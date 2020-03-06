@@ -1,0 +1,14 @@
+.client{
+    display: inline-block;
+
+    &__screen {
+        width: 368px;
+        height: 600px;
+        background: black;
+        margin-right: 20px;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
