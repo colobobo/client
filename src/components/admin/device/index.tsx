@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { devices } from '../../data/devices';
+import { devices } from '../../../datas/devices';
+
+import Client from '../../client';
 import './index.scss';
 
 interface resolution {
@@ -12,7 +14,7 @@ interface currentMobileState{
     resolution: resolution
 }
 
-function Client() {  
+function Device() {  
     const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
         name: devices[0].name,
         resolution: devices[0].resolution
@@ -33,7 +35,9 @@ function Client() {
 
     return (
         <div className="client">
-            <div className="client__screen" style={deviceSize}></div>
+            <div className="client__screen" style={deviceSize}>
+                <Client />
+            </div>
             <select
                 onChange={chooseDevice}>
                 {devices.map((devices, index) => <option value={index} key={index}>{devices.name}</option>)}
@@ -42,4 +46,4 @@ function Client() {
     )
 }
 
-export default Client;
+export default Device;

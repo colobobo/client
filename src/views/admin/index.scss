@@ -1,0 +1,25 @@
+.admin{
+    position: relative;
+
+    &__header{
+        text-align: right;
+        padding: 10px 30px;
+        
+        a{
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-right: 20px;
+            transition: color 0.1s ease-in;
+
+            &:last-of-type{
+                margin-right: 0;
+            }
+
+            &:hover{
+                color: gray;
+            }
+        }
+    }
+}
