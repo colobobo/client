@@ -1,0 +1,11 @@
+.socket-test {
+}
+
+.socket-test__buttons {
+  display: flex;
+}
+.socket-test__buttons button {
+  font-size: 20px;
+  padding: 15px;
+  margin: 10px;
+}

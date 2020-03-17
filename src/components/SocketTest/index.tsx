@@ -1,49 +1,51 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
-import io from "socket.io-client";
+import React, { FC, useCallback } from "react";
+import {
+  wsEmitMyActionExample,
+  wsSubscribeMyActionExample,
+  wsUnsubscribeMyActionExample,
+  wsEmitAction,
+  wsSubscribeAction,
+  wsUnsubscribeAction
+} from "../../redux/WebSocket";
+import { useDispatch } from "react-redux";
+import "./styles.css";
 
 interface SocketTestProps {}
 
 const SocketTest: FC<SocketTestProps> = () => {
-  // state
+  const dispatch = useDispatch();
 
-  const [socket, setSocket] = useState<SocketIOClient.Socket | null>(null);
-  const [isConnected, setIsConnected] = useState(false);
-  const [roomId, setRoomId] = useState<string | null>(null);
+  // handlers
 
-  // function
+  const handleClickEmitEvent = useCallback(() => {
+    // exemple 1
+    dispatch(wsEmitMyActionExample("data test"));
+    // exemple 2
+    dispatch(wsEmitAction("socketEventName2", "data test"));
+  }, [dispatch]);
 
-  const connectToSocket = useCallback(() => {
-    const url = process.env.REACT_APP_SERVER_URL as string;
-    setSocket(io(url));
-  }, []);
+  const handleClickSubsribeEvent = useCallback(() => {
+    // example 1
+    dispatch(wsSubscribeMyActionExample);
+    // example 2
+    dispatch(wsSubscribeAction("socketEventName2", "reduxAction2"));
+  }, [dispatch]);
 
-  // effects
+  const handleClickUnsubsribeEvent = useCallback(() => {
+    // example 1
+    dispatch(wsUnsubscribeMyActionExample);
+    // example 2
+    dispatch(wsUnsubscribeAction("socketEventName2"));
+  }, [dispatch]);
 
-  useEffect(() => {
-    connectToSocket();
-  }, [connectToSocket]);
-
-  useEffect(() => {
-    socket?.on("connect", () => {
-      setIsConnected(true);
-    });
-    socket?.on("room:create:success", (e: any) => {
-      setRoomId(e);
-    });
-  }, [socket]);
-
-  useEffect(() => {
-    if (isConnected) {
-      socket?.emit("room:create");
-    }
-  }, [socket, isConnected]);
-
+  // return
   return (
-    <div>
-      <p>Room id : {roomId}</p>
-      <p style={{ color: isConnected ? "green" : "red" }}>
-        {isConnected ? "Connecté" : "Pas connecté"}
-      </p>
+    <div className="socket-test">
+      <div className="socket-test__buttons">
+        <button onClick={handleClickEmitEvent}>emit event</button>
+        <button onClick={handleClickSubsribeEvent}>subscribe event</button>
+        <button onClick={handleClickUnsubsribeEvent}>subscribe event</button>
+      </div>
     </div>
   );
 };
