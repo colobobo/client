@@ -9,11 +9,12 @@ import {
 } from "../../redux/WebSocket";
 import { useDispatch } from "react-redux";
 import "./styles.css";
+import { AppDispatch } from "../../redux/store";
 
 interface SocketTestProps {}
 
 const SocketTest: FC<SocketTestProps> = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   // handlers
 

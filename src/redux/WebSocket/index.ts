@@ -3,6 +3,7 @@
 // Emit
 const createEmitAction = (event: string) => {
   return (data: any) => ({
+    type: null,
     emit: true,
     event,
     payload: {
@@ -14,6 +15,7 @@ const createEmitAction = (event: string) => {
 // Subscribe
 const createSubscribeAction = (event: string, handle: string | (() => any)) => {
   return {
+    type: null,
     event,
     handle
   };
@@ -22,6 +24,7 @@ const createSubscribeAction = (event: string, handle: string | (() => any)) => {
 // Unsubscribe
 const createUnsubscribeAction = (event: string) => {
   return {
+    type: null,
     leave: true,
     event
   };

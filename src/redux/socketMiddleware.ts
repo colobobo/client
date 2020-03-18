@@ -1,27 +1,27 @@
 import io from "socket.io-client";
-import { Middleware, MiddlewareAPI, Dispatch, Action } from "redux";
+import { MiddlewareAPI, Dispatch, Action } from "redux";
 
-type handleFunctionType = (p: any) => any;
-
-interface CustomAction extends Action {
+export interface CustomAction extends Action {
   event?: string;
   leave?: boolean;
   emit?: boolean;
-  handle: handleFunctionType | string;
+  handle: ((result: any) => any) | string;
   payload: any;
 }
+
+export type MiddlewareFunction = (
+  store: MiddlewareAPI
+) => (next: Dispatch) => (action: CustomAction) => any;
 
 const logStyles =
   "font-size:14px; color:white; padding:10px; border: 2px solid purple; background:black";
 
-const socketMiddleware = () => {
+const socketMiddleware = (): MiddlewareFunction => {
   console.log("%c socketMiddleware : creation", logStyles);
   const url = process.env.REACT_APP_SERVER_URL as string;
   const socket = io(url);
 
-  const middleware: Middleware = ({ dispatch }: MiddlewareAPI) => (
-    next: Dispatch
-  ) => (action: CustomAction) => {
+  const middleware: MiddlewareFunction = ({ dispatch }) => next => action => {
     if (typeof action === "function") {
       return next(action);
     }
@@ -47,8 +47,7 @@ const socketMiddleware = () => {
     if (handle) {
       let handleEvent = handle;
       if (typeof handleEvent === "string") {
-        handleEvent = (result: any) =>
-          dispatch({ type: handle, result, ...rest });
+        handleEvent = result => dispatch({ type: handle, result, ...rest });
       }
       console.log("%c socketMiddleware : subscribe", logStyles, {
         event,
@@ -67,6 +66,7 @@ const socketMiddleware = () => {
 
     return next(action);
   };
+
   return middleware;
 };
 
