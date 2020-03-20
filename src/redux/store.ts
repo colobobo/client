@@ -4,11 +4,7 @@ import {
   combineReducers
 } from "@reduxjs/toolkit";
 import { reducer as counterReducer } from "./Counter";
-import socketMiddleware, {
-  MiddlewareFunction,
-  CustomAction
-} from "./socketMiddleware";
-import { Middleware } from "redux";
+import socketMiddleware from "./socketMiddleware";
 
 const rootReducer = combineReducers({
   counter: counterReducer

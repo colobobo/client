@@ -1,66 +1,33 @@
-// ACTION CREATOR
+import { Events } from "./events";
+import {
+  createEmitAction,
+  createSubscribeAction,
+  createUnsubscribeAction
+} from "./actionCreators";
+import { actions as CounterActions } from "../Counter";
+
+// EXAMPLE OF ACTIONS
 
 // Emit
-const createEmitAction = (event: string) => {
-  return (data: any) => ({
-    type: null,
-    emit: true,
-    event,
-    payload: {
-      data
-    }
-  });
-};
-
-// Subscribe
-const createSubscribeAction = (event: string, handle: string | (() => any)) => {
-  return {
-    type: null,
-    event,
-    handle
-  };
-};
-
-// Unsubscribe
-const createUnsubscribeAction = (event: string) => {
-  return {
-    type: null,
-    leave: true,
-    event
-  };
-};
-
-// GENERIC ACTION
-
-// Emit
-export const wsEmitAction = (event: string, data: any) =>
-  createEmitAction(event)(data);
-
-// Subscribe
-export const wsSubscribeAction = (
-  event: string,
-  handle: string | (() => any)
-) => createSubscribeAction(event, handle);
-
-// Unsubscribe
-export const wsUnsubscribeAction = (event: string) =>
-  createUnsubscribeAction(event);
-
-// EXAMPLE OF ACTION CREATION
-
-// Emit
-// emit "socketEventName" event with passed data
-export const wsEmitMyActionExample = createEmitAction("socketEventName");
+// emit Events.SOCKET_EVENT_EXAMPLE event with data
+const wsEmitActionExample = (data: { text: string; num: number }) =>
+  createEmitAction(Events.SOCKET_EVENT_EXAMPLE, data);
 
 // Subsribe
-// subscribe to "socketEventName" and dispatch "reduxAction" action when event is received
-export const wsSubscribeMyActionExample = createSubscribeAction(
-  "socketEventName",
-  "reduxAction"
+// subscribe to Events.SOCKET_EVENT_EXAMPLE and dispatch CounterActions.increment when event is received
+const wsSubscribeActionExample = createSubscribeAction(
+  Events.SOCKET_EVENT_EXAMPLE,
+  CounterActions.incrementByAmount.type
 );
 
 // Unsubsribe
-// unsubscribe from "socketEventName"
-export const wsUnsubscribeMyActionExample = createUnsubscribeAction(
-  "socketEventName"
+// unsubscribe from Events.SOCKET_EVENT_EXAMPLE
+const wsUnsubscribeMyActionExample = createUnsubscribeAction(
+  Events.SOCKET_EVENT_EXAMPLE
 );
+
+export const actions = {
+  wsEmitActionExample,
+  wsSubscribeActionExample,
+  wsUnsubscribeMyActionExample
+};

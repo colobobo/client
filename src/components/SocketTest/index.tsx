@@ -1,15 +1,8 @@
 import React, { FC, useCallback } from "react";
-import {
-  wsEmitMyActionExample,
-  wsSubscribeMyActionExample,
-  wsUnsubscribeMyActionExample,
-  wsEmitAction,
-  wsSubscribeAction,
-  wsUnsubscribeAction
-} from "../../redux/WebSocket";
+import { actions as WebSocketActions } from "../../redux/WebSocket";
 import { useDispatch } from "react-redux";
-import "./styles.css";
 import { AppDispatch } from "../../redux/store";
+import "./styles.css";
 
 interface SocketTestProps {}
 
@@ -19,24 +12,15 @@ const SocketTest: FC<SocketTestProps> = () => {
   // handlers
 
   const handleClickEmitEvent = useCallback(() => {
-    // exemple 1
-    dispatch(wsEmitMyActionExample("data test"));
-    // exemple 2
-    dispatch(wsEmitAction("socketEventName2", "data test"));
+    dispatch(WebSocketActions.wsEmitActionExample({ text: "t", num: 1 }));
   }, [dispatch]);
 
   const handleClickSubsribeEvent = useCallback(() => {
-    // example 1
-    dispatch(wsSubscribeMyActionExample);
-    // example 2
-    dispatch(wsSubscribeAction("socketEventName2", "reduxAction2"));
+    dispatch(WebSocketActions.wsSubscribeActionExample);
   }, [dispatch]);
 
   const handleClickUnsubsribeEvent = useCallback(() => {
-    // example 1
-    dispatch(wsUnsubscribeMyActionExample);
-    // example 2
-    dispatch(wsUnsubscribeAction("socketEventName2"));
+    dispatch(WebSocketActions.wsUnsubscribeMyActionExample);
   }, [dispatch]);
 
   // return
@@ -45,7 +29,7 @@ const SocketTest: FC<SocketTestProps> = () => {
       <div className="socket-test__buttons">
         <button onClick={handleClickEmitEvent}>emit event</button>
         <button onClick={handleClickSubsribeEvent}>subscribe event</button>
-        <button onClick={handleClickUnsubsribeEvent}>subscribe event</button>
+        <button onClick={handleClickUnsubsribeEvent}>unsubscribe event</button>
       </div>
     </div>
   );

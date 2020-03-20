@@ -1,0 +1,3 @@
+export enum Events {
+  SOCKET_EVENT_EXAMPLE = "SOCKET_EVENT_EXAMPLE"
+}

@@ -26,7 +26,7 @@ const socketMiddleware = (): MiddlewareFunction => {
       return next(action);
     }
 
-    const { event, leave, emit, handle, payload, ...rest } = action;
+    const { event, leave, emit, handle, payload } = action;
 
     // if event no event -> next
 
@@ -47,7 +47,9 @@ const socketMiddleware = (): MiddlewareFunction => {
     if (handle) {
       let handleEvent = handle;
       if (typeof handleEvent === "string") {
-        handleEvent = result => dispatch({ type: handle, result, ...rest });
+        handleEvent = result => {
+          dispatch({ type: handle, payload: result });
+        };
       }
       console.log("%c socketMiddleware : subscribe", logStyles, {
         event,
