@@ -1,4 +1,4 @@
-import { Events } from "./events";
+import { WebSocketEvents } from "./events";
 import {
   createEmitAction,
   createSubscribeAction,
@@ -10,20 +10,20 @@ import { actions as CounterActions } from "../Counter";
 
 // Emit
 // emit Events.SOCKET_EVENT_EXAMPLE event with data
-const wsEmitActionExample = (data: { text: string; num: number }) =>
-  createEmitAction(Events.SOCKET_EVENT_EXAMPLE, data);
+const wsEmitActionExample = (payload: { text: string; num: number }) =>
+  createEmitAction(WebSocketEvents.SOCKET_EVENT_EXAMPLE, payload);
 
 // Subsribe
 // subscribe to Events.SOCKET_EVENT_EXAMPLE and dispatch CounterActions.increment when event is received
 const wsSubscribeActionExample = createSubscribeAction(
-  Events.SOCKET_EVENT_EXAMPLE,
+  WebSocketEvents.SOCKET_EVENT_EXAMPLE,
   CounterActions.incrementByAmount.type
 );
 
 // Unsubsribe
 // unsubscribe from Events.SOCKET_EVENT_EXAMPLE
 const wsUnsubscribeMyActionExample = createUnsubscribeAction(
-  Events.SOCKET_EVENT_EXAMPLE
+  WebSocketEvents.SOCKET_EVENT_EXAMPLE
 );
 
 export const actions = {

@@ -4,7 +4,7 @@ import {
   combineReducers
 } from "@reduxjs/toolkit";
 import { reducer as counterReducer } from "./Counter";
-import socketMiddleware from "./socketMiddleware";
+import socketMiddleware from "./WebSocket/socketMiddleware";
 
 const rootReducer = combineReducers({
   counter: counterReducer
@@ -17,7 +17,10 @@ const store = configureStore({
   middleware: [
     ...getDefaultMiddleware<RootState>(),
     socketMiddleware()
-  ] as const
+  ] as const,
+  devTools: {
+    name: "fast-not-fat"
+  }
 });
 
 export type AppDispatch = typeof store.dispatch;

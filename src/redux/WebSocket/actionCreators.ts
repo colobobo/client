@@ -1,26 +1,33 @@
-import { Events } from "./events";
+import { WebSocketEvents } from "./events";
+import { WebSocketAction } from "./socketMiddleware";
+
+export enum WebSocketActionTypes {
+  wsEmit = "ws/emit",
+  wsSubscribe = "ws/subscribe",
+  wsUnsubscribe = "ws/unsubscribe"
+}
 
 // Emit
 
-export const createEmitAction = (event: Events, data: any) => {
+export const createEmitAction = (
+  event: WebSocketEvents,
+  payload: any
+): WebSocketAction => {
   return {
-    type: null,
-    emit: true,
+    type: WebSocketActionTypes.wsEmit,
     event,
-    payload: {
-      data
-    }
+    payload
   };
 };
 
 // Subscribe
 
 export const createSubscribeAction = (
-  event: Events,
+  event: WebSocketEvents,
   handle: string | (() => any)
-) => {
+): WebSocketAction => {
   return {
-    type: null,
+    type: WebSocketActionTypes.wsSubscribe,
     event,
     handle
   };
@@ -28,10 +35,11 @@ export const createSubscribeAction = (
 
 // Unsubscribe
 
-export const createUnsubscribeAction = (event: Events) => {
+export const createUnsubscribeAction = (
+  event: WebSocketEvents
+): WebSocketAction => {
   return {
-    type: null,
-    leave: true,
+    type: WebSocketActionTypes.wsUnsubscribe,
     event
   };
 };
