@@ -1,5 +1,6 @@
 .client {
   display: inline-block;
+  text-align: center;
 
   &__screen {
     background: black;
@@ -9,5 +10,9 @@
 
   &:last-of-type {
     margin-right: 0;
+  }
+
+  select {
+    margin-bottom: 15px;
   }
 }

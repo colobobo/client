@@ -12,14 +12,17 @@ const Room: FunctionComponent = () => {
 
   return (
     <div className="room">
-      <h1 className="room__title">Id room: 0001</h1>
-      <div className="room__container">
+      <div className="room__header">
+        <h1 className="room__title">Room: 0001</h1>
         <button
           onClick={() => setClientNumber(clientNumber + 1)}
           className="room__add"
         >
           Ajouter un joueur
         </button>
+      </div>
+
+      <div className="room__container">
         <div className="room__clients">{clients}</div>
       </div>
     </div>

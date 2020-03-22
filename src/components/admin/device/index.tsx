@@ -38,9 +38,6 @@ const Device: FunctionComponent<Props> = ({ userId }) => {
 
   return (
     <div className="client">
-      <div className="client__screen" style={deviceSize}>
-        <Client userId={userId} />
-      </div>
       <select onChange={chooseDevice}>
         {devices.map((devices, index) => (
           <option value={index} key={index}>
@@ -48,6 +45,9 @@ const Device: FunctionComponent<Props> = ({ userId }) => {
           </option>
         ))}
       </select>
+      <div className="client__screen" style={deviceSize}>
+        <Client userId={userId} />
+      </div>
     </div>
   );
 };
