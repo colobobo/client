@@ -3,15 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectors as CounterSelectors,
   actions as CounterActions
-} from "../../redux/Counter/index";
+} from "../../redux/Counter";
 import styles from "./CounterTest.module.css";
+import { AppDispatch } from "../../redux/store";
 
 interface CounterTestProps {}
 
 const CounterTest: FC<CounterTestProps> = () => {
   // store
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const count = useSelector(CounterSelectors.selectValue);
 
   // state
