@@ -14,7 +14,7 @@ const Room: FC = () => {
   }, [clientNumber]);
 
   const handle = useCallback(() => {
-    setClientNumber(clientNumber + 1);
+    setClientNumber(prev => prev + 1);
   }, [clientNumber]);
 
   return (
