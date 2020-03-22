@@ -1,49 +1,36 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
-import io from "socket.io-client";
+import React, { FC, useCallback } from "react";
+import { actions as WebSocketActions } from "../../redux/WebSocket";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import "./styles.css";
 
 interface SocketTestProps {}
 
 const SocketTest: FC<SocketTestProps> = () => {
-  // state
+  const dispatch: AppDispatch = useDispatch();
 
-  const [socket, setSocket] = useState<SocketIOClient.Socket | null>(null);
-  const [isConnected, setIsConnected] = useState(false);
-  const [roomId, setRoomId] = useState<string | null>(null);
+  // handlers
 
-  // function
+  const handleClickEmitEvent = useCallback(() => {
+    dispatch(WebSocketActions.wsEmitActionExample({ text: "t", num: 1 }));
+  }, [dispatch]);
 
-  const connectToSocket = useCallback(() => {
-    const url = process.env.REACT_APP_SERVER_URL as string;
-    setSocket(io(url));
-  }, []);
+  const handleClickSubsribeEvent = useCallback(() => {
+    dispatch(WebSocketActions.wsSubscribeActionExample);
+  }, [dispatch]);
 
-  // effects
+  const handleClickUnsubsribeEvent = useCallback(() => {
+    dispatch(WebSocketActions.wsUnsubscribeMyActionExample);
+  }, [dispatch]);
 
-  useEffect(() => {
-    connectToSocket();
-  }, [connectToSocket]);
-
-  useEffect(() => {
-    socket?.on("connect", () => {
-      setIsConnected(true);
-    });
-    socket?.on("room:create:success", (e: any) => {
-      setRoomId(e);
-    });
-  }, [socket]);
-
-  useEffect(() => {
-    if (isConnected) {
-      socket?.emit("room:create");
-    }
-  }, [socket, isConnected]);
-
+  // return
   return (
-    <div>
-      <p>Room id : {roomId}</p>
-      <p style={{ color: isConnected ? "green" : "red" }}>
-        {isConnected ? "Connecté" : "Pas connecté"}
-      </p>
+    <div className="socket-test">
+      <div className="socket-test__buttons">
+        <button onClick={handleClickEmitEvent}>emit event</button>
+        <button onClick={handleClickSubsribeEvent}>subscribe event</button>
+        <button onClick={handleClickUnsubsribeEvent}>unsubscribe event</button>
+      </div>
     </div>
   );
 };
