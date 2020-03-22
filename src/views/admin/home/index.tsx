@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { FC } from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./index.scss";
 
 // assets
-import iconEye from "../../assets/icons/eye.png";
-import iconAdd from "../../assets/icons/add.png";
+import iconEye from "../../../assets/icons/eye.png";
+import iconAdd from "../../../assets/icons/add.png";
 
-const AdminHome: FunctionComponent = () => {
+const Home: FC = () => {
   return (
     <div className="admin-homepage">
       <div className="admin-homepage__container">
@@ -35,4 +35,4 @@ const AdminHome: FunctionComponent = () => {
   );
 };
 
-export default AdminHome;
+export default Home;

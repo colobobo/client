@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FunctionComponent } from "react";
+import React, { useState, FC } from "react";
 import { devices } from "../../../datas/devices";
 
 import Client from "../../client";
@@ -18,7 +18,7 @@ interface Props {
   userId: number;
 }
 
-const Device: FunctionComponent<Props> = ({ userId }) => {
+const Device: FC<Props> = ({ userId }) => {
   const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
     name: devices[0].name,
     resolution: devices[0].resolution

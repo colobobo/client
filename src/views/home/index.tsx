@@ -1,8 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { FC } from "react";
 
-function Home() {
+const Home: FC = () => {
   return <div className="app"></div>;
-}
+};
 
 export default Home;

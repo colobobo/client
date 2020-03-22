@@ -1,23 +1,27 @@
-import React, { useState, FunctionComponent } from "react";
+import React, { useState, FC, useMemo, useCallback } from "react";
 import Device from "../../components/admin/device";
 import "./index.scss";
 
-const Room: FunctionComponent = () => {
+const Room: FC = () => {
   const [clientNumber, setClientNumber] = useState(1);
 
-  let clients = [];
-  for (let i = 0; i < clientNumber; i++) {
-    clients.push(<Device key={i} userId={i} />);
-  }
+  let clients = useMemo(() => {
+    const c = [];
+    for (let i = 0; i < clientNumber; i++) {
+      c.push(<Device key={i} userId={i} />);
+    }
+    return c;
+  }, [clientNumber]);
+
+  const handle = useCallback(() => {
+    setClientNumber(clientNumber + 1);
+  }, [clientNumber]);
 
   return (
     <div className="room">
       <div className="room__header">
         <h1 className="room__title">Room: 0001</h1>
-        <button
-          onClick={() => setClientNumber(clientNumber + 1)}
-          className="room__add"
-        >
+        <button onClick={handle} className="room__add">
           Ajouter un joueur
         </button>
       </div>

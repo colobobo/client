@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { FC } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Routes from "./routes";
 import "./App.scss";
 
-const App: FunctionComponent = () => {
+const App: FC = () => {
   return (
     <Router>
       <Routes />
