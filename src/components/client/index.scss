@@ -1,0 +1,13 @@
+.client {
+  display: inline-block;
+
+  &__screen {
+    background: black;
+    color: white;
+    margin-right: 20px;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

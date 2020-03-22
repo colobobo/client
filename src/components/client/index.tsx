@@ -1,12 +1,12 @@
-import React from 'react';
-import './index.scss';
+import React, { FunctionComponent } from "react";
+import "./index.scss";
 
-function Client() {
-    return (
-        <div className="client">
-            client
-        </div>
-    )
+interface Props {
+  userId: number;
 }
+
+const Client: FunctionComponent<Props> = ({ userId }) => {
+  return <div className="client">User {userId}</div>;
+};
 
 export default Client;
