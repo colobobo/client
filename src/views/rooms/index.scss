@@ -1,0 +1,41 @@
+.rooms {
+  &__container {
+    padding: 20px 30px;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__item {
+    list-style: none;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      background: #4f5d75;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      &:before {
+        background: #ef8354;
+      }
+    }
+
+    .item {
+      &__link {
+        font-size: 30px;
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}

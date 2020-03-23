@@ -1,19 +1,15 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import SocketTest from "./components/SocketTest";
-import CounterTest from "./components/CounterTest";
+import React, { FC } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+import Routes from "./routes";
+import "./App.scss";
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <SocketTest />
-        <CounterTest />
-      </header>
-    </div>
+    <Router>
+      <Routes />
+    </Router>
   );
-}
+};
 
 export default App;

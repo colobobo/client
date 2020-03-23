@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background: #2d3142;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+
+  &__link {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: color 0.1s ease-in;
+    letter-spacing: 1px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: #ef8354;
+    }
+
+    &.home {
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: initial;
+      font-size: 22px;
+
+      img {
+        height: 40px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
