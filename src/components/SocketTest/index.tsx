@@ -12,15 +12,15 @@ const SocketTest: FC<SocketTestProps> = () => {
   // handlers
 
   const handleClickEmitEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsEmitActionExample({ text: "t", num: 1 }));
+    dispatch(WebSocketActions.emit.example({ text: "t", num: 1 }));
   }, [dispatch]);
 
   const handleClickSubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsSubscribeActionExample);
+    dispatch(WebSocketActions.subscribe.example);
   }, [dispatch]);
 
   const handleClickUnsubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsUnsubscribeMyActionExample);
+    dispatch(WebSocketActions.unsubscribe.example);
   }, [dispatch]);
 
   // return

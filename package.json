@@ -79,7 +79,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "types-link": "yarn link \"@types/fast-not-fat\"",
+    "types-unlink": "yarn unlink \"@types/fast-not-fat\""
   },
   "browserslist": {
     "production": [
@@ -164,6 +166,7 @@
     "@types/hoist-non-react-statics": "^3.3.1",
     "@types/react": "^16.9.23",
     "@types/react-router-dom": "^5.1.3",
+    "@types/fast-not-fat": "https://github.com/Fast-Not-Fat/types",
     "@types/react-redux": "^7.1.7",
     "@types/socket.io-client": "^1.4.32",
     "eslint-config-prettier": "^6.10.1",

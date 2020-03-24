@@ -1,11 +1,11 @@
 import io from "socket.io-client";
 import { MiddlewareAPI, Dispatch, Action } from "redux";
-import { WebSocketEvents } from "./events";
 import { WebSocketActionTypes } from "./actionCreators";
+import { Events } from "fast-not-fat";
 
 export interface WebSocketAction extends Action {
   type: WebSocketActionTypes;
-  event: WebSocketEvents;
+  event: Events;
   handle?: ((result: any) => any) | string;
   payload?: any;
 }

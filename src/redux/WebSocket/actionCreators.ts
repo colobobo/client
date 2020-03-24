@@ -1,5 +1,5 @@
-import { WebSocketEvents } from "./events";
 import { WebSocketAction } from "./socketMiddleware";
+import { Events } from "fast-not-fat";
 
 export enum WebSocketActionTypes {
   wsEmit = "ws/emit",
@@ -7,23 +7,22 @@ export enum WebSocketActionTypes {
   wsUnsubscribe = "ws/unsubscribe"
 }
 
+export type EmitAction<T = {}> = (payload: T) => WebSocketAction;
+
 // Emit
 
-export const createEmitAction = (
-  event: WebSocketEvents,
-  payload: any
-): WebSocketAction => {
-  return {
+export const createEmitAction = (event: Events): EmitAction => {
+  return payload => ({
     type: WebSocketActionTypes.wsEmit,
     event,
     payload
-  };
+  });
 };
 
 // Subscribe
 
 export const createSubscribeAction = (
-  event: WebSocketEvents,
+  event: Events,
   handle: string | (() => any)
 ): WebSocketAction => {
   return {
@@ -35,9 +34,7 @@ export const createSubscribeAction = (
 
 // Unsubscribe
 
-export const createUnsubscribeAction = (
-  event: WebSocketEvents
-): WebSocketAction => {
+export const createUnsubscribeAction = (event: Events): WebSocketAction => {
   return {
     type: WebSocketActionTypes.wsUnsubscribe,
     event
