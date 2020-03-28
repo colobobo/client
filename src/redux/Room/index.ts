@@ -1,13 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { PayloadSocket } from "fast-not-fat";
+import { PayloadsRoom } from "fast-not-fat";
 
 export interface RoomState {
-  id: number | null;
-  error: string | null;
+  id: string | null;
+  error: number | null;
 }
-
-type PayloadActionSocket<T> = PayloadAction<PayloadSocket<T>>;
 
 export const slice = createSlice({
   name: "room",
@@ -18,10 +16,24 @@ export const slice = createSlice({
   reducers: {
     createSuccess: (
       state: RoomState,
-      action: PayloadActionSocket<{ id: number }>
+      action: PayloadAction<PayloadsRoom.CreateSuccess>
     ) => {
       state.id = action.payload.data.id;
-    }
+    },
+    createError: (
+      state: RoomState,
+      action: PayloadAction<PayloadsRoom.CreateError>
+    ) => {
+      state.error = action.payload.data.code;
+    },
+    joinSuccess: (
+      state: RoomState,
+      action: PayloadAction<PayloadsRoom.JoinSuccess>
+    ) => {},
+    joinError: (
+      state: RoomState,
+      action: PayloadAction<PayloadsRoom.JoinError>
+    ) => {}
   }
 });
 
@@ -29,8 +41,10 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.room;
 const selectId = (state: RootState) => getRoot(state).id;
+const selectError = (state: RootState) => getRoot(state).error;
 export const selectors = {
-  selectId
+  selectId,
+  selectError
 };
 
 // reducer / actions

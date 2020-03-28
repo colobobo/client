@@ -1,11 +1,5 @@
-import { createUnsubscribeAction } from "../../actionCreators";
-import { EventsExample, EventsRoom } from "fast-not-fat";
-
-const example = createUnsubscribeAction(EventsExample.SOCKET_EVENT_EXAMPLE);
-
-const roomCreateSuccess = createUnsubscribeAction(EventsRoom.createSuccess);
+import * as room from "./room";
 
 export default {
-  example,
-  roomCreateSuccess
+  room
 };

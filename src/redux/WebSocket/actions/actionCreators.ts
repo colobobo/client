@@ -1,5 +1,6 @@
-import { WebSocketAction } from "./socketMiddleware";
-import { Events } from "fast-not-fat";
+import { WebSocketAction } from "../socketMiddleware";
+// @ts-ignore
+import { Events } from "@types/fast-not-fat";
 
 export enum WebSocketActionTypes {
   wsEmit = "ws/emit",
