@@ -1,8 +1,7 @@
 import io from "socket.io-client";
 import { MiddlewareAPI, Dispatch, Action } from "redux";
 import { WebSocketActionTypes } from "./actions/actionCreators";
-// @ts-ignore
-import { Events } from "@types/fast-not-fat";
+import { Events } from "fast-not-fat";
 
 export interface WebSocketAction extends Action {
   type: WebSocketActionTypes;

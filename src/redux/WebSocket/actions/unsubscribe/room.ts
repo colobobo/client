@@ -1,6 +1,6 @@
 import { createUnsubscribeAction } from "../actionCreators";
-// @ts-ignore
-import { EventsRoom } from "@types/fast-not-fat";
+
+import { EventsRoom } from "fast-not-fat";
 
 // create
 

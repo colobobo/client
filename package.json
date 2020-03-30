@@ -33,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.18.0",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "fast-not-fat": "https://github.com/Fast-Not-Fat/types",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "4.0.0-beta.11",
@@ -80,8 +81,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "types-link": "yarn link \"@types/fast-not-fat\"",
-    "types-unlink": "yarn unlink \"@types/fast-not-fat\""
+    "link-fast-not-fat": "yarn link \"fast-not-fat\"",
+    "unlink-fast-not-fat": "yarn unlink \"fast-not-fat\""
   },
   "browserslist": {
     "production": [
@@ -161,7 +162,6 @@
     }
   },
   "devDependencies": {
-    "@types/fast-not-fat": "https://github.com/Fast-Not-Fat/types",
     "@types/hoist-non-react-statics": "^3.3.1",
     "@types/react": "^16.9.23",
     "@types/react-redux": "^7.1.7",

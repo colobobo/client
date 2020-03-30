@@ -1,6 +1,5 @@
 import { createSubscribeAction } from "../actionCreators";
-// @ts-ignore
-import { EventsRoom } from "@types/fast-not-fat";
+import { EventsRoom } from "fast-not-fat";
 import { actions as RoomActions } from "../../../Room";
 
 // create

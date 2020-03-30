@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-// @ts-ignore
-import { PayloadsRoom } from "@types/fast-not-fat";
+
+import { PayloadsRoom } from "fast-not-fat";
 
 export interface RoomState {
   id: string | null;
