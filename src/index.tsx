@@ -2,14 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./stylesheets/index.scss";
 import App from "./App";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 import * as serviceWorker from "./serviceWorker";
+import StoreWrapper from "./components/StoreWrapper";
 
 ReactDOM.render(
-  <Provider store={store}>
+  <StoreWrapper storeId="app">
     <App />
-  </Provider>,
+  </StoreWrapper>,
   document.getElementById("root")
 );
 
