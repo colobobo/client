@@ -18,16 +18,16 @@ const Room: FC = () => {
   }, []);
 
   return (
-    <div className="room">
-      <div className="room__header">
-        <h1 className="room__title">Room: 0001</h1>
-        <button onClick={handle} className="room__add">
+    <div className="admin-room">
+      <div className="admin-room__header">
+        <h1 className="admin-room__title">Room: 0001</h1>
+        <button onClick={handle} className="admin-room__add">
           Ajouter un joueur
         </button>
       </div>
 
-      <div className="room__container">
-        <div className="room__clients">{clients}</div>
+      <div className="admin-room__container">
+        <div className="admin-room__clients">{clients}</div>
       </div>
     </div>
   );

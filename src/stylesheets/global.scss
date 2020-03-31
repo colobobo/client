@@ -29,8 +29,38 @@ a {
   text-decoration: none;
 }
 
+input,
+button,
+textarea,
+select {
+  &:focus,
+  &:active,
+  &hover {
+    outline: none;
+  }
+}
+
 #root,
 .client {
   width: 100%;
   height: 100%;
+}
+
+.button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 10px 30px;
+  display: block;
+  width: fit-content;
+
+  &--orange {
+    background: #ef8354;
+  }
+
+  &--blue {
+    background: #2d3142;
+  }
 }

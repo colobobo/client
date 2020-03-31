@@ -1,11 +1,11 @@
-.landing {
+.room {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  &__action {
-    margin: 0 auto 20px auto;
+  &__title {
+    margin-bottom: 20px;
   }
 }

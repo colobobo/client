@@ -39,10 +39,13 @@ const Landing: FC = () => {
     <div className="landing">
       <div className="landing__container">
         <div className="landing__actions">
-          <button onClick={handleOnClickCreateRoom} className="landing__action">
+          <button
+            onClick={handleOnClickCreateRoom}
+            className="landing__action button button--orange"
+          >
             Créer une partie
           </button>
-          <Link to="/join" className="landing__action">
+          <Link to="/join" className="landing__action button button--blue">
             Rejoindre une partie
           </Link>
         </div>
