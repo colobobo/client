@@ -1,7 +1,6 @@
 import React, { FC, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { AppDispatch } from "../../../redux/store";
 import { actions as RoomActions } from "../../../redux/WebSocket";
 
 interface screenSize {
@@ -9,7 +8,7 @@ interface screenSize {
   height: number;
 }
 
-const JoinRoom: FC = () => {
+const Join: FC = () => {
   // states
 
   const [screenSize] = useState<screenSize>({
@@ -20,7 +19,7 @@ const JoinRoom: FC = () => {
   const [inputRoomId, setInputRoomId] = useState("");
 
   // store
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // handlers
 
@@ -47,7 +46,12 @@ const JoinRoom: FC = () => {
   return (
     <div className="join">
       <form onSubmit={handleOnClickStart}>
-        <input type="text" value={inputRoomId} onChange={handleChange} />
+        <input
+          type="text"
+          value={inputRoomId}
+          onChange={handleChange}
+          placeholder="Numéro de la room"
+        />
         <button
           type="submit"
           onClick={handleOnClickStart}
@@ -60,4 +64,4 @@ const JoinRoom: FC = () => {
   );
 };
 
-export default JoinRoom;
+export default Join;
