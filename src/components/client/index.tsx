@@ -1,5 +1,10 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  MemoryRouter
+} from "react-router-dom";
 import "./index.scss";
 
 // views
@@ -13,14 +18,14 @@ const Client: FC = () => {
 
   return (
     <div className="client">
-      <Router>
+      <MemoryRouter>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/join" component={Join} />
           <Route exact path="/game" component={Game} />
           <Route path="/:roomId" component={Room} />
         </Switch>
-      </Router>
+      </MemoryRouter>
     </div>
   );
 };
