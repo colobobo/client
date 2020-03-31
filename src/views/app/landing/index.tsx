@@ -29,9 +29,9 @@ const Landing: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      history.push(roomId);
+      history.push("/room/" + roomId);
     }
-  });
+  }, [history, roomId]);
 
   // return
 

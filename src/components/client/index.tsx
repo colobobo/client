@@ -23,7 +23,7 @@ const Client: FC = () => {
           <Route exact path="/" component={Landing} />
           <Route exact path="/join" component={Join} />
           <Route exact path="/game" component={Game} />
-          <Route path="/:roomId" component={Room} />
+          <Route path="/room/:roomId" component={Room} />
         </Switch>
       </MemoryRouter>
     </div>

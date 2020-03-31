@@ -39,9 +39,9 @@ const Device: FC<Props> = ({ userId }) => {
   return (
     <div className="device">
       <select onChange={chooseDevice}>
-        {devices.map((devices, index) => (
+        {devices.map((device, index) => (
           <option value={index} key={index}>
-            {devices.name}
+            {device.name}
           </option>
         ))}
       </select>

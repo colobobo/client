@@ -49,12 +49,16 @@ const Join: FC = () => {
     <div className="join">
       <div className="join__container">
         <form onSubmit={handleOnClickStart} className="join__form">
-          <label className="form__label">Numéro de la partie</label>
+          <label className="form__label" htmlFor="roomId">
+            Numéro de la partie
+          </label>
           <input
             type="text"
             value={inputRoomId}
             onChange={handleChange}
             className="form__input"
+            name="roomId"
+            id="roomId"
           />
           <button
             type="submit"
