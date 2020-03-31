@@ -46,7 +46,7 @@ const Device: FC<Props> = ({ userId }) => {
         ))}
       </select>
       <div className="client__screen" style={deviceSize}>
-        <Client userId={userId} />
+        <Client />
       </div>
     </div>
   );

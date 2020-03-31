@@ -1,5 +1,5 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
-import Device from "../../components/admin/device";
+import Device from "../../../components/admin/device";
 import "./index.scss";
 
 const Room: FC = () => {
@@ -15,7 +15,7 @@ const Room: FC = () => {
 
   const handle = useCallback(() => {
     setClientNumber(prev => prev + 1);
-  }, [clientNumber]);
+  }, []);
 
   return (
     <div className="room">
