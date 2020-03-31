@@ -1,13 +1,12 @@
 import React, { FC, useCallback } from "react";
 import { actions as WebSocketActions } from "../../redux/WebSocket";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../redux/store";
 import "./styles.css";
 
 interface SocketTestProps {}
 
 const SocketTest: FC<SocketTestProps> = () => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // handlers
 
