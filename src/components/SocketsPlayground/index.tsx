@@ -1,4 +1,4 @@
-import React, { FC, Ref, useCallback } from "react";
+import React, { FC, Ref, useCallback, useRef } from "react";
 import { actions as WebSocketActions } from "../../redux/WebSocket";
 import { useDispatch } from "react-redux";
 
@@ -8,7 +8,7 @@ interface SocketsPlaygroundProps {}
 
 const SocketsPlayground: FC<SocketsPlaygroundProps> = () => {
   const dispatch = useDispatch();
-  const joinInput: Ref<HTMLInputElement> = React.createRef();
+  const joinInput: Ref<HTMLInputElement> = useRef(null);
 
   const handleRoomCreate = useCallback(() => {
     dispatch(WebSocketActions.emit.room.create({ width: 200, height: 200 }));
