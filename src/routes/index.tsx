@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import Client from "../components/client";
+import Client from "../views/client";
 import Admin from "../views/admin";
 
 const Routes: FunctionComponent = () => {
