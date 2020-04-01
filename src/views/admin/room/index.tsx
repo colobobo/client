@@ -5,7 +5,7 @@ import "./index.scss";
 const Room: FC = () => {
   const [clientNumber, setClientNumber] = useState(1);
 
-  let clients = useMemo(() => {
+  let devices = useMemo(() => {
     const c = [];
     for (let i = 0; i < clientNumber; i++) {
       c.push(<Device key={i} userId={i} />);
@@ -27,7 +27,7 @@ const Room: FC = () => {
       </div>
 
       <div className="admin-room__container">
-        <div className="admin-room__clients">{clients}</div>
+        <div className="admin-room__clients">{devices}</div>
       </div>
     </div>
   );

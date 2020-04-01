@@ -1,5 +1,6 @@
 import React, { useState, FC } from "react";
 import { devices } from "../../../datas/devices";
+import StoreWrapper from "../../../components/StoreWrapper";
 
 import Client from "../../client";
 import "./index.scss";
@@ -46,7 +47,9 @@ const Device: FC<Props> = ({ userId }) => {
         ))}
       </select>
       <div className="device__screen" style={deviceSize}>
-        <Client />
+        <StoreWrapper storeId={userId.toString()}>
+          <Client />
+        </StoreWrapper>
       </div>
     </div>
   );
