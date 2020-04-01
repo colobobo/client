@@ -1,0 +1,12 @@
+.sockets-playground {
+  &__buttons {
+    display: flex;
+
+    button {
+      font-size: 18px;
+      padding: 15px;
+      margin: 10px;
+      background: white;
+    }
+  }
+}

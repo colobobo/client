@@ -1,4 +1,4 @@
-import { WebSocketEvents } from "./events";
+import { WebSocketEvents } from "./index";
 import { WebSocketAction } from "./socketMiddleware";
 
 export enum WebSocketActionTypes {

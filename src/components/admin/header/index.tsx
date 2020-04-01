@@ -18,6 +18,9 @@ const AdminHeader: FC = () => {
       <Link to="/admin/rooms" className="header__link">
         Liste des rooms
       </Link>
+      <Link to="/admin/sockets-playground" className="header__link">
+        Sockets playground
+      </Link>
     </header>
   );
 };
