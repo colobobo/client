@@ -6,13 +6,15 @@ import { PayloadsRoom } from "fast-not-fat";
 export interface RoomState {
   id: string | null;
   error: number | null;
+  message: string | null;
 }
 
 export const slice = createSlice({
   name: "room",
   initialState: {
     id: null,
-    error: null
+    error: null,
+    message: null
   } as RoomState,
   reducers: {
     createSuccess: (
@@ -30,11 +32,16 @@ export const slice = createSlice({
     joinSuccess: (
       state: RoomState,
       action: PayloadAction<PayloadsRoom.JoinSuccess>
-    ) => {},
+    ) => {
+      state.id = action.payload.data.id;
+    },
     joinError: (
       state: RoomState,
       action: PayloadAction<PayloadsRoom.JoinError>
-    ) => {}
+    ) => {
+      //@ts-ignore
+      state.message = action.payload.message;
+    }
   }
 });
 
@@ -43,9 +50,11 @@ export const slice = createSlice({
 const getRoot = (state: RootState) => state.room;
 const selectId = (state: RootState) => getRoot(state).id;
 const selectError = (state: RootState) => getRoot(state).error;
+const selectMessage = (state: RootState) => getRoot(state).message;
 export const selectors = {
   selectId,
-  selectError
+  selectError,
+  selectMessage
 };
 
 // reducer / actions

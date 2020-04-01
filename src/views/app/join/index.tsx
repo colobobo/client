@@ -1,7 +1,9 @@
-import React, { FC, useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { FC, useCallback, useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { actions as RoomActions } from "../../../redux/WebSocket";
+import { selectors as RoomSelectors } from "../../../redux/Room";
 
 import "./index.scss";
 
@@ -22,6 +24,10 @@ const Join: FC = () => {
 
   // store
   const dispatch = useDispatch();
+  const roomId = useSelector(RoomSelectors.selectId);
+  const roomError = useSelector(RoomSelectors.selectMessage);
+
+  const history = useHistory();
 
   // handlers
 
@@ -42,6 +48,12 @@ const Join: FC = () => {
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);
   }, []);
+
+  useEffect(() => {
+    if (roomId) {
+      history.push("/game");
+    }
+  }, [history, roomId]);
 
   // return
 
@@ -68,6 +80,7 @@ const Join: FC = () => {
             Rejoindre
           </button>
         </form>
+        <div className="join__error">{roomError}</div>
       </div>
     </div>
   );
