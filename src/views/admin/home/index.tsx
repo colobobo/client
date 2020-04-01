@@ -16,7 +16,7 @@ const Home: FC = () => {
             <span>
               Ajouter
               <br />
-              une room
+              un groupe
             </span>
           </div>
         </Link>
@@ -26,7 +26,7 @@ const Home: FC = () => {
             <span>
               Voir
               <br />
-              les rooms
+              les groupes
             </span>
           </div>
         </Link>

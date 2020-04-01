@@ -1,5 +1,5 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
-import Device from "../../components/admin/device";
+import Device from "../../../components/admin/device";
 import "./index.scss";
 
 const Room: FC = () => {
@@ -15,19 +15,19 @@ const Room: FC = () => {
 
   const handle = useCallback(() => {
     setClientNumber(prev => prev + 1);
-  }, [clientNumber]);
+  }, []);
 
   return (
-    <div className="room">
-      <div className="room__header">
-        <h1 className="room__title">Room: 0001</h1>
-        <button onClick={handle} className="room__add">
+    <div className="admin-room">
+      <div className="admin-room__header">
+        <h1 className="admin-room__title">Room: 0001</h1>
+        <button onClick={handle} className="admin-room__add">
           Ajouter un joueur
         </button>
       </div>
 
-      <div className="room__container">
-        <div className="room__clients">{clients}</div>
+      <div className="admin-room__container">
+        <div className="admin-room__clients">{clients}</div>
       </div>
     </div>
   );

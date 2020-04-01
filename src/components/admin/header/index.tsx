@@ -13,10 +13,10 @@ const AdminHeader: FC = () => {
         FastNotFat
       </Link>
       <Link to="/admin/rooms" className="header__link">
-        Créer une room
+        Créer un groupe
       </Link>
       <Link to="/admin/rooms" className="header__link">
-        Liste des rooms
+        Liste des groupes
       </Link>
       <Link to="/admin/sockets-playground" className="header__link">
         Sockets playground
