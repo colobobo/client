@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { actions as RoomActions } from "../../../redux/WebSocket";
 import { selectors as RoomSelectors } from "../../../redux/Room";

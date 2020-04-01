@@ -1,10 +1,5 @@
 import React, { FC, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  MemoryRouter
-} from "react-router-dom";
+import { Route, Switch, MemoryRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
@@ -13,10 +8,10 @@ import { actions as WebSocketActions } from "../../redux/WebSocket";
 import "./index.scss";
 
 // views
-import Landing from "../../views/app/landing";
-import Room from "../../views/app/room";
-import Join from "../../views/app/join";
-import Game from "../../views/app/game";
+import Landing from "./landing";
+import Room from "./room";
+import Join from "./join";
+import Game from "./game";
 
 const Client: FC = () => {
   const dispatch = useDispatch();

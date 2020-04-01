@@ -2,7 +2,7 @@ import React, { useState, FC } from "react";
 import { devices } from "../../../datas/devices";
 import StoreWrapper from "../../../components/StoreWrapper";
 
-import Client from "../../client";
+import Client from "../../../views/client";
 import "./index.scss";
 
 interface resolution {
