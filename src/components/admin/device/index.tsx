@@ -37,16 +37,16 @@ const Device: FC<Props> = ({ userId }) => {
   };
 
   return (
-    <div className="client">
+    <div className="device">
       <select onChange={chooseDevice}>
-        {devices.map((devices, index) => (
+        {devices.map((device, index) => (
           <option value={index} key={index}>
-            {devices.name}
+            {device.name}
           </option>
         ))}
       </select>
-      <div className="client__screen" style={deviceSize}>
-        <Client userId={userId} />
+      <div className="device__screen" style={deviceSize}>
+        <Client />
       </div>
     </div>
   );

@@ -7,8 +7,8 @@ import AdminHeader from "../../components/admin/header";
 import Home from "./home";
 
 // routes
-import Rooms from "../rooms";
-import Room from "../room";
+import Rooms from "./rooms";
+import Room from "./room";
 
 const Admin: FC = () => {
   return (
