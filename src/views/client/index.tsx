@@ -1,10 +1,13 @@
 import React, { FC, useEffect } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
+
+// store
 import { useDispatch } from "react-redux";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
 import { actions as WebSocketActions } from "../../redux/WebSocket";
 import { actions as AdminActions } from "../../redux/Admin";
+import { actions as DeviceActions } from "../../redux/Device";
 
 import "./index.scss";
 
@@ -40,6 +43,17 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
       dispatch(AdminActions.disable());
     }
   }, [isAdmin, dispatch]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      dispatch(
+        DeviceActions.addScreenSize({
+          width: deviceSize.width,
+          height: deviceSize.height
+        })
+      );
+    }
+  }, [isAdmin, dispatch, deviceSize]);
 
   // return
 
