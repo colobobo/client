@@ -5,9 +5,11 @@ import {
 } from "@reduxjs/toolkit";
 import { reducer as counterReducer } from "./Counter";
 import { reducer as roomReducer } from "./Room";
+import { reducer as adminReducer } from "./Admin";
 import socketMiddleware from "./WebSocket/socketMiddleware";
 
 const rootReducer = combineReducers({
+  admin: adminReducer,
   counter: counterReducer,
   room: roomReducer
 });

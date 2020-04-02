@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { actions as RoomActions } from "../../../redux/WebSocket";
 import { selectors as RoomSelectors } from "../../../redux/Room";
+import { selectors as AdminSelectors } from "../../../redux/Admin";
 
 import "./index.scss";
 
@@ -15,9 +16,9 @@ interface screenSize {
 const Join: FC = () => {
   // states
 
-  const [screenSize] = useState<screenSize>({
-    width: window.innerWidth,
-    height: window.innerHeight
+  const [screenSize, setScreenSize] = useState<screenSize>({
+    width: 0,
+    height: 0
   });
 
   const [inputRoomId, setInputRoomId] = useState("");
@@ -25,12 +26,12 @@ const Join: FC = () => {
   // store
   const dispatch = useDispatch();
   const roomId = useSelector(RoomSelectors.selectId);
-  const roomError = useSelector(RoomSelectors.selectMessage);
+  const roomError = useSelector(RoomSelectors.selectCode);
+  const adminStatus = useSelector(AdminSelectors.selectStatus);
 
   const history = useHistory();
 
   // handlers
-
   const handleOnClickStart = useCallback(
     event => {
       event.preventDefault();
@@ -54,6 +55,21 @@ const Join: FC = () => {
       history.push("/game");
     }
   }, [history, roomId]);
+
+  useEffect(() => {
+    console.log(adminStatus);
+    if (adminStatus) {
+      setScreenSize({
+        width: 100,
+        height: 100
+      });
+    } else {
+      setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+  }, [adminStatus]);
 
   // return
 
