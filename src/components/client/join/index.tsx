@@ -1,27 +1,27 @@
-import React, { FC, useCallback, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { FC, useCallback, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
+// store
+import { useDispatch, useSelector } from "react-redux";
 import { actions as RoomActions } from "../../../redux/WebSocket";
+import { selectors as RoomSelectors } from "../../../redux/Room";
+import { selectors as DeviceSelectors } from "../../../redux/Device";
 
+// style
 import "./index.scss";
-
-interface screenSize {
-  width: number;
-  height: number;
-}
 
 const Join: FC = () => {
   // states
-
-  const [screenSize] = useState<screenSize>({
-    width: window.innerWidth,
-    height: window.innerHeight
-  });
 
   const [inputRoomId, setInputRoomId] = useState("");
 
   // store
   const dispatch = useDispatch();
+  const roomId = useSelector(RoomSelectors.selectId);
+  const roomError = useSelector(RoomSelectors.selectCode);
+  const screenSize = useSelector(DeviceSelectors.selectScreenSize);
+
+  const history = useHistory();
 
   // handlers
 
@@ -36,12 +36,18 @@ const Join: FC = () => {
         })
       );
     },
-    [dispatch, inputRoomId, screenSize.height, screenSize.width]
+    [dispatch, inputRoomId, screenSize]
   );
 
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);
   }, []);
+
+  useEffect(() => {
+    if (roomId) {
+      history.push("/game");
+    }
+  }, [history, roomId]);
 
   // return
 
@@ -68,6 +74,7 @@ const Join: FC = () => {
             Rejoindre
           </button>
         </form>
+        <div className="join__error">{roomError}</div>
       </div>
     </div>
   );

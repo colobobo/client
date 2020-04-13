@@ -1,10 +1,13 @@
 import React, { FC, useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
+// store
+import { useDispatch, useSelector } from "react-redux";
 import { actions as RoomActions } from "../../../redux/WebSocket";
 import { selectors as RoomSelectors } from "../../../redux/Room";
+import { selectors as DeviceSelectors } from "../../../redux/Device";
 
+// style
 import "./index.scss";
 
 const Landing: FC = () => {
@@ -13,6 +16,7 @@ const Landing: FC = () => {
   const dispatch = useDispatch();
   const roomId = useSelector(RoomSelectors.selectId);
   const roomError = useSelector(RoomSelectors.selectError);
+  const screenSize = useSelector(DeviceSelectors.selectScreenSize);
 
   const history = useHistory();
 
@@ -21,11 +25,11 @@ const Landing: FC = () => {
   const handleOnClickCreateRoom = useCallback(() => {
     dispatch(
       RoomActions.emit.room.create({
-        width: window.innerWidth,
-        height: window.innerHeight
+        width: screenSize.width,
+        height: screenSize.height
       })
     );
-  }, [dispatch]);
+  }, [dispatch, screenSize]);
 
   useEffect(() => {
     if (roomId) {

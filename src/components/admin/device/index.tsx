@@ -1,7 +1,11 @@
 import React, { useState, FC } from "react";
 import { devices } from "../../../datas/devices";
+import StoreWrapper from "../../../components/StoreWrapper";
 
-import Client from "../../client";
+import { useSelector } from "react-redux";
+import { selectors as AdminSelectors } from "../../../redux/Admin";
+
+import Client from "../../../views/client";
 import "./index.scss";
 
 interface resolution {
@@ -19,6 +23,8 @@ interface Props {
 }
 
 const Device: FC<Props> = ({ userId }) => {
+  const adminStatus = useSelector(AdminSelectors.selectStatus);
+
   const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
     name: devices[0].name,
     resolution: devices[0].resolution
@@ -46,7 +52,9 @@ const Device: FC<Props> = ({ userId }) => {
         ))}
       </select>
       <div className="device__screen" style={deviceSize}>
-        <Client />
+        <StoreWrapper storeId={userId.toString()}>
+          <Client deviceSize={deviceSize} isAdmin={adminStatus} />
+        </StoreWrapper>
       </div>
     </div>
   );

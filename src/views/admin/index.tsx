@@ -1,6 +1,9 @@
-import React, { FC } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { FC, useEffect } from "react";
+import { Route } from "react-router-dom";
 import "./index.scss";
+
+import { useDispatch } from "react-redux";
+import { actions as AdminActions } from "../../redux/Admin";
 
 // components
 import AdminHeader from "../../components/admin/header";
@@ -12,6 +15,14 @@ import Room from "./room";
 import SocketsPlayground from "../../components/SocketsPlayground";
 
 const Admin: FC = () => {
+  // store
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(AdminActions.activate());
+  }, [dispatch]);
+
   return (
     <div className="admin">
       <AdminHeader />

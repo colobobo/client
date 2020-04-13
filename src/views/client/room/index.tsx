@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
 // components
-import AdminRoom from "../../../components/admin/room";
+import ClientRoom from "../../../components/client/room";
 
 const Room: FC = () => {
-  return <AdminRoom />;
+  return <ClientRoom />;
 };
 
 export default Room;
