@@ -46,6 +46,10 @@ select {
   height: 100%;
 }
 
+.client {
+  white-space: initial;
+}
+
 .button {
   cursor: pointer;
   color: white;
@@ -55,6 +59,7 @@ select {
   padding: 10px 30px;
   display: block;
   width: fit-content;
+  margin: 0 auto;
 
   &--orange {
     background: #ef8354;
