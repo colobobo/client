@@ -1,9 +1,13 @@
 import React, { FC, useEffect } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
+
+// store
 import { useDispatch } from "react-redux";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
 import { actions as WebSocketActions } from "../../redux/WebSocket";
+import { actions as AdminActions } from "../../redux/Admin";
+import { actions as DeviceActions } from "../../redux/Device";
 
 import "./index.scss";
 
@@ -13,7 +17,15 @@ import Room from "./room";
 import Join from "./join";
 import Game from "./game";
 
-const Client: FC = () => {
+interface Props {
+  deviceSize: {
+    width: number;
+    height: number;
+  };
+  isAdmin: boolean;
+}
+
+const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,6 +35,25 @@ const Client: FC = () => {
       dispatch
     );
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      dispatch(AdminActions.activate());
+    } else {
+      dispatch(AdminActions.disable());
+    }
+  }, [isAdmin, dispatch]);
+
+  useEffect(() => {
+    if (isAdmin) {
+      dispatch(
+        DeviceActions.addScreenSize({
+          width: deviceSize.width,
+          height: deviceSize.height
+        })
+      );
+    }
+  }, [isAdmin, dispatch, deviceSize]);
 
   // return
 
