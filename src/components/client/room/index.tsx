@@ -1,17 +1,10 @@
 import React, { FC, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
-// store
-import { useDispatch, useSelector } from "react-redux";
-
 import "./index.scss";
 
 const Room: FC = () => {
   const { roomId } = useParams();
-
-  // store
-
-  const dispatch = useDispatch();
 
   // handlers
 
