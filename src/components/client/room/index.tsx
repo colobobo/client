@@ -1,17 +1,29 @@
 import React, { FC, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
+// store
+import { useDispatch } from "react-redux";
+import { actions as GameActions } from "../../../redux/WebSocket";
+
 import "./index.scss";
 
 const Room: FC = () => {
   const { roomId } = useParams();
 
+  // store
+  const dispatch = useDispatch();
+
   // handlers
 
-  const handleOnClickStart = useCallback(event => {
-    event.preventDefault();
-    console.log("event start to server");
-  }, []);
+  const handleOnClickStart = useCallback(
+    event => {
+      event.preventDefault();
+
+      dispatch(GameActions.emit.game.start);
+      console.log("dispatch start");
+    },
+    [dispatch]
+  );
 
   // return
 
