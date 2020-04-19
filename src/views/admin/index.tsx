@@ -7,11 +7,12 @@ import { actions as AdminActions } from "../../redux/Admin";
 
 // components
 import AdminHeader from "../../components/admin/header";
-import Home from "./home";
 
 // routes
+import Home from "./home";
 import Rooms from "./rooms";
 import Room from "./room";
+import SocketsPlayground from "../../components/SocketsPlayground";
 
 const Admin: FC = () => {
   // store
@@ -30,6 +31,7 @@ const Admin: FC = () => {
         <Route path="/admin" exact component={Home} />
         <Route path="/admin/rooms" component={Rooms} />
         <Route path="/admin/room" component={Room} />
+        <Route path="/admin/sockets-playground" component={SocketsPlayground} />
       </div>
     </div>
   );
