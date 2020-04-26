@@ -1,7 +1,9 @@
 import * as area from "./area";
 import * as room from "./room";
+import * as game from "./game";
 
 export default {
-  area,
-  room
+  room,
+  game,
+  area
 };

@@ -7,7 +7,7 @@ export enum WebSocketActionTypes {
   wsUnsubscribe = "ws/unsubscribe"
 }
 
-export type EmitAction<T = {}> = (payload: T) => WebSocketAction;
+export type EmitAction<T = {}> = (payload?: T) => WebSocketAction;
 
 // Emit
 
