@@ -18,9 +18,7 @@ const Room: FC = () => {
   const handleOnClickStart = useCallback(
     event => {
       event.preventDefault();
-
-      dispatch(GameActions.emit.game.start);
-      console.log("dispatch start");
+      dispatch(GameActions.emit.game.start());
     },
     [dispatch]
   );
