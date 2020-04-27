@@ -3,6 +3,8 @@ import {
   getDefaultMiddleware,
   combineReducers
 } from "@reduxjs/toolkit";
+import { useSelector, TypedUseSelectorHook } from "react-redux";
+
 import { reducer as adminReducer } from "./Admin";
 import { reducer as areaReducer } from "./Area";
 import { reducer as counterReducer } from "./Counter";
@@ -21,6 +23,8 @@ const rootReducer = combineReducers({
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export const getStore = (id: string) =>
   configureStore({

@@ -1,7 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 import { PayloadsArea, AreaDevice } from "fast-not-fat";
+import { useMemo } from "react";
 
 export interface AreaState {
   width: number;
@@ -34,6 +35,12 @@ const getRoot = (state: RootState) => state.area;
 const selectWidth = (state: RootState) => getRoot(state).width;
 const selectHeight = (state: RootState) => getRoot(state).height;
 const selectDevices = (state: RootState) => getRoot(state).devices;
+const selectDevicesArray = createSelector([selectDevices], devices => {
+  return Object.keys(devices).map(deviceId => ({
+    id: deviceId,
+    ...devices[deviceId]
+  }));
+});
 const selectDevice = (state: RootState, { id }: { id: string }) =>
   getRoot(state).devices[id];
 
@@ -41,6 +48,7 @@ export const selectors = {
   selectWidth,
   selectHeight,
   selectDevices,
+  selectDevicesArray,
   selectDevice
 };
 

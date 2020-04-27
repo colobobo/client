@@ -1,15 +1,15 @@
 import { createSubscribeAction } from "../actionCreators";
 import { EventsGame } from "fast-not-fat";
-import { actions as GameActions } from "../../../Room";
+import { actions as GameActions } from "../../../Game";
 
 // start
 
 export const startSuccess = createSubscribeAction(
   EventsGame.startSuccess,
-  GameActions.createSuccess.type
+  GameActions.startSuccess.type
 );
 
 export const startError = createSubscribeAction(
   EventsGame.startError,
-  GameActions.createError.type
+  GameActions.startError.type
 );
