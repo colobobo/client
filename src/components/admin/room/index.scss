@@ -1,0 +1,33 @@
+.admin-room {
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px 30px 30px;
+  }
+
+  &__clients {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  &__container {
+    overflow-x: scroll;
+    padding: 0 30px 50px 30px;
+  }
+
+  &__add {
+    cursor: pointer;
+    border-radius: 10px;
+    background: #ef8354;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border: none;
+    line-height: 0;
+    padding: 20px 25px;
+    font-weight: bold;
+    margin-left: auto;
+  }
+}

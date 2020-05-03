@@ -1,26 +1,25 @@
 import React, { FC, useCallback } from "react";
 import { actions as WebSocketActions } from "../../redux/WebSocket";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../redux/store";
 import "./styles.css";
 
 interface SocketTestProps {}
 
 const SocketTest: FC<SocketTestProps> = () => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // handlers
 
   const handleClickEmitEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsEmitActionExample({ text: "t", num: 1 }));
+    dispatch(WebSocketActions.emit.room.create({ width: 10, height: 10 }));
   }, [dispatch]);
 
   const handleClickSubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsSubscribeActionExample);
+    dispatch(WebSocketActions.subscribe.room.joinSuccess);
   }, [dispatch]);
 
   const handleClickUnsubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.wsUnsubscribeMyActionExample);
+    dispatch(WebSocketActions.unsubscribe.room.joinSuccess);
   }, [dispatch]);
 
   // return

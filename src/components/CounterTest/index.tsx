@@ -5,14 +5,13 @@ import {
   actions as CounterActions
 } from "../../redux/Counter";
 import styles from "./CounterTest.module.css";
-import { AppDispatch } from "../../redux/store";
 
 interface CounterTestProps {}
 
 const CounterTest: FC<CounterTestProps> = () => {
   // store
 
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
   const count = useSelector(CounterSelectors.selectValue);
 
   // state

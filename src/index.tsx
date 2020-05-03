@@ -1,16 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./stylesheets/index.scss";
-import App from "./App";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import * as serviceWorker from "./serviceWorker";
+import React, { Suspense } from "react";
 import "./i18n";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import StoreWrapper from "./components/StoreWrapper";
+
+// styles
+import "./stylesheets/index.scss";
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Suspense fallback={null}>
+    <StoreWrapper storeId="app">
+      <App />
+    </StoreWrapper>
+  </Suspense>,
   document.getElementById("root")
 );
 

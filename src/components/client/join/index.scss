@@ -1,0 +1,31 @@
+.join {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form {
+    .form {
+      &__label {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      &__input {
+        margin-bottom: 20px;
+        border: 1px solid black;
+        padding: 20px 30px;
+        font-size: 40px;
+        letter-spacing: 10px;
+        max-width: 220px;
+        text-align: center;
+      }
+
+      &__action {
+        margin: 0 auto;
+      }
+    }
+  }
+}

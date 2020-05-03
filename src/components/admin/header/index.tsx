@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./index.scss";
 
 // assets
@@ -13,10 +13,13 @@ const AdminHeader: FC = () => {
         FastNotFat
       </Link>
       <Link to="/admin/rooms" className="header__link">
-        Créer une room
+        Créer un groupe
       </Link>
       <Link to="/admin/rooms" className="header__link">
-        Liste des rooms
+        Liste des groupes
+      </Link>
+      <Link to="/admin/sockets-playground" className="header__link">
+        Sockets playground
       </Link>
     </header>
   );

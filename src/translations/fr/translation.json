@@ -1,0 +1,24 @@
+{
+  "languages": {
+    "french": "Français",
+    "english": "Anglais"
+  },
+  "landing": {
+    "buttons": {
+      "create": "Créer une partie",
+      "join": "Rejoindre une partie"
+    }
+  },
+  "room": {
+    "title": "ID de la partie :",
+    "buttons": {
+      "start": "Commencer"
+    }
+  },
+  "join": {
+    "label": "Numéro de la partie",
+    "buttons": {
+      "join": "Rejoindre"
+    }
+  }
+}

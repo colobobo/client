@@ -1,29 +1,28 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import common_fr from "./translations/fr/common.json";
-import common_en from "./translations/en/common.json";
+import common_fr from "./translations/fr/translation.json";
+import common_en from "./translations/en/translation.json";
 
 const resources = {
   en: {
-    common: common_en
+    translation: common_en
   },
   fr: {
-    common: common_fr
+    translation: common_fr
   }
 };
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    resources,
-    lng: "fr",
+i18n.use(initReactI18next).init({
+  /*     debug: true, */
+  resources,
+  lng: "fr",
+  fallbackLng: "fr",
+  whitelist: ["fr", "en"],
 
-    keySeparator: false, // we do not use keys in form messages.welcome
-
-    interpolation: {
-      escapeValue: false // react already safes from xss
-    }
-  });
+  interpolation: {
+    escapeValue: false
+  }
+});
 
 export default i18n;

@@ -1,0 +1,24 @@
+{
+  "languages": {
+    "french": "French",
+    "english": "English"
+  },
+  "landing": {
+    "buttons": {
+      "create": "Create a room",
+      "join": "Join a room"
+    }
+  },
+  "room": {
+    "title": "Room's ID :",
+    "buttons": {
+      "start": "Start"
+    }
+  },
+  "join": {
+    "label": "Room number",
+    "buttons": {
+      "join": "Join"
+    }
+  }
+}
