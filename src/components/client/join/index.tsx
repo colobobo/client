@@ -48,7 +48,7 @@ const Join: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      history.push("/game");
+      history.push("/waiting-room/" + roomId);
     }
   }, [history, roomId]);
 

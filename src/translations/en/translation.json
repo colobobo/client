@@ -13,6 +13,9 @@
     "title": "Room's ID :",
     "buttons": {
       "start": "Start"
+    },
+    "waiting": {
+      "title": "You are in the room :"
     }
   },
   "join": {

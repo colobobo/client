@@ -13,6 +13,9 @@
     "title": "ID de la partie :",
     "buttons": {
       "start": "Commencer"
+    },
+    "waiting": {
+      "title": "Vous êtes bien dans la room :"
     }
   },
   "join": {

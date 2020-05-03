@@ -7,13 +7,15 @@ import { reducer as counterReducer } from "./Counter";
 import { reducer as roomReducer } from "./Room";
 import { reducer as adminReducer } from "./Admin";
 import { reducer as deviceReducer } from "./Device";
+import { reducer as gameReducer } from "./Game";
 import socketMiddleware from "./WebSocket/socketMiddleware";
 
 const rootReducer = combineReducers({
   admin: adminReducer,
   counter: counterReducer,
   room: roomReducer,
-  device: deviceReducer
+  device: deviceReducer,
+  game: gameReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
