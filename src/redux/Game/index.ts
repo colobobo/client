@@ -8,18 +8,24 @@ export interface GameState {
     x: number;
     y: number;
   };
+  tick: number;
   isStarted: boolean;
 }
 
 export const slice = createSlice({
   name: "game",
   initialState: {
+    position: {
+      x: 0,
+      y: 0
+    },
     isStarted: false
   } as GameState,
   reducers: {
     tick: (state: GameState, action: PayloadAction<PayloadsGame.Tick>) => {
       state.position.x = action.payload.data.x;
       state.position.y = action.payload.data.y;
+      state.tick = action.payload.data.tick;
     },
     startSuccess: (state: GameState, action) => {
       state.isStarted = true;
@@ -34,10 +40,12 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.game;
 const selectPosition = (state: RootState) => getRoot(state).position;
+const selectTick = (state: RootState) => getRoot(state).tick;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 export const selectors = {
   selectPosition,
-  selectIsStarted
+  selectIsStarted,
+  selectTick
 };
 
 // reducer / actions

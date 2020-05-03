@@ -2,7 +2,6 @@ import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 import { PayloadsArea, AreaDevice } from "fast-not-fat";
-import { useMemo } from "react";
 
 export interface AreaState {
   width: number;

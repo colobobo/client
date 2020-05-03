@@ -28,7 +28,7 @@ const Room: FC = () => {
   return (
     <div className="waiting-room">
       <div className="waiting-room__container">
-        <h1 className="waiting-room__title">
+        <h1 className="waiting-room__container__title">
           Vous êtes bien dans la room : {roomId}
         </h1>
         <p>Joueur{devicesArray.length > 1 && "s"} :</p>
