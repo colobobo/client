@@ -2,7 +2,7 @@ import React, { FC, useCallback, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import i18n from "../../../i18n";
+import i18n from "../../../translations/i18n";
 
 // store
 import { useDispatch, useSelector } from "react-redux";
@@ -13,18 +13,12 @@ import { selectors as DeviceSelectors } from "../../../redux/Device";
 // style
 import "./index.scss";
 
-interface translation {
-  currentLanguage: string;
-}
-
 const Landing: FC = () => {
   const { t } = useTranslation();
 
   // states
 
-  const [translation, setTranslation] = useState<translation>({
-    currentLanguage: "fr"
-  });
+  const [currentLanguage, setCurrentLanguage] = useState<string>("fr");
 
   // store
 
@@ -47,9 +41,7 @@ const Landing: FC = () => {
   }, [dispatch, screenSize]);
 
   const handleChangeLanguage = useCallback(event => {
-    setTranslation({
-      currentLanguage: event.target.value
-    });
+    setCurrentLanguage(event.target.value);
     i18n.changeLanguage(event.target.value);
   }, []);
 
@@ -66,7 +58,7 @@ const Landing: FC = () => {
       <div className="landing__container">
         <select
           className="landing__languages"
-          value={translation.currentLanguage}
+          value={currentLanguage}
           onChange={handleChangeLanguage}
         >
           <option value="fr">{t("languages.french")}</option>

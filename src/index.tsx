@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import "./i18n";
+import "./translations/i18n";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -9,11 +9,9 @@ import StoreWrapper from "./components/StoreWrapper";
 import "./stylesheets/index.scss";
 
 ReactDOM.render(
-  <Suspense fallback={null}>
-    <StoreWrapper storeId="app">
-      <App />
-    </StoreWrapper>
-  </Suspense>,
+  <StoreWrapper storeId="app">
+    <App />
+  </StoreWrapper>,
   document.getElementById("root")
 );
 
