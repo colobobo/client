@@ -5546,13 +5546,6 @@ husky@^4.2.3:
     slash "^3.0.0"
     which-pm-runs "^1.0.0"
 
-i18next-http-backend@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/i18next-http-backend/-/i18next-http-backend-1.0.8.tgz#6d32c4baacf363a26dfef76a973bfc3dd8d9b25d"
-  integrity sha512-f9oWlt3AuMh+xuKVpG8qlP6azI40N+wRBK/2jaJ7tHk6vMJSAGtZSM76Zx7p2JULqj27yNnc2yOEN4moq3RuFg==
-  dependencies:
-    node-fetch "2.6.0"
-
 i18next@^19.3.4:
   version "19.3.4"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.3.4.tgz#512de50ee6075df825c646e1ce646a104f0938c9"
@@ -7562,11 +7555,6 @@ no-case@^3.0.3:
   dependencies:
     lower-case "^2.0.1"
     tslib "^1.10.0"
-
-node-fetch@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
 node-forge@0.9.0:
   version "0.9.0"
