@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { PayloadsRoom } from "fast-not-fat";
+import { payloads } from "fast-not-fat";
 
 export interface RoomState {
   id: string | null;
@@ -21,7 +21,7 @@ export const slice = createSlice({
   reducers: {
     createSuccess: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.CreateSuccess>
+      action: PayloadAction<payloads.room.CreateSuccess>
     ) => {
       const { id, deviceId } = action.payload.data;
       state.id = id;
@@ -29,13 +29,13 @@ export const slice = createSlice({
     },
     createError: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.CreateError>
+      action: PayloadAction<payloads.room.CreateError>
     ) => {
       state.error = action.payload.code;
     },
     joinSuccess: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.JoinSuccess>
+      action: PayloadAction<payloads.room.JoinSuccess>
     ) => {
       const { id, deviceId } = action.payload.data;
       state.id = id;
@@ -43,7 +43,7 @@ export const slice = createSlice({
     },
     joinError: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.JoinError>
+      action: PayloadAction<payloads.room.JoinError>
     ) => {
       state.code = action.payload.code;
     }

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { PayloadsGame } from "fast-not-fat";
+import { payloads } from "fast-not-fat";
 
 export interface GameState {
   position: {
@@ -22,7 +22,7 @@ export const slice = createSlice({
     isStarted: false
   } as GameState,
   reducers: {
-    tick: (state: GameState, action: PayloadAction<PayloadsGame.Tick>) => {
+    tick: (state: GameState, action: PayloadAction<payloads.game.Tick>) => {
       state.position.x = action.payload.data.x;
       state.position.y = action.payload.data.y;
       state.tick = action.payload.data.tick;

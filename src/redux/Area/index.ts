@@ -1,7 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { PayloadsArea, AreaDevice } from "fast-not-fat";
+import { AreaDevice, payloads } from "fast-not-fat";
 
 export interface AreaState {
   width: number;
@@ -19,7 +19,7 @@ export const slice = createSlice({
     devices: {}
   } as AreaState,
   reducers: {
-    update: (state: AreaState, action: PayloadAction<PayloadsArea.Update>) => {
+    update: (state: AreaState, action: PayloadAction<payloads.area.Update>) => {
       const { width, height, devices } = action.payload.data;
       state.width = width;
       state.height = height;

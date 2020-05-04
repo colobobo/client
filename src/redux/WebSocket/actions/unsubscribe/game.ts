@@ -1,9 +1,9 @@
 import { createUnsubscribeAction } from "../actionCreators";
 
-import { EventsGame } from "fast-not-fat";
+import { events } from "fast-not-fat";
 
 // start
 
-export const startSuccess = createUnsubscribeAction(EventsGame.startSuccess);
+export const startSuccess = createUnsubscribeAction(events.game.startSuccess);
 
-export const startError = createUnsubscribeAction(EventsGame.startError);
+export const startError = createUnsubscribeAction(events.game.startError);
