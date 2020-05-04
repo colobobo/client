@@ -4,7 +4,7 @@ import { actions as AreaActions } from "../../../Area";
 
 // update
 
-export const createSuccess = createSubscribeAction(
+export const update = createSubscribeAction(
   EventsArea.update,
   AreaActions.update.type
 );
