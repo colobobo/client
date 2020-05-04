@@ -6,7 +6,19 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &__title {
+      text-align: center;
+    }
+
+    ul {
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
+    }
   }
 }

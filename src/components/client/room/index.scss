@@ -8,4 +8,13 @@
   &__title {
     margin-bottom: 20px;
   }
+
+  ul {
+    margin-bottom: 20px;
+
+    li {
+      list-style: none;
+      margin: 5px 0;
+    }
+  }
 }

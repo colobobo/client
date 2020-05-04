@@ -7,6 +7,7 @@ export interface RoomState {
   id: string | null;
   error: number | null;
   code: number | null;
+  deviceId: string;
 }
 
 export const slice = createSlice({
@@ -14,14 +15,17 @@ export const slice = createSlice({
   initialState: {
     id: null,
     error: null,
-    code: null
+    code: null,
+    deviceId: ""
   } as RoomState,
   reducers: {
     createSuccess: (
       state: RoomState,
       action: PayloadAction<PayloadsRoom.CreateSuccess>
     ) => {
-      state.id = action.payload.data.id;
+      const { id, deviceId } = action.payload.data;
+      state.id = id;
+      state.deviceId = deviceId;
     },
     createError: (
       state: RoomState,
@@ -33,7 +37,9 @@ export const slice = createSlice({
       state: RoomState,
       action: PayloadAction<PayloadsRoom.JoinSuccess>
     ) => {
-      state.id = action.payload.data.id;
+      const { id, deviceId } = action.payload.data;
+      state.id = id;
+      state.deviceId = deviceId;
     },
     joinError: (
       state: RoomState,
@@ -50,10 +56,12 @@ const getRoot = (state: RootState) => state.room;
 const selectId = (state: RootState) => getRoot(state).id;
 const selectError = (state: RootState) => getRoot(state).error;
 const selectCode = (state: RootState) => getRoot(state).code;
+const selectDeviceId = (state: RootState) => getRoot(state).deviceId;
 export const selectors = {
   selectId,
   selectError,
-  selectCode
+  selectCode,
+  selectDeviceId
 };
 
 // reducer / actions
