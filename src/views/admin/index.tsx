@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import "./index.scss";
 
 import { useDispatch } from "react-redux";
-import { actions as AdminActions } from "../../redux/Admin";
+import { actions } from "../../redux";
 
 // components
 import AdminHeader from "../../components/admin/header";
@@ -20,7 +20,7 @@ const Admin: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(AdminActions.activate());
+    dispatch(actions.admin.activate());
   }, [dispatch]);
 
   return (

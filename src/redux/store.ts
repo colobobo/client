@@ -4,23 +4,10 @@ import {
   combineReducers
 } from "@reduxjs/toolkit";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
-
-import { reducer as adminReducer } from "./Admin";
-import { reducer as areaReducer } from "./Area";
-import { reducer as counterReducer } from "./Counter";
-import { reducer as roomReducer } from "./Room";
-import { reducer as deviceReducer } from "./Device";
-import { reducer as gameReducer } from "./Game";
+import { reducers } from ".";
 import socketMiddleware from "./WebSocket/socketMiddleware";
 
-const rootReducer = combineReducers({
-  admin: adminReducer,
-  area: areaReducer,
-  counter: counterReducer,
-  room: roomReducer,
-  device: deviceReducer,
-  game: gameReducer
-});
+const rootReducer = combineReducers(reducers);
 
 export type RootState = ReturnType<typeof rootReducer>;
 

@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { actions as WebSocketActions } from "./redux/WebSocket";
+import { actions } from "./redux";
 
 import Routes from "./routes";
 import "./App.scss";
@@ -13,7 +13,7 @@ const App: FC = () => {
 
   useEffect(() => {
     reduxUtils.dispatchAll(
-      WebSocketActions,
+      actions.webSocket,
       WebSocketActionTypes.wsSubscribe,
       dispatch
     );

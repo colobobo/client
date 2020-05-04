@@ -3,13 +3,12 @@ import Area from "../../Area";
 
 import "./game.scss";
 import { useTypedSelector } from "../../../redux/store";
-import { selectors as GameSelectors } from "../../../redux/Game";
+import { selectors } from "../../../redux";
 
 const Game: FC = () => {
   // selectors
-
-  const gameTick = useTypedSelector(GameSelectors.selectTick);
-  const gamePosition = useTypedSelector(GameSelectors.selectPosition);
+  const gameTick = useTypedSelector(selectors.game.selectTick);
+  const gamePosition = useTypedSelector(selectors.game.selectPosition);
 
   // return
 

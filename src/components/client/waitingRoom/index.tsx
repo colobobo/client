@@ -3,8 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 import "./index.scss";
 import { useTypedSelector } from "../../../redux/store";
-import { selectors as AreaSelectors } from "../../../redux/Area";
-import { selectors as GameSelectors } from "../../../redux/Game";
+import { selectors } from "../../../redux";
 
 const Room: FC = () => {
   const { roomId } = useParams();
@@ -12,8 +11,8 @@ const Room: FC = () => {
 
   // store
 
-  const devicesArray = useTypedSelector(AreaSelectors.selectDevicesArray);
-  const isGameStarted = useTypedSelector(GameSelectors.selectIsStarted);
+  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
+  const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
 
   // effect
 

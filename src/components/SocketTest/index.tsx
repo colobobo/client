@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from "react";
-import { actions as WebSocketActions } from "../../redux/WebSocket";
+import { actions } from "../../redux";
 import { useDispatch } from "react-redux";
 import "./styles.css";
 
@@ -11,15 +11,15 @@ const SocketTest: FC<SocketTestProps> = () => {
   // handlers
 
   const handleClickEmitEvent = useCallback(() => {
-    dispatch(WebSocketActions.emit.room.create({ width: 10, height: 10 }));
+    dispatch(actions.webSocket.emit.room.create({ width: 10, height: 10 }));
   }, [dispatch]);
 
   const handleClickSubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.subscribe.room.joinSuccess);
+    dispatch(actions.webSocket.subscribe.room.joinSuccess);
   }, [dispatch]);
 
   const handleClickUnsubsribeEvent = useCallback(() => {
-    dispatch(WebSocketActions.unsubscribe.room.joinSuccess);
+    dispatch(actions.webSocket.unsubscribe.room.joinSuccess);
   }, [dispatch]);
 
   // return

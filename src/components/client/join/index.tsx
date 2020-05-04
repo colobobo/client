@@ -3,9 +3,7 @@ import { useHistory } from "react-router-dom";
 
 // store
 import { useDispatch, useSelector } from "react-redux";
-import { actions as RoomActions } from "../../../redux/WebSocket";
-import { selectors as RoomSelectors } from "../../../redux/Room";
-import { selectors as DeviceSelectors } from "../../../redux/Device";
+import { selectors, actions } from "../../../redux";
 
 // style
 import "./index.scss";
@@ -17,9 +15,9 @@ const Join: FC = () => {
 
   // store
   const dispatch = useDispatch();
-  const roomId = useSelector(RoomSelectors.selectId);
-  const roomError = useSelector(RoomSelectors.selectCode);
-  const screenSize = useSelector(DeviceSelectors.selectScreenSize);
+  const roomId = useSelector(selectors.room.selectId);
+  const roomError = useSelector(selectors.room.selectCode);
+  const screenSize = useSelector(selectors.device.selectScreenSize);
 
   const history = useHistory();
 
@@ -29,7 +27,7 @@ const Join: FC = () => {
     event => {
       event.preventDefault();
       dispatch(
-        RoomActions.emit.room.join({
+        actions.webSocket.emit.room.join({
           height: screenSize.height,
           width: screenSize.width,
           id: inputRoomId

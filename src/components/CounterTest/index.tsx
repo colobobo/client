@@ -1,9 +1,6 @@
 import React, { FC, useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  selectors as CounterSelectors,
-  actions as CounterActions
-} from "../../redux/Counter";
+import { selectors, actions } from "../../redux";
 import styles from "./CounterTest.module.css";
 
 interface CounterTestProps {}
@@ -12,7 +9,7 @@ const CounterTest: FC<CounterTestProps> = () => {
   // store
 
   const dispatch = useDispatch();
-  const count = useSelector(CounterSelectors.selectValue);
+  const count = useSelector(selectors.counter.selectValue);
 
   // state
 
@@ -21,11 +18,11 @@ const CounterTest: FC<CounterTestProps> = () => {
   // handlers
 
   const handleOnClickDecrement = useCallback(() => {
-    dispatch(CounterActions.decrement());
+    dispatch(actions.counter.decrement());
   }, [dispatch]);
 
   const handleOnClickIncrement = useCallback(() => {
-    dispatch(CounterActions.increment());
+    dispatch(actions.counter.increment());
   }, [dispatch]);
 
   const handleOnChangeIncrementAmount = useCallback(e => {
@@ -35,7 +32,7 @@ const CounterTest: FC<CounterTestProps> = () => {
   const handleOnClickIncrementAmount = useCallback(
     e => {
       dispatch(
-        CounterActions.incrementByAmount({
+        actions.counter.incrementByAmount({
           amount: Number(incrementAmount) || 0
         })
       );
