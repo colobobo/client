@@ -4,8 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &__action {
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px auto !important;
+  }
+
+  &__languages {
+    position: absolute;
+    top: 20px;
+    right: 30px;
   }
 }

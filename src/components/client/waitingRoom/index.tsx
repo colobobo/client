@@ -1,11 +1,13 @@
 import React, { FC, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
-import "./index.scss";
+import { useTranslation } from "react-i18next";
 import { useTypedSelector } from "../../../redux/store";
 import { selectors } from "../../../redux";
 
+import "./index.scss";
+
 const Room: FC = () => {
+  const { t } = useTranslation();
   const { roomId } = useParams();
   const history = useHistory();
 
@@ -28,7 +30,7 @@ const Room: FC = () => {
     <div className="waiting-room">
       <div className="waiting-room__container">
         <h1 className="waiting-room__container__title">
-          Vous êtes bien dans la room : {roomId}
+          {t("room.waiting.title")} {roomId}
         </h1>
         <p>Joueur{devicesArray.length > 1 && "s"} :</p>
         <ul>

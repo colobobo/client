@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./stylesheets/index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import StoreWrapper from "./components/StoreWrapper";
+
+// styles
+import "./stylesheets/index.scss";
 
 ReactDOM.render(
   <StoreWrapper storeId="app">

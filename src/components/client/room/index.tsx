@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // store
 import { useDispatch } from "react-redux";
@@ -9,6 +10,7 @@ import { useTypedSelector } from "../../../redux/store";
 import "./index.scss";
 
 const Room: FC = () => {
+  const { t } = useTranslation();
   const { roomId } = useParams();
   const history = useHistory();
 
@@ -41,8 +43,13 @@ const Room: FC = () => {
   return (
     <div className="room">
       <div className="room__container">
-        <h1 className="room__title">Id de la room: {roomId}</h1>
-        <p>Joueur{devicesArray.length > 1 && "s"} :</p>
+        <h1 className="room__title">
+          {t("room.title")} {roomId}
+        </h1>
+        <p>
+          {t("room.player")}
+          {devicesArray.length > 1 && "s"} :
+        </p>
         <ul>
           {devicesArray.map(device => (
             <li key={device.id}>{device.id}</li>
@@ -52,7 +59,7 @@ const Room: FC = () => {
           onClick={handleOnClickStart}
           className="room__action button button--orange"
         >
-          Commencer le jeu
+          {t("room.buttons.start")}
         </button>
       </div>
     </div>

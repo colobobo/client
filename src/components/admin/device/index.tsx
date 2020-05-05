@@ -1,6 +1,8 @@
-import React, { useState, FC } from "react";
+import React, { useState, FC, useMemo } from "react";
 import { devices } from "../../../datas/devices";
 import StoreWrapper from "../../../components/StoreWrapper";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../../../translations/i18n";
 
 import { useSelector } from "react-redux";
 import { selectors } from "../../../redux";
@@ -42,6 +44,8 @@ const Device: FC<Props> = ({ userId }) => {
     height: currentMobile.resolution.height
   };
 
+  const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
+
   return (
     <div className="device">
       <select onChange={chooseDevice}>
@@ -53,7 +57,9 @@ const Device: FC<Props> = ({ userId }) => {
       </select>
       <div className="device__screen" style={deviceSize}>
         <StoreWrapper storeId={userId.toString()}>
-          <Client deviceSize={deviceSize} isAdmin={adminStatus} />
+          <I18nextProvider i18n={newI18nInstance}>
+            <Client deviceSize={deviceSize} isAdmin={adminStatus} />
+          </I18nextProvider>
         </StoreWrapper>
       </div>
     </div>

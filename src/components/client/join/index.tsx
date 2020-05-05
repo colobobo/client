@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // store
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +10,8 @@ import { selectors, actions } from "../../../redux";
 import "./index.scss";
 
 const Join: FC = () => {
+  const { t } = useTranslation();
+
   // states
 
   const [inputRoomId, setInputRoomId] = useState("");
@@ -54,7 +57,7 @@ const Join: FC = () => {
       <div className="join__container">
         <form onSubmit={handleOnClickStart} className="join__form">
           <label className="form__label" htmlFor="roomId">
-            Numéro de la partie
+            {t("join.label")}
           </label>
           <input
             type="text"
@@ -69,7 +72,7 @@ const Join: FC = () => {
             onClick={handleOnClickStart}
             className="form__action button button--orange"
           >
-            Rejoindre
+            {t("join.buttons.join")}
           </button>
         </form>
         <div className="join__error">{roomError}</div>

@@ -1,5 +1,6 @@
-import React, { FC, useCallback, useEffect } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // store
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +10,12 @@ import { selectors, actions } from "../../../redux";
 import "./index.scss";
 
 const Landing: FC = () => {
+  const { t, i18n } = useTranslation();
+
+  // states
+
+  const [currentLanguage, setCurrentLanguage] = useState<string>("fr");
+
   // store
 
   const dispatch = useDispatch();
@@ -29,6 +36,11 @@ const Landing: FC = () => {
     );
   }, [dispatch, screenSize]);
 
+  const handleChangeLanguage = useCallback(event => {
+    setCurrentLanguage(event.target.value);
+    i18n.changeLanguage(event.target.value);
+  }, []);
+
   useEffect(() => {
     if (roomId) {
       history.push("/room/" + roomId);
@@ -40,15 +52,24 @@ const Landing: FC = () => {
   return (
     <div className="landing">
       <div className="landing__container">
+        <select
+          className="landing__languages"
+          value={currentLanguage}
+          onChange={handleChangeLanguage}
+        >
+          <option value="fr">{t("languages.french")}</option>
+          <option value="en">{t("languages.english")}</option>
+        </select>
+
         <div className="landing__actions">
           <button
             onClick={handleOnClickCreateRoom}
             className="landing__action button button--orange"
           >
-            Créer une partie
+            {t("landing.buttons.create")}
           </button>
           <Link to="/join" className="landing__action button button--blue">
-            Rejoindre une partie
+            {t("landing.buttons.join")}
           </Link>
         </div>
         <div className="landing__error">{roomError}</div>
