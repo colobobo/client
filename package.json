@@ -160,7 +160,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged & yarn upgrade fast-not-fat && git add yarn.lock"
     }
   },
   "devDependencies": {

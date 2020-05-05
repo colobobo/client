@@ -5,7 +5,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "../../../translations/i18n";
 
 import { useSelector } from "react-redux";
-import { selectors as AdminSelectors } from "../../../redux/Admin";
+import { selectors } from "../../../redux";
 
 import Client from "../../../views/client";
 import "./index.scss";
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const Device: FC<Props> = ({ userId }) => {
-  const adminStatus = useSelector(AdminSelectors.selectStatus);
+  const adminStatus = useSelector(selectors.admin.selectStatus);
 
   const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
     name: devices[0].name,

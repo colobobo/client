@@ -5,9 +5,7 @@ import { Route, Switch, MemoryRouter } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
-import { actions as WebSocketActions } from "../../redux/WebSocket";
-import { actions as AdminActions } from "../../redux/Admin";
-import { actions as DeviceActions } from "../../redux/Device";
+import { actions } from "../../redux";
 
 import "./index.scss";
 
@@ -31,7 +29,7 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
 
   useEffect(() => {
     reduxUtils.dispatchAll(
-      WebSocketActions,
+      actions.webSocket,
       WebSocketActionTypes.wsSubscribe,
       dispatch
     );
@@ -39,16 +37,16 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
 
   useEffect(() => {
     if (isAdmin) {
-      dispatch(AdminActions.activate());
+      dispatch(actions.admin.activate());
     } else {
-      dispatch(AdminActions.disable());
+      dispatch(actions.admin.disable());
     }
   }, [isAdmin, dispatch]);
 
   useEffect(() => {
     if (isAdmin) {
       dispatch(
-        DeviceActions.addScreenSize({
+        actions.device.addScreenSize({
           width: deviceSize.width,
           height: deviceSize.height
         })

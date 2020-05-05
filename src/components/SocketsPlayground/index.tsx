@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useRef } from "react";
-import { actions as WebSocketActions } from "../../redux/WebSocket";
+import { actions } from "../../redux";
 import { useDispatch } from "react-redux";
 
 import "./styles.scss";
@@ -11,12 +11,12 @@ const SocketsPlayground: FC<SocketsPlaygroundProps> = () => {
   const joinInput = useRef<HTMLInputElement>(null);
 
   const handleRoomCreate = useCallback(() => {
-    dispatch(WebSocketActions.emit.room.create({ width: 200, height: 200 }));
+    dispatch(actions.webSocket.emit.room.create({ width: 200, height: 200 }));
   }, [dispatch]);
 
   const handleRoomJoin = useCallback(() => {
     dispatch(
-      WebSocketActions.emit.room.join({
+      actions.webSocket.emit.room.join({
         id: joinInput.current!.value,
         width: 200,
         height: 200

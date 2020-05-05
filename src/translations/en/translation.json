@@ -11,6 +11,7 @@
   },
   "room": {
     "title": "Room's ID :",
+    "player": "Player",
     "buttons": {
       "start": "Start"
     },

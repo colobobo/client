@@ -11,6 +11,7 @@
   },
   "room": {
     "title": "ID de la partie :",
+    "player": "Joueur",
     "buttons": {
       "start": "Commencer"
     },

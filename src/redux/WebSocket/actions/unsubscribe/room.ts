@@ -1,15 +1,15 @@
 import { createUnsubscribeAction } from "../actionCreators";
 
-import { EventsRoom } from "fast-not-fat";
+import { events } from "fast-not-fat";
 
 // create
 
-export const createSuccess = createUnsubscribeAction(EventsRoom.createSuccess);
+export const createSuccess = createUnsubscribeAction(events.room.createSuccess);
 
-export const createError = createUnsubscribeAction(EventsRoom.createError);
+export const createError = createUnsubscribeAction(events.room.createError);
 
 // join
 
-export const joinSuccess = createUnsubscribeAction(EventsRoom.joinSuccess);
+export const joinSuccess = createUnsubscribeAction(events.room.joinSuccess);
 
-export const joinError = createUnsubscribeAction(EventsRoom.joinError);
+export const joinError = createUnsubscribeAction(events.room.joinError);

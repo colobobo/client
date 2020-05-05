@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { PayloadsRoom } from "fast-not-fat";
+import { payloads } from "fast-not-fat";
 
 export interface RoomState {
   id: string | null;
   error: number | null;
   code: number | null;
+  deviceId: string;
 }
 
 export const slice = createSlice({
@@ -14,30 +15,35 @@ export const slice = createSlice({
   initialState: {
     id: null,
     error: null,
-    code: null
+    code: null,
+    deviceId: ""
   } as RoomState,
   reducers: {
     createSuccess: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.CreateSuccess>
+      action: PayloadAction<payloads.room.CreateSuccess>
     ) => {
-      state.id = action.payload.data.id;
+      const { id, deviceId } = action.payload.data;
+      state.id = id;
+      state.deviceId = deviceId;
     },
     createError: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.CreateError>
+      action: PayloadAction<payloads.room.CreateError>
     ) => {
       state.error = action.payload.code;
     },
     joinSuccess: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.JoinSuccess>
+      action: PayloadAction<payloads.room.JoinSuccess>
     ) => {
-      state.id = action.payload.data.id;
+      const { id, deviceId } = action.payload.data;
+      state.id = id;
+      state.deviceId = deviceId;
     },
     joinError: (
       state: RoomState,
-      action: PayloadAction<PayloadsRoom.JoinError>
+      action: PayloadAction<payloads.room.JoinError>
     ) => {
       state.code = action.payload.code;
     }
@@ -50,10 +56,12 @@ const getRoot = (state: RootState) => state.room;
 const selectId = (state: RootState) => getRoot(state).id;
 const selectError = (state: RootState) => getRoot(state).error;
 const selectCode = (state: RootState) => getRoot(state).code;
+const selectDeviceId = (state: RootState) => getRoot(state).deviceId;
 export const selectors = {
   selectId,
   selectError,
-  selectCode
+  selectCode,
+  selectDeviceId
 };
 
 // reducer / actions

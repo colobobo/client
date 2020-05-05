@@ -2,6 +2,7 @@ import io from "socket.io-client";
 import { MiddlewareAPI, Dispatch, Action } from "redux";
 import { WebSocketActionTypes } from "./actions/actionCreators";
 import { Events } from "fast-not-fat";
+import { RootState } from "../store";
 
 export interface WebSocketAction extends Action {
   type: WebSocketActionTypes;
@@ -11,7 +12,7 @@ export interface WebSocketAction extends Action {
 }
 
 export type MiddlewareFunction = (
-  store: MiddlewareAPI
+  store: MiddlewareAPI<Dispatch, RootState>
 ) => (next: Dispatch) => (action: WebSocketAction) => any;
 
 const socketMiddleware = (): MiddlewareFunction => {

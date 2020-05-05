@@ -1,11 +1,11 @@
 import { createEmitAction, EmitAction } from "../actionCreators";
 
-import { EventsRoom, PayloadsRoom } from "fast-not-fat";
+import { events, payloads } from "fast-not-fat";
 
-export const create: EmitAction<PayloadsRoom.Create> = createEmitAction(
-  EventsRoom.create
+export const create: EmitAction<payloads.room.Create> = createEmitAction(
+  events.room.create
 );
 
-export const join: EmitAction<PayloadsRoom.Join> = createEmitAction(
-  EventsRoom.join
+export const join: EmitAction<payloads.room.Join> = createEmitAction(
+  events.room.join
 );

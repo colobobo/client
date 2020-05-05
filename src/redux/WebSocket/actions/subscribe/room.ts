@@ -1,27 +1,27 @@
 import { createSubscribeAction } from "../actionCreators";
-import { EventsRoom } from "fast-not-fat";
+import { events } from "fast-not-fat";
 import { actions as RoomActions } from "../../../Room";
 
 // create
 
 export const createSuccess = createSubscribeAction(
-  EventsRoom.createSuccess,
+  events.room.createSuccess,
   RoomActions.createSuccess.type
 );
 
 export const createError = createSubscribeAction(
-  EventsRoom.createError,
+  events.room.createError,
   RoomActions.createError.type
 );
 
 // join
 
 export const joinSuccess = createSubscribeAction(
-  EventsRoom.joinSuccess,
+  events.room.joinSuccess,
   RoomActions.joinSuccess.type
 );
 
 export const joinError = createSubscribeAction(
-  EventsRoom.joinError,
+  events.room.joinError,
   RoomActions.joinError.type
 );
