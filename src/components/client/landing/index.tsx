@@ -2,8 +2,6 @@ import React, { FC, useCallback, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import i18n from "../../../translations/i18n";
-
 // store
 import { useDispatch, useSelector } from "react-redux";
 import { actions as RoomActions } from "../../../redux/WebSocket";
@@ -14,7 +12,7 @@ import { selectors as DeviceSelectors } from "../../../redux/Device";
 import "./index.scss";
 
 const Landing: FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   // states
 
