@@ -56,13 +56,6 @@ export const devices = [
     }
   },
   {
-    name: "iPad Pro",
-    resolution: {
-      width: 1024,
-      height: 1366
-    }
-  },
-  {
     name: "Samsung Galaxy S5/S6/S7",
     resolution: {
       width: 360,

@@ -30,7 +30,7 @@ const Admin: FC = () => {
       <div className="admin__container">
         <Route path="/admin" exact component={Home} />
         <Route path="/admin/rooms" component={Rooms} />
-        <Route path="/admin/room" component={Room} />
+        <Route path="/admin/room/:roomId" component={Room} />
         <Route path="/admin/sockets-playground" component={SocketsPlayground} />
       </div>
     </div>

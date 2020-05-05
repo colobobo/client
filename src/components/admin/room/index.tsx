@@ -1,9 +1,36 @@
-import React, { useState, FC, useMemo, useCallback } from "react";
+import React, { useState, FC, useMemo, useCallback, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Device from "../../../components/admin/device";
+
+//config
+import { rooms } from "../../../config/rooms";
+
+//style
 import "./index.scss";
 
+interface room {
+  name: string;
+  devices: Array<string>;
+}
+
 const Room: FC = () => {
+  let { roomId } = useParams();
+
   const [clientNumber, setClientNumber] = useState(1);
+  const [currentRoom, setCurrentRoom] = useState<room>({
+    name: "",
+    devices: []
+  });
+
+  useEffect(() => {
+    if (roomId) {
+      setCurrentRoom({
+        name: rooms[parseInt(roomId)].name,
+        devices: rooms[parseInt(roomId)].devices
+      });
+      setClientNumber(rooms[parseInt(roomId)].devices.length);
+    }
+  }, [roomId]);
 
   let devices = useMemo(() => {
     const c = [];
@@ -20,7 +47,7 @@ const Room: FC = () => {
   return (
     <div className="admin-room">
       <div className="admin-room__header">
-        <h1 className="admin-room__title">Room: 0001</h1>
+        <h1 className="admin-room__title">Room: {currentRoom.name}</h1>
         <button onClick={handle} className="admin-room__add">
           Ajouter un joueur
         </button>
