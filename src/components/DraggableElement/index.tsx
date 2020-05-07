@@ -7,13 +7,19 @@ import { selectors, actions } from "../../redux";
 import DraggableWrapper from "../DraggableWrapper";
 import "./index.scss";
 
-const DraggableElement: FC = () => {
+interface Props {
+  id: string;
+}
+
+const DraggableElement: FC<Props> = ({ id }) => {
   const dispatch = useDispatch();
 
   // selectors
 
   const gameTick = useTypedSelector(selectors.game.selectTick);
-  const gamePosition = useTypedSelector(selectors.game.selectPosition);
+  const elementPosition = useTypedSelector(state =>
+    selectors.game.selectObject(state, { id })
+  );
 
   // ref
 
@@ -48,31 +54,32 @@ const DraggableElement: FC = () => {
 
       dispatch(
         actions.webSocket.emit.game.positionUpdate({
-          data: { x, y }
+          x,
+          y,
+          id
         })
       );
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   // effects
 
   useEffect(() => {
     if (!isDragging) {
       gsap.to($element.current, {
-        x: gamePosition.x,
-        y: gamePosition.y,
+        x: elementPosition.x,
+        y: elementPosition.y,
         duration: gameTick / 1000,
         ease: Linear.easeNone
       });
     }
-  }, [gamePosition.x, gamePosition.y, gameTick, isDragging]);
+  }, [elementPosition.x, elementPosition.y, gameTick, isDragging]);
 
   // return
 
   return (
     <DraggableWrapper
       classNames={"draggable-element"}
-      id={"circle"}
       bounds={".area"}
       onDraggableInstance={handleOnDragInstance}
       onDragStart={handleOnDragStart}

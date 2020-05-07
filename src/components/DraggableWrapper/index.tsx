@@ -8,13 +8,13 @@ import "./index.scss";
 gsap.registerPlugin(Draggable);
 
 interface Props {
-  id: string;
+  id?: string;
   classNames?: string;
   bounds?: Draggable.Vars["bounds"];
-  onDraggableInstance: (draggable: Draggable, id: string) => any;
-  onDragStart: (id: string) => any;
-  onDrag: (id: string) => any;
-  onDragEnd: (id: string) => any;
+  onDraggableInstance: (draggable: Draggable, id?: string) => any;
+  onDragStart: (id?: string) => any;
+  onDrag: (id?: string) => any;
+  onDragEnd: (id?: string) => any;
   onRef: (ref: HTMLDivElement) => any;
 }
 
