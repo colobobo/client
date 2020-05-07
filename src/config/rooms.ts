@@ -12,7 +12,7 @@ export const rooms = [
     devices: [
       "iPhone 6/7/8",
       "iPhone 11",
-      "iPad",
+      "Samsung Galaxy S8",
       "Samsung Galaxy S10/S10+/Note10"
     ]
   },
@@ -21,7 +21,7 @@ export const rooms = [
     devices: [
       "iPhone 6/7/8",
       "iPhone 11",
-      "Samsung Galaxy S8",
+      "iPad",
       "Samsung Galaxy S10/S10+/Note10"
     ]
   }

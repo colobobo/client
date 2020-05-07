@@ -1,4 +1,4 @@
-import React, { useState, FC, useMemo } from "react";
+import React, { useState, FC, useMemo, useEffect } from "react";
 import { devices } from "../../../datas/devices";
 import StoreWrapper from "../../../components/StoreWrapper";
 import { I18nextProvider } from "react-i18next";
@@ -16,24 +16,42 @@ interface resolution {
 }
 
 interface currentMobileState {
+  index: number;
   name: string;
   resolution: resolution;
 }
 
 interface Props {
   userId: number;
+  deviceName: string;
 }
 
-const Device: FC<Props> = ({ userId }) => {
+const Device: FC<Props> = ({ userId, deviceName }) => {
   const adminStatus = useSelector(selectors.admin.selectStatus);
 
   const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
+    index: 0,
     name: devices[0].name,
     resolution: devices[0].resolution
   });
 
+  useEffect(() => {
+    if (deviceName) {
+      devices.map((device, index) => {
+        if (device.name === deviceName) {
+          setCurrentMobile({
+            index: index,
+            name: device.name,
+            resolution: device.resolution
+          });
+        }
+      });
+    }
+  }, [deviceName]);
+
   function chooseDevice(event: any) {
     setCurrentMobile({
+      index: event.target.value,
       name: devices[event.target.value].name,
       resolution: devices[event.target.value].resolution
     });
@@ -48,7 +66,7 @@ const Device: FC<Props> = ({ userId }) => {
 
   return (
     <div className="device">
-      <select onChange={chooseDevice}>
+      <select value={currentMobile.index} onChange={chooseDevice}>
         {devices.map((device, index) => (
           <option value={index} key={index}>
             {device.name}

@@ -35,7 +35,7 @@ const Room: FC = () => {
   let devices = useMemo(() => {
     const c = [];
     for (let i = 0; i < clientNumber; i++) {
-      c.push(<Device key={i} userId={i} />);
+      c.push(<Device key={i} userId={i} deviceName={currentRoom.devices[i]} />);
     }
     return c;
   }, [clientNumber]);
