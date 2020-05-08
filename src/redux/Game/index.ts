@@ -1,30 +1,23 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 import { payloads } from "fast-not-fat";
 
 export interface GameState {
-  position: {
-    x: number;
-    y: number;
-  };
-  tick: number;
   isStarted: boolean;
+  tick: number;
+  objects: { [id: string]: { x: number; y: number } };
 }
 
 export const slice = createSlice({
   name: "game",
   initialState: {
-    position: {
-      x: 0,
-      y: 0
-    },
-    isStarted: false
+    isStarted: false,
+    objects: {}
   } as GameState,
   reducers: {
     tick: (state: GameState, action: PayloadAction<payloads.game.Tick>) => {
-      state.position.x = action.payload.data.x;
-      state.position.y = action.payload.data.y;
+      state.objects = action.payload.data.objects;
       state.tick = action.payload.data.tick;
     },
     startSuccess: (state: GameState, action) => {
@@ -39,13 +32,20 @@ export const slice = createSlice({
 // Selectors
 
 const getRoot = (state: RootState) => state.game;
-const selectPosition = (state: RootState) => getRoot(state).position;
-const selectTick = (state: RootState) => getRoot(state).tick;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectTick = (state: RootState) => getRoot(state).tick;
+const selectObject = (state: RootState, { id }: { id: string }) =>
+  getRoot(state).objects[id];
+const selectObjects = (state: RootState) => getRoot(state).objects;
+const selectObjectsAsArray = createSelector(selectObjects, objects =>
+  Object.keys(objects).map(objectId => ({ ...objects[objectId], id: objectId }))
+);
+
 export const selectors = {
-  selectPosition,
   selectIsStarted,
-  selectTick
+  selectTick,
+  selectObject,
+  selectObjectsAsArray
 };
 
 // reducer / actions

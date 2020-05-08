@@ -1,29 +1,24 @@
 import React, { FC } from "react";
 import Area from "../../Area";
+import DraggableElement from "../../DraggableElement";
+import "./index.scss";
 
-import "./game.scss";
-import { useTypedSelector } from "../../../redux/store";
 import { selectors } from "../../../redux";
+import { useSelector } from "react-redux";
 
 const Game: FC = () => {
   // selectors
-  const gameTick = useTypedSelector(selectors.game.selectTick);
-  const gamePosition = useTypedSelector(selectors.game.selectPosition);
+
+  const objectsArray = useSelector(selectors.game.selectObjectsAsArray);
 
   // return
 
   return (
     <div className="game">
       <Area>
-        {gamePosition && (
-          <div
-            className="game__square"
-            style={{
-              transform: `translate(${gamePosition.x}px, ${gamePosition.y}px)`,
-              transition: `transform ${gameTick}ms linear`
-            }}
-          />
-        )}
+        {objectsArray.map(object => (
+          <DraggableElement key={object.id} id={object.id} />
+        ))}
       </Area>
     </div>
   );

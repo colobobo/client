@@ -1,0 +1,22 @@
+.draggable-element {
+  position: absolute;
+  border-radius: 50%;
+
+  &:nth-child(3n + 1) {
+    background-color: #ffe136;
+    width: 180px;
+    height: 180px;
+  }
+
+  &:nth-child(3n + 2) {
+    background-color: #ff7ade;
+    width: 130px;
+    height: 130px;
+  }
+
+  &:nth-child(3n + 3) {
+    background-color: #3ced7e;
+    width: 100px;
+    height: 100px;
+  }
+}
