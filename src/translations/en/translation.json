@@ -1,0 +1,28 @@
+{
+  "languages": {
+    "french": "French",
+    "english": "English"
+  },
+  "landing": {
+    "buttons": {
+      "create": "Create a room",
+      "join": "Join a room"
+    }
+  },
+  "room": {
+    "title": "Room's ID :",
+    "player": "Player",
+    "buttons": {
+      "start": "Start"
+    },
+    "waiting": {
+      "title": "You are in the room :"
+    }
+  },
+  "join": {
+    "label": "Room number",
+    "buttons": {
+      "join": "Join"
+    }
+  }
+}
