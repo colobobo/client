@@ -3,8 +3,6 @@ import React, { FC, useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 
-import "./index.scss";
-
 gsap.registerPlugin(Draggable);
 
 interface Props {
