@@ -36,6 +36,7 @@
     "fast-not-fat": "https://github.com/Fast-Not-Fat/types",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
+    "gsap": "^3.2.6",
     "html-webpack-plugin": "4.0.0-beta.11",
     "husky": "^4.2.3",
     "i18next": "^19.3.4",
