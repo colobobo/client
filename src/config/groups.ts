@@ -1,4 +1,4 @@
-export const rooms = [
+export const groups = [
   {
     name: "Default room",
     devices: ["iPhone 6/7/8"],

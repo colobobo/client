@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React, { useState, FC, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Device from "../../../components/admin/device";
+import Device from "../device";
 
 //config
-import { rooms } from "../../../config/rooms";
+import { groups } from "../../../config/groups";
 import { devices } from "../../../datas/devices";
 
 //style
@@ -17,8 +17,8 @@ interface room {
   autoconnect?: boolean;
 }
 
-const Room: FC = () => {
-  let { roomId } = useParams();
+const Group: FC = () => {
+  let { groupId } = useParams();
 
   //store
 
@@ -39,18 +39,18 @@ const Room: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (roomId) {
+    if (groupId) {
       setCurrentRoom({
-        name: rooms[parseInt(roomId)].name,
-        devices: rooms[parseInt(roomId)].devices,
-        autoconnect: rooms[parseInt(roomId)].autoconnect
+        name: groups[parseInt(groupId)].name,
+        devices: groups[parseInt(groupId)].devices,
+        autoconnect: groups[parseInt(groupId)].autoconnect
       });
-      setClientNumber(rooms[parseInt(roomId)].devices.length);
+      setClientNumber(groups[parseInt(groupId)].devices.length);
     }
-  }, [roomId]);
+  }, [groupId]);
 
   useEffect(() => {
-    if (roomId) {
+    if (groupId) {
       const devicesArray = [];
 
       for (let i = 0; i < clientNumber; i++) {
@@ -92,7 +92,7 @@ const Room: FC = () => {
     currentRoom.devices,
     currentRoom.adminRoomId,
     handleOnCreateRoom,
-    roomId
+    groupId
   ]);
 
   const handle = useCallback(() => {
@@ -115,4 +115,4 @@ const Room: FC = () => {
   );
 };
 
-export default Room;
+export default Group;

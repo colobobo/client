@@ -2,21 +2,21 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 //config
-import { rooms } from "../../../config/rooms";
+import { groups } from "../../../config/groups";
 
 //styles
 import "./index.scss";
 
-const Rooms: FC = () => {
+const Groups: FC = () => {
   return (
     <div className="admin-rooms">
       <div className="admin-rooms__container">
-        <h1 className="admin-rooms__title">Les rooms :</h1>
+        <h1 className="admin-rooms__title">Les groupes :</h1>
         <ul className="admin-rooms__list">
-          {rooms.map((room, index) => (
+          {groups.map((group, index) => (
             <li className="admin-rooms__item" key={index}>
-              <Link to={`/admin/room/${index}`} className="item__link">
-                {room.name}
+              <Link to={`/admin/group/${index}`} className="item__link">
+                {group.name}
               </Link>
             </li>
           ))}
@@ -26,4 +26,4 @@ const Rooms: FC = () => {
   );
 };
 
-export default Rooms;
+export default Groups;
