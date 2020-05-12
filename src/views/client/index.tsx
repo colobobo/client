@@ -1,12 +1,13 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useCallback } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
 
 // store
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
-import { actions } from "../../redux";
+import { actions, selectors } from "../../redux";
 
+//style
 import "./index.scss";
 
 // views
@@ -17,15 +18,31 @@ import Game from "./game";
 import WaitingRoom from "./waitingRoom";
 
 interface Props {
-  deviceSize: {
-    width: number;
-    height: number;
-  };
+  currentMobile: any;
   isAdmin: boolean;
+  gameId?: string;
+  autoconnect?: boolean;
+  onCreateGame: any;
+  adminPosition: number;
 }
 
-const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
+const Client: FC<Props> = ({
+  currentMobile,
+  isAdmin,
+  gameId,
+  autoconnect,
+  onCreateGame,
+  adminPosition
+}) => {
   const dispatch = useDispatch();
+  const roomId = useSelector(selectors.room.selectId);
+
+  const handleOnCreateGame = useCallback(
+    (gameId?: string) => {
+      onCreateGame(gameId);
+    },
+    [onCreateGame]
+  );
 
   useEffect(() => {
     reduxUtils.dispatchAll(
@@ -47,12 +64,44 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
     if (isAdmin) {
       dispatch(
         actions.device.addScreenSize({
-          width: deviceSize.width,
-          height: deviceSize.height
+          width: currentMobile.resolution.width,
+          height: currentMobile.resolution.height
         })
       );
+
+      if (autoconnect) {
+        if (!gameId && adminPosition === 0) {
+          console.log(currentMobile);
+          dispatch(
+            actions.webSocket.emit.room.create({
+              width: currentMobile.resolution.width,
+              height: currentMobile.resolution.height
+            })
+          );
+          if (roomId) {
+            handleOnCreateGame(roomId);
+          }
+        } else if (gameId && adminPosition > 0) {
+          dispatch(
+            actions.webSocket.emit.room.join({
+              width: currentMobile.resolution.width,
+              height: currentMobile.resolution.height,
+              id: gameId
+            })
+          );
+        }
+      }
     }
-  }, [isAdmin, dispatch, deviceSize]);
+  }, [
+    dispatch,
+    isAdmin,
+    currentMobile,
+    gameId,
+    handleOnCreateGame,
+    autoconnect,
+    adminPosition,
+    roomId
+  ]);
 
   // return
 

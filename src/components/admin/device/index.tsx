@@ -1,61 +1,67 @@
-import React, { useState, FC, useMemo, useEffect } from "react";
+import React, { useState, FC, useMemo, useCallback } from "react";
 import { devices } from "../../../datas/devices";
-import StoreWrapper from "../../../components/StoreWrapper";
+
+// translation
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../translations/i18n";
 
+// views / components
+import Client from "../../../views/client";
+import StoreWrapper from "../../../components/StoreWrapper";
+
+// store
 import { useSelector } from "react-redux";
 import { selectors } from "../../../redux";
 
-import Client from "../../../views/client";
+//style
 import "./index.scss";
 
-interface resolution {
-  width: number;
-  height: number;
-}
-
-interface currentMobileState {
+interface currentMobile {
   index: number;
   name: string;
-  resolution: resolution;
+  resolution: {
+    width: number;
+    height: number;
+  };
 }
 
 interface Props {
   userId: number;
-  deviceName: string;
+  deviceData: any;
+  gameId?: string;
+  autoconnect?: boolean;
+  onCreateGame: any;
 }
 
-const Device: FC<Props> = ({ userId, deviceName }) => {
+const Device: FC<Props> = ({
+  userId,
+  deviceData,
+  gameId,
+  onCreateGame,
+  autoconnect
+}) => {
   const adminStatus = useSelector(selectors.admin.selectStatus);
 
-  const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
-    index: 0,
-    name: devices[0].name,
-    resolution: devices[0].resolution
+  const [currentMobile, setCurrentMobile] = useState<currentMobile>({
+    index: deviceData?.index,
+    name: deviceData?.name,
+    resolution: deviceData?.resolution
   });
 
-  useEffect(() => {
-    if (deviceName) {
-      devices.map((device, index) => {
-        if (device.name === deviceName) {
-          setCurrentMobile({
-            index: index,
-            name: device.name,
-            resolution: device.resolution
-          });
-        }
-      });
-    }
-  }, [deviceName]);
-
-  function chooseDevice(event: any) {
+  const chooseDevice = useCallback((event: any) => {
     setCurrentMobile({
       index: event.target.value,
       name: devices[event.target.value].name,
       resolution: devices[event.target.value].resolution
     });
-  }
+  }, []);
+
+  const handleOnCreateGame = useCallback(
+    (gameId?: string) => {
+      onCreateGame(gameId);
+    },
+    [onCreateGame]
+  );
 
   const deviceSize = {
     width: currentMobile.resolution.width,
@@ -76,7 +82,14 @@ const Device: FC<Props> = ({ userId, deviceName }) => {
       <div className="device__screen" style={deviceSize}>
         <StoreWrapper storeId={userId.toString()}>
           <I18nextProvider i18n={newI18nInstance}>
-            <Client deviceSize={deviceSize} isAdmin={adminStatus} />
+            <Client
+              currentMobile={currentMobile}
+              autoconnect={autoconnect}
+              isAdmin={adminStatus}
+              adminPosition={userId}
+              gameId={gameId}
+              onCreateGame={handleOnCreateGame}
+            />
           </I18nextProvider>
         </StoreWrapper>
       </div>

@@ -1,11 +1,13 @@
 export const rooms = [
   {
     name: "Default room",
-    devices: ["iPhone 6/7/8"]
+    devices: ["iPhone 6/7/8"],
+    autoconnect: true
   },
   {
     name: "Room with same mobiles height",
-    devices: ["iPhone 6/7/8", "iPhone 6/7/8", "iPhone 6/7/8", "iPhone 6/7/8"]
+    devices: ["iPhone 6/7/8", "iPhone 6/7/8", "iPhone 6/7/8", "iPhone 6/7/8"],
+    autoconnect: true
   },
   {
     name: "Room with multiple mobiles height",
@@ -13,8 +15,10 @@ export const rooms = [
       "iPhone 6/7/8",
       "iPhone 11",
       "Samsung Galaxy S8",
-      "Samsung Galaxy S10/S10+/Note10"
-    ]
+      "Samsung Galaxy S10/S10+/Note10",
+      "iPhone X"
+    ],
+    autoconnect: true
   },
   {
     name: "Room with mobiles and ipad",
@@ -23,6 +27,7 @@ export const rooms = [
       "iPhone 11",
       "iPad",
       "Samsung Galaxy S10/S10+/Note10"
-    ]
+    ],
+    autoconnect: false
   }
 ];
