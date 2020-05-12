@@ -13,7 +13,7 @@ import "./index.scss";
 interface room {
   name: string;
   devices: Array<string>;
-  gameId?: string;
+  adminRoomId?: string;
   autoconnect?: boolean;
 }
 
@@ -27,14 +27,14 @@ const Room: FC = () => {
   const [currentRoom, setCurrentRoom] = useState<room>({
     name: "",
     devices: [],
-    gameId: "",
+    adminRoomId: "",
     autoconnect: false
   });
 
-  const handleOnCreateGame = useCallback((gameId: string) => {
+  const handleOnCreateRoom = useCallback((adminRoomId: string) => {
     setCurrentRoom(prev => ({
       ...prev,
-      gameId
+      adminRoomId
     }));
   }, []);
 
@@ -51,7 +51,7 @@ const Room: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      const c = [];
+      const devicesArray = [];
 
       for (let i = 0; i < clientNumber; i++) {
         const deviceName = currentRoom.devices[i];
@@ -77,22 +77,21 @@ const Room: FC = () => {
             userId={i}
             autoconnect={currentRoom.autoconnect}
             deviceData={deviceData}
-            gameId={currentRoom.gameId}
-            onCreateGame={handleOnCreateGame}
+            adminRoomId={currentRoom.adminRoomId}
+            onCreateRoom={handleOnCreateRoom}
           />
         );
 
-        c.push(device);
+        devicesArray.push(device);
       }
-      console.log("c", c);
-      setDevicesList(c);
+      setDevicesList(devicesArray);
     }
   }, [
     clientNumber,
     currentRoom.autoconnect,
     currentRoom.devices,
-    currentRoom.gameId,
-    handleOnCreateGame,
+    currentRoom.adminRoomId,
+    handleOnCreateRoom,
     roomId
   ]);
 

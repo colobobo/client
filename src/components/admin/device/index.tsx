@@ -16,7 +16,7 @@ import { selectors } from "../../../redux";
 //style
 import "./index.scss";
 
-interface currentMobile {
+interface currentDevice {
   index: number;
   name: string;
   resolution: {
@@ -28,51 +28,51 @@ interface currentMobile {
 interface Props {
   userId: number;
   deviceData: any;
-  gameId?: string;
+  adminRoomId?: string;
   autoconnect?: boolean;
-  onCreateGame: any;
+  onCreateRoom: any;
 }
 
 const Device: FC<Props> = ({
   userId,
   deviceData,
-  gameId,
-  onCreateGame,
+  adminRoomId,
+  onCreateRoom,
   autoconnect
 }) => {
   const adminStatus = useSelector(selectors.admin.selectStatus);
 
-  const [currentMobile, setCurrentMobile] = useState<currentMobile>({
+  const [currentDevice, setCurrentDevice] = useState<currentDevice>({
     index: deviceData?.index,
     name: deviceData?.name,
     resolution: deviceData?.resolution
   });
 
   const chooseDevice = useCallback((event: any) => {
-    setCurrentMobile({
+    setCurrentDevice({
       index: event.target.value,
       name: devices[event.target.value].name,
       resolution: devices[event.target.value].resolution
     });
   }, []);
 
-  const handleOnCreateGame = useCallback(
-    (gameId?: string) => {
-      onCreateGame(gameId);
+  const handleOnCreateRoom = useCallback(
+    (adminRoomId?: string) => {
+      onCreateRoom(adminRoomId);
     },
-    [onCreateGame]
+    [onCreateRoom]
   );
 
   const deviceSize = {
-    width: currentMobile.resolution.width,
-    height: currentMobile.resolution.height
+    width: currentDevice.resolution.width,
+    height: currentDevice.resolution.height
   };
 
   const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
 
   return (
     <div className="device">
-      <select value={currentMobile.index} onChange={chooseDevice}>
+      <select value={currentDevice.index} onChange={chooseDevice}>
         {devices.map((device, index) => (
           <option value={index} key={index}>
             {device.name}
@@ -83,12 +83,12 @@ const Device: FC<Props> = ({
         <StoreWrapper storeId={userId.toString()}>
           <I18nextProvider i18n={newI18nInstance}>
             <Client
-              currentMobile={currentMobile}
+              device={currentDevice}
               autoconnect={autoconnect}
               isAdmin={adminStatus}
               adminPosition={userId}
-              gameId={gameId}
-              onCreateGame={handleOnCreateGame}
+              adminRoomId={adminRoomId}
+              onCreateRoom={handleOnCreateRoom}
             />
           </I18nextProvider>
         </StoreWrapper>
