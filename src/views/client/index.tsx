@@ -22,7 +22,7 @@ interface Props {
   isAdmin: boolean;
   adminRoomId?: string;
   autoconnect?: boolean;
-  onCreateRoom: any;
+  onCreateRoom?: (adminRoomId: string) => any;
   adminPosition: number;
 }
 
@@ -37,13 +37,6 @@ const Client: FC<Props> = ({
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
 
-  const handleOnCreateRoom = useCallback(
-    (adminRoomId?: string) => {
-      onCreateRoom(adminRoomId);
-    },
-    [onCreateRoom]
-  );
-
   useEffect(() => {
     reduxUtils.dispatchAll(
       actions.webSocket,
@@ -53,10 +46,10 @@ const Client: FC<Props> = ({
   }, [dispatch]);
 
   useEffect(() => {
-    if (roomId) {
-      handleOnCreateRoom(roomId);
+    if (roomId && onCreateRoom) {
+      onCreateRoom(roomId);
     }
-  }, [handleOnCreateRoom, roomId]);
+  }, [onCreateRoom, roomId]);
 
   useEffect(() => {
     if (isAdmin) {
@@ -94,15 +87,7 @@ const Client: FC<Props> = ({
         }
       }
     }
-  }, [
-    dispatch,
-    isAdmin,
-    device,
-    adminRoomId,
-    handleOnCreateRoom,
-    autoconnect,
-    adminPosition
-  ]);
+  }, [dispatch, isAdmin, adminRoomId, autoconnect, adminPosition]);
 
   // return
 

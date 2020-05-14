@@ -30,7 +30,7 @@ interface Props {
   deviceData: any;
   adminRoomId?: string;
   autoconnect?: boolean;
-  onCreateRoom: any;
+  onCreateRoom?: (adminRoomId: string) => any;
 }
 
 const Device: FC<Props> = ({
@@ -57,8 +57,10 @@ const Device: FC<Props> = ({
   }, []);
 
   const handleOnCreateRoom = useCallback(
-    (adminRoomId?: string) => {
-      onCreateRoom(adminRoomId);
+    adminRoomId => {
+      if (onCreateRoom) {
+        onCreateRoom(adminRoomId);
+      }
     },
     [onCreateRoom]
   );

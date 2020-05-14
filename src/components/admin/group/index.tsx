@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useState, FC, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Device from "../device";
@@ -54,15 +53,20 @@ const Group: FC = () => {
       const devicesArray = [];
 
       for (let i = 0; i < clientNumber; i++) {
-        const deviceName = currentRoom.devices[i];
-        let deviceIndex = 0;
-        let deviceResolution = {};
+        let deviceName, deviceIndex, deviceResolution;
 
-        for (let j = 0; j < devices.length; j++) {
-          if (devices[j].name === deviceName) {
-            deviceIndex = j;
-            deviceResolution = devices[j].resolution;
+        if (currentRoom.devices[i] != null) {
+          deviceName = currentRoom.devices[i];
+          for (let j = 0; j < devices.length; j++) {
+            if (devices[j].name === deviceName) {
+              deviceIndex = j;
+              deviceResolution = devices[j].resolution;
+            }
           }
+        } else {
+          deviceIndex = 0;
+          deviceName = devices[0].name;
+          deviceResolution = devices[0].resolution;
         }
 
         const deviceData = {
@@ -95,7 +99,7 @@ const Group: FC = () => {
     groupId
   ]);
 
-  const handle = useCallback(() => {
+  const handleOnAddPlayer = useCallback(() => {
     setClientNumber(prev => prev + 1);
   }, []);
 
@@ -103,7 +107,7 @@ const Group: FC = () => {
     <div className="admin-room">
       <div className="admin-room__header">
         <h1 className="admin-room__title">Room: {currentRoom.name}</h1>
-        <button onClick={handle} className="admin-room__add">
+        <button onClick={handleOnAddPlayer} className="admin-room__add">
           Ajouter un joueur
         </button>
       </div>
