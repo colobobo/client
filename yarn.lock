@@ -4657,7 +4657,7 @@ fast-levenshtein@~2.0.6:
 
 "fast-not-fat@https://github.com/Fast-Not-Fat/types":
   version "1.0.0"
-  resolved "https://github.com/Fast-Not-Fat/types#b79689516353aecc5247b35300abba360faea7cb"
+  resolved "https://github.com/Fast-Not-Fat/types#2cddb19f537598b734d96ca586b8b22b41c12858"
   dependencies:
     prettier "^2.0.1"
     tslint "^6.1.0"

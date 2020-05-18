@@ -29,6 +29,7 @@ interface Props {
   userId: number;
   deviceData: any;
   adminRoomId?: string;
+  adminDevicesNumber: number;
   autoconnect?: boolean;
   onCreateRoom?: (adminRoomId: string) => any;
 }
@@ -37,11 +38,12 @@ const Device: FC<Props> = ({
   userId,
   deviceData,
   adminRoomId,
+  adminDevicesNumber,
   onCreateRoom,
   autoconnect
 }) => {
   const adminStatus = useSelector(selectors.admin.selectStatus);
-
+  const [position, setPosition] = useState<number>();
   const [currentDevice, setCurrentDevice] = useState<currentDevice>({
     index: deviceData?.index,
     name: deviceData?.name,
@@ -65,15 +67,25 @@ const Device: FC<Props> = ({
     [onCreateRoom]
   );
 
+  const handleOnSetAdminDevicePosition = useCallback(pos => {
+    if (pos) {
+      setPosition(pos);
+    }
+  }, []);
+
   const deviceSize = {
     width: currentDevice.resolution.width,
     height: currentDevice.resolution.height
   };
 
+  const positionStyle = {
+    order: position
+  };
+
   const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
 
   return (
-    <div className="device">
+    <div className="device" style={positionStyle}>
       <select value={currentDevice.index} onChange={chooseDevice}>
         {devices.map((device, index) => (
           <option value={index} key={index}>
@@ -91,6 +103,7 @@ const Device: FC<Props> = ({
               adminPosition={userId}
               adminRoomId={adminRoomId}
               onCreateRoom={handleOnCreateRoom}
+              onSetAdminDevicePosition={handleOnSetAdminDevicePosition}
             />
           </I18nextProvider>
         </StoreWrapper>

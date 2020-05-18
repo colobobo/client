@@ -22,7 +22,7 @@ const Group: FC = () => {
   //store
 
   const [devicesList, setDevicesList] = useState<Array<object>>([]);
-  const [clientNumber, setClientNumber] = useState<number>(0);
+  const [devicesNumber, setDevicesNumber] = useState<number>(0);
   const [currentRoom, setCurrentRoom] = useState<room>({
     name: "",
     devices: [],
@@ -37,6 +37,10 @@ const Group: FC = () => {
     }));
   }, []);
 
+  const handleOnAddPlayer = useCallback(() => {
+    setDevicesNumber(prev => prev + 1);
+  }, []);
+
   useEffect(() => {
     if (groupId) {
       setCurrentRoom({
@@ -44,7 +48,7 @@ const Group: FC = () => {
         devices: groups[parseInt(groupId)].devices,
         autoconnect: groups[parseInt(groupId)].autoconnect
       });
-      setClientNumber(groups[parseInt(groupId)].devices.length);
+      setDevicesNumber(groups[parseInt(groupId)].devices.length);
     }
   }, [groupId]);
 
@@ -52,7 +56,7 @@ const Group: FC = () => {
     if (groupId) {
       const devicesArray = [];
 
-      for (let i = 0; i < clientNumber; i++) {
+      for (let i = 0; i < devicesNumber; i++) {
         let deviceName, deviceIndex, deviceResolution;
 
         if (currentRoom.devices[i] != null) {
@@ -81,6 +85,7 @@ const Group: FC = () => {
             userId={i}
             autoconnect={currentRoom.autoconnect}
             deviceData={deviceData}
+            adminDevicesNumber={devicesNumber}
             adminRoomId={currentRoom.adminRoomId}
             onCreateRoom={handleOnCreateRoom}
           />
@@ -91,17 +96,13 @@ const Group: FC = () => {
       setDevicesList(devicesArray);
     }
   }, [
-    clientNumber,
+    devicesNumber,
     currentRoom.autoconnect,
     currentRoom.devices,
     currentRoom.adminRoomId,
     handleOnCreateRoom,
     groupId
   ]);
-
-  const handleOnAddPlayer = useCallback(() => {
-    setClientNumber(prev => prev + 1);
-  }, []);
 
   return (
     <div className="admin-room">

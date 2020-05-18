@@ -2,7 +2,7 @@ export const groups = [
   {
     name: "Default room",
     devices: ["iPhone 6/7/8"],
-    autoconnect: true
+    autoconnect: false
   },
   {
     name: "Room with same mobiles height",
@@ -28,6 +28,6 @@ export const groups = [
       "iPad",
       "Samsung Galaxy S10/S10+/Note10"
     ],
-    autoconnect: false
+    autoconnect: true
   }
 ];

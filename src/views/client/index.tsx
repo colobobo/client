@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useCallback } from "react";
+import React, { FC, useEffect } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
 
 // store
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useTypedSelector } from "../../redux/store";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
 import { actions, selectors } from "../../redux";
@@ -23,6 +24,7 @@ interface Props {
   adminRoomId?: string;
   autoconnect?: boolean;
   onCreateRoom?: (adminRoomId: string) => any;
+  onSetAdminDevicePosition?: (position: number) => any;
   adminPosition: number;
 }
 
@@ -32,10 +34,40 @@ const Client: FC<Props> = ({
   adminRoomId,
   autoconnect,
   onCreateRoom,
+  onSetAdminDevicePosition,
   adminPosition
 }) => {
   const dispatch = useDispatch();
-  const roomId = useSelector(selectors.room.selectId);
+  const roomId = useTypedSelector(selectors.room.selectId);
+  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
+  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
+  const devicePosition = useTypedSelector(selectors.device.selectPosition);
+
+  useEffect(() => {
+    if (deviceId) {
+      let position;
+      devicesArray.map(device => {
+        if (device.id === deviceId) {
+          position = device.position;
+        }
+      });
+
+      if (position !== undefined) {
+        dispatch(
+          actions.device.update({
+            id: deviceId,
+            position: position
+          })
+        );
+      }
+    }
+  }, [deviceId, dispatch]);
+
+  useEffect(() => {
+    if (isAdmin && onSetAdminDevicePosition && devicePosition !== undefined) {
+      onSetAdminDevicePosition(devicePosition + 1);
+    }
+  }, [isAdmin, devicePosition, onSetAdminDevicePosition]);
 
   useEffect(() => {
     reduxUtils.dispatchAll(
