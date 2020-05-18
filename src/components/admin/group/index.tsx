@@ -85,7 +85,6 @@ const Group: FC = () => {
             userId={i}
             autoconnect={currentRoom.autoconnect}
             deviceData={deviceData}
-            adminDevicesNumber={devicesNumber}
             adminRoomId={currentRoom.adminRoomId}
             onCreateRoom={handleOnCreateRoom}
           />

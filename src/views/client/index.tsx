@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useMemo } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
 
 // store
@@ -40,34 +40,23 @@ const Client: FC<Props> = ({
   const dispatch = useDispatch();
   const roomId = useTypedSelector(selectors.room.selectId);
   const deviceId = useTypedSelector(selectors.room.selectDeviceId);
-  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
-  const devicePosition = useTypedSelector(selectors.device.selectPosition);
+  const currentDevice = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { id: deviceId })
+  );
+
+  const currentDevicePosition = useMemo(() => {
+    return currentDevice?.position;
+  }, [currentDevice]);
 
   useEffect(() => {
-    if (deviceId) {
-      let position;
-      devicesArray.map(device => {
-        if (device.id === deviceId) {
-          position = device.position;
-        }
-      });
-
-      if (position !== undefined) {
-        dispatch(
-          actions.device.update({
-            id: deviceId,
-            position: position
-          })
-        );
-      }
+    if (
+      isAdmin &&
+      onSetAdminDevicePosition &&
+      currentDevicePosition !== undefined
+    ) {
+      onSetAdminDevicePosition(currentDevicePosition);
     }
-  }, [deviceId, dispatch]);
-
-  useEffect(() => {
-    if (isAdmin && onSetAdminDevicePosition && devicePosition !== undefined) {
-      onSetAdminDevicePosition(devicePosition + 1);
-    }
-  }, [isAdmin, devicePosition, onSetAdminDevicePosition]);
+  }, [isAdmin, currentDevicePosition, onSetAdminDevicePosition]);
 
   useEffect(() => {
     reduxUtils.dispatchAll(

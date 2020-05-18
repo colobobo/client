@@ -29,7 +29,6 @@ interface Props {
   userId: number;
   deviceData: any;
   adminRoomId?: string;
-  adminDevicesNumber: number;
   autoconnect?: boolean;
   onCreateRoom?: (adminRoomId: string) => any;
 }
@@ -38,7 +37,6 @@ const Device: FC<Props> = ({
   userId,
   deviceData,
   adminRoomId,
-  adminDevicesNumber,
   onCreateRoom,
   autoconnect
 }) => {
@@ -68,9 +66,7 @@ const Device: FC<Props> = ({
   );
 
   const handleOnSetAdminDevicePosition = useCallback(pos => {
-    if (pos) {
-      setPosition(pos);
-    }
+    setPosition(pos);
   }, []);
 
   const deviceSize = {
@@ -78,14 +74,10 @@ const Device: FC<Props> = ({
     height: currentDevice.resolution.height
   };
 
-  const positionStyle = {
-    order: position
-  };
-
   const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
 
   return (
-    <div className="device" style={positionStyle}>
+    <div className="device" style={{ order: position }}>
       <select value={currentDevice.index} onChange={chooseDevice}>
         {devices.map((device, index) => (
           <option value={index} key={index}>
