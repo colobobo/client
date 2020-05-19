@@ -9,11 +9,6 @@ import {
   selectors as areaSelectors
 } from "./Area";
 import {
-  actions as counterActions,
-  reducer as counterReducer,
-  selectors as counterSelectors
-} from "./Counter";
-import {
   actions as deviceActions,
   reducer as deviceReducer,
   selectors as deviceSelectors
@@ -34,7 +29,6 @@ import { actions as webSocketActions } from "./WebSocket";
 export const actions = {
   admin: adminActions,
   area: areaActions,
-  counter: counterActions,
   device: deviceActions,
   game: gameActions,
   room: roomActions,
@@ -44,7 +38,6 @@ export const actions = {
 export const selectors = {
   admin: adminSelectors,
   area: areaSelectors,
-  counter: counterSelectors,
   device: deviceSelectors,
   game: gameSelectors,
   room: roomSelectors
@@ -53,7 +46,6 @@ export const selectors = {
 export const reducers = {
   admin: adminReducer,
   area: areaReducer,
-  counter: counterReducer,
   device: deviceReducer,
   game: gameReducer,
   room: roomReducer
