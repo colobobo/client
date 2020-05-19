@@ -1,25 +1,44 @@
-import React, { FC, useCallback, useEffect, useState, useRef } from "react";
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+  CSSProperties
+} from "react";
 import { useDispatch } from "react-redux";
 import { gsap, Linear } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { useTypedSelector } from "../../redux/store";
 import { selectors, actions } from "../../redux";
 import DraggableWrapper from "../DraggableWrapper";
+import classnames from "classnames";
 import "./index.scss";
 
 interface Props {
+  classNames?: string;
+  styles?: CSSProperties;
   id: string;
+  x: number;
+  y: number;
+  xOffset?: number;
+  text?: string;
 }
 
-const DraggableElement: FC<Props> = ({ id }) => {
+const DraggableElement: FC<Props> = ({
+  classNames = "",
+  styles,
+  id,
+  x,
+  y,
+  xOffset = 0,
+  text
+}) => {
   const dispatch = useDispatch();
 
   // selectors
 
   const gameTick = useTypedSelector(selectors.game.selectTick);
-  const elementPosition = useTypedSelector(state =>
-    selectors.game.selectObject(state, { id })
-  );
 
   // ref
 
@@ -54,39 +73,50 @@ const DraggableElement: FC<Props> = ({ id }) => {
 
       dispatch(
         actions.webSocket.emit.game.positionUpdate({
-          x,
+          x: x - xOffset,
           y,
           id
         })
       );
     }
-  }, [dispatch, id]);
+  }, [dispatch, id, xOffset]);
 
   // effects
 
   useEffect(() => {
     if (!isDragging) {
       gsap.to($element.current, {
-        x: elementPosition.x,
-        y: elementPosition.y,
+        x: x + xOffset,
+        y: y,
         duration: gameTick / 1000,
         ease: Linear.easeNone
       });
     }
-  }, [elementPosition.x, elementPosition.y, gameTick, isDragging]);
+  }, [gameTick, isDragging, x, xOffset, y]);
+
+  useEffect(() => {
+    // opcity 1 after 0.1 seconde
+    gsap.set($element.current, {
+      opacity: 1,
+      delay: 0.1
+    });
+  }, []);
 
   // return
 
   return (
     <DraggableWrapper
-      classNames={"draggable-element"}
-      bounds={".area"}
+      classNames={classnames("draggable-element", classNames)}
+      styles={styles}
+      // bounds={".area"}
       onDraggableInstance={handleOnDragInstance}
       onDragStart={handleOnDragStart}
       onDrag={handleOnDrag}
       onDragEnd={handleOnDragEnd}
       onRef={handleOnRef}
-    />
+    >
+      <p className={"draggable-element__text"}>{text}</p>
+    </DraggableWrapper>
   );
 };
 

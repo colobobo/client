@@ -1,4 +1,10 @@
-import React, { FC, useCallback, useEffect, useRef } from "react";
+import React, {
+  FC,
+  useCallback,
+  useEffect,
+  useRef,
+  CSSProperties
+} from "react";
 
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
@@ -6,8 +12,9 @@ import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 interface Props {
-  id?: string;
+  styles?: CSSProperties;
   classNames?: string;
+  id?: string;
   bounds?: Draggable.Vars["bounds"];
   onDraggableInstance: (draggable: Draggable, id?: string) => any;
   onDragStart: (id?: string) => any;
@@ -19,6 +26,7 @@ interface Props {
 const DraggableWrapper: FC<Props> = ({
   children,
   classNames,
+  styles,
   id,
   bounds,
   onDraggableInstance,
@@ -76,7 +84,11 @@ const DraggableWrapper: FC<Props> = ({
   // return
 
   return (
-    <div className={`draggable-wrapper ${classNames}`} ref={handleRef}>
+    <div
+      className={`draggable-wrapper ${classNames}`}
+      style={styles}
+      ref={handleRef}
+    >
       {children}
     </div>
   );

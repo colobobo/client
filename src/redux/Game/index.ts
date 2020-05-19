@@ -1,12 +1,12 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads } from "fast-not-fat";
+import { payloads, GameObjects } from "fast-not-fat";
 
 export interface GameState {
   isStarted: boolean;
   tick: number;
-  objects: { [id: string]: { x: number; y: number } };
+  objects: GameObjects;
 }
 
 export const slice = createSlice({
