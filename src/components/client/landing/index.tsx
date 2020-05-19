@@ -11,6 +11,7 @@ import "./index.scss";
 
 const Landing: FC = () => {
   const { t, i18n } = useTranslation();
+  const history = useHistory();
 
   // states
 
@@ -23,8 +24,6 @@ const Landing: FC = () => {
   const roomError = useSelector(selectors.room.selectError);
   const screenSize = useSelector(selectors.device.selectScreenSize);
 
-  const history = useHistory();
-
   // handlers
 
   const handleOnClickCreateRoom = useCallback(() => {
@@ -36,10 +35,13 @@ const Landing: FC = () => {
     );
   }, [dispatch, screenSize]);
 
-  const handleChangeLanguage = useCallback(event => {
-    setCurrentLanguage(event.target.value);
-    i18n.changeLanguage(event.target.value);
-  }, []);
+  const handleChangeLanguage = useCallback(
+    event => {
+      setCurrentLanguage(event.target.value);
+      i18n.changeLanguage(event.target.value);
+    },
+    [i18n]
+  );
 
   useEffect(() => {
     if (roomId) {

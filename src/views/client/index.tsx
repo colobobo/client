@@ -1,12 +1,14 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useMemo } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
 
 // store
 import { useDispatch } from "react-redux";
+import { useTypedSelector } from "../../redux/store";
 import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "../../utils";
-import { actions } from "../../redux";
+import { actions, selectors } from "../../redux";
 
+//style
 import "./index.scss";
 
 // views
@@ -17,15 +19,44 @@ import Game from "./game";
 import WaitingRoom from "./waitingRoom";
 
 interface Props {
-  deviceSize: {
-    width: number;
-    height: number;
-  };
+  device: any;
   isAdmin: boolean;
+  adminRoomId?: string;
+  autoconnect?: boolean;
+  onCreateRoom?: (adminRoomId: string) => any;
+  onSetAdminDevicePosition?: (position: number) => any;
+  adminPosition: number;
 }
 
-const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
+const Client: FC<Props> = ({
+  device,
+  isAdmin,
+  adminRoomId,
+  autoconnect,
+  onCreateRoom,
+  onSetAdminDevicePosition,
+  adminPosition
+}) => {
   const dispatch = useDispatch();
+  const roomId = useTypedSelector(selectors.room.selectId);
+  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
+  const currentDevice = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { id: deviceId })
+  );
+
+  const currentDevicePosition = useMemo(() => {
+    return currentDevice?.position;
+  }, [currentDevice]);
+
+  useEffect(() => {
+    if (
+      isAdmin &&
+      onSetAdminDevicePosition &&
+      currentDevicePosition !== undefined
+    ) {
+      onSetAdminDevicePosition(currentDevicePosition);
+    }
+  }, [isAdmin, currentDevicePosition, onSetAdminDevicePosition]);
 
   useEffect(() => {
     reduxUtils.dispatchAll(
@@ -34,6 +65,12 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
       dispatch
     );
   }, [dispatch]);
+
+  useEffect(() => {
+    if (roomId && onCreateRoom) {
+      onCreateRoom(roomId);
+    }
+  }, [onCreateRoom, roomId]);
 
   useEffect(() => {
     if (isAdmin) {
@@ -47,12 +84,31 @@ const Client: FC<Props> = ({ deviceSize, isAdmin }) => {
     if (isAdmin) {
       dispatch(
         actions.device.addScreenSize({
-          width: deviceSize.width,
-          height: deviceSize.height
+          width: device.resolution.width,
+          height: device.resolution.height
         })
       );
+
+      if (autoconnect) {
+        if (!adminRoomId && adminPosition === 0) {
+          dispatch(
+            actions.webSocket.emit.room.create({
+              width: device.resolution.width,
+              height: device.resolution.height
+            })
+          );
+        } else if (adminRoomId && adminPosition > 0) {
+          dispatch(
+            actions.webSocket.emit.room.join({
+              width: device.resolution.width,
+              height: device.resolution.height,
+              id: adminRoomId
+            })
+          );
+        }
+      }
     }
-  }, [isAdmin, dispatch, deviceSize]);
+  }, [dispatch, isAdmin, adminRoomId, autoconnect, adminPosition]);
 
   // return
 

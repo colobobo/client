@@ -1,54 +1,84 @@
-import React, { useState, FC, useMemo } from "react";
+import React, { useState, FC, useMemo, useCallback } from "react";
 import { devices } from "../../../datas/devices";
-import StoreWrapper from "../../../components/StoreWrapper";
+
+// translation
 import { I18nextProvider } from "react-i18next";
 import i18n from "../../../translations/i18n";
 
+// views / components
+import Client from "../../../views/client";
+import StoreWrapper from "../../../components/StoreWrapper";
+
+// store
 import { useSelector } from "react-redux";
 import { selectors } from "../../../redux";
 
-import Client from "../../../views/client";
+//style
 import "./index.scss";
 
-interface resolution {
-  width: number;
-  height: number;
-}
-
-interface currentMobileState {
+interface currentDevice {
+  index: number;
   name: string;
-  resolution: resolution;
+  resolution: {
+    width: number;
+    height: number;
+  };
 }
 
 interface Props {
   userId: number;
+  deviceData: any;
+  adminRoomId?: string;
+  autoconnect?: boolean;
+  onCreateRoom?: (adminRoomId: string) => any;
 }
 
-const Device: FC<Props> = ({ userId }) => {
+const Device: FC<Props> = ({
+  userId,
+  deviceData,
+  adminRoomId,
+  onCreateRoom,
+  autoconnect
+}) => {
   const adminStatus = useSelector(selectors.admin.selectStatus);
-
-  const [currentMobile, setCurrentMobile] = useState<currentMobileState>({
-    name: devices[0].name,
-    resolution: devices[0].resolution
+  const [position, setPosition] = useState<number>();
+  const [currentDevice, setCurrentDevice] = useState<currentDevice>({
+    index: deviceData?.index,
+    name: deviceData?.name,
+    resolution: deviceData?.resolution
   });
 
-  function chooseDevice(event: any) {
-    setCurrentMobile({
+  const chooseDevice = useCallback((event: any) => {
+    setCurrentDevice({
+      index: event.target.value,
       name: devices[event.target.value].name,
       resolution: devices[event.target.value].resolution
     });
-  }
+  }, []);
+
+  const handleOnCreateRoom = useCallback(
+    adminRoomId => {
+      if (onCreateRoom) {
+        onCreateRoom(adminRoomId);
+      }
+    },
+    [onCreateRoom]
+  );
+
+  const handleOnSetAdminDevicePosition = useCallback(pos => {
+    setPosition(pos);
+  }, []);
 
   const deviceSize = {
-    width: currentMobile.resolution.width,
-    height: currentMobile.resolution.height
+    width: currentDevice.resolution.width,
+    height: currentDevice.resolution.height
   };
 
   const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
 
   return (
-    <div className="device">
-      <select onChange={chooseDevice}>
+    <div className="device" style={{ order: position }}>
+      <select value={currentDevice.index} onChange={chooseDevice}>
         {devices.map((device, index) => (
           <option value={index} key={index}>
             {device.name}
@@ -58,7 +88,15 @@ const Device: FC<Props> = ({ userId }) => {
       <div className="device__screen" style={deviceSize}>
         <StoreWrapper storeId={userId.toString()}>
           <I18nextProvider i18n={newI18nInstance}>
-            <Client deviceSize={deviceSize} isAdmin={adminStatus} />
+            <Client
+              device={currentDevice}
+              autoconnect={autoconnect}
+              isAdmin={adminStatus}
+              adminPosition={userId}
+              adminRoomId={adminRoomId}
+              onCreateRoom={handleOnCreateRoom}
+              onSetAdminDevicePosition={handleOnSetAdminDevicePosition}
+            />
           </I18nextProvider>
         </StoreWrapper>
       </div>

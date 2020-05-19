@@ -12,15 +12,12 @@ const AdminHeader: FC = () => {
         <img src={logo} alt="logo" />
         FastNotFat
       </Link>
-      <Link to="/admin/rooms" className="header__link">
-        Créer un groupe
-      </Link>
-      <Link to="/admin/rooms" className="header__link">
+      <Link to="/admin/groups" className="header__link">
         Liste des groupes
       </Link>
-      <Link to="/admin/sockets-playground" className="header__link">
+      {/*       <Link to="/admin/sockets-playground" className="header__link">
         Sockets playground
-      </Link>
+      </Link> */}
     </header>
   );
 };

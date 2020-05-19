@@ -1,15 +1,11 @@
 .device {
   display: inline-block;
   text-align: center;
+  margin-right: 20px;
 
   &__screen {
     background: black;
     color: white;
-    margin-right: 20px;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
   }
 
   select {
