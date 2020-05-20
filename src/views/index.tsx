@@ -3,10 +3,10 @@ import { Route, Switch, MemoryRouter } from "react-router-dom";
 
 // store
 import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../../redux/store";
-import { WebSocketActionTypes } from "../../redux/WebSocket/actions/actionCreators";
-import { redux as reduxUtils } from "../../utils";
-import { actions, selectors } from "../../redux";
+import { useTypedSelector } from "../redux/store";
+import { WebSocketActionTypes } from "../redux/WebSocket/actions/actionCreators";
+import { redux as reduxUtils } from "../utils";
+import { actions, selectors } from "../redux";
 
 //style
 import "./index.scss";

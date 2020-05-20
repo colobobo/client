@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 
 // components
-import AdminHeader from "../../components/admin/header";
+import AdminHeader from "../../components/admin/Header";
 
 // routes
 import Home from "./home";

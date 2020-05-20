@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 
 // store
 import { useDispatch } from "react-redux";
-import { selectors, actions } from "../../../redux";
-import { useTypedSelector } from "../../../redux/store";
+import { selectors, actions } from "../../redux";
+import { useTypedSelector } from "../../redux/store";
 
 import "./index.scss";
 

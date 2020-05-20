@@ -6,7 +6,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "../../../translations/i18n";
 
 // views / components
-import Client from "../../../views/client";
+import Client from "../../../views";
 import StoreWrapper from "../../../components/StoreWrapper";
 
 // store

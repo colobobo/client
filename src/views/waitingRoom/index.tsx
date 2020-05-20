@@ -1,8 +1,8 @@
 import React, { FC, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useTypedSelector } from "../../../redux/store";
-import { selectors } from "../../../redux";
+import { useTypedSelector } from "../../redux/store";
+import { selectors } from "../../redux";
 
 import "./index.scss";
 

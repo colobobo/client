@@ -1,5 +1,14 @@
 .device {
+  display: inline-block;
+  text-align: center;
+  margin-right: 20px;
+
   &__screen {
     overflow: hidden;
+    border: 2px solid black;
+  }
+
+  > select {
+    margin-bottom: 15px;
   }
 }

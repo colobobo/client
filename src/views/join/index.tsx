@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // store
 import { useDispatch, useSelector } from "react-redux";
-import { selectors, actions } from "../../../redux";
+import { selectors, actions } from "../../redux";
 
 // style
 import "./index.scss";

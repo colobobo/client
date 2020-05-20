@@ -1,12 +1,11 @@
 import React, { FC, useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { actions } from "./redux";
-
-import Routes from "./routes";
-import "./App.scss";
 import { useDispatch } from "react-redux";
 import { WebSocketActionTypes } from "./redux/WebSocket/actions/actionCreators";
 import { redux as reduxUtils } from "./utils";
+import Client from "./views";
+import Admin from "./views/admin";
 
 const App: FC = () => {
   const dispatch = useDispatch();
@@ -21,7 +20,10 @@ const App: FC = () => {
 
   return (
     <Router>
-      <Routes />
+      <Switch>
+        <Route path="/" exact component={Client} />
+        <Route path="/admin" component={Admin} />
+      </Switch>
     </Router>
   );
 };

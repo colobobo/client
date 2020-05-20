@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import Area from "../../Area";
+import Area from "../../components/Area";
+import GameCanvas from "../../components/GameCanvas";
 
 import "./index.scss";
-
-import GameCanvas from "../../GameCanvas";
 
 const Game: FC = () => {
   // return
