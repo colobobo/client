@@ -1,5 +1,5 @@
-import React, { FC, useCallback, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React, { FC, useCallback, useEffect, useMemo } from "react";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // store
@@ -13,12 +13,19 @@ const Room: FC = () => {
   const { t } = useTranslation();
   const { roomId } = useParams();
   const history = useHistory();
+  const location = useLocation<{ isCreator: boolean }>();
 
   // store
 
   const dispatch = useDispatch();
   const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
+
+  // memo
+
+  const isCreator = useMemo(() => location.state.isCreator, [
+    location.state.isCreator
+  ]);
 
   // effect
 
@@ -55,12 +62,14 @@ const Room: FC = () => {
             <li key={device.id}>{device.id}</li>
           ))}
         </ul>
-        <button
-          onClick={handleOnClickStart}
-          className="room__action button button--orange"
-        >
-          {t("room.buttons.start")}
-        </button>
+        {isCreator && (
+          <button
+            onClick={handleOnClickStart}
+            className="room__action button button--orange"
+          >
+            {t("room.buttons.start")}
+          </button>
+        )}
       </div>
     </div>
   );

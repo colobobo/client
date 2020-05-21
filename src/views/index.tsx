@@ -16,7 +16,6 @@ import Landing from "./landing";
 import Room from "./room";
 import Join from "./join";
 import Game from "./game";
-import WaitingRoom from "./waitingRoom";
 
 interface Props {
   device: any;
@@ -120,7 +119,6 @@ const Client: FC<Props> = ({
           <Route exact path="/join" component={Join} />
           <Route exact path="/game" component={Game} />
           <Route path="/room/:roomId" component={Room} />
-          <Route path="/waiting-room/:roomId" component={WaitingRoom} />
         </Switch>
       </MemoryRouter>
     </div>

@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // store
@@ -45,7 +45,7 @@ const Landing: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      history.push("/room/" + roomId);
+      history.push("/room/" + roomId, { isCreator: true });
     }
   }, [history, roomId]);
 
