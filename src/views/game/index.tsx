@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Area from "../../components/Area";
 import GameCanvas from "../../components/GameCanvas";
 import GameDecorationBleed from "../../components/GameDecorationBleed";
+import GameDecoration from "../../components/GameDecoration";
 
 import "./index.scss";
 
@@ -14,8 +15,8 @@ const Game: FC = () => {
       <Area>
         <div className="game-decoration__background"></div>
         <GameCanvas />
-        <div className="game-decoration__top"></div>
-        <div className="game-decoration__bottom"></div>
+        <GameDecoration position="top" />
+        <GameDecoration position="bottom" />
       </Area>
       <GameDecorationBleed position="bottom" />
     </div>

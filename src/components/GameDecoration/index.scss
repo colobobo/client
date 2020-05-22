@@ -1,0 +1,18 @@
+.game-decoration {
+  &__foreground {
+    position: absolute;
+    width: 100%;
+
+    &--top {
+      top: 0;
+      height: 30px;
+      background: green;
+    }
+
+    &--bottom {
+      bottom: 0;
+      height: 60px;
+      background: blue;
+    }
+  }
+}
