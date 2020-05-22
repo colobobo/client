@@ -1,9 +1,10 @@
 {
-  "name": "fast-not-fat-client",
+  "name": "@colobobo/client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.8.4",
+    "@colobobo/library": "https://github.com/colobobo/library",
     "@reduxjs/toolkit": "^1.2.5",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
@@ -35,7 +36,6 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.18.0",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "fast-not-fat": "https://github.com/Fast-Not-Fat/types",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
     "gsap": "^3.2.6",
@@ -85,8 +85,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "link-fast-not-fat": "yarn link \"fast-not-fat\"",
-    "unlink-fast-not-fat": "yarn unlink \"fast-not-fat\""
+    "link-library": "yarn link \"@colobobo/library\"",
+    "unlink-library": "yarn unlink \"@colobobo/library\""
   },
   "browserslist": {
     "production": [
@@ -112,7 +112,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged & yarn upgrade fast-not-fat && git add yarn.lock"
+      "pre-commit": "lint-staged & yarn upgrade @colobobo/library && git add yarn.lock"
     }
   },
   "devDependencies": {

@@ -1016,6 +1016,15 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@colobobo/library@https://github.com/colobobo/library":
+  version "1.0.0"
+  resolved "https://github.com/colobobo/library#c66de4ece836a1590323097eb16fbcb551ceaf13"
+  dependencies:
+    prettier "^2.0.1"
+    tslint "^6.1.0"
+    tslint-config-prettier "^1.18.0"
+    typescript "^3.8.3"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -4664,15 +4673,6 @@ fast-levenshtein@~2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
-
-"fast-not-fat@https://github.com/Fast-Not-Fat/types":
-  version "1.0.0"
-  resolved "https://github.com/Fast-Not-Fat/types#2cddb19f537598b734d96ca586b8b22b41c12858"
-  dependencies:
-    prettier "^2.0.1"
-    tslint "^6.1.0"
-    tslint-config-prettier "^1.18.0"
-    typescript "^3.8.3"
 
 faye-websocket@^0.10.0:
   version "0.10.0"

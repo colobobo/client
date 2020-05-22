@@ -1,5 +1,5 @@
 import { WebSocketAction } from "../socketMiddleware";
-import { Events } from "fast-not-fat";
+import { Events } from "@colobobo/library";
 
 export enum WebSocketActionTypes {
   wsEmit = "ws/emit",
