@@ -1,7 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads, GameObjects } from "fast-not-fat";
+import { payloads, GameObjects } from "@colobobo/library";
 
 export interface GameState {
   isStarted: boolean;

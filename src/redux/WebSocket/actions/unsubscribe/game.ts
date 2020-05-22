@@ -1,6 +1,6 @@
 import { createUnsubscribeAction } from "../actionCreators";
 
-import { events } from "fast-not-fat";
+import { events } from "@colobobo/library";
 
 // start
 
