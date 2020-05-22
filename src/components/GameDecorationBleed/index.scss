@@ -1,0 +1,16 @@
+.game-decoration {
+  &__bleed {
+    position: absolute;
+    width: 100%;
+
+    &--top {
+      top: 0;
+      background: green;
+    }
+
+    &--bottom {
+      bottom: 0;
+      background: blue;
+    }
+  }
+}

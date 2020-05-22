@@ -18,16 +18,16 @@ const App: FC = () => {
     );
   }, [dispatch]);
 
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  });
-
   const handleResize = useCallback(() => {
     const vh = window.innerHeight * 0.01;
     document.body.style.setProperty("--vh", `${vh}px`);
   }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <Router>

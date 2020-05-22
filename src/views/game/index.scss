@@ -4,11 +4,28 @@
   width: 100%;
   height: 100%;
 
-  &-background {
-    position: absolute;
-    inset: 0;
-    background-color: red;
-    width: 100%;
-    height: 100%;
+  &-decoration {
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      width: 100%;
+      height: 100%;
+    }
+    &__top {
+      background: green;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 30px;
+    }
+    &__bottom {
+      background: blue;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+    }
   }
 }
