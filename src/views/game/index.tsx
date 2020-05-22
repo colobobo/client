@@ -10,6 +10,7 @@ const Game: FC = () => {
   return (
     <div className="game">
       <Area>
+        <div className="game-background"></div>
         <GameCanvas />
       </Area>
     </div>

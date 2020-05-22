@@ -1,5 +1,14 @@
 .game {
+  overflow-x: hidden;
   position: relative;
   width: 100%;
   height: 100%;
+
+  &-background {
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+  }
 }
