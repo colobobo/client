@@ -6,6 +6,7 @@ import GameDecoration from "../../components/GameDecoration";
 import GameBackground from "../../components/GameBackground";
 
 import "./index.scss";
+import GamePhaser from "../../components/GamePhaser";
 
 const Game: FC = () => {
   // return
