@@ -20,7 +20,7 @@ const getConfigs = (): MembersConfig => {
       ...configs,
       [value]: {
         key: value,
-        url: `/images/members/${value}.svg`,
+        url: require(`../assets/members/${value}.svg`),
         svgConfig: {
           scale: 1
         }

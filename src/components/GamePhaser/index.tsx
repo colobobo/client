@@ -1,11 +1,13 @@
-import React, { FC, useRef, useEffect, useCallback, useMemo } from "react";
-import "./index.scss";
-
+import React, { FC, useRef, useEffect, useCallback } from "react";
 import * as Phaser from "phaser";
-
+import * as utils from "../../utils";
 import { selectors } from "../../redux";
 import { useSelector } from "react-redux";
 import { membersConfig, members } from "../../datas/members";
+
+import "./index.scss";
+
+const mainSceneKey = "main-scene";
 
 const GamePhaser: FC = () => {
   // ref
@@ -17,49 +19,63 @@ const GamePhaser: FC = () => {
 
   const areaWidth = useSelector(selectors.area.selectWidth);
   const areaHeight = useSelector(selectors.area.selectHeight);
+  const gameObjectsArray = useSelector(selectors.game.selectObjectsAsArray);
 
   // functions
 
-  const getWrapConfig = useCallback(
-    (game: Phaser.Game) => ({
-      min: {
-        x: 0,
-        y: 0
-      },
-      max: {
-        x: game.canvas.width,
-        y: game.canvas.height
-      }
-    }),
-    []
-  );
-
-  const preload = useCallback(() => {
-    const scene = $game.current!.scene.getScene("main-scene");
+  const loadMembers = useCallback(() => {
+    const scene = $game.current!.scene.getScene(mainSceneKey);
 
     Object.values(members).forEach(member => {
       scene.load.svg(membersConfig[member]);
     });
   }, []);
 
-  const create = useCallback(() => {
-    const scene = $game.current!.scene.getScene("main-scene");
+  const addMembers = useCallback(() => {
+    const scene = $game.current!.scene.getScene(mainSceneKey);
 
     Object.values(members).forEach((member, i) => {
       scene.matter.add
-        .image(i * 50, i * 20, member, undefined, {
-          plugin: { wrap: getWrapConfig($game.current!) }
+        .image(i * 50, i * 50, member, undefined, {
+          plugin: { wrap: utils.phaser.getGameWrapConfig($game.current!) },
+          label: member
         })
-        .setScale(0.5);
-      // .setFixedRotation();
+        // scale
+        .setScale(0.5)
+        // fixe rotation
+        .setFixedRotation();
     });
+  }, []);
 
-    scene.matter.add.pointerConstraint({ stiffness: 0 });
-  }, [getWrapConfig]);
+  const onGameObjectsUpdate = useCallback(
+    (objects: typeof gameObjectsArray) => {
+      // TODO: update object positions
+    },
+    [gameObjectsArray]
+  );
 
-  // effects
+  // ---- PHASER FUNCTIONS ----
 
-  useEffect(() => {
+  const preload = useCallback(() => {
+    loadMembers();
+  }, [loadMembers]);
+
+  const create = useCallback(() => {
+    const scene = $game.current!.scene.getScene(mainSceneKey);
+
+    addMembers();
+
+    // enable drag and drop
+    scene.matter.add.mouseSpring({ stiffness: 0 });
+
+    // listen drag start
+
+    scene.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
+      console.log("dragstart ->", e.label);
+    });
+  }, [addMembers]);
+
+  const createGame = useCallback(() => {
     const gameConfig: Phaser.Types.Core.GameConfig = {
       type: Phaser.AUTO,
       width: areaWidth,
@@ -70,20 +86,29 @@ const GamePhaser: FC = () => {
         default: "matter",
         matter: {
           gravity: { y: 1 },
-          debug: {},
+          debug: {
+            showBody: true,
+            showStaticBody: true,
+            showInternalEdges: true,
+            showVelocity: true,
+            showCollisions: true,
+            lineThickness: 2,
+            showPositions: true,
+            positionSize: 6
+          },
 
           setBounds: {
             x: -300,
             left: false,
             right: false,
             width: areaWidth + 600,
-            thickness: 1
+            thickness: 100
           },
           "plugins.wrap": true
         }
       },
       scene: {
-        key: "main-scene",
+        key: mainSceneKey,
         preload,
         create
       }
@@ -91,6 +116,20 @@ const GamePhaser: FC = () => {
 
     $game.current = new Phaser.Game(gameConfig);
   }, [areaHeight, areaWidth, create, preload]);
+
+  // EFFECTS
+
+  // create game on mount
+
+  useEffect(() => {
+    createGame();
+  }, [createGame]);
+
+  // listen game objects update
+
+  useEffect(() => {
+    onGameObjectsUpdate(gameObjectsArray);
+  }, [gameObjectsArray, onGameObjectsUpdate]);
 
   // return
 
