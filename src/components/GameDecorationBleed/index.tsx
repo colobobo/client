@@ -13,22 +13,28 @@ interface Props {
 
 const GameDecorationBleed: FC<Props> = ({ position }) => {
   // selectors
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
-  const device = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
-  );
-  const areaHeight = useTypedSelector(selectors.area.selectHeight);
+  const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
+  const areaMaxHeight = useTypedSelector(selectors.area.selectMaxHeight);
 
   const bleedHeight = useMemo(() => {
-    return (device.height - areaHeight) / 2;
-  }, [areaHeight, device.height]);
+    return (areaMaxHeight - areaMinHeight) / 2;
+  }, [areaMinHeight, areaMaxHeight]);
 
   // return
   return (
     <div
       className={`game-decoration__bleed game-decoration__bleed--${position}`}
       style={{ height: `${bleedHeight}px` }}
-    ></div>
+    >
+      <div
+        className="source"
+        style={{
+          backgroundImage: `url(${require("../../assets/worlds/jungle/decorations/" +
+            position +
+            ".png")})`
+        }}
+      ></div>
+    </div>
   );
 };
 

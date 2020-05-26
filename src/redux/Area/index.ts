@@ -5,7 +5,8 @@ import { AreaDevice, payloads } from "@colobobo/library";
 
 export interface AreaState {
   width: number;
-  height: number;
+  minHeight: number;
+  maxHeight: number;
   devices: {
     [deviceId: string]: AreaDevice;
   };
@@ -15,14 +16,16 @@ export const slice = createSlice({
   name: "area",
   initialState: {
     width: 0,
-    height: 0,
+    minHeight: 0,
+    maxHeight: 0,
     devices: {}
   } as AreaState,
   reducers: {
     update: (state: AreaState, action: PayloadAction<payloads.area.Update>) => {
-      const { width, height, devices } = action.payload.data;
+      const { width, minHeight, maxHeight, devices } = action.payload.data;
       state.width = width;
-      state.height = height;
+      state.minHeight = minHeight;
+      state.maxHeight = maxHeight;
       state.devices = devices;
     }
   }
@@ -32,7 +35,8 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.area;
 const selectWidth = (state: RootState) => getRoot(state).width;
-const selectHeight = (state: RootState) => getRoot(state).height;
+const selectMinHeight = (state: RootState) => getRoot(state).minHeight;
+const selectMaxHeight = (state: RootState) => getRoot(state).maxHeight;
 const selectDevices = (state: RootState) => getRoot(state).devices;
 const selectDevicesArray = createSelector([selectDevices], devices => {
   return Object.keys(devices).map(deviceId => ({
@@ -45,7 +49,8 @@ const selectDevice = (state: RootState, { id }: { id: string }) =>
 
 export const selectors = {
   selectWidth,
-  selectHeight,
+  selectMinHeight,
+  selectMaxHeight,
   selectDevices,
   selectDevicesArray,
   selectDevice

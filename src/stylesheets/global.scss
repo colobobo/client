@@ -10,7 +10,8 @@
 html,
 body {
   width: 100%;
-  @include defineHeight;
+  height: 100%;
+  // @include defineHeight;
   font-family: "Roboto";
   margin: 0;
   padding: 0;

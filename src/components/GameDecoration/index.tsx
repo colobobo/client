@@ -12,7 +12,16 @@ const GameDecoration: FC<Props> = ({ position }) => {
   return (
     <div
       className={`game-decoration__foreground game-decoration__foreground--${position}`}
-    ></div>
+    >
+      <div
+        className="source"
+        style={{
+          backgroundImage: `url(${require("../../assets/worlds/jungle/decorations/" +
+            position +
+            ".png")})`
+        }}
+      ></div>
+    </div>
   );
 };
 

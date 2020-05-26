@@ -1,17 +1,6 @@
 .game {
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
-
-  &-decoration {
-    &__background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: red;
-      width: 100%;
-      height: 100%;
-    }
-  }
 }

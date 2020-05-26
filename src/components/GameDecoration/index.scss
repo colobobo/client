@@ -5,14 +5,25 @@
 
     &--top {
       top: 0;
-      height: 30px;
-      background: green;
+      height: 15%;
+
+      .source {
+        height: 200%;
+        background-size: auto 100%;
+        background-repeat: repeat-x;
+        transform: translateY(-50%);
+      }
     }
 
     &--bottom {
       bottom: 0;
-      height: 60px;
-      background: blue;
+      height: 30%;
+
+      .source {
+        height: 200%;
+        background-size: auto 100%;
+        background-repeat: repeat-x;
+      }
     }
   }
 }

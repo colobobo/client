@@ -1,5 +1,12 @@
 .area {
-  background-color: #33a0ff;
+  &--min {
+    background-color: #33a0ff;
+  }
+
+  &--max {
+    pointer-events: none;
+  }
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
