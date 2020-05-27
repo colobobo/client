@@ -13,10 +13,3 @@ export const startError = createSubscribeAction(
   events.game.startError,
   GameActions.startError.type
 );
-
-// tick
-
-export const tick = createSubscribeAction(
-  events.game.tick,
-  GameActions.tick.type
-);

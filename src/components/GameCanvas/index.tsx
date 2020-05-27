@@ -10,7 +10,7 @@ const overflowXSafeOffset = -50;
 const GameCanvas: FC = () => {
   // selectors
 
-  const objectsArray = useSelector(selectors.game.selectObjectsAsArray);
+  const objectsArray = useSelector(selectors.round.selectObjectsAsArray);
   const areaWidth = useSelector(selectors.area.selectWidth);
 
   // return
