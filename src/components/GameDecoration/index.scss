@@ -1,5 +1,6 @@
 .game-decoration {
   &__foreground {
+    pointer-events: none;
     position: absolute;
     width: 100%;
 
