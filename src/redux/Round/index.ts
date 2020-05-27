@@ -14,6 +14,16 @@ export const slice = createSlice({
     objects: {}
   } as RoundState,
   reducers: {
+    init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {},
+    start: (
+      state: RoundState,
+      action: PayloadAction<payloads.round.Start>
+    ) => {},
+    fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {},
+    success: (
+      state: RoundState,
+      action: PayloadAction<payloads.round.Success>
+    ) => {},
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.objects = action.payload.data.objects;
       state.tick = action.payload.data.tick;
