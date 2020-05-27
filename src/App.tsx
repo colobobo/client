@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { actions } from "./redux";
 import { useDispatch } from "react-redux";
@@ -17,6 +17,17 @@ const App: FC = () => {
       dispatch
     );
   }, [dispatch]);
+
+  const handleResize = useCallback(() => {
+    const vh = window.innerHeight * 0.01;
+    document.body.style.setProperty("--vh", `${vh}px`);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <Router>

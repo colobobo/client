@@ -1,0 +1,29 @@
+.game-decoration {
+  &__foreground {
+    position: absolute;
+    width: 100%;
+
+    &--top {
+      top: 0;
+      height: 15%;
+
+      .source {
+        height: 200%;
+        background-size: auto 100%;
+        background-repeat: repeat-x;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--bottom {
+      bottom: 0;
+      height: 30%;
+
+      .source {
+        height: 200%;
+        background-size: auto 100%;
+        background-repeat: repeat-x;
+      }
+    }
+  }
+}

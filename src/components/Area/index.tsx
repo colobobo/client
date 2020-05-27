@@ -3,26 +3,29 @@ import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 import "./index.scss";
 
-interface AreaProps {}
+interface AreaProps {
+  height: string;
+}
 
-const Area: FC<AreaProps> = ({ children }) => {
+const Area: FC<AreaProps> = ({ children, height }) => {
   // selectors
   const deviceId = useTypedSelector(selectors.room.selectDeviceId);
   const device = useTypedSelector(state =>
     selectors.area.selectDevice(state, { id: deviceId })
   );
   const areaWidh = useTypedSelector(selectors.area.selectWidth);
-  const areaHeight = useTypedSelector(selectors.area.selectHeight);
+  const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
+  const areaMaxHeight = useTypedSelector(selectors.area.selectMaxHeight);
 
   // handlers
 
   // return
   return (
     <div
-      className="area"
+      className={`area area--${height}`}
       style={{
         width: areaWidh,
-        height: areaHeight,
+        height: height === "min" ? areaMinHeight : areaMaxHeight,
         left: -device?.offsetX || 0
       }}
     >
