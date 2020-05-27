@@ -30,6 +30,12 @@ import {
   selectors as roundSelectors
 } from "./Round";
 
+import {
+  actions as transitionActions,
+  reducer as transitionReducer,
+  selectors as transitionSelectors
+} from "./Transition";
+
 import { actions as webSocketActions } from "./WebSocket";
 
 export const actions = {
@@ -39,6 +45,7 @@ export const actions = {
   game: gameActions,
   room: roomActions,
   round: roundActions,
+  transition: transitionActions,
   webSocket: webSocketActions
 };
 
@@ -48,6 +55,7 @@ export const selectors = {
   device: deviceSelectors,
   game: gameSelectors,
   room: roomSelectors,
+  transition: transitionSelectors,
   round: roundSelectors
 };
 
@@ -57,5 +65,6 @@ export const reducers = {
   device: deviceReducer,
   game: gameReducer,
   room: roomReducer,
+  transition: transitionReducer,
   round: roundReducer
 };
