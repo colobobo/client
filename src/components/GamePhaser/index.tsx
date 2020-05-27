@@ -18,8 +18,8 @@ const GamePhaser: FC = () => {
   // selectors
 
   const areaWidth = useSelector(selectors.area.selectWidth);
-  const areaHeight = useSelector(selectors.area.selectHeight);
-  const gameObjectsArray = useSelector(selectors.game.selectObjectsAsArray);
+  const areaHeight = useSelector(selectors.area.selectMinHeight);
+  const gameObjectsArray = useSelector(selectors.round.selectObjectsAsArray);
 
   // functions
 
