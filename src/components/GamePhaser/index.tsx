@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, useCallback } from "react";
+import React, { FC, useRef, useEffect, useCallback, useMemo } from "react";
 import * as Phaser from "phaser";
 import * as utils from "../../utils";
 import { selectors } from "../../redux";
@@ -14,6 +14,10 @@ const GamePhaser: FC = () => {
 
   const $parent = useRef<HTMLDivElement>(null);
   const $game = useRef<Phaser.Game | null>(null);
+  const $membersMatter = useRef<Phaser.Physics.Matter.Image[]>([]);
+  const $pointerContraint = useRef<Phaser.Physics.Matter.PointerConstraint | null>(
+    null
+  );
 
   // selectors
 
@@ -21,7 +25,9 @@ const GamePhaser: FC = () => {
   const areaHeight = useSelector(selectors.area.selectMinHeight);
   const gameObjectsArray = useSelector(selectors.round.selectObjectsAsArray);
 
-  // functions
+  // FUNCTIONS
+
+  // load members
 
   const loadMembers = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
@@ -31,19 +37,61 @@ const GamePhaser: FC = () => {
     });
   }, []);
 
-  const addMembers = useCallback(() => {
+  // add members to scene
+
+  const addMembersToScene = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
 
     Object.values(members).forEach((member, i) => {
-      scene.matter.add
-        .image(i * 50, i * 50, member, undefined, {
+      const memberMatter = scene.matter.add.image(
+        i * 50,
+        i * 50,
+        member,
+        undefined,
+        {
           plugin: { wrap: utils.phaser.getGameWrapConfig($game.current!) },
           label: member
-        })
-        // scale
-        .setScale(0.5)
-        // fixe rotation
-        .setFixedRotation();
+        }
+      );
+      // set name
+      memberMatter.setName(member);
+      // scale
+      memberMatter.setScale(0.5);
+      // fixe rotation
+      memberMatter.setFixedRotation();
+
+      // add member matter object to members array
+      $membersMatter.current.push(memberMatter);
+    });
+  }, []);
+
+  // members event listeners
+
+  const addMembersEventListeners = useCallback(() => {
+    $membersMatter.current.forEach(member => {
+      // listen pointer events
+      member.setInteractive().on("pointerdown", (e: Phaser.Input.Pointer) => {
+        console.log("pointerdown ->", member.name);
+      });
+
+      // listen collision
+      // TODO : use https://github.com/mikewesthad/phaser-matter-collision-plugin
+      member.setOnCollide((e: any) => {
+        // console.log("collide", e);
+      });
+    });
+  }, []);
+
+  // matter world event listeners
+
+  const addMatterWorldEventListeners = useCallback(() => {
+    const scene = $game.current!.scene.getScene(mainSceneKey);
+
+    // listen drag start
+    scene.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
+      const gameObject: Phaser.Physics.Matter.Image = e.gameObject;
+      console.log("dragstart ->", gameObject.name);
+      // gameObject.setScale(gameObject.scale + 0.1);
     });
   }, []);
 
@@ -54,26 +102,48 @@ const GamePhaser: FC = () => {
     [gameObjectsArray]
   );
 
-  // ---- PHASER FUNCTIONS ----
+  // ----- PHASER FUNCTIONS -----
+
+  // preload
 
   const preload = useCallback(() => {
     loadMembers();
   }, [loadMembers]);
 
+  // create
+
   const create = useCallback(() => {
+    addMembersToScene();
+
+    addMembersEventListeners();
+
+    addMatterWorldEventListeners();
+
     const scene = $game.current!.scene.getScene(mainSceneKey);
 
-    addMembers();
-
-    // enable drag and drop
-    scene.matter.add.mouseSpring({ stiffness: 0 });
-
-    // listen drag start
-
-    scene.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
-      console.log("dragstart ->", e.label);
+    // enable drag and drop in matter
+    // @ts-ignore
+    $pointerContraint.current = scene.matter.add.pointerConstraint({
+      stiffness: 0
     });
-  }, [addMembers]);
+  }, [
+    addMatterWorldEventListeners,
+    addMembersEventListeners,
+    addMembersToScene
+  ]);
+
+  // phaser main scene
+
+  const mainScene = useMemo(
+    () => ({
+      key: mainSceneKey,
+      preload,
+      create
+    }),
+    [create, preload]
+  );
+
+  // create phaser game
 
   const createGame = useCallback(() => {
     const gameConfig: Phaser.Types.Core.GameConfig = {
@@ -86,17 +156,19 @@ const GamePhaser: FC = () => {
         default: "matter",
         matter: {
           gravity: { y: 1 },
-          debug: {
-            showBody: true,
-            showStaticBody: true,
-            showInternalEdges: true,
-            showVelocity: true,
-            showCollisions: true,
-            lineThickness: 2,
-            showPositions: true,
-            positionSize: 6
-          },
-
+          debug:
+            process.env.NODE_ENV === "development"
+              ? {
+                  showBody: true,
+                  showStaticBody: true,
+                  showInternalEdges: true,
+                  showVelocity: true,
+                  showCollisions: true,
+                  lineThickness: 2,
+                  showPositions: true,
+                  positionSize: 6
+                }
+              : false,
           setBounds: {
             x: -300,
             left: false,
@@ -107,15 +179,11 @@ const GamePhaser: FC = () => {
           "plugins.wrap": true
         }
       },
-      scene: {
-        key: mainSceneKey,
-        preload,
-        create
-      }
+      scene: mainScene
     };
 
     $game.current = new Phaser.Game(gameConfig);
-  }, [areaHeight, areaWidth, create, preload]);
+  }, [areaHeight, areaWidth, mainScene]);
 
   // EFFECTS
 
