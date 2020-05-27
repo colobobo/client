@@ -20,20 +20,32 @@ const GameDecorationBleed: FC<Props> = ({ position }) => {
     return (areaMaxHeight - areaMinHeight) / 2;
   }, [areaMinHeight, areaMaxHeight]);
 
+  const $decoration = document.querySelector(
+    `.game-decoration__foreground--${position}`
+  ) as HTMLElement;
+
+  const decorationHeight = useMemo(() => {
+    const height = $decoration?.offsetHeight;
+    return height;
+  }, [$decoration]);
+
   // return
   return (
     <div
       className={`game-decoration__bleed game-decoration__bleed--${position}`}
       style={{ height: `${bleedHeight}px` }}
     >
-      <div
-        className="source"
-        style={{
-          backgroundImage: `url(${require("../../assets/worlds/jungle/decorations/" +
-            position +
-            ".png")})`
-        }}
-      ></div>
+      <div className="source__container">
+        <div
+          className="source"
+          style={{
+            height: `${decorationHeight}px`,
+            backgroundImage: `url(${require("../../assets/worlds/mountain/decorations/bleeds/" +
+              position +
+              ".png")})`
+          }}
+        ></div>
+      </div>
     </div>
   );
 };
