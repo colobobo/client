@@ -38,7 +38,7 @@ const DraggableElement: FC<Props> = ({
 
   // selectors
 
-  const gameTick = useTypedSelector(selectors.game.selectTick);
+  const roundTick = useTypedSelector(selectors.round.selectTick);
 
   // ref
 
@@ -72,7 +72,7 @@ const DraggableElement: FC<Props> = ({
       const { x, y } = $draggableInstance.current;
 
       dispatch(
-        actions.webSocket.emit.game.positionUpdate({
+        actions.webSocket.emit.round.memberMove({
           x: x - xOffset,
           y,
           id
@@ -88,11 +88,11 @@ const DraggableElement: FC<Props> = ({
       gsap.to($element.current, {
         x: x + xOffset,
         y: y,
-        duration: gameTick / 1000,
+        duration: roundTick / 1000,
         ease: Linear.easeNone
       });
     }
-  }, [gameTick, isDragging, x, xOffset, y]);
+  }, [roundTick, isDragging, x, xOffset, y]);
 
   useEffect(() => {
     // opcity 1 after 0.1 seconde
