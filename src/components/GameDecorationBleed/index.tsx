@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useEffect, useState } from "react";
 
 // store
 import { selectors } from "../../redux";
@@ -12,25 +12,26 @@ interface Props {
 }
 
 const GameDecorationBleed: FC<Props> = ({ position }) => {
+  const [decorationHeight, setDecorationHeight] = useState<number>(0);
+
   // selectors
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const areaMaxHeight = useTypedSelector(selectors.area.selectMaxHeight);
+
+  useEffect(() => {
+    const $decoration = document.querySelector(
+      `.game-decoration__foreground--${position}`
+    ) as HTMLElement;
+    const height = $decoration?.offsetHeight * 2;
+    setDecorationHeight(height);
+  }, [position]);
 
   const bleedHeight = useMemo(() => {
     return (areaMaxHeight - areaMinHeight) / 2;
   }, [areaMinHeight, areaMaxHeight]);
 
-  const $decoration = document.querySelector(
-    `.game-decoration__foreground--${position}`
-  ) as HTMLElement;
-
-  const decorationHeight = useMemo(() => {
-    const height = $decoration?.offsetHeight * 2;
-    return height;
-  }, [$decoration]);
-
   const colorBleedHeight = useMemo(() => {
-    return bleedHeight - decorationHeight;
+    return decorationHeight > 0 ? bleedHeight - decorationHeight : 0;
   }, [bleedHeight, decorationHeight]);
 
   // return
