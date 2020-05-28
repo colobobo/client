@@ -4,6 +4,12 @@
     position: absolute;
     width: 100%;
 
+    .source {
+      &__color-bleed {
+        background: #1b62e0;
+      }
+    }
+
     &--top {
       top: 0;
 
@@ -26,9 +32,14 @@
       bottom: 0;
 
       .source {
-        height: 200%;
         background-size: auto 100%;
         background-repeat: repeat;
+
+        &__container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }

@@ -25,9 +25,13 @@ const GameDecorationBleed: FC<Props> = ({ position }) => {
   ) as HTMLElement;
 
   const decorationHeight = useMemo(() => {
-    const height = $decoration?.offsetHeight;
+    const height = $decoration?.offsetHeight * 2;
     return height;
   }, [$decoration]);
+
+  const colorBleedHeight = useMemo(() => {
+    return bleedHeight - decorationHeight;
+  }, [bleedHeight, decorationHeight]);
 
   // return
   return (
@@ -44,6 +48,10 @@ const GameDecorationBleed: FC<Props> = ({ position }) => {
               position +
               ".png")})`
           }}
+        ></div>
+        <div
+          className="source__color-bleed"
+          style={{ height: `${colorBleedHeight}px` }}
         ></div>
       </div>
     </div>
