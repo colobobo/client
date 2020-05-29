@@ -1,8 +1,15 @@
-import React, { FC, useRef, useEffect, useCallback, useMemo } from "react";
+import React, {
+  FC,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+  useState
+} from "react";
 import * as Phaser from "phaser";
 import * as utils from "../../utils";
-import { selectors } from "../../redux";
-import { useSelector } from "react-redux";
+import { selectors, actions } from "../../redux";
+import { useDispatch, useSelector } from "react-redux";
 import { membersConfig, members } from "../../datas/members";
 
 import "./index.scss";
@@ -10,6 +17,15 @@ import "./index.scss";
 const mainSceneKey = "main-scene";
 
 const GamePhaser: FC = () => {
+  const dispatch = useDispatch();
+
+  // selectors
+
+  const areaWidth = useSelector(selectors.area.selectWidth);
+  const areaHeight = useSelector(selectors.area.selectMinHeight);
+  const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
+  const deviceId = useSelector(selectors.room.selectDeviceId);
+
   // ref
 
   const $parent = useRef<HTMLDivElement>(null);
@@ -18,12 +34,11 @@ const GamePhaser: FC = () => {
   const $pointerContraint = useRef<Phaser.Physics.Matter.PointerConstraint | null>(
     null
   );
+  const $gameMembersArray = useRef<typeof gameMembersArray>([]);
 
-  // selectors
+  // state
 
-  const areaWidth = useSelector(selectors.area.selectWidth);
-  const areaHeight = useSelector(selectors.area.selectMinHeight);
-  const gameObjectsArray = useSelector(selectors.round.selectObjectsAsArray);
+  const [isGameReady, setIsGameReady] = useState(false);
 
   // FUNCTIONS
 
@@ -91,18 +106,32 @@ const GamePhaser: FC = () => {
     scene.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
       const gameObject: Phaser.Physics.Matter.Image = e.gameObject;
       console.log("dragstart ->", gameObject.name);
-      // gameObject.setScale(gameObject.scale + 0.1);
-    });
-  }, []);
 
-  const onGameObjectsUpdate = useCallback(
-    (objects: typeof gameObjectsArray) => {
-      // TODO: update object positions
+      dispatch(
+        actions.webSocket.emit.round.memberDragStart({
+          playerId: deviceId,
+          memberId: gameObject.name
+        })
+      );
+    });
+  }, [deviceId, dispatch]);
+
+  const onGameMembersUpdate = useCallback(
+    (members: typeof gameMembersArray) => {
+      members.forEach(member => {
+        // update member position and velocity if I'm not the member manager
+        if (member.manager !== "" && member.manager !== deviceId) {
+          $membersMatter.current
+            .find($memberMatter => $memberMatter.name === member.id)
+            ?.setPosition(member.position.x, member.position.y)
+            ?.setVelocity(member.velocity.x, member.velocity.y);
+        }
+      });
     },
-    [gameObjectsArray]
+    [deviceId, gameMembersArray]
   );
 
-  // ----- PHASER FUNCTIONS -----
+  // ----- PHASER SCENE FUNCTIONS -----
 
   // preload
 
@@ -113,13 +142,13 @@ const GamePhaser: FC = () => {
   // create
 
   const create = useCallback(() => {
+    const scene = $game.current!.scene.getScene(mainSceneKey);
+
     addMembersToScene();
 
     addMembersEventListeners();
 
     addMatterWorldEventListeners();
-
-    const scene = $game.current!.scene.getScene(mainSceneKey);
 
     // enable drag and drop in matter
     // @ts-ignore
@@ -131,6 +160,32 @@ const GamePhaser: FC = () => {
     addMembersEventListeners,
     addMembersToScene
   ]);
+
+  // update
+
+  const update = useCallback(
+    (time, delta) => {
+      $gameMembersArray.current.forEach(member => {
+        // if I'm the member manager
+        if (deviceId === member.manager) {
+          const memberMatterBody = $membersMatter.current.find(
+            $memberMatter => $memberMatter.name === member.id
+          )?.body as MatterJS.BodyType;
+          if (memberMatterBody) {
+            // emit position and velocity of member
+            dispatch(
+              actions.webSocket.emit.round.memberMove({
+                position: memberMatterBody.position,
+                velocity: memberMatterBody.velocity,
+                id: member.id
+              })
+            );
+          }
+        }
+      });
+    },
+    [deviceId, dispatch]
+  );
 
   // phaser main scene
 
@@ -183,21 +238,44 @@ const GamePhaser: FC = () => {
     };
 
     $game.current = new Phaser.Game(gameConfig);
+
+    $game.current.events.on(Phaser.Core.Events.READY, () => {
+      setIsGameReady(true);
+    });
   }, [areaHeight, areaWidth, mainScene]);
 
   // EFFECTS
 
-  // create game on mount
+  // on mount -> create game
 
   useEffect(() => {
     createGame();
   }, [createGame]);
 
+  // on game created -> listen scene update
+
+  useEffect(() => {
+    if (isGameReady) {
+      const scene = $game.current!.scene.getScene(mainSceneKey);
+      scene.events.addListener(Phaser.Scenes.Events.UPDATE, update);
+
+      return () => {
+        scene.events.removeListener(Phaser.Scenes.Events.UPDATE, update);
+      };
+    }
+  }, [isGameReady, update]);
+
   // listen game objects update
 
   useEffect(() => {
-    onGameObjectsUpdate(gameObjectsArray);
-  }, [gameObjectsArray, onGameObjectsUpdate]);
+    onGameMembersUpdate(gameMembersArray);
+  }, [gameMembersArray, onGameMembersUpdate]);
+
+  // update $gameMembersArray ref with gameMembersArray from store
+
+  useEffect(() => {
+    $gameMembersArray.current = gameMembersArray;
+  }, [gameMembersArray]);
 
   // return
 

@@ -10,32 +10,32 @@ const overflowXSafeOffset = -50;
 const GameCanvas: FC = () => {
   // selectors
 
-  const objectsArray = useSelector(selectors.round.selectObjectsAsArray);
+  const membersArray = useSelector(selectors.round.selectMembersAsArray);
   const areaWidth = useSelector(selectors.area.selectWidth);
 
   // return
 
   return (
     <div className="game-canvas">
-      {objectsArray.map(object => {
-        const rightOverflow = object.x + object.width - areaWidth;
-        const leftOverflow = -object.x;
+      {membersArray.map(member => {
+        const rightOverflow = member.position.x + member.width - areaWidth;
+        const leftOverflow = -member.position.x;
 
         return (
-          <Fragment key={object.id}>
+          <Fragment key={member.id}>
             {/* center copy */}
-            {leftOverflow < object.width - overflowXSafeOffset &&
-              rightOverflow < object.width - overflowXSafeOffset && (
+            {leftOverflow < member.width - overflowXSafeOffset &&
+              rightOverflow < member.width - overflowXSafeOffset && (
                 <DraggableElement
-                  key={object.id}
+                  key={member.id}
                   styles={{
-                    width: object.width,
-                    height: object.height,
-                    backgroundColor: object.color
+                    width: member.width,
+                    height: member.height,
+                    backgroundColor: member.color
                   }}
-                  id={object.id}
-                  x={object.x}
-                  y={object.y}
+                  id={member.id}
+                  x={member.position.x}
+                  y={member.position.y}
                   text={"center"}
                 />
               )}
@@ -43,15 +43,15 @@ const GameCanvas: FC = () => {
             {/* left copy */}
             {rightOverflow > overflowXSafeOffset && (
               <DraggableElement
-                key={object.id + "-left"}
+                key={member.id + "-left"}
                 styles={{
-                  width: object.width,
-                  height: object.height,
-                  backgroundColor: object.color
+                  width: member.width,
+                  height: member.height,
+                  backgroundColor: member.color
                 }}
-                id={object.id}
-                x={object.x}
-                y={object.y}
+                id={member.id}
+                x={member.position.x}
+                y={member.position.y}
                 xOffset={-areaWidth}
                 text={"left"}
               />
@@ -60,15 +60,15 @@ const GameCanvas: FC = () => {
             {/* right copy */}
             {leftOverflow > overflowXSafeOffset && (
               <DraggableElement
-                key={object.id + "-right"}
+                key={member.id + "-right"}
                 styles={{
-                  width: object.width,
-                  height: object.height,
-                  backgroundColor: object.color
+                  width: member.width,
+                  height: member.height,
+                  backgroundColor: member.color
                 }}
-                id={object.id}
-                x={object.x}
-                y={object.y}
+                id={member.id}
+                x={member.position.x}
+                y={member.position.y}
                 xOffset={areaWidth}
                 text={"right"}
               />

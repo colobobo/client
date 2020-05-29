@@ -1,17 +1,17 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads, GameObjects } from "@colobobo/library";
+import { payloads, Members } from "@colobobo/library";
 
 export interface RoundState {
   tick: number;
-  objects: GameObjects;
+  members: Members;
 }
 
 export const slice = createSlice({
   name: "round",
   initialState: {
-    objects: {}
+    members: {}
   } as RoundState,
   reducers: {
     init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {},
@@ -25,7 +25,7 @@ export const slice = createSlice({
       action: PayloadAction<payloads.round.Success>
     ) => {},
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
-      state.objects = action.payload.data.objects;
+      state.members = action.payload.data.members;
       state.tick = action.payload.data.tick;
     }
   }
@@ -35,17 +35,18 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.round;
 const selectTick = (state: RootState) => getRoot(state).tick;
-const selectObject = (state: RootState, { id }: { id: string }) =>
-  getRoot(state).objects[id];
-const selectObjects = (state: RootState) => getRoot(state).objects;
-const selectObjectsAsArray = createSelector(selectObjects, objects =>
+const selectMember = (state: RootState, { id }: { id: string }) =>
+  getRoot(state).members[id];
+const selectMembers = (state: RootState) => getRoot(state).members;
+const selectMembersAsArray = createSelector(selectMembers, objects =>
   Object.keys(objects).map(objectId => ({ ...objects[objectId], id: objectId }))
 );
 
 export const selectors = {
   selectTick,
-  selectObject,
-  selectObjectsAsArray
+  selectMember,
+  selectMembers,
+  selectMembersAsArray: selectMembersAsArray
 };
 
 // reducer / actions

@@ -73,8 +73,14 @@ const DraggableElement: FC<Props> = ({
 
       dispatch(
         actions.webSocket.emit.round.memberMove({
-          x: x - xOffset,
-          y,
+          position: {
+            x: x - xOffset,
+            y
+          },
+          velocity: {
+            x: 0,
+            y: 0
+          },
           id
         })
       );
