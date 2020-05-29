@@ -66,7 +66,7 @@ const Landing: FC = () => {
           <option value="en">{t("languages.english")}</option>
         </select>
 
-        <Link to="/join" className="landing__about button button--yellow">
+        <Link to="/about" className="landing__about button button--yellow">
           ?
         </Link>
 

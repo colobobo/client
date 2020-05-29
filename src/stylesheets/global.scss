@@ -9,6 +9,7 @@ body {
   // @include defineHeight;
   @include mikado;
   font-size: 16px;
+  line-height: 1.5em;
   margin: 0;
   padding: 0;
 }
@@ -34,6 +35,12 @@ p {
 
 a {
   text-decoration: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
 }
 
 input,
