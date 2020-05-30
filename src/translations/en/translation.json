@@ -23,6 +23,11 @@
       "signature": "Colobobo - 2020"
     }
   },
+  "header": {
+    "code": {
+      "description": "Game code :"
+    }
+  },
   "room": {
     "title": "Room's ID :",
     "player": "Player",
@@ -34,7 +39,7 @@
     }
   },
   "join": {
-    "label": "Room number",
+    "label": "To join a game, enter the code corresponding to it:",
     "buttons": {
       "join": "Join"
     }

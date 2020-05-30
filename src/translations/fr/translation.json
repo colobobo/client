@@ -23,6 +23,11 @@
       "signature": "Colobobo - 2020"
     }
   },
+  "header": {
+    "code": {
+      "description": "Code de la partie :"
+    }
+  },
   "room": {
     "title": "ID de la partie :",
     "player": "Joueur",
@@ -34,7 +39,7 @@
     }
   },
   "join": {
-    "label": "Numéro de la partie",
+    "label": "Pour rejoindre une partie, entrez le code correspondant à celle-ci :",
     "buttons": {
       "join": "Rejoindre"
     }
