@@ -40,8 +40,8 @@
   },
   "join": {
     "label": "To join a game, enter the code corresponding to it:",
-    "buttons": {
-      "join": "Join"
+    "message": {
+      "error": "This code doesn't match any game.<br>Please re-try."
     }
   }
 }

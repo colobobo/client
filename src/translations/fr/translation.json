@@ -40,8 +40,8 @@
   },
   "join": {
     "label": "Pour rejoindre une partie, entrez le code correspondant à celle-ci :",
-    "buttons": {
-      "join": "Rejoindre"
+    "message": {
+      "error": "Ce code ne correspond à aucune partie.<br>Veuillez ré-essayer."
     }
   }
 }

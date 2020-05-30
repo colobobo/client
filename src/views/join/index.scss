@@ -16,6 +16,10 @@
     text-align: center;
 
     .form {
+      &__field {
+        position: relative;
+      }
+
       &__label {
         display: block;
         margin: 0 auto 10px auto;
@@ -37,6 +41,16 @@
         &::placeholder {
           opacity: 0.1;
         }
+      }
+
+      &__error {
+        font-size: 0.5rem;
+        line-height: 0.7rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        color: $red;
       }
 
       &__numeric-keypad {

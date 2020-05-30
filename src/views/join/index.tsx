@@ -17,10 +17,12 @@ import "./index.scss";
 
 const Join: FC = () => {
   const { t } = useTranslation();
+  const codeLength = 4;
 
   // states
 
-  const [inputRoomId, setInputRoomId] = useState("");
+  const [inputRoomId, setInputRoomId] = useState<string>("");
+  const [errorStatus, setErrorStatus] = useState<boolean>(false);
 
   // store
   const dispatch = useDispatch();
@@ -32,31 +34,35 @@ const Join: FC = () => {
 
   // handlers
 
-  const handleOnClickStart = useCallback(
-    event => {
-      event.preventDefault();
-      dispatch(
-        actions.webSocket.emit.room.join({
-          height: screenSize.height,
-          width: screenSize.width,
-          id: inputRoomId
-        })
-      );
-    },
-    [dispatch, inputRoomId, screenSize]
-  );
+  const joinRoom = useCallback(() => {
+    dispatch(
+      actions.webSocket.emit.room.join({
+        height: screenSize.height,
+        width: screenSize.width,
+        id: inputRoomId
+      })
+    );
+  }, [dispatch, inputRoomId, screenSize]);
 
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);
   }, []);
 
   const handleOnBackKeyClick = useCallback(() => {
-    console.log("back key press");
-  }, []);
+    const inputValue = inputRoomId.slice(0, -1);
+    setInputRoomId(inputValue);
+    setErrorStatus(false);
+  }, [inputRoomId]);
 
-  const handleOnNumericKeyClick = useCallback(() => {
-    console.log("back key press");
-  }, []);
+  const handleOnNumericKeyClick = useCallback(
+    (value: number) => {
+      if (inputRoomId.length < codeLength) {
+        const inputValue = inputRoomId + value.toString();
+        setInputRoomId(inputValue);
+      }
+    },
+    [inputRoomId]
+  );
 
   const numericKeypad = useMemo(() => {
     let numbersKey: any[] = [];
@@ -66,7 +72,7 @@ const Join: FC = () => {
         <div
           className="button button--yellow"
           key={i}
-          onClick={handleOnNumericKeyClick}
+          onClick={() => handleOnNumericKeyClick(i)}
         >
           <span>{i}</span>
         </div>
@@ -84,6 +90,18 @@ const Join: FC = () => {
     }
   }, [history, roomId]);
 
+  useEffect(() => {
+    if (inputRoomId.length === codeLength) {
+      joinRoom();
+    }
+  }, [inputRoomId.length, joinRoom]);
+
+  useEffect(() => {
+    if (roomError === 1) {
+      setErrorStatus(true);
+    }
+  }, [roomError]);
+
   // return
 
   return (
@@ -91,27 +109,38 @@ const Join: FC = () => {
       <InterfaceHeader type="join" />
 
       <div className="join__container">
-        <form onSubmit={handleOnClickStart} className="join__form">
-          <label className="form__label" htmlFor="roomId">
-            {t("join.label")}
-          </label>
-          <input
-            type="text"
-            value={inputRoomId}
-            onChange={handleChange}
-            className="form__input"
-            name="roomId"
-            id="roomId"
-            inputMode="none"
-            placeholder="0000"
-            maxLength={4}
-          />
+        <form className="join__form">
+          <div className="form__field">
+            <label className="form__label" htmlFor="roomId">
+              {t("join.label")}
+            </label>
+            <input
+              type="text"
+              value={inputRoomId}
+              onChange={handleChange}
+              className="form__input"
+              name="roomId"
+              id="roomId"
+              inputMode="none"
+              placeholder="0000"
+              maxLength={codeLength}
+            />
+            {errorStatus && (
+              <p
+                className="form__error"
+                dangerouslySetInnerHTML={{
+                  __html: t("join.message.error")
+                }}
+              />
+            )}
+          </div>
           <div className="form__numeric-keypad">
             {numericKeypad}
             <div className="button button--yellow" />
             <div
               className="button button--yellow"
-              onClick={handleOnNumericKeyClick}
+              data-value="0"
+              onClick={() => handleOnNumericKeyClick(0)}
             >
               <span>0</span>
             </div>
@@ -125,7 +154,6 @@ const Join: FC = () => {
             </div>
           </div>
         </form>
-        <div className="join__error">{roomError}</div>
       </div>
     </div>
   );
