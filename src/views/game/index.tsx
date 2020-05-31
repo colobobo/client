@@ -11,7 +11,7 @@ const Game: FC = () => {
   // return
 
   return (
-    <div className="game">
+    <div style={{ backgroundColor: "#A4E7FF" }} className="game">
       <Area height="min">
         <GameBackground />
         <GameDecoration position="top" />

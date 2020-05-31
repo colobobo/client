@@ -16,7 +16,7 @@ const GameDecoration: FC<Props> = ({ position }) => {
       <div
         className="source"
         style={{
-          backgroundImage: `url(${require("../../assets/worlds/jungle/decorations/" +
+          backgroundImage: `url(${require("../../assets/worlds/mountain/decorations/" +
             position +
             ".png")})`
         }}

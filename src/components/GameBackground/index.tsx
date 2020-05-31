@@ -10,13 +10,13 @@ const GameBackground: FC = () => {
       <div
         className="game-decoration__background"
         style={{
-          backgroundImage: `url(${require("../../assets/worlds/jungle/background-1.png")})`
+          backgroundImage: `url(${require("../../assets/worlds/mountain/background-1.png")})`
         }}
       ></div>
       <div
         className="game-decoration__background"
         style={{
-          backgroundImage: `url(${require("../../assets/worlds/jungle/background-2.png")})`
+          backgroundImage: `url(${require("../../assets/worlds/mountain/background-2.png")})`
         }}
       ></div>
     </div>
