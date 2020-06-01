@@ -1025,7 +1025,7 @@
 
 "@colobobo/library@https://github.com/colobobo/library":
   version "1.0.0"
-  resolved "https://github.com/colobobo/library#026f058da0fffe9e256dd0c19fb3a99d92d77a18"
+  resolved "https://github.com/colobobo/library#f56036b44792e5e4c3010244ad0865f57a7b8ec7"
   dependencies:
     prettier "^2.0.1"
     tslint "^6.1.0"

@@ -25,6 +25,7 @@ const GamePhaser: FC = () => {
   const areaHeight = useSelector(selectors.area.selectMinHeight);
   const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
   const deviceId = useSelector(selectors.room.selectDeviceId);
+  const isRoundStarted = useSelector(selectors.round.selectIsStarted);
 
   // ref
 
@@ -189,7 +190,7 @@ const GamePhaser: FC = () => {
 
   // phaser main scene
 
-  const mainScene = useMemo(
+  const mainScene = useMemo<Phaser.Types.Scenes.CreateSceneFromObjectConfig>(
     () => ({
       key: mainSceneKey,
       preload,
@@ -265,6 +266,16 @@ const GamePhaser: FC = () => {
     }
   }, [isGameReady, update]);
 
+  // listen isRoundStarted -> wake or sleep scene
+
+  useEffect(() => {
+    if (isGameReady) {
+      isRoundStarted
+        ? $game.current!.scene.wake(mainSceneKey)
+        : $game.current!.scene.sleep(mainSceneKey);
+    }
+  }, [isGameReady, isRoundStarted]);
+
   // listen game objects update
 
   useEffect(() => {
@@ -276,6 +287,14 @@ const GamePhaser: FC = () => {
   useEffect(() => {
     $gameMembersArray.current = gameMembersArray;
   }, [gameMembersArray]);
+
+  // on unmount : stop game
+
+  useEffect(() => {
+    return () => {
+      dispatch(actions.round.stop());
+    };
+  }, []);
 
   // return
 

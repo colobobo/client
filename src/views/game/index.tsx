@@ -1,27 +1,21 @@
 import React, { FC } from "react";
-import Area from "../../components/Area";
-import GameDecorationBleed from "../../components/GameDecorationBleed";
-import GameDecoration from "../../components/GameDecoration";
-import GameBackground from "../../components/GameBackground";
-
+import Round from "./round";
+import Transition from "./transition";
+import { useSelector } from "react-redux";
+import { selectors } from "../../redux";
+import { enums } from "@colobobo/library";
 import "./index.scss";
-import GamePhaser from "../../components/GamePhaser";
 
 const Game: FC = () => {
   // return
 
+  const sceneType = useSelector(selectors.game.selectSceneType);
+
   return (
-    <div style={{ backgroundColor: "#A4E7FF" }} className="game">
-      <Area height="min">
-        <GameBackground />
-        <GameDecoration position="top" />
-        <GameDecoration position="bottom" />
-        <GamePhaser />
-      </Area>
-      <Area height="max">
-        <GameDecorationBleed position="top" />
-        <GameDecorationBleed position="bottom" />
-      </Area>
+    <div className="game">
+      {/* TODO : animate transition */}
+      {sceneType === enums.scene.Type.round && <Round />}
+      {sceneType === enums.scene.Type.transition && <Transition />}
     </div>
   );
 };
