@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useEffect, useState } from "react";
 
 // store
 import { selectors } from "../../redux";
@@ -12,13 +12,27 @@ interface Props {
 }
 
 const GameDecorationBleed: FC<Props> = ({ position }) => {
+  const [decorationHeight, setDecorationHeight] = useState<number>(0);
+
   // selectors
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const areaMaxHeight = useTypedSelector(selectors.area.selectMaxHeight);
 
+  useEffect(() => {
+    const $decoration = document.querySelector(
+      `.game-decoration__foreground--${position}`
+    ) as HTMLElement;
+    const height = $decoration?.offsetHeight * 2;
+    setDecorationHeight(height);
+  }, [position]);
+
   const bleedHeight = useMemo(() => {
     return (areaMaxHeight - areaMinHeight) / 2;
   }, [areaMinHeight, areaMaxHeight]);
+
+  const colorBleedHeight = useMemo(() => {
+    return decorationHeight > 0 ? bleedHeight - decorationHeight : 0;
+  }, [bleedHeight, decorationHeight]);
 
   // return
   return (
@@ -26,14 +40,21 @@ const GameDecorationBleed: FC<Props> = ({ position }) => {
       className={`game-decoration__bleed game-decoration__bleed--${position}`}
       style={{ height: `${bleedHeight}px` }}
     >
-      <div
-        className="source"
-        style={{
-          backgroundImage: `url(${require("../../assets/worlds/jungle/decorations/" +
-            position +
-            ".png")})`
-        }}
-      ></div>
+      <div className="source__container">
+        <div
+          className="source"
+          style={{
+            height: `${decorationHeight}px`,
+            backgroundImage: `url(${require("../../assets/worlds/mountain/decorations/bleeds/" +
+              position +
+              ".png")})`
+          }}
+        ></div>
+        <div
+          className="source__color-bleed"
+          style={{ height: `${colorBleedHeight}px` }}
+        ></div>
+      </div>
     </div>
   );
 };
