@@ -29,10 +29,14 @@
     }
   },
   "room": {
-    "title": "ID de la partie :",
-    "player": "Joueur",
+    "description": "Placez votre téléphone selon la disposition indiquée :",
+    "creatorDescription": "Choisissez une disposition et placez votre téléphone comme indiqué :",
     "buttons": {
-      "start": "Commencer"
+      "placement": {
+        "inline": "Ligne",
+        "round": "Cercle"
+      },
+      "start": "Lancer la partie"
     },
     "waiting": {
       "title": "Vous êtes bien dans la room :"

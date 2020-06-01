@@ -30,7 +30,7 @@ const InterfaceHeader: FC<Props> = ({ type, code }) => {
         {type === "create" && (
           <div>
             <p>{t("header.code.description")}</p>
-            <p className="header__logo">7623</p>
+            <p className="header__code">{code}</p>
           </div>
         )}
       </div>

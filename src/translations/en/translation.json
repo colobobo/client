@@ -29,10 +29,14 @@
     }
   },
   "room": {
-    "title": "Room's ID :",
-    "player": "Player",
+    "description": "Place your phone as shown :",
+    "creatorDescription": "Choose a placement and place your phone as shown :",
     "buttons": {
-      "start": "Start"
+      "placement": {
+        "inline": "Inline",
+        "round": "Round"
+      },
+      "start": "Start the game"
     },
     "waiting": {
       "title": "You are in the room :"

@@ -47,9 +47,7 @@ input,
 button,
 textarea,
 select {
-  &:focus,
-  &:active,
-  &hover {
+  &:focus {
     outline: none;
   }
 }

@@ -12,6 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  position: relative;
 
   &__back {
     position: absolute;
@@ -27,6 +30,12 @@
 
   &__logo {
     width: 130px;
+  }
+
+  &__code {
+    @include mikado-black;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
 }
 
