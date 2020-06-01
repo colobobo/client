@@ -1,0 +1,80 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.about {
+  &__back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  &__summary {
+    background: $yellow;
+    color: $blue-dark;
+    padding: 30px 0;
+    text-align: center;
+
+    .summary {
+      &__logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+      &__description {
+        padding: 0 50px;
+      }
+      &__illustrations {
+        margin-top: 20px;
+        position: relative;
+
+        img {
+          &:first-child {
+            width: 30%;
+            position: absolute;
+            right: 0;
+          }
+          &:last-child {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &__introduction {
+    background: $blue;
+    color: $white;
+    padding: 50px 0 30px 0;
+    text-align: center;
+
+    .introduction {
+      &__description {
+        padding: 0 50px 40px 50px;
+      }
+      &__team {
+        padding: 0 30px;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: auto;
+        column-gap: 5%;
+        row-gap: 30px;
+
+        .person {
+          &__role,
+          &__name {
+            font-size: 0.8em;
+            line-height: 1.2em;
+          }
+          &__name {
+            @include mikado-bold;
+            margin-bottom: 5px;
+          }
+          &__picture {
+            width: 100%;
+          }
+        }
+      }
+      &__acknowledgements {
+        margin: 60px 0 80px 0;
+        padding: 0 50px 0 50px;
+      }
+    }
+  }
+}

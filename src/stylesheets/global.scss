@@ -1,8 +1,3 @@
-@mixin defineHeight {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -12,7 +7,9 @@ body {
   width: 100%;
   height: 100%;
   // @include defineHeight;
-  font-family: "Roboto";
+  @include mikado;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -40,6 +37,12 @@ a {
   text-decoration: none;
 }
 
+ol,
+ul,
+li {
+  list-style: none;
+}
+
 input,
 button,
 textarea,
@@ -57,20 +60,35 @@ select {
 
 .button {
   cursor: pointer;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 18px;
-  padding: 10px 30px;
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+  max-width: 300px;
+  @include mikado-medium;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid $blue-dark;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
 
-  &--orange {
-    background: #ef8354;
+  &--yellow {
+    background: $yellow;
+    color: $blue-dark;
+
+    -moz-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
+    -webkit-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
+    box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
   }
 
   &--blue {
-    background: #2d3142;
+    background: $blue;
+    color: $white;
+
+    -moz-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+    -webkit-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+    box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
   }
 }

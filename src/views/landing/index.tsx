@@ -9,6 +9,9 @@ import { selectors, actions } from "../../redux";
 // style
 import "./index.scss";
 
+// assets
+import logo from "../../assets/logo/logo-simple.png";
+
 const Landing: FC = () => {
   const { t, i18n } = useTranslation();
   const history = useHistory();
@@ -63,10 +66,18 @@ const Landing: FC = () => {
           <option value="en">{t("languages.english")}</option>
         </select>
 
+        <Link to="/about" className="landing__about button button--yellow">
+          ?
+        </Link>
+
+        <div className="landing__center">
+          <img className="landing__logo" src={logo} alt="Logo" />
+        </div>
+
         <div className="landing__actions">
           <button
             onClick={handleOnClickCreateRoom}
-            className="landing__action button button--orange"
+            className="landing__action button button--yellow"
           >
             {t("landing.buttons.create")}
           </button>

@@ -9,6 +9,25 @@
       "join": "Rejoindre une partie"
     }
   },
+  "about": {
+    "summary": {
+      "description": "Colobobo est un <b>jeu multijoueur sur mobile</b>. Les téléphones, disposés les uns à côté des autres forment l'interface de jeu commune.<br><br>Dans ce jeu, vous incarnez un <b>moniteur de colonie</b> légèrement inconscient qui emmène des enfants en exploration.<br><br><b>Collaborez, communiquez</b> et surtout <b>soyez réactifs</b> afin d'aller le plus loin possible dans l'expédition !"
+    },
+    "introduction": {
+      "description": "Colobo a été réalisé dans le cadre de notre projet de fin d'année à <b>Gobelins - l'Ecole de l'Image</b>. Il a été réalisé par :",
+      "role": {
+        "developer": "Développement",
+        "designer": "Direction Artistique"
+      },
+      "acknowledgements": "Nous remercions toutes les personnes ayant participé à l'aboutissement de ce projet.",
+      "signature": "Colobobo - 2020"
+    }
+  },
+  "header": {
+    "code": {
+      "description": "Code de la partie :"
+    }
+  },
   "room": {
     "title": "ID de la partie :",
     "player": "Joueur",
@@ -20,9 +39,9 @@
     }
   },
   "join": {
-    "label": "Numéro de la partie",
-    "buttons": {
-      "join": "Rejoindre"
+    "label": "Pour rejoindre une partie, entrez le code correspondant à celle-ci :",
+    "message": {
+      "error": "Ce code ne correspond à aucune partie.<br>Veuillez ré-essayer."
     }
   }
 }

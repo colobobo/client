@@ -9,6 +9,25 @@
       "join": "Join a room"
     }
   },
+  "about": {
+    "summary": {
+      "description": "Colobobo is a <b>multiplayer game on mobile</b>. Mobiles, placed side by side, create the common game interface.<br><br>In this game, you play as a slightly oblivious <b> colony monitor </b> who takes children on an exploration.<br><br><b>Collaborate, communicate </b> and above all <b> be reactive </b> to go as far as possible in the expedition!"
+    },
+    "introduction": {
+      "description": "Colobo was produced as part of our end-of-year project at <b>Gobelins - the Image School</b>. It was produced by:",
+      "role": {
+        "developer": "Development",
+        "designer": "Arts Department"
+      },
+      "acknowledgements": "Thanks for all people who helped us during this projet.",
+      "signature": "Colobobo - 2020"
+    }
+  },
+  "header": {
+    "code": {
+      "description": "Game code :"
+    }
+  },
   "room": {
     "title": "Room's ID :",
     "player": "Player",
@@ -20,9 +39,9 @@
     }
   },
   "join": {
-    "label": "Room number",
-    "buttons": {
-      "join": "Join"
+    "label": "To join a game, enter the code corresponding to it:",
+    "message": {
+      "error": "This code doesn't match any game.<br>Please re-try."
     }
   }
 }
