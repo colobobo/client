@@ -3,6 +3,9 @@ import React, { FC, useCallback, useMemo } from "react";
 // assets
 import { ReactComponent as Chevron } from "../../assets/icons/chevron.svg";
 
+// components
+import InterfaceButton from "../../components/InterfaceButton";
+
 // style
 import "./index.scss";
 
@@ -39,13 +42,12 @@ const NumericKeypad: FC<Props> = ({
 
     for (let i = 1; i < 10; i++) {
       const numberKey = (
-        <div
-          className="button button--yellow"
+        <InterfaceButton
+          actionOnClick={() => handleOnNumericKeyClick(i)}
           key={i}
-          onClick={() => handleOnNumericKeyClick(i)}
-        >
-          <span>{i}</span>
-        </div>
+          color="yellow"
+          text={i.toString()}
+        />
       );
 
       numbersKey.push(numberKey);

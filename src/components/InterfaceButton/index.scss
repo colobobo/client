@@ -1,0 +1,37 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.button {
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  max-width: 300px;
+  @include mikado-medium;
+  letter-spacing: 1px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 2px solid $blue-dark;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+
+  &--yellow {
+    background: $yellow;
+    color: $blue-dark;
+
+    -moz-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
+    -webkit-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
+    box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
+  }
+
+  &--blue {
+    background: $blue;
+    color: $white;
+
+    -moz-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+    -webkit-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+    box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+  }
+}

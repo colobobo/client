@@ -2,7 +2,7 @@
 @import "../../stylesheets/variables.scss";
 
 .numeric-keypad {
-  width: 90%;
+  width: 65vw;
   max-width: 300px;
   margin: 30px auto 0 auto;
   display: grid;
@@ -13,7 +13,7 @@
 
   .button {
     width: 25%;
-    height: fit-content;
+    height: 0;
     border-radius: 50%;
     padding-top: calc(25% - 4px);
     position: relative;

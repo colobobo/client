@@ -53,40 +53,6 @@
         color: $red;
       }
 
-      &__numeric-keypad {
-        width: 90%;
-        max-width: 300px;
-        margin: 30px auto 0 auto;
-        display: grid;
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .button {
-          width: 25%;
-          height: fit-content;
-          border-radius: 50%;
-          padding-top: calc(25% - 4px);
-          position: relative;
-          margin-bottom: 15px;
-          @include mikado-medium;
-          font-size: 1.4rem;
-
-          &:nth-of-type(3n + 2) {
-            margin: 0 12.5%;
-          }
-
-          span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            line-height: 0;
-          }
-        }
-      }
-
       &__action {
         margin: 0 auto;
       }

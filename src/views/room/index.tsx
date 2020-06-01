@@ -9,6 +9,7 @@ import { useTypedSelector } from "../../redux/store";
 
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceButton from "../../components/InterfaceButton";
 
 // assets
 import mobileIcon from "../../assets/illustrations/mobile.png";
@@ -122,12 +123,12 @@ const Room: FC = () => {
           </div>
         </div>
         {isCreator && (
-          <button
-            onClick={handleOnClickStart}
-            className="room__action button button--blue"
-          >
-            {t("room.buttons.start")}
-          </button>
+          <InterfaceButton
+            actionOnClick={handleOnClickStart}
+            color="blue"
+            text={t("room.buttons.start")}
+            extraClass="room__action"
+          />
         )}
       </div>
     </div>
