@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState, useEffect, useMemo } from "react";
+import React, { FC, useCallback, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -8,9 +8,7 @@ import { selectors, actions } from "../../redux";
 
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
-
-// assets
-import { ReactComponent as Chevron } from "../../assets/icons/chevron.svg";
+import NumericKeypad from "../../components/NumericKeypad";
 
 // style
 import "./index.scss";
@@ -48,41 +46,16 @@ const Join: FC = () => {
     setInputRoomId(event.target.value);
   }, []);
 
-  const handleOnBackKeyClick = useCallback(() => {
-    const inputValue = inputRoomId.slice(0, -1);
-    setInputRoomId(inputValue);
-    setErrorStatus(false);
-  }, [inputRoomId]);
+  const handleChangeInputRoomId = useCallback(
+    (value: string) => {
+      setInputRoomId(value);
 
-  const handleOnNumericKeyClick = useCallback(
-    (value: number) => {
-      if (inputRoomId.length < codeLength) {
-        const inputValue = inputRoomId + value.toString();
-        setInputRoomId(inputValue);
+      if (inputRoomId.length === codeLength && errorStatus) {
+        setErrorStatus(false);
       }
     },
-    [inputRoomId]
+    [errorStatus, inputRoomId.length]
   );
-
-  const numericKeypad = useMemo(() => {
-    let numbersKey: any[] = [];
-
-    for (let i = 1; i < 10; i++) {
-      const numberKey = (
-        <div
-          className="button button--yellow"
-          key={i}
-          onClick={() => handleOnNumericKeyClick(i)}
-        >
-          <span>{i}</span>
-        </div>
-      );
-
-      numbersKey.push(numberKey);
-    }
-
-    return numbersKey;
-  }, [handleOnNumericKeyClick]);
 
   useEffect(() => {
     if (roomId) {
@@ -135,23 +108,11 @@ const Join: FC = () => {
             )}
           </div>
           <div className="form__numeric-keypad">
-            {numericKeypad}
-            <div className="button button--yellow" />
-            <div
-              className="button button--yellow"
-              data-value="0"
-              onClick={() => handleOnNumericKeyClick(0)}
-            >
-              <span>0</span>
-            </div>
-            <div
-              className="button button--yellow"
-              onClick={handleOnBackKeyClick}
-            >
-              <span>
-                <Chevron />
-              </span>
-            </div>
+            <NumericKeypad
+              inputValue={inputRoomId}
+              handleChangeInputValue={handleChangeInputRoomId}
+              maxLengthValue={codeLength}
+            />
           </div>
         </form>
       </div>

@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  useRef
-} from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { useHistory, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
