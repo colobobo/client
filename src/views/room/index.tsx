@@ -54,7 +54,6 @@ const Room: FC = () => {
   );
 
   const handleCurrentPlacementChange = useCallback(event => {
-    console.log("change");
     setCurrentPlacement(event.target.value);
   }, []);
 
@@ -65,18 +64,18 @@ const Room: FC = () => {
       <InterfaceHeader type="create" code={roomId} />
 
       <div className="room__container">
-        <p className="room__description">
-          {isCreator ? t("room.creatorDescription") : t("room.description")}
-        </p>
+        <p
+          className="room__description"
+          dangerouslySetInnerHTML={{
+            __html: isCreator
+              ? t("room.creatorDescription")
+              : t("room.description")
+          }}
+        ></p>
         {isCreator && (
           <div className="room__selection">
-            {placements.map(placement => (
-              <div className="room__choice">
-                <InterfaceButton
-                  color="yellow"
-                  text={t(`room.placement.${placement}`)}
-                />
-                <label htmlFor={placement} />
+            {placements.map((placement, index) => (
+              <div className="room__choice" key={index}>
                 <input
                   type="radio"
                   id={placement}
@@ -85,6 +84,12 @@ const Room: FC = () => {
                   checked={currentPlacement === placement}
                   onChange={handleCurrentPlacementChange}
                 />
+                <InterfaceButton
+                  color="yellow"
+                  text={t(`room.placement.${placement}`)}
+                  extraClass="button--small"
+                />
+                <label htmlFor={placement} />
               </div>
             ))}
           </div>

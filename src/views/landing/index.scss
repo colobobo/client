@@ -6,7 +6,7 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px;
+  padding: 40px 30px;
 
   &__container {
     position: relative;
@@ -19,7 +19,7 @@
     font-size: 22px;
     position: absolute;
     top: -20px;
-    left: -20px;
+    left: -10px;
   }
 
   &__center {

@@ -25,13 +25,11 @@
         margin: 0 auto 10px auto;
         text-align: center;
         max-width: 200px;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
       }
 
       &__input {
         @include mikado-black;
-        font-size: 4.5rem;
+        font-size: 4.6rem;
         width: 220px;
         text-align: center;
         border: none;

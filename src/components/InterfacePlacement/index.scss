@@ -2,23 +2,33 @@
 @import "../../stylesheets/variables.scss";
 
 .placement {
-  &__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 100%;
 
   &__players {
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.inline {
-      display: flex;
-      justify-content: center;
+      height: initial !important;
+    }
+
+    &.round {
+      max-width: 250px;
+      margin: 0 auto;
+
+      .placement__player {
+        margin: 0;
+      }
     }
   }
 
   &__player {
-    width: 50px;
+    width: 20%;
+    max-width: 45px;
+    height: fit-content;
     position: relative;
     opacity: 0.5;
 
@@ -41,6 +51,19 @@
       top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media #{$smallMobile} {
+  .placement {
+    &__players {
+      &.round {
+        max-width: 200px;
+      }
+    }
+    &__player {
+      width: 16%;
     }
   }
 }

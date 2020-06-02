@@ -8,7 +8,7 @@
   max-width: 300px;
   @include mikado-medium;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 1.1rem;
   text-transform: uppercase;
   border: 2px solid $blue-dark;
   border-radius: 30px;
@@ -33,5 +33,9 @@
     -moz-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
     -webkit-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
     box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
+  }
+
+  &--small {
+    height: 45px;
   }
 }

@@ -5,12 +5,13 @@ import "./index.scss";
 
 interface Props {
   color: string;
-  text: string;
+  text?: string;
   extraClass?: string;
   actionOnClick?: any;
 }
 
 const InterfaceButton: FC<Props> = ({
+  children,
   color,
   text,
   extraClass,
@@ -18,12 +19,13 @@ const InterfaceButton: FC<Props> = ({
 }) => {
   // return
   return (
-    <button
+    <div
       onClick={actionOnClick}
-      className={`${extraClass} button button--${color}`}
+      className={`${extraClass ? extraClass : ""} button button--${color}`}
     >
-      <span>{text}</span>
-    </button>
+      {text && <span>{text}</span>}
+      {children}
+    </div>
   );
 };
 

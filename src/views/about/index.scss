@@ -59,8 +59,8 @@
         .person {
           &__role,
           &__name {
-            font-size: 0.8em;
-            line-height: 1.2em;
+            font-size: 0.9rem;
+            line-height: 1.2rem;
           }
           &__name {
             @include mikado-bold;

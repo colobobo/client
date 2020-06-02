@@ -61,19 +61,17 @@ const NumericKeypad: FC<Props> = ({
   return (
     <div className="numeric-keypad">
       {numericKeypad}
-      <div className="button button--yellow" />
-      <div
-        className="button button--yellow"
-        data-value="0"
-        onClick={() => handleOnNumericKeyClick(0)}
-      >
-        <span>0</span>
-      </div>
-      <div className="button button--yellow" onClick={handleOnBackKeyClick}>
+      <InterfaceButton color="yellow" />
+      <InterfaceButton
+        actionOnClick={() => handleOnNumericKeyClick(0)}
+        color="yellow"
+        text={"0"}
+      />
+      <InterfaceButton actionOnClick={handleOnBackKeyClick} color="yellow">
         <span>
           <Chevron />
         </span>
-      </div>
+      </InterfaceButton>
     </div>
   );
 };

@@ -84,9 +84,13 @@ const Join: FC = () => {
       <div className="join__container">
         <form className="join__form">
           <div className="form__field">
-            <label className="form__label" htmlFor="roomId">
-              {t("join.label")}
-            </label>
+            <label
+              className="form__label"
+              htmlFor="roomId"
+              dangerouslySetInnerHTML={{
+                __html: t("join.label")
+              }}
+            ></label>
             <input
               type="text"
               value={inputRoomId}
