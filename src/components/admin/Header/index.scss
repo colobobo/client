@@ -1,3 +1,5 @@
+@import "../../../stylesheets/mixins.scss";
+
 .admin-header {
   z-index: 5;
   position: fixed;
@@ -28,9 +30,7 @@
 
     &.home {
       margin-right: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include display-center;
       text-transform: initial;
       font-size: 22px;
 

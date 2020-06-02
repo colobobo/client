@@ -12,9 +12,7 @@
   text-transform: uppercase;
   border: 2px solid $blue-dark;
   border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-center;
   -webkit-appearance: none;
 
   &--yellow {

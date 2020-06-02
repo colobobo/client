@@ -39,9 +39,9 @@ const InterfacePlacement: FC<Props> = ({ placement }) => {
 
     playersContainer.style.height = `${playersContainer.offsetWidth}px`;
 
-    const degree = 360 / devicesArray.length;
+    const degree = 360 / players.length;
     const radius = playersContainer.offsetWidth / 3;
-    const step = (2 * Math.PI) / devicesArray.length;
+    const step = (2 * Math.PI) / players.length;
 
     let angle = 0;
     let incrementDegree = 0;

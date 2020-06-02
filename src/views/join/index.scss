@@ -6,6 +6,8 @@
   height: 100%;
 
   &__container {
+    max-width: 500px;
+    margin: 0 auto;
     height: calc(100% - 130px);
     padding: 30px;
     display: flex;

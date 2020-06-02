@@ -30,7 +30,7 @@
   },
   "room": {
     "description": "Placez votre téléphone selon la disposition indiquée :",
-    "creatorDescription": "Choisissez une disposition et placez votre téléphone comme indiqué :",
+    "creatorDescription": "Choisissez une disposition et placez<br>votre téléphone comme indiqué :",
     "placement": {
       "inline": "Ligne",
       "round": "Cercle"
@@ -43,7 +43,7 @@
     }
   },
   "join": {
-    "label": "Pour rejoindre une partie, entrez le code correspondant à celle-ci :",
+    "label": "Pour rejoindre une partie, entrez<br>le code correspondant à celle-ci :",
     "message": {
       "error": "Ce code ne correspond à aucune partie.<br>Veuillez ré-essayer."
     }
