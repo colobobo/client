@@ -4,8 +4,6 @@ import { Route, Switch, MemoryRouter } from "react-router-dom";
 // store
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../redux/store";
-import { WebSocketActionTypes } from "../redux/WebSocket/actions/actionCreators";
-import { redux as reduxUtils } from "../utils";
 import { actions, selectors } from "../redux";
 
 //style
@@ -19,7 +17,6 @@ import Game from "./game";
 import About from "./about";
 
 interface Props {
-  device: any;
   isAdmin: boolean;
   adminRoomId?: string;
   autoconnect?: boolean;
@@ -29,7 +26,6 @@ interface Props {
 }
 
 const Client: FC<Props> = ({
-  device,
   isAdmin,
   adminRoomId,
   autoconnect,
@@ -59,14 +55,6 @@ const Client: FC<Props> = ({
   }, [isAdmin, currentDevicePosition, onSetAdminDevicePosition]);
 
   useEffect(() => {
-    reduxUtils.dispatchAll(
-      actions.webSocket,
-      WebSocketActionTypes.wsSubscribe,
-      dispatch
-    );
-  }, [dispatch]);
-
-  useEffect(() => {
     if (roomId && onCreateRoom) {
       onCreateRoom(roomId);
     }
@@ -74,34 +62,19 @@ const Client: FC<Props> = ({
 
   useEffect(() => {
     if (isAdmin) {
-      dispatch(actions.admin.activate());
-    } else {
-      dispatch(actions.admin.disable());
-    }
-  }, [isAdmin, dispatch]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      dispatch(
-        actions.device.addScreenSize({
-          width: device.resolution.width,
-          height: device.resolution.height
-        })
-      );
-
       if (autoconnect) {
         if (!adminRoomId && adminPosition === 0) {
           dispatch(
             actions.webSocket.emit.room.create({
-              width: device.resolution.width,
-              height: device.resolution.height
+              width: window.innerWidth,
+              height: window.innerHeight
             })
           );
         } else if (adminRoomId && adminPosition > 0) {
           dispatch(
             actions.webSocket.emit.room.join({
-              width: device.resolution.width,
-              height: device.resolution.height,
+              width: window.innerWidth,
+              height: window.innerHeight,
               id: adminRoomId
             })
           );

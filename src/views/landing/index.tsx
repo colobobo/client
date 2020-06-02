@@ -25,18 +25,17 @@ const Landing: FC = () => {
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
   const roomError = useSelector(selectors.room.selectError);
-  const screenSize = useSelector(selectors.device.selectScreenSize);
 
   // handlers
 
   const handleOnClickCreateRoom = useCallback(() => {
     dispatch(
       actions.webSocket.emit.room.create({
-        width: screenSize.width,
-        height: screenSize.height
+        width: window.innerWidth,
+        height: window.innerHeight
       })
     );
-  }, [dispatch, screenSize]);
+  }, [dispatch]);
 
   const handleChangeLanguage = useCallback(
     event => {
