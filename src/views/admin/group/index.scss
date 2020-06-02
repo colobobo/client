@@ -5,6 +5,10 @@
     padding: 20px 30px 30px 30px;
   }
 
+  &__title {
+    margin-bottom: 8px;
+  }
+
   &__clients {
     white-space: nowrap;
     display: flex;

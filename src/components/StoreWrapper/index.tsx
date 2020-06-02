@@ -1,7 +1,6 @@
-import React, { FC, useEffect, useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import { Provider } from "react-redux";
 import { getStore } from "../../redux/store";
-import { actions } from "../../redux";
 
 interface StoreWrapperProps {}
 
@@ -10,25 +9,13 @@ const StoreWrapper: FC<StoreWrapperProps> = ({ children }) => {
     return new URLSearchParams(window.location.search);
   }, []);
 
-  const isAdmin = useMemo(() => {
-    return urlParams.has("admin");
-  }, [urlParams]);
-
   const adminDeviceIndex = useMemo(() => {
-    return urlParams.get("admin");
+    return urlParams.get("store_id");
   }, [urlParams]);
 
   const store = useMemo(() => {
     return getStore(adminDeviceIndex ? adminDeviceIndex : "app");
   }, [adminDeviceIndex]);
-
-  // effect
-
-  useEffect(() => {
-    if (store && isAdmin) {
-      store.dispatch(actions.admin.activate());
-    }
-  }, [isAdmin, store]);
 
   // return
 

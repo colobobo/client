@@ -27,7 +27,8 @@ const Join: FC = () => {
   // store
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
-  const roomError = useSelector(selectors.room.selectCode);
+  const roomError = useSelector(selectors.room.selectError);
+  const adminDeviceIndex = useSelector(selectors.admin.selectDeviceIndex);
 
   const history = useHistory();
 
@@ -38,10 +39,11 @@ const Join: FC = () => {
       actions.webSocket.emit.room.join({
         height: window.innerHeight,
         width: window.innerWidth,
-        id: inputRoomId
+        id: inputRoomId,
+        ...(adminDeviceIndex ? { adminIndex: adminDeviceIndex } : {})
       })
     );
-  }, [dispatch, inputRoomId]);
+  }, [adminDeviceIndex, dispatch, inputRoomId]);
 
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);
@@ -85,7 +87,7 @@ const Join: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      history.push("/room/" + roomId, { isCreator: false });
+      history.push("/room/" + roomId);
     }
   }, [history, roomId]);
 
