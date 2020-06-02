@@ -21,6 +21,6 @@ export const getStore = (id: string) =>
       socketMiddleware()
     ] as const,
     devTools: {
-      name: `fnf${id && `-${id}`}`
+      name: `colobobo${id && `-${id}`}`
     }
   });

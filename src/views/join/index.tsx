@@ -28,7 +28,6 @@ const Join: FC = () => {
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
   const roomError = useSelector(selectors.room.selectCode);
-  const screenSize = useSelector(selectors.device.selectScreenSize);
 
   const history = useHistory();
 
@@ -37,12 +36,12 @@ const Join: FC = () => {
   const joinRoom = useCallback(() => {
     dispatch(
       actions.webSocket.emit.room.join({
-        height: screenSize.height,
-        width: screenSize.width,
+        height: window.innerHeight,
+        width: window.innerWidth,
         id: inputRoomId
       })
     );
-  }, [dispatch, inputRoomId, screenSize]);
+  }, [dispatch, inputRoomId]);
 
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);

@@ -1,18 +1,6 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
 import { devices } from "../../../datas/devices";
 
-// translation
-import { I18nextProvider } from "react-i18next";
-import i18n from "../../../translations/i18n";
-
-// views / components
-import Client from "../../../views";
-import StoreWrapper from "../../../components/StoreWrapper";
-
-// store
-import { useSelector } from "react-redux";
-import { selectors } from "../../../redux";
-
 //style
 import "./index.scss";
 
@@ -40,7 +28,6 @@ const Device: FC<Props> = ({
   onCreateRoom,
   autoconnect
 }) => {
-  const adminStatus = useSelector(selectors.admin.selectStatus);
   const [position, setPosition] = useState<number>();
   const [currentDevice, setCurrentDevice] = useState<currentDevice>({
     index: deviceData?.index,
@@ -56,25 +43,29 @@ const Device: FC<Props> = ({
     });
   }, []);
 
-  const handleOnCreateRoom = useCallback(
-    adminRoomId => {
-      if (onCreateRoom) {
-        onCreateRoom(adminRoomId);
-      }
-    },
-    [onCreateRoom]
-  );
+  // const handleOnCreateRoom = useCallback(
+  //   adminRoomId => {
+  //     if (onCreateRoom) {
+  //       onCreateRoom(adminRoomId);
+  //     }
+  //   },
+  //   [onCreateRoom]
+  // );
+  //
+  // const handleOnSetAdminDevicePosition = useCallback(pos => {
+  //   setPosition(pos);
+  // }, []);
 
-  const handleOnSetAdminDevicePosition = useCallback(pos => {
-    setPosition(pos);
-  }, []);
+  const iframeUrlSearchParams = useMemo(() => {
+    const urlSearchParams = new URLSearchParams();
 
-  const deviceSize = {
-    width: currentDevice.resolution.width,
-    height: currentDevice.resolution.height
-  };
+    urlSearchParams.append("admin", userId.toString());
+    if (autoconnect && adminRoomId) {
+      urlSearchParams.append("room", adminRoomId);
+    }
 
-  const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
+    return urlSearchParams.toString();
+  }, [adminRoomId, autoconnect, userId]);
 
   return (
     <div className="device" style={{ order: position }}>
@@ -85,20 +76,26 @@ const Device: FC<Props> = ({
           </option>
         ))}
       </select>
-      <div className="device__screen" style={deviceSize}>
-        <StoreWrapper storeId={userId.toString()}>
-          <I18nextProvider i18n={newI18nInstance}>
-            <Client
-              device={currentDevice}
-              autoconnect={autoconnect}
-              isAdmin={adminStatus}
-              adminPosition={userId}
-              adminRoomId={adminRoomId}
-              onCreateRoom={handleOnCreateRoom}
-              onSetAdminDevicePosition={handleOnSetAdminDevicePosition}
-            />
-          </I18nextProvider>
-        </StoreWrapper>
+      <div
+        className="device__screen"
+        style={{
+          width: currentDevice.resolution.width,
+          height: currentDevice.resolution.height
+        }}
+      >
+        {/*    <Client*/}
+        {/*      device={currentDevice}*/}
+        {/*      autoconnect={autoconnect}*/}
+        {/*      isAdmin={adminStatus}*/}
+        {/*      adminPosition={userId}*/}
+        {/*      adminRoomId={adminRoomId}*/}
+        {/*      onCreateRoom={handleOnCreateRoom}*/}
+        {/*      onSetAdminDevicePosition={handleOnSetAdminDevicePosition}*/}
+        {/*    />*/}
+        <iframe
+          src={`${window.location.origin}?${iframeUrlSearchParams}`}
+          frameBorder="0"
+        />
       </div>
     </div>
   );

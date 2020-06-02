@@ -3,12 +3,17 @@
   text-align: center;
   margin-right: 20px;
 
-  &__screen {
-    overflow: hidden;
-    border: 2px solid black;
-  }
-
   > select {
     margin-bottom: 15px;
+  }
+
+  &__screen {
+    overflow: hidden;
+    outline: 2px solid black;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
