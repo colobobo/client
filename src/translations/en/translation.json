@@ -31,11 +31,11 @@
   "room": {
     "description": "Place your phone as shown :",
     "creatorDescription": "Choose a placement and place your phone as shown :",
+    "placement": {
+      "inline": "Inline",
+      "round": "Round"
+    },
     "buttons": {
-      "placement": {
-        "inline": "Inline",
-        "round": "Round"
-      },
       "start": "Start the game"
     },
     "waiting": {

@@ -1,0 +1,46 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.placement {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__players {
+    width: 100%;
+
+    &.inline {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__player {
+    width: 50px;
+    position: relative;
+    opacity: 0.5;
+
+    &.current {
+      opacity: 1;
+    }
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    span {
+      @include mikado-bold;
+      font-size: 0.9rem;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -10,9 +10,7 @@ import { useTypedSelector } from "../../redux/store";
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
 import InterfaceButton from "../../components/InterfaceButton";
-
-// assets
-import mobileIcon from "../../assets/illustrations/mobile.png";
+import InterfacePlacement from "../../components/InterfacePlacement";
 
 // styles
 import "./index.scss";
@@ -22,6 +20,7 @@ const Room: FC = () => {
   const { roomId } = useParams();
   const history = useHistory();
   const location = useLocation<{ isCreator: boolean }>();
+  const placements = ["inline", "round"];
 
   const [currentPlacement, setCurrentPlacement] = useState<string>("inline");
 
@@ -29,15 +28,6 @@ const Room: FC = () => {
 
   const dispatch = useDispatch();
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
-  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
-  const currentDevice = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
-  );
-
-  const currentDevicePosition = useMemo(() => {
-    return currentDevice?.position;
-  }, [currentDevice]);
 
   // memo
 
@@ -64,6 +54,7 @@ const Room: FC = () => {
   );
 
   const handleCurrentPlacementChange = useCallback(event => {
+    console.log("change");
     setCurrentPlacement(event.target.value);
   }, []);
 
@@ -78,49 +69,28 @@ const Room: FC = () => {
           {isCreator ? t("room.creatorDescription") : t("room.description")}
         </p>
         {isCreator && (
-          <ul className="room__selection">
-            <li className="room__choice">
-              <input
-                type="radio"
-                id="inline"
-                value="inline"
-                name="placement"
-                checked={currentPlacement === "inline"}
-                onChange={handleCurrentPlacementChange}
-              />
-              <label className="button button--yellow" htmlFor="inline">
-                {t("room.buttons.placement.inline")}
-              </label>
-            </li>
-            <li className="room__choice">
-              <input
-                type="radio"
-                id="round"
-                value="round"
-                name="placement"
-                checked={currentPlacement === "round"}
-                onChange={handleCurrentPlacementChange}
-              />
-              <label className="button button--yellow" htmlFor="round">
-                {t("room.buttons.placement.round")}
-              </label>
-            </li>
-          </ul>
-        )}
-        <div className="room__placement">
-          <div className={`room__players ${currentPlacement}`}>
-            {devicesArray.map(device => (
-              <div
-                className={`room__player ${
-                  currentDevicePosition === device.position ? "current" : ""
-                }`}
-                key={device.id}
-              >
-                <img src={mobileIcon} alt={`Position ${device.position + 1}`} />
-                <span>{device.position + 1}</span>
+          <div className="room__selection">
+            {placements.map(placement => (
+              <div className="room__choice">
+                <InterfaceButton
+                  color="yellow"
+                  text={t(`room.placement.${placement}`)}
+                />
+                <label htmlFor={placement} />
+                <input
+                  type="radio"
+                  id={placement}
+                  value={placement}
+                  name="placement"
+                  checked={currentPlacement === placement}
+                  onChange={handleCurrentPlacementChange}
+                />
               </div>
             ))}
           </div>
+        )}
+        <div className="room__placement">
+          <InterfacePlacement placement={currentPlacement} />
         </div>
         {isCreator && (
           <InterfaceButton
