@@ -17,11 +17,11 @@ import SocketsPlayground from "../../components/SocketsPlayground";
 const Admin: FC = () => {
   // store
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(actions.admin.activate());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(actions.admin.activate());
+  // }, [dispatch]);
 
   return (
     <div className="admin">

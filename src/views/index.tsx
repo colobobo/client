@@ -16,73 +16,9 @@ import Join from "./join";
 import Game from "./game";
 import About from "./about";
 
-interface Props {
-  isAdmin: boolean;
-  adminRoomId?: string;
-  autoconnect?: boolean;
-  onCreateRoom?: (adminRoomId: string) => any;
-  onSetAdminDevicePosition?: (position: number) => any;
-  adminPosition: number;
-}
+interface Props {}
 
-const Client: FC<Props> = ({
-  isAdmin,
-  adminRoomId,
-  autoconnect,
-  onCreateRoom,
-  onSetAdminDevicePosition,
-  adminPosition
-}) => {
-  const dispatch = useDispatch();
-  const roomId = useTypedSelector(selectors.room.selectId);
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
-  const currentDevice = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
-  );
-
-  const currentDevicePosition = useMemo(() => {
-    return currentDevice?.position;
-  }, [currentDevice]);
-
-  useEffect(() => {
-    if (
-      isAdmin &&
-      onSetAdminDevicePosition &&
-      currentDevicePosition !== undefined
-    ) {
-      onSetAdminDevicePosition(currentDevicePosition);
-    }
-  }, [isAdmin, currentDevicePosition, onSetAdminDevicePosition]);
-
-  useEffect(() => {
-    if (roomId && onCreateRoom) {
-      onCreateRoom(roomId);
-    }
-  }, [onCreateRoom, roomId]);
-
-  useEffect(() => {
-    if (isAdmin) {
-      if (autoconnect) {
-        if (!adminRoomId && adminPosition === 0) {
-          dispatch(
-            actions.webSocket.emit.room.create({
-              width: window.innerWidth,
-              height: window.innerHeight
-            })
-          );
-        } else if (adminRoomId && adminPosition > 0) {
-          dispatch(
-            actions.webSocket.emit.room.join({
-              width: window.innerWidth,
-              height: window.innerHeight,
-              id: adminRoomId
-            })
-          );
-        }
-      }
-    }
-  }, [dispatch, isAdmin, adminRoomId, autoconnect, adminPosition]);
-
+const Client: FC<Props> = () => {
   // return
 
   return (
