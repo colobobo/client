@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
 
 // components
-import InterfaceButton from "../../components/InterfaceButton";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // style
 import "./index.scss";
@@ -83,16 +83,16 @@ const Landing: FC = () => {
 
         <div className="landing__actions">
           <InterfaceButton
-            actionOnClick={handleOnClickCreateRoom}
-            color="yellow"
+            onClick={handleOnClickCreateRoom}
+            color={Colors.yellow}
             text={t("landing.buttons.create")}
-            extraClass="landing__action"
+            classNames="landing__action"
           />
           <InterfaceButton
-            actionOnClick={handleOnJoinRedirect}
-            color="blue"
+            onClick={handleOnJoinRedirect}
+            color={Colors.blue}
             text={t("landing.buttons.join")}
-            extraClass="landing__action"
+            classNames="landing__action"
           />
         </div>
         <div className="landing__error">{roomError}</div>

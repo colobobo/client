@@ -9,8 +9,7 @@ body {
   height: 100%;
   // @include defineHeight;
   @include mikado;
-  font-size: 14px;
-  line-height: 1.5rem;
+  font-size: 62.5%; // 1rem = 10px
   margin: 0;
   padding: 0;
 }
@@ -18,6 +17,8 @@ body {
 #root {
   width: 100%;
   height: 100%;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 h1,

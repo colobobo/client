@@ -31,7 +31,7 @@
 
       &__input {
         @include mikado-black;
-        font-size: 4.6rem;
+        font-size: 6rem;
         width: 220px;
         text-align: center;
         border: none;
@@ -44,8 +44,8 @@
       }
 
       &__error {
-        font-size: 0.5rem;
-        line-height: 0.7rem;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -69,7 +69,7 @@
     &__form {
       .form {
         &__input {
-          font-size: 3.5rem;
+          font-size: 4.5rem;
         }
       }
     }

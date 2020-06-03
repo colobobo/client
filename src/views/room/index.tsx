@@ -9,8 +9,10 @@ import { useTypedSelector } from "../../redux/store";
 
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
-import InterfaceButton from "../../components/InterfaceButton";
-import InterfacePlacement from "../../components/InterfacePlacement";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+import InterfacePlacement, {
+  PlacementList
+} from "../../components/InterfacePlacement";
 
 // styles
 import "./index.scss";
@@ -20,9 +22,10 @@ const Room: FC = () => {
   const { roomId } = useParams();
   const history = useHistory();
   const location = useLocation<{ isCreator: boolean }>();
-  const placements = ["inline", "round"];
 
-  const [currentPlacement, setCurrentPlacement] = useState<string>("inline");
+  const [currentPlacement, setCurrentPlacement] = useState<PlacementList>(
+    PlacementList.round
+  );
 
   // store
 
@@ -74,22 +77,22 @@ const Room: FC = () => {
         ></p>
         {isCreator && (
           <div className="room__selection">
-            {placements.map((placement, index) => (
-              <div className="room__choice" key={index}>
+            {Object.values(PlacementList).map(value => (
+              <div className="room__choice" key={value}>
                 <input
                   type="radio"
-                  id={placement}
-                  value={placement}
+                  id={value}
+                  value={value}
                   name="placement"
-                  checked={currentPlacement === placement}
+                  checked={currentPlacement === value}
                   onChange={handleCurrentPlacementChange}
                 />
                 <InterfaceButton
-                  color="yellow"
-                  text={t(`room.placement.${placement}`)}
-                  extraClass="button--small"
+                  color={Colors.yellow}
+                  text={t(`room.placement.${value}`)}
+                  classNames="button--small"
                 />
-                <label htmlFor={placement} />
+                <label htmlFor={value} />
               </div>
             ))}
           </div>
@@ -99,10 +102,10 @@ const Room: FC = () => {
         </div>
         {isCreator && (
           <InterfaceButton
-            actionOnClick={handleOnClickStart}
-            color="blue"
+            onClick={handleOnClickStart}
+            color={Colors.blue}
             text={t("room.buttons.start")}
-            extraClass="room__action"
+            classNames="room__action"
           />
         )}
       </div>

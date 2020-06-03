@@ -10,8 +10,13 @@ import mobileIcon from "../../assets/illustrations/mobile.png";
 // styles
 import "./index.scss";
 
+export enum PlacementList {
+  round = "round",
+  inline = "inline"
+}
+
 interface Props {
-  placement: string;
+  placement: PlacementList;
 }
 
 const InterfacePlacement: FC<Props> = ({ placement }) => {

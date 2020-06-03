@@ -114,7 +114,7 @@ const Join: FC = () => {
           <div className="form__numeric-keypad">
             <NumericKeypad
               inputValue={inputRoomId}
-              handleChangeInputValue={handleChangeInputRoomId}
+              onChangeInputValue={handleChangeInputRoomId}
               maxLengthValue={codeLength}
             />
           </div>

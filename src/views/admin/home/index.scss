@@ -10,7 +10,6 @@
     @include display-center;
   }
   &__link {
-    display: block;
     height: 100%;
     width: 100%;
     transition: all 0.5s ease-in-out;
@@ -18,7 +17,8 @@
     text-transform: uppercase;
     color: #ffffff;
     background: #ef8354;
-    font-size: 3em;
+    font-size: 5rem;
+    line-height: 5rem;
     text-align: center;
     font-weight: 900;
     letter-spacing: 2px;

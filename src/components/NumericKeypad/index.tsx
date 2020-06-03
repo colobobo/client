@@ -4,7 +4,7 @@ import React, { FC, useCallback, useMemo } from "react";
 import { ReactComponent as Chevron } from "../../assets/icons/chevron.svg";
 
 // components
-import InterfaceButton from "../../components/InterfaceButton";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // style
 import "./index.scss";
@@ -12,29 +12,29 @@ import "./index.scss";
 interface Props {
   inputValue: string;
   maxLengthValue: number;
-  handleChangeInputValue: (value: string) => any;
+  onChangeInputValue: (value: string) => any;
 }
 
 const NumericKeypad: FC<Props> = ({
   inputValue,
   maxLengthValue,
-  handleChangeInputValue
+  onChangeInputValue
 }) => {
   // handlers
 
   const handleOnBackKeyClick = useCallback(() => {
     const value = inputValue.slice(0, -1);
-    handleChangeInputValue(value);
-  }, [handleChangeInputValue, inputValue]);
+    onChangeInputValue(value);
+  }, [onChangeInputValue, inputValue]);
 
   const handleOnNumericKeyClick = useCallback(
     (key: number) => {
       if (inputValue.length < maxLengthValue) {
         const value = inputValue + key.toString();
-        handleChangeInputValue(value);
+        onChangeInputValue(value);
       }
     },
-    [handleChangeInputValue, inputValue, maxLengthValue]
+    [onChangeInputValue, inputValue, maxLengthValue]
   );
 
   const numericKeypad = useMemo(() => {
@@ -43,9 +43,9 @@ const NumericKeypad: FC<Props> = ({
     for (let i = 1; i < 10; i++) {
       const numberKey = (
         <InterfaceButton
-          actionOnClick={() => handleOnNumericKeyClick(i)}
+          onClick={() => handleOnNumericKeyClick(i)}
           key={i}
-          color="yellow"
+          color={Colors.yellow}
           text={i.toString()}
         />
       );
@@ -61,13 +61,13 @@ const NumericKeypad: FC<Props> = ({
   return (
     <div className="numeric-keypad">
       {numericKeypad}
-      <InterfaceButton color="yellow" />
+      <InterfaceButton color={Colors.yellow} />
       <InterfaceButton
-        actionOnClick={() => handleOnNumericKeyClick(0)}
-        color="yellow"
+        onClick={() => handleOnNumericKeyClick(0)}
+        color={Colors.yellow}
         text={"0"}
       />
-      <InterfaceButton actionOnClick={handleOnBackKeyClick} color="yellow">
+      <InterfaceButton onClick={handleOnBackKeyClick} color={Colors.yellow}>
         <span>
           <Chevron />
         </span>

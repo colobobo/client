@@ -2,7 +2,7 @@ import React, { FC, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 // components
-import InterfaceButton from "../../components/InterfaceButton";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // assets
 import { ReactComponent as SoundSVG } from "../../assets/icons/sound-on.svg";
@@ -33,9 +33,9 @@ const InterfaceBreak: FC<Props> = ({ handleOnClickToggleGameState }) => {
     <div className="break">
       <div className="break__container">
         <InterfaceButton
-          actionOnClick={handleOnClickToggleSoundState}
-          color="blue"
-          extraClass="break__sound button--round"
+          onClick={handleOnClickToggleSoundState}
+          color={Colors.blue}
+          classNames="break__sound button--round"
         >
           <SoundSVG />
         </InterfaceButton>
@@ -47,16 +47,16 @@ const InterfaceBreak: FC<Props> = ({ handleOnClickToggleGameState }) => {
           />
           <div className="break__actions">
             <InterfaceButton
-              actionOnClick={() => handleOnClickToggleGameState(false)}
-              color="yellow"
+              onClick={() => handleOnClickToggleGameState(false)}
+              color={Colors.yellow}
               text={t("break.buttons.resume")}
-              extraClass="break__action"
+              classNames="break__action"
             />
             <InterfaceButton
-              actionOnClick={handleOnClickLeftRoom}
-              color="blue"
+              onClick={handleOnClickLeftRoom}
+              color={Colors.blue}
               text={t("break.buttons.left")}
-              extraClass="break__action"
+              classNames="break__action"
             />
           </div>
         </div>

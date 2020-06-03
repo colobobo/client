@@ -14,7 +14,7 @@
   &__link {
     color: #000000;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-transform: uppercase;
     margin-right: 20px;
     transition: color 0.1s ease-in;
@@ -32,7 +32,7 @@
       margin-right: auto;
       @include display-center;
       text-transform: initial;
-      font-size: 22px;
+      font-size: 2.2rem;
 
       img {
         height: 50px;

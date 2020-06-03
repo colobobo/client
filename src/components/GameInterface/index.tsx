@@ -2,7 +2,7 @@ import React, { FC, useCallback, useState } from "react";
 
 // components
 import InterfaceBreak from "../../components/InterfaceBreak";
-import InterfaceButton from "../../components/InterfaceButton";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // assets
 import { ReactComponent as PauseSVG } from "../../assets/icons/pause.svg";
@@ -27,9 +27,9 @@ const GameInterface: FC = () => {
   return (
     <div className="game-interface">
       <InterfaceButton
-        actionOnClick={() => handleOnClickToggleGameState(true)}
-        color="blue"
-        extraClass="game-interface__pause button--round"
+        onClick={() => handleOnClickToggleGameState(true)}
+        color={Colors.blue}
+        classNames="game-interface__pause button--round"
       >
         <PauseSVG />
       </InterfaceButton>

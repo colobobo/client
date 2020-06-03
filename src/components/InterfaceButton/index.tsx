@@ -3,25 +3,32 @@ import React, { FC } from "react";
 // style
 import "./index.scss";
 
+export enum Colors {
+  blue = "blue",
+  yellow = "yellow",
+  pink = "pink",
+  red = "red"
+}
+
 interface Props {
-  color: string;
+  color: Colors;
   text?: string;
-  extraClass?: string;
-  actionOnClick?: any;
+  classNames?: string;
+  onClick?: any;
 }
 
 const InterfaceButton: FC<Props> = ({
   children,
   color,
   text,
-  extraClass,
-  actionOnClick
+  classNames,
+  onClick
 }) => {
   // return
   return (
     <div
-      onClick={actionOnClick}
-      className={`${extraClass ? extraClass : ""} button button--${color}`}
+      onClick={onClick}
+      className={`${classNames ? classNames : ""} button button--${color}`}
     >
       {text && <span>{text}</span>}
       {children}
