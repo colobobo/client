@@ -1,20 +1,10 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
 import { devices } from "../../../datas/devices";
 
-// translation
-import { I18nextProvider } from "react-i18next";
-import i18n from "../../../translations/i18n";
-
-// views / components
-import Client from "../../../views";
-import StoreWrapper from "../../../components/StoreWrapper";
-
-// store
-import { useSelector } from "react-redux";
-import { selectors } from "../../../redux";
-
 //style
 import "./index.scss";
+import { useSelector } from "react-redux";
+import { selectors } from "../../../redux";
 
 interface currentDevice {
   index: number;
@@ -28,25 +18,30 @@ interface currentDevice {
 interface Props {
   userId: number;
   deviceData: any;
-  adminRoomId?: string;
+  adminRoomId: string;
   autoconnect?: boolean;
-  onCreateRoom?: (adminRoomId: string) => any;
 }
 
 const Device: FC<Props> = ({
   userId,
   deviceData,
   adminRoomId,
-  onCreateRoom,
   autoconnect
 }) => {
-  const adminStatus = useSelector(selectors.admin.selectStatus);
-  const [position, setPosition] = useState<number>();
+  // selectors
+
+  const adminDevices = useSelector(selectors.admin.selectDevices);
+  const areaDevices = useSelector(selectors.area.selectDevices);
+
+  // state
+
   const [currentDevice, setCurrentDevice] = useState<currentDevice>({
     index: deviceData?.index,
     name: deviceData?.name,
     resolution: deviceData?.resolution
   });
+
+  // handlers
 
   const chooseDevice = useCallback((event: any) => {
     setCurrentDevice({
@@ -56,25 +51,32 @@ const Device: FC<Props> = ({
     });
   }, []);
 
-  const handleOnCreateRoom = useCallback(
-    adminRoomId => {
-      if (onCreateRoom) {
-        onCreateRoom(adminRoomId);
+  // memo
+
+  const position = useMemo(() => {
+    const playerId = adminDevices[userId.toString()]?.playerId;
+
+    return areaDevices[playerId] ? areaDevices[playerId].position : 100;
+  }, [adminDevices, areaDevices, userId]);
+
+  const iframeUrlSearchParams = useMemo(() => {
+    const urlSearchParams = new URLSearchParams();
+
+    urlSearchParams.append("store_id", userId.toString());
+    urlSearchParams.append("admin", userId.toString());
+
+    if (adminRoomId) {
+      urlSearchParams.append("admin_room", adminRoomId);
+
+      if (autoconnect) {
+        urlSearchParams.append("room", adminRoomId);
       }
-    },
-    [onCreateRoom]
-  );
+    }
 
-  const handleOnSetAdminDevicePosition = useCallback(pos => {
-    setPosition(pos);
-  }, []);
+    return urlSearchParams.toString();
+  }, [adminRoomId, autoconnect, userId]);
 
-  const deviceSize = {
-    width: currentDevice.resolution.width,
-    height: currentDevice.resolution.height
-  };
-
-  const newI18nInstance = useMemo(() => i18n.cloneInstance(), []);
+  // return
 
   return (
     <div className="device" style={{ order: position }}>
@@ -85,20 +87,18 @@ const Device: FC<Props> = ({
           </option>
         ))}
       </select>
-      <div className="device__screen" style={deviceSize}>
-        <StoreWrapper storeId={userId.toString()}>
-          <I18nextProvider i18n={newI18nInstance}>
-            <Client
-              device={currentDevice}
-              autoconnect={autoconnect}
-              isAdmin={adminStatus}
-              adminPosition={userId}
-              adminRoomId={adminRoomId}
-              onCreateRoom={handleOnCreateRoom}
-              onSetAdminDevicePosition={handleOnSetAdminDevicePosition}
-            />
-          </I18nextProvider>
-        </StoreWrapper>
+      <div
+        className="device__screen"
+        style={{
+          width: currentDevice.resolution.width,
+          height: currentDevice.resolution.height
+        }}
+      >
+        <iframe
+          src={`${window.location.origin}?${iframeUrlSearchParams}`}
+          frameBorder="0"
+          title={`device-${userId.toString()}`}
+        />
       </div>
     </div>
   );

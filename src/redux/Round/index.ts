@@ -38,7 +38,6 @@ export const slice = createSlice({
       action: PayloadAction<payloads.round.Success>
     ) => {},
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
-      console.log("tick");
       state.members = action.payload.data.members;
     }
   }

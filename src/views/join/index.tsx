@@ -27,8 +27,8 @@ const Join: FC = () => {
   // store
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
-  const roomError = useSelector(selectors.room.selectCode);
-  const screenSize = useSelector(selectors.device.selectScreenSize);
+  const roomError = useSelector(selectors.room.selectError);
+  const adminDeviceIndex = useSelector(selectors.admin.selectDeviceIndex);
 
   const history = useHistory();
 
@@ -37,12 +37,13 @@ const Join: FC = () => {
   const joinRoom = useCallback(() => {
     dispatch(
       actions.webSocket.emit.room.join({
-        height: screenSize.height,
-        width: screenSize.width,
-        id: inputRoomId
+        height: window.innerHeight,
+        width: window.innerWidth,
+        id: inputRoomId,
+        ...(adminDeviceIndex ? { adminIndex: adminDeviceIndex } : {})
       })
     );
-  }, [dispatch, inputRoomId, screenSize]);
+  }, [adminDeviceIndex, dispatch, inputRoomId]);
 
   const handleChange = useCallback(event => {
     setInputRoomId(event.target.value);
@@ -86,7 +87,7 @@ const Join: FC = () => {
 
   useEffect(() => {
     if (roomId) {
-      history.push("/room/" + roomId, { isCreator: false });
+      history.push("/room/" + roomId);
     }
   }, [history, roomId]);
 
