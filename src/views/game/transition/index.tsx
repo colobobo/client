@@ -10,7 +10,7 @@ const Transition: FC = () => {
 
   // selector
 
-  const devideId = useSelector(selectors.room.selectDeviceId);
+  const deviceId = useSelector(selectors.room.selectDeviceId);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   // effect
@@ -31,7 +31,7 @@ const Transition: FC = () => {
         onClick={() => {
           dispatch(
             actions.webSocket.emit.transition.playerReady({
-              playerId: devideId
+              playerId: deviceId
             })
           );
         }}
