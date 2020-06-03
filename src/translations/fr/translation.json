@@ -47,5 +47,11 @@
     "message": {
       "error": "Ce code ne correspond à aucune partie.<br>Veuillez ré-essayer."
     }
+  },
+  "break": {
+    "buttons": {
+      "resume": "Continuer",
+      "left": "Quitter la partie"
+    }
   }
 }

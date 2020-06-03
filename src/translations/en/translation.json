@@ -47,5 +47,11 @@
     "message": {
       "error": "This code doesn't match any game.<br>Please re-try."
     }
+  },
+  "break": {
+    "buttons": {
+      "resume": "Resume",
+      "left": "Left the game"
+    }
   }
 }
