@@ -10,7 +10,9 @@ import * as Phaser from "phaser";
 import * as utils from "../../utils";
 import { selectors, actions } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
-import { membersConfig, members } from "../../datas/members";
+import { membersSkinConfig } from "../../datas/members";
+
+import { enums } from "@colobobo/library";
 
 import "./index.scss";
 
@@ -19,7 +21,7 @@ const mainSceneKey = "main-scene";
 const GamePhaser: FC = () => {
   const dispatch = useDispatch();
 
-  // selectors
+  // SELECTORS
 
   const areaWidth = useSelector(selectors.area.selectWidth);
   const areaHeight = useSelector(selectors.area.selectMinHeight);
@@ -27,54 +29,74 @@ const GamePhaser: FC = () => {
   const deviceId = useSelector(selectors.room.selectDeviceId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
 
-  // ref
+  // DOM REF
 
   const $parent = useRef<HTMLDivElement>(null);
+
+  // PHASER REF
+
   const $game = useRef<Phaser.Game | null>(null);
-  const $membersMatter = useRef<Phaser.Physics.Matter.Image[]>([]);
   const $pointerContraint = useRef<Phaser.Physics.Matter.PointerConstraint | null>(
     null
   );
-  const $gameMembersArray = useRef<typeof gameMembersArray>([]);
+  const $membersMatter = useRef<Phaser.Physics.Matter.Image[]>([]);
 
-  // state
+  // OTHER REF
+
+  const $gameMembersArray = useRef<typeof gameMembersArray>(gameMembersArray);
+
+  // STATE
 
   const [isGameReady, setIsGameReady] = useState(false);
 
-  // FUNCTIONS
+  // ########## FUNCTIONS ##########
+
+  // ----- PRELOAD ----
 
   // load members
 
   const loadMembers = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
 
-    Object.values(members).forEach(member => {
-      scene.load.svg(membersConfig[member]);
+    Object.values(enums.member.Skins).forEach(memberSkin => {
+      scene.load.svg(membersSkinConfig[memberSkin]);
     });
   }, []);
+
+  // ----- CREATE -----
 
   // add members to scene
 
   const addMembersToScene = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
 
-    Object.values(members).forEach((member, i) => {
+    console.log($gameMembersArray.current);
+
+    $gameMembersArray.current.forEach((member, i) => {
       const memberMatter = scene.matter.add.image(
-        i * 50,
-        i * 50,
-        member,
+        i * 70,
+        i * 70,
+        member.skin,
         undefined,
         {
           plugin: { wrap: utils.phaser.getGameWrapConfig($game.current!) },
-          label: member
+          label: member.id
         }
       );
       // set name
-      memberMatter.setName(member);
+      memberMatter.setName(member.id);
       // scale
       memberMatter.setScale(0.5);
+      // alpha
+      memberMatter.setAlpha(0.8);
       // fixe rotation
       memberMatter.setFixedRotation();
+
+      // memberMatter.setToSleep();
+
+      // setTimeout(() => {
+      //   memberMatter.setAwake();
+      // }, 2000 * i);
 
       // add member matter object to members array
       $membersMatter.current.push(memberMatter);
@@ -117,11 +139,15 @@ const GamePhaser: FC = () => {
     });
   }, [deviceId, dispatch]);
 
+  // ---- UPDATE ----
+
+  // round tick : members
+
   const onGameMembersUpdate = useCallback(
     (members: typeof gameMembersArray) => {
       members.forEach(member => {
         // update member position and velocity if I'm not the member manager
-        if (member.manager !== "" && member.manager !== deviceId) {
+        if (member.manager && member.manager !== deviceId) {
           $membersMatter.current
             .find($memberMatter => $memberMatter.name === member.id)
             ?.setPosition(member.position.x, member.position.y)
@@ -132,15 +158,15 @@ const GamePhaser: FC = () => {
     [deviceId, gameMembersArray]
   );
 
-  // ----- PHASER SCENE FUNCTIONS -----
+  // ########## PHASER SCENE FUNCTIONS ##########
 
-  // preload
+  // ---- PRELOAD ----
 
   const preload = useCallback(() => {
     loadMembers();
   }, [loadMembers]);
 
-  // create
+  // ---- CREATE ----
 
   const create = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
@@ -162,7 +188,7 @@ const GamePhaser: FC = () => {
     addMembersToScene
   ]);
 
-  // update
+  // ---- UPDATE ----
 
   const update = useCallback(
     (time, delta) => {
@@ -188,7 +214,7 @@ const GamePhaser: FC = () => {
     [deviceId, dispatch]
   );
 
-  // phaser main scene
+  // ---- MAIN SCENE ----
 
   const mainScene = useMemo<Phaser.Types.Scenes.CreateSceneFromObjectConfig>(
     () => ({
@@ -199,7 +225,7 @@ const GamePhaser: FC = () => {
     [create, preload]
   );
 
-  // create phaser game
+  // ---- CREATE PHASER GAME ----
 
   const createGame = useCallback(() => {
     const gameConfig: Phaser.Types.Core.GameConfig = {
@@ -245,7 +271,7 @@ const GamePhaser: FC = () => {
     });
   }, [areaHeight, areaWidth, mainScene]);
 
-  // EFFECTS
+  //  ########## SIDE EFFECTS  ##########
 
   // on mount -> create game
 
@@ -270,9 +296,9 @@ const GamePhaser: FC = () => {
 
   useEffect(() => {
     if (isGameReady) {
-      isRoundStarted
-        ? $game.current!.scene.wake(mainSceneKey)
-        : $game.current!.scene.sleep(mainSceneKey);
+      const scene = $game.current!.scene.getScene(mainSceneKey);
+      isRoundStarted ? scene.matter.resume() : scene.matter.pause();
+      // isRoundStarted
     }
   }, [isGameReady, isRoundStarted]);
 
@@ -294,7 +320,7 @@ const GamePhaser: FC = () => {
     return () => {
       dispatch(actions.round.stop());
     };
-  }, []);
+  }, [dispatch]);
 
   // return
 

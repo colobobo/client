@@ -38,20 +38,20 @@ const Round: FC = () => {
       <GameInterface />
       <GameTimer />
       <button
-        style={{ position: "absolute", top: 10, right: 10 }}
-        onClick={() => {
-          dispatch(actions.webSocket.emit.round.memberArrived());
-        }}
-      >
-        Emit member arrived
-      </button>
-      <button
-        style={{ position: "absolute", top: 10, left: 10 }}
+        style={{ position: "absolute", top: 100, left: 10 }}
         onClick={() => {
           dispatch(actions.webSocket.emit.round.playerReady());
         }}
       >
         Emit round player ready
+      </button>
+      <button
+        style={{ position: "absolute", top: 130, left: 10 }}
+        onClick={() => {
+          dispatch(actions.webSocket.emit.round.memberArrived());
+        }}
+      >
+        Emit member arrived
       </button>
     </div>
   );

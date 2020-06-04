@@ -20,11 +20,13 @@ export const slice = createSlice({
   } as RoundState,
   reducers: {
     init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {
-      const { id, duration, world, tick } = action.payload.data;
+      const { id, duration, world, tick, members } = action.payload.data;
       state.id = id;
       state.duration = duration;
       state.world = world;
       state.tick = tick;
+      state.members = members;
+      // TODO: playerRoles
     },
     start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
       state.isStarted = true;

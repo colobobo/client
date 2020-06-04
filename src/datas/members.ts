@@ -1,21 +1,14 @@
-export enum members {
-  member1 = "member-1",
-  member2 = "member-2",
-  member3 = "member-3",
-  member4 = "member-4",
-  member5 = "member-5",
-  member6 = "member-6"
-}
+import { enums } from "@colobobo/library";
 
-type MemberConfig = Phaser.Types.Loader.FileTypes.SVGFileConfig;
+type MemberSkinConfig = Phaser.Types.Loader.FileTypes.SVGFileConfig;
 
-type MembersConfig = {
-  [key in members]: MemberConfig;
+type MembersSkinConfig = {
+  [key in enums.member.Skins]: MemberSkinConfig;
 };
 
-const getConfigs = (): MembersConfig => {
+const getConfigs = (): MembersSkinConfig => {
   let configs = {};
-  Object.values(members).forEach(value => {
+  Object.values(enums.member.Skins).forEach(value => {
     configs = {
       ...configs,
       [value]: {
@@ -24,11 +17,11 @@ const getConfigs = (): MembersConfig => {
         svgConfig: {
           scale: 1
         }
-      } as MemberConfig
+      } as MemberSkinConfig
     };
   });
 
-  return configs as MembersConfig;
+  return configs as MembersSkinConfig;
 };
 
-export const membersConfig = getConfigs();
+export const membersSkinConfig = getConfigs();
