@@ -7,16 +7,18 @@ import { useTypedSelector } from "../../redux/store";
 // style
 import "./index.scss";
 
-const GameTimer: FC = () => {
+interface Props {
+  isRoundStarted: boolean;
+}
+
+const GameTimer: FC<Props> = ({ isRoundStarted }) => {
   // selectors
   const areaWidh = useTypedSelector(selectors.area.selectWidth);
   const deviceId = useTypedSelector(selectors.room.selectDeviceId);
   const device = useTypedSelector(state =>
     selectors.area.selectDevice(state, { id: deviceId })
   );
-
-  const isWin = false; // TODO: REPLACE BY ROUND SUCCESS EVENT
-  const duration = 30000; // en ms // TODO: REPLACE BY DURATION OF INIT SCENE EVENT
+  const duration = useTypedSelector(selectors.round.selectDuration);
 
   // state
   const [timeLeft, setTimeLeft] = useState(0);
@@ -24,26 +26,20 @@ const GameTimer: FC = () => {
   // handles
 
   useEffect(() => {
-    if (timeLeft === duration) {
-      console.log("END OF TIMER"); // TODO: EMIT EVENT WHEN TIMER IS OVER
-      return;
-    } else if (isWin) {
-      // TODO: RECEIVE EVENT WHEN ROUND IS WIN
-      console.log("STOP TIMER BEFORE IS COMPLETE");
+    if (!isRoundStarted || timeLeft === duration) {
       return;
     }
-    // TODO: START TIMER WHEN ROUND + PLAYERS ARE READY
 
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft + 100);
     }, 100);
 
     return () => clearInterval(intervalId);
-  }, [isWin, timeLeft]);
+  }, [duration, isRoundStarted, timeLeft]);
 
   const progressTimer = useMemo(() => {
     return Math.floor((timeLeft * areaWidh) / duration);
-  }, [timeLeft, areaWidh]);
+  }, [timeLeft, areaWidh, duration]);
 
   // return
 

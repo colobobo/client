@@ -11,7 +11,11 @@ import { ReactComponent as PauseSVG } from "../../assets/icons/pause.svg";
 // style
 import "./index.scss";
 
-const GameInterface: FC = () => {
+interface Props {
+  isRoundStarted: boolean;
+}
+
+const GameInterface: FC<Props> = ({ isRoundStarted }) => {
   // states
 
   const [gamePaused, setGamePaused] = useState<boolean>(false);
@@ -27,7 +31,7 @@ const GameInterface: FC = () => {
 
   return (
     <div className="game-interface">
-      <InterfaceTimer />
+      <InterfaceTimer isRoundStarted={isRoundStarted} />
       <InterfaceButton
         onClick={() => handleOnClickToggleGameState(true)}
         color={Colors.blue}

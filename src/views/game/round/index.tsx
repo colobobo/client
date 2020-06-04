@@ -34,9 +34,9 @@ const Round: FC = () => {
         <GameDecorationBleed position="top" />
         <GameDecorationBleed position="bottom" />
       </Area>
-      <GameInterface />
+      <GameInterface isRoundStarted={isRoundStarted} />
       <button
-        style={{ position: "absolute", top: 10, right: 10 }}
+        style={{ position: "absolute", top: 30, right: 10 }}
         onClick={() => {
           dispatch(actions.webSocket.emit.round.memberArrived());
         }}
@@ -44,7 +44,7 @@ const Round: FC = () => {
         Emit member arrived
       </button>
       <button
-        style={{ position: "absolute", top: 10, left: 10 }}
+        style={{ position: "absolute", top: 60, right: 10 }}
         onClick={() => {
           dispatch(actions.webSocket.emit.round.playerReady());
         }}
