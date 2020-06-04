@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
 
+// components
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+
 // style
 import "./index.scss";
 
@@ -59,6 +62,10 @@ const Landing: FC = () => {
     [i18n]
   );
 
+  const handleOnJoinRedirect = useCallback(() => {
+    history.push("/join");
+  }, [history]);
+
   // EFFECTS
 
   // when connected -> go to room
@@ -92,15 +99,18 @@ const Landing: FC = () => {
         </div>
 
         <div className="landing__actions">
-          <button
+          <InterfaceButton
             onClick={handleOnClickCreateRoom}
-            className="landing__action button button--yellow"
-          >
-            {t("landing.buttons.create")}
-          </button>
-          <Link to="/join" className="landing__action button button--blue">
-            {t("landing.buttons.join")}
-          </Link>
+            color={Colors.yellow}
+            text={t("landing.buttons.create")}
+            classNames="landing__action"
+          />
+          <InterfaceButton
+            onClick={handleOnJoinRedirect}
+            color={Colors.blue}
+            text={t("landing.buttons.join")}
+            classNames="landing__action"
+          />
         </div>
         <div className="landing__error">{roomError}</div>
       </div>

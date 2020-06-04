@@ -1,0 +1,8 @@
+.game-interface {
+  &__pause {
+    z-index: 5;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+  }
+}

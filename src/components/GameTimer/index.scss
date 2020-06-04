@@ -1,0 +1,28 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.timer {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20px;
+  border-bottom: 2px solid $blue-dark;
+  background: $white;
+  overflow: hidden;
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  &__progress {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 2px solid $blue-dark;
+    background: $red;
+  }
+}

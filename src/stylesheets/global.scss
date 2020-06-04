@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -8,8 +9,7 @@ body {
   height: 100%;
   // @include defineHeight;
   @include mikado;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 62.5%; // 1rem = 10px
   margin: 0;
   padding: 0;
 }
@@ -17,6 +17,8 @@ body {
 #root {
   width: 100%;
   height: 100%;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 h1,
@@ -47,48 +49,11 @@ input,
 button,
 textarea,
 select {
-  &:focus,
-  &:active,
-  &hover {
+  &:focus {
     outline: none;
   }
 }
 
 .client {
   white-space: initial;
-}
-
-.button {
-  cursor: pointer;
-  width: 100%;
-  height: 60px;
-  max-width: 300px;
-  @include mikado-medium;
-  letter-spacing: 1px;
-  font-size: 16px;
-  text-transform: uppercase;
-  border: 2px solid $blue-dark;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-appearance: none;
-
-  &--yellow {
-    background: $yellow;
-    color: $blue-dark;
-
-    -moz-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
-    -webkit-box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
-    box-shadow: inset 5px 5px 0 #fff09d, inset -5px -5px 0 #fcc62e;
-  }
-
-  &--blue {
-    background: $blue;
-    color: $white;
-
-    -moz-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
-    -webkit-box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
-    box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
-  }
 }

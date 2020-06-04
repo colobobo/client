@@ -3,6 +3,12 @@
   height: calc(var(--vh, 1vh) * 100);
 }
 
+@mixin display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin fontFace(
   $name,
   $path,

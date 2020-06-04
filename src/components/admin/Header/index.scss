@@ -1,3 +1,5 @@
+@import "../../../stylesheets/mixins.scss";
+
 .admin-header {
   z-index: 5;
   position: fixed;
@@ -12,7 +14,7 @@
   &__link {
     color: #000000;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-transform: uppercase;
     margin-right: 20px;
     transition: color 0.1s ease-in;
@@ -28,11 +30,9 @@
 
     &.home {
       margin-right: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include display-center;
       text-transform: initial;
-      font-size: 22px;
+      font-size: 2.2rem;
 
       img {
         height: 50px;

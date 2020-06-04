@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useMemo } from "react";
+import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { useHistory, useParams, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -7,6 +7,14 @@ import { useDispatch } from "react-redux";
 import { selectors, actions } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
+// components
+import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+import InterfacePlacement, {
+  PlacementList
+} from "../../components/InterfacePlacement";
+
+// styles
 import "./index.scss";
 
 const Room: FC = () => {
@@ -14,10 +22,13 @@ const Room: FC = () => {
   const { roomId } = useParams();
   const history = useHistory();
 
+  const [currentPlacement, setCurrentPlacement] = useState<PlacementList>(
+    PlacementList.round
+  );
+
   // store
 
   const dispatch = useDispatch();
-  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
@@ -39,30 +50,57 @@ const Room: FC = () => {
     [dispatch]
   );
 
+  const handleCurrentPlacementChange = useCallback(event => {
+    setCurrentPlacement(event.target.value);
+  }, []);
+
   // return
 
   return (
     <div className="room">
+      <InterfaceHeader type="create" code={roomId} />
+
       <div className="room__container">
-        <h1 className="room__title">
-          {t("room.title")} {roomId}
-        </h1>
-        <p>
-          {t("room.player")}
-          {devicesArray.length > 1 && "s"} :
-        </p>
-        <ul>
-          {devicesArray.map(device => (
-            <li key={device.id}>{device.id}</li>
-          ))}
-        </ul>
+        <p
+          className="room__description"
+          dangerouslySetInnerHTML={{
+            __html: isCreator
+              ? t("room.creatorDescription")
+              : t("room.description")
+          }}
+        ></p>
         {isCreator && (
-          <button
+          <div className="room__selection">
+            {Object.values(PlacementList).map(value => (
+              <div className="room__choice" key={value}>
+                <input
+                  type="radio"
+                  id={value}
+                  value={value}
+                  name="placement"
+                  checked={currentPlacement === value}
+                  onChange={handleCurrentPlacementChange}
+                />
+                <InterfaceButton
+                  color={Colors.yellow}
+                  text={t(`room.placement.${value}`)}
+                  classNames="button--small"
+                />
+                <label htmlFor={value} />
+              </div>
+            ))}
+          </div>
+        )}
+        <div className="room__placement">
+          <InterfacePlacement placement={currentPlacement} />
+        </div>
+        {isCreator && (
+          <InterfaceButton
             onClick={handleOnClickStart}
-            className="room__action button button--orange"
-          >
-            {t("room.buttons.start")}
-          </button>
+            color={Colors.blue}
+            text={t("room.buttons.start")}
+            classNames="room__action"
+          />
         )}
       </div>
     </div>

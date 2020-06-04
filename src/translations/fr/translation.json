@@ -29,19 +29,29 @@
     }
   },
   "room": {
-    "title": "ID de la partie :",
-    "player": "Joueur",
+    "description": "Placez votre téléphone selon la disposition indiquée :",
+    "creatorDescription": "Choisissez une disposition et placez<br>votre téléphone comme indiqué :",
+    "placement": {
+      "inline": "Ligne",
+      "round": "Cercle"
+    },
     "buttons": {
-      "start": "Commencer"
+      "start": "Lancer la partie"
     },
     "waiting": {
       "title": "Vous êtes bien dans la room :"
     }
   },
   "join": {
-    "label": "Pour rejoindre une partie, entrez le code correspondant à celle-ci :",
+    "label": "Pour rejoindre une partie, entrez<br>le code correspondant à celle-ci :",
     "message": {
       "error": "Ce code ne correspond à aucune partie.<br>Veuillez ré-essayer."
+    }
+  },
+  "break": {
+    "buttons": {
+      "resume": "Continuer",
+      "left": "Quitter la partie"
     }
   }
 }

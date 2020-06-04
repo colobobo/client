@@ -6,6 +6,8 @@
   height: 100%;
 
   &__container {
+    max-width: 500px;
+    margin: 0 auto;
     height: calc(100% - 130px);
     padding: 30px;
     display: flex;
@@ -25,13 +27,11 @@
         margin: 0 auto 10px auto;
         text-align: center;
         max-width: 200px;
-        font-size: 0.85rem;
-        line-height: 1.2rem;
       }
 
       &__input {
         @include mikado-black;
-        font-size: 4.5rem;
+        font-size: 6rem;
         width: 220px;
         text-align: center;
         border: none;
@@ -44,47 +44,13 @@
       }
 
       &__error {
-        font-size: 0.5rem;
-        line-height: 0.7rem;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
         color: $red;
-      }
-
-      &__numeric-keypad {
-        width: 65vw;
-        max-width: 300px;
-        margin: 30px auto 0 auto;
-        display: grid;
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .button {
-          width: 25%;
-          height: fit-content;
-          border-radius: 50%;
-          padding-top: calc(25% - 4px);
-          position: relative;
-          margin-bottom: 15px;
-          @include mikado-medium;
-          font-size: 1.4rem;
-
-          &:nth-of-type(3n + 2) {
-            margin: 0 12.5%;
-          }
-
-          span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            line-height: 0;
-          }
-        }
       }
 
       &__action {
@@ -103,7 +69,7 @@
     &__form {
       .form {
         &__input {
-          font-size: 3.5rem;
+          font-size: 4.5rem;
         }
       }
     }

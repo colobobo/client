@@ -1,0 +1,81 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.placement {
+  width: 100%;
+
+  &__players {
+    width: 100%;
+    position: relative;
+    @include display-center;
+
+    &.inline {
+      height: initial !important;
+    }
+
+    &.round {
+      max-width: 250px;
+      margin: 0 auto;
+
+      .placement__player {
+        margin: 0;
+      }
+    }
+  }
+
+  &__player {
+    width: 20%;
+    max-width: 45px;
+    height: fit-content;
+    position: relative;
+    opacity: 0.5;
+
+    &.current {
+      opacity: 1;
+    }
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    span {
+      @include mikado-bold;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media #{$smallMobile} {
+  .placement {
+    &__players {
+      &.round {
+        max-width: 200px;
+      }
+    }
+    &__player {
+      width: 16%;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .placement {
+    &__players {
+      &.round {
+        max-width: 400px;
+      }
+    }
+    &__player {
+      width: 20%;
+      max-width: 70px;
+    }
+  }
+}

@@ -1,13 +1,20 @@
 import React, { FC } from "react";
+
+// store
+import { actions, selectors } from "../../../redux";
+import { useDispatch, useSelector } from "react-redux";
+
+// components
 import Area from "../../../components/Area";
 import GameDecorationBleed from "../../../components/GameDecorationBleed";
 import GameDecoration from "../../../components/GameDecoration";
 import GameBackground from "../../../components/GameBackground";
-
-import "./index.scss";
+import GameInterface from "../../../components/GameInterface";
+import GameTimer from "../../../components/GameTimer";
 import GamePhaser from "../../../components/GamePhaser";
-import { actions, selectors } from "../../../redux";
-import { useDispatch, useSelector } from "react-redux";
+
+// styles
+import "./index.scss";
 
 const Round: FC = () => {
   // return
@@ -28,6 +35,8 @@ const Round: FC = () => {
         <GameDecorationBleed position="top" />
         <GameDecorationBleed position="bottom" />
       </Area>
+      <GameInterface />
+      <GameTimer />
       <button
         style={{ position: "absolute", top: 10, right: 10 }}
         onClick={() => {

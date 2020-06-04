@@ -4,8 +4,8 @@
 .about {
   &__back {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 40px;
   }
   &__summary {
     background: $yellow;
@@ -59,8 +59,8 @@
         .person {
           &__role,
           &__name {
-            font-size: 0.8em;
-            line-height: 1.2em;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
           }
           &__name {
             @include mikado-bold;

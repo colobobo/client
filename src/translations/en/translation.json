@@ -29,19 +29,29 @@
     }
   },
   "room": {
-    "title": "Room's ID :",
-    "player": "Player",
+    "description": "Place your phone as shown :",
+    "creatorDescription": "Choose a placement and place<br>your phone as shown :",
+    "placement": {
+      "inline": "Inline",
+      "round": "Round"
+    },
     "buttons": {
-      "start": "Start"
+      "start": "Start the game"
     },
     "waiting": {
       "title": "You are in the room :"
     }
   },
   "join": {
-    "label": "To join a game, enter the code corresponding to it:",
+    "label": "To join a game, enter<br>the code corresponding to it:",
     "message": {
       "error": "This code doesn't match any game.<br>Please re-try."
+    }
+  },
+  "break": {
+    "buttons": {
+      "resume": "Resume",
+      "left": "Left the game"
     }
   }
 }

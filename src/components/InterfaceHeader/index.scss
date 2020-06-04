@@ -9,9 +9,10 @@
   width: 100%;
   height: 130px;
   max-height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-center;
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
 
   &__back {
     position: absolute;
@@ -27,6 +28,12 @@
 
   &__logo {
     width: 130px;
+  }
+
+  &__code {
+    @include mikado-black;
+    font-size: 6rem;
+    line-height: 5.5rem;
   }
 }
 
