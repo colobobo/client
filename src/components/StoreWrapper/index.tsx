@@ -2,14 +2,22 @@ import React, { FC, useMemo } from "react";
 import { Provider } from "react-redux";
 import { getStore } from "../../redux/store";
 
-interface StoreWrapperProps {
-  storeId: string;
-}
+interface StoreWrapperProps {}
 
-const StoreWrapper: FC<StoreWrapperProps> = ({ children, storeId }) => {
+const StoreWrapper: FC<StoreWrapperProps> = ({ children }) => {
+  const urlParams = useMemo(() => {
+    return new URLSearchParams(window.location.search);
+  }, []);
+
+  const adminDeviceIndex = useMemo(() => {
+    return urlParams.get("store_id");
+  }, [urlParams]);
+
   const store = useMemo(() => {
-    return getStore(storeId);
-  }, [storeId]);
+    return getStore(adminDeviceIndex ? adminDeviceIndex : "app");
+  }, [adminDeviceIndex]);
+
+  // return
 
   return <Provider store={store}>{children}</Provider>;
 };

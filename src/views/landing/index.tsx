@@ -28,18 +28,31 @@ const Landing: FC = () => {
   const dispatch = useDispatch();
   const roomId = useSelector(selectors.room.selectId);
   const roomError = useSelector(selectors.room.selectError);
-  const screenSize = useSelector(selectors.device.selectScreenSize);
+  const isAdmin = useSelector(selectors.admin.selectStatus);
+  const adminRoomId = useSelector(selectors.admin.selectRoomId);
+  const adminDeviceIndex = useSelector(selectors.admin.selectDeviceIndex);
 
   // handlers
 
   const handleOnClickCreateRoom = useCallback(() => {
-    dispatch(
-      actions.webSocket.emit.room.create({
-        width: screenSize.width,
-        height: screenSize.height
-      })
-    );
-  }, [dispatch, screenSize]);
+    if (isAdmin && adminRoomId) {
+      dispatch(
+        actions.webSocket.emit.room.join({
+          width: window.innerWidth,
+          height: window.innerHeight,
+          id: adminRoomId,
+          ...(adminDeviceIndex ? { adminIndex: adminDeviceIndex } : {})
+        })
+      );
+    } else {
+      dispatch(
+        actions.webSocket.emit.room.create({
+          width: window.innerWidth,
+          height: window.innerHeight
+        })
+      );
+    }
+  }, [isAdmin, adminRoomId, dispatch, adminDeviceIndex]);
 
   const handleChangeLanguage = useCallback(
     event => {
@@ -53,9 +66,13 @@ const Landing: FC = () => {
     history.push("/join");
   }, [history]);
 
+  // EFFECTS
+
+  // when connected -> go to room
+
   useEffect(() => {
     if (roomId) {
-      history.push("/room/" + roomId, { isCreator: true });
+      history.push("/room/" + roomId);
     }
   }, [history, roomId]);
 

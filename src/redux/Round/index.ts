@@ -1,9 +1,13 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads, Members } from "@colobobo/library";
+import { payloads, enums, Members } from "@colobobo/library";
 
 export interface RoundState {
+  id: number;
+  isStarted: boolean;
+  duration: number;
+  world: enums.World;
   tick: number;
   members: Members;
 }
@@ -11,14 +15,23 @@ export interface RoundState {
 export const slice = createSlice({
   name: "round",
   initialState: {
+    isStarted: false,
     members: {}
   } as RoundState,
   reducers: {
-    init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {},
-    start: (
-      state: RoundState,
-      action: PayloadAction<payloads.round.Start>
-    ) => {},
+    init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {
+      const { id, duration, world, tick } = action.payload.data;
+      state.id = id;
+      state.duration = duration;
+      state.world = world;
+      state.tick = tick;
+    },
+    start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
+      state.isStarted = true;
+    },
+    stop: (state: RoundState) => {
+      state.isStarted = false;
+    },
     fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {},
     success: (
       state: RoundState,
@@ -26,7 +39,6 @@ export const slice = createSlice({
     ) => {},
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
-      state.tick = action.payload.data.tick;
     }
   }
 });
@@ -34,6 +46,7 @@ export const slice = createSlice({
 // Selectors
 
 const getRoot = (state: RootState) => state.round;
+const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectTick = (state: RootState) => getRoot(state).tick;
 const selectMember = (state: RootState, { id }: { id: string }) =>
   getRoot(state).members[id];
@@ -44,6 +57,7 @@ const selectMembersAsArray = createSelector(selectMembers, objects =>
 
 export const selectors = {
   selectTick,
+  selectIsStarted,
   selectMember,
   selectMembers,
   selectMembersAsArray: selectMembersAsArray

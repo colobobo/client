@@ -9,11 +9,6 @@ import {
   selectors as areaSelectors
 } from "./Area";
 import {
-  actions as deviceActions,
-  reducer as deviceReducer,
-  selectors as deviceSelectors
-} from "./Device";
-import {
   actions as gameActions,
   reducer as gameReducer,
   selectors as gameSelectors
@@ -41,7 +36,6 @@ import { actions as webSocketActions } from "./WebSocket";
 export const actions = {
   admin: adminActions,
   area: areaActions,
-  device: deviceActions,
   game: gameActions,
   room: roomActions,
   round: roundActions,
@@ -52,7 +46,6 @@ export const actions = {
 export const selectors = {
   admin: adminSelectors,
   area: areaSelectors,
-  device: deviceSelectors,
   game: gameSelectors,
   room: roomSelectors,
   transition: transitionSelectors,
@@ -62,7 +55,6 @@ export const selectors = {
 export const reducers = {
   admin: adminReducer,
   area: areaReducer,
-  device: deviceReducer,
   game: gameReducer,
   room: roomReducer,
   transition: transitionReducer,

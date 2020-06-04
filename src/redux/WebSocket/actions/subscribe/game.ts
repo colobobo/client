@@ -2,8 +2,6 @@ import { createSubscribeAction } from "../actionCreators";
 import { events } from "@colobobo/library";
 import { actions as GameActions } from "../../../Game";
 
-// start
-
 export const startSuccess = createSubscribeAction(
   events.game.startSuccess,
   GameActions.startSuccess.type
@@ -12,4 +10,9 @@ export const startSuccess = createSubscribeAction(
 export const startError = createSubscribeAction(
   events.game.startError,
   GameActions.startError.type
+);
+
+export const sceneTypeUpdate = createSubscribeAction(
+  events.game.sceneTypeUpdate,
+  GameActions.sceneTypeUpdate.type
 );

@@ -9,6 +9,8 @@ import { devices } from "../../../datas/devices";
 
 //style
 import "./index.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, selectors } from "../../../redux";
 
 interface room {
   name: string;
@@ -19,8 +21,13 @@ interface room {
 
 const Group: FC = () => {
   let { groupId } = useParams();
+  const dispatch = useDispatch();
 
-  //store
+  // store
+
+  const roomId = useSelector(selectors.room.selectId);
+
+  // state
 
   const [devicesList, setDevicesList] = useState<Array<object>>([]);
   const [devicesNumber, setDevicesNumber] = useState<number>(0);
@@ -33,19 +40,27 @@ const Group: FC = () => {
 
   // handlers
 
-  const handleOnCreateRoom = useCallback((adminRoomId: string) => {
-    copyToClipboard(adminRoomId);
-    setCurrentRoom(prev => ({
-      ...prev,
-      adminRoomId
-    }));
-  }, []);
+  // const handleOnCreateRoom = useCallback((adminRoomId: string) => {
+  //   copyToClipboard(adminRoomId);
+  //   setCurrentRoom(prev => ({
+  //     ...prev,
+  //     adminRoomId
+  //   }));
+  // }, []);
 
   const handleOnAddPlayer = useCallback(() => {
     setDevicesNumber(prev => prev + 1);
   }, []);
 
-  // effects
+  // EFFECTS
+
+  // on mount : create socket room
+
+  useEffect(() => {
+    dispatch(
+      actions.webSocket.emit.room.create({ isAdmin: true, width: 0, height: 0 })
+    );
+  }, [dispatch]);
 
   useEffect(() => {
     if (groupId) {
@@ -59,7 +74,7 @@ const Group: FC = () => {
   }, [groupId]);
 
   useEffect(() => {
-    if (groupId) {
+    if (groupId && roomId) {
       const devicesArray = [];
 
       for (let i = 0; i < devicesNumber; i++) {
@@ -91,8 +106,8 @@ const Group: FC = () => {
             userId={i}
             autoconnect={currentRoom.autoconnect}
             deviceData={deviceData}
-            adminRoomId={currentRoom.adminRoomId}
-            onCreateRoom={handleOnCreateRoom}
+            adminRoomId={roomId}
+            // onCreateRoom={handleOnCreateRoom}
           />
         );
 
@@ -105,14 +120,19 @@ const Group: FC = () => {
     currentRoom.autoconnect,
     currentRoom.devices,
     currentRoom.adminRoomId,
-    handleOnCreateRoom,
-    groupId
+    // handleOnCreateRoom,
+    groupId,
+    roomId
   ]);
 
   return (
     <div className="admin-room">
       <div className="admin-room__header">
-        <h1 className="admin-room__title">Room: {currentRoom.name}</h1>
+        <div>
+          <h1 className="admin-room__title">Room: {currentRoom.name}</h1>
+          <h2 className="admin-room__title2">Socket room id : {roomId}</h2>
+        </div>
+
         <button onClick={handleOnAddPlayer} className="admin-room__add">
           Ajouter un joueur
         </button>
