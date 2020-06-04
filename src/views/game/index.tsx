@@ -7,6 +7,7 @@ import GameDecoration from "../../components/GameDecoration";
 import GameBackground from "../../components/GameBackground";
 import GamePhaser from "../../components/GamePhaser";
 import GameInterface from "../../components/GameInterface";
+import GameTimer from "../../components/GameTimer";
 
 // assets
 import "./index.scss";
@@ -16,6 +17,7 @@ const Game: FC = () => {
 
   return (
     <div style={{ backgroundColor: "#A4E7FF" }} className="game">
+      <GameTimer />
       <Area height="min">
         <GameBackground />
         <GameDecoration position="top" />
