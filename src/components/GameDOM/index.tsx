@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC, Fragment, useMemo } from "react";
 import DraggableElement from "../DraggableElement";
 import "./index.scss";
 
@@ -13,25 +13,27 @@ const GameCanvas: FC = () => {
   const membersArray = useSelector(selectors.round.selectMembersAsArray);
   const areaWidth = useSelector(selectors.area.selectWidth);
 
+  const memberWidth = useMemo(() => 150, []);
+
   // return
 
   return (
     <div className="game-canvas">
       {membersArray.map(member => {
-        const rightOverflow = member.position.x + member.width - areaWidth;
+        const rightOverflow = member.position.x + memberWidth - areaWidth;
         const leftOverflow = -member.position.x;
 
         return (
           <Fragment key={member.id}>
             {/* center copy */}
-            {leftOverflow < member.width - overflowXSafeOffset &&
-              rightOverflow < member.width - overflowXSafeOffset && (
+            {leftOverflow < memberWidth - overflowXSafeOffset &&
+              rightOverflow < memberWidth - overflowXSafeOffset && (
                 <DraggableElement
                   key={member.id}
                   styles={{
-                    width: member.width,
-                    height: member.height,
-                    backgroundColor: member.color
+                    width: memberWidth,
+                    height: memberWidth,
+                    backgroundColor: "#ffe136"
                   }}
                   id={member.id}
                   x={member.position.x}
@@ -45,9 +47,9 @@ const GameCanvas: FC = () => {
               <DraggableElement
                 key={member.id + "-left"}
                 styles={{
-                  width: member.width,
-                  height: member.height,
-                  backgroundColor: member.color
+                  width: memberWidth,
+                  height: memberWidth,
+                  backgroundColor: "#ffe136"
                 }}
                 id={member.id}
                 x={member.position.x}
@@ -62,9 +64,9 @@ const GameCanvas: FC = () => {
               <DraggableElement
                 key={member.id + "-right"}
                 styles={{
-                  width: member.width,
-                  height: member.height,
-                  backgroundColor: member.color
+                  width: memberWidth,
+                  height: memberWidth,
+                  backgroundColor: "#ffe136"
                 }}
                 id={member.id}
                 x={member.position.x}

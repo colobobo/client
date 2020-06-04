@@ -21,7 +21,6 @@ const Room: FC = () => {
   const { t } = useTranslation();
   const { roomId } = useParams();
   const history = useHistory();
-  const location = useLocation<{ isCreator: boolean }>();
 
   const [currentPlacement, setCurrentPlacement] = useState<PlacementList>(
     PlacementList.round
@@ -31,12 +30,7 @@ const Room: FC = () => {
 
   const dispatch = useDispatch();
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
-
-  // memo
-
-  const isCreator = useMemo(() => location.state.isCreator, [
-    location.state.isCreator
-  ]);
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   // effect
 

@@ -6,8 +6,8 @@ import { payloads } from "@colobobo/library";
 export interface RoomState {
   id: string | null;
   error: number | null;
-  code: number | null;
   deviceId: string;
+  isCreator: boolean;
 }
 
 export const slice = createSlice({
@@ -15,8 +15,8 @@ export const slice = createSlice({
   initialState: {
     id: null,
     error: null,
-    code: null,
-    deviceId: ""
+    deviceId: "",
+    isCreator: false
   } as RoomState,
   reducers: {
     createSuccess: (
@@ -26,6 +26,7 @@ export const slice = createSlice({
       const { id, deviceId } = action.payload.data;
       state.id = id;
       state.deviceId = deviceId;
+      state.isCreator = true;
     },
     createError: (
       state: RoomState,
@@ -37,15 +38,16 @@ export const slice = createSlice({
       state: RoomState,
       action: PayloadAction<payloads.room.JoinSuccess>
     ) => {
-      const { id, deviceId } = action.payload.data;
+      const { id, deviceId, isCreator } = action.payload.data;
       state.id = id;
       state.deviceId = deviceId;
+      state.isCreator = isCreator;
     },
     joinError: (
       state: RoomState,
       action: PayloadAction<payloads.room.JoinError>
     ) => {
-      state.code = action.payload.code;
+      state.error = action.payload.code;
     }
   }
 });
@@ -55,13 +57,13 @@ export const slice = createSlice({
 const getRoot = (state: RootState) => state.room;
 const selectId = (state: RootState) => getRoot(state).id;
 const selectError = (state: RootState) => getRoot(state).error;
-const selectCode = (state: RootState) => getRoot(state).code;
 const selectDeviceId = (state: RootState) => getRoot(state).deviceId;
+const selectIsCreator = (state: RootState) => getRoot(state).isCreator;
 export const selectors = {
   selectId,
   selectError,
-  selectCode,
-  selectDeviceId
+  selectDeviceId,
+  selectIsCreator
 };
 
 // reducer / actions
