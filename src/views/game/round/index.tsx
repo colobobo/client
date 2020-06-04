@@ -10,7 +10,6 @@ import GameDecorationBleed from "../../../components/GameDecorationBleed";
 import GameDecoration from "../../../components/GameDecoration";
 import GameBackground from "../../../components/GameBackground";
 import GameInterface from "../../../components/GameInterface";
-import GameTimer from "../../../components/GameTimer";
 import GamePhaser from "../../../components/GamePhaser";
 
 // styles
@@ -36,7 +35,6 @@ const Round: FC = () => {
         <GameDecorationBleed position="bottom" />
       </Area>
       <GameInterface />
-      <GameTimer />
       <button
         style={{ position: "absolute", top: 10, right: 10 }}
         onClick={() => {

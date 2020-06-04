@@ -2,6 +2,7 @@ import React, { FC, useCallback, useState } from "react";
 
 // components
 import InterfaceBreak from "../../components/InterfaceBreak";
+import InterfaceTimer from "../../components/InterfaceTimer";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // assets
@@ -26,6 +27,7 @@ const GameInterface: FC = () => {
 
   return (
     <div className="game-interface">
+      <InterfaceTimer />
       <InterfaceButton
         onClick={() => handleOnClickToggleGameState(true)}
         color={Colors.blue}
