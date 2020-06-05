@@ -13,9 +13,10 @@ import "./index.scss";
 
 interface Props {
   isRoundStarted: boolean;
+  colorTheme: Colors;
 }
 
-const GameInterface: FC<Props> = ({ isRoundStarted }) => {
+const GameInterface: FC<Props> = ({ isRoundStarted, colorTheme }) => {
   // states
 
   const [gamePaused, setGamePaused] = useState<boolean>(false);
@@ -31,10 +32,10 @@ const GameInterface: FC<Props> = ({ isRoundStarted }) => {
 
   return (
     <div className="game-interface">
-      <InterfaceTimer isRoundStarted={isRoundStarted} />
+      <InterfaceTimer isRoundStarted={isRoundStarted} color={colorTheme} />
       <InterfaceButton
         onClick={() => handleOnClickToggleGameState(true)}
-        color={Colors.blue}
+        color={colorTheme}
         classNames="game-interface__pause button--round"
       >
         <PauseSVG />

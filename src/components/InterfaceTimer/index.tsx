@@ -4,14 +4,18 @@ import React, { FC, useEffect, useState, useMemo } from "react";
 import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
+// components
+import { Colors } from "../../components/InterfaceButton";
+
 // style
 import "./index.scss";
 
 interface Props {
   isRoundStarted: boolean;
+  color: Colors;
 }
 
-const GameTimer: FC<Props> = ({ isRoundStarted }) => {
+const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   // selectors
   const areaWidh = useTypedSelector(selectors.area.selectWidth);
   const deviceId = useTypedSelector(selectors.room.selectDeviceId);
@@ -50,7 +54,7 @@ const GameTimer: FC<Props> = ({ isRoundStarted }) => {
         style={{ width: areaWidh, left: -device?.offsetX || 0 }}
       >
         <div
-          className="timer__progress"
+          className={`timer__progress timer__progress--${color}`}
           style={{ width: `${progressTimer}px` }}
         ></div>
       </div>

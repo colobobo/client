@@ -21,7 +21,18 @@
     left: 0;
     top: 0;
     border-right: 2px solid $blue-dark;
-    background: $red;
     transition: all 0.3s ease;
+
+    &--blue {
+      background: $blue;
+    }
+
+    &--pink {
+      background: $pink;
+    }
+
+    &--red {
+      background: $red;
+    }
   }
 }

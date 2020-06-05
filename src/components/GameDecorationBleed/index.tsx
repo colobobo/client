@@ -4,14 +4,19 @@ import React, { FC, useMemo, useEffect, useState } from "react";
 import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
+// lib
+import { enums } from "@colobobo/library";
+
 // style
 import "./index.scss";
 
 interface Props {
   position: string;
+  world: enums.World;
+  bgBleedColor: string;
 }
 
-const GameDecorationBleed: FC<Props> = ({ position }) => {
+const GameDecorationBleed: FC<Props> = ({ position, world, bgBleedColor }) => {
   const [decorationHeight, setDecorationHeight] = useState<number>(0);
 
   // selectors
@@ -45,14 +50,15 @@ const GameDecorationBleed: FC<Props> = ({ position }) => {
           className="source"
           style={{
             height: `${decorationHeight}px`,
-            backgroundImage: `url(${require("../../assets/worlds/mountain/decorations/bleeds/" +
-              position +
-              ".png")})`
+            backgroundImage: `url(${require(`../../assets/worlds/${world}/decorations/bleeds/${position}.png`)})`
           }}
         ></div>
         <div
           className="source__color-bleed"
-          style={{ height: `${colorBleedHeight}px` }}
+          style={{
+            height: `${colorBleedHeight}px`,
+            backgroundColor: bgBleedColor
+          }}
         ></div>
       </div>
     </div>
