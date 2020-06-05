@@ -43,6 +43,7 @@ const Round: FC = () => {
   const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
   const roundMembersActive = useSelector(selectors.round.selectMembersActive);
   const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
+  const isRoundStarted = useSelector(selectors.round.selectIsStarted);
 
   return (
     <div
@@ -75,7 +76,12 @@ const Round: FC = () => {
           </div>
         )}
       </Area>
-      {world && <GameInterface colorTheme={worldProperties!.colorTheme} />}
+      {world && (
+        <GameInterface
+          isRoundStarted={isRoundStarted}
+          colorTheme={worldProperties!.colorTheme}
+        />
+      )}
       <div
         className="debug-buttons"
         style={{

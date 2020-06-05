@@ -33,7 +33,7 @@
     "creatorDescription": "Choose a placement and place<br>your phone as shown :",
     "placement": {
       "inline": "Inline",
-      "round": "Round"
+      "circle": "Circle"
     },
     "buttons": {
       "start": "Start the game"
@@ -53,5 +53,8 @@
       "resume": "Resume",
       "left": "Left the game"
     }
+  },
+  "score": {
+    "title": "Score"
   }
 }

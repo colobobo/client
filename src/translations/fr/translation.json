@@ -29,11 +29,11 @@
     }
   },
   "room": {
-    "description": "Placez votre téléphone selon la disposition indiquée :",
+    "description": "Placez votre téléphone<br>selon la disposition indiquée :",
     "creatorDescription": "Choisissez une disposition et placez<br>votre téléphone comme indiqué :",
     "placement": {
       "inline": "Ligne",
-      "round": "Cercle"
+      "circle": "Cercle"
     },
     "buttons": {
       "start": "Lancer la partie"
@@ -53,5 +53,8 @@
       "resume": "Continuer",
       "left": "Quitter la partie"
     }
+  },
+  "score": {
+    "title": "Score"
   }
 }

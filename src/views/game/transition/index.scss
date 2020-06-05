@@ -9,11 +9,16 @@
   justify-content: center;
   align-items: center;
 
-  p {
-    margin-bottom: 30px;
-  }
+  .debug {
+    position: absolute;
+    bottom: 0;
+    span {
+      display: block;
+      margin-bottom: 30px;
+    }
 
-  button {
-    margin-bottom: 30px;
+    button {
+      margin-bottom: 30px;
+    }
   }
 }

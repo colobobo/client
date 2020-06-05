@@ -2,7 +2,7 @@
 @import "../../stylesheets/variables.scss";
 
 .timer {
-  z-index: 5;
+  z-index: 10;
   position: absolute;
   top: 0;
   width: 100%;
@@ -13,16 +13,26 @@
 
   &__container {
     height: 100%;
-    width: 100%;
     position: relative;
   }
   &__progress {
-    width: 40%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
     border-right: 2px solid $blue-dark;
-    background: $red;
+    transition: all 0.3s ease;
+
+    &--blue {
+      background: $blue;
+    }
+
+    &--pink {
+      background: $pink;
+    }
+
+    &--red {
+      background: $red;
+    }
   }
 }

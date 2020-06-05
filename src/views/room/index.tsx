@@ -1,5 +1,5 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import React, { FC, useCallback, useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // store
@@ -23,7 +23,7 @@ const Room: FC = () => {
   const history = useHistory();
 
   const [currentPlacement, setCurrentPlacement] = useState<PlacementList>(
-    PlacementList.round
+    PlacementList.inline
   );
 
   // store

@@ -2,6 +2,7 @@ import React, { FC, useCallback, useState } from "react";
 
 // components
 import InterfaceBreak from "../../components/InterfaceBreak";
+import InterfaceTimer from "../../components/InterfaceTimer";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // assets
@@ -11,10 +12,11 @@ import { ReactComponent as PauseSVG } from "../../assets/icons/pause.svg";
 import "./index.scss";
 
 interface Props {
+  isRoundStarted: boolean;
   colorTheme: Colors;
 }
 
-const GameInterface: FC<Props> = ({ colorTheme }) => {
+const GameInterface: FC<Props> = ({ isRoundStarted, colorTheme }) => {
   // states
 
   const [gamePaused, setGamePaused] = useState<boolean>(false);
@@ -30,6 +32,7 @@ const GameInterface: FC<Props> = ({ colorTheme }) => {
 
   return (
     <div className="game-interface">
+      <InterfaceTimer isRoundStarted={isRoundStarted} color={colorTheme} />
       <InterfaceButton
         onClick={() => handleOnClickToggleGameState(true)}
         color={colorTheme}
