@@ -1,7 +1,14 @@
 import React, { FC, useEffect } from "react";
+
+// styles
 import "./index.scss";
+
+// store
 import { useDispatch, useSelector } from "react-redux";
 import { actions, selectors } from "../../../redux";
+
+// components
+import InterfaceScore from "../../../components/InterfaceScore";
 
 const Transition: FC = () => {
   // return
@@ -9,7 +16,6 @@ const Transition: FC = () => {
   const dispatch = useDispatch();
 
   // selector
-
   const deviceId = useSelector(selectors.room.selectDeviceId);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
@@ -25,26 +31,29 @@ const Transition: FC = () => {
 
   return (
     <div className="transition">
-      <p>TRANSITION</p>
-      <p>started : {isTransitionStarted ? "true" : "false"}</p>
-      <button
-        onClick={() => {
-          dispatch(
-            actions.webSocket.emit.transition.playerReady({
-              playerId: deviceId
-            })
-          );
-        }}
-      >
-        Emit transition player ready
-      </button>
-      <button
-        onClick={() => {
-          dispatch(actions.webSocket.emit.transition.ended());
-        }}
-      >
-        Emit transition ended
-      </button>
+      <InterfaceScore />
+      <div className="debug">
+        <p>TRANSITION</p>
+        <span>started : {isTransitionStarted ? "true" : "false"}</span>
+        <button
+          onClick={() => {
+            dispatch(
+              actions.webSocket.emit.transition.playerReady({
+                playerId: deviceId
+              })
+            );
+          }}
+        >
+          Emit transition player ready
+        </button>
+        <button
+          onClick={() => {
+            dispatch(actions.webSocket.emit.transition.ended());
+          }}
+        >
+          Emit transition ended
+        </button>
+      </div>
     </div>
   );
 };

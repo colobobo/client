@@ -53,5 +53,8 @@
       "resume": "Continuer",
       "left": "Quitter la partie"
     }
+  },
+  "score": {
+    "title": "Score"
   }
 }
