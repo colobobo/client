@@ -43,7 +43,8 @@ const GamePhaser: FC = () => {
 
   // OTHER REF
 
-  const $gameMembersArray = useRef<typeof gameMembersArray>(gameMembersArray);
+  type GameMembersArrayType = typeof gameMembersArray;
+  const $gameMembersArray = useRef<GameMembersArrayType>(gameMembersArray);
 
   // STATE
 
@@ -51,7 +52,7 @@ const GamePhaser: FC = () => {
 
   // ########## FUNCTIONS ##########
 
-  // ----- PRELOAD ----
+  // ---------- PRELOAD ----------
 
   // load members
 
@@ -63,7 +64,7 @@ const GamePhaser: FC = () => {
     });
   }, []);
 
-  // ----- CREATE -----
+  // ---------- CREATE ----------
 
   // add members to scene
 
@@ -97,6 +98,7 @@ const GamePhaser: FC = () => {
         y: memberMatter.y
       });
       // disable collision
+      // TODO: use : .setCollisionCategory
       memberMatter.setSensor(true);
       // sleep
       memberMatter.setToSleep();
@@ -142,79 +144,121 @@ const GamePhaser: FC = () => {
     });
   }, [deviceId, dispatch]);
 
-  // ---- UPDATE ----
+  // ---------- UPDATE ----------
 
-  // round tick : members
+  // member : spawned
+
+  const onMemberSpawned = useCallback(
+    (memberMatter: Phaser.Physics.Matter.Image) => {
+      memberMatter.setAwake();
+      memberMatter.setAlpha(1);
+      memberMatter.setSensor(false);
+      memberMatter.data.set("status", enums.member.Status.active);
+    },
+    []
+  );
+
+  // member : trapped
+
+  const onMemberTrapped = useCallback(
+    (memberMatter: Phaser.Physics.Matter.Image) => {
+      const initialPosition = memberMatter.data.get("initialPosition");
+      memberMatter.setAlpha(0.5);
+      memberMatter.setSensor(true);
+      memberMatter.setPosition(initialPosition.x, initialPosition.y);
+      memberMatter.setToSleep();
+      memberMatter.data.set("status", enums.member.Status.waiting);
+    },
+    []
+  );
+
+  // member : arrived
+
+  const onMemberArrived = useCallback(
+    (memberMatter: Phaser.Physics.Matter.Image) => {
+      const initialPosition = memberMatter.data.get("initialPosition");
+      memberMatter.setAlpha(0);
+      memberMatter.setSensor(true);
+      memberMatter.setPosition(initialPosition.x, initialPosition.y);
+      memberMatter.setToSleep();
+      memberMatter.data.set("status", enums.member.Status.arrived);
+    },
+    []
+  );
+
+  // member : moved
+
+  const onMemberMoved = useCallback(
+    (
+      memberMatter: Phaser.Physics.Matter.Image,
+      member: GameMembersArrayType[0]
+    ) => {
+      // disable gravity
+      memberMatter.setIgnoreGravity(true);
+      // update member position and velocity
+      memberMatter.setPosition(member.position.x, member.position.y);
+      memberMatter.setVelocity(member.velocity.x, member.velocity.y);
+    },
+    []
+  );
+
+  // round tick : members update
 
   const onGameMembersUpdate = useCallback(
-    (members: typeof gameMembersArray) => {
+    (members: GameMembersArrayType) => {
       members.forEach(member => {
         const memberMatter = $membersMatter.current.find(
           $memberMatter => $memberMatter.name === member.id
         );
 
         // if I'm not the member manager
-        if (member.manager && member.manager !== deviceId) {
-          // disable gravity
-          memberMatter?.setIgnoreGravity(true);
-          // update member position and velocity
-          memberMatter?.setPosition(member.position.x, member.position.y);
-          memberMatter?.setVelocity(member.velocity.x, member.velocity.y);
+        if (memberMatter && member.manager && member.manager !== deviceId) {
+          // move member
+          onMemberMoved(memberMatter, member);
         }
 
+        const memberMatterStatus = memberMatter?.data.get("status");
+
         // if status are different
-        if (memberMatter && member.status !== memberMatter.data.get("status")) {
-          // waiting -> active : spawned
+        if (memberMatter && member.status !== memberMatterStatus) {
+          // waiting -> active : member spawned
           if (
-            memberMatter.data.get("status") === enums.member.Status.waiting &&
+            memberMatterStatus === enums.member.Status.waiting &&
             member.status === enums.member.Status.active
           ) {
-            memberMatter.setAwake();
-            memberMatter.setAlpha(1);
-            memberMatter.setSensor(false);
-            memberMatter.data.set("status", enums.member.Status.active);
+            onMemberSpawned(memberMatter);
           }
 
-          // active -> waiting : trapped
+          // active -> waiting : member trapped
           if (
-            memberMatter.data.get("status") === enums.member.Status.active &&
+            memberMatterStatus === enums.member.Status.active &&
             member.status === enums.member.Status.waiting
           ) {
-            const initialPosition = memberMatter.data.get("initialPosition");
-            memberMatter.setAlpha(0.5);
-            memberMatter.setSensor(true);
-            memberMatter.setPosition(initialPosition.x, initialPosition.y);
-            memberMatter.setToSleep();
-            memberMatter.data.set("status", enums.member.Status.waiting);
+            onMemberTrapped(memberMatter);
           }
 
-          // active -> arrived : trapped
+          // active -> arrived : member arrived
           if (
-            memberMatter.data.get("status") === enums.member.Status.active &&
+            memberMatterStatus === enums.member.Status.active &&
             member.status === enums.member.Status.arrived
           ) {
-            const initialPosition = memberMatter.data.get("initialPosition");
-            memberMatter.setAlpha(0);
-            memberMatter.setSensor(true);
-            memberMatter.setPosition(initialPosition.x, initialPosition.y);
-            memberMatter.setToSleep();
-            memberMatter.data.set("status", enums.member.Status.arrived);
+            onMemberArrived(memberMatter);
           }
         }
       });
     },
-    [deviceId, gameMembersArray]
+    [deviceId, onMemberArrived, onMemberMoved, onMemberSpawned, onMemberTrapped]
   );
 
   // ########## PHASER SCENE FUNCTIONS ##########
 
-  // ---- PRELOAD ----
+  // ---------- PRELOAD ----------
 
   const preload = useCallback(() => {
     loadMembers();
   }, [loadMembers]);
 
-  // ---- CREATE ----
+  // ---------- CREATE ----------
 
   const create = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
@@ -224,6 +268,12 @@ const GamePhaser: FC = () => {
     addMembersEventListeners();
 
     addMatterWorldEventListeners();
+
+    console.log(
+      $membersMatter.current.map(
+        m => (m.body as MatterJS.BodyType).collisionFilter
+      )
+    );
 
     // enable drag and drop in matter
     // @ts-ignore
@@ -236,7 +286,7 @@ const GamePhaser: FC = () => {
     addMembersToScene
   ]);
 
-  // ---- UPDATE ----
+  // ---------- UPDATE ----------
 
   const update = useCallback(
     (time, delta) => {
@@ -265,7 +315,7 @@ const GamePhaser: FC = () => {
     [deviceId, dispatch]
   );
 
-  // ---- MAIN SCENE ----
+  // ---------- MAIN SCENE ----------
 
   const mainScene = useMemo<Phaser.Types.Scenes.CreateSceneFromObjectConfig>(
     () => ({
@@ -276,7 +326,7 @@ const GamePhaser: FC = () => {
     [create, preload]
   );
 
-  // ---- CREATE PHASER GAME ----
+  // ---------- CREATE PHASER GAME ----------
 
   const createGame = useCallback(() => {
     const gameConfig: Phaser.Types.Core.GameConfig = {
