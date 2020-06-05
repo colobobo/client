@@ -54,7 +54,7 @@ const InterfacePlacement: FC<Props> = ({ placement }) => {
     for (let player of players) {
       const currentPlayer = player as HTMLElement;
 
-      if (placement === "circle" && devicesArray.length > 1) {
+      if (placement === PlacementList.circle && devicesArray.length > 1) {
         currentPlayer.style.transform = `rotate(-${incrementDegree}deg)`;
 
         const x = Math.round(
