@@ -1,10 +1,13 @@
 import React, { FC } from "react";
 
+// lib
+import { enums } from "@colobobo/library";
+
 // style
 import "./index.scss";
 
 interface Props {
-  world: string;
+  world: enums.World;
 }
 
 const GameBackground: FC<Props> = ({ world }) => {

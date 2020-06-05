@@ -3,6 +3,7 @@ import React, { FC, useMemo } from "react";
 // store
 import { actions, selectors } from "../../../redux";
 import { useDispatch, useSelector } from "react-redux";
+import { useTypedSelector } from "../../../redux/store";
 
 // components
 import Area from "../../../components/Area";
@@ -10,7 +11,6 @@ import GameDecorationBleed from "../../../components/GameDecorationBleed";
 import GameDecoration from "../../../components/GameDecoration";
 import GameBackground from "../../../components/GameBackground";
 import GameInterface from "../../../components/GameInterface";
-import GameTimer from "../../../components/GameTimer";
 import GamePhaser from "../../../components/GamePhaser";
 
 // config
@@ -20,9 +20,10 @@ import { worlds } from "../../../config/worlds";
 import "./index.scss";
 
 const Round: FC = () => {
-  const world = "river";
+  const world = useTypedSelector(selectors.round.selectWorld);
 
   const worldProperties = useMemo(() => {
+    console.log(world);
     for (let i = 0; i < worlds.length; i++) {
       if (worlds[i].name === world) {
         const properties = {
@@ -33,7 +34,7 @@ const Round: FC = () => {
         return properties;
       }
     }
-  }, []);
+  }, [world]);
 
   // return
 
@@ -43,28 +44,37 @@ const Round: FC = () => {
 
   return (
     <div
-      style={{ backgroundColor: worldProperties!.bgColor }}
+      style={{ backgroundColor: worldProperties?.bgColor }}
       className="round"
     >
       <Area height="min">
-        <GameBackground world={world} />
-        <GameDecoration world={world} position="top" />
-        <GameDecoration world={world} position="bottom" />
+        {world && (
+          <div>
+            <GameBackground world={world} />
+            <GameDecoration world={world} position="top" />
+            <GameDecoration world={world} position="bottom" />
+          </div>
+        )}
         <GamePhaser />
       </Area>
       <Area height="max">
-        <GameDecorationBleed
-          bgBleedColor={worldProperties!.bgBleedColor}
-          world={world}
-          position="top"
-        />
-        <GameDecorationBleed
-          bgBleedColor={worldProperties!.bgBleedColor}
-          world={world}
-          position="bottom"
-        />
+        {world && (
+          <div>
+            <GameDecorationBleed
+              bgBleedColor={worldProperties!.bgBleedColor}
+              world={world}
+              position="top"
+            />
+            <GameDecorationBleed
+              bgBleedColor={worldProperties!.bgBleedColor}
+              world={world}
+              position="bottom"
+            />
+          </div>
+        )}
       </Area>
-      <GameInterface colorTheme={worldProperties!.colorTheme} />
+      {world && <GameInterface colorTheme={worldProperties!.colorTheme} />}
+
       <button
         style={{ position: "absolute", top: 10, right: 10 }}
         onClick={() => {

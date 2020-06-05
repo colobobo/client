@@ -4,12 +4,15 @@ import React, { FC, useMemo, useEffect, useState } from "react";
 import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
+// lib
+import { enums } from "@colobobo/library";
+
 // style
 import "./index.scss";
 
 interface Props {
   position: string;
-  world: string;
+  world: enums.World;
   bgBleedColor: string;
 }
 
