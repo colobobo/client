@@ -33,6 +33,24 @@
     box-shadow: inset 5px 5px 0 #74abff, inset -5px -5px 0 #344dff;
   }
 
+  &--pink {
+    background: $pink;
+    color: $white;
+
+    -moz-box-shadow: inset 5px 5px 0 #fbacec, inset -5px -5px 0 #ec64d3;
+    -webkit-box-shadow: inset 5px 5px 0 #fbacec, inset -5px -5px 0 #ec64d3;
+    box-shadow: inset 5px 5px 0 #fbacec, inset -5px -5px 0 #ec64d3;
+  }
+
+  &--red {
+    background: $red;
+    color: $white;
+
+    -moz-box-shadow: inset 5px 5px 0 #ed8787, inset -5px -5px 0 #f93030;
+    -webkit-box-shadow: inset 5px 5px 0 #ed8787, inset -5px -5px 0 #f93030;
+    box-shadow: inset 5px 5px 0 #ed8787, inset -5px -5px 0 #f93030;
+  }
+
   &--small {
     height: 45px;
   }
