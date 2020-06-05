@@ -70,12 +70,10 @@ const GamePhaser: FC = () => {
   const addMembersToScene = useCallback(() => {
     const scene = $game.current!.scene.getScene(mainSceneKey);
 
-    console.log($gameMembersArray.current);
-
     $gameMembersArray.current.forEach((member, i) => {
       const memberMatter = scene.matter.add.image(
-        i * 70,
-        i * 70,
+        50 + i * 70,
+        120,
         member.skin,
         undefined,
         {
@@ -88,15 +86,20 @@ const GamePhaser: FC = () => {
       // scale
       memberMatter.setScale(0.5);
       // alpha
-      memberMatter.setAlpha(0.8);
+      memberMatter.setAlpha(0.5);
       // fixe rotation
       memberMatter.setFixedRotation();
-
-      // memberMatter.setToSleep();
-
-      // setTimeout(() => {
-      //   memberMatter.setAwake();
-      // }, 2000 * i);
+      // status = waiting
+      memberMatter.setData("status", enums.member.Status.waiting);
+      // save initial position
+      memberMatter.setData("initialPosition", {
+        x: memberMatter.x,
+        y: memberMatter.y
+      });
+      // disable collision
+      memberMatter.setSensor(true);
+      // sleep
+      memberMatter.setToSleep();
 
       // add member matter object to members array
       $membersMatter.current.push(memberMatter);
@@ -146,12 +149,57 @@ const GamePhaser: FC = () => {
   const onGameMembersUpdate = useCallback(
     (members: typeof gameMembersArray) => {
       members.forEach(member => {
-        // update member position and velocity if I'm not the member manager
+        const memberMatter = $membersMatter.current.find(
+          $memberMatter => $memberMatter.name === member.id
+        );
+
+        // if I'm not the member manager
         if (member.manager && member.manager !== deviceId) {
-          $membersMatter.current
-            .find($memberMatter => $memberMatter.name === member.id)
-            ?.setPosition(member.position.x, member.position.y)
-            ?.setVelocity(member.velocity.x, member.velocity.y);
+          // disable gravity
+          memberMatter?.setIgnoreGravity(true);
+          // update member position and velocity
+          memberMatter?.setPosition(member.position.x, member.position.y);
+          memberMatter?.setVelocity(member.velocity.x, member.velocity.y);
+        }
+
+        // if status are different
+        if (memberMatter && member.status !== memberMatter.data.get("status")) {
+          // waiting -> active : spawned
+          if (
+            memberMatter.data.get("status") === enums.member.Status.waiting &&
+            member.status === enums.member.Status.active
+          ) {
+            memberMatter.setAwake();
+            memberMatter.setAlpha(1);
+            memberMatter.setSensor(false);
+            memberMatter.data.set("status", enums.member.Status.active);
+          }
+
+          // active -> waiting : trapped
+          if (
+            memberMatter.data.get("status") === enums.member.Status.active &&
+            member.status === enums.member.Status.waiting
+          ) {
+            const initialPosition = memberMatter.data.get("initialPosition");
+            memberMatter.setAlpha(0.5);
+            memberMatter.setSensor(true);
+            memberMatter.setPosition(initialPosition.x, initialPosition.y);
+            memberMatter.setToSleep();
+            memberMatter.data.set("status", enums.member.Status.waiting);
+          }
+
+          // active -> arrived : trapped
+          if (
+            memberMatter.data.get("status") === enums.member.Status.active &&
+            member.status === enums.member.Status.arrived
+          ) {
+            const initialPosition = memberMatter.data.get("initialPosition");
+            memberMatter.setAlpha(0);
+            memberMatter.setSensor(true);
+            memberMatter.setPosition(initialPosition.x, initialPosition.y);
+            memberMatter.setToSleep();
+            memberMatter.data.set("status", enums.member.Status.arrived);
+          }
         }
       });
     },
@@ -195,10 +243,13 @@ const GamePhaser: FC = () => {
       $gameMembersArray.current.forEach(member => {
         // if I'm the member manager
         if (deviceId === member.manager) {
-          const memberMatterBody = $membersMatter.current.find(
+          const memberMatter = $membersMatter.current.find(
             $memberMatter => $memberMatter.name === member.id
-          )?.body as MatterJS.BodyType;
-          if (memberMatterBody) {
+          );
+          const memberMatterBody = memberMatter?.body as MatterJS.BodyType;
+          if (memberMatter && memberMatterBody) {
+            // enable gravity
+            memberMatter.setIgnoreGravity(false);
             // emit position and velocity of member
             dispatch(
               actions.webSocket.emit.round.memberMove({

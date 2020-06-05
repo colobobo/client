@@ -56,13 +56,25 @@ const selectMembers = (state: RootState) => getRoot(state).members;
 const selectMembersAsArray = createSelector(selectMembers, objects =>
   Object.keys(objects).map(objectId => ({ ...objects[objectId], id: objectId }))
 );
+const selectMembersWaiting = createSelector(selectMembersAsArray, members =>
+  members.filter(member => member.status === enums.member.Status.waiting)
+);
+const selectMembersActive = createSelector(selectMembersAsArray, members =>
+  members.filter(member => member.status === enums.member.Status.active)
+);
+const selectMembersArrived = createSelector(selectMembersAsArray, members =>
+  members.filter(member => member.status === enums.member.Status.arrived)
+);
 
 export const selectors = {
   selectTick,
   selectIsStarted,
   selectMember,
   selectMembers,
-  selectMembersAsArray: selectMembersAsArray
+  selectMembersAsArray,
+  selectMembersWaiting,
+  selectMembersActive,
+  selectMembersArrived
 };
 
 // reducer / actions
