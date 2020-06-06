@@ -37,7 +37,7 @@ export const slice = createSlice({
       const { type } = action.payload.data;
       state.sceneType = type;
     },
-    DispositionValidated: (
+    dispositionValidated: (
       state: GameState,
       action: PayloadAction<payloads.game.DispositionValidated>
     ) => {
