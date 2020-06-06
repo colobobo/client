@@ -32,7 +32,7 @@
     "description": "Placez votre téléphone<br>selon la disposition indiquée :",
     "creatorDescription": "Choisissez une disposition et placez<br>votre téléphone comme indiqué :",
     "placement": {
-      "inline": "Ligne",
+      "line": "Ligne",
       "circle": "Cercle"
     },
     "buttons": {

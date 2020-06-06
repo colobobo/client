@@ -7,16 +7,14 @@ import { useTypedSelector } from "../../redux/store";
 // assets
 import mobileIcon from "../../assets/illustrations/mobile.png";
 
+// lib
+import { enums } from "@colobobo/library";
+
 // styles
 import "./index.scss";
 
-export enum PlacementList {
-  inline = "inline",
-  circle = "circle"
-}
-
 interface Props {
-  placement: PlacementList;
+  placement: enums.game.Disposition;
 }
 
 const InterfacePlacement: FC<Props> = ({ placement }) => {
@@ -54,7 +52,10 @@ const InterfacePlacement: FC<Props> = ({ placement }) => {
     for (let player of players) {
       const currentPlayer = player as HTMLElement;
 
-      if (placement === PlacementList.circle && devicesArray.length > 1) {
+      if (
+        placement === enums.game.Disposition.circle &&
+        devicesArray.length > 1
+      ) {
         currentPlayer.style.transform = `rotate(-${incrementDegree}deg)`;
 
         const x = Math.round(
