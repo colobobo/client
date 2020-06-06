@@ -7,11 +7,19 @@ import { useTypedSelector } from "../../redux/store";
 // lib
 import { enums } from "@colobobo/library";
 
+// config
+import * as config from "../../config";
+
 // style
 import "./index.scss";
 
+export enum Position {
+  top = "top",
+  bottom = "bottom"
+}
+
 interface Props {
-  position: string;
+  position: Position;
   world: enums.World;
   bgBleedColor: string;
 }
@@ -50,16 +58,16 @@ const GameDecorationBleed: FC<Props> = ({ position, world, bgBleedColor }) => {
           className="source"
           style={{
             height: `${decorationHeight}px`,
-            backgroundImage: `url(${require(`../../assets/worlds/${world}/decorations/bleeds/${position}.png`)})`
+            backgroundImage: `url(${config.worlds[world].decorations.bleeds[position]})`
           }}
-        ></div>
+        />
         <div
           className="source__color-bleed"
           style={{
             height: `${colorBleedHeight}px`,
             backgroundColor: bgBleedColor
           }}
-        ></div>
+        />
       </div>
     </div>
   );

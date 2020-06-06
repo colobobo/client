@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 import { enums } from "@colobobo/library";
-import { membersSkinConfig } from "../../datas/members";
+import * as config from "../../config";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
@@ -57,7 +57,8 @@ export default class MainScene extends Phaser.Scene {
 
   loadMembers() {
     Object.values(enums.member.Skins).forEach(memberSkin => {
-      this.load.svg(membersSkinConfig[memberSkin]);
+      // load skins texture
+      this.load.svg(config.members[memberSkin].skin);
     });
   }
 
