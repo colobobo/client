@@ -19,7 +19,11 @@ import { worlds } from "../../../config/worlds";
 // styles
 import "./index.scss";
 
-const Round: FC = () => {
+interface Props {
+  isActive: boolean;
+}
+
+const Round: FC<Props> = ({ isActive }) => {
   const world = useTypedSelector(selectors.round.selectWorld);
 
   const worldProperties = useMemo(() => {
@@ -48,7 +52,7 @@ const Round: FC = () => {
   return (
     <div
       style={{ backgroundColor: worldProperties?.bgColor }}
-      className="round"
+      className={`round ${isActive ? "active" : ""}`}
     >
       <Area height="min">
         {world && (
@@ -58,7 +62,7 @@ const Round: FC = () => {
             <GameDecoration world={world} position="bottom" />
           </div>
         )}
-        <GamePhaser />
+        {isActive && <GamePhaser />}
       </Area>
       <Area height="max">
         {world && (

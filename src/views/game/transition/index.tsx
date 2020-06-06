@@ -10,7 +10,11 @@ import { actions, selectors } from "../../../redux";
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
 
-const Transition: FC = () => {
+interface Props {
+  isActive: boolean;
+}
+
+const Transition: FC<Props> = ({ isActive }) => {
   // return
 
   const dispatch = useDispatch();
@@ -30,7 +34,7 @@ const Transition: FC = () => {
   // return
 
   return (
-    <div className="transition">
+    <div className={`transition ${isActive ? "active" : ""}`}>
       <InterfaceScore />
       <div className="debug">
         <p>TRANSITION</p>
@@ -48,6 +52,7 @@ const Transition: FC = () => {
         </button>
         <button
           onClick={() => {
+            dispatch(actions.transition.stop());
             dispatch(actions.webSocket.emit.transition.ended());
           }}
         >
