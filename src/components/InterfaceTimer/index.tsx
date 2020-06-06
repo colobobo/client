@@ -5,7 +5,7 @@ import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
 // components
-import { Colors } from "../../components/InterfaceButton";
+import { Colors } from "../InterfaceButton";
 
 // style
 import "./index.scss";
@@ -18,9 +18,9 @@ interface Props {
 const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   // selectors
   const areaWidh = useTypedSelector(selectors.area.selectWidth);
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
   const device = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
+    selectors.area.selectDevice(state, { playerId })
   );
   const duration = useTypedSelector(selectors.round.selectDuration);
 

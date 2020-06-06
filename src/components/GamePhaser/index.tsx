@@ -26,7 +26,7 @@ const GamePhaser: FC = () => {
   const areaWidth = useSelector(selectors.area.selectWidth);
   const areaHeight = useSelector(selectors.area.selectMinHeight);
   const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
-  const deviceId = useSelector(selectors.room.selectDeviceId);
+  const playerId = useSelector(selectors.room.selectPlayerId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
 
   // DOM REF
@@ -137,12 +137,12 @@ const GamePhaser: FC = () => {
 
       dispatch(
         actions.webSocket.emit.round.memberDragStart({
-          playerId: deviceId,
+          playerId,
           memberId: gameObject.name
         })
       );
     });
-  }, [deviceId, dispatch]);
+  }, [playerId, dispatch]);
 
   // ---------- UPDATE ----------
 
@@ -212,7 +212,7 @@ const GamePhaser: FC = () => {
         );
 
         // if I'm not the member manager
-        if (memberMatter && member.manager && member.manager !== deviceId) {
+        if (memberMatter && member.manager && member.manager !== playerId) {
           // move member
           onMemberMoved(memberMatter, member);
         }
@@ -247,7 +247,7 @@ const GamePhaser: FC = () => {
         }
       });
     },
-    [deviceId, onMemberArrived, onMemberMoved, onMemberSpawned, onMemberTrapped]
+    [playerId, onMemberArrived, onMemberMoved, onMemberSpawned, onMemberTrapped]
   );
 
   // ########## PHASER SCENE FUNCTIONS ##########
@@ -292,7 +292,7 @@ const GamePhaser: FC = () => {
     (time, delta) => {
       $gameMembersArray.current.forEach(member => {
         // if I'm the member manager
-        if (deviceId === member.manager) {
+        if (playerId === member.manager) {
           const memberMatter = $membersMatter.current.find(
             $memberMatter => $memberMatter.name === member.id
           );
@@ -312,7 +312,7 @@ const GamePhaser: FC = () => {
         }
       });
     },
-    [deviceId, dispatch]
+    [playerId, dispatch]
   );
 
   // ---------- MAIN SCENE ----------

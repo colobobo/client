@@ -23,9 +23,9 @@ const InterfacePlacement: FC<Props> = ({ placement }) => {
   // store
 
   const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
   const currentDevice = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
+    selectors.area.selectDevice(state, { playerId })
   );
 
   const currentDevicePosition = useMemo(() => {

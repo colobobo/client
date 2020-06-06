@@ -9,9 +9,9 @@ interface AreaProps {
 
 const Area: FC<AreaProps> = ({ children, height }) => {
   // selectors
-  const deviceId = useTypedSelector(selectors.room.selectDeviceId);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
   const device = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { id: deviceId })
+    selectors.area.selectDevice(state, { playerId })
   );
   const areaWidh = useTypedSelector(selectors.area.selectWidth);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
