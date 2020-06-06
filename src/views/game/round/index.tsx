@@ -24,10 +24,15 @@ interface Props {
 }
 
 const Round: FC<Props> = ({ isActive }) => {
+  const dispatch = useDispatch();
+
+  const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
+  const roundMembersActive = useSelector(selectors.round.selectMembersActive);
+  const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
+  const isRoundStarted = useSelector(selectors.round.selectIsStarted);
   const world = useTypedSelector(selectors.round.selectWorld);
 
   const worldProperties = useMemo(() => {
-    console.log(world);
     for (let i = 0; i < worlds.length; i++) {
       if (worlds[i].name === world) {
         const properties = {
@@ -41,13 +46,6 @@ const Round: FC<Props> = ({ isActive }) => {
   }, [world]);
 
   // return
-
-  const dispatch = useDispatch();
-
-  const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
-  const roundMembersActive = useSelector(selectors.round.selectMembersActive);
-  const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
-  const isRoundStarted = useSelector(selectors.round.selectIsStarted);
 
   return (
     <div

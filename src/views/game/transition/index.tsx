@@ -26,10 +26,10 @@ const Transition: FC<Props> = ({ isActive }) => {
   // effect
 
   useEffect(() => {
-    return () => {
+    if (!isActive) {
       dispatch(actions.transition.stop());
-    };
-  }, [dispatch]);
+    }
+  }, [dispatch, isActive]);
 
   // return
 
@@ -52,7 +52,6 @@ const Transition: FC<Props> = ({ isActive }) => {
         </button>
         <button
           onClick={() => {
-            dispatch(actions.transition.stop());
             dispatch(actions.webSocket.emit.transition.ended());
           }}
         >
