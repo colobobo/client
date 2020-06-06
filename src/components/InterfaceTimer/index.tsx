@@ -25,17 +25,17 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   const duration = useTypedSelector(selectors.round.selectDuration);
 
   // state
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(duration);
 
   // handles
 
   useEffect(() => {
-    if (timeLeft === duration) {
+    if (!isRoundStarted || timeLeft === 0) {
       return;
     }
 
     const intervalId = setInterval(() => {
-      setTimeLeft(timeLeft + 100);
+      setTimeLeft(timeLeft - 100);
     }, 100);
 
     return () => clearInterval(intervalId);
