@@ -16,8 +16,8 @@ const Game: FC = () => {
   return (
     <div className="game">
       {/* TODO : animate transition */}
-      {sceneType === enums.scene.Type.round && <Round />}
-      {sceneType === enums.scene.Type.transition && <Transition />}
+      <Round isActive={sceneType === enums.scene.Type.round} />
+      <Transition isActive={sceneType === enums.scene.Type.transition} />
     </div>
   );
 };
