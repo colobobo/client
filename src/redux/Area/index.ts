@@ -8,7 +8,7 @@ export interface AreaState {
   minHeight: number;
   maxHeight: number;
   devices: {
-    [deviceId: string]: AreaDevice;
+    [playerId: string]: AreaDevice;
   };
 }
 
@@ -39,13 +39,13 @@ const selectMinHeight = (state: RootState) => getRoot(state).minHeight;
 const selectMaxHeight = (state: RootState) => getRoot(state).maxHeight;
 const selectDevices = (state: RootState) => getRoot(state).devices;
 const selectDevicesArray = createSelector([selectDevices], devices => {
-  return Object.keys(devices).map(deviceId => ({
-    id: deviceId,
-    ...devices[deviceId]
+  return Object.keys(devices).map(playerId => ({
+    id: playerId,
+    ...devices[playerId]
   }));
 });
-const selectDevice = (state: RootState, { id }: { id: string }) =>
-  getRoot(state).devices[id];
+const selectDevice = (state: RootState, { playerId }: { playerId: string }) =>
+  getRoot(state).devices[playerId];
 
 export const selectors = {
   selectWidth,
