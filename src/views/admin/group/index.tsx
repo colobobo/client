@@ -1,7 +1,6 @@
 import React, { useState, FC, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Device from "../../../components/admin/Device";
-import { copyToClipboard } from "../../../utils";
 
 //config
 import { groups } from "../../../config/groups";
@@ -39,14 +38,6 @@ const Group: FC = () => {
   });
 
   // handlers
-
-  // const handleOnCreateRoom = useCallback((adminRoomId: string) => {
-  //   copyToClipboard(adminRoomId);
-  //   setCurrentRoom(prev => ({
-  //     ...prev,
-  //     adminRoomId
-  //   }));
-  // }, []);
 
   const handleOnAddPlayer = useCallback(() => {
     setDevicesNumber(prev => prev + 1);

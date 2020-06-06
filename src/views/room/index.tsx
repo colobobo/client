@@ -10,9 +10,10 @@ import { useTypedSelector } from "../../redux/store";
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
-import InterfacePlacement, {
-  PlacementList
-} from "../../components/InterfacePlacement";
+import InterfacePlacement from "../../components/InterfacePlacement";
+
+// lib
+import { enums } from "@colobobo/library";
 
 // styles
 import "./index.scss";
@@ -22,15 +23,16 @@ const Room: FC = () => {
   const { roomId } = useParams();
   const history = useHistory();
 
-  const [currentPlacement, setCurrentPlacement] = useState<PlacementList>(
-    PlacementList.inline
-  );
-
   // store
 
   const dispatch = useDispatch();
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+  const disposition = useTypedSelector(selectors.game.selectDisposition);
+
+  const [currentPlacement, setCurrentPlacement] = useState<
+    enums.game.Disposition
+  >(disposition);
 
   // effect
 
@@ -54,6 +56,14 @@ const Room: FC = () => {
     setCurrentPlacement(event.target.value);
   }, []);
 
+  useEffect(() => {
+    dispatch(
+      actions.webSocket.emit.game.dispositionSelected({
+        disposition: currentPlacement
+      })
+    );
+  }, [dispatch, currentPlacement]);
+
   // return
 
   return (
@@ -71,7 +81,7 @@ const Room: FC = () => {
         ></p>
         {isCreator && (
           <div className="room__selection">
-            {Object.values(PlacementList).map(value => (
+            {Object.values(enums.game.Disposition).map(value => (
               <div className="room__choice" key={value}>
                 <input
                   type="radio"
@@ -92,7 +102,7 @@ const Room: FC = () => {
           </div>
         )}
         <div className="room__placement">
-          <InterfacePlacement placement={currentPlacement} />
+          <InterfacePlacement placement={disposition} />
         </div>
         {isCreator && (
           <InterfaceButton

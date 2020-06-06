@@ -12,6 +12,11 @@ export const startError = createSubscribeAction(
   GameActions.startError.type
 );
 
+export const dispositionValidated = createSubscribeAction(
+  events.game.dispositionValidated,
+  GameActions.dispositionValidated.type
+);
+
 export const sceneTypeUpdate = createSubscribeAction(
   events.game.sceneTypeUpdate,
   GameActions.sceneTypeUpdate.type
