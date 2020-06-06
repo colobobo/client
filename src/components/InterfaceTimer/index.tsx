@@ -30,10 +30,6 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   // handles
 
   useEffect(() => {
-    if (!isRoundStarted) {
-      setTimeLeft(0);
-    }
-
     if (timeLeft === duration) {
       return;
     }
