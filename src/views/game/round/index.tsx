@@ -44,7 +44,7 @@ const Round: FC<Props> = ({ isActive }) => {
     if (isActive) {
       dispatch(actions.webSocket.emit.round.playerReady());
     }
-  }, [isActive]);
+  }, [dispatch, isActive]);
 
   // return
 
