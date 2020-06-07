@@ -1025,7 +1025,7 @@
 
 "@colobobo/library@https://github.com/colobobo/library":
   version "1.0.0"
-  resolved "https://github.com/colobobo/library#cde8e06208ee2f3358a1e7a63a89b839063f7018"
+  resolved "https://github.com/colobobo/library#fb59387416f1e499511ecd7f765a62459c27c1e0"
   dependencies:
     prettier "^2.0.1"
     tslint "^6.1.0"
@@ -8368,6 +8368,11 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
+phaser-matter-collision-plugin@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/phaser-matter-collision-plugin/-/phaser-matter-collision-plugin-0.10.2.tgz#9b3af7f36ac7bd2951ebe8c2357e958be5b2d551"
+  integrity sha512-k/+eFmPpy1ppTFB2tJcSasM/79GevjaZSMUJAj95wpftXlLxmfqyVK9PfiQg3d49dD7LeTj8iJOkLMCTaAiK/w==
 
 phaser@^3.23.0:
   version "3.23.0"

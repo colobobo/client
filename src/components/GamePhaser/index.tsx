@@ -2,6 +2,7 @@ import React, { FC, useRef, useEffect, useCallback, useState } from "react";
 import * as Phaser from "phaser";
 import { selectors, actions } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
+import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 
 import "./index.scss";
 
@@ -79,6 +80,15 @@ const GamePhaser: FC = () => {
           },
           "plugins.wrap": true
         }
+      },
+      plugins: {
+        scene: [
+          {
+            plugin: PhaserMatterCollisionPlugin, // The plugin class
+            key: "matterCollision",
+            mapping: "matterCollision"
+          }
+        ]
       },
       scene: $mainScene.current
     };
