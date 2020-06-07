@@ -1,7 +1,5 @@
 import React, { FC } from "react";
 
-import ClassNames from "classnames";
-
 // components
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 

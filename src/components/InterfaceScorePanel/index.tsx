@@ -37,7 +37,9 @@ const InterfaceScorePanel: FC<Props> = ({ score, lives }) => {
       <div className="score-panel__container">
         <div className="score-panel__content">
           <p className="score-panel__title">{t("score.title")}</p>
-          <p className="score-panel__score">{score}</p>
+          <p className="score-panel__score">
+            {score.toString().padStart(3, "0")}
+          </p>
           <ul className="score-panel__lives">{livesItem}</ul>
         </div>
       </div>
