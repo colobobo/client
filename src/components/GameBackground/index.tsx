@@ -3,6 +3,9 @@ import React, { FC } from "react";
 // lib
 import { enums } from "@colobobo/library";
 
+// config
+import * as config from "../../config";
+
 // style
 import "./index.scss";
 
@@ -17,15 +20,15 @@ const GameBackground: FC<Props> = ({ world }) => {
       <div
         className="game-decoration__background"
         style={{
-          backgroundImage: `url(${require(`../../assets/worlds/${world}/background-1.png`)})`
+          backgroundImage: `url(${config.worlds[world].backgrounds.first})`
         }}
-      ></div>
+      />
       <div
         className="game-decoration__background"
         style={{
-          backgroundImage: `url(${require(`../../assets/worlds/${world}/background-2.png`)})`
+          backgroundImage: `url(${config.worlds[world].backgrounds.second})`
         }}
-      ></div>
+      />
     </div>
   );
 };

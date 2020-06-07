@@ -32,7 +32,7 @@
     "description": "Place your phone as shown :",
     "creatorDescription": "Choose a placement and place<br>your phone as shown :",
     "placement": {
-      "inline": "Inline",
+      "line": "Inline",
       "circle": "Circle"
     },
     "buttons": {

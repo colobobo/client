@@ -7,58 +7,61 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import Area from "../../../components/Area";
-import GameDecorationBleed from "../../../components/GameDecorationBleed";
-import GameDecoration from "../../../components/GameDecoration";
+import GameDecorationBleed, {
+  Position as GameDecorationBleedPosition
+} from "../../../components/GameDecorationBleed";
+import GameDecoration, {
+  Position as GameDecorationPosition
+} from "../../../components/GameDecoration";
 import GameBackground from "../../../components/GameBackground";
 import GameInterface from "../../../components/GameInterface";
 import GamePhaser from "../../../components/GamePhaser";
 
 // config
-import { worlds } from "../../../config/worlds";
+import * as config from "../../../config";
 
 // styles
 import "./index.scss";
 
-const Round: FC = () => {
-  const world = useTypedSelector(selectors.round.selectWorld);
+interface Props {
+  isActive: boolean;
+}
 
-  const worldProperties = useMemo(() => {
-    console.log(world);
-    for (let i = 0; i < worlds.length; i++) {
-      if (worlds[i].name === world) {
-        const properties = {
-          bgColor: worlds[i].bgColor,
-          bgBleedColor: worlds[i].bgBleedColor,
-          colorTheme: worlds[i].colorTheme
-        };
-        return properties;
-      }
-    }
-  }, [world]);
-
-  // return
-
+const Round: FC<Props> = ({ isActive }) => {
   const dispatch = useDispatch();
 
   const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
   const roundMembersActive = useSelector(selectors.round.selectMembersActive);
   const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
+  const world = useTypedSelector(selectors.round.selectWorld);
+
+  const worldProperties = useMemo(() => {
+    return config.worlds[world];
+  }, [world]);
+
+  // return
 
   return (
     <div
       style={{ backgroundColor: worldProperties?.bgColor }}
-      className="round"
+      className={`round ${isActive ? "active" : ""}`}
     >
       <Area height="min">
         {world && (
           <div>
             <GameBackground world={world} />
-            <GameDecoration world={world} position="top" />
-            <GameDecoration world={world} position="bottom" />
+            <GameDecoration
+              world={world}
+              position={GameDecorationPosition.top}
+            />
+            <GameDecoration
+              world={world}
+              position={GameDecorationPosition.bottom}
+            />
           </div>
         )}
-        <GamePhaser />
+        {isActive && <GamePhaser />}
       </Area>
       <Area height="max">
         {world && (
@@ -66,12 +69,12 @@ const Round: FC = () => {
             <GameDecorationBleed
               bgBleedColor={worldProperties!.bgBleedColor}
               world={world}
-              position="top"
+              position={GameDecorationBleedPosition.top}
             />
             <GameDecorationBleed
               bgBleedColor={worldProperties!.bgBleedColor}
               world={world}
-              position="bottom"
+              position={GameDecorationBleedPosition.bottom}
             />
           </div>
         )}

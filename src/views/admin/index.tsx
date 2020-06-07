@@ -1,9 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import { Route } from "react-router-dom";
 import "./index.scss";
-
-import { useDispatch } from "react-redux";
-import { actions } from "../../redux";
 
 // components
 import AdminHeader from "../../components/admin/Header";

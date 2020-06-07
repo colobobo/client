@@ -1,10 +1,5 @@
-import React, { FC, useEffect, useMemo } from "react";
+import React, { FC } from "react";
 import { Route, Switch, MemoryRouter } from "react-router-dom";
-
-// store
-import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../redux/store";
-import { actions, selectors } from "../redux";
 
 //style
 import "./index.scss";

@@ -3,11 +3,19 @@ import React, { FC } from "react";
 // lib
 import { enums } from "@colobobo/library";
 
+// config
+import * as config from "../../config";
+
 // style
 import "./index.scss";
 
+export enum Position {
+  top = "top",
+  bottom = "bottom"
+}
+
 interface Props {
-  position: string;
+  position: Position;
   world: enums.World;
 }
 
@@ -20,9 +28,9 @@ const GameDecoration: FC<Props> = ({ position, world }) => {
       <div
         className="source"
         style={{
-          backgroundImage: `url(${require(`../../assets/worlds/${world}/decorations/${position}.png`)})`
+          backgroundImage: `url(${config.worlds[world].decorations[position]})`
         }}
-      ></div>
+      />
     </div>
   );
 };
