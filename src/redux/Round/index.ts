@@ -12,6 +12,7 @@ export interface RoundState {
   members: Members;
   score: number;
   lives: number;
+  isSuccess: boolean;
 }
 
 export const slice = createSlice({
@@ -40,12 +41,14 @@ export const slice = createSlice({
     },
     fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
       state.lives = action.payload.data.lives;
+      state.isSuccess = false;
     },
     success: (
       state: RoundState,
       action: PayloadAction<payloads.round.Success>
     ) => {
       state.score = action.payload.data.score;
+      state.isSuccess = true;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
@@ -62,6 +65,7 @@ const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
 const selectLives = (state: RootState) => getRoot(state).lives;
 const selectScore = (state: RootState) => getRoot(state).score;
+const selectIsSuccess = (state: RootState) => getRoot(state).isSuccess;
 const selectMember = (state: RootState, { id }: { id: string }) =>
   getRoot(state).members[id];
 const selectMembers = (state: RootState) => getRoot(state).members;
@@ -87,6 +91,7 @@ export const selectors = {
   selectMembers,
   selectLives,
   selectScore,
+  selectIsSuccess,
   selectMembersAsArray,
   selectMembersWaiting,
   selectMembersActive,

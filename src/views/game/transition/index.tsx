@@ -37,7 +37,6 @@ const Transition: FC<Props> = ({ isActive }) => {
     <div className={`transition ${isActive ? "active" : ""}`}>
       <InterfaceScore />
       <div className="debug">
-        <p>TRANSITION</p>
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button
           onClick={() => {
