@@ -10,7 +10,24 @@
   flex-direction: column;
   align-items: center;
 
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__panel {
-    margin-top: 30%;
+    margin-top: 25%;
+  }
+
+  &__animation {
+    margin-top: auto;
+  }
+
+  &__gif {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
