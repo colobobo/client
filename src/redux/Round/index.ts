@@ -10,22 +10,26 @@ export interface RoundState {
   world: enums.World;
   tick: number;
   members: Members;
+  score: number;
+  lives: number;
 }
 
 export const slice = createSlice({
   name: "round",
   initialState: {
     isStarted: false,
-    members: {}
+    members: {},
+    score: 0
   } as RoundState,
   reducers: {
     init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {
-      const { id, duration, world, tick, members } = action.payload.data;
+      const { id, duration, world, tick, members, lives } = action.payload.data;
       state.id = id;
       state.duration = duration;
       state.world = world;
       state.tick = tick;
       state.members = members;
+      state.lives = lives;
       // TODO: playerRoles
     },
     start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
@@ -34,11 +38,15 @@ export const slice = createSlice({
     stop: (state: RoundState) => {
       state.isStarted = false;
     },
-    fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {},
+    fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
+      state.lives = action.payload.data.lives;
+    },
     success: (
       state: RoundState,
       action: PayloadAction<payloads.round.Success>
-    ) => {},
+    ) => {
+      state.score = action.payload.data.score;
+    },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
     }
@@ -52,6 +60,8 @@ const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectDuration = (state: RootState) => getRoot(state).duration;
 const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
+const selectLives = (state: RootState) => getRoot(state).lives;
+const selectScore = (state: RootState) => getRoot(state).score;
 const selectMember = (state: RootState, { id }: { id: string }) =>
   getRoot(state).members[id];
 const selectMembers = (state: RootState) => getRoot(state).members;
@@ -75,6 +85,8 @@ export const selectors = {
   selectWorld,
   selectMember,
   selectMembers,
+  selectLives,
+  selectScore,
   selectMembersAsArray,
   selectMembersWaiting,
   selectMembersActive,
