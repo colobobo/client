@@ -15,7 +15,7 @@ const getConfigs = (): MembersConfig => {
       ...membersConfig,
       [skin]: {
         skin: {
-          key: skin,
+          key: `member_${skin}_skin`,
           url: require(`../assets/members/${skin}/skin.svg`),
           svgConfig: {
             scale: 1

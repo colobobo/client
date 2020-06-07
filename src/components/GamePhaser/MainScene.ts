@@ -6,23 +6,34 @@ import { Dispatch } from "redux";
 import * as utils from "../../utils";
 
 type GameMembersArray = ReturnType<typeof selectors.round.selectMembersAsArray>;
+type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
+type AreaDevices = ReturnType<typeof selectors.area.selectDevices>;
 
 export default class MainScene extends Phaser.Scene {
   dispatch: Dispatch;
   playerId: string;
   gameMembersArray: GameMembersArray;
   isRoundStarted: boolean;
+  world: enums.World;
+  playersRole: PlayersRole;
+  areaDevices: AreaDevices;
 
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   membersMatter: Phaser.Physics.Matter.Image[] = [];
   constructor({
     dispatch,
-    gameMembersArray,
+    world,
     playerId,
+    playersRole,
+    areaDevices,
+    gameMembersArray,
     isRoundStarted
   }: {
     dispatch: Dispatch;
+    world: enums.World;
     playerId: string;
+    playersRole: PlayersRole;
+    areaDevices: AreaDevices;
     gameMembersArray: GameMembersArray;
     isRoundStarted: boolean;
   }) {
@@ -32,6 +43,9 @@ export default class MainScene extends Phaser.Scene {
     this.playerId = playerId;
     this.gameMembersArray = gameMembersArray;
     this.isRoundStarted = isRoundStarted;
+    this.world = world;
+    this.playersRole = playersRole;
+    this.areaDevices = areaDevices;
   }
 
   // SETTERS
@@ -49,6 +63,18 @@ export default class MainScene extends Phaser.Scene {
     this.onGameMembersUpdate();
   }
 
+  setWorld(world: enums.World) {
+    this.world = world;
+  }
+
+  setPlayersRole(playersRole: PlayersRole) {
+    this.playersRole = playersRole;
+  }
+
+  setAreaDevices(areaDevices: AreaDevices) {
+    this.areaDevices = areaDevices;
+  }
+
   // ########## FUNCTIONS ##########
 
   // ---------- PRELOAD ----------
@@ -62,16 +88,27 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
+  loadPlatforms() {
+    Object.values(enums.World).forEach(world => {
+      // load left platform
+      this.load.svg(config.worlds[world].platforms.left);
+      // load right platform
+      this.load.svg(config.worlds[world].platforms.right);
+      // load wall
+      this.load.svg(config.worlds[world].platforms.wall);
+    });
+  }
+
   // ---------- CREATE ----------
 
   // add members to scene
 
-  addMembersToScene() {
+  createMembers() {
     this.gameMembersArray.forEach((member, i) => {
       const memberMatter = this.matter.add.image(
         50 + i * 70,
         120,
-        member.skin,
+        config.members[member.skin].skin.key,
         undefined,
         {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
@@ -81,14 +118,14 @@ export default class MainScene extends Phaser.Scene {
       // set name
       memberMatter.setName(member.id);
       // scale
-      memberMatter.setScale(0.5);
+      memberMatter.setScale(0.4);
       // alpha
       memberMatter.setAlpha(0.5);
       // fixe rotation
       memberMatter.setFixedRotation();
-      // status = waiting
+      // set data
+      memberMatter.setData("type", "member");
       memberMatter.setData("status", enums.member.Status.waiting);
-      // save initial position
       memberMatter.setData("initialPosition", {
         x: memberMatter.x,
         y: memberMatter.y
@@ -110,7 +147,7 @@ export default class MainScene extends Phaser.Scene {
     this.membersMatter.forEach(member => {
       // listen pointer events
       member.setInteractive().on("pointerdown", (e: Phaser.Input.Pointer) => {
-        console.log("pointerdown ->", member.name);
+        // console.log("pointerdown ->", member.name);
       });
 
       // listen collision
@@ -118,6 +155,57 @@ export default class MainScene extends Phaser.Scene {
       member.setOnCollide((e: any) => {
         // console.log("collide", e);
       });
+    });
+  }
+
+  createPlatforms() {
+    const leftPlatform = this.matter.add
+      .image(
+        0,
+        this.game.canvas.height,
+        config.worlds[this.world].platforms.left.key,
+        undefined,
+        {
+          isStatic: true
+        }
+      )
+      .setScale(0.3);
+
+    const rightPlatform = this.matter.add
+      .image(
+        0,
+        this.game.canvas.height,
+        config.worlds[this.world].platforms.right.key,
+        undefined,
+        {
+          isStatic: true
+        }
+      )
+      .setScale(0.3);
+
+    // translateY -50%
+    leftPlatform.setY(leftPlatform.y - leftPlatform.displayHeight / 2);
+    rightPlatform.setY(rightPlatform.y - rightPlatform.displayHeight / 2);
+
+    const wall = this.matter.add
+      .image(0, 0, config.worlds[this.world].platforms.wall.key, undefined, {
+        isStatic: true
+      })
+      .setScale(0.35);
+
+    // translateY +50%
+    wall.setY(wall.y + wall.displayHeight / 2);
+
+    Object.keys(this.playersRole).forEach(playerId => {
+      const playerRole = this.playersRole[playerId];
+
+      if (playerRole.role === enums.player.Role.platform) {
+        const device = this.areaDevices[playerId];
+
+        leftPlatform.setX(device.offsetX + device.width * 0.2);
+        rightPlatform.setX(device.offsetX + device.width * 0.8);
+        wall.setX(device.offsetX + device.width * 0.5);
+      }
     });
   }
 
@@ -129,12 +217,13 @@ export default class MainScene extends Phaser.Scene {
       const gameObject: Phaser.Physics.Matter.Image = e.gameObject;
       console.log("dragstart ->", gameObject.name);
 
-      this.dispatch(
-        actions.webSocket.emit.round.memberDragStart({
-          playerId: this.playerId,
-          memberId: gameObject.name
-        })
-      );
+      if (gameObject.getData("type") === "member")
+        this.dispatch(
+          actions.webSocket.emit.round.memberDragStart({
+            playerId: this.playerId,
+            memberId: gameObject.name
+          })
+        );
     });
   }
 
@@ -233,12 +322,14 @@ export default class MainScene extends Phaser.Scene {
 
   preload() {
     this.loadMembers();
+    this.loadPlatforms();
   }
 
   create() {
-    this.addMembersToScene();
-
+    this.createMembers();
     this.addMembersEventListeners();
+
+    this.createPlatforms();
 
     this.addMatterWorldEventListeners();
 

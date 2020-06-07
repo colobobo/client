@@ -89,14 +89,15 @@ const Round: FC<Props> = ({ isActive }) => {
         className="debug-buttons"
         style={{
           position: "absolute",
-          top: 100,
+          top: 90,
           left: 10,
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
+          pointerEvents: "none"
         }}
       >
         <button
-          style={{ marginTop: 15 }}
+          style={{ marginTop: 10, pointerEvents: "all" }}
           onClick={() => {
             dispatch(actions.webSocket.emit.round.playerReady());
           }}
@@ -104,7 +105,7 @@ const Round: FC<Props> = ({ isActive }) => {
           Emit round player ready
         </button>
         <button
-          style={{ marginTop: 15 }}
+          style={{ marginTop: 10, pointerEvents: "all" }}
           onClick={() => {
             const memberId = roundMembersWaiting[0]?.id;
             if (memberId) {
@@ -117,7 +118,7 @@ const Round: FC<Props> = ({ isActive }) => {
           Emit member spawned
         </button>
         <button
-          style={{ marginTop: 15 }}
+          style={{ marginTop: 10, pointerEvents: "all" }}
           onClick={() => {
             const memberId = roundMembersActive[0]?.id;
             if (memberId) {
@@ -130,7 +131,7 @@ const Round: FC<Props> = ({ isActive }) => {
           Emit member trapped
         </button>
         <button
-          style={{ marginTop: 15 }}
+          style={{ marginTop: 10, pointerEvents: "all" }}
           onClick={() => {
             const memberId = roundMembersActive[0]?.id;
             if (memberId) {

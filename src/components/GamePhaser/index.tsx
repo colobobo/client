@@ -17,6 +17,9 @@ const GamePhaser: FC = () => {
   const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
+  const world = useSelector(selectors.round.selectWorld);
+  const playersRole = useSelector(selectors.round.selectPlayersRole);
+  const areaDevices = useSelector(selectors.area.selectDevices);
 
   // DOM REF
 
@@ -26,7 +29,15 @@ const GamePhaser: FC = () => {
 
   const $game = useRef<Phaser.Game | null>(null);
   const $mainScene = useRef(
-    new MainScene({ dispatch, gameMembersArray, playerId, isRoundStarted })
+    new MainScene({
+      dispatch,
+      world,
+      playerId,
+      playersRole,
+      areaDevices,
+      gameMembersArray,
+      isRoundStarted
+    })
   );
 
   // STATE
@@ -93,11 +104,29 @@ const GamePhaser: FC = () => {
     $mainScene.current.setDispatch(dispatch);
   }, [dispatch]);
 
+  // update world
+
+  useEffect(() => {
+    $mainScene.current.setWorld(world);
+  }, [world]);
+
   // update playerId
 
   useEffect(() => {
     $mainScene.current.setPlayerId(playerId);
   }, [playerId]);
+
+  // update playersRole
+
+  useEffect(() => {
+    $mainScene.current.setPlayersRole(playersRole);
+  }, [playersRole]);
+
+  // update areaDevices
+
+  useEffect(() => {
+    $mainScene.current.setAreaDevices(areaDevices);
+  }, [areaDevices]);
 
   // update gameMembersArray
 
