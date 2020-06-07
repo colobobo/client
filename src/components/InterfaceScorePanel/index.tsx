@@ -1,8 +1,11 @@
 import React, { FC, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-// assets
-import lifePicture from "../../assets/illustrations/score/life.png";
+// components
+import SpriteAnimation from "../../components/SpriteAnimation";
+
+// config
+import { animationId } from "../../config/animations";
 
 // styles
 import "./index.scss";
@@ -15,14 +18,22 @@ interface Props {
 const InterfaceScorePanel: FC<Props> = ({ score, life }) => {
   const { t } = useTranslation();
   const maxLife = 4; /* REPLACE BY MAX LIFE LATER */
+  const currentLives = 3;
 
   const lives = useMemo(() => {
     let livesArray = [];
+    const currentLife = maxLife - currentLives - 1;
 
     for (let i = 0; i < maxLife; i++) {
-      const life = (
+      let life = (
         <li className="score-panel__life" key={i}>
-          <img src={lifePicture} alt="Logo" />
+          <SpriteAnimation
+            animationID={
+              currentLife === i
+                ? animationId.teacher_fail
+                : animationId.teacher_success
+            }
+          />
         </li>
       );
       livesArray.push(life);
