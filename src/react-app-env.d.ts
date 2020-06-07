@@ -9,6 +9,8 @@ declare namespace NodeJS {
   }
 }
 
+declare module "react-responsive-spritesheet";
+
 declare module "*.bmp" {
   const src: string;
   export default src;

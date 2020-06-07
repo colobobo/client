@@ -2,6 +2,8 @@ import React, { FC, useCallback, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import Spritesheet from "react-responsive-spritesheet";
+
 // store
 import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
@@ -13,7 +15,7 @@ import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import "./index.scss";
 
 // assets
-import logo from "../../assets/logo/logo-simple.png";
+import logoSprite from "../../assets/logo/logo-spritesheet.png";
 
 const Landing: FC = () => {
   const { t, i18n } = useTranslation();
@@ -95,7 +97,14 @@ const Landing: FC = () => {
         </Link>
 
         <div className="landing__center">
-          <img className="landing__logo" src={logo} alt="Logo" />
+          <Spritesheet
+            image={logoSprite}
+            widthFrame={400}
+            heightFrame={289}
+            steps={214}
+            fps={25}
+            loop={true}
+          />
         </div>
 
         <div className="landing__actions">
