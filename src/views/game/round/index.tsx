@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useEffect, useMemo } from "react";
 
 // store
 import { actions, selectors } from "../../../redux";
@@ -39,6 +39,12 @@ const Round: FC<Props> = ({ isActive }) => {
   const worldProperties = useMemo(() => {
     return config.worlds[world];
   }, [world]);
+
+  useEffect(() => {
+    if (isActive) {
+      dispatch(actions.webSocket.emit.round.playerReady());
+    }
+  }, [isActive]);
 
   // return
 
@@ -95,14 +101,6 @@ const Round: FC<Props> = ({ isActive }) => {
           flexDirection: "column"
         }}
       >
-        <button
-          style={{ marginTop: 15 }}
-          onClick={() => {
-            dispatch(actions.webSocket.emit.round.playerReady());
-          }}
-        >
-          Emit round player ready
-        </button>
         <button
           style={{ marginTop: 15 }}
           onClick={() => {
