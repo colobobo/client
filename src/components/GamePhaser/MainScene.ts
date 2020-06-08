@@ -143,6 +143,49 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
+  // create floor
+
+  createFloor() {
+    const floorSensor = this.matter.add.rectangle(
+      this.game.canvas.width / 2,
+      this.game.canvas.height - 5,
+      this.game.canvas.width,
+      10,
+
+      {
+        isSensor: true,
+        isStatic: true,
+        ignorePointer: true
+      }
+    );
+
+    // listen collision start
+    this.matterCollision.addOnCollideStart({
+      objectA: floorSensor,
+      callback: (e: any) => {
+        const { gameObjectB } = e;
+
+        console.log("floor collision");
+        // if collide with member
+        if (gameObjectB.getData("type") === "member") {
+          const roundMember = this.roundMembersArray.find(
+            member => member.id === gameObjectB.getData("id")
+          );
+          // if i'm the player manager
+          if (this.playerId === roundMember?.manager) {
+            // emit member arrived
+
+            this.dispatch(
+              actions.webSocket.emit.round.memberTrapped({
+                memberId: gameObjectB.getData("id")
+              })
+            );
+          }
+        }
+      }
+    });
+  }
+
   // create members and add to scene
 
   createMembers() {
@@ -156,7 +199,7 @@ export default class MainScene extends Phaser.Scene {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
           label: member.id,
           restitution: 0,
-          friction: 0.005,
+          friction: 0.002,
           frictionStatic: 0.05,
           frictionAir: 0.02,
           ignoreGravity: true
@@ -278,17 +321,32 @@ export default class MainScene extends Phaser.Scene {
 
       // START SENSOR
 
-      const startSensor = this.matter.add.rectangle(
-        this.plateforms.start.x,
-        this.plateforms.start.y - this.plateforms.start.displayHeight / 2 - 100,
-        this.plateforms.start.displayWidth + 100,
-        200,
+      const startSensor = this.matter.add.gameObject(
+        this.add.rectangle(
+          this.plateforms.start.x,
+          this.plateforms.start.y -
+            this.plateforms.start.displayHeight / 2 -
+            100,
+          this.plateforms.start.displayWidth + 50,
+          200
+        ),
         {
           isSensor: true,
           isStatic: true,
           ignorePointer: true
         }
       );
+
+      this.matterCollision.addOnCollideActive({
+        objectA: startSensor,
+        callback: (e: any) => {
+          const { gameObjectB } = e;
+          // if collide with member
+          if (gameObjectB.getData("type") === "member") {
+            startSensor.setData("isColliding", true);
+          }
+        }
+      });
 
       // listen collisions end
       this.matterCollision.addOnCollideEnd({
@@ -297,10 +355,12 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           // if collide with member
           if (gameObjectB.getData("type") === "member") {
-            // wait 1 second
+            startSensor.setData("isColliding", false);
+            // wait 0.5 second
             setTimeout(() => {
-              this.newMemberSpawn();
-            }, 1000);
+              // if sensor not colliding currently : new member spawn
+              if (!startSensor.getData("isColliding")) this.newMemberSpawn();
+            }, 500);
           }
         }
       });
@@ -383,6 +443,13 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberSpawned(memberMatter: Phaser.Physics.Matter.Image) {
     console.log("on member spawned");
+
+    memberMatter.setX(this.plateforms.start!.x);
+    memberMatter.setY(
+      this.plateforms.start!.y -
+        this.plateforms.start!.displayHeight / 2 -
+        (memberMatter.height * 0.42) / 2
+    );
     memberMatter.setFixedRotation();
     memberMatter.data.set("status", enums.member.Status.active);
 
@@ -390,9 +457,9 @@ export default class MainScene extends Phaser.Scene {
     this.tweens.add({
       alpha: 1,
       targets: memberMatter,
-      scale: { from: 0.2, to: memberMatter.scale },
+      scale: { from: 0.2, to: 0.42 },
       ease: "Sine.easeOut",
-      duration: 800,
+      duration: 600,
       onComplete: () => {
         memberMatter.setCollidesWith([
           this.collisionCategories[CollisionCategories.default],
@@ -411,17 +478,20 @@ export default class MainScene extends Phaser.Scene {
   onMemberTrapped(memberMatter: Phaser.Physics.Matter.Image) {
     console.log("on member trapped");
 
-    memberMatter.setX(this.plateforms.start!.x);
-    memberMatter.setY(
-      this.plateforms.start!.y -
-        this.plateforms.start!.displayHeight / 2 -
-        memberMatter.displayHeight / 2
-    );
-    memberMatter.setAlpha(0);
+    memberMatter.setVelocity(0);
     memberMatter.setIgnoreGravity(true);
     memberMatter.setCollidesWith(0);
     memberMatter.disableInteractive();
     memberMatter.data.set("status", enums.member.Status.waiting);
+
+    // animate
+    this.tweens.add({
+      targets: memberMatter,
+      alpha: 0,
+      scale: 0.2,
+      duration: 500,
+      ease: "Sine.easeIn"
+    });
   }
 
   // member : arrived
@@ -444,7 +514,7 @@ export default class MainScene extends Phaser.Scene {
         this.plateforms.finish!.displayHeight / 2 -
         memberMatter.displayHeight / 2,
       scale: 0.2,
-      duration: 800,
+      duration: 600,
       ease: "Sine.easeIn"
     });
   }
@@ -523,6 +593,8 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     this.createCollisionCategories();
+
+    this.createFloor();
 
     this.createPlatformsAndWall();
 

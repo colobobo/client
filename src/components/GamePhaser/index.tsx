@@ -76,10 +76,10 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
                 }
               : false,
           setBounds: {
-            x: -300,
+            x: -150,
             left: false,
             right: false,
-            width: areaWidth + 600,
+            width: areaWidth + 150,
             thickness: 30
           },
           "plugins.wrap": true
