@@ -2,12 +2,16 @@ import React, { FC, useCallback, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+// config
+import { animationId } from "../../config/animations";
+
 // store
 import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
 
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+import SpriteAnimation from "../../components/SpriteAnimation";
 
 // style
 import "./index.scss";
@@ -95,6 +99,7 @@ const Landing: FC = () => {
         </Link>
 
         <div className="landing__center">
+          {/* <SpriteAnimation animationID={animationId.logo} /> */}
           <img className="landing__logo" src={logo} alt="Logo" />
         </div>
 

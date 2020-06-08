@@ -1,8 +1,15 @@
 import React, { FC, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
+// components
+import SpriteAnimation from "../../components/SpriteAnimation";
+
+// config
+import { animationId } from "../../config/animations";
+
 // assets
-import lifePicture from "../../assets/illustrations/score/life.png";
+import teacherDeadPicture from "../../assets/illustrations/score/teacher_dead.png";
+import teacherAlivePicture from "../../assets/illustrations/score/teacher_alive.png";
 
 // styles
 import "./index.scss";
@@ -10,25 +17,48 @@ import "./index.scss";
 interface Props {
   score: number;
   lives: number;
+  isSuccess: boolean;
+  isActive: boolean;
 }
 
-const InterfaceScorePanel: FC<Props> = ({ score, lives }) => {
+const InterfaceScorePanel: FC<Props> = ({ score, lives, isSuccess }) => {
   const { t } = useTranslation();
-  const maxLife = 4; /* REPLACE BY MAX LIFE LATER */
 
   const livesItem = useMemo(() => {
     let livesArray = [];
+    /* TODO: REPLACE MAX LIVES NUMBER BY VARIABLE BASED ON LIVES FROM ROUND INIT */
+    const currentLife = 4 - lives - 1;
 
-    for (let i = 0; i < maxLife; i++) {
-      const life = (
+    for (let i = 0; i < 4; i++) {
+      let life = (
         <li className="score-panel__life" key={i}>
-          <img src={lifePicture} alt="Logo" />
+          {i < currentLife && (
+            <img src={teacherDeadPicture} alt="Dead teacher" />
+          )}
+          {i === currentLife && isSuccess && (
+            <img src={teacherDeadPicture} alt="Dead teacher" />
+          )}
+          {i === currentLife && !isSuccess && (
+            <SpriteAnimation
+              animationID={animationId.teacher_fail}
+              autoplay={true}
+            />
+          )}
+          {i > currentLife && isSuccess && (
+            <SpriteAnimation
+              animationID={animationId.teacher_success}
+              autoplay={true}
+            />
+          )}
+          {i > currentLife && !isSuccess && (
+            <img src={teacherAlivePicture} alt="Alive teacher" />
+          )}
         </li>
       );
       livesArray.push(life);
     }
     return livesArray;
-  }, [maxLife]);
+  }, [isSuccess, lives]);
 
   // return
 

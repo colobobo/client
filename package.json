@@ -66,6 +66,7 @@
     "react-dom": "^16.13.0",
     "react-i18next": "^11.3.4",
     "react-redux": "^7.2.0",
+    "react-responsive-spritesheet": "^2.3.9",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "resolve": "1.15.0",
