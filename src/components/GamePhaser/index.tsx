@@ -22,6 +22,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
+  const roundId = useSelector(selectors.round.selectId);
   const world = useSelector(selectors.round.selectWorld);
   const playersRole = useSelector(selectors.round.selectPlayersRole);
   const areaDevices = useSelector(selectors.area.selectDevices);
@@ -160,11 +161,11 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   }, [isGameReady, isRoundStarted]);
 
   useEffect(() => {
-    if (isGameReady && isActive) {
+    if (isRoundStarted && roundId > 1) {
       // TODO: wip
       $mainScene.current.newRound();
     }
-  }, [isActive, isGameReady]);
+  }, [isRoundStarted, roundId]);
 
   // on unmount : stop game
 

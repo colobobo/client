@@ -132,6 +132,12 @@ export default class MainScene extends Phaser.Scene {
     return playerWithPlatformRole;
   }
 
+  getPlayersWithTrapRole(): string[] {
+    return Object.keys(this.playersRole).filter(
+      playerId => this.playersRole[playerId].role === enums.player.Role.trap
+    );
+  }
+
   // ---------- CREATE ----------
 
   // generate collision categories
@@ -401,6 +407,57 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
+  createTraps() {
+    const playersWithTrapRole = this.getPlayersWithTrapRole();
+
+    console.log(playersWithTrapRole);
+
+    playersWithTrapRole.forEach(playerId => {
+      const playerRole = this.playersRole[playerId];
+      const device = this.areaDevices[playerId];
+
+      const trap = this.matter.add.gameObject(
+        this.add.rectangle(
+          device.offsetX + device.width * 0.5,
+          0,
+          40,
+          this.game.canvas.height * 0.3,
+          0xff0000
+        ),
+        {
+          isStatic: true
+        }
+      ) as Phaser.GameObjects.Rectangle;
+
+      trap.setY(trap.y + trap.displayHeight / 2);
+
+      // listen collision start
+      this.matterCollision.addOnCollideStart({
+        objectA: trap,
+        callback: (e: any) => {
+          const { gameObjectB } = e;
+          console.log("trap collision");
+          // if collide with member
+          if (gameObjectB.getData("type") === "member") {
+            const roundMember = this.roundMembersArray.find(
+              member => member.id === gameObjectB.getData("id")
+            );
+            // if i'm the player manager
+            if (this.playerId === roundMember?.manager) {
+              // emit member arrived
+
+              this.dispatch(
+                actions.webSocket.emit.round.memberTrapped({
+                  memberId: gameObjectB.getData("id")
+                })
+              );
+            }
+          }
+        }
+      });
+    });
+  }
+
   // matter world event listeners
 
   addMatterWorldEventListeners() {
@@ -430,6 +487,7 @@ export default class MainScene extends Phaser.Scene {
       waitingMember[0] &&
       this.playerId === this.getPlayerWithPlatformRole()
     ) {
+      console.log("SPAWN >>>>> ", waitingMember[0].id);
       // emit member spawned
       this.dispatch(
         actions.webSocket.emit.round.memberSpawned({
@@ -442,7 +500,7 @@ export default class MainScene extends Phaser.Scene {
   // member : spawned
 
   onMemberSpawned(memberMatter: Phaser.Physics.Matter.Image) {
-    console.log("on member spawned");
+    console.log("on member spawned", memberMatter.getData("id"));
 
     memberMatter.setX(this.plateforms.start!.x);
     memberMatter.setY(
@@ -489,7 +547,7 @@ export default class MainScene extends Phaser.Scene {
       targets: memberMatter,
       alpha: 0,
       scale: 0.2,
-      duration: 500,
+      duration: 400,
       ease: "Sine.easeIn"
     });
 
@@ -609,6 +667,8 @@ export default class MainScene extends Phaser.Scene {
 
     this.createPlatformsAndWall();
 
+    this.createTraps();
+
     this.createMembers();
     this.addMembersEventListeners();
 
@@ -623,7 +683,12 @@ export default class MainScene extends Phaser.Scene {
     this.newMemberSpawn();
 
     this.events.on("destroy", () => {
+      console.log("scene destroy");
       this.matterCollision.removeAllCollideListeners();
+    });
+
+    this.events.on("shutdown", () => {
+      console.log("scene shutdown");
     });
   }
 

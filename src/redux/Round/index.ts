@@ -71,6 +71,7 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.round;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectId = (state: RootState) => getRoot(state).id;
 const selectDuration = (state: RootState) => getRoot(state).duration;
 const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
@@ -96,6 +97,7 @@ const selectPlayersRole = (state: RootState) => getRoot(state).playersRole;
 
 export const selectors = {
   selectTick,
+  selectId,
   selectIsStarted,
   selectDuration,
   selectWorld,
