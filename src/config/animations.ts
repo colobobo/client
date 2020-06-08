@@ -15,7 +15,6 @@ interface AnimationType {
   steps: number;
   fps: number;
   loop: boolean;
-  autoplay: boolean;
 }
 
 const animations: { [key: string]: AnimationType } = {
@@ -25,8 +24,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 289,
     steps: 214,
     fps: 25,
-    loop: true,
-    autoplay: true
+    loop: true
   },
   [animationId.teacher_fail]: {
     image: teacher_fail,
@@ -34,8 +32,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 50,
     steps: 74,
     fps: 25,
-    loop: true,
-    autoplay: true
+    loop: true
   },
   [animationId.teacher_success]: {
     image: teacher_success,
@@ -43,8 +40,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 50,
     steps: 14,
     fps: 25,
-    loop: false,
-    autoplay: false
+    loop: true
   }
 };
 

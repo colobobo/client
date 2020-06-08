@@ -11,18 +11,19 @@ import "./index.scss";
 interface Props {
   animationID: string;
   className?: string;
+  startAt?: number;
+  autoplay?: boolean;
 }
 
-const NumericKeypad: FC<Props> = ({ className, animationID }) => {
-  const {
-    image,
-    widthFrame,
-    heightFrame,
-    steps,
-    fps,
-    loop,
-    autoplay
-  } = animations[animationID];
+const NumericKeypad: FC<Props> = ({
+  className,
+  animationID,
+  startAt,
+  autoplay
+}) => {
+  const { image, widthFrame, heightFrame, steps, fps, loop } = animations[
+    animationID
+  ];
 
   // return
 
@@ -36,6 +37,7 @@ const NumericKeypad: FC<Props> = ({ className, animationID }) => {
       fps={fps}
       loop={loop}
       autoplay={autoplay}
+      startAt={startAt}
     />
   );
 };
