@@ -156,11 +156,14 @@ export default class MainScene extends Phaser.Scene {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
           label: member.id,
           restitution: 0,
+          friction: 0.005,
+          frictionStatic: 0.05,
+          frictionAir: 0.02,
           ignoreGravity: true
         }
       );
       // scale
-      memberMatter.setScale(0.4);
+      memberMatter.setScale(0.42);
       // position
       memberMatter.setX(this.plateforms.start!.x);
       memberMatter.setY(
@@ -268,7 +271,7 @@ export default class MainScene extends Phaser.Scene {
             friction: 0
           }
         )
-        .setScale(0.35);
+        .setScale(0.3);
 
       // set y
       wall.setY(wall.y + wall.displayHeight / 2);
@@ -277,9 +280,9 @@ export default class MainScene extends Phaser.Scene {
 
       const startSensor = this.matter.add.rectangle(
         this.plateforms.start.x,
-        this.plateforms.start.y - this.plateforms.start.displayHeight / 2 - 50,
-        this.plateforms.start.displayWidth,
-        100,
+        this.plateforms.start.y - this.plateforms.start.displayHeight / 2 - 100,
+        this.plateforms.start.displayWidth + 100,
+        200,
         {
           isSensor: true,
           isStatic: true,
@@ -294,10 +297,10 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           // if collide with member
           if (gameObjectB.getData("type") === "member") {
-            // wait 3 second
+            // wait 1 second
             setTimeout(() => {
               this.newMemberSpawn();
-            }, 3000);
+            }, 1000);
           }
         }
       });
@@ -306,14 +309,13 @@ export default class MainScene extends Phaser.Scene {
 
       const finishSensor = this.matter.add.rectangle(
         this.plateforms.finish.x,
-        this.plateforms.finish.y -
-          this.plateforms.finish.displayHeight / 2 -
-          10,
+        this.plateforms.finish.y - this.plateforms.finish.displayHeight / 2 - 5,
         this.plateforms.finish.displayWidth / 4,
-        20,
+        10,
         {
           isSensor: true,
-          isStatic: true
+          isStatic: true,
+          ignorePointer: true
         }
       );
 
@@ -381,17 +383,27 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberSpawned(memberMatter: Phaser.Physics.Matter.Image) {
     console.log("on member spawned");
-    memberMatter.setIgnoreGravity(false);
-    memberMatter.setInteractive();
     memberMatter.setFixedRotation();
-    memberMatter.setAlpha(1);
-    memberMatter.setCollidesWith([
-      this.collisionCategories[CollisionCategories.default],
-      this.collisionCategories[CollisionCategories.member],
-      this.collisionCategories[CollisionCategories.platform],
-      this.collisionCategories[CollisionCategories.wall]
-    ]);
     memberMatter.data.set("status", enums.member.Status.active);
+
+    // animate
+    this.tweens.add({
+      alpha: 1,
+      targets: memberMatter,
+      scale: { from: 0.2, to: memberMatter.scale },
+      ease: "Sine.easeOut",
+      duration: 800,
+      onComplete: () => {
+        memberMatter.setCollidesWith([
+          this.collisionCategories[CollisionCategories.default],
+          this.collisionCategories[CollisionCategories.member],
+          this.collisionCategories[CollisionCategories.platform],
+          this.collisionCategories[CollisionCategories.wall]
+        ]);
+        memberMatter.setIgnoreGravity(false);
+        memberMatter.setInteractive();
+      }
+    });
   }
 
   // member : trapped
@@ -416,17 +428,25 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberArrived(memberMatter: Phaser.Physics.Matter.Image) {
     console.log("on member arrived");
-    memberMatter.setPosition(
-      this.plateforms.finish?.x,
-      (this.plateforms.finish?.y || 0) - memberMatter.displayHeight / 2
-    );
     memberMatter.disableInteractive();
-    memberMatter.setAlpha(0);
     memberMatter.setCollidesWith(0);
     memberMatter.setIgnoreGravity(true);
     memberMatter.setVelocity(0);
-
     memberMatter.data.set("status", enums.member.Status.arrived);
+
+    // animate
+    this.tweens.add({
+      targets: memberMatter,
+      alpha: 0,
+      x: this.plateforms.finish?.x,
+      y:
+        this.plateforms.finish!.y -
+        this.plateforms.finish!.displayHeight / 2 -
+        memberMatter.displayHeight / 2,
+      scale: 0.2,
+      duration: 800,
+      ease: "Sine.easeIn"
+    });
   }
 
   // member : moved

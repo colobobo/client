@@ -1,6 +1,6 @@
 import React, { FC, useRef, useEffect, useCallback, useState } from "react";
 import * as Phaser from "phaser";
-import { selectors, actions } from "../../redux";
+import { selectors } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 
@@ -80,7 +80,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
             left: false,
             right: false,
             width: areaWidth + 600,
-            thickness: 100
+            thickness: 30
           },
           "plugins.wrap": true
         }
