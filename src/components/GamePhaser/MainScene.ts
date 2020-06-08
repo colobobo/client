@@ -492,6 +492,17 @@ export default class MainScene extends Phaser.Scene {
       duration: 500,
       ease: "Sine.easeIn"
     });
+
+    const waitingMember = this.roundMembersArray.filter(
+      member => member.status === enums.member.Status.waiting
+    );
+    // TODO: refacto
+    if (waitingMember.length === 1) {
+      setTimeout(() => {
+        this.newMemberSpawn();
+      }, 800);
+    }
+    console.log(waitingMember);
   }
 
   // member : arrived

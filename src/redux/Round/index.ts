@@ -51,6 +51,7 @@ export const slice = createSlice({
     fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
       state.lives = action.payload.data.lives;
       state.isSuccess = false;
+      state.isStarted = false;
     },
     success: (
       state: RoundState,
@@ -58,6 +59,7 @@ export const slice = createSlice({
     ) => {
       state.score = action.payload.data.score;
       state.isSuccess = true;
+      state.isStarted = false;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;

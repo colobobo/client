@@ -17,6 +17,8 @@
   }
   &__progress {
     height: 100%;
+    width: 100%;
+    transform-origin: left center;
     position: absolute;
     left: 0;
     top: 0;
