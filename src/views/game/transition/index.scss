@@ -11,14 +11,15 @@
 
   .debug {
     position: absolute;
-    bottom: 0;
+    top: 0;
+
     span {
       display: block;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     button {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
   }
 }

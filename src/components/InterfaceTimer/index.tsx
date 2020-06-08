@@ -41,6 +41,10 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
     return () => clearInterval(intervalId);
   }, [duration, isRoundStarted, timeLeft]);
 
+  useEffect(() => {
+    setTimeLeft(duration);
+  }, [duration]);
+
   const progressTimer = useMemo(() => {
     return Math.floor((timeLeft * areaWidh) / duration);
   }, [timeLeft, areaWidh, duration]);

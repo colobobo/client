@@ -5,8 +5,6 @@ import { enums, payloads } from "@colobobo/library";
 export interface GameState {
   isStarted: boolean;
   sceneType: enums.scene.Type | null;
-  score: number;
-  life: number;
   disposition: enums.game.Disposition;
 }
 
@@ -52,15 +50,11 @@ export const slice = createSlice({
 const getRoot = (state: RootState) => state.game;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectSceneType = (state: RootState) => getRoot(state).sceneType;
-const selectScore = (state: RootState) => getRoot(state).score;
-const selectLife = (state: RootState) => getRoot(state).life;
 const selectDisposition = (state: RootState) => getRoot(state).disposition;
 
 export const selectors = {
   selectIsStarted,
   selectSceneType,
-  selectScore,
-  selectLife,
   selectDisposition
 };
 

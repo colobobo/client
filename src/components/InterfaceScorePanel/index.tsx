@@ -9,14 +9,14 @@ import "./index.scss";
 
 interface Props {
   score: number;
-  life: number;
+  lives: number;
 }
 
-const InterfaceScorePanel: FC<Props> = ({ score, life }) => {
+const InterfaceScorePanel: FC<Props> = ({ score, lives }) => {
   const { t } = useTranslation();
   const maxLife = 4; /* REPLACE BY MAX LIFE LATER */
 
-  const lives = useMemo(() => {
+  const livesItem = useMemo(() => {
     let livesArray = [];
 
     for (let i = 0; i < maxLife; i++) {
@@ -37,9 +37,10 @@ const InterfaceScorePanel: FC<Props> = ({ score, life }) => {
       <div className="score-panel__container">
         <div className="score-panel__content">
           <p className="score-panel__title">{t("score.title")}</p>
-          {/* REPLACE BY SCORE LATER */}
-          <p className="score-panel__score">000</p>{" "}
-          <ul className="score-panel__lives">{lives}</ul>
+          <p className="score-panel__score">
+            {score.toString().padStart(3, "0")}
+          </p>
+          <ul className="score-panel__lives">{livesItem}</ul>
         </div>
       </div>
     </div>

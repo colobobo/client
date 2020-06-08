@@ -4,15 +4,16 @@ import React, { FC } from "react";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 
 // store
-import { useSelector } from "react-redux";
+import { useTypedSelector } from "../../redux/store";
 import { selectors } from "../../redux";
 
 // styles
 import "./index.scss";
 
 const InterfaceScore: FC = () => {
-  const score = useSelector(selectors.game.selectScore);
-  const life = useSelector(selectors.game.selectLife);
+  const lives = useTypedSelector(selectors.round.selectLives);
+  const score = useTypedSelector(selectors.round.selectScore);
+  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
 
   // return
 
@@ -20,7 +21,16 @@ const InterfaceScore: FC = () => {
     <div className="score">
       <div className="score__container">
         <div className="score__panel">
-          <InterfaceScorePanel score={score} life={life} />
+          <InterfaceScorePanel score={score} lives={lives} />
+        </div>
+        <div className="score__animation">
+          <img
+            className="score__gif"
+            src={require(`../../assets/illustrations/score/gifs/${
+              isSuccess ? "success" : "fail"
+            }.gif`)}
+            alt="Gif"
+          />
         </div>
       </div>
     </div>
