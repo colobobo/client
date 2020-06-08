@@ -8369,6 +8369,11 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+phaser-matter-collision-plugin@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/phaser-matter-collision-plugin/-/phaser-matter-collision-plugin-0.10.2.tgz#9b3af7f36ac7bd2951ebe8c2357e958be5b2d551"
+  integrity sha512-k/+eFmPpy1ppTFB2tJcSasM/79GevjaZSMUJAj95wpftXlLxmfqyVK9PfiQg3d49dD7LeTj8iJOkLMCTaAiK/w==
+
 phaser@^3.23.0:
   version "3.23.0"
   resolved "https://registry.yarnpkg.com/phaser/-/phaser-3.23.0.tgz#9f3c02d358ced75e70e42d6fa51b37d17f37ee25"
