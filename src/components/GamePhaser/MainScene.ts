@@ -202,12 +202,11 @@ export default class MainScene extends Phaser.Scene {
       // member.setInteractive().on("pointerdown", (e: Phaser.Input.Pointer) => {
       //   console.log("pointerdown ->", member.name);
       // });
-
       // listen collision
       // TODO : use https://github.com/mikewesthad/phaser-matter-collision-plugin
-      member.setOnCollide((e: any) => {
-        // console.log("collide", e);
-      });
+      // member.setOnCollide((e: any) => {
+      //   // console.log("collide", e);
+      // });
     });
   }
 
@@ -422,7 +421,7 @@ export default class MainScene extends Phaser.Scene {
       (this.plateforms.finish?.y || 0) - memberMatter.displayHeight / 2
     );
     memberMatter.disableInteractive();
-    memberMatter.setAlpha(0.3);
+    memberMatter.setAlpha(0);
     memberMatter.setCollidesWith(0);
     memberMatter.setIgnoreGravity(true);
     memberMatter.setVelocity(0);
@@ -488,6 +487,13 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
+  // ---------- RESTART ----------
+
+  newRound() {
+    // TODO: wip
+    this.scene.restart();
+  }
+
   // ########## PHASER SCENE FUNCTIONS ##########
 
   preload() {
@@ -512,6 +518,10 @@ export default class MainScene extends Phaser.Scene {
     });
 
     this.newMemberSpawn();
+
+    this.events.on("destroy", () => {
+      this.matterCollision.removeAllCollideListeners();
+    });
   }
 
   update(time: number, delta: number) {

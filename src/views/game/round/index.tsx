@@ -67,7 +67,7 @@ const Round: FC<Props> = ({ isActive }) => {
             />
           </div>
         )}
-        {isActive && <GamePhaser />}
+        <GamePhaser isActive={isActive} />
       </Area>
       <Area height="max">
         {world && (

@@ -8,7 +8,11 @@ import "./index.scss";
 
 import MainScene from "./MainScene";
 
-const GamePhaser: FC = () => {
+interface Props {
+  isActive: boolean;
+}
+
+const GamePhaser: FC<Props> = ({ isActive }) => {
   const dispatch = useDispatch();
 
   // SELECTORS
@@ -148,17 +152,28 @@ const GamePhaser: FC = () => {
 
   useEffect(() => {
     if (isGameReady) {
-      isRoundStarted
-        ? $mainScene.current.matter.resume()
-        : $mainScene.current.matter.pause();
+      console.log({ isRoundStarted });
+      // isRoundStarted
+      //   ? $mainScene.current.matter.resume()
+      //   : $mainScene.current.matter.pause();
     }
   }, [isGameReady, isRoundStarted]);
+
+  useEffect(() => {
+    if (isGameReady && isActive) {
+      // TODO: wip
+      $mainScene.current.newRound();
+    }
+  }, [isActive, isGameReady]);
 
   // on unmount : stop game
 
   useEffect(() => {
     return () => {
-      dispatch(actions.round.stop());
+      if ($game.current) {
+        $game.current.destroy(true);
+      }
+      // dispatch(actions.round.stop());
     };
   }, [dispatch]);
 
