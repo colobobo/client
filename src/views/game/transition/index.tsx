@@ -21,22 +21,29 @@ const Transition: FC<Props> = ({ isActive }) => {
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
-  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
+  // const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   // effect
 
   useEffect(() => {
-    if (!isActive) {
+    if (isActive) {
+      dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+
+      setTimeout(
+        () => dispatch(actions.webSocket.emit.transition.ended()),
+        4000
+      );
+    } else {
       dispatch(actions.transition.stop());
     }
-  }, [dispatch, isActive]);
+  }, [dispatch, isActive, playerId]);
 
   // return
 
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
       <InterfaceScore isActive={isActive} />
-      <div className="debug">
+      {/*<div className="debug">
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button
           onClick={() => {
@@ -49,14 +56,7 @@ const Transition: FC<Props> = ({ isActive }) => {
         >
           Emit transition player ready
         </button>
-        <button
-          onClick={() => {
-            dispatch(actions.webSocket.emit.transition.ended());
-          }}
-        >
-          Emit transition ended
-        </button>
-      </div>
+      </div>*/}
     </div>
   );
 };
