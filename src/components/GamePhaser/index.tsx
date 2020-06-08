@@ -1,13 +1,18 @@
 import React, { FC, useRef, useEffect, useCallback, useState } from "react";
 import * as Phaser from "phaser";
-import { selectors, actions } from "../../redux";
+import { selectors } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
+import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 
 import "./index.scss";
 
 import MainScene from "./MainScene";
 
-const GamePhaser: FC = () => {
+interface Props {
+  isActive: boolean;
+}
+
+const GamePhaser: FC<Props> = ({ isActive }) => {
   const dispatch = useDispatch();
 
   // SELECTORS
@@ -17,6 +22,9 @@ const GamePhaser: FC = () => {
   const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
+  const world = useSelector(selectors.round.selectWorld);
+  const playersRole = useSelector(selectors.round.selectPlayersRole);
+  const areaDevices = useSelector(selectors.area.selectDevices);
 
   // DOM REF
 
@@ -26,7 +34,15 @@ const GamePhaser: FC = () => {
 
   const $game = useRef<Phaser.Game | null>(null);
   const $mainScene = useRef(
-    new MainScene({ dispatch, gameMembersArray, playerId, isRoundStarted })
+    new MainScene({
+      dispatch,
+      world,
+      playerId,
+      playersRole,
+      areaDevices,
+      gameMembersArray,
+      isRoundStarted
+    })
   );
 
   // STATE
@@ -60,14 +76,23 @@ const GamePhaser: FC = () => {
                 }
               : false,
           setBounds: {
-            x: -300,
+            x: -150,
             left: false,
             right: false,
-            width: areaWidth + 600,
-            thickness: 100
+            width: areaWidth + 150,
+            thickness: 30
           },
           "plugins.wrap": true
         }
+      },
+      plugins: {
+        scene: [
+          {
+            plugin: PhaserMatterCollisionPlugin, // The plugin class
+            key: "matterCollision",
+            mapping: "matterCollision"
+          }
+        ]
       },
       scene: $mainScene.current
     };
@@ -93,11 +118,29 @@ const GamePhaser: FC = () => {
     $mainScene.current.setDispatch(dispatch);
   }, [dispatch]);
 
+  // update world
+
+  useEffect(() => {
+    $mainScene.current.setWorld(world);
+  }, [world]);
+
   // update playerId
 
   useEffect(() => {
     $mainScene.current.setPlayerId(playerId);
   }, [playerId]);
+
+  // update playersRole
+
+  useEffect(() => {
+    $mainScene.current.setPlayersRole(playersRole);
+  }, [playersRole]);
+
+  // update areaDevices
+
+  useEffect(() => {
+    $mainScene.current.setAreaDevices(areaDevices);
+  }, [areaDevices]);
 
   // update gameMembersArray
 
@@ -109,17 +152,28 @@ const GamePhaser: FC = () => {
 
   useEffect(() => {
     if (isGameReady) {
-      isRoundStarted
-        ? $mainScene.current.matter.resume()
-        : $mainScene.current.matter.pause();
+      console.log({ isRoundStarted });
+      // isRoundStarted
+      //   ? $mainScene.current.matter.resume()
+      //   : $mainScene.current.matter.pause();
     }
   }, [isGameReady, isRoundStarted]);
+
+  useEffect(() => {
+    if (isGameReady && isActive) {
+      // TODO: wip
+      $mainScene.current.newRound();
+    }
+  }, [isActive, isGameReady]);
 
   // on unmount : stop game
 
   useEffect(() => {
     return () => {
-      dispatch(actions.round.stop());
+      if ($game.current) {
+        $game.current.destroy(true);
+      }
+      // dispatch(actions.round.stop());
     };
   }, [dispatch]);
 

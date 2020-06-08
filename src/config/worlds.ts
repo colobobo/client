@@ -52,6 +52,11 @@ type WorldConfig = ColorConfig & {
       bottom: string;
     };
   };
+  platforms: {
+    left: Phaser.Types.Loader.FileTypes.SVGFileConfig;
+    right: Phaser.Types.Loader.FileTypes.SVGFileConfig;
+    wall: Phaser.Types.Loader.FileTypes.SVGFileConfig;
+  };
 };
 
 type WorldsConfig = {
@@ -76,6 +81,29 @@ const getConfigs = (): WorldsConfig => {
           bleeds: {
             top: require(`../assets/worlds/${world}/decorations/bleeds/top.png`),
             bottom: require(`../assets/worlds/${world}/decorations/bleeds/bottom.png`)
+          }
+        },
+        platforms: {
+          left: {
+            key: `world_${world}_platforms_left`,
+            url: require(`../assets/worlds/${world}/platforms/left.svg`),
+            svgConfig: {
+              scale: 1
+            }
+          },
+          right: {
+            key: `world_${world}_platforms_right`,
+            url: require(`../assets/worlds/${world}/platforms/right.svg`),
+            svgConfig: {
+              scale: 1
+            }
+          },
+          wall: {
+            key: `world_${world}_platforms_wall`,
+            url: require(`../assets/worlds/${world}/platforms/wall.svg`),
+            svgConfig: {
+              scale: 1
+            }
           }
         }
       } as WorldConfig
