@@ -16,9 +16,6 @@ import SpriteAnimation from "../../components/SpriteAnimation";
 // style
 import "./index.scss";
 
-// assets
-import logo from "../../assets/logo/logo-simple.png";
-
 const Landing: FC = () => {
   const { t, i18n } = useTranslation();
   const history = useHistory();
@@ -99,8 +96,9 @@ const Landing: FC = () => {
         </Link>
 
         <div className="landing__center">
-          {/* <SpriteAnimation animationID={animationId.logo} /> */}
-          <img className="landing__logo" src={logo} alt="Logo" />
+          <div className="landing__logo">
+            <SpriteAnimation animationID={animationId.logo} />
+          </div>
         </div>
 
         <div className="landing__actions">
