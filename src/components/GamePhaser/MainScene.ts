@@ -5,8 +5,11 @@ import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
+import Member from "./Member";
 
-type GameMembersArray = ReturnType<typeof selectors.round.selectMembersAsArray>;
+type RoundMembersArray = ReturnType<
+  typeof selectors.round.selectMembersAsArray
+>;
 type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
 type AreaDevices = ReturnType<typeof selectors.area.selectDevices>;
 
@@ -22,7 +25,7 @@ export default class MainScene extends Phaser.Scene {
 
   dispatch: Dispatch;
   playerId: string;
-  roundMembersArray: GameMembersArray;
+  roundMembersArray: RoundMembersArray;
   isRoundStarted: boolean;
   world: enums.World;
   playersRole: PlayersRole;
@@ -35,7 +38,7 @@ export default class MainScene extends Phaser.Scene {
     [CollisionCategories.wall]: 0
   };
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
-  membersMatter: Phaser.Physics.Matter.Image[] = [];
+  members: Member[] = [];
   plateforms: {
     start: Phaser.Physics.Matter.Image | null;
     finish: Phaser.Physics.Matter.Image | null;
@@ -47,7 +50,7 @@ export default class MainScene extends Phaser.Scene {
     playerId,
     playersRole,
     areaDevices,
-    gameMembersArray,
+    roundMembersArray,
     isRoundStarted
   }: {
     dispatch: Dispatch;
@@ -55,14 +58,14 @@ export default class MainScene extends Phaser.Scene {
     playerId: string;
     playersRole: PlayersRole;
     areaDevices: AreaDevices;
-    gameMembersArray: GameMembersArray;
+    roundMembersArray: RoundMembersArray;
     isRoundStarted: boolean;
   }) {
     super({ key: "main-scene" });
 
     this.dispatch = dispatch;
     this.playerId = playerId;
-    this.roundMembersArray = gameMembersArray;
+    this.roundMembersArray = roundMembersArray;
     this.isRoundStarted = isRoundStarted;
     this.world = world;
     this.playersRole = playersRole;
@@ -79,8 +82,8 @@ export default class MainScene extends Phaser.Scene {
     this.playerId = playerId;
   }
 
-  setGameMembersArray(gameMembersArray: GameMembersArray) {
-    this.roundMembersArray = gameMembersArray;
+  setRoundMembersArray(roundMembersArray: RoundMembersArray) {
+    this.roundMembersArray = roundMembersArray;
     this.onGameMembersUpdate();
   }
 
@@ -173,9 +176,9 @@ export default class MainScene extends Phaser.Scene {
 
         console.log("floor collision");
         // if collide with member
-        if (gameObjectB.getData("type") === "member") {
+        if (gameObjectB instanceof Member) {
           const roundMember = this.roundMembersArray.find(
-            member => member.id === gameObjectB.getData("id")
+            member => member.id === gameObjectB.id
           );
           // if i'm the player manager
           if (this.playerId === roundMember?.manager) {
@@ -183,7 +186,7 @@ export default class MainScene extends Phaser.Scene {
 
             this.dispatch(
               actions.webSocket.emit.round.memberTrapped({
-                memberId: gameObjectB.getData("id")
+                memberId: gameObjectB.id
               })
             );
           }
@@ -195,61 +198,54 @@ export default class MainScene extends Phaser.Scene {
   // create members and add to scene
 
   createMembers() {
-    this.roundMembersArray.forEach((member, i) => {
-      const memberMatter = this.matter.add.image(
-        0,
-        0,
-        config.members[member.skin].skin.key,
-        undefined,
-        {
+    this.roundMembersArray.forEach((roundMember, i) => {
+      const member = new Member({
+        scene: this,
+        texture: config.members[roundMember.skin].skin.key,
+        options: {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
-          label: member.id,
           restitution: 0,
           friction: 0.002,
           frictionStatic: 0.05,
           frictionAir: 0.02,
           ignoreGravity: true
-        }
-      );
+        },
+        id: roundMember.id
+      });
+
       // scale
-      memberMatter.setScale(0.42);
+      member.setScale(0.42);
       // position
-      memberMatter.setX(this.plateforms.start!.x);
-      memberMatter.setY(
+      member.setX(this.plateforms.start!.x);
+      member.setY(
         this.plateforms.start!.y -
           this.plateforms.start!.displayHeight / 2 -
-          memberMatter.displayHeight / 2
+          member.displayHeight / 2
       );
       // alpha
-      memberMatter.setAlpha(0);
-      // fixe rotation
-      memberMatter.setFixedRotation();
+      member.setAlpha(0);
+      // fixed rotation
+      member.setFixedRotation();
       // disbale intercation
-      memberMatter.disableInteractive();
-      // set data
-      memberMatter.setData("type", "member");
-      memberMatter.setData("id", member.id);
-      memberMatter.setData("status", enums.member.Status.waiting);
-      memberMatter.setData("initialPosition", {
-        x: memberMatter.x,
-        y: memberMatter.y
-      });
+      member.disableInteractive();
+      // set status
+      member.status = enums.member.Status.waiting;
       // set collision category
-      memberMatter.setCollisionCategory(
+      member.setCollisionCategory(
         this.collisionCategories[CollisionCategories.member]
       );
-      // disbale collision
-      memberMatter.setCollidesWith(0);
+      // disable collision
+      member.setCollidesWith(0);
 
       // add member matter object to members array
-      this.membersMatter.push(memberMatter);
+      this.members.push(member);
     });
   }
 
   // members event listeners
 
   addMembersEventListeners() {
-    this.membersMatter.forEach(member => {
+    this.members.forEach(member => {
       // listen pointer events
       // member.setInteractive().on("pointerdown", (e: Phaser.Input.Pointer) => {
       //   console.log("pointerdown ->", member.name);
@@ -348,7 +344,7 @@ export default class MainScene extends Phaser.Scene {
         callback: (e: any) => {
           const { gameObjectB } = e;
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             startSensor.setData("isColliding", true);
           }
         }
@@ -360,7 +356,7 @@ export default class MainScene extends Phaser.Scene {
         callback: (e: any) => {
           const { gameObjectB } = e;
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             startSensor.setData("isColliding", false);
             // wait 0.5 second
             setTimeout(() => {
@@ -392,13 +388,13 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           // if collide with member and my role is plateforms
           if (
-            gameObjectB.getData("type") === "member" &&
+            gameObjectB instanceof Member &&
             this.playerId === this.getPlayerWithPlatformRole()
           ) {
             // emit member arrived
             this.dispatch(
               actions.webSocket.emit.round.memberArrived({
-                memberId: gameObjectB.getData("id")
+                memberId: gameObjectB.id
               })
             );
           }
@@ -409,8 +405,6 @@ export default class MainScene extends Phaser.Scene {
 
   createTraps() {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
-
-    console.log(playersWithTrapRole);
 
     playersWithTrapRole.forEach(playerId => {
       const playerRole = this.playersRole[playerId];
@@ -438,9 +432,9 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           console.log("trap collision");
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             const roundMember = this.roundMembersArray.find(
-              member => member.id === gameObjectB.getData("id")
+              member => member.id === gameObjectB.id
             );
             // if i'm the player manager
             if (this.playerId === roundMember?.manager) {
@@ -448,7 +442,7 @@ export default class MainScene extends Phaser.Scene {
 
               this.dispatch(
                 actions.webSocket.emit.round.memberTrapped({
-                  memberId: gameObjectB.getData("id")
+                  memberId: gameObjectB.id
                 })
               );
             }
@@ -463,14 +457,13 @@ export default class MainScene extends Phaser.Scene {
   addMatterWorldEventListeners() {
     // listen drag start
     this.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
-      const gameObject: Phaser.Physics.Matter.Image = e.gameObject;
-      console.log("dragstart ->", gameObject?.getData("id"));
+      console.log("dragstart ->", (e.gameObject as Member)?.id);
 
-      if (gameObject?.getData("type") === "member")
+      if (e.gameObject instanceof Member)
         this.dispatch(
           actions.webSocket.emit.round.memberDragStart({
             playerId: this.playerId,
-            memberId: gameObject.getData("id")
+            memberId: e.gameObject.id
           })
         );
     });
@@ -480,7 +473,7 @@ export default class MainScene extends Phaser.Scene {
 
   newMemberSpawn() {
     const waitingMember = this.roundMembersArray.filter(
-      member => member.status === enums.member.Status.waiting
+      roundMember => roundMember.status === enums.member.Status.waiting
     );
     // if were are waiting member and my role is plateform
     if (
@@ -499,52 +492,55 @@ export default class MainScene extends Phaser.Scene {
 
   // member : spawned
 
-  onMemberSpawned(memberMatter: Phaser.Physics.Matter.Image) {
-    console.log("on member spawned", memberMatter.getData("id"));
+  onMemberSpawned(member: Member) {
+    console.log("on member spawned", member.id);
+    console.log({ member });
 
-    memberMatter.setX(this.plateforms.start!.x);
-    memberMatter.setY(
+    member.setX(this.plateforms.start!.x);
+    member.setY(
       this.plateforms.start!.y -
         this.plateforms.start!.displayHeight / 2 -
-        (memberMatter.height * 0.42) / 2
+        (member.height * 0.42) / 2
     );
-    memberMatter.setFixedRotation();
-    memberMatter.data.set("status", enums.member.Status.active);
+    member.setFixedRotation();
+    member.status = enums.member.Status.active;
+    // member.data.set("status", enums.member.Status.active);
 
     // animate
     this.tweens.add({
       alpha: 1,
-      targets: memberMatter,
+      targets: member,
       scale: { from: 0.2, to: 0.42 },
       ease: "Sine.easeOut",
       duration: 600,
       onComplete: () => {
-        memberMatter.setCollidesWith([
+        member.setCollidesWith([
           this.collisionCategories[CollisionCategories.default],
           this.collisionCategories[CollisionCategories.member],
           this.collisionCategories[CollisionCategories.platform],
           this.collisionCategories[CollisionCategories.wall]
         ]);
-        memberMatter.setIgnoreGravity(false);
-        memberMatter.setInteractive();
+        member.setIgnoreGravity(false);
+        member.setInteractive();
       }
     });
   }
 
   // member : trapped
 
-  onMemberTrapped(memberMatter: Phaser.Physics.Matter.Image) {
+  onMemberTrapped(member: Member) {
     console.log("on member trapped");
 
-    memberMatter.setVelocity(0);
-    memberMatter.setIgnoreGravity(true);
-    memberMatter.setCollidesWith(0);
-    memberMatter.disableInteractive();
-    memberMatter.data.set("status", enums.member.Status.waiting);
+    member.setVelocity(0);
+    member.setIgnoreGravity(true);
+    member.setCollidesWith(0);
+    member.disableInteractive();
+    member.status = enums.member.Status.waiting;
+    // member.data.set("status", enums.member.Status.waiting);
 
     // animate
     this.tweens.add({
-      targets: memberMatter,
+      targets: member,
       alpha: 0,
       scale: 0.2,
       duration: 400,
@@ -552,7 +548,7 @@ export default class MainScene extends Phaser.Scene {
     });
 
     const waitingMember = this.roundMembersArray.filter(
-      member => member.status === enums.member.Status.waiting
+      roundMember => roundMember.status === enums.member.Status.waiting
     );
     // TODO: refacto
     if (waitingMember.length === 1) {
@@ -560,28 +556,28 @@ export default class MainScene extends Phaser.Scene {
         this.newMemberSpawn();
       }, 800);
     }
-    console.log(waitingMember);
   }
 
   // member : arrived
 
-  onMemberArrived(memberMatter: Phaser.Physics.Matter.Image) {
+  onMemberArrived(member: Member) {
     console.log("on member arrived");
-    memberMatter.disableInteractive();
-    memberMatter.setCollidesWith(0);
-    memberMatter.setIgnoreGravity(true);
-    memberMatter.setVelocity(0);
-    memberMatter.data.set("status", enums.member.Status.arrived);
+    member.disableInteractive();
+    member.setCollidesWith(0);
+    member.setIgnoreGravity(true);
+    member.setVelocity(0);
+    member.status = enums.member.Status.arrived;
+    // member.data.set("status", enums.member.Status.arrived);
 
     // animate
     this.tweens.add({
-      targets: memberMatter,
+      targets: member,
       alpha: 0,
       x: this.plateforms.finish?.x,
       y:
         this.plateforms.finish!.y -
         this.plateforms.finish!.displayHeight / 2 -
-        memberMatter.displayHeight / 2,
+        member.displayHeight / 2,
       scale: 0.2,
       duration: 600,
       ease: "Sine.easeIn"
@@ -592,55 +588,55 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberMoved(
     memberMatter: Phaser.Physics.Matter.Image,
-    member: GameMembersArray[0]
+    roundMember: RoundMembersArray[0]
   ) {
     // disable gravity
     // memberMatter.setIgnoreGravity(true);
     // update member position and velocity
-    memberMatter.setPosition(member.position.x, member.position.y);
-    memberMatter.setVelocity(member.velocity.x, member.velocity.y);
+    memberMatter.setPosition(roundMember.position.x, roundMember.position.y);
+    memberMatter.setVelocity(roundMember.velocity.x, roundMember.velocity.y);
   }
 
   // round tick : members update
 
   onGameMembersUpdate() {
-    this.roundMembersArray.forEach(member => {
-      const memberMatter = this.membersMatter.find(
-        _memberMatter => _memberMatter.getData("id") === member.id
+    this.roundMembersArray.forEach(roundMember => {
+      const member = this.members.find(
+        _member => _member.id === roundMember.id
       );
 
+      if (!member) return;
+
       // if I'm not the member manager
-      if (memberMatter && member.manager && member.manager !== this.playerId) {
+      if (roundMember.manager && roundMember.manager !== this.playerId) {
         // move member
-        this.onMemberMoved(memberMatter, member);
+        this.onMemberMoved(member, roundMember);
       }
 
-      const memberMatterStatus = memberMatter?.data.get("status");
-
       // if status are different
-      if (memberMatter && member.status !== memberMatterStatus) {
+      if (roundMember.status !== member.status) {
         // waiting -> active : member spawned
         if (
-          memberMatterStatus === enums.member.Status.waiting &&
-          member.status === enums.member.Status.active
+          member.status === enums.member.Status.waiting &&
+          roundMember.status === enums.member.Status.active
         ) {
-          this.onMemberSpawned(memberMatter);
+          this.onMemberSpawned(member);
         }
 
         // active -> waiting : member trapped
         if (
-          memberMatterStatus === enums.member.Status.active &&
-          member.status === enums.member.Status.waiting
+          member.status === enums.member.Status.active &&
+          roundMember.status === enums.member.Status.waiting
         ) {
-          this.onMemberTrapped(memberMatter);
+          this.onMemberTrapped(member);
         }
 
         // active -> arrived : member arrived
         if (
-          memberMatterStatus === enums.member.Status.active &&
-          member.status === enums.member.Status.arrived
+          member.status === enums.member.Status.active &&
+          roundMember.status === enums.member.Status.arrived
         ) {
-          this.onMemberArrived(memberMatter);
+          this.onMemberArrived(member);
         }
       }
     });
@@ -688,27 +684,28 @@ export default class MainScene extends Phaser.Scene {
     });
 
     this.events.on("shutdown", () => {
+      this.members = [];
       console.log("scene shutdown");
     });
   }
 
   update(time: number, delta: number) {
-    this.roundMembersArray.forEach(member => {
+    this.roundMembersArray.forEach(roundMember => {
       // if I'm the member manager
-      if (this.playerId === member.manager) {
-        const memberMatter = this.membersMatter.find(
-          _memberMatter => _memberMatter.getData("id") === member.id
+      if (this.playerId === roundMember.manager) {
+        const member = this.members.find(
+          _member => _member.id === roundMember.id
         );
-        const memberMatterBody = memberMatter?.body as MatterJS.BodyType;
-        if (memberMatter && memberMatterBody) {
+        const memberBody = member?.body as MatterJS.BodyType;
+        if (member && memberBody) {
           // enable gravity
-          // memberMatter.setIgnoreGravity(false);
+          // member.setIgnoreGravity(false);
           // emit position and velocity of member
           this.dispatch(
             actions.webSocket.emit.round.memberMove({
-              position: memberMatterBody.position,
-              velocity: memberMatterBody.velocity,
-              id: member.id
+              position: memberBody.position,
+              velocity: memberBody.velocity,
+              id: roundMember.id
             })
           );
         }

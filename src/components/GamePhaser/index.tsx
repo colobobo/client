@@ -19,7 +19,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
 
   const areaWidth = useSelector(selectors.area.selectWidth);
   const areaHeight = useSelector(selectors.area.selectMinHeight);
-  const gameMembersArray = useSelector(selectors.round.selectMembersAsArray);
+  const roundMembersArray = useSelector(selectors.round.selectMembersAsArray);
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isRoundStarted = useSelector(selectors.round.selectIsStarted);
   const roundId = useSelector(selectors.round.selectId);
@@ -41,7 +41,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
       playerId,
       playersRole,
       areaDevices,
-      gameMembersArray,
+      roundMembersArray: roundMembersArray,
       isRoundStarted
     })
   );
@@ -143,11 +143,11 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
     $mainScene.current.setAreaDevices(areaDevices);
   }, [areaDevices]);
 
-  // update gameMembersArray
+  // update roundMembersArray
 
   useEffect(() => {
-    $mainScene.current.setGameMembersArray(gameMembersArray);
-  }, [gameMembersArray]);
+    $mainScene.current.setRoundMembersArray(roundMembersArray);
+  }, [roundMembersArray]);
 
   // listen isRoundStarted -> pause or resume
 
