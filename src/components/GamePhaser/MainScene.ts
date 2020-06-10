@@ -176,9 +176,9 @@ export default class MainScene extends Phaser.Scene {
 
         console.log("floor collision");
         // if collide with member
-        if (gameObjectB.getData("type") === "member") {
+        if (gameObjectB instanceof Member) {
           const roundMember = this.roundMembersArray.find(
-            member => member.id === (gameObjectB as Member).id
+            member => member.id === gameObjectB.id
           );
           // if i'm the player manager
           if (this.playerId === roundMember?.manager) {
@@ -186,7 +186,7 @@ export default class MainScene extends Phaser.Scene {
 
             this.dispatch(
               actions.webSocket.emit.round.memberTrapped({
-                memberId: (gameObjectB as Member).id
+                memberId: gameObjectB.id
               })
             );
           }
@@ -344,7 +344,7 @@ export default class MainScene extends Phaser.Scene {
         callback: (e: any) => {
           const { gameObjectB } = e;
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             startSensor.setData("isColliding", true);
           }
         }
@@ -356,7 +356,7 @@ export default class MainScene extends Phaser.Scene {
         callback: (e: any) => {
           const { gameObjectB } = e;
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             startSensor.setData("isColliding", false);
             // wait 0.5 second
             setTimeout(() => {
@@ -388,13 +388,13 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           // if collide with member and my role is plateforms
           if (
-            gameObjectB.getData("type") === "member" &&
+            gameObjectB instanceof Member &&
             this.playerId === this.getPlayerWithPlatformRole()
           ) {
             // emit member arrived
             this.dispatch(
               actions.webSocket.emit.round.memberArrived({
-                memberId: (gameObjectB as Member).id
+                memberId: gameObjectB.id
               })
             );
           }
@@ -405,8 +405,6 @@ export default class MainScene extends Phaser.Scene {
 
   createTraps() {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
-
-    console.log(playersWithTrapRole);
 
     playersWithTrapRole.forEach(playerId => {
       const playerRole = this.playersRole[playerId];
@@ -434,9 +432,9 @@ export default class MainScene extends Phaser.Scene {
           const { gameObjectB } = e;
           console.log("trap collision");
           // if collide with member
-          if (gameObjectB.getData("type") === "member") {
+          if (gameObjectB instanceof Member) {
             const roundMember = this.roundMembersArray.find(
-              member => member.id === (gameObjectB as Member).id
+              member => member.id === gameObjectB.id
             );
             // if i'm the player manager
             if (this.playerId === roundMember?.manager) {
@@ -444,7 +442,7 @@ export default class MainScene extends Phaser.Scene {
 
               this.dispatch(
                 actions.webSocket.emit.round.memberTrapped({
-                  memberId: (gameObjectB as Member).id
+                  memberId: gameObjectB.id
                 })
               );
             }
@@ -459,14 +457,13 @@ export default class MainScene extends Phaser.Scene {
   addMatterWorldEventListeners() {
     // listen drag start
     this.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
-      const gameObject: Phaser.Physics.Matter.Image = e.gameObject;
-      console.log("dragstart ->", (gameObject as Member)?.id);
+      console.log("dragstart ->", (e.gameObject as Member)?.id);
 
-      if (gameObject?.getData("type") === "member")
+      if (e.gameObject instanceof Member)
         this.dispatch(
           actions.webSocket.emit.round.memberDragStart({
             playerId: this.playerId,
-            memberId: (gameObject as Member).id
+            memberId: e.gameObject.id
           })
         );
     });
@@ -699,15 +696,15 @@ export default class MainScene extends Phaser.Scene {
         const member = this.members.find(
           _member => _member.id === roundMember.id
         );
-        const memberMatterBody = member?.body as MatterJS.BodyType;
-        if (member && memberMatterBody) {
+        const memberBody = member?.body as MatterJS.BodyType;
+        if (member && memberBody) {
           // enable gravity
           // member.setIgnoreGravity(false);
           // emit position and velocity of member
           this.dispatch(
             actions.webSocket.emit.round.memberMove({
-              position: memberMatterBody.position,
-              velocity: memberMatterBody.velocity,
+              position: memberBody.position,
+              velocity: memberBody.velocity,
               id: roundMember.id
             })
           );

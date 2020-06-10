@@ -5,6 +5,7 @@ import { enums } from "@colobobo/library";
 export default class Member extends Phaser.Physics.Matter.Image {
   private readonly _id: string;
   private _status: enums.member.Status = enums.member.Status.waiting;
+  scene: MainScene;
 
   constructor({
     scene,
@@ -24,14 +25,10 @@ export default class Member extends Phaser.Physics.Matter.Image {
     super(scene.matter.world, x, y, texture, undefined, options);
 
     scene.sys.displayList.add(this);
-    // scene.add.existing(this);
 
-    console.log("NEW MEMBER");
+    this.scene = scene;
 
     this._id = id;
-
-    // set type on gameObject data
-    this.setData("type", "member");
   }
 
   // GETTERS & SETTERS
