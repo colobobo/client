@@ -9,6 +9,8 @@ declare namespace NodeJS {
   }
 }
 
+declare module "phaser-matter-collision-plugin";
+
 declare module "react-responsive-spritesheet";
 
 declare module "*.bmp" {

@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState, useMemo } from "react";
+import React, { FC, useEffect, useRef } from "react";
+import { gsap, Linear } from "gsap";
 
 // store
 import { selectors } from "../../redux";
@@ -24,30 +25,27 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   );
   const duration = useTypedSelector(selectors.round.selectDuration);
 
-  // state
-  const [timeLeft, setTimeLeft] = useState(duration);
+  // ref
+
+  const $progressBar = useRef<HTMLDivElement>(null);
 
   // handles
 
   useEffect(() => {
-    if (!isRoundStarted || timeLeft === 0) {
+    if (!isRoundStarted) {
       return;
     }
 
-    const intervalId = setInterval(() => {
-      setTimeLeft(timeLeft - 100);
-    }, 100);
-
-    return () => clearInterval(intervalId);
-  }, [duration, isRoundStarted, timeLeft]);
-
-  useEffect(() => {
-    setTimeLeft(duration);
-  }, [duration]);
-
-  const progressTimer = useMemo(() => {
-    return Math.floor((timeLeft * areaWidh) / duration);
-  }, [timeLeft, areaWidh, duration]);
+    gsap.fromTo(
+      $progressBar.current!,
+      { scale: 1 },
+      {
+        duration: duration / 1000,
+        scaleX: 0,
+        ease: Linear.easeNone
+      }
+    );
+  }, [duration, isRoundStarted]);
 
   // return
 
@@ -58,9 +56,9 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
         style={{ width: areaWidh, left: -device?.offsetX || 0 }}
       >
         <div
+          ref={$progressBar}
           className={`timer__progress timer__progress--${color}`}
-          style={{ width: `${progressTimer}px` }}
-        ></div>
+        />
       </div>
     </div>
   );

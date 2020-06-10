@@ -1,7 +1,7 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads, enums, Members } from "@colobobo/library";
+import { payloads, enums, Members, PlayerRoles } from "@colobobo/library";
 
 export interface RoundState {
   id: number;
@@ -10,6 +10,7 @@ export interface RoundState {
   world: enums.World;
   tick: number;
   members: Members;
+  playersRole: PlayerRoles;
   score: number;
   lives: number;
   isSuccess: boolean;
@@ -24,14 +25,22 @@ export const slice = createSlice({
   } as RoundState,
   reducers: {
     init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {
-      const { id, duration, world, tick, members, lives } = action.payload.data;
+      const {
+        id,
+        duration,
+        world,
+        tick,
+        members,
+        lives,
+        playerRoles
+      } = action.payload.data;
       state.id = id;
       state.duration = duration;
       state.world = world;
       state.tick = tick;
       state.members = members;
+      state.playersRole = playerRoles;
       state.lives = lives;
-      // TODO: playerRoles
     },
     start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
       state.isStarted = true;
@@ -42,6 +51,7 @@ export const slice = createSlice({
     fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
       state.lives = action.payload.data.lives;
       state.isSuccess = false;
+      state.isStarted = false;
     },
     success: (
       state: RoundState,
@@ -49,6 +59,7 @@ export const slice = createSlice({
     ) => {
       state.score = action.payload.data.score;
       state.isSuccess = true;
+      state.isStarted = false;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
@@ -60,6 +71,7 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.round;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectId = (state: RootState) => getRoot(state).id;
 const selectDuration = (state: RootState) => getRoot(state).duration;
 const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
@@ -81,9 +93,11 @@ const selectMembersActive = createSelector(selectMembersAsArray, members =>
 const selectMembersArrived = createSelector(selectMembersAsArray, members =>
   members.filter(member => member.status === enums.member.Status.arrived)
 );
+const selectPlayersRole = (state: RootState) => getRoot(state).playersRole;
 
 export const selectors = {
   selectTick,
+  selectId,
   selectIsStarted,
   selectDuration,
   selectWorld,
@@ -95,7 +109,8 @@ export const selectors = {
   selectMembersAsArray,
   selectMembersWaiting,
   selectMembersActive,
-  selectMembersArrived
+  selectMembersArrived,
+  selectPlayersRole
 };
 
 // reducer / actions
