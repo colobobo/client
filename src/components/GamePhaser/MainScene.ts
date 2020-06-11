@@ -21,8 +21,10 @@ enum CollisionCategories {
 }
 
 export default class MainScene extends Phaser.Scene {
+  // scene plugin
   matterCollision: typeof PhaserMatterCollisionPlugin;
 
+  // data from redux store
   dispatch: Dispatch;
   playerId: string;
   roundMembersArray: RoundMembersArray;
@@ -31,6 +33,7 @@ export default class MainScene extends Phaser.Scene {
   playersRole: PlayersRole;
   areaDevices: AreaDevices;
 
+  // scene variables
   collisionCategories: { [key in CollisionCategories]: number } = {
     [CollisionCategories.default]: 1,
     [CollisionCategories.member]: 0,
@@ -456,16 +459,54 @@ export default class MainScene extends Phaser.Scene {
 
   addMatterWorldEventListeners() {
     // listen drag start
-    this.matter.world.on("dragstart", (e: MatterJS.BodyType) => {
-      console.log("dragstart ->", (e.gameObject as Member)?.id);
+    this.matter.world.on("dragstart", (body: MatterJS.BodyType) => {
+      console.log("dragstart ->", (body.gameObject as Member)?.id);
 
-      if (e.gameObject instanceof Member)
+      if (body.gameObject instanceof Member) {
         this.dispatch(
           actions.webSocket.emit.round.memberDragStart({
             playerId: this.playerId,
-            memberId: e.gameObject.id
+            memberId: body.gameObject.id
           })
         );
+      }
+    });
+
+    // listen drag end
+    this.matter.world.on("dragend", (body: MatterJS.BodyType) => {
+      // reset pointer constraint
+      this.pointerContraint!.constraint.length = 0.01;
+      this.pointerContraint!.constraint.damping = 0;
+    });
+
+    this.matter.world.on("beforeupdate", () => {
+      const { pointA, pointB, bodyB } = this.pointerContraint!.constraint;
+      // pointA is pointer
+      // pointB is drag start point
+      // bodyB is the dragged body
+
+      if (bodyB && pointA && pointB) {
+        const pointBRealCoordinate = {
+          x: bodyB.position.x + pointB.x,
+          y: bodyB.position.y + pointB.y
+        };
+
+        const distance = Phaser.Math.Distance.BetweenPoints(
+          pointBRealCoordinate,
+          pointA
+        );
+
+        // if distance between pointA & pointB is higher than a threshold
+        if (distance > 25) {
+          // change pointer constraint based on distance
+          // -> prevent Continuous Collision Detection issue
+          this.pointerContraint!.constraint.length = distance * 0.77;
+          this.pointerContraint!.constraint.damping = 0.7;
+        } else {
+          this.pointerContraint!.constraint.length = 0.01;
+          this.pointerContraint!.constraint.damping = 0;
+        }
+      }
     });
   }
 
@@ -494,7 +535,6 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberSpawned(member: Member) {
     console.log("on member spawned", member.id);
-    console.log({ member });
 
     member.setX(this.plateforms.start!.x);
     member.setY(
@@ -673,7 +713,10 @@ export default class MainScene extends Phaser.Scene {
     // enable drag and drop in matter
     // @ts-ignore
     this.pointerContraint = this.matter.add.pointerConstraint({
-      stiffness: 0
+      stiffness: 0.15,
+      render: {
+        visible: true
+      }
     });
 
     this.newMemberSpawn();
