@@ -29,5 +29,10 @@ export const groups = [
       "Samsung Galaxy S10/S10+/Note10"
     ],
     autoconnect: true
+  },
+  {
+    name: "Room with 3 mobiles",
+    devices: ["iPhone 6/7/8", "iPhone 11", "Samsung Galaxy S10/S10+/Note10"],
+    autoconnect: true
   }
 ];

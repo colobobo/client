@@ -5,7 +5,8 @@ import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { selectors } from "../../redux";
+import { selectors, actions } from "../../redux";
+import { useDispatch } from "react-redux";
 
 // styles
 import "./index.scss";
@@ -15,9 +16,14 @@ interface Props {
 }
 
 const InterfaceScore: FC<Props> = ({ isActive }) => {
+  const dispatch = useDispatch();
+  const roundId = useTypedSelector(selectors.round.selectId);
   const lives = useTypedSelector(selectors.round.selectLives);
+  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
   const score = useTypedSelector(selectors.round.selectScore);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+
+  console.log(isSuccess);
 
   // state
 
@@ -28,6 +34,14 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
       setTimeout(() => setIsGameOver(true), 3000);
     }
   }, [isActive, lives]);
+
+  useEffect(() => {
+    if (roundId === 1) {
+      dispatch(
+        actions.game.setTotalLives({ lives: isSuccess ? lives : lives + 1 })
+      );
+    }
+  }, [dispatch, isSuccess, lives, roundId]);
 
   // return
 
@@ -43,6 +57,7 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
             <InterfaceScorePanel
               score={score}
               lives={lives}
+              totalLives={totalLives}
               isSuccess={isSuccess}
               isActive={isActive}
             />
