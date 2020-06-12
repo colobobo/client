@@ -43,15 +43,6 @@
       top: 0;
       left: 0;
       opacity: 0;
-
-      &:checked + .button {
-        opacity: 1;
-      }
-    }
-
-    .button {
-      opacity: 0.3;
-      height: 45px;
     }
   }
 
