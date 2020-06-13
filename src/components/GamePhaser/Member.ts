@@ -3,10 +3,10 @@ import MainScene, { CollisionCategories } from "./MainScene";
 import { enums } from "@colobobo/library";
 
 export default class Member extends Phaser.Physics.Matter.Image {
-  private readonly _id: string;
-  private _status: enums.member.Status = enums.member.Status.waiting;
+  readonly id: string;
+  status: enums.member.Status = enums.member.Status.waiting;
   scene: MainScene;
-  private readonly _baseScale: number;
+  readonly baseScale: number;
 
   constructor({
     scene,
@@ -31,37 +31,23 @@ export default class Member extends Phaser.Physics.Matter.Image {
 
     this.scene = scene;
 
-    this._id = id;
+    this.id = id;
 
-    this._baseScale = baseScale;
+    this.baseScale = baseScale;
 
     this.init();
-  }
-
-  // GETTERS & SETTERS
-
-  get id(): string {
-    return this._id;
-  }
-
-  get status(): enums.member.Status {
-    return this._status;
-  }
-
-  set status(value: enums.member.Status) {
-    this._status = value;
   }
 
   // CUSTOM GETTERS
 
   get baseHeight(): number {
-    return this._baseScale * this.height;
+    return this.baseScale * this.height;
   }
 
   // FUNCTIONS
 
   init() {
-    this.setScale(this._baseScale);
+    this.setScale(this.baseScale);
     this.setAlpha(0);
     this.setFixedRotation();
     this.disableInteractive();
@@ -95,7 +81,7 @@ export default class Member extends Phaser.Physics.Matter.Image {
     this.scene.tweens.add({
       alpha: 1,
       targets: this,
-      scale: { from: 0.2, to: this._baseScale },
+      scale: { from: 0.2, to: this.baseScale },
       ease: "Sine.easeOut",
       duration: 600,
       onComplete: () => {
