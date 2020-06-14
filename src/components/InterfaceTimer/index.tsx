@@ -24,8 +24,8 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   const [count, setCount] = useState(duration);
 
   const tick = useCallback(() => {
-    setCount(count - 100);
-  }, [count]);
+    setCount(prevState => prevState - 100);
+  }, []);
 
   useEffect(() => {
     setCount(duration);
@@ -38,7 +38,7 @@ const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
 
     let id = setInterval(tick, 100);
     return () => clearInterval(id);
-  }, [count, isRoundStarted, tick]);
+  }, [isRoundStarted, tick]);
 
   const seconds = useMemo(() => {
     return Math.floor((count % 60000) / 1000);
