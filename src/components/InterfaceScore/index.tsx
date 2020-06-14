@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 
 // components
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
+import Area from "../../components/Area";
 
 // store
 import { useTypedSelector } from "../../redux/store";
@@ -18,6 +19,8 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
   const lives = useTypedSelector(selectors.round.selectLives);
   const score = useTypedSelector(selectors.round.selectScore);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   // state
 
@@ -34,29 +37,43 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
   return (
     <div className="score">
       <div className="score__container">
-        {isGameOver ? (
-          <div className="score__game-over">
-            <p>Game over</p>
+        <Area height="min">
+          <div className="score__background">
+            <div className="score__bush"></div>
           </div>
-        ) : (
-          <div className="score__panel">
-            <InterfaceScorePanel
-              score={score}
-              lives={lives}
-              isSuccess={isSuccess}
-              isActive={isActive}
-            />
-          </div>
-        )}
+        </Area>
+        <div
+          className="score__min-area"
+          style={{
+            height: areaMinHeight
+          }}
+        >
+          {isGameOver ? (
+            <div className="score__game-over">
+              <p>Game over</p>
+            </div>
+          ) : (
+            <div className="score__panel">
+              <InterfaceScorePanel
+                score={score}
+                lives={lives}
+                isSuccess={isSuccess}
+                isActive={isActive}
+              />
+            </div>
+          )}
 
-        <div className="score__animation">
-          <img
-            className="score__gif"
-            src={require(`../../assets/illustrations/score/gifs/${
-              isSuccess ? "success" : "fail"
-            }.gif`)}
-            alt="Gif"
-          />
+          <div className="score__animation">
+            {isCreator && (
+              <img
+                className="score__gif"
+                src={require(`../../assets/illustrations/score/gifs/${
+                  isSuccess ? "success" : "fail"
+                }.gif`)}
+                alt="Gif"
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

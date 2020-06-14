@@ -55,6 +55,11 @@
     }
   },
   "score": {
-    "title": "Score"
+    "title": "Score",
+    "bonus": "Successful level bonus",
+    "sum": "Level total",
+    "buttons": {
+      "next": "Next level"
+    }
   }
 }
