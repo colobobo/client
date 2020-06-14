@@ -7,6 +7,7 @@ import "./index.scss";
 // store
 import { useDispatch, useSelector } from "react-redux";
 import { actions, selectors } from "../../../redux";
+import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
@@ -23,6 +24,7 @@ const Transition: FC<Props> = ({ isActive }) => {
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
+  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   // const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   // effect
@@ -39,7 +41,7 @@ const Transition: FC<Props> = ({ isActive }) => {
 
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
-      <InterfaceScore isActive={isActive} />
+      {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
       {/*<div className="debug">
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button

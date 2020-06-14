@@ -19,7 +19,9 @@ interface Props {
 }
 
 const InterfaceScore: FC<Props> = ({ isActive }) => {
+  const roundId = useTypedSelector(selectors.round.selectId);
   const lives = useTypedSelector(selectors.round.selectLives);
+  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
   const score = useTypedSelector(selectors.round.selectScore);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
@@ -34,6 +36,8 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
     dispatch(actions.webSocket.emit.transition.ended());
   }, [dispatch]);
 
+  console.log(isSuccess);
+
   // state
 
   const [isGameOver, setIsGameOver] = useState(false);
@@ -43,6 +47,14 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
       setTimeout(() => setIsGameOver(true), 3000);
     }
   }, [isActive, lives]);
+
+  useEffect(() => {
+    if (roundId === 1) {
+      dispatch(
+        actions.game.setTotalLives({ lives: isSuccess ? lives : lives + 1 })
+      );
+    }
+  }, [dispatch, isSuccess, lives, roundId]);
 
   // return
 
@@ -72,6 +84,7 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
                 lives={lives}
                 isSuccess={isSuccess}
                 isActive={isActive}
+                totalLives={totalLives}
               />
             </div>
           )}

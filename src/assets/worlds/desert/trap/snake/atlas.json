@@ -1,0 +1,2666 @@
+{
+  "textures": [
+    {
+      "image": "texture.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 3944,
+        "h": 1995
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "trap/desert/snake/00062.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 400
+          },
+          "frame": {
+            "x": 1,
+            "y": 1,
+            "w": 230,
+            "h": 400
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00063.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 400
+          },
+          "frame": {
+            "x": 233,
+            "y": 1,
+            "w": 230,
+            "h": 400
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00061.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 398
+          },
+          "frame": {
+            "x": 465,
+            "y": 1,
+            "w": 230,
+            "h": 398
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00064.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 395
+          },
+          "frame": {
+            "x": 697,
+            "y": 1,
+            "w": 230,
+            "h": 395
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00060.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 394
+          },
+          "frame": {
+            "x": 929,
+            "y": 1,
+            "w": 230,
+            "h": 394
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00059.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 388
+          },
+          "frame": {
+            "x": 1161,
+            "y": 1,
+            "w": 230,
+            "h": 388
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00065.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 382
+          },
+          "frame": {
+            "x": 1393,
+            "y": 1,
+            "w": 230,
+            "h": 382
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00058.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 380
+          },
+          "frame": {
+            "x": 1625,
+            "y": 1,
+            "w": 230,
+            "h": 380
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00093.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 372
+          },
+          "frame": {
+            "x": 1857,
+            "y": 1,
+            "w": 230,
+            "h": 372
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00092.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 371
+          },
+          "frame": {
+            "x": 2089,
+            "y": 1,
+            "w": 230,
+            "h": 371
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00094.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 371
+          },
+          "frame": {
+            "x": 2321,
+            "y": 1,
+            "w": 230,
+            "h": 371
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00057.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 368
+          },
+          "frame": {
+            "x": 2089,
+            "y": 374,
+            "w": 230,
+            "h": 368
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00066.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 368
+          },
+          "frame": {
+            "x": 697,
+            "y": 398,
+            "w": 230,
+            "h": 368
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00095.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 368
+          },
+          "frame": {
+            "x": 1,
+            "y": 403,
+            "w": 230,
+            "h": 368
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00091.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 365
+          },
+          "frame": {
+            "x": 233,
+            "y": 403,
+            "w": 230,
+            "h": 365
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00096.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 364
+          },
+          "frame": {
+            "x": 465,
+            "y": 401,
+            "w": 230,
+            "h": 364
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00097.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 359
+          },
+          "frame": {
+            "x": 465,
+            "y": 767,
+            "w": 230,
+            "h": 359
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00067.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 355
+          },
+          "frame": {
+            "x": 1,
+            "y": 773,
+            "w": 230,
+            "h": 355
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00090.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 354
+          },
+          "frame": {
+            "x": 233,
+            "y": 770,
+            "w": 230,
+            "h": 354
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00098.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 354
+          },
+          "frame": {
+            "x": 233,
+            "y": 1126,
+            "w": 230,
+            "h": 354
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00056.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 352
+          },
+          "frame": {
+            "x": 1,
+            "y": 1130,
+            "w": 230,
+            "h": 352
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00099.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 349
+          },
+          "frame": {
+            "x": 929,
+            "y": 397,
+            "w": 230,
+            "h": 349
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00076.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1161,
+            "y": 391,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00077.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1161,
+            "y": 740,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00078.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 697,
+            "y": 768,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00079.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 929,
+            "y": 748,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00080.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1393,
+            "y": 385,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00081.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1393,
+            "y": 734,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00082.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1625,
+            "y": 383,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00083.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1625,
+            "y": 732,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00084.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1857,
+            "y": 375,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00085.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1857,
+            "y": 724,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00086.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2321,
+            "y": 374,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00087.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2321,
+            "y": 723,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00088.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2089,
+            "y": 744,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00089.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1393,
+            "y": 1083,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00100.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 697,
+            "y": 1117,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00101.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 465,
+            "y": 1128,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00102.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 929,
+            "y": 1097,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00103.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1161,
+            "y": 1089,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00104.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1625,
+            "y": 1081,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00105.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1857,
+            "y": 1073,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00106.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2321,
+            "y": 1072,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00107.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2089,
+            "y": 1093,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00108.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1857,
+            "y": 1422,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00109.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1625,
+            "y": 1430,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00110.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1393,
+            "y": 1432,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00111.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1161,
+            "y": 1438,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00112.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 929,
+            "y": 1446,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00113.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 697,
+            "y": 1466,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00114.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 465,
+            "y": 1477,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00115.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 233,
+            "y": 1482,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00116.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 1,
+            "y": 1484,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00117.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2321,
+            "y": 1421,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00118.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2089,
+            "y": 1442,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00048.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 221
+          },
+          "frame": {
+            "x": 1857,
+            "y": 1771,
+            "w": 230,
+            "h": 221
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00047.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 208
+          },
+          "frame": {
+            "x": 1625,
+            "y": 1779,
+            "w": 230,
+            "h": 208
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00128.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 196
+          },
+          "frame": {
+            "x": 1393,
+            "y": 1781,
+            "w": 230,
+            "h": 196
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00046.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 194
+          },
+          "frame": {
+            "x": 1161,
+            "y": 1787,
+            "w": 230,
+            "h": 194
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00045.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 181
+          },
+          "frame": {
+            "x": 929,
+            "y": 1795,
+            "w": 230,
+            "h": 181
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00129.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 177
+          },
+          "frame": {
+            "x": 697,
+            "y": 1815,
+            "w": 230,
+            "h": 177
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00043.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 164
+          },
+          "frame": {
+            "x": 465,
+            "y": 1826,
+            "w": 230,
+            "h": 164
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00130.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 163
+          },
+          "frame": {
+            "x": 233,
+            "y": 1831,
+            "w": 230,
+            "h": 163
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00042.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 155
+          },
+          "frame": {
+            "x": 1,
+            "y": 1833,
+            "w": 230,
+            "h": 155
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00127.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 217
+          },
+          "frame": {
+            "x": 2321,
+            "y": 1770,
+            "w": 230,
+            "h": 217
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00044.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 172
+          },
+          "frame": {
+            "x": 2089,
+            "y": 1791,
+            "w": 230,
+            "h": 172
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00119.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2553,
+            "y": 1,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00120.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2553,
+            "y": 350,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00121.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 347
+          },
+          "frame": {
+            "x": 2553,
+            "y": 699,
+            "w": 230,
+            "h": 347
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00075.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 345
+          },
+          "frame": {
+            "x": 2553,
+            "y": 1048,
+            "w": 230,
+            "h": 345
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00074.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 344
+          },
+          "frame": {
+            "x": 2553,
+            "y": 1395,
+            "w": 230,
+            "h": 344
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00050.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 252
+          },
+          "frame": {
+            "x": 2553,
+            "y": 1741,
+            "w": 230,
+            "h": 252
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00068.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 343
+          },
+          "frame": {
+            "x": 2785,
+            "y": 1,
+            "w": 230,
+            "h": 343
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00122.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 341
+          },
+          "frame": {
+            "x": 2785,
+            "y": 346,
+            "w": 230,
+            "h": 341
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00073.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 339
+          },
+          "frame": {
+            "x": 2785,
+            "y": 689,
+            "w": 230,
+            "h": 339
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00055.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 333
+          },
+          "frame": {
+            "x": 2785,
+            "y": 1030,
+            "w": 230,
+            "h": 333
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00069.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 333
+          },
+          "frame": {
+            "x": 2785,
+            "y": 1365,
+            "w": 230,
+            "h": 333
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00124.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 294
+          },
+          "frame": {
+            "x": 2785,
+            "y": 1700,
+            "w": 230,
+            "h": 294
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00072.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 327
+          },
+          "frame": {
+            "x": 3017,
+            "y": 1,
+            "w": 230,
+            "h": 327
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00070.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 325
+          },
+          "frame": {
+            "x": 3017,
+            "y": 330,
+            "w": 230,
+            "h": 325
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00071.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 320
+          },
+          "frame": {
+            "x": 3017,
+            "y": 657,
+            "w": 230,
+            "h": 320
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00123.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 319
+          },
+          "frame": {
+            "x": 3017,
+            "y": 979,
+            "w": 230,
+            "h": 319
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00054.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 318
+          },
+          "frame": {
+            "x": 3017,
+            "y": 1300,
+            "w": 230,
+            "h": 318
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00053.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 303
+          },
+          "frame": {
+            "x": 3017,
+            "y": 1620,
+            "w": 230,
+            "h": 303
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00052.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 284
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1,
+            "w": 230,
+            "h": 284
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00051.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 266
+          },
+          "frame": {
+            "x": 3249,
+            "y": 287,
+            "w": 230,
+            "h": 266
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00125.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 264
+          },
+          "frame": {
+            "x": 3249,
+            "y": 555,
+            "w": 230,
+            "h": 264
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00126.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 241
+          },
+          "frame": {
+            "x": 3249,
+            "y": 821,
+            "w": 230,
+            "h": 241
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00049.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 235
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1064,
+            "w": 230,
+            "h": 235
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00131.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 149
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1301,
+            "w": 230,
+            "h": 149
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00041.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 146
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1452,
+            "w": 230,
+            "h": 146
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00040.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 139
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1600,
+            "w": 230,
+            "h": 139
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00132.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 137
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1741,
+            "w": 230,
+            "h": 137
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00034.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 113
+          },
+          "frame": {
+            "x": 3249,
+            "y": 1880,
+            "w": 230,
+            "h": 113
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00023.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 133
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1,
+            "w": 230,
+            "h": 133
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00024.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 132
+          },
+          "frame": {
+            "x": 3481,
+            "y": 136,
+            "w": 230,
+            "h": 132
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00039.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 132
+          },
+          "frame": {
+            "x": 3481,
+            "y": 270,
+            "w": 230,
+            "h": 132
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00022.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 131
+          },
+          "frame": {
+            "x": 3481,
+            "y": 404,
+            "w": 230,
+            "h": 131
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00025.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 130
+          },
+          "frame": {
+            "x": 3481,
+            "y": 537,
+            "w": 230,
+            "h": 130
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00133.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 128
+          },
+          "frame": {
+            "x": 3481,
+            "y": 669,
+            "w": 230,
+            "h": 128
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00038.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 127
+          },
+          "frame": {
+            "x": 3481,
+            "y": 799,
+            "w": 230,
+            "h": 127
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00026.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 126
+          },
+          "frame": {
+            "x": 3481,
+            "y": 928,
+            "w": 230,
+            "h": 126
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00037.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 123
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1056,
+            "w": 230,
+            "h": 123
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00021.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 122
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1181,
+            "w": 230,
+            "h": 122
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00027.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 121
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1305,
+            "w": 230,
+            "h": 121
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00134.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 121
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1428,
+            "w": 230,
+            "h": 121
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00036.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 119
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1551,
+            "w": 230,
+            "h": 119
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00028.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 116
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1672,
+            "w": 230,
+            "h": 116
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00135.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 116
+          },
+          "frame": {
+            "x": 3481,
+            "y": 1790,
+            "w": 230,
+            "h": 116
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00035.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 115
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1,
+            "w": 230,
+            "h": 115
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00020.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 112
+          },
+          "frame": {
+            "x": 3713,
+            "y": 118,
+            "w": 230,
+            "h": 112
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00136.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 112
+          },
+          "frame": {
+            "x": 3713,
+            "y": 232,
+            "w": 230,
+            "h": 112
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00033.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 111
+          },
+          "frame": {
+            "x": 3713,
+            "y": 346,
+            "w": 230,
+            "h": 111
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00029.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 110
+          },
+          "frame": {
+            "x": 3713,
+            "y": 459,
+            "w": 230,
+            "h": 110
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00032.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 109
+          },
+          "frame": {
+            "x": 3713,
+            "y": 571,
+            "w": 230,
+            "h": 109
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00137.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 109
+          },
+          "frame": {
+            "x": 3713,
+            "y": 682,
+            "w": 230,
+            "h": 109
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00019.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 793,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00030.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 903,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00031.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1013,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00138.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1123,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00139.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1233,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00140.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1343,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00141.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1453,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00142.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1563,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00143.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1673,
+            "w": 230,
+            "h": 108
+          }
+        },
+        {
+          "filename": "trap/desert/snake/00144.png",
+          "rotated": false,
+          "trimmed": true,
+          "sourceSize": {
+            "w": 400,
+            "h": 400
+          },
+          "spriteSourceSize": {
+            "x": 114,
+            "y": 0,
+            "w": 230,
+            "h": 108
+          },
+          "frame": {
+            "x": 3713,
+            "y": 1783,
+            "w": 230,
+            "h": 108
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "3.0",
+    "smartupdate": "$TexturePacker:SmartUpdate:0578d280758a549d760ac2b50819a8b9:39a46f193dab1c5c86de30c5b6cddc4e:afebaf100d2db0b87ec38dfe59d5374c$"
+  }
+}

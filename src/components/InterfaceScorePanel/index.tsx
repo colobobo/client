@@ -20,48 +20,32 @@ import "./index.scss";
 interface Props {
   score: number;
   lives: number;
+  totalLives: number;
   isSuccess: boolean;
   isActive: boolean;
 }
 
-const InterfaceScorePanel: FC<Props> = ({ score, lives, isSuccess }) => {
+const InterfaceScorePanel: FC<Props> = ({
+  score,
+  lives,
+  totalLives,
+  isSuccess
+}) => {
   const { t } = useTranslation();
 
   const livesItem = useMemo(() => {
     let livesArray = [];
-    /* TODO: REPLACE MAX LIVES NUMBER BY VARIABLE BASED ON LIVES FROM ROUND INIT */
-    const currentLife = 4 - lives - 1;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < totalLives; i++) {
       let life = (
         <li className="score-panel__life" key={i}>
-          {i < currentLife && (
-            <img src={teacherDeadPicture} alt="Dead teacher" />
-          )}
-          {i === currentLife && isSuccess && (
-            <img src={teacherDeadPicture} alt="Dead teacher" />
-          )}
-          {i === currentLife && !isSuccess && (
-            <SpriteAnimation
-              animationID={animationId.teacher_fail}
-              autoplay={true}
-            />
-          )}
-          {i > currentLife && isSuccess && (
-            <SpriteAnimation
-              animationID={animationId.teacher_success}
-              autoplay={true}
-            />
-          )}
-          {i > currentLife && !isSuccess && (
-            <img src={teacherAlivePicture} alt="Alive teacher" />
-          )}
+          <SpriteAnimation animationID={animationId.teacher_success} />
         </li>
       );
       livesArray.push(life);
     }
     return livesArray;
-  }, [isSuccess, lives]);
+  }, [totalLives]);
 
   // return
 
