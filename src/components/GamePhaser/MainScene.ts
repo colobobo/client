@@ -7,6 +7,7 @@ import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "./Member";
 import Platform, { PlatformType } from "./Platform";
+import Trap, { TrapLocation } from "./Trap";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -124,6 +125,18 @@ export default class MainScene extends Phaser.Scene {
       this.load.svg(config.worlds[world].platforms.right);
       // load wall
       this.load.svg(config.worlds[world].platforms.wall);
+    });
+  }
+
+  loadTraps() {
+    // TODO : wip
+    const texture = require("../../assets/worlds/desert/trap/snake/texture.png");
+    const atlas = require("../../assets/worlds/desert/trap/snake/atlas.json");
+
+    this.load.atlas({
+      key: "snake-test",
+      textureURL: texture,
+      atlasURL: atlas
     });
   }
 
@@ -305,44 +318,18 @@ export default class MainScene extends Phaser.Scene {
       const playerRole = this.playersRole[playerId];
       const device = this.areaDevices[playerId];
 
-      const trap = this.matter.add.gameObject(
-        this.add.rectangle(
-          device.offsetX + device.width * 0.5,
-          0,
-          40,
-          this.game.canvas.height * 0.3,
-          0xff0000
-        ),
-        {
-          isStatic: true
-        }
-      ) as Phaser.GameObjects.Rectangle;
+      // TODO : create trap dynamicaly with playerRole data
 
-      trap.setY(trap.y + trap.displayHeight / 2);
-
-      // listen collision start
-      this.matterCollision.addOnCollideStart({
-        objectA: trap,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          console.log("trap collision");
-          // if collide with member
-          if (gameObjectB instanceof Member) {
-            const roundMember = this.roundMembersArray.find(
-              member => member.id === gameObjectB.id
-            );
-            // if i'm the player manager
-            if (this.playerId === roundMember?.manager) {
-              // emit member arrived
-
-              this.dispatch(
-                actions.webSocket.emit.round.memberTrapped({
-                  memberId: gameObjectB.id
-                })
-              );
-            }
-          }
-        }
+      const trap = new Trap({
+        scene: this,
+        x: device.offsetX + device.width * 0.5,
+        y: 0,
+        texture: "snake-test",
+        animationKey: "anim-snake",
+        scale: 0.6,
+        options: { isStatic: true },
+        collisionEnabled: false,
+        location: TrapLocation.top
       });
     });
   }
@@ -520,6 +507,7 @@ export default class MainScene extends Phaser.Scene {
   preload() {
     this.loadMembers();
     this.loadPlatforms();
+    this.loadTraps();
   }
 
   create() {
