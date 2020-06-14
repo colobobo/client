@@ -10,7 +10,6 @@ import { actions, selectors } from "../../../redux";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
-import InterfaceButton, { Colors } from "../../../components/InterfaceButton";
 
 interface Props {
   isActive: boolean;
@@ -36,22 +35,11 @@ const Transition: FC<Props> = ({ isActive }) => {
     }
   }, [dispatch, isActive, playerId]);
 
-  // handlers
-
-  const handleOnNextRoundClick = useCallback(() => {
-    dispatch(actions.webSocket.emit.transition.ended());
-  }, [dispatch]);
-
   // return
 
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
       <InterfaceScore isActive={isActive} />
-      {/* <InterfaceButton
-        onClick={handleOnNextRoundClick}
-        color={Colors.blue}
-        text={t("score.buttons.next")}
-      /> */}
       {/*<div className="debug">
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button

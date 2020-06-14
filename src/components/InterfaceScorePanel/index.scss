@@ -46,7 +46,7 @@
     color: $blue-dark;
     border: 2px solid $blue-dark;
     border-radius: 30px;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 30px 20px;
 
     &::before {
       content: "";
@@ -207,6 +207,8 @@
     }
 
     &__container {
+      padding: 0 20px 20px 20px;
+
       &::before {
         top: -50px;
         width: 130px;
