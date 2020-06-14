@@ -6,6 +6,7 @@ import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "./Member";
+import Platform, { PlatformType } from "./Platform";
 
 type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -43,9 +44,9 @@ export default class MainScene extends Phaser.Scene {
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   members: Member[] = [];
   plateforms: {
-    start: Phaser.Physics.Matter.Image | null;
-    finish: Phaser.Physics.Matter.Image | null;
-  } = { start: null, finish: null };
+    start?: Platform;
+    finish?: Platform;
+  } = {};
 
   constructor({
     dispatch,
@@ -233,41 +234,44 @@ export default class MainScene extends Phaser.Scene {
 
       // PLATFORMS
 
-      const leftPlatform = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.2,
-          0,
-          config.worlds[this.world].platforms.left.key,
-          undefined,
-          {
-            isStatic: true
-          }
-        )
-        .setScale(0.3);
-
-      const rightPlatform = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.8,
-          0,
-          config.worlds[this.world].platforms.right.key,
-          undefined,
-          {
-            isStatic: true
-          }
-        )
-        .setScale(0.3);
-
-      // set y
-      leftPlatform.setY(
-        this.game.canvas.height - leftPlatform.displayHeight / 2
-      );
-      rightPlatform.setY(
-        this.game.canvas.height - rightPlatform.displayHeight / 2
-      );
+      const leftRightData = {
+        left: {
+          x: device.offsetX + device.width * 0.2,
+          texture: config.worlds[this.world].platforms.left.key
+        },
+        right: {
+          x: device.offsetX + device.width * 0.8,
+          texture: config.worlds[this.world].platforms.right.key
+        }
+      };
 
       // TODO: dynamic
-      this.plateforms.start = rightPlatform;
-      this.plateforms.finish = leftPlatform;
+      const startFinishData = {
+        start: leftRightData.right,
+        finish: leftRightData.left
+      };
+
+      // start
+
+      this.plateforms.start = new Platform({
+        scene: this,
+        type: PlatformType.start,
+        x: startFinishData.start.x,
+        texture: startFinishData.start.texture,
+        options: { isStatic: true },
+        scale: 0.3
+      });
+
+      // finish
+
+      this.plateforms.finish = new Platform({
+        scene: this,
+        type: PlatformType.finish,
+        x: startFinishData.finish.x,
+        texture: startFinishData.finish.texture,
+        options: { isStatic: true },
+        scale: 0.3
+      });
 
       // WALL
 
@@ -287,86 +291,6 @@ export default class MainScene extends Phaser.Scene {
 
       // set y
       wall.setY(wall.y + wall.displayHeight / 2);
-
-      // START SENSOR
-
-      const startSensor = this.matter.add.gameObject(
-        this.add.rectangle(
-          this.plateforms.start.x,
-          this.plateforms.start.y -
-            this.plateforms.start.displayHeight / 2 -
-            100,
-          this.plateforms.start.displayWidth + 50,
-          200
-        ),
-        {
-          isSensor: true,
-          isStatic: true,
-          ignorePointer: true
-        }
-      );
-
-      this.matterCollision.addOnCollideActive({
-        objectA: startSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member
-          if (gameObjectB instanceof Member) {
-            startSensor.setData("isColliding", true);
-          }
-        }
-      });
-
-      // listen collisions end
-      this.matterCollision.addOnCollideEnd({
-        objectA: startSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member
-          if (gameObjectB instanceof Member) {
-            startSensor.setData("isColliding", false);
-            // wait 0.5 second
-            setTimeout(() => {
-              // if sensor not colliding currently : new member spawn
-              if (!startSensor.getData("isColliding")) this.newMemberSpawn();
-            }, 500);
-          }
-        }
-      });
-
-      // FINISH SENSOR
-
-      const finishSensor = this.matter.add.rectangle(
-        this.plateforms.finish.x,
-        this.plateforms.finish.y - this.plateforms.finish.displayHeight / 2 - 5,
-        this.plateforms.finish.displayWidth / 4,
-        10,
-        {
-          isSensor: true,
-          isStatic: true,
-          ignorePointer: true
-        }
-      );
-
-      // listen collision start
-      this.matterCollision.addOnCollideStart({
-        objectA: finishSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member and my role is plateforms
-          if (
-            gameObjectB instanceof Member &&
-            this.playerId === this.getPlayerWithPlatformRole()
-          ) {
-            // emit member arrived
-            this.dispatch(
-              actions.webSocket.emit.round.memberArrived({
-                memberId: gameObjectB.id
-              })
-            );
-          }
-        }
-      });
     }
   }
 
