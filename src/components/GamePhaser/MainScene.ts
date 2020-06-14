@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import { enums } from "@colobobo/library";
+import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
 import * as config from "../../config";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
@@ -129,14 +129,10 @@ export default class MainScene extends Phaser.Scene {
 
   // GETTERS
 
-  getPlayerWithPlatformRole(): string | null {
-    let playerWithPlatformRole = null;
-    Object.keys(this.playersRole).forEach(playerId => {
-      if (this.playersRole[playerId].role === enums.player.Role.platform) {
-        playerWithPlatformRole = playerId;
-      }
-    });
-    return playerWithPlatformRole;
+  getPlayerWithPlatformRole(): string {
+    return Object.keys(this.playersRole).find(
+      playerId => this.playersRole[playerId].role === enums.player.Role.platform
+    ) as string;
   }
 
   getPlayersWithTrapRole(): string[] {
@@ -229,69 +225,77 @@ export default class MainScene extends Phaser.Scene {
   createPlatformsAndWall() {
     const playerWithPlatformRole = this.getPlayerWithPlatformRole();
 
-    if (playerWithPlatformRole) {
-      const device = this.areaDevices[playerWithPlatformRole];
+    if (!playerWithPlatformRole) return;
 
-      // PLATFORMS
+    const device = this.areaDevices[playerWithPlatformRole];
+    const role = this.playersRole[playerWithPlatformRole];
 
-      const leftRightData = {
-        left: {
-          x: device.offsetX + device.width * 0.2,
-          texture: config.worlds[this.world].platforms.left.key
-        },
-        right: {
-          x: device.offsetX + device.width * 0.8,
-          texture: config.worlds[this.world].platforms.right.key
+    // PLATFORMS
+
+    const leftRightData = {
+      left: {
+        x: device.offsetX + device.width * 0.2,
+        texture: config.worlds[this.world].platforms.left.key
+      },
+      right: {
+        x: device.offsetX + device.width * 0.8,
+        texture: config.worlds[this.world].platforms.right.key
+      }
+    };
+
+    const startFinishData = {
+      start:
+        (role.properties as PlayerRolePropertiesPlateform).direction ===
+        enums.round.Direction.leftToRight
+          ? leftRightData.right
+          : leftRightData.left,
+      finish:
+        (role.properties as PlayerRolePropertiesPlateform).direction ===
+        enums.round.Direction.leftToRight
+          ? leftRightData.left
+          : leftRightData.right
+    };
+
+    // start
+
+    this.plateforms.start = new Platform({
+      scene: this,
+      type: PlatformType.start,
+      x: startFinishData.start.x,
+      texture: startFinishData.start.texture,
+      options: { isStatic: true },
+      scale: 0.3
+    });
+
+    // finish
+
+    this.plateforms.finish = new Platform({
+      scene: this,
+      type: PlatformType.finish,
+      x: startFinishData.finish.x,
+      texture: startFinishData.finish.texture,
+      options: { isStatic: true },
+      scale: 0.3
+    });
+
+    // WALL
+
+    const wall = this.matter.add
+      .image(
+        device.offsetX + device.width * 0.5,
+        0,
+        config.worlds[this.world].platforms.wall.key,
+        undefined,
+        {
+          isStatic: true,
+          frictionStatic: 0,
+          friction: 0
         }
-      };
+      )
+      .setScale(0.3);
 
-      // TODO: dynamic
-      const startFinishData = {
-        start: leftRightData.right,
-        finish: leftRightData.left
-      };
-
-      // start
-
-      this.plateforms.start = new Platform({
-        scene: this,
-        type: PlatformType.start,
-        x: startFinishData.start.x,
-        texture: startFinishData.start.texture,
-        options: { isStatic: true },
-        scale: 0.3
-      });
-
-      // finish
-
-      this.plateforms.finish = new Platform({
-        scene: this,
-        type: PlatformType.finish,
-        x: startFinishData.finish.x,
-        texture: startFinishData.finish.texture,
-        options: { isStatic: true },
-        scale: 0.3
-      });
-
-      // WALL
-
-      const wall = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.5,
-          0,
-          config.worlds[this.world].platforms.wall.key,
-          undefined,
-          {
-            isStatic: true,
-            frictionStatic: 0,
-            friction: 0
-          }
-        )
-        .setScale(0.3);
-
-      // set y
-      wall.setY(wall.y + wall.displayHeight / 2);
-    }
+    // set y
+    wall.setY(wall.y + wall.displayHeight / 2);
   }
 
   createTraps() {
