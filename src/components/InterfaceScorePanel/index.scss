@@ -91,13 +91,15 @@
     @include mikado-black;
     font-size: 5.5rem;
     line-height: 4rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   &__lives {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
   &__life {
@@ -145,6 +147,7 @@
       padding: 5px;
       border-radius: 15px;
       margin-top: 25px;
+      max-width: 100px;
 
       &:not(:first-child) {
         margin-left: 5px;
@@ -169,7 +172,7 @@
         border-radius: 10px;
         background-color: $white;
         border: 2px solid $blue-dark;
-        padding-top: 15px;
+        padding-top: 12px;
 
         img {
           height: 35px;
@@ -179,9 +182,75 @@
       &__point {
         color: $white;
         @include mikado-medium;
-        font-size: 1.6rem;
-        line-height: 1.6rem;
-        padding: 8px 0 4px 0;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        padding: 6px 0 2px 0;
+      }
+    }
+  }
+}
+
+@media #{$smallMobile} {
+  .score-panel {
+    width: 90vw;
+
+    &::before {
+      top: -50px;
+      width: 170px;
+      height: 170px;
+    }
+
+    &::after {
+      top: 0;
+      width: 170px;
+      height: 175px;
+    }
+
+    &__container {
+      &::before {
+        top: -50px;
+        width: 130px;
+        height: 130px;
+      }
+
+      &::after {
+        top: 0;
+        width: 160px;
+        height: 160px;
+      }
+    }
+
+    &__score {
+      font-size: 4.5rem;
+      line-height: 4rem;
+      margin-bottom: 10px;
+    }
+
+    &__life {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__cards {
+      margin: 10px 0 20px 0;
+
+      .card {
+        margin-top: 15px;
+
+        &__detail {
+          top: -15px;
+          width: 30px;
+          height: 30px;
+          font-size: 1.2rem;
+        }
+
+        &__picture {
+          padding-top: 12px;
+
+          img {
+            height: 25px;
+          }
+        }
       }
     }
   }

@@ -37,11 +37,12 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
   return (
     <div className="score">
       <div className="score__container">
-        <Area height="min">
-          <div className="score__background">
-            <div className="score__bush"></div>
-          </div>
-        </Area>
+        <div
+          className="score__background"
+          style={{
+            height: areaMinHeight
+          }}
+        ></div>
         <div
           className="score__min-area"
           style={{
@@ -62,7 +63,16 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
               />
             </div>
           )}
-
+        </div>
+        <Area height="min">
+          <div className="score__bush"></div>
+        </Area>
+        <div
+          className="score__min-area"
+          style={{
+            height: areaMinHeight
+          }}
+        >
           <div className="score__animation">
             {isCreator && (
               <img
