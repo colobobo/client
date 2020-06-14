@@ -7,13 +7,13 @@ import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "./Member";
 
-type RoundMembersArray = ReturnType<
+export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
 >;
 type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
 type AreaDevices = ReturnType<typeof selectors.area.selectDevices>;
 
-enum CollisionCategories {
+export enum CollisionCategories {
   default = "default",
   member = "member",
   platform = "platform",
@@ -213,51 +213,15 @@ export default class MainScene extends Phaser.Scene {
           frictionAir: 0.02,
           ignoreGravity: true
         },
-        id: roundMember.id
+        id: roundMember.id,
+        baseScale: 0.42
       });
 
-      // scale
-      member.setScale(0.42);
-      // position
-      member.setX(this.plateforms.start!.x);
-      member.setY(
-        this.plateforms.start!.y -
-          this.plateforms.start!.displayHeight / 2 -
-          member.displayHeight / 2
-      );
-      // alpha
-      member.setAlpha(0);
-      // fixed rotation
-      member.setFixedRotation();
-      // disbale intercation
-      member.disableInteractive();
-      // set status
-      member.status = enums.member.Status.waiting;
-      // set collision category
-      member.setCollisionCategory(
-        this.collisionCategories[CollisionCategories.member]
-      );
-      // disable collision
-      member.setCollidesWith(0);
+      member.setPositionToStartPlatform();
+      member.addEventListeners();
 
-      // add member matter object to members array
+      // add member to members array
       this.members.push(member);
-    });
-  }
-
-  // members event listeners
-
-  addMembersEventListeners() {
-    this.members.forEach(member => {
-      // listen pointer events
-      // member.setInteractive().on("pointerdown", (e: Phaser.Input.Pointer) => {
-      //   console.log("pointerdown ->", member.name);
-      // });
-      // listen collision
-      // TODO : use https://github.com/mikewesthad/phaser-matter-collision-plugin
-      // member.setOnCollide((e: any) => {
-      //   // console.log("collide", e);
-      // });
     });
   }
 
@@ -535,57 +499,15 @@ export default class MainScene extends Phaser.Scene {
 
   onMemberSpawned(member: Member) {
     console.log("on member spawned", member.id);
-
-    member.setX(this.plateforms.start!.x);
-    member.setY(
-      this.plateforms.start!.y -
-        this.plateforms.start!.displayHeight / 2 -
-        (member.height * 0.42) / 2
-    );
-    member.setFixedRotation();
-    member.status = enums.member.Status.active;
-    // member.data.set("status", enums.member.Status.active);
-
-    // animate
-    this.tweens.add({
-      alpha: 1,
-      targets: member,
-      scale: { from: 0.2, to: 0.42 },
-      ease: "Sine.easeOut",
-      duration: 600,
-      onComplete: () => {
-        member.setCollidesWith([
-          this.collisionCategories[CollisionCategories.default],
-          this.collisionCategories[CollisionCategories.member],
-          this.collisionCategories[CollisionCategories.platform],
-          this.collisionCategories[CollisionCategories.wall]
-        ]);
-        member.setIgnoreGravity(false);
-        member.setInteractive();
-      }
-    });
+    member.spawned();
   }
 
   // member : trapped
 
   onMemberTrapped(member: Member) {
-    console.log("on member trapped");
+    console.log("on member trapped", member.id);
 
-    member.setVelocity(0);
-    member.setIgnoreGravity(true);
-    member.setCollidesWith(0);
-    member.disableInteractive();
-    member.status = enums.member.Status.waiting;
-    // member.data.set("status", enums.member.Status.waiting);
-
-    // animate
-    this.tweens.add({
-      targets: member,
-      alpha: 0,
-      scale: 0.2,
-      duration: 400,
-      ease: "Sine.easeIn"
-    });
+    member.trapped();
 
     const waitingMember = this.roundMembersArray.filter(
       roundMember => roundMember.status === enums.member.Status.waiting
@@ -601,40 +523,16 @@ export default class MainScene extends Phaser.Scene {
   // member : arrived
 
   onMemberArrived(member: Member) {
-    console.log("on member arrived");
-    member.disableInteractive();
-    member.setCollidesWith(0);
-    member.setIgnoreGravity(true);
-    member.setVelocity(0);
-    member.status = enums.member.Status.arrived;
-    // member.data.set("status", enums.member.Status.arrived);
-
-    // animate
-    this.tweens.add({
-      targets: member,
-      alpha: 0,
-      x: this.plateforms.finish?.x,
-      y:
-        this.plateforms.finish!.y -
-        this.plateforms.finish!.displayHeight / 2 -
-        member.displayHeight / 2,
-      scale: 0.2,
-      duration: 600,
-      ease: "Sine.easeIn"
-    });
+    console.log("on member arrived", member.id);
+    member.arrived();
   }
 
   // member : moved
 
-  onMemberMoved(
-    memberMatter: Phaser.Physics.Matter.Image,
-    roundMember: RoundMembersArray[0]
-  ) {
+  onMemberMoved(member: Member, roundMember: RoundMembersArray[0]) {
     // disable gravity
     // memberMatter.setIgnoreGravity(true);
-    // update member position and velocity
-    memberMatter.setPosition(roundMember.position.x, roundMember.position.y);
-    memberMatter.setVelocity(roundMember.velocity.x, roundMember.velocity.y);
+    member.moved(roundMember);
   }
 
   // round tick : members update
@@ -706,7 +604,6 @@ export default class MainScene extends Phaser.Scene {
     this.createTraps();
 
     this.createMembers();
-    this.addMembersEventListeners();
 
     this.addMatterWorldEventListeners();
 
