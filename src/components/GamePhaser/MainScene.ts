@@ -1,11 +1,12 @@
 import * as Phaser from "phaser";
-import { enums } from "@colobobo/library";
+import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
 import * as config from "../../config";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "./Member";
+import Platform, { PlatformType } from "./Platform";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -43,9 +44,9 @@ export default class MainScene extends Phaser.Scene {
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   members: Member[] = [];
   plateforms: {
-    start: Phaser.Physics.Matter.Image | null;
-    finish: Phaser.Physics.Matter.Image | null;
-  } = { start: null, finish: null };
+    start?: Platform;
+    finish?: Platform;
+  } = {};
 
   constructor({
     dispatch,
@@ -128,14 +129,10 @@ export default class MainScene extends Phaser.Scene {
 
   // GETTERS
 
-  getPlayerWithPlatformRole(): string | null {
-    let playerWithPlatformRole = null;
-    Object.keys(this.playersRole).forEach(playerId => {
-      if (this.playersRole[playerId].role === enums.player.Role.platform) {
-        playerWithPlatformRole = playerId;
-      }
-    });
-    return playerWithPlatformRole;
+  getPlayerWithPlatformRole(): string {
+    return Object.keys(this.playersRole).find(
+      playerId => this.playersRole[playerId].role === enums.player.Role.platform
+    ) as string;
   }
 
   getPlayersWithTrapRole(): string[] {
@@ -228,146 +225,77 @@ export default class MainScene extends Phaser.Scene {
   createPlatformsAndWall() {
     const playerWithPlatformRole = this.getPlayerWithPlatformRole();
 
-    if (playerWithPlatformRole) {
-      const device = this.areaDevices[playerWithPlatformRole];
+    if (!playerWithPlatformRole) return;
 
-      // PLATFORMS
+    const device = this.areaDevices[playerWithPlatformRole];
+    const role = this.playersRole[playerWithPlatformRole];
 
-      const leftPlatform = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.2,
-          0,
-          config.worlds[this.world].platforms.left.key,
-          undefined,
-          {
-            isStatic: true
-          }
-        )
-        .setScale(0.3);
+    // PLATFORMS
 
-      const rightPlatform = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.8,
-          0,
-          config.worlds[this.world].platforms.right.key,
-          undefined,
-          {
-            isStatic: true
-          }
-        )
-        .setScale(0.3);
+    const leftRightData = {
+      left: {
+        x: device.offsetX + device.width * 0.2,
+        texture: config.worlds[this.world].platforms.left.key
+      },
+      right: {
+        x: device.offsetX + device.width * 0.8,
+        texture: config.worlds[this.world].platforms.right.key
+      }
+    };
 
-      // set y
-      leftPlatform.setY(
-        this.game.canvas.height - leftPlatform.displayHeight / 2
-      );
-      rightPlatform.setY(
-        this.game.canvas.height - rightPlatform.displayHeight / 2
-      );
+    const startFinishData = {
+      start:
+        (role.properties as PlayerRolePropertiesPlateform).direction ===
+        enums.round.Direction.leftToRight
+          ? leftRightData.right
+          : leftRightData.left,
+      finish:
+        (role.properties as PlayerRolePropertiesPlateform).direction ===
+        enums.round.Direction.leftToRight
+          ? leftRightData.left
+          : leftRightData.right
+    };
 
-      // TODO: dynamic
-      this.plateforms.start = rightPlatform;
-      this.plateforms.finish = leftPlatform;
+    // start
 
-      // WALL
+    this.plateforms.start = new Platform({
+      scene: this,
+      type: PlatformType.start,
+      x: startFinishData.start.x,
+      texture: startFinishData.start.texture,
+      options: { isStatic: true },
+      scale: 0.3
+    });
 
-      const wall = this.matter.add
-        .image(
-          device.offsetX + device.width * 0.5,
-          0,
-          config.worlds[this.world].platforms.wall.key,
-          undefined,
-          {
-            isStatic: true,
-            frictionStatic: 0,
-            friction: 0
-          }
-        )
-        .setScale(0.3);
+    // finish
 
-      // set y
-      wall.setY(wall.y + wall.displayHeight / 2);
+    this.plateforms.finish = new Platform({
+      scene: this,
+      type: PlatformType.finish,
+      x: startFinishData.finish.x,
+      texture: startFinishData.finish.texture,
+      options: { isStatic: true },
+      scale: 0.3
+    });
 
-      // START SENSOR
+    // WALL
 
-      const startSensor = this.matter.add.gameObject(
-        this.add.rectangle(
-          this.plateforms.start.x,
-          this.plateforms.start.y -
-            this.plateforms.start.displayHeight / 2 -
-            100,
-          this.plateforms.start.displayWidth + 50,
-          200
-        ),
+    const wall = this.matter.add
+      .image(
+        device.offsetX + device.width * 0.5,
+        0,
+        config.worlds[this.world].platforms.wall.key,
+        undefined,
         {
-          isSensor: true,
           isStatic: true,
-          ignorePointer: true
+          frictionStatic: 0,
+          friction: 0
         }
-      );
+      )
+      .setScale(0.3);
 
-      this.matterCollision.addOnCollideActive({
-        objectA: startSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member
-          if (gameObjectB instanceof Member) {
-            startSensor.setData("isColliding", true);
-          }
-        }
-      });
-
-      // listen collisions end
-      this.matterCollision.addOnCollideEnd({
-        objectA: startSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member
-          if (gameObjectB instanceof Member) {
-            startSensor.setData("isColliding", false);
-            // wait 0.5 second
-            setTimeout(() => {
-              // if sensor not colliding currently : new member spawn
-              if (!startSensor.getData("isColliding")) this.newMemberSpawn();
-            }, 500);
-          }
-        }
-      });
-
-      // FINISH SENSOR
-
-      const finishSensor = this.matter.add.rectangle(
-        this.plateforms.finish.x,
-        this.plateforms.finish.y - this.plateforms.finish.displayHeight / 2 - 5,
-        this.plateforms.finish.displayWidth / 4,
-        10,
-        {
-          isSensor: true,
-          isStatic: true,
-          ignorePointer: true
-        }
-      );
-
-      // listen collision start
-      this.matterCollision.addOnCollideStart({
-        objectA: finishSensor,
-        callback: (e: any) => {
-          const { gameObjectB } = e;
-          // if collide with member and my role is plateforms
-          if (
-            gameObjectB instanceof Member &&
-            this.playerId === this.getPlayerWithPlatformRole()
-          ) {
-            // emit member arrived
-            this.dispatch(
-              actions.webSocket.emit.round.memberArrived({
-                memberId: gameObjectB.id
-              })
-            );
-          }
-        }
-      });
-    }
+    // set y
+    wall.setY(wall.y + wall.displayHeight / 2);
   }
 
   createTraps() {
