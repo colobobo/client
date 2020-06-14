@@ -7,7 +7,7 @@ import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "./Member";
 
-type RoundMembersArray = ReturnType<
+export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
 >;
 type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
@@ -532,9 +532,7 @@ export default class MainScene extends Phaser.Scene {
   onMemberMoved(member: Member, roundMember: RoundMembersArray[0]) {
     // disable gravity
     // memberMatter.setIgnoreGravity(true);
-    // update member position and velocity
-    member.setPosition(roundMember.position.x, roundMember.position.y);
-    member.setVelocity(roundMember.velocity.x, roundMember.velocity.y);
+    member.moved(roundMember);
   }
 
   // round tick : members update

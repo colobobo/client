@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import MainScene, { CollisionCategories } from "./MainScene";
+import MainScene, { CollisionCategories, RoundMembersArray } from "./MainScene";
 import { enums } from "@colobobo/library";
 
 export default class Member extends Phaser.Physics.Matter.Image {
@@ -95,6 +95,12 @@ export default class Member extends Phaser.Physics.Matter.Image {
         this.setInteractive();
       }
     });
+  }
+
+  moved(roundMember: RoundMembersArray[0]) {
+    // update member position and velocity
+    this.setPosition(roundMember.position.x, roundMember.position.y);
+    this.setVelocity(roundMember.velocity.x, roundMember.velocity.y);
   }
 
   trapped() {
