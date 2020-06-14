@@ -33,7 +33,7 @@ const GameInterface: FC<Props> = ({ isRoundStarted, colorTheme }) => {
   return (
     <div className="game-interface">
       <InterfaceTimer isRoundStarted={isRoundStarted} color={colorTheme} />
-      {/* <InterfaceButton
+      <InterfaceButton
         onClick={() => handleOnClickToggleGameState(true)}
         color={colorTheme}
         classNames="game-interface__pause button--round"
@@ -44,7 +44,7 @@ const GameInterface: FC<Props> = ({ isRoundStarted, colorTheme }) => {
         <InterfaceBreak
           handleOnClickToggleGameState={handleOnClickToggleGameState}
         />
-      )} */}
+      )}
     </div>
   );
 };

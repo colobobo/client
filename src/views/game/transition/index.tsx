@@ -1,4 +1,5 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 // styles
 import "./index.scss";
@@ -19,6 +20,7 @@ const Transition: FC<Props> = ({ isActive }) => {
   // return
 
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
@@ -30,11 +32,6 @@ const Transition: FC<Props> = ({ isActive }) => {
   useEffect(() => {
     if (isActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
-
-      setTimeout(
-        () => dispatch(actions.webSocket.emit.transition.ended()),
-        4000
-      );
     } else {
       dispatch(actions.transition.stop());
     }

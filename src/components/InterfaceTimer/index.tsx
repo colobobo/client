@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useRef } from "react";
-import { gsap, Linear } from "gsap";
+import React, { FC, useEffect, useState, useMemo, useCallback } from "react";
 
 // store
 import { selectors } from "../../redux";
@@ -18,47 +17,46 @@ interface Props {
 
 const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   // selectors
-  const areaWidh = useTypedSelector(selectors.area.selectWidth);
-  const playerId = useTypedSelector(selectors.room.selectPlayerId);
-  const device = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { playerId })
-  );
   const duration = useTypedSelector(selectors.round.selectDuration);
 
-  // ref
-
-  const $progressBar = useRef<HTMLDivElement>(null);
-
   // handles
+
+  const [count, setCount] = useState(duration);
+
+  const tick = useCallback(() => {
+    setCount(prevState => prevState - 100);
+  }, []);
+
+  useEffect(() => {
+    setCount(duration);
+  }, [duration]);
 
   useEffect(() => {
     if (!isRoundStarted) {
       return;
     }
 
-    gsap.fromTo(
-      $progressBar.current!,
-      { scale: 1 },
-      {
-        duration: duration / 1000,
-        scaleX: 0,
-        ease: Linear.easeNone
-      }
-    );
-  }, [duration, isRoundStarted]);
+    let id = setInterval(tick, 100);
+    return () => clearInterval(id);
+  }, [isRoundStarted, tick]);
+
+  const seconds = useMemo(() => {
+    return Math.floor((count % 60000) / 1000);
+  }, [count]);
+
+  const minutes = useMemo(() => {
+    return Math.floor(count / 60000);
+  }, [count]);
 
   // return
 
   return (
-    <div className="timer">
-      <div
-        className="timer__container"
-        style={{ width: areaWidh, left: -device?.offsetX || 0 }}
-      >
-        <div
-          ref={$progressBar}
-          className={`timer__progress timer__progress--${color}`}
-        />
+    <div className={`timer timer--${color}`}>
+      <div className="timer__container">
+        <div className="timer__content">
+          {minutes.toString().padStart(1, "0")}:
+          {seconds.toString().padStart(2, "0")}
+        </div>
       </div>
     </div>
   );
