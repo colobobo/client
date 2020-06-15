@@ -5,9 +5,9 @@ import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
-import Member from "./Member";
-import Platform, { PlatformType } from "./Platform";
-import Trap, { TrapLocation } from "./Trap";
+import Member from "../objects/Member";
+import Platform, { PlatformType } from "../objects/Platform";
+import Trap, { TrapLocation } from "../objects/Trap";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
