@@ -22,10 +22,10 @@ const Client: FC<Props> = () => {
       <MemoryRouter>
         <Switch>
           <Route exact path="/" component={Landing} />
-          {/* <Route exact path="/about" component={About} /> */}
+          <Route exact path="/about" component={About} />
           <Route exact path="/join" component={Join} />
           <Route exact path="/game" component={Game} />
-          <Route exact path="/about" component={Leaderboard} />
+          <Route exact path="/leaderboard" component={Leaderboard} />
           <Route path="/room/:roomId" component={Room} />
         </Switch>
       </MemoryRouter>

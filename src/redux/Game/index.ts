@@ -4,6 +4,7 @@ import { enums, payloads } from "@colobobo/library";
 
 export interface GameState {
   isStarted: boolean;
+  isEnded: boolean;
   sceneType: enums.scene.Type | null;
   disposition: enums.game.Disposition;
   totalLives: number;
@@ -50,6 +51,10 @@ export const slice = createSlice({
     ) => {
       const { lives } = action.payload;
       state.totalLives = lives;
+    },
+    end: (state: GameState, action: PayloadAction<payloads.game.End>) => {
+      state.isStarted = false;
+      state.isEnded = true;
     }
   }
 });
@@ -59,11 +64,13 @@ export const slice = createSlice({
 const getRoot = (state: RootState) => state.game;
 const selectTotalLives = (state: RootState) => getRoot(state).totalLives;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectIsEnded = (state: RootState) => getRoot(state).isEnded;
 const selectSceneType = (state: RootState) => getRoot(state).sceneType;
 const selectDisposition = (state: RootState) => getRoot(state).disposition;
 
 export const selectors = {
   selectIsStarted,
+  selectIsEnded,
   selectSceneType,
   selectDisposition,
   selectTotalLives

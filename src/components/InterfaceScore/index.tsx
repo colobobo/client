@@ -36,8 +36,6 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
     dispatch(actions.webSocket.emit.transition.ended());
   }, [dispatch]);
 
-  console.log(isSuccess);
-
   // state
 
   const [isGameOver, setIsGameOver] = useState(false);
