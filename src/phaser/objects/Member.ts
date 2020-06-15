@@ -1,5 +1,8 @@
 import * as Phaser from "phaser";
-import MainScene, { CollisionCategories, RoundMembersArray } from "./MainScene";
+import MainScene, {
+  CollisionCategories,
+  RoundMembersArray
+} from "../scenes/MainScene";
 import { enums } from "@colobobo/library";
 
 export default class Member extends Phaser.Physics.Matter.Image {
