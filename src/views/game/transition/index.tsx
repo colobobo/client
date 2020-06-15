@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import React, { FC, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 // styles
 import "./index.scss";
@@ -20,11 +20,12 @@ const Transition: FC<Props> = ({ isActive }) => {
   // return
 
   const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const history = useHistory();
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
   // const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   // effect
@@ -32,10 +33,21 @@ const Transition: FC<Props> = ({ isActive }) => {
   useEffect(() => {
     if (isActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+
+      setTimeout(
+        () => dispatch(actions.webSocket.emit.transition.ended()),
+        4000
+      );
     } else {
       dispatch(actions.transition.stop());
     }
   }, [dispatch, isActive, playerId]);
+
+  useEffect(() => {
+    if (gameIsEnded) {
+      setTimeout(() => history.push("/leaderboard"), 4000);
+    }
+  }, [gameIsEnded, history]);
 
   // return
 

@@ -26,6 +26,9 @@
   "header": {
     "code": {
       "description": "Game code :"
+    },
+    "score": {
+      "description": "Best score "
     }
   },
   "room": {
@@ -61,5 +64,16 @@
     "buttons": {
       "next": "Next level"
     }
+  },
+  "leaderboard": {
+    "filters": {
+      "all": "All",
+      "players": " players"
+    },
+    "buttons": {
+      "register": "Save score",
+      "play-again": "Play again"
+    },
+    "placeholder": "Team name"
   }
 }

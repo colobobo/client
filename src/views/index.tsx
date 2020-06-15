@@ -10,6 +10,7 @@ import Room from "./room";
 import Join from "./join";
 import Game from "./game";
 import About from "./about";
+import Leaderboard from "./leaderboard";
 
 interface Props {}
 
@@ -24,6 +25,7 @@ const Client: FC<Props> = () => {
           <Route exact path="/about" component={About} />
           <Route exact path="/join" component={Join} />
           <Route exact path="/game" component={Game} />
+          <Route exact path="/leaderboard" component={Leaderboard} />
           <Route path="/room/:roomId" component={Room} />
         </Switch>
       </MemoryRouter>
