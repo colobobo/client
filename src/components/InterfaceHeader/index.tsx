@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 // style
@@ -13,17 +12,25 @@ interface Props {
   type: string;
   code?: string;
   score?: string;
+  backButtonStatus?: boolean;
+  onBackButtonClick?: any;
 }
 
-const InterfaceHeader: FC<Props> = ({ type, code, score }) => {
+const InterfaceHeader: FC<Props> = ({
+  type,
+  code,
+  score,
+  backButtonStatus,
+  onBackButtonClick
+}) => {
   const { t } = useTranslation();
 
   // return
   return (
     <div className="header">
-      <Link to="/" className="header__back">
-        <ArrowBack />
-      </Link>
+      {backButtonStatus && (
+        <ArrowBack className="header__back" onClick={onBackButtonClick} />
+      )}
       <div className="header__container">
         {type === "join" && (
           <img className="header__logo" src={logo} alt="Logo" />

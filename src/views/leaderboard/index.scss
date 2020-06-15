@@ -6,6 +6,7 @@
   height: 100%;
 
   &__container {
+    max-width: 500px;
     margin: 0 auto;
     height: calc(100% - 130px);
     padding: 30px;
@@ -40,26 +41,6 @@
     overflow-y: scroll;
     margin: 35px 0;
     flex: 1 1 auto;
-  }
-
-  &__list {
-    width: 100%;
-    font-size: 1.6rem;
-    line-height: 3.5rem;
-    text-align: left;
-  }
-
-  &__team {
-    td {
-      &:nth-of-type(2) {
-        opacity: 0.5;
-        text-align: center;
-      }
-      &:nth-of-type(3) {
-        @include mikado-bold;
-        text-align: right;
-      }
-    }
   }
 
   &__actions {

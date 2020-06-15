@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 // components
 import InterfaceButton, { Colors } from "../InterfaceButton";
-import winnerPicture from "../../assets/illustrations/break/man.png";
+import winnerPicture from "../../assets/illustrations/score/winner.png";
 
 // styles
 import "./index.scss";
@@ -49,14 +49,13 @@ const InterfaceLeaderboardRegister: FC<Props> = ({
           className="leaderboard-register__input"
           name="teamName"
           id="teamName"
-          inputMode="none"
           placeholder={t("leaderboard.placeholder")}
         />
         <InterfaceButton
           onClick={handleScoreRegister}
           color={Colors.yellow}
           text={t("leaderboard.buttons.register")}
-          classNames="leaderboard__action"
+          classNames="leaderboard-register__action"
         />
       </div>
     </div>

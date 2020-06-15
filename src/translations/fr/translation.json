@@ -68,7 +68,7 @@
   "leaderboard": {
     "filters": {
       "all": "Tous",
-      "players": "joueurs"
+      "players": " joueurs"
     },
     "buttons": {
       "register": "Enregistrer le score",

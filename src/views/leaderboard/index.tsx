@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
 import InterfaceLeaderboardRegister from "../../components/InterfaceLeaderboardRegister";
+import InterfaceLeaderboardTable from "../../components/InterfaceLeaderboardTable";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // store
@@ -15,6 +16,9 @@ import "./index.scss";
 
 const About: FC = () => {
   const { t } = useTranslation();
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+  const playersNumber = useTypedSelector(selectors.area.selectDevicesArray)
+    .length;
 
   // state
   const [activeRegister, setActiveRegister] = useState<boolean>(false);
@@ -37,7 +41,12 @@ const About: FC = () => {
 
   return (
     <div className="leaderboard">
-      <InterfaceHeader type="leaderboard" score={score} />
+      <InterfaceHeader
+        backButtonStatus={activeRegister}
+        onBackButtonClick={() => handleToggleScoreRegisterState(false)}
+        type="leaderboard"
+        score={score}
+      />
 
       <div className="leaderboard__container">
         <div className="leaderboard__content">
@@ -48,46 +57,30 @@ const About: FC = () => {
               classNames="leaderboard__filter button--small"
             />
             <InterfaceButton
-              color={Colors.yellow}
-              text={t("leaderboard.filters.players")}
+              color={Colors.white}
+              text={playersNumber + t("leaderboard.filters.players")}
               classNames="leaderboard__filter button--small"
             />
           </div>
           <div className="leaderboard__board">
-            <table className="leaderboard__list">
-              <tbody className="leaderboard__teams">
-                <tr className="leaderboard__team">
-                  <td>Les Boulets</td>
-                  <td>4 joueurs</td>
-                  <td>320</td>
-                </tr>
-                <tr className="leaderboard__team">
-                  <td>Superhéros</td>
-                  <td>6 joueurs</td>
-                  <td>600</td>
-                </tr>
-                <tr className="leaderboard__team">
-                  <td>Totally Spies</td>
-                  <td>3 joueurs</td>
-                  <td>289</td>
-                </tr>
-              </tbody>
-            </table>
+            <InterfaceLeaderboardTable />
           </div>
-          <div className="leaderboard__actions">
-            <InterfaceButton
-              onClick={() => handleToggleScoreRegisterState(true)}
-              color={Colors.yellow}
-              text={t("leaderboard.buttons.register")}
-              classNames="leaderboard__action"
-            />
-            <InterfaceButton
-              onClick={handlePlayAgain}
-              color={Colors.blue}
-              text={t("leaderboard.buttons.play-again")}
-              classNames="leaderboard__action"
-            />
-          </div>
+          {!isCreator && (
+            <div className="leaderboard__actions">
+              <InterfaceButton
+                onClick={() => handleToggleScoreRegisterState(true)}
+                color={Colors.yellow}
+                text={t("leaderboard.buttons.register")}
+                classNames="leaderboard__action"
+              />
+              <InterfaceButton
+                onClick={handlePlayAgain}
+                color={Colors.blue}
+                text={t("leaderboard.buttons.play-again")}
+                classNames="leaderboard__action"
+              />
+            </div>
+          )}
         </div>
       </div>
 

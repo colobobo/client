@@ -68,7 +68,7 @@
   "leaderboard": {
     "filters": {
       "all": "All",
-      "players": "players"
+      "players": " players"
     },
     "buttons": {
       "register": "Save score",

@@ -57,6 +57,10 @@ const Room: FC = () => {
     setCurrentPlacement(event.target.value);
   }, []);
 
+  const handleOnBackButtonClick = useCallback(() => {
+    console.log("LEAVE THE ROOM AND REDIRECT TO HOME");
+  }, []);
+
   useEffect(() => {
     dispatch(
       actions.webSocket.emit.game.dispositionSelected({
@@ -69,7 +73,12 @@ const Room: FC = () => {
 
   return (
     <div className="room">
-      <InterfaceHeader type="create" code={roomId} />
+      <InterfaceHeader
+        backButtonStatus={true}
+        onBackButtonClick={handleOnBackButtonClick}
+        type="create"
+        code={roomId}
+      />
 
       <div className="room__container">
         <p

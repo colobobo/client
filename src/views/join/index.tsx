@@ -58,6 +58,10 @@ const Join: FC = () => {
     [errorStatus, inputRoomId.length]
   );
 
+  const handleOnBackButtonClick = useCallback(() => {
+    history.push("/");
+  }, [history]);
+
   useEffect(() => {
     if (roomId) {
       history.push("/room/" + roomId);
@@ -80,7 +84,11 @@ const Join: FC = () => {
 
   return (
     <div className="join">
-      <InterfaceHeader type="join" />
+      <InterfaceHeader
+        type="join"
+        backButtonStatus={true}
+        onBackButtonClick={handleOnBackButtonClick}
+      />
 
       <div className="join__container">
         <form className="join__form">
