@@ -1,0 +1,15 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.preamble {
+  width: 100%;
+  height: 100%;
+  background: $black;
+
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+  }
+}

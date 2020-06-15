@@ -11,6 +11,7 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
+import MotionPreamble from "../../../components/MotionPreamble";
 
 interface Props {
   isActive: boolean;
@@ -42,6 +43,7 @@ const Transition: FC<Props> = ({ isActive }) => {
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
       {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
+      {isSuccess === undefined && <MotionPreamble />}
       {/*<div className="debug">
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button
