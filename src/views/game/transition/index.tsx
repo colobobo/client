@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useCallback } from "react";
+import React, { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 // styles
@@ -11,7 +11,7 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
-import MotionPreamble from "../../../components/MotionPreamble";
+import MotionShared, { Type } from "../../../components/MotionShared";
 
 interface Props {
   isActive: boolean;
@@ -43,7 +43,7 @@ const Transition: FC<Props> = ({ isActive }) => {
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
       {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
-      {isSuccess === undefined && <MotionPreamble />}
+      {isSuccess === undefined && <MotionShared type={Type.preamble} />}
       {/*<div className="debug">
         <span>started : {isTransitionStarted ? "true" : "false"}</span>
         <button
