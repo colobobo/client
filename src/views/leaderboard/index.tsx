@@ -2,7 +2,7 @@ import React, { FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // components
-import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceHeader, { Type } from "../../components/InterfaceHeader";
 import InterfaceLeaderboardRegister from "../../components/InterfaceLeaderboardRegister";
 import InterfaceLeaderboardTable from "../../components/InterfaceLeaderboardTable";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
@@ -44,7 +44,7 @@ const About: FC = () => {
       <InterfaceHeader
         backButtonStatus={activeRegister}
         onBackButtonClick={() => handleToggleScoreRegisterState(false)}
-        type="leaderboard"
+        type={Type.leaderboard}
         score={score}
       />
 

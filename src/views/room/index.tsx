@@ -8,7 +8,7 @@ import { selectors, actions } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
 
 // components
-import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceHeader, { Type } from "../../components/InterfaceHeader";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfacePlacement from "../../components/InterfacePlacement";
 
@@ -76,7 +76,7 @@ const Room: FC = () => {
       <InterfaceHeader
         backButtonStatus={true}
         onBackButtonClick={handleOnBackButtonClick}
-        type="create"
+        type={Type.create}
         code={roomId}
       />
 

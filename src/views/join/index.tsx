@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
 
 // components
-import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceHeader, { Type } from "../../components/InterfaceHeader";
 import NumericKeypad from "../../components/NumericKeypad";
 
 // style
@@ -85,7 +85,7 @@ const Join: FC = () => {
   return (
     <div className="join">
       <InterfaceHeader
-        type="join"
+        type={Type.join}
         backButtonStatus={true}
         onBackButtonClick={handleOnBackButtonClick}
       />
