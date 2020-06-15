@@ -73,12 +73,23 @@
       margin: 0 auto 15px auto;
     }
   }
+
+  .leaderboard-register {
+    width: 100%;
+    height: calc(100% - 130px);
+    position: absolute;
+    top: 130px;
+  }
 }
 
 @media #{$smallMobile} {
   .leaderboard {
     &__container {
       height: calc(100% - 100px);
+    }
+    .leaderboard-register {
+      height: calc(100% - 100px);
+      top: 100px;
     }
   }
 }

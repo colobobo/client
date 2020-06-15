@@ -73,6 +73,7 @@
     "buttons": {
       "register": "Save score",
       "play-again": "Play again"
-    }
+    },
+    "placeholder": "Team name"
   }
 }

@@ -1,8 +1,9 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // components
 import InterfaceHeader from "../../components/InterfaceHeader";
+import InterfaceLeaderboardRegister from "../../components/InterfaceLeaderboardRegister";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // store
@@ -15,17 +16,20 @@ import "./index.scss";
 const About: FC = () => {
   const { t } = useTranslation();
 
+  // state
+  const [activeRegister, setActiveRegister] = useState<boolean>(false);
+
   // store values
   const score = useTypedSelector(selectors.round.selectScore)
     .toString()
     .padStart(3, "0");
 
   // handlers
-  const handleOnScoreRegister = useCallback(() => {
-    console.log("TOGGLE REGISTER DISPLAY");
+  const handleToggleScoreRegisterState = useCallback(state => {
+    setActiveRegister(state);
   }, []);
 
-  const handleOnPlayAgain = useCallback(() => {
+  const handlePlayAgain = useCallback(() => {
     console.log("PLAY AGAIN");
   }, []);
 
@@ -72,13 +76,13 @@ const About: FC = () => {
           </div>
           <div className="leaderboard__actions">
             <InterfaceButton
-              onClick={handleOnScoreRegister}
+              onClick={() => handleToggleScoreRegisterState(true)}
               color={Colors.yellow}
               text={t("leaderboard.buttons.register")}
               classNames="leaderboard__action"
             />
             <InterfaceButton
-              onClick={handleOnPlayAgain}
+              onClick={handlePlayAgain}
               color={Colors.blue}
               text={t("leaderboard.buttons.play-again")}
               classNames="leaderboard__action"
@@ -86,6 +90,12 @@ const About: FC = () => {
           </div>
         </div>
       </div>
+
+      {activeRegister && (
+        <InterfaceLeaderboardRegister
+          onToggleScoreRegisterState={handleToggleScoreRegisterState}
+        />
+      )}
     </div>
   );
 };

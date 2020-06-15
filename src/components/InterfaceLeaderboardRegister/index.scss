@@ -1,0 +1,25 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.leaderboard-register {
+  &__picture {
+    flex: 1;
+    width: 60%;
+    margin-bottom: 40%;
+  }
+
+  &__input {
+    @include mikado-black;
+    font-size: 3.5rem;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    &::placeholder {
+      opacity: 0.1;
+    }
+  }
+}

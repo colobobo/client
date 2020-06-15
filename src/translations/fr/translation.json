@@ -73,6 +73,7 @@
     "buttons": {
       "register": "Enregistrer le score",
       "play-again": "Rejouer"
-    }
+    },
+    "placeholder": "Nom d'équipe"
   }
 }
