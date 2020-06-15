@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useEffect, useRef } from "react";
 
 // store
 import { useDispatch } from "react-redux";
@@ -17,16 +17,26 @@ export enum Type {
 
 interface Props {
   type: Type;
+  isTransitionStarted: boolean;
 }
 
-const MotionShared: FC<Props> = ({ type }) => {
+const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
   const dispatch = useDispatch();
+  const motionVideo = useRef<HTMLVideoElement>(null);
 
   // handlers
 
   const handleOnVideoEnded = useCallback(() => {
     dispatch(actions.webSocket.emit.transition.ended());
   }, [dispatch]);
+
+  // useEffect
+
+  useEffect(() => {
+    if (isTransitionStarted) {
+      motionVideo.current?.play();
+    }
+  }, [isTransitionStarted]);
 
   // return
 
@@ -35,8 +45,8 @@ const MotionShared: FC<Props> = ({ type }) => {
       <div className="motion-shared__container">
         <Area height="min">
           <video
+            ref={motionVideo}
             className="motion-shared__video"
-            autoPlay
             muted
             onEnded={handleOnVideoEnded}
           >
