@@ -80,10 +80,6 @@ const InterfaceScorePanel: FC<Props> = ({
               <p className="card__point">+200</p>
             </li>
           </ul>
-          <div className="score-panel__bonus">
-            <p>{t("score.bonus")}</p>
-            <span>+200</span>
-          </div>
           <div className="score-panel__sum">
             <p>{t("score.sum")}</p>
             <span>240</span>
