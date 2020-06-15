@@ -30,10 +30,18 @@
     width: 130px;
   }
 
-  &__code {
+  &__code,
+  &__score {
     @include mikado-black;
     font-size: 6rem;
     line-height: 5.5rem;
+  }
+
+  &__best-score {
+    @include mikado-bold;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-top: 10px;
   }
 }
 

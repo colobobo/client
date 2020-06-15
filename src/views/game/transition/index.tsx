@@ -32,6 +32,11 @@ const Transition: FC<Props> = ({ isActive }) => {
   useEffect(() => {
     if (isActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+
+      setTimeout(
+        () => dispatch(actions.webSocket.emit.transition.ended()),
+        4000
+      );
     } else {
       dispatch(actions.transition.stop());
     }

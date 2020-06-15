@@ -12,9 +12,10 @@ import logo from "../../assets/logo/logo-simple.png";
 interface Props {
   type: string;
   code?: string;
+  score?: string;
 }
 
-const InterfaceHeader: FC<Props> = ({ type, code }) => {
+const InterfaceHeader: FC<Props> = ({ type, code, score }) => {
   const { t } = useTranslation();
 
   // return
@@ -31,6 +32,14 @@ const InterfaceHeader: FC<Props> = ({ type, code }) => {
           <div>
             <p>{t("header.code.description")}</p>
             <p className="header__code">{code}</p>
+          </div>
+        )}
+        {type === "leaderboard" && (
+          <div>
+            <p className="header__score">{score}</p>
+            <p className="header__best-score">
+              {t("header.score.description")} {score}
+            </p>
           </div>
         )}
       </div>

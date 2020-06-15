@@ -26,6 +26,9 @@
   "header": {
     "code": {
       "description": "Game code :"
+    },
+    "score": {
+      "description": "Best score "
     }
   },
   "room": {
@@ -60,6 +63,16 @@
     "sum": "Level total",
     "buttons": {
       "next": "Next level"
+    }
+  },
+  "leaderboard": {
+    "filters": {
+      "all": "All",
+      "players": "players"
+    },
+    "buttons": {
+      "register": "Save score",
+      "play-again": "Play again"
     }
   }
 }
