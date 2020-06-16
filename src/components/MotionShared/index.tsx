@@ -59,15 +59,6 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
           >
             <source src={require(`../../assets/motions/${type}.mp4`)} />
           </video>
-          {/* <ReactPlayer
-            url={require(`../../assets/motions/${type}.webm`)}
-            autoPlay
-            className="motion-shared__video"
-            loop={false}
-            controls={false}
-            volume={0}
-            playsinline={true}
-          /> */}
         </Area>
       </div>
     </div>
