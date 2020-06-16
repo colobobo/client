@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import React, { FC, useEffect } from "react";
 
 // styles
 import "./index.scss";
@@ -20,7 +19,6 @@ const Transition: FC<Props> = ({ isActive }) => {
   // return
 
   const dispatch = useDispatch();
-  const { t } = useTranslation();
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);

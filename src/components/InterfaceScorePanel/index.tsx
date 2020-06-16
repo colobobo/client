@@ -8,8 +8,6 @@ import SpriteAnimation from "../../components/SpriteAnimation";
 import { animationId } from "../../config/animations";
 
 // assets
-import teacherDeadPicture from "../../assets/illustrations/score/teacher_dead.png";
-import teacherAlivePicture from "../../assets/illustrations/score/teacher_alive.png";
 import timePicture from "../../assets/illustrations/score/time.png";
 import memberPicture from "../../assets/illustrations/score/member.png";
 import trapPicture from "../../assets/illustrations/score/trap.png";

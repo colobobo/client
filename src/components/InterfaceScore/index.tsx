@@ -8,7 +8,7 @@ import Area from "../../components/Area";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { actions, selectors } from "../../redux";
 
 // styles

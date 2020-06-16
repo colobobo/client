@@ -7,7 +7,7 @@ import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "../objects/Member";
 import Platform, { PlatformType } from "../objects/Platform";
-import Trap, { TrapLocation } from "../objects/Trap";
+// import Trap, { TrapLocation } from "../objects/Trap";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -315,12 +315,10 @@ export default class MainScene extends Phaser.Scene {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
 
     playersWithTrapRole.forEach(playerId => {
-      const playerRole = this.playersRole[playerId];
-      const device = this.areaDevices[playerId];
-
+      // const playerRole = this.playersRole[playerId];
+      // const device = this.areaDevices[playerId];
       // TODO : create trap dynamicaly with playerRole data
-
-      const trap = new Trap({
+      /*const trap = new Trap({
         scene: this,
         x: device.offsetX + device.width * 0.5,
         y: 0,
@@ -330,7 +328,7 @@ export default class MainScene extends Phaser.Scene {
         options: { isStatic: true },
         collisionEnabled: false,
         location: TrapLocation.top
-      });
+      });*/
     });
   }
 

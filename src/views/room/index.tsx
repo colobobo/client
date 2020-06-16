@@ -29,7 +29,7 @@ const Room: FC = () => {
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const disposition = useTypedSelector(selectors.game.selectDisposition);
-  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
+  // const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
 
   const [currentPlacement, setCurrentPlacement] = useState<
     enums.game.Disposition
