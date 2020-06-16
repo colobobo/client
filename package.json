@@ -87,7 +87,6 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "deploy": "node scripts/build.js",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "link-library": "yarn link \"@colobobo/library\"",
     "unlink-library": "yarn unlink \"@colobobo/library\""
