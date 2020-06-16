@@ -5,22 +5,29 @@ export const getGameConfig = ({
   areaWidth,
   areaHeight,
   parent,
-  scene
+  scene,
+  pixelRatio = window.devicePixelRatio
 }: {
   areaWidth: number;
   areaHeight: number;
   parent: Phaser.Types.Core.GameConfig["parent"];
   scene: Phaser.Types.Core.GameConfig["scene"];
+  pixelRatio?: number;
 }): Phaser.Types.Core.GameConfig => ({
   type: Phaser.AUTO,
-  width: areaWidth,
-  height: areaHeight,
+  width: areaWidth * pixelRatio,
+  height: areaHeight * pixelRatio,
+  zoom: 1 / pixelRatio,
+  // note : resolution doesn't work, see : https://github.com/photonstorm/phaser/issues/4417
+  // resolution: pixelRatio
   parent: parent,
   transparent: true,
   physics: {
     default: "matter",
     matter: {
-      gravity: { y: 1 },
+      gravity: { y: 0.9 * pixelRatio },
+      // TODO: test sleeping
+      // enableSleeping: true
       debug:
         process.env.NODE_ENV === "development"
           ? {
@@ -35,11 +42,12 @@ export const getGameConfig = ({
             }
           : false,
       setBounds: {
-        x: -150,
+        x: -150 * pixelRatio,
         left: false,
         right: false,
-        width: areaWidth + 150,
-        thickness: 30
+        width: (areaWidth + 150) * pixelRatio,
+        height: areaHeight * pixelRatio,
+        thickness: 30 * pixelRatio
       },
       "plugins.wrap": true
     }
