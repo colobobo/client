@@ -6,10 +6,11 @@ import MainScene, {
 import { enums } from "@colobobo/library";
 
 export default class Member extends Phaser.Physics.Matter.Image {
+  pixelRatio: number;
   readonly id: string;
   status: enums.member.Status = enums.member.Status.waiting;
   scene: MainScene;
-  readonly baseScale: number;
+  baseScale: number = 1;
 
   constructor({
     scene,
@@ -18,7 +19,7 @@ export default class Member extends Phaser.Physics.Matter.Image {
     texture,
     options,
     id,
-    baseScale = 0.42
+    pixelRatio
   }: {
     scene: MainScene;
     x?: number;
@@ -26,7 +27,7 @@ export default class Member extends Phaser.Physics.Matter.Image {
     texture: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
     id: string;
-    baseScale?: number;
+    pixelRatio: number;
   }) {
     super(scene.matter.world, x, y, texture, undefined, options);
 
@@ -34,9 +35,9 @@ export default class Member extends Phaser.Physics.Matter.Image {
 
     this.scene = scene;
 
-    this.id = id;
+    this.pixelRatio = pixelRatio;
 
-    this.baseScale = baseScale;
+    this.id = id;
 
     this.init();
   }
@@ -50,7 +51,13 @@ export default class Member extends Phaser.Physics.Matter.Image {
   // FUNCTIONS
 
   init() {
-    this.setScale(this.baseScale);
+    // 25% of areaHeight
+    this.setScale(
+      ((this.scene.areaHeight * 0.25) / this.height) * this.pixelRatio
+    );
+    // set baseScale
+    this.baseScale = this.scale;
+
     this.setAlpha(0);
     this.setFixedRotation();
     this.disableInteractive();
@@ -102,8 +109,14 @@ export default class Member extends Phaser.Physics.Matter.Image {
 
   moved(roundMember: RoundMembersArray[0]) {
     // update member position and velocity
-    this.setPosition(roundMember.position.x, roundMember.position.y);
-    this.setVelocity(roundMember.velocity.x, roundMember.velocity.y);
+    this.setPosition(
+      roundMember.position.x * this.pixelRatio,
+      roundMember.position.y * this.pixelRatio
+    );
+    this.setVelocity(
+      roundMember.velocity.x * this.pixelRatio,
+      roundMember.velocity.y * this.pixelRatio
+    );
   }
 
   trapped() {

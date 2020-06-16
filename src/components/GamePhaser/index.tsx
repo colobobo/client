@@ -1,4 +1,11 @@
-import React, { FC, useRef, useEffect, useCallback, useState } from "react";
+import React, {
+  FC,
+  useRef,
+  useEffect,
+  useCallback,
+  useState,
+  useMemo
+} from "react";
 import * as Phaser from "phaser";
 import { selectors } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,6 +32,8 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   const playersRole = useSelector(selectors.round.selectPlayersRole);
   const areaDevices = useSelector(selectors.area.selectDevices);
 
+  const pixelRatio = useMemo(() => window.devicePixelRatio, []);
+
   // DOM REF
 
   const $parent = useRef<HTMLDivElement>(null);
@@ -40,7 +49,10 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
       playersRole,
       areaDevices,
       roundMembersArray: roundMembersArray,
-      isRoundStarted
+      isRoundStarted,
+      areaWidth,
+      areaHeight,
+      pixelRatio
     })
   );
 
@@ -55,7 +67,8 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
       areaHeight,
       areaWidth,
       scene: $mainScene.current,
-      parent: $parent.current!
+      parent: $parent.current!,
+      pixelRatio
     });
 
     $game.current = new Phaser.Game(gameConfig);
@@ -63,7 +76,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
     $game.current.events.on(Phaser.Core.Events.READY, () => {
       setIsGameReady(true);
     });
-  }, [areaHeight, areaWidth]);
+  }, [areaHeight, areaWidth, pixelRatio]);
 
   // SIDE EFFECTS
 
