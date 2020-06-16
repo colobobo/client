@@ -8,8 +8,6 @@ import SpriteAnimation from "../../components/SpriteAnimation";
 import { animationId } from "../../config/animations";
 
 // assets
-import teacherDeadPicture from "../../assets/illustrations/score/teacher_dead.png";
-import teacherAlivePicture from "../../assets/illustrations/score/teacher_alive.png";
 import timePicture from "../../assets/illustrations/score/time.png";
 import memberPicture from "../../assets/illustrations/score/member.png";
 import trapPicture from "../../assets/illustrations/score/trap.png";
@@ -80,10 +78,6 @@ const InterfaceScorePanel: FC<Props> = ({
               <p className="card__point">+200</p>
             </li>
           </ul>
-          <div className="score-panel__bonus">
-            <p>{t("score.bonus")}</p>
-            <span>+200</span>
-          </div>
           <div className="score-panel__sum">
             <p>{t("score.sum")}</p>
             <span>240</span>

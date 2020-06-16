@@ -331,12 +331,12 @@ export default class MainScene extends Phaser.Scene {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
 
     playersWithTrapRole.forEach(playerId => {
-      const playerRole = this.playersRole[playerId];
+      // const playerRole = this.playersRole[playerId];
       const device = this.areaDevices[playerId];
 
       // TODO : create trap dynamicaly with playerRole data
 
-      const trap = new Trap({
+      new Trap({
         pixelRatio: this.pixelRatio,
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.pixelRatio,

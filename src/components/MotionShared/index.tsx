@@ -35,6 +35,8 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
   useEffect(() => {
     if (isTransitionStarted) {
       motionVideo.current?.play();
+    } else {
+      motionVideo.current?.pause();
     }
   }, [isTransitionStarted]);
 
