@@ -26,6 +26,9 @@
   "header": {
     "code": {
       "description": "Code de la partie :"
+    },
+    "score": {
+      "description": "Meilleur score "
     }
   },
   "room": {
@@ -61,5 +64,16 @@
     "buttons": {
       "next": "Niveau suivant"
     }
+  },
+  "leaderboard": {
+    "filters": {
+      "all": "Tous",
+      "players": " joueurs"
+    },
+    "buttons": {
+      "register": "Enregistrer le score",
+      "play-again": "Rejouer"
+    },
+    "placeholder": "Nom d'équipe"
   }
 }

@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import MainScene from "./MainScene";
+import MainScene from "../scenes/MainScene";
 import Member from "./Member";
 import { actions } from "../../redux";
 
