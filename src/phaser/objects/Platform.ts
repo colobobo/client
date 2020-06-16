@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import MainScene from "./MainScene";
+import MainScene from "../scenes/MainScene";
 import Member from "./Member";
 import { actions } from "../../redux";
 
@@ -9,9 +9,9 @@ export enum PlatformType {
 }
 
 export default class Platform extends Phaser.Physics.Matter.Image {
+  pixelRatio: number;
   type: PlatformType;
   scene: MainScene;
-  readonly initialScale: number;
   sensor?: Phaser.GameObjects.GameObject;
 
   constructor({
@@ -21,31 +21,36 @@ export default class Platform extends Phaser.Physics.Matter.Image {
     texture,
     options,
     type,
-    scale = 0.3
+    pixelRatio
   }: {
     scene: MainScene;
     x?: number;
     y?: number;
     texture: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
-    scale?: number;
     type: PlatformType;
+    pixelRatio: number;
   }) {
     super(scene.matter.world, x, y, texture, undefined, options);
 
     scene.sys.displayList.add(this);
 
     this.scene = scene;
+
+    this.pixelRatio = pixelRatio;
     this.type = type;
-    this.initialScale = scale;
     this.init();
   }
 
   // FUNCTIONS
 
   init() {
-    this.setScale(this.initialScale);
-    this.setY(this.scene.game.canvas.height - this.displayHeight / 2);
+    // 40% of areaHeight
+    this.setScale(
+      ((this.scene.areaHeight * 0.4) / this.height) * this.pixelRatio
+    );
+    // align to bottom
+    this.setY(this.scene.areaHeight * this.pixelRatio - this.displayHeight / 2);
     this.createSensor();
   }
 
@@ -61,9 +66,9 @@ export default class Platform extends Phaser.Physics.Matter.Image {
     this.sensor = this.scene.matter.add.gameObject(
       this.scene.add.rectangle(
         this.x,
-        this.y - this.displayHeight / 2 - 100,
-        this.displayWidth + 50,
-        200
+        this.y - this.displayHeight / 2 - 150 * this.pixelRatio,
+        this.displayWidth * 2,
+        300 * this.pixelRatio
       ),
       {
         isSensor: true,
@@ -108,9 +113,9 @@ export default class Platform extends Phaser.Physics.Matter.Image {
     this.sensor = this.scene.matter.add.gameObject(
       this.scene.add.rectangle(
         this.x,
-        this.y - this.displayHeight / 2 - 5,
+        this.y - this.displayHeight / 2 - 5 * this.pixelRatio,
         this.displayWidth / 4,
-        10
+        10 * this.pixelRatio
       ),
       {
         isSensor: true,

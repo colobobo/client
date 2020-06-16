@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import MainScene from "./MainScene";
+import MainScene from "../scenes/MainScene";
 import Member from "./Member";
 import { actions } from "../../redux";
 
@@ -9,11 +9,12 @@ export enum TrapLocation {
 }
 
 export default class Trap extends Phaser.Physics.Matter.Sprite {
+  pixelRatio: number;
   scene: MainScene;
-  readonly initialScale: number;
   readonly animationKey: string;
   collisionEnabled: boolean;
   location: TrapLocation;
+  areaHeightRatio: number;
 
   constructor({
     scene,
@@ -21,10 +22,11 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     y = 0,
     texture,
     options,
-    scale = 1,
     animationKey,
     collisionEnabled = true,
-    location = TrapLocation.top
+    location = TrapLocation.top,
+    areaHeightRatio = 0.5,
+    pixelRatio
   }: {
     scene: MainScene;
     x?: number;
@@ -32,9 +34,10 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     texture: string;
     animationKey: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
-    scale?: number;
     collisionEnabled?: boolean;
     location?: TrapLocation;
+    areaHeightRatio?: number;
+    pixelRatio: number;
   }) {
     super(scene.matter.world, x, y, texture, undefined, options);
 
@@ -42,17 +45,22 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     scene.sys.updateList.add(this);
 
     this.scene = scene;
-    this.initialScale = scale;
     this.animationKey = animationKey;
     this.collisionEnabled = collisionEnabled;
     this.location = location;
+    this.areaHeightRatio = areaHeightRatio;
+    this.pixelRatio = pixelRatio;
     this.init();
   }
 
   // FUNCTIONS
 
   init() {
-    this.setScale(this.initialScale);
+    // set scale with areaHeightRatio
+    this.setScale(
+      ((this.scene.areaHeight * this.areaHeightRatio) / this.height) *
+        this.pixelRatio
+    );
 
     if (this.location === TrapLocation.top) {
       this.setY(this.y + this.displayHeight / 2);

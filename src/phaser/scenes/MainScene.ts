@@ -5,9 +5,9 @@ import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
-import Member from "./Member";
-import Platform, { PlatformType } from "./Platform";
-import Trap, { TrapLocation } from "./Trap";
+import Member from "../objects/Member";
+import Platform, { PlatformType } from "../objects/Platform";
+import Trap, { TrapLocation } from "../objects/Trap";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -26,6 +26,9 @@ export default class MainScene extends Phaser.Scene {
   // scene plugin
   matterCollision: typeof PhaserMatterCollisionPlugin;
 
+  // device data
+  pixelRatio: number;
+
   // data from redux store
   dispatch: Dispatch;
   playerId: string;
@@ -34,6 +37,8 @@ export default class MainScene extends Phaser.Scene {
   world: enums.World;
   playersRole: PlayersRole;
   areaDevices: AreaDevices;
+  areaHeight: number;
+  areaWidth: number;
 
   // scene variables
   collisionCategories: { [key in CollisionCategories]: number } = {
@@ -56,7 +61,10 @@ export default class MainScene extends Phaser.Scene {
     playersRole,
     areaDevices,
     roundMembersArray,
-    isRoundStarted
+    isRoundStarted,
+    areaWidth,
+    areaHeight,
+    pixelRatio
   }: {
     dispatch: Dispatch;
     world: enums.World;
@@ -65,8 +73,13 @@ export default class MainScene extends Phaser.Scene {
     areaDevices: AreaDevices;
     roundMembersArray: RoundMembersArray;
     isRoundStarted: boolean;
+    areaWidth: number;
+    areaHeight: number;
+    pixelRatio: number;
   }) {
     super({ key: "main-scene" });
+
+    this.pixelRatio = pixelRatio;
 
     this.dispatch = dispatch;
     this.playerId = playerId;
@@ -75,6 +88,8 @@ export default class MainScene extends Phaser.Scene {
     this.world = world;
     this.playersRole = playersRole;
     this.areaDevices = areaDevices;
+    this.areaWidth = areaWidth;
+    this.areaHeight = areaHeight;
   }
 
   // SETTERS
@@ -224,7 +239,7 @@ export default class MainScene extends Phaser.Scene {
           ignoreGravity: true
         },
         id: roundMember.id,
-        baseScale: 0.42
+        pixelRatio: this.pixelRatio
       });
 
       member.setPositionToStartPlatform();
@@ -247,11 +262,11 @@ export default class MainScene extends Phaser.Scene {
 
     const leftRightData = {
       left: {
-        x: device.offsetX + device.width * 0.2,
+        x: (device.offsetX + device.width * 0.2) * this.pixelRatio,
         texture: config.worlds[this.world].platforms.left.key
       },
       right: {
-        x: device.offsetX + device.width * 0.8,
+        x: (device.offsetX + device.width * 0.8) * this.pixelRatio,
         texture: config.worlds[this.world].platforms.right.key
       }
     };
@@ -277,7 +292,7 @@ export default class MainScene extends Phaser.Scene {
       x: startFinishData.start.x,
       texture: startFinishData.start.texture,
       options: { isStatic: true },
-      scale: 0.3
+      pixelRatio: this.pixelRatio
     });
 
     // finish
@@ -288,24 +303,25 @@ export default class MainScene extends Phaser.Scene {
       x: startFinishData.finish.x,
       texture: startFinishData.finish.texture,
       options: { isStatic: true },
-      scale: 0.3
+      pixelRatio: this.pixelRatio
     });
 
     // WALL
 
-    const wall = this.matter.add
-      .image(
-        device.offsetX + device.width * 0.5,
-        0,
-        config.worlds[this.world].platforms.wall.key,
-        undefined,
-        {
-          isStatic: true,
-          frictionStatic: 0,
-          friction: 0
-        }
-      )
-      .setScale(0.3);
+    const wall = this.matter.add.image(
+      (device.offsetX + device.width * 0.5) * this.pixelRatio,
+      0,
+      config.worlds[this.world].platforms.wall.key,
+      undefined,
+      {
+        isStatic: true,
+        frictionStatic: 0,
+        friction: 0
+      }
+    );
+
+    // 100% of areaHeight
+    wall.setScale((this.areaHeight / wall.height) * this.pixelRatio);
 
     // set y
     wall.setY(wall.y + wall.displayHeight / 2);
@@ -321,12 +337,13 @@ export default class MainScene extends Phaser.Scene {
       // TODO : create trap dynamicaly with playerRole data
 
       const trap = new Trap({
+        pixelRatio: this.pixelRatio,
         scene: this,
-        x: device.offsetX + device.width * 0.5,
+        x: (device.offsetX + device.width * 0.5) * this.pixelRatio,
         y: 0,
         texture: "snake-test",
         animationKey: "anim-snake",
-        scale: 0.6,
+        // scale: 0.6,
         options: { isStatic: true },
         collisionEnabled: false,
         location: TrapLocation.top
@@ -556,11 +573,17 @@ export default class MainScene extends Phaser.Scene {
         if (member && memberBody) {
           // enable gravity
           // member.setIgnoreGravity(false);
-          // emit position and velocity of member
+          // emit normalized position and velocity of member
           this.dispatch(
             actions.webSocket.emit.round.memberMove({
-              position: memberBody.position,
-              velocity: memberBody.velocity,
+              position: {
+                x: memberBody.position.x / this.pixelRatio,
+                y: memberBody.position.y / this.pixelRatio
+              },
+              velocity: {
+                x: memberBody.velocity.x / this.pixelRatio,
+                y: memberBody.velocity.y / this.pixelRatio
+              },
               id: roundMember.id
             })
           );
