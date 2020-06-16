@@ -16,16 +16,16 @@ import "./index.scss";
 
 interface Props {
   isActive: boolean;
+  isCreator: boolean;
+  isSuccess: boolean;
 }
 
-const InterfaceScore: FC<Props> = ({ isActive }) => {
+const InterfaceScore: FC<Props> = ({ isActive, isCreator, isSuccess }) => {
   const roundId = useTypedSelector(selectors.round.selectId);
   const lives = useTypedSelector(selectors.round.selectLives);
   const totalLives = useTypedSelector(selectors.game.selectTotalLives);
   const score = useTypedSelector(selectors.round.selectScore);
-  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
-  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   const dispatch = useDispatch();
   const { t } = useTranslation();

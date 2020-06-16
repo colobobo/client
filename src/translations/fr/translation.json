@@ -75,5 +75,10 @@
       "play-again": "Rejouer"
     },
     "placeholder": "Nom d'équipe"
+  },
+  "transition": {
+    "buttons": {
+      "preambleSkip": "Passer l'introduction"
+    }
   }
 }
