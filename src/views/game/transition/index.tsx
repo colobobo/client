@@ -11,7 +11,11 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
-import MotionShared, { Type } from "../../../components/MotionShared";
+import MotionShared, {
+  Type,
+  Extension,
+  Position
+} from "../../../components/MotionShared";
 
 interface Props {
   isActive: boolean;
@@ -35,10 +39,10 @@ const Transition: FC<Props> = ({ isActive }) => {
     if (isActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
 
-      setTimeout(
+      /*       setTimeout(
         () => dispatch(actions.webSocket.emit.transition.ended()),
         4000
-      );
+      ); */
     } else {
       dispatch(actions.transition.stop());
     }
@@ -58,10 +62,21 @@ const Transition: FC<Props> = ({ isActive }) => {
       {isSuccess === undefined && (
         <MotionShared
           type={Type.preamble}
+          extension={Extension.mp4}
+          position={Position.center}
+          isPlayed={isTransitionStarted}
+        />
+      )}
+      {isSuccess !== undefined && (
+        <InterfaceScore
+          isActive={isActive}
           isTransitionStarted={isTransitionStarted}
         />
       )}
-      {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
+      {/*       <InterfaceScore
+        isActive={isActive}
+        isTransitionStarted={isTransitionStarted}
+      /> */}
     </div>
   );
 };

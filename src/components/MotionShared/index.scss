@@ -6,9 +6,6 @@
   height: 100%;
   background: $black;
 
-  &__container {
-  }
-
   .area {
     background: rgb(108, 224, 91);
     background: linear-gradient(
@@ -20,8 +17,15 @@
 
   &__video {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     height: 100%;
+
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.left {
+      left: 0;
+    }
   }
 }
