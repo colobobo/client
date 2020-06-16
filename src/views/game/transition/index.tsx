@@ -11,6 +11,7 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
+import MotionShared, { Type } from "../../../components/MotionShared";
 
 interface Props {
   isActive: boolean;
@@ -25,8 +26,8 @@ const Transition: FC<Props> = ({ isActive }) => {
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
-  // const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   // effect
 
@@ -53,21 +54,14 @@ const Transition: FC<Props> = ({ isActive }) => {
 
   return (
     <div className={`transition ${isActive ? "active" : ""}`}>
+      {/*  /!\ Find another way to toggle the display of each element /!\ */}
+      {isSuccess === undefined && (
+        <MotionShared
+          type={Type.preamble}
+          isTransitionStarted={isTransitionStarted}
+        />
+      )}
       {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
-      {/*<div className="debug">
-        <span>started : {isTransitionStarted ? "true" : "false"}</span>
-        <button
-          onClick={() => {
-            dispatch(
-              actions.webSocket.emit.transition.playerReady({
-                playerId
-              })
-            );
-          }}
-        >
-          Emit transition player ready
-        </button>
-      </div>*/}
     </div>
   );
 };

@@ -1,0 +1,27 @@
+@import "../../stylesheets/mixins.scss";
+@import "../../stylesheets/variables.scss";
+
+.motion-shared {
+  width: 100%;
+  height: 100%;
+  background: $black;
+
+  &__container {
+  }
+
+  .area {
+    background: rgb(108, 224, 91);
+    background: linear-gradient(
+      90deg,
+      rgba(108, 224, 91, 1) 40%,
+      rgba(11, 115, 70, 1) 60%
+    );
+  }
+
+  &__video {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+  }
+}
