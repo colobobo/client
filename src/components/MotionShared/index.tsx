@@ -38,6 +38,11 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
     }
   }, [isTransitionStarted]);
 
+  useEffect(() => {
+    motionVideo.current?.load();
+    motionVideo.current?.setAttribute("muted", "true");
+  }, []);
+
   // return
 
   return (
@@ -47,11 +52,22 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
           <video
             ref={motionVideo}
             className="motion-shared__video"
+            playsInline
             muted
+            autoPlay={false}
             onEnded={handleOnVideoEnded}
           >
             <source src={require(`../../assets/motions/${type}.mp4`)} />
           </video>
+          {/* <ReactPlayer
+            url={require(`../../assets/motions/${type}.webm`)}
+            autoPlay
+            className="motion-shared__video"
+            loop={false}
+            controls={false}
+            volume={0}
+            playsinline={true}
+          /> */}
         </Area>
       </div>
     </div>
