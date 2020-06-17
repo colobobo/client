@@ -41,8 +41,9 @@ const MotionTransition: FC<Props> = ({
         <video
           ref={motionVideo}
           className="motion-transition__video"
-          autoPlay
+          playsInline
           muted
+          autoPlay
           onEnded={handleOnVideoEnded}
         >
           <source src={config.worlds[world].motions[outcome]} />
