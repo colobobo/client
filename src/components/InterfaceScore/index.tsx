@@ -13,8 +13,11 @@ import { gsap } from "gsap";
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
-import InterfaceBleed, { BleedPosition } from "../../components/InterfaceBleed";
-import Area from "../../components/Area";
+import InterfaceScoreArea from "../../components/InterfaceScoreArea";
+import InterfaceBleed, {
+  BleedPosition,
+  BleedColor
+} from "../../components/InterfaceBleed";
 import SpriteAnimation from "../../components/SpriteAnimation";
 
 // config
@@ -55,7 +58,6 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   // refs
 
-  const $motionVideo = useRef<HTMLVideoElement>(null);
   const $scorePanel = useRef<HTMLDivElement>(null);
   const $scoreOverlay = useRef<HTMLDivElement>(null);
 
@@ -67,7 +69,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   // handlers
 
-  const handlePanelAnimationComplete = useCallback(() => {
+  const handleOnPanelAnimationComplete = useCallback(() => {
     setPlaySpritesheet(true);
   }, []);
 
@@ -91,17 +93,6 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
   }, [dispatch]);
 
   //use effects
-
-  useEffect(() => {
-    $motionVideo.current?.load();
-    $motionVideo.current?.setAttribute("muted", "true");
-  }, []);
-
-  useEffect(() => {
-    if (showMotion) {
-      $motionVideo.current?.play();
-    }
-  }, [showMotion]);
 
   useEffect(() => {
     if (isScoreActive) {
@@ -131,31 +122,15 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
             isActive={isTansitionActive}
             isScoreActive={isScoreActive}
             playSpritesheet={playSpritesheet}
-            onAnimationComplete={handlePanelAnimationComplete}
+            onAnimationComplete={handleOnPanelAnimationComplete}
           />
         </div>
 
-        <Area height="min">
-          <div className="score__bush"></div>
-          <div
-            style={{
-              height: `${animationHeight}px`
-            }}
-            className={Classnames("score__motion", {
-              active: showMotion
-            })}
-          >
-            <video
-              ref={$motionVideo}
-              playsInline
-              muted
-              autoPlay={false}
-              onEnded={handleOnMotionEnded}
-            >
-              <source src={require(`../../assets/motions/transition.webm`)} />
-            </video>
-          </div>
-        </Area>
+        <InterfaceScoreArea
+          showMotion={showMotion}
+          animationHeight={animationHeight}
+          onMotionEnded={handleOnMotionEnded}
+        />
 
         {isCreator && (
           <div
@@ -199,7 +174,11 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
       {isScoreActive && (
         <div ref={$scoreOverlay} className="score__overlay"></div>
       )}
-      <InterfaceBleed position={BleedPosition.bottom} bgColor="#64ce55" />
+
+      <InterfaceBleed
+        position={BleedPosition.bottom}
+        bgColor={BleedColor.scoreBottom}
+      />
     </div>
   );
 };

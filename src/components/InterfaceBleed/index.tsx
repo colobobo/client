@@ -14,6 +14,10 @@ export enum BleedPosition {
   right = "right"
 }
 
+export enum BleedColor {
+  scoreBottom = "#64ce55"
+}
+
 interface Props {
   position: BleedPosition;
   bgColor: string;
@@ -21,6 +25,7 @@ interface Props {
 
 const InterfaceBleed: FC<Props> = ({ position, bgColor }) => {
   // selectors
+
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const deviceHeight = document.documentElement.clientHeight;
 
