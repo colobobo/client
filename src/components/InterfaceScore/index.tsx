@@ -13,6 +13,7 @@ import { gsap } from "gsap";
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
+import InterfaceBleed, { BleedPosition } from "../../components/InterfaceBleed";
 import Area from "../../components/Area";
 import SpriteAnimation from "../../components/SpriteAnimation";
 
@@ -198,6 +199,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
       {isScoreActive && (
         <div ref={$scoreOverlay} className="score__overlay"></div>
       )}
+      <InterfaceBleed position={BleedPosition.bottom} bgColor="#64ce55" />
     </div>
   );
 };
