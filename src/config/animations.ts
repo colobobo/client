@@ -36,7 +36,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 150,
     steps: 74,
     fps: 25,
-    loop: true
+    loop: false
   },
   [animationId.teacher_success]: {
     image: teacher_success,
@@ -44,7 +44,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 150,
     steps: 14,
     fps: 25,
-    loop: true
+    loop: false
   },
   [animationId.group_success]: {
     image: group_success,
@@ -52,7 +52,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 620,
     steps: 95,
     fps: 25,
-    loop: true
+    loop: false
   },
   [animationId.group_fail]: {
     image: group_fail,
@@ -60,7 +60,7 @@ const animations: { [key: string]: AnimationType } = {
     heightFrame: 620,
     steps: 95,
     fps: 25,
-    loop: true
+    loop: false
   }
 };
 

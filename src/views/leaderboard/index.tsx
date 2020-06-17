@@ -65,7 +65,7 @@ const About: FC = () => {
           <div className="leaderboard__board">
             <InterfaceLeaderboardTable />
           </div>
-          {!isCreator && (
+          {isCreator && (
             <div className="leaderboard__actions">
               <InterfaceButton
                 onClick={() => handleToggleScoreRegisterState(true)}

@@ -1,17 +1,13 @@
-import React, { FC, useEffect, useState, useCallback } from "react";
+import React, { FC, useEffect, useState, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Classnames from "classnames";
+import { gsap } from "gsap";
 
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 import Area from "../../components/Area";
 import SpriteAnimation from "../../components/SpriteAnimation";
-import MotionShared, {
-  Type,
-  Extension,
-  Position
-} from "../../components/MotionShared";
 
 // config
 import { animationId } from "../../config/animations";
@@ -25,15 +21,11 @@ import { actions, selectors } from "../../redux";
 import "./index.scss";
 
 interface Props {
-  isActive: boolean;
-  isTransitionStarted: boolean;
+  isTansitionActive: boolean;
+  isScoreActive: boolean;
 }
 
-const InterfaceScore: FC<Props> = ({ isActive, isTransitionStarted }) => {
-  const roundId = useTypedSelector(selectors.round.selectId);
-  const lives = useTypedSelector(selectors.round.selectLives);
-  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
-  const score = useTypedSelector(selectors.round.selectScore);
+const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
@@ -41,68 +33,96 @@ const InterfaceScore: FC<Props> = ({ isActive, isTransitionStarted }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
+  // refs
+
+  const $motionVideo = useRef<HTMLVideoElement>(null);
+  const $scorePanel = useRef<HTMLDivElement>(null);
+
+  // state
+
   const [showMotion, setShowMotion] = useState(false);
+  const [animationHeight, setAnimationHeight] = useState(0);
+  const [playSpritesheet, setPlaySpritesheet] = useState(false);
 
   // handlers
 
+  const handlePanelAnimationComplete = useCallback(() => {
+    setPlaySpritesheet(true);
+  }, []);
+
   const handleOnNextRoundClick = useCallback(() => {
     setShowMotion(true);
-    // dispatch(actions.webSocket.emit.transition.ended());
+    dispatch(actions.webSocket.emit.transition.ended());
+  }, [dispatch]);
+
+  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
+    setAnimationHeight(spritesheet.getInfo("height"));
+  }, []);
+
+  //use effects
+
+  useEffect(() => {
+    $motionVideo.current?.load();
+    $motionVideo.current?.setAttribute("muted", "true");
   }, []);
 
   useEffect(() => {
-    if (roundId === 1) {
-      dispatch(
-        actions.game.setTotalLives({ lives: isSuccess ? lives : lives + 1 })
-      );
+    if (showMotion) {
+      $motionVideo.current?.play();
     }
-  }, [dispatch, isSuccess, lives, roundId]);
+  }, [showMotion]);
+
+  useEffect(() => {
+    if (isScoreActive) {
+      gsap.from($scorePanel.current, {
+        duration: 1,
+        bottom: `-${areaMinHeight}px`
+      });
+    } else {
+      setShowMotion(false);
+      setPlaySpritesheet(false);
+    }
+  }, [areaMinHeight, handlePanelAnimationComplete, isScoreActive]);
 
   // return
 
   return (
     <div className="score">
-      <div className="score__container">
-        <div
-          className="score__background"
-          style={{
-            height: areaMinHeight
-          }}
-        ></div>
-        <div
-          className="score__area"
-          style={{
-            height: areaMinHeight
-          }}
-        >
-          <div className="score__panel">
-            <InterfaceScorePanel
-              score={score}
-              lives={lives}
-              isSuccess={isSuccess}
-              isActive={isActive}
-              totalLives={totalLives}
-            />
-          </div>
+      <div
+        className="score__container"
+        style={{
+          height: areaMinHeight
+        }}
+      >
+        <div ref={$scorePanel} className="score__panel">
+          <InterfaceScorePanel
+            isSuccess={isSuccess}
+            isActive={isTansitionActive}
+            isScoreActive={isScoreActive}
+            playSpritesheet={playSpritesheet}
+            onAnimationComplete={handlePanelAnimationComplete}
+          />
         </div>
+
         <Area height="min">
           <div className="score__bush"></div>
-          {/* <div
+          <div
+            style={{
+              height: `${animationHeight}px`
+            }}
             className={Classnames("score__motion", {
               active: showMotion
             })}
           >
-            <MotionShared
-              type={Type.transition}
-              extension={Extension.webm}
-              position={Position.left}
-              isPlayed={showMotion}
-            />
-          </div> */}
+            <video ref={$motionVideo} playsInline muted autoPlay={false}>
+              <source src={require(`../../assets/motions/transition.webm`)} />
+            </video>
+          </div>
         </Area>
+
         {isCreator && (
           <div
-            className="score__area"
+            className="score__bottom"
             style={{
               height: areaMinHeight
             }}
@@ -113,10 +133,18 @@ const InterfaceScore: FC<Props> = ({ isActive, isTransitionStarted }) => {
               text={t("score.buttons.next")}
               classNames="score__next"
             />
-            <div className="score__animations">
+            <div
+              className={Classnames("score__animations", {
+                active: !showMotion
+              })}
+            >
               <SpriteAnimation
-                animationID={animationId.group_success}
+                animationID={
+                  isSuccess ? animationId.group_success : animationId.group_fail
+                }
                 className="score__animation"
+                onInstance={handleSpritesheetAnimation}
+                play={playSpritesheet}
               />
             </div>
           </div>

@@ -9,17 +9,20 @@
   justify-content: center;
   align-items: center;
 
-  .debug {
+  &__score,
+  &__motion,
+  &__motion-shared {
     position: absolute;
-    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 0;
 
-    span {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    button {
-      margin-bottom: 10px;
+    &.active {
+      pointer-events: initial;
+      visibility: visible;
+      z-index: 1;
     }
   }
 }

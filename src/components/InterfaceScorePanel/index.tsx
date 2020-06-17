@@ -1,5 +1,10 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useMemo, useEffect, useRef, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
+
+// store
+import { useTypedSelector } from "../../redux/store";
+import { selectors } from "../../redux";
 
 // components
 import SpriteAnimation from "../../components/SpriteAnimation";
@@ -8,8 +13,6 @@ import SpriteAnimation from "../../components/SpriteAnimation";
 import { animationId } from "../../config/animations";
 
 // assets
-import teacherDeadPicture from "../../assets/illustrations/score/teacher_dead.png";
-import teacherAlivePicture from "../../assets/illustrations/score/teacher_alive.png";
 import timePicture from "../../assets/illustrations/score/time.png";
 import memberPicture from "../../assets/illustrations/score/member.png";
 import trapPicture from "../../assets/illustrations/score/trap.png";
@@ -18,34 +21,68 @@ import trapPicture from "../../assets/illustrations/score/trap.png";
 import "./index.scss";
 
 interface Props {
-  score: number;
-  lives: number;
-  totalLives: number;
   isSuccess: boolean;
   isActive: boolean;
+  isScoreActive: boolean;
+  playSpritesheet: boolean;
+  onAnimationComplete: any;
 }
 
 const InterfaceScorePanel: FC<Props> = ({
-  score,
-  lives,
-  totalLives,
-  isSuccess
+  isScoreActive,
+  playSpritesheet,
+  onAnimationComplete
 }) => {
   const { t } = useTranslation();
+  const defaultDelay = 1;
+
+  const lives = useTypedSelector(selectors.round.selectLives);
+  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
+  const score = useTypedSelector(selectors.round.selectScore);
+
+  // refs
+  const $scoreLives = useRef<HTMLDivElement>(null);
+  const $scoreRoundTotal = useRef<HTMLDivElement>(null);
 
   const livesItem = useMemo(() => {
     let livesArray = [];
 
-    for (let i = 0; i < totalLives; i++) {
+    for (let i = 0; i < 4; i++) {
       let life = (
-        <li className="score-panel__life" key={i}>
+        <div className="score-panel__life" key={i}>
           <SpriteAnimation animationID={animationId.teacher_success} />
-        </li>
+        </div>
       );
       livesArray.push(life);
     }
     return livesArray;
-  }, [totalLives]);
+  }, []);
+
+  // use effects
+
+  useEffect(() => {
+    if (isScoreActive) {
+      console.log("score is active");
+      const timeline = gsap.timeline({
+        delay: defaultDelay
+      });
+
+      timeline.from($scoreLives.current, 0.2, {
+        opacity: 0
+      });
+
+      const cards = document.getElementsByClassName("card");
+      for (let i = 0; i < cards.length; i++) {
+        timeline.from(cards[i], 0.5, { opacity: 0 });
+      }
+
+      timeline.from($scoreRoundTotal.current, 0.5, {
+        opacity: 0
+      });
+
+      timeline.then(onAnimationComplete);
+    }
+  }, [isScoreActive, livesItem, onAnimationComplete]);
 
   // return
 
@@ -54,37 +91,35 @@ const InterfaceScorePanel: FC<Props> = ({
       <div className="score-panel__container">
         <div className="score-panel__content">
           <p className="score-panel__score">
-            {score.toString().padStart(3, "0")}
+            {score.toString().padStart(4, "0")}
           </p>
-          <ul className="score-panel__lives">{livesItem}</ul>
-          <ul className="score-panel__cards">
-            <li className="card">
+          <div ref={$scoreLives} className="score-panel__lives">
+            {livesItem}
+          </div>
+          <div className="score-panel__cards">
+            <div className="card">
               <div className="card__detail">x5</div>
               <div className="card__picture">
                 <img src={memberPicture} alt="Member icon" />
               </div>
               <p className="card__point">+200</p>
-            </li>
-            <li className="card">
+            </div>
+            <div className="card">
               <div className="card__detail">x15</div>
               <div className="card__picture">
                 <img src={trapPicture} alt="Trap icon" />
               </div>
               <p className="card__point">-100</p>
-            </li>
-            <li className="card">
+            </div>
+            <div className="card">
               <div className="card__detail">x5</div>
               <div className="card__picture">
                 <img src={timePicture} alt="Time icon" />
               </div>
               <p className="card__point">+200</p>
-            </li>
-          </ul>
-          <div className="score-panel__bonus">
-            <p>{t("score.bonus")}</p>
-            <span>+200</span>
+            </div>
           </div>
-          <div className="score-panel__sum">
+          <div ref={$scoreRoundTotal} className="score-panel__sum">
             <p>{t("score.sum")}</p>
             <span>240</span>
           </div>

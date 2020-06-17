@@ -52,6 +52,11 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
     }
   }, [isPlayed]);
 
+  useEffect(() => {
+    motionVideo.current?.load();
+    motionVideo.current?.setAttribute("muted", "true");
+  }, []);
+
   // return
 
   return (
@@ -61,7 +66,9 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
           <video
             ref={motionVideo}
             className={Classnames("motion-shared__video", position)}
+            playsInline
             muted
+            autoPlay={false}
             onEnded={handleOnVideoEnded}
           >
             <source
