@@ -49,6 +49,8 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
   useEffect(() => {
     if (isPlayed) {
       motionVideo.current?.play();
+    } else {
+      motionVideo.current?.pause();
     }
   }, [isPlayed]);
 
