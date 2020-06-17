@@ -21,7 +21,7 @@ import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { actions, selectors } from "../../redux";
 
 // styles
@@ -56,6 +56,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   const $motionVideo = useRef<HTMLVideoElement>(null);
   const $scorePanel = useRef<HTMLDivElement>(null);
+  const $scoreOverlay = useRef<HTMLDivElement>(null);
 
   // state
 
@@ -71,12 +72,22 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   const handleOnNextRoundClick = useCallback(() => {
     setShowMotion(true);
-    dispatch(actions.webSocket.emit.transition.ended());
-  }, [dispatch]);
+  }, []);
 
   const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
     setAnimationHeight(spritesheet.getInfo("height"));
   }, []);
+
+  const handleOnMotionEnded = useCallback(() => {
+    gsap
+      .to($scoreOverlay.current, {
+        duration: 1,
+        opacity: 1
+      })
+      .then(() => {
+        dispatch(actions.webSocket.emit.transition.ended());
+      });
+  }, [dispatch]);
 
   //use effects
 
@@ -101,7 +112,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
       setShowMotion(false);
       setPlaySpritesheet(false);
     }
-  }, [areaMinHeight, handlePanelAnimationComplete, isScoreActive]);
+  }, [areaMinHeight, isScoreActive]);
 
   // return
 
@@ -133,7 +144,13 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
               active: showMotion
             })}
           >
-            <video ref={$motionVideo} playsInline muted autoPlay={false}>
+            <video
+              ref={$motionVideo}
+              playsInline
+              muted
+              autoPlay={false}
+              onEnded={handleOnMotionEnded}
+            >
               <source src={require(`../../assets/motions/transition.webm`)} />
             </video>
           </div>
@@ -177,6 +194,10 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
           />
         )}
       </div>
+
+      {isScoreActive && (
+        <div ref={$scoreOverlay} className="score__overlay"></div>
+      )}
     </div>
   );
 };
