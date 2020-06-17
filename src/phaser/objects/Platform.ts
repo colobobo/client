@@ -2,27 +2,19 @@ import * as Phaser from "phaser";
 import MainScene from "../scenes/MainScene";
 import Member from "./Member";
 import { actions } from "../../redux";
-import { AnimationConfig } from "../../config/platforms";
-
-export enum PlatformType {
-  start = "start",
-  finish = "finish"
-}
-
-export enum AnimationKeys {
-  spawn = "spawn"
-}
+import {
+  PlatformAnimationsKey,
+  PlatformPosition,
+  PlatformsPositionConfig
+} from "../../config/platforms";
 
 export default class Platform extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
-  type: PlatformType;
+  position: PlatformPosition;
   scene: MainScene;
   sensor?: Phaser.GameObjects.GameObject;
   options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
-  animationConfig: AnimationConfig;
-  animationKeys?: {
-    [AnimationKeys.spawn]: string;
-  };
+  animationsConfig: PlatformsPositionConfig;
 
   constructor({
     scene,
@@ -30,23 +22,23 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     y = 0,
     texture,
     options,
-    type,
+    position,
     pixelRatio,
-    animationConfig
+    animationsConfig
   }: {
     scene: MainScene;
     x?: number;
     y?: number;
     texture: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
-    type: PlatformType;
+    position: PlatformPosition;
     pixelRatio: number;
-    animationConfig: AnimationConfig;
+    animationsConfig: PlatformsPositionConfig;
   }) {
     const firstFrame = scene.anims.generateFrameNames(texture, {
-      prefix: animationConfig.prefix,
-      start: animationConfig.startFrame,
-      end: animationConfig.endFrame,
+      prefix: animationsConfig[PlatformAnimationsKey.lightIn].prefix,
+      start: animationsConfig[PlatformAnimationsKey.lightIn].startFrame,
+      end: animationsConfig[PlatformAnimationsKey.lightIn].endFrame,
       zeroPad: 5
     })[0]?.frame as string;
 
@@ -57,15 +49,10 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
 
     this.scene = scene;
     this.options = options;
-    this.animationConfig = animationConfig;
+    this.animationsConfig = animationsConfig;
 
     this.pixelRatio = pixelRatio;
-    this.type = type;
-
-    this.animationKeys = {
-      [AnimationKeys.spawn]:
-        animationConfig.animationKey + [AnimationKeys.spawn]
-    };
+    this.position = position;
 
     this.init();
   }
@@ -73,11 +60,10 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   // FUNCTIONS
 
   init() {
-    this.updateBodyWithShape();
-
-    // 90% of areaHeight
+    this.setBodyWithShape();
+    // 80% of areaHeight
     this.setScale(
-      ((this.scene.areaHeight * 0.9) / this.height) * this.pixelRatio
+      ((this.scene.areaHeight * 0.8) / this.height) * this.pixelRatio
     );
 
     // align to bottom
@@ -89,37 +75,42 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     );
 
     this.createSensor();
-    this.createAnimation();
+    this.createAnimations();
+
+    // TODO : test
+    this.playAnimation(PlatformAnimationsKey.lightIn);
   }
 
-  updateBodyWithShape() {
+  setBodyWithShape() {
     const shapes = this.scene.cache.json.get("shapes");
-
     this.setScale(1);
-
     this.setBody(shapes.platform, this.options);
   }
 
-  createAnimation() {
-    this.scene.anims.create({
-      key: this.animationConfig.animationKey,
-      frames: this.scene.anims.generateFrameNames(this.texture.key, {
-        prefix: this.animationConfig.prefix,
-        start: this.animationConfig.startFrame,
-        end: this.animationConfig.endFrame,
-        zeroPad: 5
-      }),
-      repeat: -1,
-      frameRate: 25
+  createAnimations() {
+    Object.values(this.animationsConfig).forEach(animationConfig => {
+      this.scene.anims.create({
+        key: animationConfig.animationKey,
+        frames: this.scene.anims.generateFrameNames(this.texture.key, {
+          prefix: animationConfig.prefix,
+          start: animationConfig.startFrame,
+          end: animationConfig.endFrame,
+          zeroPad: 5
+        }),
+        repeat: -1,
+        frameRate: 25
+      });
     });
+  }
 
-    this.play(this.animationConfig.animationKey);
+  playAnimation(animationKey: PlatformAnimationsKey) {
+    this.play(this.animationsConfig[animationKey].animationKey);
   }
 
   createSensor() {
-    if (this.type === PlatformType.start) {
+    if (this.position === PlatformPosition.start) {
       this.createStartSensor();
-    } else if (this.type === PlatformType.finish) {
+    } else if (this.position === PlatformPosition.finish) {
       this.createFinishSensor();
     }
   }

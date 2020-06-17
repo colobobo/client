@@ -1,104 +1,127 @@
 import { enums } from "@colobobo/library";
 
-// ====== EDITABLE CONFIG =======
+// enums
 
-type EditableAnimationConfig = {
+export enum PlatformPosition {
+  start = "start",
+  finish = "finish"
+}
+
+export enum PlatformAnimationsKey {
+  lightIn = "light-in",
+  lightOut = "light-out",
+  pannel = "pannel"
+}
+
+// editable plateforms types
+
+type EditablePlatformsAnimationConfig = {
   startFrame: number;
   endFrame: number;
 };
 
-type EditableConfig = {
-  start: EditableAnimationConfig;
-  finish: EditableAnimationConfig;
+type EditablePlatformsPositionConfig = {
+  [key in PlatformAnimationsKey]: EditablePlatformsAnimationConfig;
 };
 
-type EditableConfigs = {
-  [key in enums.World]: EditableConfig;
+type EditablePlateformsConfig = {
+  [key in PlatformPosition]: EditablePlatformsPositionConfig;
 };
 
-const editableConfigs: EditableConfigs = {
-  [enums.World.desert]: {
-    start: {
-      startFrame: 0,
-      endFrame: 63
-    },
-    finish: {
-      startFrame: 0,
-      endFrame: 28
-    }
-  },
-  [enums.World.jungle]: {
-    start: {
-      startFrame: 0,
-      endFrame: 63
-    },
-    finish: {
-      startFrame: 0,
-      endFrame: 28
-    }
-  },
-  [enums.World.mountain]: {
-    start: {
-      startFrame: 0,
-      endFrame: 63
-    },
-    finish: {
-      startFrame: 0,
-      endFrame: 28
-    }
-  },
-  [enums.World.river]: {
-    start: {
-      startFrame: 0,
-      endFrame: 63
-    },
-    finish: {
-      startFrame: 0,
-      endFrame: 28
-    }
-  }
+type EditablePlatformsConfigByWorld = {
+  [key in enums.World]: EditablePlateformsConfig;
 };
 
-// ======= GENERATED CONFIG =======
-
-export type AnimationConfig = EditableAnimationConfig & {
+// generated plateforms types
+export type PlatformsAnimationConfig = EditablePlatformsAnimationConfig & {
   texture: string;
   animationKey: string;
   prefix: string;
 };
 
-type PlatformConfig = {
-  start: AnimationConfig;
-  finish: AnimationConfig;
+export type PlatformsPositionConfig = {
+  [key in PlatformAnimationsKey]: PlatformsAnimationConfig;
 };
 
 type PlatformsConfig = {
-  [key in enums.World]: PlatformConfig;
+  [key in PlatformPosition]: PlatformsPositionConfig;
 };
 
-const getConfigs = (): PlatformsConfig => {
-  let platformsConfig = {};
-  Object.values(enums.World).forEach(world => {
-    platformsConfig = {
-      ...platformsConfig,
-      [world]: {
-        start: {
-          ...editableConfigs[world].start,
-          animationKey: `${world}_platforms_start_animation`,
-          prefix: `worlds/${world}/platforms/start/`,
-          texture: "spritesheets"
-        },
-        finish: {
-          ...editableConfigs[world].finish,
-          animationKey: `${world}_platforms_finish_animation`,
-          prefix: `worlds/${world}/platforms/finish/`,
-          texture: "spritesheets"
-        }
-      } as PlatformConfig
-    };
-  });
+// ====== EDITABLE CONFIG =======
 
-  return platformsConfig as PlatformsConfig;
+const defaultEditableConfig: EditablePlateformsConfig = {
+  [PlatformPosition.start]: {
+    [PlatformAnimationsKey.lightIn]: {
+      startFrame: 0,
+      endFrame: 63
+    },
+    [PlatformAnimationsKey.lightOut]: {
+      startFrame: 0,
+      endFrame: 63
+    },
+    [PlatformAnimationsKey.pannel]: {
+      startFrame: 0,
+      endFrame: 63
+    }
+  },
+  [PlatformPosition.finish]: {
+    [PlatformAnimationsKey.lightIn]: {
+      startFrame: 0,
+      endFrame: 63
+    },
+    [PlatformAnimationsKey.lightOut]: {
+      startFrame: 0,
+      endFrame: 63
+    },
+    [PlatformAnimationsKey.pannel]: {
+      startFrame: 0,
+      endFrame: 63
+    }
+  }
 };
 
-export const platformsConfig = getConfigs();
+const editableConfigsByWorld: EditablePlatformsConfigByWorld = {
+  [enums.World.desert]: defaultEditableConfig,
+  [enums.World.jungle]: defaultEditableConfig,
+  [enums.World.mountain]: defaultEditableConfig,
+  [enums.World.river]: defaultEditableConfig
+};
+
+// ======= GENERATED CONFIG =======
+
+const getAnimationConfig = (
+  world: enums.World,
+  position: PlatformPosition,
+  animationKey: PlatformAnimationsKey
+): PlatformsAnimationConfig => ({
+  ...editableConfigsByWorld[world][position][animationKey],
+  animationKey: `${world}_platforms_${position}_${animationKey}`,
+  prefix: `worlds/${world}/platforms/${position}/`,
+  texture: "spritesheets"
+});
+
+const getPositionConfig = (
+  world: enums.World,
+  position: PlatformPosition
+): PlatformsPositionConfig => ({
+  [PlatformAnimationsKey.lightIn]: getAnimationConfig(
+    world,
+    position,
+    PlatformAnimationsKey.lightIn
+  ),
+  [PlatformAnimationsKey.lightOut]: getAnimationConfig(
+    world,
+    position,
+    PlatformAnimationsKey.lightOut
+  ),
+  [PlatformAnimationsKey.pannel]: getAnimationConfig(
+    world,
+    position,
+    PlatformAnimationsKey.pannel
+  )
+});
+
+export const getPlatFormsConfig = (world: enums.World): PlatformsConfig => ({
+  [PlatformPosition.start]: getPositionConfig(world, PlatformPosition.start),
+  [PlatformPosition.finish]: getPositionConfig(world, PlatformPosition.finish)
+});

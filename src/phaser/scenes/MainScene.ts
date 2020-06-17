@@ -1,12 +1,13 @@
 import * as Phaser from "phaser";
 import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
 import * as config from "../../config";
+import { PlatformPosition } from "../../config/platforms";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "../objects/Member";
-import Platform, { PlatformType } from "../objects/Platform";
+import Platform from "../objects/Platform";
 import Trap, { TrapLocation } from "../objects/Trap";
 
 export type RoundMembersArray = ReturnType<
@@ -49,9 +50,8 @@ export default class MainScene extends Phaser.Scene {
   };
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   members: Member[] = [];
-  plateforms: {
-    start?: Platform;
-    finish?: Platform;
+  platforms: {
+    [key in PlatformPosition]?: Platform;
   } = {};
 
   constructor({
@@ -290,26 +290,26 @@ export default class MainScene extends Phaser.Scene {
 
     // start
 
-    this.plateforms.start = new Platform({
+    this.platforms.start = new Platform({
       scene: this,
-      type: PlatformType.start,
+      position: PlatformPosition.start,
       x: startFinishData.start.x,
       texture: "spritesheets",
       options: { isStatic: true },
       pixelRatio: this.pixelRatio,
-      animationConfig: config.platforms[this.world].start
+      animationsConfig: config.getPlatFormsConfig(this.world).start
     });
 
     // finish
 
-    this.plateforms.finish = new Platform({
+    this.platforms.finish = new Platform({
       scene: this,
-      type: PlatformType.finish,
+      position: PlatformPosition.finish,
       x: startFinishData.finish.x,
       texture: "spritesheets",
       options: { isStatic: true },
       pixelRatio: this.pixelRatio,
-      animationConfig: config.platforms[this.world].finish
+      animationsConfig: config.getPlatFormsConfig(this.world).finish
     });
 
     // WALL
