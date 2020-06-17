@@ -3,13 +3,15 @@ import teacher_fail from "../assets/illustrations/score/spritesheets/teacher_fai
 import teacher_success from "../assets/illustrations/score/spritesheets/teacher_success.png";
 import group_fail from "../assets/illustrations/score/spritesheets/group_fail.png";
 import group_success from "../assets/illustrations/score/spritesheets/group_success.png";
+import sign from "../assets/illustrations/score/spritesheets/sign.png";
 
 export enum animationId {
   logo = "logo",
   teacher_fail = "teacher_fail",
   teacher_success = "teacher_success",
   group_fail = "group_fail",
-  group_success = "group_success"
+  group_success = "group_success",
+  sign = "sign"
 }
 
 interface AnimationType {
@@ -50,7 +52,7 @@ const animations: { [key: string]: AnimationType } = {
     image: group_success,
     widthFrame: 1100,
     heightFrame: 620,
-    steps: 95,
+    steps: 96,
     fps: 25,
     loop: false
   },
@@ -58,9 +60,17 @@ const animations: { [key: string]: AnimationType } = {
     image: group_fail,
     widthFrame: 1100,
     heightFrame: 620,
-    steps: 95,
+    steps: 96,
     fps: 25,
     loop: false
+  },
+  [animationId.sign]: {
+    image: sign,
+    widthFrame: 600,
+    heightFrame: 600,
+    steps: 96,
+    fps: 25,
+    loop: true
   }
 };
 

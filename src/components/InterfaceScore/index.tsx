@@ -1,4 +1,11 @@
-import React, { FC, useEffect, useState, useCallback, useRef } from "react";
+import React, {
+  FC,
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+  useMemo
+} from "react";
 import { useTranslation } from "react-i18next";
 import Classnames from "classnames";
 import { gsap } from "gsap";
@@ -14,7 +21,7 @@ import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actions, selectors } from "../../redux";
 
 // styles
@@ -29,9 +36,21 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+  const areaDevices = useTypedSelector(selectors.area.selectDevices);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
+  const device = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { playerId })
+  );
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  const isLastDevice = useMemo(() => {
+    if (Object.keys(areaDevices).length - 1 === device.position) {
+      return true;
+    }
+    return false;
+  }, [areaDevices, device.position]);
 
   // refs
 
@@ -148,6 +167,14 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
               />
             </div>
           </div>
+        )}
+
+        {isLastDevice && (
+          <SpriteAnimation
+            className="score__sign"
+            animationID={animationId.sign}
+            autoplay={true}
+          />
         )}
       </div>
     </div>
