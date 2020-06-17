@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useEffect, useRef, useCallback } from "react";
+import React, { FC, useMemo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 
@@ -36,8 +36,6 @@ const InterfaceScorePanel: FC<Props> = ({
   const { t } = useTranslation();
   const defaultDelay = 1;
 
-  const lives = useTypedSelector(selectors.round.selectLives);
-  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
   const score = useTypedSelector(selectors.round.selectScore);
 
   // refs
