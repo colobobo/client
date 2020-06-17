@@ -50,10 +50,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
   const { t } = useTranslation();
 
   const isLastDevice = useMemo(() => {
-    if (Object.keys(areaDevices).length - 1 === device.position) {
-      return true;
-    }
-    return false;
+    return Object.keys(areaDevices).length - 1 === device.position;
   }, [areaDevices, device.position]);
 
   // refs
@@ -98,7 +95,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
     if (isScoreActive) {
       gsap.from($scorePanel.current, {
         duration: 1,
-        bottom: `-${areaMinHeight}px`
+        yPercent: `100`
       });
     } else {
       setShowMotion(false);

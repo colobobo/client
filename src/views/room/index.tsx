@@ -29,7 +29,7 @@ const Room: FC = () => {
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const disposition = useTypedSelector(selectors.game.selectDisposition);
-  /*  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray); */
+  const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
 
   const [currentPlacement, setCurrentPlacement] = useState<
     enums.game.Disposition
@@ -122,7 +122,7 @@ const Room: FC = () => {
             color={Colors.blue}
             text={t("room.buttons.start")}
             classNames="room__action"
-            /* disabled={devicesArray.length >= 3 ? false : true} */
+            disabled={devicesArray.length >= 3 ? false : true}
           />
         )}
       </div>

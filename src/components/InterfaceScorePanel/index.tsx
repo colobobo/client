@@ -60,7 +60,6 @@ const InterfaceScorePanel: FC<Props> = ({
 
   useEffect(() => {
     if (isScoreActive) {
-      console.log("score is active");
       const timeline = gsap.timeline({
         delay: defaultDelay
       });
@@ -70,12 +69,9 @@ const InterfaceScorePanel: FC<Props> = ({
       });
 
       const cards = document.getElementsByClassName("card");
-      for (let i = 0; i < cards.length; i++) {
-        timeline.from(cards[i], 0.5, { opacity: 0 });
-      }
-
-      timeline.from($scoreRoundTotal.current, 0.5, {
-        opacity: 0
+      timeline.from([...cards, $scoreRoundTotal.current], 0.5, {
+        opacity: 0,
+        stagger: 0.5
       });
 
       timeline.then(onAnimationComplete);
