@@ -1,0 +1,6563 @@
+{
+	"textures": [
+		{
+			"image": "texture-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4089,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "worlds/jungle/platforms/start/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1081,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1081,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1441,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1081,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1441,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1801,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1441,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1801,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2161,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1801,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2161,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2521,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2161,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2521,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2881,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2521,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2881,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3241,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2881,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3241,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3601,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3241,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3601,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 3601,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 76,
+						"w": 127,
+						"h": 686
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1,
+						"w": 127,
+						"h": 686
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 320
+					},
+					"frame": {
+						"x": 1,
+						"y": 3775,
+						"w": 230,
+						"h": 320
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00123",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 319
+					},
+					"frame": {
+						"x": 233,
+						"y": 3775,
+						"w": 230,
+						"h": 319
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 318
+					},
+					"frame": {
+						"x": 465,
+						"y": 3775,
+						"w": 230,
+						"h": 318
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 303
+					},
+					"frame": {
+						"x": 697,
+						"y": 3775,
+						"w": 230,
+						"h": 303
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00124",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 294
+					},
+					"frame": {
+						"x": 929,
+						"y": 3775,
+						"w": 230,
+						"h": 294
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 284
+					},
+					"frame": {
+						"x": 1161,
+						"y": 3775,
+						"w": 230,
+						"h": 284
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 366,
+						"w": 106,
+						"h": 394
+					},
+					"frame": {
+						"x": 3961,
+						"y": 689,
+						"w": 106,
+						"h": 394
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 266
+					},
+					"frame": {
+						"x": 1393,
+						"y": 3775,
+						"w": 230,
+						"h": 266
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00125",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 264
+					},
+					"frame": {
+						"x": 1625,
+						"y": 3775,
+						"w": 230,
+						"h": 264
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 252
+					},
+					"frame": {
+						"x": 1857,
+						"y": 3775,
+						"w": 230,
+						"h": 252
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00126",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 241
+					},
+					"frame": {
+						"x": 2089,
+						"y": 3775,
+						"w": 230,
+						"h": 241
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 235
+					},
+					"frame": {
+						"x": 2321,
+						"y": 3775,
+						"w": 230,
+						"h": 235
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 221
+					},
+					"frame": {
+						"x": 2553,
+						"y": 3775,
+						"w": 230,
+						"h": 221
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00127",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 217
+					},
+					"frame": {
+						"x": 2785,
+						"y": 3775,
+						"w": 230,
+						"h": 217
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 208
+					},
+					"frame": {
+						"x": 3017,
+						"y": 3775,
+						"w": 230,
+						"h": 208
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 110
+					},
+					"frame": {
+						"x": 3017,
+						"y": 3985,
+						"w": 230,
+						"h": 110
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 380,
+						"w": 179,
+						"h": 296
+					},
+					"frame": {
+						"x": 3249,
+						"y": 3775,
+						"w": 179,
+						"h": 296
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 88,
+						"y": 426,
+						"w": 180,
+						"h": 229
+					},
+					"frame": {
+						"x": 3430,
+						"y": 3775,
+						"w": 180,
+						"h": 229
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 123,
+						"y": 446,
+						"w": 97,
+						"h": 290
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1085,
+						"w": 97,
+						"h": 290
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 424,
+						"w": 178,
+						"h": 209
+					},
+					"frame": {
+						"x": 3612,
+						"y": 3775,
+						"w": 178,
+						"h": 209
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 109
+					},
+					"frame": {
+						"x": 3612,
+						"y": 3986,
+						"w": 230,
+						"h": 109
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 123,
+						"y": 517,
+						"w": 97,
+						"h": 238
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1377,
+						"w": 97,
+						"h": 238
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 96,
+						"y": 380,
+						"w": 127,
+						"h": 113
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1617,
+						"w": 127,
+						"h": 113
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 401,
+						"w": 152,
+						"h": 143
+					},
+					"frame": {
+						"x": 3792,
+						"y": 3775,
+						"w": 152,
+						"h": 143
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 123,
+						"y": 593,
+						"w": 97,
+						"h": 172
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1732,
+						"w": 97,
+						"h": 172
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 88,
+						"y": 387,
+						"w": 144,
+						"h": 137
+					},
+					"frame": {
+						"x": 3844,
+						"y": 3920,
+						"w": 144,
+						"h": 137
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 166,
+						"y": 666,
+						"w": 54,
+						"h": 97
+					},
+					"frame": {
+						"x": 3961,
+						"y": 1906,
+						"w": 54,
+						"h": 97
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 166,
+						"y": 722,
+						"w": 38,
+						"h": 47
+					},
+					"frame": {
+						"x": 3430,
+						"y": 4006,
+						"w": 38,
+						"h": 47
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 99,
+						"y": 467,
+						"w": 15,
+						"h": 16
+					},
+					"frame": {
+						"x": 1393,
+						"y": 4043,
+						"w": 15,
+						"h": 16
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 166,
+						"y": 751,
+						"w": 10,
+						"h": 12
+					},
+					"frame": {
+						"x": 697,
+						"y": 4080,
+						"w": 10,
+						"h": 12
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 105,
+						"y": 463,
+						"w": 9,
+						"h": 10
+					},
+					"frame": {
+						"x": 1857,
+						"y": 4029,
+						"w": 9,
+						"h": 10
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 464,
+						"w": 4,
+						"h": 4
+					},
+					"frame": {
+						"x": 929,
+						"y": 4071,
+						"w": 4,
+						"h": 4
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 1161,
+						"y": 4061,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2089,
+						"y": 4018,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2321,
+						"y": 4012,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2553,
+						"y": 3998,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3249,
+						"y": 4073,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 4069,
+						"y": 689,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 4060,
+						"y": 1085,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 4060,
+						"y": 1732,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3792,
+						"y": 3920,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3844,
+						"y": 4059,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3946,
+						"y": 3775,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3961,
+						"y": 2005,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 4017,
+						"y": 1906,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3430,
+						"y": 4055,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3470,
+						"y": 4006,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 1410,
+						"y": 4043,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 709,
+						"y": 4080,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 1868,
+						"y": 4029,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 935,
+						"y": 4071,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 1161,
+						"y": 4066,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 1166,
+						"y": 4061,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2089,
+						"y": 4023,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2094,
+						"y": 4018,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2326,
+						"y": 4012,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 2553,
+						"y": 4003,
+						"w": 3,
+						"h": 3
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4092,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "worlds/jungle/platforms/start/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00128",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 196
+					},
+					"frame": {
+						"x": 1,
+						"y": 3775,
+						"w": 230,
+						"h": 196
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 122
+					},
+					"frame": {
+						"x": 1,
+						"y": 3973,
+						"w": 230,
+						"h": 122
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 194
+					},
+					"frame": {
+						"x": 233,
+						"y": 3775,
+						"w": 230,
+						"h": 194
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 233,
+						"y": 3971,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 407,
+						"y": 3971,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 361,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 82,
+						"y": 424,
+						"w": 175,
+						"h": 186
+					},
+					"frame": {
+						"x": 465,
+						"y": 3775,
+						"w": 175,
+						"h": 186
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 132
+					},
+					"frame": {
+						"x": 581,
+						"y": 3963,
+						"w": 230,
+						"h": 132
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 181
+					},
+					"frame": {
+						"x": 642,
+						"y": 3775,
+						"w": 230,
+						"h": 181
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00132",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 137
+					},
+					"frame": {
+						"x": 813,
+						"y": 3958,
+						"w": 230,
+						"h": 137
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 1259,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 721,
+						"y": 2517,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00129",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 177
+					},
+					"frame": {
+						"x": 874,
+						"y": 3775,
+						"w": 230,
+						"h": 177
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 139
+					},
+					"frame": {
+						"x": 1045,
+						"y": 3954,
+						"w": 230,
+						"h": 139
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1277,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 82,
+						"y": 427,
+						"w": 168,
+						"h": 160
+					},
+					"frame": {
+						"x": 1106,
+						"y": 1,
+						"w": 168,
+						"h": 160
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 164,
+						"h": 665
+					},
+					"frame": {
+						"x": 1106,
+						"y": 163,
+						"w": 164,
+						"h": 665
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 83,
+						"y": 413,
+						"w": 161,
+						"h": 152
+					},
+					"frame": {
+						"x": 1106,
+						"y": 830,
+						"w": 161,
+						"h": 152
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 79,
+						"w": 156,
+						"h": 674
+					},
+					"frame": {
+						"x": 1106,
+						"y": 984,
+						"w": 156,
+						"h": 674
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1081,
+						"y": 1660,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 398
+					},
+					"frame": {
+						"x": 1264,
+						"y": 1259,
+						"w": 230,
+						"h": 398
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 734,
+						"w": 309,
+						"h": 851
+					},
+					"frame": {
+						"x": 1081,
+						"y": 2918,
+						"w": 309,
+						"h": 851
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 172
+					},
+					"frame": {
+						"x": 1106,
+						"y": 3771,
+						"w": 230,
+						"h": 172
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00131",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 149
+					},
+					"frame": {
+						"x": 1277,
+						"y": 3945,
+						"w": 230,
+						"h": 149
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 164
+					},
+					"frame": {
+						"x": 1338,
+						"y": 3771,
+						"w": 230,
+						"h": 164
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 734,
+						"w": 309,
+						"h": 851
+					},
+					"frame": {
+						"x": 1392,
+						"y": 2918,
+						"w": 309,
+						"h": 851
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1441,
+						"y": 1659,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 155
+					},
+					"frame": {
+						"x": 1509,
+						"y": 3937,
+						"w": 230,
+						"h": 155
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00130",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 163
+					},
+					"frame": {
+						"x": 1570,
+						"y": 3771,
+						"w": 230,
+						"h": 163
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 734,
+						"w": 309,
+						"h": 851
+					},
+					"frame": {
+						"x": 1703,
+						"y": 2917,
+						"w": 309,
+						"h": 851
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 325
+					},
+					"frame": {
+						"x": 1802,
+						"y": 3770,
+						"w": 230,
+						"h": 325
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 395
+					},
+					"frame": {
+						"x": 1496,
+						"y": 1259,
+						"w": 230,
+						"h": 395
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 358,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1637,
+						"y": 1,
+						"w": 358,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 394
+					},
+					"frame": {
+						"x": 1728,
+						"y": 1259,
+						"w": 230,
+						"h": 394
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 339,
+						"w": 355,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1801,
+						"y": 1655,
+						"w": 355,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 413,
+						"w": 336,
+						"h": 1182
+					},
+					"frame": {
+						"x": 2034,
+						"y": 2913,
+						"w": 336,
+						"h": 1182
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 388
+					},
+					"frame": {
+						"x": 1960,
+						"y": 1259,
+						"w": 230,
+						"h": 388
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 339,
+						"w": 343,
+						"h": 1256
+					},
+					"frame": {
+						"x": 1997,
+						"y": 1,
+						"w": 343,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 339,
+						"w": 336,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2158,
+						"y": 1649,
+						"w": 336,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 382
+					},
+					"frame": {
+						"x": 2192,
+						"y": 1259,
+						"w": 230,
+						"h": 382
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 339,
+						"w": 336,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2342,
+						"y": 1,
+						"w": 336,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 380
+					},
+					"frame": {
+						"x": 2424,
+						"y": 1259,
+						"w": 230,
+						"h": 380
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2372,
+						"y": 2907,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 339,
+						"w": 336,
+						"h": 1256
+					},
+					"frame": {
+						"x": 2496,
+						"y": 1641,
+						"w": 336,
+						"h": 1256
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 394,
+						"w": 106,
+						"h": 374
+					},
+					"frame": {
+						"x": 2656,
+						"y": 1259,
+						"w": 106,
+						"h": 374
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 340,
+						"w": 358,
+						"h": 1255
+					},
+					"frame": {
+						"x": 2680,
+						"y": 1,
+						"w": 358,
+						"h": 1255
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00093",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 372
+					},
+					"frame": {
+						"x": 2764,
+						"y": 1258,
+						"w": 230,
+						"h": 372
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 146
+					},
+					"frame": {
+						"x": 2372,
+						"y": 3770,
+						"w": 230,
+						"h": 146
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 133
+					},
+					"frame": {
+						"x": 2372,
+						"y": 3918,
+						"w": 230,
+						"h": 133
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 132
+					},
+					"frame": {
+						"x": 2604,
+						"y": 3770,
+						"w": 230,
+						"h": 132
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2710,
+						"y": 2899,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 333
+					},
+					"frame": {
+						"x": 2836,
+						"y": 3762,
+						"w": 230,
+						"h": 333
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 131
+					},
+					"frame": {
+						"x": 2604,
+						"y": 3904,
+						"w": 230,
+						"h": 131
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 340,
+						"w": 336,
+						"h": 1255
+					},
+					"frame": {
+						"x": 2834,
+						"y": 1632,
+						"w": 336,
+						"h": 1255
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00092",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 371
+					},
+					"frame": {
+						"x": 2996,
+						"y": 1258,
+						"w": 230,
+						"h": 371
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 342,
+						"w": 336,
+						"h": 1253
+					},
+					"frame": {
+						"x": 3040,
+						"y": 1,
+						"w": 336,
+						"h": 1253
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 3048,
+						"y": 2889,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 343
+					},
+					"frame": {
+						"x": 3068,
+						"y": 3752,
+						"w": 230,
+						"h": 343
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00122",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 341
+					},
+					"frame": {
+						"x": 3300,
+						"y": 3752,
+						"w": 230,
+						"h": 341
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 347,
+						"w": 358,
+						"h": 1248
+					},
+					"frame": {
+						"x": 3172,
+						"y": 1631,
+						"w": 358,
+						"h": 1248
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00094",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 371
+					},
+					"frame": {
+						"x": 3228,
+						"y": 1256,
+						"w": 230,
+						"h": 371
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 3378,
+						"y": 1,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 340,
+						"w": 355,
+						"h": 1245
+					},
+					"frame": {
+						"x": 3736,
+						"y": 1,
+						"w": 355,
+						"h": 1245
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 3386,
+						"y": 2881,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00099",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 349
+					},
+					"frame": {
+						"x": 3532,
+						"y": 3744,
+						"w": 230,
+						"h": 349
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 327,
+						"h": 1246
+					},
+					"frame": {
+						"x": 3764,
+						"y": 1248,
+						"w": 327,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 3724,
+						"y": 2496,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 400
+					},
+					"frame": {
+						"x": 3532,
+						"y": 1249,
+						"w": 230,
+						"h": 400
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 400
+					},
+					"frame": {
+						"x": 3532,
+						"y": 1651,
+						"w": 230,
+						"h": 400
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 368
+					},
+					"frame": {
+						"x": 3532,
+						"y": 2053,
+						"w": 230,
+						"h": 368
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3764,
+						"y": 3744,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3532,
+						"y": 2423,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3532,
+						"y": 2549,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3532,
+						"y": 2675,
+						"w": 172,
+						"h": 124
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4016,
+				"h": 4093
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "worlds/jungle/platforms/finish/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1,
+						"y": 1249,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1,
+						"y": 2497,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 233,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 359,
+						"y": 1,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 359,
+						"y": 1249,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 359,
+						"y": 2497,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 465,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 697,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 717,
+						"y": 1,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 717,
+						"y": 1249,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 717,
+						"y": 2497,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 929,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1075,
+						"y": 1,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1075,
+						"y": 1249,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 356,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1075,
+						"y": 2497,
+						"w": 356,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1161,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1393,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 339,
+						"w": 354,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1433,
+						"y": 1,
+						"w": 354,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 340,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1433,
+						"y": 1249,
+						"w": 340,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 312,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1433,
+						"y": 2497,
+						"w": 312,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1625,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 309,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1747,
+						"y": 2497,
+						"w": 309,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1857,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 309,
+						"h": 1246
+					},
+					"frame": {
+						"x": 1775,
+						"y": 1249,
+						"w": 309,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 339,
+						"w": 309,
+						"h": 1246
+					},
+					"frame": {
+						"x": 2058,
+						"y": 2497,
+						"w": 309,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 2089,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 2321,
+						"y": 3745,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 340,
+						"w": 309,
+						"h": 1245
+					},
+					"frame": {
+						"x": 1789,
+						"y": 1,
+						"w": 309,
+						"h": 1245
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 344,
+						"w": 309,
+						"h": 1241
+					},
+					"frame": {
+						"x": 2086,
+						"y": 1248,
+						"w": 309,
+						"h": 1241
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2369,
+						"y": 2491,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 368
+					},
+					"frame": {
+						"x": 2369,
+						"y": 3354,
+						"w": 230,
+						"h": 368
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00095",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 368
+					},
+					"frame": {
+						"x": 2553,
+						"y": 3724,
+						"w": 230,
+						"h": 368
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 365
+					},
+					"frame": {
+						"x": 2601,
+						"y": 3354,
+						"w": 230,
+						"h": 365
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00096",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 364
+					},
+					"frame": {
+						"x": 2785,
+						"y": 3721,
+						"w": 230,
+						"h": 364
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2100,
+						"y": 1,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00097",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 359
+					},
+					"frame": {
+						"x": 2100,
+						"y": 864,
+						"w": 230,
+						"h": 359
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 355
+					},
+					"frame": {
+						"x": 2332,
+						"y": 864,
+						"w": 230,
+						"h": 355
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2438,
+						"y": 1,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/start/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 734,
+						"w": 336,
+						"h": 861
+					},
+					"frame": {
+						"x": 2397,
+						"y": 1221,
+						"w": 336,
+						"h": 861
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 354
+					},
+					"frame": {
+						"x": 2564,
+						"y": 864,
+						"w": 230,
+						"h": 354
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00098",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 354
+					},
+					"frame": {
+						"x": 2397,
+						"y": 2084,
+						"w": 230,
+						"h": 354
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 352
+					},
+					"frame": {
+						"x": 2629,
+						"y": 2084,
+						"w": 230,
+						"h": 352
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 734,
+						"w": 309,
+						"h": 851
+					},
+					"frame": {
+						"x": 2776,
+						"y": 1,
+						"w": 309,
+						"h": 851
+					}
+				},
+				{
+					"filename": "worlds/jungle/platforms/finish/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 734,
+						"w": 309,
+						"h": 851
+					},
+					"frame": {
+						"x": 2735,
+						"y": 1220,
+						"w": 309,
+						"h": 851
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 2796,
+						"y": 854,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3028,
+						"y": 854,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 175,
+						"h": 635
+					},
+					"frame": {
+						"x": 3087,
+						"y": 1,
+						"w": 175,
+						"h": 635
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 130
+					},
+					"frame": {
+						"x": 3087,
+						"y": 638,
+						"w": 230,
+						"h": 130
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 176,
+						"h": 619
+					},
+					"frame": {
+						"x": 3264,
+						"y": 1,
+						"w": 176,
+						"h": 619
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 171,
+						"h": 649
+					},
+					"frame": {
+						"x": 2707,
+						"y": 2438,
+						"w": 171,
+						"h": 649
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00133",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 128
+					},
+					"frame": {
+						"x": 2707,
+						"y": 3089,
+						"w": 230,
+						"h": 128
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 127
+					},
+					"frame": {
+						"x": 2707,
+						"y": 3219,
+						"w": 230,
+						"h": 127
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00100",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 2861,
+						"y": 2073,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00101",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 2833,
+						"y": 3348,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00102",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3017,
+						"y": 3697,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 144,
+						"h": 649
+					},
+					"frame": {
+						"x": 2880,
+						"y": 2422,
+						"w": 144,
+						"h": 649
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 126
+					},
+					"frame": {
+						"x": 2939,
+						"y": 3073,
+						"w": 230,
+						"h": 126
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 123
+					},
+					"frame": {
+						"x": 2939,
+						"y": 3201,
+						"w": 230,
+						"h": 123
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00103",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3065,
+						"y": 3326,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00104",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3249,
+						"y": 3675,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 76,
+						"w": 127,
+						"h": 649
+					},
+					"frame": {
+						"x": 3026,
+						"y": 2422,
+						"w": 127,
+						"h": 649
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 93,
+						"w": 146,
+						"h": 666
+					},
+					"frame": {
+						"x": 3046,
+						"y": 1203,
+						"w": 146,
+						"h": 666
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 121
+					},
+					"frame": {
+						"x": 3046,
+						"y": 1871,
+						"w": 230,
+						"h": 121
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00105",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3093,
+						"y": 1994,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 96,
+						"w": 127,
+						"h": 647
+					},
+					"frame": {
+						"x": 3194,
+						"y": 1203,
+						"w": 127,
+						"h": 647
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00134",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 121
+					},
+					"frame": {
+						"x": 3278,
+						"y": 1852,
+						"w": 230,
+						"h": 121
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00106",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3260,
+						"y": 770,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3319,
+						"y": 622,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00107",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3442,
+						"y": 1,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3442,
+						"y": 350,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3442,
+						"y": 476,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 81,
+						"w": 144,
+						"h": 674
+					},
+					"frame": {
+						"x": 3323,
+						"y": 1119,
+						"w": 144,
+						"h": 674
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 76,
+						"w": 144,
+						"h": 667
+					},
+					"frame": {
+						"x": 3469,
+						"y": 1119,
+						"w": 144,
+						"h": 667
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00108",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3492,
+						"y": 748,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3493,
+						"y": 602,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00109",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3667,
+						"y": 350,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00110",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3674,
+						"y": 1,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 83,
+						"w": 127,
+						"h": 673
+					},
+					"frame": {
+						"x": 3155,
+						"y": 2343,
+						"w": 127,
+						"h": 673
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3171,
+						"y": 3018,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3171,
+						"y": 3144,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00111",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3297,
+						"y": 3270,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00112",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3481,
+						"y": 3619,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3481,
+						"y": 3968,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/finish/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3655,
+						"y": 3968,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 76,
+						"w": 127,
+						"h": 672
+					},
+					"frame": {
+						"x": 3284,
+						"y": 2343,
+						"w": 127,
+						"h": 672
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3345,
+						"y": 3017,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3345,
+						"y": 3143,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00113",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3325,
+						"y": 1975,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3510,
+						"y": 1788,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 100,
+						"w": 122,
+						"h": 663
+					},
+					"frame": {
+						"x": 3615,
+						"y": 1097,
+						"w": 122,
+						"h": 663
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00114",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3724,
+						"y": 699,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00115",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3413,
+						"y": 2324,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00116",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3557,
+						"y": 1914,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3684,
+						"y": 1762,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00117",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3739,
+						"y": 1048,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00118",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3739,
+						"y": 1397,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 339
+					},
+					"frame": {
+						"x": 3413,
+						"y": 2673,
+						"w": 230,
+						"h": 339
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3519,
+						"y": 3014,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3519,
+						"y": 3140,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00119",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 3529,
+						"y": 3266,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 333
+					},
+					"frame": {
+						"x": 3713,
+						"y": 3615,
+						"w": 230,
+						"h": 333
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3829,
+						"y": 3950,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 125,
+						"w": 122,
+						"h": 612
+					},
+					"frame": {
+						"x": 3645,
+						"y": 2263,
+						"w": 122,
+						"h": 612
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3645,
+						"y": 2877,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3693,
+						"y": 3003,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3693,
+						"y": 3129,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3761,
+						"y": 3255,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3761,
+						"y": 3381,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 155,
+						"w": 122,
+						"h": 597
+					},
+					"frame": {
+						"x": 3769,
+						"y": 2263,
+						"w": 122,
+						"h": 597
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/panels/start/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 818,
+						"w": 172,
+						"h": 124
+					},
+					"frame": {
+						"x": 3819,
+						"y": 2862,
+						"w": 172,
+						"h": 124
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 265,
+						"w": 122,
+						"h": 499
+					},
+					"frame": {
+						"x": 3858,
+						"y": 1746,
+						"w": 122,
+						"h": 499
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 192,
+						"w": 122,
+						"h": 570
+					},
+					"frame": {
+						"x": 3893,
+						"y": 2247,
+						"w": 122,
+						"h": 570
+					}
+				},
+				{
+					"filename": "worlds/all/plateforms/ray/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 361,
+						"h": 1600
+					},
+					"spriteSourceSize": {
+						"x": 92,
+						"y": 380,
+						"w": 135,
+						"h": 127
+					},
+					"frame": {
+						"x": 3867,
+						"y": 2988,
+						"w": 135,
+						"h": 127
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-3.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 232,
+				"h": 3861
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "worlds/desert/trap/snake/00120",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00121",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 347
+					},
+					"frame": {
+						"x": 1,
+						"y": 350,
+						"w": 230,
+						"h": 347
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 345
+					},
+					"frame": {
+						"x": 1,
+						"y": 699,
+						"w": 230,
+						"h": 345
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 344
+					},
+					"frame": {
+						"x": 1,
+						"y": 1046,
+						"w": 230,
+						"h": 344
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 327
+					},
+					"frame": {
+						"x": 1,
+						"y": 1392,
+						"w": 230,
+						"h": 327
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 119
+					},
+					"frame": {
+						"x": 1,
+						"y": 1721,
+						"w": 230,
+						"h": 119
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 116
+					},
+					"frame": {
+						"x": 1,
+						"y": 1842,
+						"w": 230,
+						"h": 116
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00135",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 116
+					},
+					"frame": {
+						"x": 1,
+						"y": 1960,
+						"w": 230,
+						"h": 116
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 115
+					},
+					"frame": {
+						"x": 1,
+						"y": 2078,
+						"w": 230,
+						"h": 115
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 113
+					},
+					"frame": {
+						"x": 1,
+						"y": 2195,
+						"w": 230,
+						"h": 113
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 112
+					},
+					"frame": {
+						"x": 1,
+						"y": 2310,
+						"w": 230,
+						"h": 112
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00136",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 112
+					},
+					"frame": {
+						"x": 1,
+						"y": 2424,
+						"w": 230,
+						"h": 112
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 111
+					},
+					"frame": {
+						"x": 1,
+						"y": 2538,
+						"w": 230,
+						"h": 111
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00137",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 109
+					},
+					"frame": {
+						"x": 1,
+						"y": 2651,
+						"w": 230,
+						"h": 109
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 2762,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 2872,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 2982,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00138",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3092,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00139",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3202,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00140",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3312,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00141",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3422,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00142",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3532,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00143",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3642,
+						"w": 230,
+						"h": 108
+					}
+				},
+				{
+					"filename": "worlds/desert/trap/snake/00144",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 400,
+						"h": 400
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 0,
+						"w": 230,
+						"h": 108
+					},
+					"frame": {
+						"x": 1,
+						"y": 3752,
+						"w": 230,
+						"h": 108
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:44f16943fe1efdf947e346012e11ac69:50ade169b0ef287de32c2453426a3f52:c9f9b33aba3e9bd870909d293aaf86d4$"
+	}
+}

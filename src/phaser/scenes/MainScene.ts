@@ -145,13 +145,17 @@ export default class MainScene extends Phaser.Scene {
 
   loadTraps() {
     // TODO : wip
-    const texture = require("../../assets/worlds/desert/trap/snake/texture.png");
-    const atlas = require("../../assets/worlds/desert/trap/snake/atlas.json");
+  }
 
-    this.load.atlas({
-      key: "snake-test",
-      textureURL: texture,
-      atlasURL: atlas
+  loadShapes() {
+    this.load.json("shapes", "assets/shapes/shapes.json");
+  }
+
+  loadSpritesSheets() {
+    this.load.multiatlas({
+      key: "spritesheets",
+      atlasURL: "assets/spritesheets/atlas.json",
+      path: "assets/spritesheets/"
     });
   }
 
@@ -234,7 +238,7 @@ export default class MainScene extends Phaser.Scene {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
           restitution: 0,
           friction: 0.002,
-          frictionStatic: 0.05,
+          // frictionStatic: 0.05,
           frictionAir: 0.02,
           ignoreGravity: true
         },
@@ -290,9 +294,10 @@ export default class MainScene extends Phaser.Scene {
       scene: this,
       type: PlatformType.start,
       x: startFinishData.start.x,
-      texture: startFinishData.start.texture,
+      texture: "spritesheets",
       options: { isStatic: true },
-      pixelRatio: this.pixelRatio
+      pixelRatio: this.pixelRatio,
+      animationConfig: config.platforms[this.world].start
     });
 
     // finish
@@ -301,9 +306,10 @@ export default class MainScene extends Phaser.Scene {
       scene: this,
       type: PlatformType.finish,
       x: startFinishData.finish.x,
-      texture: startFinishData.finish.texture,
+      texture: "spritesheets",
       options: { isStatic: true },
-      pixelRatio: this.pixelRatio
+      pixelRatio: this.pixelRatio,
+      animationConfig: config.platforms[this.world].finish
     });
 
     // WALL
@@ -341,9 +347,8 @@ export default class MainScene extends Phaser.Scene {
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.pixelRatio,
         y: 0,
-        texture: "snake-test",
+        texture: "spritesheets",
         animationKey: "anim-snake",
-        // scale: 0.6,
         options: { isStatic: true },
         collisionEnabled: false,
         location: TrapLocation.top
@@ -525,6 +530,8 @@ export default class MainScene extends Phaser.Scene {
     this.loadMembers();
     this.loadPlatforms();
     this.loadTraps();
+    this.loadSpritesSheets();
+    this.loadShapes();
   }
 
   create() {

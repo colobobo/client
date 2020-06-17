@@ -13,6 +13,8 @@ import { getGameConfig } from "../../phaser/configs/gameConfig";
 import MainScene from "../../phaser/scenes/MainScene";
 import "./index.scss";
 
+import { enums } from "@colobobo/library";
+
 interface Props {
   isActive: boolean;
 }
@@ -95,7 +97,9 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   // update world
 
   useEffect(() => {
-    $mainScene.current.setWorld(world);
+    // $mainScene.current.setWorld(world);
+    // TODO: temporary for test
+    $mainScene.current.setWorld(enums.World.jungle);
   }, [world]);
 
   // update playerId
