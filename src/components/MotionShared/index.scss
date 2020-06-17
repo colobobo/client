@@ -17,8 +17,15 @@
 
   &__video {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     height: 100%;
+
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.left {
+      left: 0;
+    }
   }
 }

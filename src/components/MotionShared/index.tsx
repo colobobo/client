@@ -1,4 +1,5 @@
 import React, { FC, useCallback, useEffect, useRef } from "react";
+import Classnames from "classnames";
 
 // store
 import { useDispatch } from "react-redux";
@@ -12,15 +13,28 @@ import "./index.scss";
 
 export enum Type {
   preamble = "preamble",
+  transition = "transition",
   ending = "ending"
+}
+
+export enum Extension {
+  mp4 = "mp4",
+  webm = "webm"
+}
+
+export enum Position {
+  center = "center",
+  left = "left"
 }
 
 interface Props {
   type: Type;
-  isTransitionStarted: boolean;
+  extension: Extension;
+  position: Position;
+  isPlayed: boolean;
 }
 
-const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
+const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
   const dispatch = useDispatch();
   const motionVideo = useRef<HTMLVideoElement>(null);
 
@@ -33,12 +47,12 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
   // useEffect
 
   useEffect(() => {
-    if (isTransitionStarted) {
+    if (isPlayed) {
       motionVideo.current?.play();
     } else {
       motionVideo.current?.pause();
     }
-  }, [isTransitionStarted]);
+  }, [isPlayed]);
 
   useEffect(() => {
     motionVideo.current?.load();
@@ -53,13 +67,15 @@ const MotionShared: FC<Props> = ({ type, isTransitionStarted }) => {
         <Area height="min">
           <video
             ref={motionVideo}
-            className="motion-shared__video"
+            className={Classnames("motion-shared__video", position)}
             playsInline
             muted
             autoPlay={false}
             onEnded={handleOnVideoEnded}
           >
-            <source src={require(`../../assets/motions/${type}.mp4`)} />
+            <source
+              src={require(`../../assets/motions/${type}.${extension}`)}
+            />
           </video>
         </Area>
       </div>

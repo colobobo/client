@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useRef, useEffect } from "react";
 import Spritesheet from "react-responsive-spritesheet";
 import ClassNames from "classnames";
 
@@ -12,22 +12,24 @@ interface Props {
   animationID: string;
   className?: string;
   startAt?: number;
+  play?: boolean;
   autoplay?: boolean;
-  onInstance?: (spriteSheet: any) => void;
+  onInstance?: (spritesheet: any) => void;
 }
 
 const NumericKeypad: FC<Props> = ({
   className,
   animationID,
   startAt,
-  autoplay,
-  onInstance
+  onInstance,
+  play,
+  autoplay
 }) => {
   const { image, widthFrame, heightFrame, steps, fps, loop } = animations[
     animationID
   ];
 
-  const spritesheetInstance = useRef();
+  const spritesheetInstance = useRef<any>(null);
 
   const getInstance = (spritesheet: any) => {
     spritesheetInstance.current = spritesheet;
@@ -35,6 +37,12 @@ const NumericKeypad: FC<Props> = ({
       onInstance(spritesheet);
     }
   };
+
+  useEffect(() => {
+    if (play) {
+      spritesheetInstance.current?.goToAndPlay(1);
+    }
+  }, [play]);
 
   // return
 
@@ -48,7 +56,7 @@ const NumericKeypad: FC<Props> = ({
       fps={fps}
       loop={loop}
       autoplay={autoplay}
-      startAt={startAt}
+      timeout={1}
       getInstance={getInstance}
     />
   );

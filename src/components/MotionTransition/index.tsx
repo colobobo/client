@@ -30,7 +30,7 @@ const MotionTransition: FC<Props> = ({
   // handlers
 
   const handleOnVideoEnded = useCallback(() => {
-    setTimeout(() => onMotionTransitionEnded(true), 2000);
+    onMotionTransitionEnded(true);
   }, [onMotionTransitionEnded]);
 
   // return

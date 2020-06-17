@@ -1,0 +1,24 @@
+.interface-bleed {
+  z-index: 1;
+  position: absolute;
+
+  &--top {
+    width: 100%;
+    top: 0;
+  }
+
+  &--bottom {
+    width: 100%;
+    bottom: 0;
+  }
+
+  &--left {
+    left: 0;
+    height: 100%;
+  }
+
+  &--right {
+    right: 0;
+    height: 100%;
+  }
+}
