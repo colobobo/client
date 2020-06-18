@@ -1,98 +1,137 @@
-import React, { FC, useEffect, useState, useCallback } from "react";
+import React, {
+  FC,
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+  useMemo
+} from "react";
 import { useTranslation } from "react-i18next";
+import Classnames from "classnames";
+import { gsap } from "gsap";
 
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
-import Area from "../../components/Area";
+import InterfaceScoreArea from "../../components/InterfaceScoreArea";
+import InterfaceBleed, {
+  BleedPosition,
+  BleedColor
+} from "../../components/InterfaceBleed";
+import SpriteAnimation from "../../components/SpriteAnimation";
+
+// config
+import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { actions, selectors } from "../../redux";
 
 // styles
 import "./index.scss";
 
 interface Props {
-  isActive: boolean;
+  isTansitionActive: boolean;
+  isScoreActive: boolean;
 }
 
-const InterfaceScore: FC<Props> = ({ isActive }) => {
-  const roundId = useTypedSelector(selectors.round.selectId);
-  const lives = useTypedSelector(selectors.round.selectLives);
-  const totalLives = useTypedSelector(selectors.game.selectTotalLives);
-  const score = useTypedSelector(selectors.round.selectScore);
+const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+  const areaDevices = useTypedSelector(selectors.area.selectDevices);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
+  const device = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { playerId })
+  );
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
-  // handlers
+  const isLastDevice = useMemo(() => {
+    return Object.keys(areaDevices).length - 1 === device.position;
+  }, [areaDevices, device.position]);
 
-  const handleOnNextRoundClick = useCallback(() => {
-    dispatch(actions.webSocket.emit.transition.ended());
-  }, [dispatch]);
+  // refs
+
+  const $scorePanel = useRef<HTMLDivElement>(null);
+  const $scoreOverlay = useRef<HTMLDivElement>(null);
 
   // state
 
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [showMotion, setShowMotion] = useState(false);
+  const [animationHeight, setAnimationHeight] = useState(0);
+  const [playSpritesheet, setPlaySpritesheet] = useState(false);
+
+  // handlers
+
+  const handleOnPanelAnimationComplete = useCallback(() => {
+    setPlaySpritesheet(true);
+  }, []);
+
+  const handleOnNextRoundClick = useCallback(() => {
+    setShowMotion(true);
+  }, []);
+
+  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
+    setAnimationHeight(spritesheet.getInfo("height"));
+  }, []);
+
+  const handleOnMotionEnded = useCallback(() => {
+    gsap
+      .to($scoreOverlay.current, {
+        duration: 1,
+        opacity: 1
+      })
+      .then(() => {
+        dispatch(actions.webSocket.emit.transition.ended());
+      });
+  }, [dispatch]);
+
+  //use effects
 
   useEffect(() => {
-    if (isActive && lives === 0) {
-      setTimeout(() => setIsGameOver(true), 3000);
+    if (isScoreActive) {
+      gsap.from($scorePanel.current, {
+        duration: 1,
+        yPercent: `100`
+      });
+    } else {
+      setShowMotion(false);
+      setPlaySpritesheet(false);
     }
-  }, [isActive, lives]);
-
-  useEffect(() => {
-    if (roundId === 1) {
-      dispatch(
-        actions.game.setTotalLives({ lives: isSuccess ? lives : lives + 1 })
-      );
-    }
-  }, [dispatch, isSuccess, lives, roundId]);
+  }, [areaMinHeight, isScoreActive]);
 
   // return
 
   return (
     <div className="score">
-      <div className="score__container">
-        <div
-          className="score__background"
-          style={{
-            height: areaMinHeight
-          }}
-        ></div>
-        <div
-          className="score__area"
-          style={{
-            height: areaMinHeight
-          }}
-        >
-          {isGameOver ? (
-            <div className="score__game-over">
-              <p>Game over</p>
-            </div>
-          ) : (
-            <div className="score__panel">
-              <InterfaceScorePanel
-                score={score}
-                lives={lives}
-                isSuccess={isSuccess}
-                isActive={isActive}
-                totalLives={totalLives}
-              />
-            </div>
-          )}
+      <div
+        className="score__container"
+        style={{
+          height: areaMinHeight
+        }}
+      >
+        <div ref={$scorePanel} className="score__panel">
+          <InterfaceScorePanel
+            isSuccess={isSuccess}
+            isActive={isTansitionActive}
+            isScoreActive={isScoreActive}
+            playSpritesheet={playSpritesheet}
+            onAnimationComplete={handleOnPanelAnimationComplete}
+          />
         </div>
-        <Area height="min">
-          <div className="score__bush"></div>
-        </Area>
+
+        <InterfaceScoreArea
+          showMotion={showMotion}
+          animationHeight={animationHeight}
+          onMotionEnded={handleOnMotionEnded}
+        />
+
         {isCreator && (
           <div
-            className="score__area"
+            className="score__bottom"
             style={{
               height: areaMinHeight
             }}
@@ -103,18 +142,40 @@ const InterfaceScore: FC<Props> = ({ isActive }) => {
               text={t("score.buttons.next")}
               classNames="score__next"
             />
-            <div className="score__animation">
-              <img
-                className="score__gif"
-                src={require(`../../assets/illustrations/score/gifs/${
-                  isSuccess ? "success" : "fail"
-                }.gif`)}
-                alt="Gif"
+            <div
+              className={Classnames("score__animations", {
+                active: !showMotion
+              })}
+            >
+              <SpriteAnimation
+                animationID={
+                  isSuccess ? animationId.group_success : animationId.group_fail
+                }
+                className="score__animation"
+                onInstance={handleSpritesheetAnimation}
+                play={playSpritesheet}
               />
             </div>
           </div>
         )}
+
+        {isLastDevice && (
+          <SpriteAnimation
+            className="score__sign"
+            animationID={animationId.sign}
+            autoplay={true}
+          />
+        )}
       </div>
+
+      {isScoreActive && (
+        <div ref={$scoreOverlay} className="score__overlay"></div>
+      )}
+
+      <InterfaceBleed
+        position={BleedPosition.bottom}
+        bgColor={BleedColor.scoreBottom}
+      />
     </div>
   );
 };

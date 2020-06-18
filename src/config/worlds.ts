@@ -57,6 +57,10 @@ type WorldConfig = ColorConfig & {
     right: Phaser.Types.Loader.FileTypes.SVGFileConfig;
     wall: Phaser.Types.Loader.FileTypes.SVGFileConfig;
   };
+  motions: {
+    death: string;
+    elapsedTime: string;
+  };
 };
 
 type WorldsConfig = {
@@ -105,6 +109,10 @@ const getConfigs = (): WorldsConfig => {
               scale: 1
             }
           }
+        },
+        motions: {
+          death: require(`../assets/worlds/${world}/motions/death.mp4`),
+          elapsedTime: require(`../assets/worlds/${world}/motions/elapsedTime.mp4`)
         }
       } as WorldConfig
     };

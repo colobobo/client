@@ -75,5 +75,10 @@
       "play-again": "Play again"
     },
     "placeholder": "Team name"
+  },
+  "transition": {
+    "buttons": {
+      "preambleSkip": "Skip preamble"
+    }
   }
 }

@@ -1,5 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import Classnames from "classnames";
 
 // styles
 import "./index.scss";
@@ -11,38 +12,48 @@ import { useTypedSelector } from "../../../redux/store";
 
 // components
 import InterfaceScore from "../../../components/InterfaceScore";
-import MotionShared, { Type } from "../../../components/MotionShared";
+import MotionShared, {
+  Type,
+  Extension,
+  Position
+} from "../../../components/MotionShared";
+import MotionTransition, {
+  Outcome
+} from "../../../components/MotionTransition";
 
 interface Props {
-  isActive: boolean;
+  isTansitionActive: boolean;
 }
 
-const Transition: FC<Props> = ({ isActive }) => {
+const Transition: FC<Props> = ({ isTansitionActive }) => {
   // return
 
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const [showScore, setShowScore] = useState(false);
+
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const currentWorld = useTypedSelector(selectors.round.selectWorld);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
+
+  const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
+    setShowScore(value);
+  }, []);
 
   // effect
 
   useEffect(() => {
-    if (isActive) {
+    if (isTansitionActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
-
-      setTimeout(
-        () => dispatch(actions.webSocket.emit.transition.ended()),
-        4000
-      );
     } else {
       dispatch(actions.transition.stop());
+      handleOnMotionTransitionEnded(false);
     }
-  }, [dispatch, isActive, playerId]);
+  }, [dispatch, playerId, handleOnMotionTransitionEnded, isTansitionActive]);
 
   useEffect(() => {
     if (gameIsEnded) {
@@ -53,15 +64,34 @@ const Transition: FC<Props> = ({ isActive }) => {
   // return
 
   return (
-    <div className={`transition ${isActive ? "active" : ""}`}>
+    <div className={`transition ${isTansitionActive ? "active" : ""}`}>
       {/*  /!\ Find another way to toggle the display of each element /!\ */}
+      {/*  /!\ Toggle outcome when time is over OR if member is down /!\ */}
+      {isSuccess !== undefined && !showScore && isTansitionActive && (
+        <MotionTransition
+          outcome={Outcome.death}
+          world={currentWorld}
+          onMotionTransitionEnded={handleOnMotionTransitionEnded}
+        />
+      )}
+      <div
+        className={Classnames("transition__score", {
+          active: isTansitionActive && showScore
+        })}
+      >
+        <InterfaceScore
+          isScoreActive={showScore}
+          isTansitionActive={isTansitionActive}
+        />
+      </div>
       {isSuccess === undefined && (
         <MotionShared
           type={Type.preamble}
-          isTransitionStarted={isTransitionStarted}
+          extension={Extension.mp4}
+          position={Position.center}
+          isPlayed={isTransitionStarted}
         />
       )}
-      {isSuccess !== undefined && <InterfaceScore isActive={isActive} />}
     </div>
   );
 };
