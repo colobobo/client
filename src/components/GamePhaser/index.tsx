@@ -97,9 +97,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   // update world
 
   useEffect(() => {
-    // $mainScene.current.setWorld(world);
-    // TODO: temporary for test
-    $mainScene.current.setWorld(enums.World.jungle);
+    $mainScene.current.setWorld(world);
   }, [world]);
 
   // update playerId

@@ -5,8 +5,25 @@ import { actions } from "../../redux";
 import {
   PlatformAnimationsKey,
   PlatformPosition,
-  PlatformsPositionConfig
+  PlatformsPositionConfig,
+  PlatformsAnimationConfig
 } from "../../config/platforms";
+
+// utils
+
+const getAnimationFrames = (
+  scene: Phaser.Scene,
+  texture: string,
+  animationConfig: PlatformsAnimationConfig
+) =>
+  scene.anims.generateFrameNames(texture, {
+    prefix: animationConfig.prefix,
+    start: animationConfig.startFrame,
+    end: animationConfig.endFrame,
+    zeroPad: 5
+  });
+
+// class
 
 export default class Platform extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
@@ -15,6 +32,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   sensor?: Phaser.GameObjects.GameObject;
   options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
   animationsConfig: PlatformsPositionConfig;
+  panelSprite?: Phaser.Physics.Matter.Sprite;
 
   constructor({
     scene,
@@ -35,12 +53,11 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     pixelRatio: number;
     animationsConfig: PlatformsPositionConfig;
   }) {
-    const firstFrame = scene.anims.generateFrameNames(texture, {
-      prefix: animationsConfig[PlatformAnimationsKey.lightIn].prefix,
-      start: animationsConfig[PlatformAnimationsKey.lightIn].startFrame,
-      end: animationsConfig[PlatformAnimationsKey.lightIn].endFrame,
-      zeroPad: 5
-    })[0]?.frame as string;
+    const firstFrame = getAnimationFrames(
+      scene,
+      texture,
+      animationsConfig[PlatformAnimationsKey.lightIn]
+    )[0]?.frame as string;
 
     super(scene.matter.world, x, y, texture, firstFrame, options);
 
@@ -50,7 +67,6 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     this.scene = scene;
     this.options = options;
     this.animationsConfig = animationsConfig;
-
     this.pixelRatio = pixelRatio;
     this.position = position;
 
@@ -61,6 +77,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
 
   init() {
     this.setBodyWithShape();
+
     // 80% of areaHeight
     this.setScale(
       ((this.scene.areaHeight * 0.8) / this.height) * this.pixelRatio
@@ -74,11 +91,13 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
       Phaser.Display.Align.BOTTOM_CENTER
     );
 
-    this.createSensor();
     this.createAnimations();
+    this.createPanelSprite();
+    this.createSensor();
 
-    // TODO : test
+    // TODO : animations test
     this.playAnimation(PlatformAnimationsKey.lightIn);
+    this.playAnimation(PlatformAnimationsKey.panel);
   }
 
   setBodyWithShape() {
@@ -91,20 +110,51 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     Object.values(this.animationsConfig).forEach(animationConfig => {
       this.scene.anims.create({
         key: animationConfig.animationKey,
-        frames: this.scene.anims.generateFrameNames(this.texture.key, {
-          prefix: animationConfig.prefix,
-          start: animationConfig.startFrame,
-          end: animationConfig.endFrame,
-          zeroPad: 5
-        }),
+        frames: getAnimationFrames(
+          this.scene,
+          this.texture.key,
+          animationConfig
+        ),
         repeat: -1,
         frameRate: 25
       });
     });
   }
 
-  playAnimation(animationKey: PlatformAnimationsKey) {
-    this.play(this.animationsConfig[animationKey].animationKey);
+  playAnimation(platformAnimationKey: PlatformAnimationsKey) {
+    const animationKey = this.animationsConfig[platformAnimationKey]
+      .animationKey;
+
+    switch (platformAnimationKey) {
+      case PlatformAnimationsKey.lightIn:
+      case PlatformAnimationsKey.lightOut:
+        this.play(animationKey);
+        break;
+      case PlatformAnimationsKey.panel:
+        this.panelSprite?.play(animationKey);
+        break;
+    }
+  }
+
+  createPanelSprite() {
+    const panelFirstFrame = getAnimationFrames(
+      this.scene,
+      this.texture.key,
+      this.animationsConfig[PlatformAnimationsKey.panel]
+    )[0]?.frame as string;
+
+    const center = this.getCenter();
+
+    this.panelSprite = this.scene.matter.add.sprite(
+      center.x,
+      center.y,
+      this.texture.key,
+      panelFirstFrame,
+      { isStatic: true }
+    );
+
+    this.panelSprite.setScale(this.scale);
+    this.panelSprite.setCollidesWith(0);
   }
 
   createSensor() {

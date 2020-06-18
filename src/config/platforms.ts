@@ -10,7 +10,7 @@ export enum PlatformPosition {
 export enum PlatformAnimationsKey {
   lightIn = "light-in",
   lightOut = "light-out",
-  pannel = "pannel"
+  panel = "panel"
 }
 
 // editable plateforms types
@@ -33,6 +33,7 @@ type EditablePlatformsConfigByWorld = {
 };
 
 // generated plateforms types
+
 export type PlatformsAnimationConfig = EditablePlatformsAnimationConfig & {
   texture: string;
   animationKey: string;
@@ -59,23 +60,23 @@ const defaultEditableConfig: EditablePlateformsConfig = {
       startFrame: 0,
       endFrame: 63
     },
-    [PlatformAnimationsKey.pannel]: {
+    [PlatformAnimationsKey.panel]: {
       startFrame: 0,
-      endFrame: 63
+      endFrame: 12
     }
   },
   [PlatformPosition.finish]: {
     [PlatformAnimationsKey.lightIn]: {
       startFrame: 0,
-      endFrame: 63
+      endFrame: 28
     },
     [PlatformAnimationsKey.lightOut]: {
       startFrame: 0,
       endFrame: 63
     },
-    [PlatformAnimationsKey.pannel]: {
+    [PlatformAnimationsKey.panel]: {
       startFrame: 0,
-      endFrame: 63
+      endFrame: 12
     }
   }
 };
@@ -93,12 +94,25 @@ const getAnimationConfig = (
   world: enums.World,
   position: PlatformPosition,
   animationKey: PlatformAnimationsKey
-): PlatformsAnimationConfig => ({
-  ...editableConfigsByWorld[world][position][animationKey],
-  animationKey: `${world}_platforms_${position}_${animationKey}`,
-  prefix: `worlds/${world}/platforms/${position}/`,
-  texture: "spritesheets"
-});
+): PlatformsAnimationConfig => {
+  let prefix = "";
+  switch (animationKey) {
+    case PlatformAnimationsKey.lightIn:
+    case PlatformAnimationsKey.lightOut:
+      // TODO: prefix: `worlds/${world}/platforms/${position}/`,
+      prefix = `worlds/jungle/platforms/${position}/`;
+      break;
+    case PlatformAnimationsKey.panel:
+      prefix = `worlds/all/plateforms/panels/${position}/`;
+      break;
+  }
+  return {
+    ...editableConfigsByWorld[world][position][animationKey],
+    animationKey: `${world}_platforms_${position}_${animationKey}`,
+    prefix,
+    texture: "spritesheets"
+  };
+};
 
 const getPositionConfig = (
   world: enums.World,
@@ -114,10 +128,10 @@ const getPositionConfig = (
     position,
     PlatformAnimationsKey.lightOut
   ),
-  [PlatformAnimationsKey.pannel]: getAnimationConfig(
+  [PlatformAnimationsKey.panel]: getAnimationConfig(
     world,
     position,
-    PlatformAnimationsKey.pannel
+    PlatformAnimationsKey.panel
   )
 });
 
