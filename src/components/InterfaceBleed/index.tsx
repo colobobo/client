@@ -15,31 +15,47 @@ export enum BleedPosition {
 }
 
 export enum BleedColor {
-  scoreBottom = "#64ce55"
+  scoreBottom = "#64ce55",
+  preambleLeft = "#6CE05B",
+  preambleRight = "#0B7346"
 }
 
 interface Props {
   position: BleedPosition;
   bgColor: string;
+  elementWidth?: number;
 }
 
-const InterfaceBleed: FC<Props> = ({ position, bgColor }) => {
+const InterfaceBleed: FC<Props> = ({ position, bgColor, elementWidth }) => {
   // selectors
 
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
+  const areaWidth = useTypedSelector(selectors.area.selectWidth);
   const deviceHeight = document.documentElement.clientHeight;
 
   const bleedHeight = useMemo(() => {
     if (BleedPosition.bottom === position || BleedPosition.top === position) {
       return (deviceHeight - areaMinHeight) / 2 + 5;
     }
+    return 0;
   }, [areaMinHeight, deviceHeight, position]);
+
+  const bleedWidth = useMemo(() => {
+    if (elementWidth) {
+      return (areaWidth - elementWidth) / 2 + 5;
+    }
+    return 0;
+  }, [areaWidth, elementWidth]);
 
   // return
   return (
     <div
       className={`interface-bleed interface-bleed--${position}`}
-      style={{ height: `${bleedHeight}px`, backgroundColor: bgColor }}
+      style={{
+        height: bleedHeight ? `${bleedHeight}px` : `100%`,
+        width: bleedWidth ? `${bleedWidth}px` : `100%`,
+        backgroundColor: bgColor
+      }}
     ></div>
   );
 };

@@ -1,5 +1,6 @@
-import React, { FC, useCallback, useEffect, useRef } from "react";
+import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 import Classnames from "classnames";
+import { gsap } from "gsap";
 
 // store
 import { useDispatch } from "react-redux";
@@ -7,6 +8,10 @@ import { actions } from "../../redux";
 
 // components
 import Area from "../Area";
+import InterfaceBleed, {
+  BleedPosition,
+  BleedColor
+} from "../../components/InterfaceBleed";
 
 // style
 import "./index.scss";
@@ -36,27 +41,43 @@ interface Props {
 
 const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
   const dispatch = useDispatch();
-  const motionVideo = useRef<HTMLVideoElement>(null);
+
+  // refs
+  const $motionVideo = useRef<HTMLVideoElement>(null);
+  const $scoreOverlay = useRef<HTMLDivElement>(null);
+
+  const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
   // handlers
 
   const handleOnVideoEnded = useCallback(() => {
-    dispatch(actions.webSocket.emit.transition.ended());
+    gsap
+      .to($scoreOverlay.current, {
+        duration: 0.5,
+        opacity: 1
+      })
+      .then(() => {
+        dispatch(actions.webSocket.emit.transition.ended());
+      });
   }, [dispatch]);
+
+  const handleOnVideoLoaded = useCallback(() => {
+    setVideoIsLoaded(true);
+  }, []);
 
   // useEffect
 
   useEffect(() => {
-    if (isPlayed) {
-      motionVideo.current?.play();
+    if (isPlayed && videoIsLoaded) {
+      $motionVideo.current?.play();
     } else {
-      motionVideo.current?.pause();
+      $motionVideo.current?.pause();
     }
-  }, [isPlayed]);
+  }, [isPlayed, videoIsLoaded]);
 
   useEffect(() => {
-    motionVideo.current?.load();
-    motionVideo.current?.setAttribute("muted", "true");
+    $motionVideo.current?.load();
+    $motionVideo.current?.setAttribute("muted", "true");
   }, []);
 
   // return
@@ -65,19 +86,38 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
     <div className="motion-shared">
       <div className="motion-shared__container">
         <Area height="min">
+          {videoIsLoaded && (
+            <InterfaceBleed
+              position={BleedPosition.left}
+              bgColor={BleedColor.preambleLeft}
+              elementWidth={$motionVideo.current?.clientWidth}
+            />
+          )}
           <video
-            ref={motionVideo}
+            ref={$motionVideo}
             className={Classnames("motion-shared__video", position)}
             playsInline
             muted
             autoPlay={false}
+            preload="auto"
             onEnded={handleOnVideoEnded}
+            onLoadedData={handleOnVideoLoaded}
           >
             <source
               src={require(`../../assets/motions/${type}.${extension}`)}
             />
           </video>
+          {videoIsLoaded && (
+            <InterfaceBleed
+              position={BleedPosition.right}
+              bgColor={BleedColor.preambleRight}
+              elementWidth={$motionVideo.current?.clientWidth}
+            />
+          )}
         </Area>
+        {isPlayed && (
+          <div ref={$scoreOverlay} className="motion-shared__overlay"></div>
+        )}
       </div>
     </div>
   );
