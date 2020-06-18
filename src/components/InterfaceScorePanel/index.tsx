@@ -29,6 +29,7 @@ interface Props {
 }
 
 const InterfaceScorePanel: FC<Props> = ({
+  isSuccess,
   isScoreActive,
   playSpritesheet,
   onAnimationComplete
@@ -37,6 +38,9 @@ const InterfaceScorePanel: FC<Props> = ({
   const defaultDelay = 1;
 
   const score = useTypedSelector(selectors.round.selectScore);
+  const lives = useTypedSelector(selectors.round.selectLives);
+  /* TO REPLACE BY REAL LIVES FROM STORE -> WAINTING */
+  const totalLives = 4;
 
   // refs
   const $scoreLives = useRef<HTMLDivElement>(null);
@@ -44,17 +48,35 @@ const InterfaceScorePanel: FC<Props> = ({
 
   const livesItem = useMemo(() => {
     let livesArray = [];
+    const lostLives = totalLives - lives;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < totalLives; i++) {
+      const currentLife = i + 1;
+      const currentLifeLost = !isSuccess && currentLife === lostLives;
+
       let life = (
         <div className="score-panel__life" key={i}>
-          <SpriteAnimation animationID={animationId.teacher_success} />
+          {currentLife <= lostLives && (
+            <SpriteAnimation
+              pauseOnLastFrame={!currentLifeLost}
+              play={currentLifeLost && playSpritesheet}
+              animationID={animationId.teacher_fail}
+              autoplay={false}
+            />
+          )}
+          {currentLife > lostLives && (
+            <SpriteAnimation
+              play={isSuccess && playSpritesheet}
+              animationID={animationId.teacher_success}
+              autoplay={false}
+            />
+          )}
         </div>
       );
       livesArray.push(life);
     }
     return livesArray;
-  }, []);
+  }, [isSuccess, lives, playSpritesheet]);
 
   // use effects
 
@@ -76,7 +98,7 @@ const InterfaceScorePanel: FC<Props> = ({
 
       timeline.then(onAnimationComplete);
     }
-  }, [isScoreActive, livesItem, onAnimationComplete]);
+  }, [isScoreActive, onAnimationComplete]);
 
   // return
 
