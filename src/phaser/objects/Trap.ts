@@ -21,6 +21,7 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     x = 0,
     y = 0,
     texture,
+    frame,
     options,
     animationKey,
     collisionEnabled = true,
@@ -32,6 +33,7 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     x?: number;
     y?: number;
     texture: string;
+    frame?: string;
     animationKey: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
     collisionEnabled?: boolean;
@@ -39,7 +41,17 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     areaHeightRatio?: number;
     pixelRatio: number;
   }) {
-    super(scene.matter.world, x, y, texture, undefined, options);
+    // TODO: wip
+    const firstFrame =
+      frame ||
+      (scene.anims.generateFrameNames(texture, {
+        prefix: "worlds/desert/trap/snake/",
+        start: 19,
+        end: 144,
+        zeroPad: 5
+      })[0]?.frame as string);
+
+    super(scene.matter.world, x, y, texture, firstFrame, options);
 
     scene.sys.displayList.add(this);
     scene.sys.updateList.add(this);
@@ -84,8 +96,7 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     this.scene.anims.create({
       key: this.animationKey,
       frames: this.scene.anims.generateFrameNames(this.texture.key, {
-        prefix: "trap/desert/snake/",
-        suffix: ".png",
+        prefix: "worlds/desert/trap/snake/",
         start: 19,
         end: 144,
         zeroPad: 5

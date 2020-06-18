@@ -1,12 +1,13 @@
 import * as Phaser from "phaser";
 import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
 import * as config from "../../config";
+import { PlatformPosition, platformsTexture } from "../../config/platforms";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "../objects/Member";
-import Platform, { PlatformType } from "../objects/Platform";
+import Platform from "../objects/Platform";
 import Trap, { TrapLocation } from "../objects/Trap";
 
 export type RoundMembersArray = ReturnType<
@@ -49,9 +50,8 @@ export default class MainScene extends Phaser.Scene {
   };
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   members: Member[] = [];
-  plateforms: {
-    start?: Platform;
-    finish?: Platform;
+  platforms: {
+    [key in PlatformPosition]?: Platform;
   } = {};
 
   constructor({
@@ -119,6 +119,32 @@ export default class MainScene extends Phaser.Scene {
     this.areaDevices = areaDevices;
   }
 
+  // GETTERS
+
+  getPlayerWithPlatformRole(): string {
+    return Object.keys(this.playersRole).find(
+      playerId => this.playersRole[playerId].role === enums.player.Role.platform
+    ) as string;
+  }
+
+  getPlayersWithTrapRole(): string[] {
+    return Object.keys(this.playersRole).filter(
+      playerId => this.playersRole[playerId].role === enums.player.Role.trap
+    );
+  }
+
+  getWaitingMembers(): RoundMembersArray {
+    return this.roundMembersArray.filter(
+      roundMember => roundMember.status === enums.member.Status.waiting
+    );
+  }
+
+  getArrivedMembers(): RoundMembersArray {
+    return this.roundMembersArray.filter(
+      roundMember => roundMember.status === enums.member.Status.arrived
+    );
+  }
+
   // ########## FUNCTIONS ##########
 
   // ---------- PRELOAD ----------
@@ -145,28 +171,26 @@ export default class MainScene extends Phaser.Scene {
 
   loadTraps() {
     // TODO : wip
-    const texture = require("../../assets/worlds/desert/trap/snake/texture.png");
-    const atlas = require("../../assets/worlds/desert/trap/snake/atlas.json");
+  }
 
-    this.load.atlas({
-      key: "snake-test",
-      textureURL: texture,
-      atlasURL: atlas
+  loadShapes() {
+    this.load.json("shapes", "assets/shapes/shapes.json");
+  }
+
+  loadSpritesSheets() {
+    // test
+    this.load.multiatlas({
+      key: "spritesheets-test",
+      atlasURL: "assets/spritesheets/atlas-test.json",
+      path: "assets/spritesheets/"
     });
-  }
 
-  // GETTERS
-
-  getPlayerWithPlatformRole(): string {
-    return Object.keys(this.playersRole).find(
-      playerId => this.playersRole[playerId].role === enums.player.Role.platform
-    ) as string;
-  }
-
-  getPlayersWithTrapRole(): string[] {
-    return Object.keys(this.playersRole).filter(
-      playerId => this.playersRole[playerId].role === enums.player.Role.trap
-    );
+    // plateforms
+    this.load.multiatlas({
+      key: platformsTexture,
+      atlasURL: "assets/spritesheets/platforms/atlas.json",
+      path: "assets/spritesheets/platforms/"
+    });
   }
 
   // ---------- CREATE ----------
@@ -234,7 +258,7 @@ export default class MainScene extends Phaser.Scene {
           plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
           restitution: 0,
           friction: 0.002,
-          frictionStatic: 0.05,
+          // frictionStatic: 0.05,
           frictionAir: 0.02,
           ignoreGravity: true
         },
@@ -260,50 +284,50 @@ export default class MainScene extends Phaser.Scene {
 
     // PLATFORMS
 
-    const leftRightData = {
+    const leftRightPosition = {
       left: {
-        x: (device.offsetX + device.width * 0.2) * this.pixelRatio,
-        texture: config.worlds[this.world].platforms.left.key
+        x: (device.offsetX + device.width * 0.2) * this.pixelRatio
       },
       right: {
-        x: (device.offsetX + device.width * 0.8) * this.pixelRatio,
-        texture: config.worlds[this.world].platforms.right.key
+        x: (device.offsetX + device.width * 0.8) * this.pixelRatio
       }
     };
 
-    const startFinishData = {
+    const startFinishPosition = {
       start:
         (role.properties as PlayerRolePropertiesPlateform).direction ===
         enums.round.Direction.leftToRight
-          ? leftRightData.right
-          : leftRightData.left,
+          ? leftRightPosition.left
+          : leftRightPosition.right,
       finish:
         (role.properties as PlayerRolePropertiesPlateform).direction ===
         enums.round.Direction.leftToRight
-          ? leftRightData.left
-          : leftRightData.right
+          ? leftRightPosition.right
+          : leftRightPosition.left
     };
 
     // start
 
-    this.plateforms.start = new Platform({
+    this.platforms.start = new Platform({
       scene: this,
-      type: PlatformType.start,
-      x: startFinishData.start.x,
-      texture: startFinishData.start.texture,
+      position: PlatformPosition.start,
+      x: startFinishPosition.start.x,
+      texture: platformsTexture,
       options: { isStatic: true },
-      pixelRatio: this.pixelRatio
+      pixelRatio: this.pixelRatio,
+      animationsConfig: config.getPlatFormsConfig(this.world).start
     });
 
     // finish
 
-    this.plateforms.finish = new Platform({
+    this.platforms.finish = new Platform({
       scene: this,
-      type: PlatformType.finish,
-      x: startFinishData.finish.x,
-      texture: startFinishData.finish.texture,
+      position: PlatformPosition.finish,
+      x: startFinishPosition.finish.x,
+      texture: platformsTexture,
       options: { isStatic: true },
-      pixelRatio: this.pixelRatio
+      pixelRatio: this.pixelRatio,
+      animationsConfig: config.getPlatFormsConfig(this.world).finish
     });
 
     // WALL
@@ -341,9 +365,8 @@ export default class MainScene extends Phaser.Scene {
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.pixelRatio,
         y: 0,
-        texture: "snake-test",
+        texture: "spritesheets-test",
         animationKey: "anim-snake",
-        // scale: 0.6,
         options: { isStatic: true },
         collisionEnabled: false,
         location: TrapLocation.top
@@ -409,9 +432,7 @@ export default class MainScene extends Phaser.Scene {
   // ---------- UPDATE ----------
 
   newMemberSpawn() {
-    const waitingMember = this.roundMembersArray.filter(
-      roundMember => roundMember.status === enums.member.Status.waiting
-    );
+    const waitingMember = this.getWaitingMembers();
     // if were are waiting member and my role is plateform
     if (
       waitingMember[0] &&
@@ -432,6 +453,7 @@ export default class MainScene extends Phaser.Scene {
   onMemberSpawned(member: Member) {
     console.log("on member spawned", member.id);
     member.spawned();
+    this.platforms.start?.animateMemberSpawned();
   }
 
   // member : trapped
@@ -441,13 +463,16 @@ export default class MainScene extends Phaser.Scene {
 
     member.trapped();
 
-    const waitingMember = this.roundMembersArray.filter(
-      roundMember => roundMember.status === enums.member.Status.waiting
-    );
+    const waitingMembers = this.getWaitingMembers();
+
+    this.platforms.start?.updateCounterText();
+
     // TODO: refacto
-    if (waitingMember.length === 1) {
+    if (waitingMembers.length === 1) {
       setTimeout(() => {
-        this.newMemberSpawn();
+        if (!this.platforms.start?.sensor!.getData("hasMemberOn")) {
+          this.newMemberSpawn();
+        }
       }, 800);
     }
   }
@@ -457,6 +482,7 @@ export default class MainScene extends Phaser.Scene {
   onMemberArrived(member: Member) {
     console.log("on member arrived", member.id);
     member.arrived();
+    this.platforms.finish?.animateMemberArrived();
   }
 
   // member : moved
@@ -519,12 +545,20 @@ export default class MainScene extends Phaser.Scene {
     this.scene.restart();
   }
 
+  // ---------- START ----------
+
+  start() {
+    // TODO
+  }
+
   // ########## PHASER SCENE FUNCTIONS ##########
 
   preload() {
     this.loadMembers();
     this.loadPlatforms();
     this.loadTraps();
+    this.loadSpritesSheets();
+    this.loadShapes();
   }
 
   create() {
@@ -549,7 +583,9 @@ export default class MainScene extends Phaser.Scene {
       }
     });
 
-    this.newMemberSpawn();
+    setTimeout(() => {
+      this.newMemberSpawn();
+    }, 3000);
 
     this.events.on("destroy", () => {
       console.log("scene destroy");
