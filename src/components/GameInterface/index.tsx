@@ -1,7 +1,8 @@
 import React, { FC, useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { enums } from "@colobobo/library";
 import { actions, selectors } from "../../redux";
+import { useTypedSelector } from "../../redux/store";
 
 // components
 import InterfaceBreak from "../../components/InterfaceBreak";
@@ -23,7 +24,10 @@ const GameInterface: FC<Props> = ({ colorTheme }) => {
   const [hasClickedOnPause, setHasClickedOnPause] = useState(false);
 
   // Selectors
-  const roundStatus = useSelector(selectors.round.selectStatus);
+  const roundStatus = useTypedSelector(selectors.round.selectStatus);
+  const endRoundTimeStamp = useTypedSelector(
+    selectors.round.selectEndRoundTimeStamp
+  );
 
   // Handles
   const handleOnClickToggleGameState = useCallback(() => {
@@ -46,7 +50,7 @@ const GameInterface: FC<Props> = ({ colorTheme }) => {
 
   return (
     <div className="game-interface">
-      <InterfaceTimer color={colorTheme} />
+      {endRoundTimeStamp && <InterfaceTimer color={colorTheme} />}
       <InterfaceButton
         onClick={handleOnClickToggleGameState}
         color={colorTheme}

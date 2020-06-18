@@ -1,4 +1,5 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useEffect, useMemo, useRef, useState } from "react";
+import gsap, { Linear } from "gsap";
 
 // store
 import { selectors } from "../../redux";
@@ -19,16 +20,29 @@ const GameTimer: FC<Props> = ({ color }) => {
   const endRoundTimeStamp = useTypedSelector(
     selectors.round.selectEndRoundTimeStamp
   );
-  const duration = endRoundTimeStamp - new Date().getTime();
 
-  // handles
-  const minutes = useMemo(() => {
-    return Math.floor(duration / 60000);
+  const duration = useMemo(() => endRoundTimeStamp - new Date().getTime(), [
+    endRoundTimeStamp
+  ]);
+  const [remainingTime, setRemainingTime] = useState(duration);
+  const $animatedTimerValue = useRef({ value: duration });
+
+  useEffect(() => {
+    gsap.to($animatedTimerValue.current, {
+      ease: Linear.easeNone,
+      value: 0,
+      duration: duration / 1000,
+      onUpdate: () => setRemainingTime($animatedTimerValue.current.value)
+    });
   }, [duration]);
+
+  const minutes = useMemo(() => {
+    return Math.floor(remainingTime / 60000);
+  }, [remainingTime]);
 
   const seconds = useMemo(() => {
-    return Math.floor((duration % 60000) / 1000);
-  }, [duration]);
+    return Math.floor((remainingTime % 60000) / 1000);
+  }, [remainingTime]);
 
   return (
     <div className={`timer timer--${color}`}>
