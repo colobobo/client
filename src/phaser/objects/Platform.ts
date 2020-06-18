@@ -34,6 +34,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   animationsConfig: PlatformsPositionConfig;
   panelSprite?: Phaser.Physics.Matter.Sprite;
   raySprite?: Phaser.Physics.Matter.Sprite;
+  counterText?: Phaser.GameObjects.Text;
 
   constructor({
     scene,
@@ -95,6 +96,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     this.createAnimations();
     this.createPanelSprite();
     this.createRaySprite();
+    this.createCounterText();
     this.createSensor();
 
     // TODO : animations test
@@ -124,24 +126,6 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
         frameRate: 25
       });
     });
-  }
-
-  playAnimation(platformAnimationKey: PlatformAnimationsKey) {
-    const animationKey = this.animationsConfig[platformAnimationKey]
-      .animationKey;
-
-    switch (platformAnimationKey) {
-      case PlatformAnimationsKey.lightIn:
-      case PlatformAnimationsKey.lightOut:
-        this.play(animationKey);
-        break;
-      case PlatformAnimationsKey.panel:
-        this.panelSprite?.play(animationKey);
-        break;
-      case PlatformAnimationsKey.ray:
-        this.raySprite?.play(animationKey);
-        break;
-    }
   }
 
   createPanelSprite() {
@@ -185,6 +169,28 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     this.raySprite.setScale(this.scale);
     this.raySprite.setCollidesWith(0);
     this.raySprite.setDepth(3);
+  }
+
+  createCounterText() {
+    const textStyles: Phaser.Types.GameObjects.Text.TextStyle = {
+      fontFamily: "Mikado",
+      fontStyle: "bold",
+      fontSize: "61px",
+      color: this.position === PlatformPosition.start ? "#EF5252" : "#40FF84"
+    };
+    this.counterText = this.scene.add.text(this.x, this.y, "0", textStyles);
+    this.counterText.setScale(this.scale);
+    this.counterText.setDepth(2);
+
+    // horizontal center
+    this.counterText.setX(this.x - this.counterText.displayWidth / 2);
+    // set Y : 53.1% of height from top
+    this.counterText.setY(this.getTopCenter().y + this.displayHeight * 0.531);
+
+    // TODO: to test
+    setInterval(() => {
+      this.updateCounterText(`${Number(this.counterText?.text) + 1}`);
+    }, 1000);
   }
 
   createSensor() {
@@ -277,5 +283,29 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
         }
       }
     });
+  }
+
+  playAnimation(platformAnimationKey: PlatformAnimationsKey) {
+    const animationKey = this.animationsConfig[platformAnimationKey]
+      .animationKey;
+
+    switch (platformAnimationKey) {
+      case PlatformAnimationsKey.lightIn:
+      case PlatformAnimationsKey.lightOut:
+        this.play(animationKey);
+        break;
+      case PlatformAnimationsKey.panel:
+        this.panelSprite?.play(animationKey);
+        break;
+      case PlatformAnimationsKey.ray:
+        this.raySprite?.play(animationKey);
+        break;
+    }
+  }
+
+  updateCounterText(text: string) {
+    this.counterText?.setText(text);
+    // horizontal center
+    this.counterText?.setX(this.x - this.counterText?.displayWidth / 2);
   }
 }
