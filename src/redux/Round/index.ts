@@ -47,6 +47,7 @@ export const slice = createSlice({
     },
     start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
       state.isStarted = true;
+      state.endRoundTimeStamp = action.payload.data.endRoundTimeStamp;
     },
     statusUpdateSuccess: (
       state: RoundState,

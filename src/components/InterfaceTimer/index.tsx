@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, useMemo, useCallback } from "react";
+import React, { FC, useMemo } from "react";
 
 // store
 import { selectors } from "../../redux";
@@ -11,46 +11,24 @@ import { Colors } from "../InterfaceButton";
 import "./index.scss";
 
 interface Props {
-  isRoundStarted: boolean;
   color: Colors;
 }
 
-const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
+const GameTimer: FC<Props> = ({ color }) => {
   // selectors
   const endRoundTimeStamp = useTypedSelector(
     selectors.round.selectEndRoundTimeStamp
   );
+  const duration = endRoundTimeStamp - new Date().getTime();
 
   // handles
-
-  const [count, setCount] = useState(endRoundTimeStamp);
-
-  const tick = useCallback(() => {
-    setCount(prevState => prevState - 100);
-  }, []);
-
-  useEffect(() => {
-    setCount(endRoundTimeStamp);
-  }, [endRoundTimeStamp]);
-
-  useEffect(() => {
-    if (!isRoundStarted) {
-      return;
-    }
-
-    let id = setInterval(tick, 100);
-    return () => clearInterval(id);
-  }, [isRoundStarted, tick]);
+  const minutes = useMemo(() => {
+    return Math.floor(duration / 60000);
+  }, [duration]);
 
   const seconds = useMemo(() => {
-    return Math.floor((count % 60000) / 1000);
-  }, [count]);
-
-  const minutes = useMemo(() => {
-    return Math.floor(count / 60000);
-  }, [count]);
-
-  // return
+    return Math.floor((duration % 60000) / 1000);
+  }, [duration]);
 
   return (
     <div className={`timer timer--${color}`}>
