@@ -1,6 +1,7 @@
-import React, { FC, useMemo, useEffect, useRef } from "react";
+import React, { FC, useMemo, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
+import Odometer from "react-odometerjs";
 
 // store
 import { useTypedSelector } from "../../redux/store";
@@ -29,6 +30,7 @@ interface Props {
 }
 
 const InterfaceScorePanel: FC<Props> = ({
+  isSuccess,
   isScoreActive,
   playSpritesheet,
   onAnimationComplete
@@ -37,26 +39,54 @@ const InterfaceScorePanel: FC<Props> = ({
   const defaultDelay = 1;
 
   const score = useTypedSelector(selectors.round.selectScore);
+  const lives = useTypedSelector(selectors.round.selectLives);
+  const totalLives = useTypedSelector(selectors.game.selectLives);
 
   // refs
   const $scoreLives = useRef<HTMLDivElement>(null);
   const $scoreRoundTotal = useRef<HTMLDivElement>(null);
 
+  const [newScore, setNewScore] = useState(0);
+
   const livesItem = useMemo(() => {
     let livesArray = [];
+    const lostLives = totalLives - lives;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < totalLives; i++) {
+      const currentLife = i + 1;
+      const currentLifeLost = !isSuccess && currentLife === lostLives;
+
       let life = (
         <div className="score-panel__life" key={i}>
-          <SpriteAnimation animationID={animationId.teacher_success} />
+          {currentLife <= lostLives && (
+            <SpriteAnimation
+              pauseOnLastFrame={!currentLifeLost}
+              play={currentLifeLost && playSpritesheet}
+              animationID={animationId.teacher_fail}
+              autoplay={false}
+            />
+          )}
+          {currentLife > lostLives && (
+            <SpriteAnimation
+              play={isSuccess && playSpritesheet}
+              animationID={animationId.teacher_success}
+              autoplay={false}
+            />
+          )}
         </div>
       );
       livesArray.push(life);
     }
     return livesArray;
-  }, []);
+  }, [isSuccess, lives, playSpritesheet, totalLives]);
 
   // use effects
+
+  useEffect(() => {
+    if (playSpritesheet) {
+      setNewScore(score);
+    }
+  }, [playSpritesheet, score]);
 
   useEffect(() => {
     if (isScoreActive) {
@@ -76,7 +106,7 @@ const InterfaceScorePanel: FC<Props> = ({
 
       timeline.then(onAnimationComplete);
     }
-  }, [isScoreActive, livesItem, onAnimationComplete]);
+  }, [isScoreActive, onAnimationComplete]);
 
   // return
 
@@ -84,9 +114,9 @@ const InterfaceScorePanel: FC<Props> = ({
     <div className="score-panel">
       <div className="score-panel__container">
         <div className="score-panel__content">
-          <p className="score-panel__score">
-            {score.toString().padStart(4, "0")}
-          </p>
+          <div className="score-panel__score">
+            <Odometer format="d" duration={1000} value={newScore} />
+          </div>
           <div ref={$scoreLives} className="score-panel__lives">
             {livesItem}
           </div>

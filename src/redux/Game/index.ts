@@ -7,7 +7,7 @@ export interface GameState {
   isEnded: boolean;
   sceneType: enums.scene.Type | null;
   disposition: enums.game.Disposition;
-  totalLives: number;
+  lives: number;
 }
 
 export const slice = createSlice({
@@ -16,13 +16,15 @@ export const slice = createSlice({
     isStarted: false,
     sceneType: null,
     disposition: enums.game.Disposition.line,
-    totalLives: 0
+    lives: 0
   } as GameState,
   reducers: {
     startSuccess: (
       state: GameState,
       action: PayloadAction<payloads.game.StartSuccess>
     ) => {
+      const { lives } = action.payload.data;
+      state.lives = lives;
       state.isStarted = true;
     },
     startError: (
@@ -45,13 +47,6 @@ export const slice = createSlice({
       const { disposition } = action.payload.data;
       state.disposition = disposition;
     },
-    setTotalLives: (
-      state: GameState,
-      action: PayloadAction<{ lives: number }>
-    ) => {
-      const { lives } = action.payload;
-      state.totalLives = lives;
-    },
     end: (state: GameState, action: PayloadAction<payloads.game.End>) => {
       state.isStarted = false;
       state.isEnded = true;
@@ -62,7 +57,7 @@ export const slice = createSlice({
 // Selectors
 
 const getRoot = (state: RootState) => state.game;
-const selectTotalLives = (state: RootState) => getRoot(state).totalLives;
+const selectLives = (state: RootState) => getRoot(state).lives;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectIsEnded = (state: RootState) => getRoot(state).isEnded;
 const selectSceneType = (state: RootState) => getRoot(state).sceneType;
@@ -73,7 +68,7 @@ export const selectors = {
   selectIsEnded,
   selectSceneType,
   selectDisposition,
-  selectTotalLives
+  selectLives
 };
 
 // reducer / actions

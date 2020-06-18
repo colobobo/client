@@ -13,6 +13,7 @@ interface Props {
   className?: string;
   startAt?: number;
   play?: boolean;
+  pauseOnLastFrame?: boolean;
   autoplay?: boolean;
   onInstance?: (spritesheet: any) => void;
 }
@@ -23,6 +24,7 @@ const NumericKeypad: FC<Props> = ({
   startAt,
   onInstance,
   play,
+  pauseOnLastFrame,
   autoplay
 }) => {
   const { image, widthFrame, heightFrame, steps, fps, loop } = animations[
@@ -43,6 +45,12 @@ const NumericKeypad: FC<Props> = ({
       spritesheetInstance.current?.goToAndPlay(1);
     }
   }, [play]);
+
+  useEffect(() => {
+    if (pauseOnLastFrame) {
+      spritesheetInstance.current?.goToAndPause(steps);
+    }
+  }, [pauseOnLastFrame, steps]);
 
   // return
 

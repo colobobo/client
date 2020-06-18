@@ -1,12 +1,13 @@
 @import "../../stylesheets/mixins.scss";
 @import "../../stylesheets/variables.scss";
+@import "~odometer/themes/odometer-theme-default.css";
 
 .score-panel {
   position: relative;
   background: $blue;
   border: 2px solid $blue-dark;
   border-radius: 40px;
-  max-width: 400px;
+  max-width: 350px;
   width: 80vw;
   min-height: 190px;
   padding: 15px;
@@ -88,10 +89,13 @@
   }
 
   &__score {
-    @include mikado-black;
-    font-size: 5rem;
-    line-height: 4rem;
     margin-bottom: 20px;
+
+    .odometer-digit {
+      @include mikado-black;
+      font-size: 5rem;
+      line-height: 4rem;
+    }
   }
 
   &__lives {

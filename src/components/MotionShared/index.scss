@@ -6,13 +6,16 @@
   height: 100%;
   background: $black;
 
-  .area {
-    background: rgb(108, 224, 91);
-    background: linear-gradient(
-      90deg,
-      rgba(108, 224, 91, 1) 40%,
-      rgba(11, 115, 70, 1) 60%
-    );
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
   }
 
   &__video {
