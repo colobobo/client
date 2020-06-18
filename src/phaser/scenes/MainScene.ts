@@ -119,6 +119,32 @@ export default class MainScene extends Phaser.Scene {
     this.areaDevices = areaDevices;
   }
 
+  // GETTERS
+
+  getPlayerWithPlatformRole(): string {
+    return Object.keys(this.playersRole).find(
+      playerId => this.playersRole[playerId].role === enums.player.Role.platform
+    ) as string;
+  }
+
+  getPlayersWithTrapRole(): string[] {
+    return Object.keys(this.playersRole).filter(
+      playerId => this.playersRole[playerId].role === enums.player.Role.trap
+    );
+  }
+
+  getWaitingMembers(): RoundMembersArray {
+    return this.roundMembersArray.filter(
+      roundMember => roundMember.status === enums.member.Status.waiting
+    );
+  }
+
+  getArrivedMembers(): RoundMembersArray {
+    return this.roundMembersArray.filter(
+      roundMember => roundMember.status === enums.member.Status.arrived
+    );
+  }
+
   // ########## FUNCTIONS ##########
 
   // ---------- PRELOAD ----------
@@ -157,20 +183,6 @@ export default class MainScene extends Phaser.Scene {
       atlasURL: "assets/spritesheets/atlas.json",
       path: "assets/spritesheets/"
     });
-  }
-
-  // GETTERS
-
-  getPlayerWithPlatformRole(): string {
-    return Object.keys(this.playersRole).find(
-      playerId => this.playersRole[playerId].role === enums.player.Role.platform
-    ) as string;
-  }
-
-  getPlayersWithTrapRole(): string[] {
-    return Object.keys(this.playersRole).filter(
-      playerId => this.playersRole[playerId].role === enums.player.Role.trap
-    );
   }
 
   // ---------- CREATE ----------
@@ -414,9 +426,7 @@ export default class MainScene extends Phaser.Scene {
   // ---------- UPDATE ----------
 
   newMemberSpawn() {
-    const waitingMember = this.roundMembersArray.filter(
-      roundMember => roundMember.status === enums.member.Status.waiting
-    );
+    const waitingMember = this.getWaitingMembers();
     // if were are waiting member and my role is plateform
     if (
       waitingMember[0] &&
@@ -437,6 +447,7 @@ export default class MainScene extends Phaser.Scene {
   onMemberSpawned(member: Member) {
     console.log("on member spawned", member.id);
     member.spawned();
+    this.platforms.start?.animateMemberSpawned();
   }
 
   // member : trapped
@@ -446,11 +457,9 @@ export default class MainScene extends Phaser.Scene {
 
     member.trapped();
 
-    const waitingMember = this.roundMembersArray.filter(
-      roundMember => roundMember.status === enums.member.Status.waiting
-    );
+    const waitingMembers = this.getWaitingMembers();
     // TODO: refacto
-    if (waitingMember.length === 1) {
+    if (waitingMembers.length === 1) {
       setTimeout(() => {
         this.newMemberSpawn();
       }, 800);
@@ -462,6 +471,7 @@ export default class MainScene extends Phaser.Scene {
   onMemberArrived(member: Member) {
     console.log("on member arrived", member.id);
     member.arrived();
+    this.platforms.finish?.animateMemberArrived();
   }
 
   // member : moved
@@ -524,6 +534,12 @@ export default class MainScene extends Phaser.Scene {
     this.scene.restart();
   }
 
+  // ---------- START ----------
+
+  start() {
+    // TODO
+  }
+
   // ########## PHASER SCENE FUNCTIONS ##########
 
   preload() {
@@ -556,7 +572,9 @@ export default class MainScene extends Phaser.Scene {
       }
     });
 
-    this.newMemberSpawn();
+    setTimeout(() => {
+      this.newMemberSpawn();
+    }, 3000);
 
     this.events.on("destroy", () => {
       console.log("scene destroy");
