@@ -59,18 +59,14 @@ export const slice = createSlice({
     stop: (state: RoundState) => {
       state.isStarted = false;
     },
-    fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
+    end: (state: RoundState, action: PayloadAction<payloads.round.End>) => {
+      state.score = action.payload.data.score;
       state.lives = action.payload.data.lives;
       state.isSuccess = false;
       state.isStarted = false;
-    },
-    success: (
-      state: RoundState,
-      action: PayloadAction<payloads.round.Success>
-    ) => {
-      state.score = action.payload.data.score;
-      state.isSuccess = true;
       state.isStarted = false;
+      state.isSuccess =
+        action.payload.data.endType === enums.round.EndType.success;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
