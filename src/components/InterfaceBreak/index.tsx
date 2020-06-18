@@ -12,10 +12,14 @@ import memberPicture from "../../assets/illustrations/break/man.png";
 import "./index.scss";
 
 interface Props {
-  handleOnClickToggleGameState: (state: boolean) => any;
+  handleOnClickToggleGameState: () => any;
+  showContinue: boolean;
 }
 
-const InterfaceBreak: FC<Props> = ({ handleOnClickToggleGameState }) => {
+const InterfaceBreak: FC<Props> = ({
+  handleOnClickToggleGameState,
+  showContinue
+}) => {
   const { t } = useTranslation();
 
   // handles
@@ -46,12 +50,14 @@ const InterfaceBreak: FC<Props> = ({ handleOnClickToggleGameState }) => {
             alt="Man in break"
           />
           <div className="break__actions">
-            <InterfaceButton
-              onClick={() => handleOnClickToggleGameState(false)}
-              color={Colors.yellow}
-              text={t("break.buttons.resume")}
-              classNames="break__action"
-            />
+            {showContinue && (
+              <InterfaceButton
+                onClick={handleOnClickToggleGameState}
+                color={Colors.yellow}
+                text={t("break.buttons.resume")}
+                classNames="break__action"
+              />
+            )}
             <InterfaceButton
               onClick={handleOnClickLeftRoom}
               color={Colors.blue}
