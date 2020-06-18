@@ -57,6 +57,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   const $scorePanel = useRef<HTMLDivElement>(null);
   const $scoreOverlay = useRef<HTMLDivElement>(null);
+  const $scoreBottom = useRef<HTMLDivElement>(null);
 
   // state
 
@@ -72,6 +73,10 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
   const handleOnNextRoundClick = useCallback(() => {
     setShowMotion(true);
+    gsap.to([$scorePanel.current, $scoreBottom.current], {
+      duration: 0.3,
+      opacity: 0
+    });
   }, []);
 
   const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
@@ -96,6 +101,9 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
       gsap.from($scorePanel.current, {
         duration: 1,
         yPercent: `100`
+      });
+      gsap.to([$scorePanel.current, $scoreBottom.current], {
+        opacity: 1
       });
     } else {
       setShowMotion(false);
@@ -131,6 +139,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
         {isCreator && (
           <div
+            ref={$scoreBottom}
             className="score__bottom"
             style={{
               height: areaMinHeight
@@ -142,11 +151,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
               text={t("score.buttons.next")}
               classNames="score__next"
             />
-            <div
-              className={Classnames("score__animations", {
-                active: !showMotion
-              })}
-            >
+            <div className={Classnames("score__animations")}>
               <SpriteAnimation
                 animationID={
                   isSuccess ? animationId.group_success : animationId.group_fail
