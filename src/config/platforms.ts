@@ -10,7 +10,8 @@ export enum PlatformPosition {
 export enum PlatformAnimationsKey {
   lightIn = "light-in",
   lightOut = "light-out",
-  panel = "panel"
+  panel = "panel",
+  ray = "ray"
 }
 
 // editable plateforms types
@@ -63,6 +64,10 @@ const defaultEditableConfig: EditablePlateformsConfig = {
     [PlatformAnimationsKey.panel]: {
       startFrame: 0,
       endFrame: 12
+    },
+    [PlatformAnimationsKey.ray]: {
+      startFrame: 0,
+      endFrame: 64
     }
   },
   [PlatformPosition.finish]: {
@@ -77,6 +82,10 @@ const defaultEditableConfig: EditablePlateformsConfig = {
     [PlatformAnimationsKey.panel]: {
       startFrame: 0,
       endFrame: 12
+    },
+    [PlatformAnimationsKey.ray]: {
+      startFrame: 0,
+      endFrame: 64
     }
   }
 };
@@ -103,7 +112,10 @@ const getAnimationConfig = (
       prefix = `worlds/jungle/platforms/${position}/`;
       break;
     case PlatformAnimationsKey.panel:
-      prefix = `worlds/all/plateforms/panels/${position}/`;
+      prefix = `worlds/all/platforms/panels/${position}/`;
+      break;
+    case PlatformAnimationsKey.ray:
+      prefix = `worlds/all/platforms/ray/`;
       break;
   }
   return {
@@ -132,6 +144,11 @@ const getPositionConfig = (
     world,
     position,
     PlatformAnimationsKey.panel
+  ),
+  [PlatformAnimationsKey.ray]: getAnimationConfig(
+    world,
+    position,
+    PlatformAnimationsKey.ray
   )
 });
 

@@ -33,6 +33,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
   animationsConfig: PlatformsPositionConfig;
   panelSprite?: Phaser.Physics.Matter.Sprite;
+  raySprite?: Phaser.Physics.Matter.Sprite;
 
   constructor({
     scene,
@@ -93,11 +94,15 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
 
     this.createAnimations();
     this.createPanelSprite();
+    this.createRaySprite();
     this.createSensor();
 
     // TODO : animations test
     this.playAnimation(PlatformAnimationsKey.lightIn);
     this.playAnimation(PlatformAnimationsKey.panel);
+    this.playAnimation(PlatformAnimationsKey.ray);
+
+    console.log(this);
   }
 
   setBodyWithShape() {
@@ -133,6 +138,9 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
       case PlatformAnimationsKey.panel:
         this.panelSprite?.play(animationKey);
         break;
+      case PlatformAnimationsKey.ray:
+        this.raySprite?.play(animationKey);
+        break;
     }
   }
 
@@ -155,6 +163,28 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
 
     this.panelSprite.setScale(this.scale);
     this.panelSprite.setCollidesWith(0);
+  }
+
+  createRaySprite() {
+    const rayFirstFrame = getAnimationFrames(
+      this.scene,
+      this.texture.key,
+      this.animationsConfig[PlatformAnimationsKey.ray]
+    )[0]?.frame as string;
+
+    const center = this.getCenter();
+
+    this.raySprite = this.scene.matter.add.sprite(
+      center.x,
+      center.y,
+      this.texture.key,
+      rayFirstFrame,
+      { isStatic: true }
+    );
+
+    this.raySprite.setScale(this.scale);
+    this.raySprite.setCollidesWith(0);
+    this.raySprite.setDepth(3);
   }
 
   createSensor() {
