@@ -51,15 +51,17 @@ type PlatformsConfig = {
 
 // ====== EDITABLE CONFIG =======
 
+export const platformsTexture = "platforms-texture";
+
 const defaultEditableConfig: EditablePlateformsConfig = {
   [PlatformPosition.start]: {
     [PlatformAnimationsKey.lightIn]: {
       startFrame: 0,
-      endFrame: 63
+      endFrame: 13
     },
     [PlatformAnimationsKey.lightOut]: {
-      startFrame: 0,
-      endFrame: 63
+      startFrame: 13,
+      endFrame: 17
     },
     [PlatformAnimationsKey.panel]: {
       startFrame: 0,
@@ -73,11 +75,11 @@ const defaultEditableConfig: EditablePlateformsConfig = {
   [PlatformPosition.finish]: {
     [PlatformAnimationsKey.lightIn]: {
       startFrame: 0,
-      endFrame: 28
+      endFrame: 26
     },
     [PlatformAnimationsKey.lightOut]: {
-      startFrame: 0,
-      endFrame: 63
+      startFrame: 26,
+      endFrame: 26
     },
     [PlatformAnimationsKey.panel]: {
       startFrame: 0,
@@ -108,21 +110,20 @@ const getAnimationConfig = (
   switch (animationKey) {
     case PlatformAnimationsKey.lightIn:
     case PlatformAnimationsKey.lightOut:
-      // TODO: prefix: `worlds/${world}/platforms/${position}/`,
-      prefix = `worlds/jungle/platforms/${position}/`;
+      prefix = `${world}/${position}/`;
       break;
     case PlatformAnimationsKey.panel:
-      prefix = `worlds/all/platforms/panels/${position}/`;
+      prefix = `common/panels/${position}/`;
       break;
     case PlatformAnimationsKey.ray:
-      prefix = `worlds/all/platforms/ray/`;
+      prefix = `common/ray/`;
       break;
   }
   return {
     ...editableConfigsByWorld[world][position][animationKey],
     animationKey: `${world}_platforms_${position}_${animationKey}`,
     prefix,
-    texture: "spritesheets"
+    texture: platformsTexture
   };
 };
 

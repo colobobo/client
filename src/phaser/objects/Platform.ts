@@ -5,8 +5,8 @@ import { actions } from "../../redux";
 import {
   PlatformAnimationsKey,
   PlatformPosition,
-  PlatformsPositionConfig,
-  PlatformsAnimationConfig
+  PlatformsAnimationConfig,
+  PlatformsPositionConfig
 } from "../../config/platforms";
 
 // utils
@@ -208,6 +208,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   createSensor() {
     if (this.position === PlatformPosition.start) {
       this.createStartSensor();
+      this.createStartLightOutSensor();
     } else if (this.position === PlatformPosition.finish) {
       this.createFinishSensor();
     }
@@ -237,7 +238,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
         const { gameObjectB } = e;
         // if collide with member
         if (gameObjectB instanceof Member) {
-          this.sensor!.setData("isColliding", true);
+          this.sensor!.setData("hasMemberOn", true);
         }
       }
     });
@@ -249,14 +250,58 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
         const { gameObjectB } = e;
         // if collide with member
         if (gameObjectB instanceof Member) {
-          this.sensor!.setData("isColliding", false);
+          this.sensor!.setData("hasMemberOn", false);
           // wait 0.5 second
           setTimeout(() => {
-            // if sensor not colliding currently : new member spawn
-            if (!this.sensor!.getData("isColliding")) {
+            // if sensor not currently colliding with member : new member spawn
+            if (!this.sensor!.getData("hasMemberOn")) {
               this.scene.newMemberSpawn();
             }
           }, 500);
+        }
+      }
+    });
+  }
+
+  // START LIGHTOUT SENSOR
+
+  createStartLightOutSensor() {
+    const lightOutSensor = this.scene.matter.add.gameObject(
+      this.scene.add.rectangle(
+        this.x,
+        (this.body as MatterJS.BodyType).bounds.min.y - 2 * this.pixelRatio,
+        this.displayWidth / 4,
+        4 * this.pixelRatio
+      ),
+      {
+        isSensor: true,
+        isStatic: true,
+        ignorePointer: true
+      }
+    );
+
+    // listen collisions end
+    this.scene.matterCollision.addOnCollideEnd({
+      objectA: lightOutSensor,
+      callback: (e: any) => {
+        const { gameObjectB } = e;
+        // if collide end with member
+        if (gameObjectB instanceof Member) {
+          if (
+            this.anims.currentAnim.key ===
+              this.animationsConfig[PlatformAnimationsKey.lightIn]
+                .animationKey &&
+            this.anims.isPlaying
+          ) {
+            this.anims.chain(
+              this.animationsConfig[PlatformAnimationsKey.lightOut].animationKey
+            );
+          } else if (
+            this.anims.currentAnim.key !==
+            this.animationsConfig[PlatformAnimationsKey.lightOut].animationKey
+          ) {
+            this.playAnimation(PlatformAnimationsKey.lightOut, true);
+          }
         }
       }
     });
@@ -317,14 +362,17 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     });
   }
 
-  playAnimation(platformAnimationKey: PlatformAnimationsKey) {
+  playAnimation(
+    platformAnimationKey: PlatformAnimationsKey,
+    ignoreIfPlaying: boolean = false
+  ) {
     const animationKey = this.animationsConfig[platformAnimationKey]
       .animationKey;
 
     switch (platformAnimationKey) {
       case PlatformAnimationsKey.lightIn:
       case PlatformAnimationsKey.lightOut:
-        this.play(animationKey);
+        this.play(animationKey, ignoreIfPlaying);
         break;
       case PlatformAnimationsKey.panel:
         this.panelSprite?.play(animationKey);

@@ -1,7 +1,7 @@
 import * as Phaser from "phaser";
 import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
 import * as config from "../../config";
-import { PlatformPosition } from "../../config/platforms";
+import { PlatformPosition, platformsTexture } from "../../config/platforms";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
@@ -178,10 +178,18 @@ export default class MainScene extends Phaser.Scene {
   }
 
   loadSpritesSheets() {
+    // test
     this.load.multiatlas({
-      key: "spritesheets",
-      atlasURL: "assets/spritesheets/atlas.json",
+      key: "spritesheets-test",
+      atlasURL: "assets/spritesheets/atlas-test.json",
       path: "assets/spritesheets/"
+    });
+
+    // plateforms
+    this.load.multiatlas({
+      key: platformsTexture,
+      atlasURL: "assets/spritesheets/platforms/atlas.json",
+      path: "assets/spritesheets/platforms/"
     });
   }
 
@@ -276,28 +284,26 @@ export default class MainScene extends Phaser.Scene {
 
     // PLATFORMS
 
-    const leftRightData = {
+    const leftRightPosition = {
       left: {
-        x: (device.offsetX + device.width * 0.2) * this.pixelRatio,
-        texture: config.worlds[this.world].platforms.left.key
+        x: (device.offsetX + device.width * 0.2) * this.pixelRatio
       },
       right: {
-        x: (device.offsetX + device.width * 0.8) * this.pixelRatio,
-        texture: config.worlds[this.world].platforms.right.key
+        x: (device.offsetX + device.width * 0.8) * this.pixelRatio
       }
     };
 
-    const startFinishData = {
+    const startFinishPosition = {
       start:
         (role.properties as PlayerRolePropertiesPlateform).direction ===
         enums.round.Direction.leftToRight
-          ? leftRightData.right
-          : leftRightData.left,
+          ? leftRightPosition.left
+          : leftRightPosition.right,
       finish:
         (role.properties as PlayerRolePropertiesPlateform).direction ===
         enums.round.Direction.leftToRight
-          ? leftRightData.left
-          : leftRightData.right
+          ? leftRightPosition.right
+          : leftRightPosition.left
     };
 
     // start
@@ -305,8 +311,8 @@ export default class MainScene extends Phaser.Scene {
     this.platforms.start = new Platform({
       scene: this,
       position: PlatformPosition.start,
-      x: startFinishData.start.x,
-      texture: "spritesheets",
+      x: startFinishPosition.start.x,
+      texture: platformsTexture,
       options: { isStatic: true },
       pixelRatio: this.pixelRatio,
       animationsConfig: config.getPlatFormsConfig(this.world).start
@@ -317,8 +323,8 @@ export default class MainScene extends Phaser.Scene {
     this.platforms.finish = new Platform({
       scene: this,
       position: PlatformPosition.finish,
-      x: startFinishData.finish.x,
-      texture: "spritesheets",
+      x: startFinishPosition.finish.x,
+      texture: platformsTexture,
       options: { isStatic: true },
       pixelRatio: this.pixelRatio,
       animationsConfig: config.getPlatFormsConfig(this.world).finish
@@ -359,7 +365,7 @@ export default class MainScene extends Phaser.Scene {
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.pixelRatio,
         y: 0,
-        texture: "spritesheets",
+        texture: "spritesheets-test",
         animationKey: "anim-snake",
         options: { isStatic: true },
         collisionEnabled: false,
@@ -458,10 +464,15 @@ export default class MainScene extends Phaser.Scene {
     member.trapped();
 
     const waitingMembers = this.getWaitingMembers();
+
+    this.platforms.start?.updateCounterText();
+
     // TODO: refacto
     if (waitingMembers.length === 1) {
       setTimeout(() => {
-        this.newMemberSpawn();
+        if (!this.platforms.start?.sensor!.getData("hasMemberOn")) {
+          this.newMemberSpawn();
+        }
       }, 800);
     }
   }
