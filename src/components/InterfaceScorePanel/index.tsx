@@ -40,8 +40,7 @@ const InterfaceScorePanel: FC<Props> = ({
 
   const score = useTypedSelector(selectors.round.selectScore);
   const lives = useTypedSelector(selectors.round.selectLives);
-  /* TO REPLACE BY REAL LIVES FROM STORE -> WAINTING */
-  const totalLives = 4;
+  const totalLives = useTypedSelector(selectors.game.selectLives);
 
   // refs
   const $scoreLives = useRef<HTMLDivElement>(null);
@@ -79,7 +78,7 @@ const InterfaceScorePanel: FC<Props> = ({
       livesArray.push(life);
     }
     return livesArray;
-  }, [isSuccess, lives, playSpritesheet]);
+  }, [isSuccess, lives, playSpritesheet, totalLives]);
 
   // use effects
 

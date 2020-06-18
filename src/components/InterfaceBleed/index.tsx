@@ -16,8 +16,8 @@ export enum BleedPosition {
 
 export enum BleedColor {
   scoreBottom = "#64ce55",
-  preambleLeft = "#6CE05B",
-  preambleRight = "#0B7346"
+  preambleLeft = "#6fd462",
+  preambleRight = "#6fd462"
 }
 
 interface Props {

@@ -4,7 +4,8 @@ import { gsap } from "gsap";
 
 // store
 import { useDispatch } from "react-redux";
-import { actions } from "../../redux";
+import { actions, selectors } from "../../redux";
+import { useTypedSelector } from "../../redux/store";
 
 // components
 import Area from "../Area";
@@ -41,10 +42,11 @@ interface Props {
 
 const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
   const dispatch = useDispatch();
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   // refs
   const $motionVideo = useRef<HTMLVideoElement>(null);
-  const $scoreOverlay = useRef<HTMLDivElement>(null);
+  const $motionOverlay = useRef<HTMLDivElement>(null);
 
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
@@ -52,14 +54,16 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
 
   const handleOnVideoEnded = useCallback(() => {
     gsap
-      .to($scoreOverlay.current, {
-        duration: 0.5,
+      .to($motionOverlay.current, {
+        duration: 0.2,
         opacity: 1
       })
       .then(() => {
-        dispatch(actions.webSocket.emit.transition.ended());
+        if (isCreator) {
+          dispatch(actions.webSocket.emit.transition.ended());
+        }
       });
-  }, [dispatch]);
+  }, [dispatch, isCreator]);
 
   const handleOnVideoLoaded = useCallback(() => {
     setVideoIsLoaded(true);
@@ -116,7 +120,7 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
           )}
         </Area>
         {isPlayed && (
-          <div ref={$scoreOverlay} className="motion-shared__overlay"></div>
+          <div ref={$motionOverlay} className="motion-shared__overlay"></div>
         )}
       </div>
     </div>
