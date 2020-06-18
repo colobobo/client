@@ -17,19 +17,21 @@ interface Props {
 
 const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
   // selectors
-  const duration = useTypedSelector(selectors.round.selectDuration);
+  const endRoundTimeStamp = useTypedSelector(
+    selectors.round.selectEndRoundTimeStamp
+  );
 
   // handles
 
-  const [count, setCount] = useState(duration);
+  const [count, setCount] = useState(endRoundTimeStamp);
 
   const tick = useCallback(() => {
     setCount(prevState => prevState - 100);
   }, []);
 
   useEffect(() => {
-    setCount(duration);
-  }, [duration]);
+    setCount(endRoundTimeStamp);
+  }, [endRoundTimeStamp]);
 
   useEffect(() => {
     if (!isRoundStarted) {

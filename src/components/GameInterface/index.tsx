@@ -1,4 +1,7 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { enums } from "@colobobo/library";
+import { actions, selectors } from "../../redux";
 
 // components
 import InterfaceBreak from "../../components/InterfaceBreak";
@@ -17,31 +20,44 @@ interface Props {
 }
 
 const GameInterface: FC<Props> = ({ isRoundStarted, colorTheme }) => {
-  // states
+  const dispatch = useDispatch();
+  const [hasClickedOnPause, setHasClickedOnPause] = useState(false);
 
-  const [gamePaused, setGamePaused] = useState<boolean>(false);
+  // Selectors
+  const roundStatus = useSelector(selectors.round.selectStatus);
 
-  //handles
+  // Handles
+  const handleOnClickToggleGameState = useCallback(() => {
+    const newStatus =
+      roundStatus === enums.round.Status.play
+        ? enums.round.Status.pause
+        : enums.round.Status.play;
 
-  /* WAITING FOR REAL EVENT TO EMIT TO ALL PLAYERS IN ROOM */
-  const handleOnClickToggleGameState = useCallback(state => {
-    setGamePaused(state);
-  }, []);
+    setHasClickedOnPause(true);
+    dispatch(
+      actions.webSocket.emit.round.statusUpdate({
+        status: newStatus
+      })
+    );
+  }, [dispatch, roundStatus]);
 
-  // return
+  useEffect(() => {
+    if (roundStatus === enums.round.Status.play) setHasClickedOnPause(false);
+  }, [roundStatus]);
 
   return (
     <div className="game-interface">
       <InterfaceTimer isRoundStarted={isRoundStarted} color={colorTheme} />
       <InterfaceButton
-        onClick={() => handleOnClickToggleGameState(true)}
+        onClick={handleOnClickToggleGameState}
         color={colorTheme}
         classNames="game-interface__pause button--round"
       >
         <PauseSVG />
       </InterfaceButton>
-      {gamePaused && (
+      {roundStatus === enums.round.Status.pause && (
         <InterfaceBreak
+          showContinue={hasClickedOnPause}
           handleOnClickToggleGameState={handleOnClickToggleGameState}
         />
       )}

@@ -6,6 +6,10 @@ export const playerReady: EmitAction<payloads.round.PlayerReady> = createEmitAct
   events.round.playerReady
 );
 
+export const statusUpdate: EmitAction<payloads.round.StatusUpdate> = createEmitAction(
+  events.round.statusUpdate
+);
+
 export const memberSpawned: EmitAction<payloads.round.MemberSpawned> = createEmitAction(
   events.round.memberSpawned
 );
