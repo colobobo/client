@@ -13,6 +13,8 @@ declare module "phaser-matter-collision-plugin";
 
 declare module "react-responsive-spritesheet";
 
+declare module "react-odometerjs";
+
 declare module "*.bmp" {
   const src: string;
   export default src;

@@ -52,6 +52,7 @@ export const slice = createSlice({
       state.lives = action.payload.data.lives;
       state.isSuccess = false;
       state.isStarted = false;
+      state.score = state.score + 150;
     },
     success: (
       state: RoundState,

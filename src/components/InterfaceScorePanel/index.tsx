@@ -1,6 +1,7 @@
-import React, { FC, useMemo, useEffect, useRef } from "react";
+import React, { FC, useMemo, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
+import Odometer from "react-odometerjs";
 
 // store
 import { useTypedSelector } from "../../redux/store";
@@ -46,6 +47,8 @@ const InterfaceScorePanel: FC<Props> = ({
   const $scoreLives = useRef<HTMLDivElement>(null);
   const $scoreRoundTotal = useRef<HTMLDivElement>(null);
 
+  const [newScore, setNewScore] = useState(0);
+
   const livesItem = useMemo(() => {
     let livesArray = [];
     const lostLives = totalLives - lives;
@@ -81,6 +84,12 @@ const InterfaceScorePanel: FC<Props> = ({
   // use effects
 
   useEffect(() => {
+    if (playSpritesheet) {
+      setNewScore(score);
+    }
+  }, [playSpritesheet, score]);
+
+  useEffect(() => {
     if (isScoreActive) {
       const timeline = gsap.timeline({
         delay: defaultDelay
@@ -106,9 +115,9 @@ const InterfaceScorePanel: FC<Props> = ({
     <div className="score-panel">
       <div className="score-panel__container">
         <div className="score-panel__content">
-          <p className="score-panel__score">
-            {score.toString().padStart(4, "0")}
-          </p>
+          <div className="score-panel__score">
+            <Odometer format="d" duration={1000} value={newScore} />
+          </div>
           <div ref={$scoreLives} className="score-panel__lives">
             {livesItem}
           </div>
