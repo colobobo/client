@@ -64,8 +64,6 @@ export const slice = createSlice({
     end: (state: RoundState, action: PayloadAction<payloads.round.End>) => {
       state.score = action.payload.data.score;
       state.lives = action.payload.data.lives;
-      state.isSuccess = false;
-      state.isFail = false;
       state.isStarted = false;
       state.isSuccess =
         action.payload.data.endType === enums.round.EndType.success;
