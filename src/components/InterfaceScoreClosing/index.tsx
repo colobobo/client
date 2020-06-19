@@ -7,7 +7,8 @@ import "./index.scss";
 
 const InterfaceScoreClosing: FC = () => {
   const { t } = useTranslation();
-  const repeats = [1, 3, 12, 36];
+  /* TODO : IN V2 ADD MORE REPEAT IN FULL SCREEN */
+  const repeats = [1, 3];
   const repeatIndex = Math.floor(Math.random() * repeats.length);
   const currentRepeat = repeats[repeatIndex];
 

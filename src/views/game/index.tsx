@@ -1,11 +1,13 @@
 import React, { FC } from "react";
-
-// assets
-import Round from "./round";
-import Transition from "./transition";
 import { useSelector } from "react-redux";
 import { selectors } from "../../redux";
 import { enums } from "@colobobo/library";
+
+// components
+import Round from "./round";
+import Transition from "./transition";
+
+// style
 import "./index.scss";
 
 const Game: FC = () => {

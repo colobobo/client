@@ -47,6 +47,12 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   // effect
 
   useEffect(() => {
+    if (isSuccess) {
+      setShowScore(true);
+    }
+  }, [isSuccess]);
+
+  useEffect(() => {
     if (isTansitionActive) {
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
     } else {
