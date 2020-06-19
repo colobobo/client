@@ -1,4 +1,5 @@
-import React, { FC, useEffect, useState, useMemo, useCallback } from "react";
+import React, { FC, useEffect, useMemo, useRef, useState } from "react";
+import gsap, { Linear } from "gsap";
 
 // store
 import { selectors } from "../../redux";
@@ -11,44 +12,37 @@ import { Colors } from "../InterfaceButton";
 import "./index.scss";
 
 interface Props {
-  isRoundStarted: boolean;
   color: Colors;
 }
 
-const GameTimer: FC<Props> = ({ isRoundStarted, color }) => {
+const GameTimer: FC<Props> = ({ color }) => {
   // selectors
-  const duration = useTypedSelector(selectors.round.selectDuration);
+  const endRoundTimeStamp = useTypedSelector(
+    selectors.round.selectEndRoundTimeStamp
+  );
 
-  // handles
-
-  const [count, setCount] = useState(duration);
-
-  const tick = useCallback(() => {
-    setCount(prevState => prevState - 100);
-  }, []);
+  const duration = useMemo(() => endRoundTimeStamp - new Date().getTime(), [
+    endRoundTimeStamp
+  ]);
+  const [remainingTime, setRemainingTime] = useState(duration);
+  const $animatedTimerValue = useRef({ value: duration });
 
   useEffect(() => {
-    setCount(duration);
+    gsap.to($animatedTimerValue.current, {
+      ease: Linear.easeNone,
+      value: 0,
+      duration: duration / 1000,
+      onUpdate: () => setRemainingTime($animatedTimerValue.current.value)
+    });
   }, [duration]);
 
-  useEffect(() => {
-    if (!isRoundStarted) {
-      return;
-    }
-
-    let id = setInterval(tick, 100);
-    return () => clearInterval(id);
-  }, [isRoundStarted, tick]);
+  const minutes = useMemo(() => {
+    return Math.floor(remainingTime / 60000);
+  }, [remainingTime]);
 
   const seconds = useMemo(() => {
-    return Math.floor((count % 60000) / 1000);
-  }, [count]);
-
-  const minutes = useMemo(() => {
-    return Math.floor(count / 60000);
-  }, [count]);
-
-  // return
+    return Math.floor((remainingTime % 60000) / 1000);
+  }, [remainingTime]);
 
   return (
     <div className={`timer timer--${color}`}>

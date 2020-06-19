@@ -74,10 +74,9 @@ export default class Member extends Phaser.Physics.Matter.Image {
   }
 
   setPositionToStartPlatform() {
-    this.setX(this.scene.plateforms.start!.x);
+    this.setX(this.scene.platforms.start!.x);
     this.setY(
-      this.scene.plateforms.start!.y -
-        this.scene.plateforms.start!.displayHeight / 2 -
+      (this.scene.platforms.start!.body as MatterJS.BodyType).bounds.min.y -
         this.baseHeight / 2
     );
   }
@@ -147,10 +146,9 @@ export default class Member extends Phaser.Physics.Matter.Image {
     this.scene.tweens.add({
       targets: this,
       alpha: 0,
-      x: this.scene.plateforms.finish!.x,
+      x: this.scene.platforms.finish!.x,
       y:
-        this.scene.plateforms.finish!.y -
-        this.scene.plateforms.finish!.displayHeight / 2 -
+        (this.scene.platforms.finish!.body as MatterJS.BodyType).bounds.min.y -
         this.displayHeight / 2,
       scale: 0.2,
       duration: 600,

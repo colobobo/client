@@ -12,17 +12,17 @@ export const start = createSubscribeAction(
   RoundActions.start.type
 );
 
+export const statusUpdateSuccess = createSubscribeAction(
+  events.round.statusUpdateSuccess,
+  RoundActions.statusUpdateSuccess.type
+);
+
 export const tick = createSubscribeAction(
   events.round.tick,
   RoundActions.tick.type
 );
 
-export const fail = createSubscribeAction(
-  events.round.fail,
-  RoundActions.fail.type
-);
-
-export const Success = createSubscribeAction(
-  events.round.success,
-  RoundActions.success.type
+export const end = createSubscribeAction(
+  events.round.end,
+  RoundActions.end.type
 );

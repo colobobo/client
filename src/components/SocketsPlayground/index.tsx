@@ -1,6 +1,7 @@
 import React, { FC, useCallback, useRef } from "react";
-import { actions } from "../../redux";
 import { useDispatch } from "react-redux";
+import { enums } from "@colobobo/library";
+import { actions } from "../../redux";
 
 import "./styles.scss";
 
@@ -24,6 +25,22 @@ const SocketsPlayground: FC<SocketsPlaygroundProps> = () => {
     );
   }, [dispatch, joinInput]);
 
+  const handleRoundPlay = useCallback(() => {
+    dispatch(
+      actions.webSocket.emit.round.statusUpdate({
+        status: enums.round.Status.play
+      })
+    );
+  }, [dispatch]);
+
+  const handleRoundPause = useCallback(() => {
+    dispatch(
+      actions.webSocket.emit.round.statusUpdate({
+        status: enums.round.Status.pause
+      })
+    );
+  }, [dispatch]);
+
   return (
     <div className="sockets-playground">
       <div className="sockets-playground__buttons">
@@ -32,6 +49,8 @@ const SocketsPlayground: FC<SocketsPlaygroundProps> = () => {
           <input type="text" ref={joinInput} />
           <button onClick={handleRoomJoin}>Join room</button>
         </div>
+        <button onClick={handleRoundPlay}>Play round</button>
+        <button onClick={handleRoundPause}>Pause round</button>
       </div>
     </div>
   );

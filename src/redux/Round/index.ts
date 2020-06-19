@@ -6,7 +6,9 @@ import { payloads, enums, Members, PlayerRoles } from "@colobobo/library";
 export interface RoundState {
   id: number;
   isStarted: boolean;
+  status: enums.round.Status;
   duration: number;
+  endRoundTimeStamp: number;
   world: enums.World;
   tick: number;
   members: Members;
@@ -35,6 +37,7 @@ export const slice = createSlice({
         playerRoles
       } = action.payload.data;
       state.id = id;
+      state.status = enums.round.Status.play;
       state.duration = duration;
       state.world = world;
       state.tick = tick;
@@ -44,22 +47,26 @@ export const slice = createSlice({
     },
     start: (state: RoundState, action: PayloadAction<payloads.round.Start>) => {
       state.isStarted = true;
+      state.endRoundTimeStamp = action.payload.data.endRoundTimeStamp;
+    },
+    statusUpdateSuccess: (
+      state: RoundState,
+      action: PayloadAction<payloads.round.StatusUpdateSuccess>
+    ) => {
+      state.status = action.payload.data.status;
+      state.endRoundTimeStamp = action.payload.data.endRoundTimeStamp;
     },
     stop: (state: RoundState) => {
       state.isStarted = false;
     },
-    fail: (state: RoundState, action: PayloadAction<payloads.round.Fail>) => {
+    end: (state: RoundState, action: PayloadAction<payloads.round.End>) => {
+      state.score = action.payload.data.score;
       state.lives = action.payload.data.lives;
       state.isSuccess = false;
       state.isStarted = false;
-    },
-    success: (
-      state: RoundState,
-      action: PayloadAction<payloads.round.Success>
-    ) => {
-      state.score = action.payload.data.score;
-      state.isSuccess = true;
       state.isStarted = false;
+      state.isSuccess =
+        action.payload.data.endType === enums.round.EndType.success;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
@@ -71,8 +78,11 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.round;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectStatus = (state: RootState) => getRoot(state).status;
 const selectId = (state: RootState) => getRoot(state).id;
 const selectDuration = (state: RootState) => getRoot(state).duration;
+const selectEndRoundTimeStamp = (state: RootState) =>
+  getRoot(state).endRoundTimeStamp;
 const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
 const selectLives = (state: RootState) => getRoot(state).lives;
@@ -99,7 +109,9 @@ export const selectors = {
   selectTick,
   selectId,
   selectIsStarted,
+  selectStatus,
   selectDuration,
+  selectEndRoundTimeStamp,
   selectWorld,
   selectMember,
   selectMembers,
