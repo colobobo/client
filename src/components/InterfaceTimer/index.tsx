@@ -33,11 +33,20 @@ const GameTimer: FC<Props> = ({ color }) => {
     endRoundTimeStamp
   ]);
   const [remainingTime, setRemainingTime] = useState(duration);
-  const $timer = useRef<HTMLDivElement>(null);
+  const $timerGlow = useRef<HTMLDivElement>(null);
   const $animatedTimerValue = useRef({ value: duration });
-  const endCap = 6000;
+  const $glowTween = useRef<GSAPTimeline | null>(null);
+  const endCap = 5000;
 
   const handleAnimateTimerUpdate = useCallback(() => {
+    const glowTweenProgress = gsap.utils.mapRange(
+      endCap,
+      0,
+      0,
+      1,
+      gsap.utils.clamp(0, endCap, $animatedTimerValue.current.value)
+    );
+    $glowTween.current?.progress(glowTweenProgress);
     setRemainingTime($animatedTimerValue.current.value);
   }, []);
 
@@ -50,22 +59,33 @@ const GameTimer: FC<Props> = ({ color }) => {
     });
   }, [duration, handleAnimateTimerUpdate]);
 
+  useEffect(() => {
+    $glowTween.current = gsap.timeline({ paused: true });
+
+    $glowTween.current.to($timerGlow.current, {
+      scale: 1,
+      opacity: 0.6,
+      repeat: 10,
+      yoyo: true
+    });
+  }, []);
+
   const minutes = useMemo(() => {
     return Math.floor(remainingTime / 60000);
   }, [remainingTime]);
 
   const seconds = useMemo(() => {
-    return Math.floor((remainingTime % 60000) / 1000);
+    return Math.ceil((remainingTime % 60000) / 1000);
   }, [remainingTime]);
 
   return (
     <div
-      ref={$timer}
       className={Classnames(`timer`, `timer--${color}`, {
         end: $animatedTimerValue.current.value < endCap
       })}
     >
       <div className="timer__container">
+        <div ref={$timerGlow} className="timer__glow"></div>
         <div className="timer__content">
           {minutes.toString().padStart(1, "0")}:
           {seconds.toString().padStart(2, "0")}
