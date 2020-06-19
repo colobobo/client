@@ -1,5 +1,4 @@
 import { enums } from "@colobobo/library";
-import { worlds } from "./index";
 
 type EditableTrapsAnimationConfig = {
   startFrame: number;
@@ -12,10 +11,10 @@ type GeneratedTrapsAnimationConfig = {
   prefix: string;
 };
 
-type TrapsAnimationConfig = EditableTrapsAnimationConfig &
+export type TrapsAnimationConfig = EditableTrapsAnimationConfig &
   GeneratedTrapsAnimationConfig;
 
-type TrapsConfigsByWorlds = {
+export type TrapsConfigsByWorlds = {
   [enums.World.desert]: {
     [key in enums.traps.Desert]: TrapsAnimationConfig;
   };
@@ -30,6 +29,8 @@ type TrapsConfigsByWorlds = {
   };
 };
 
+export const getTrapsTexture = (world: enums.World) => `texture-traps-${world}`;
+
 const getGeneratedConfig = (
   world: enums.World,
   trapName: enums.traps.All
@@ -37,7 +38,7 @@ const getGeneratedConfig = (
   return {
     prefix: `${world}/${trapName}/`,
     animationKey: `traps_${world}_${trapName}`,
-    texture: `texture-traps-${world}`
+    texture: getTrapsTexture(world)
   };
 };
 
