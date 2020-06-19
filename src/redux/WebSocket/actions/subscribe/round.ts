@@ -22,12 +22,7 @@ export const tick = createSubscribeAction(
   RoundActions.tick.type
 );
 
-export const fail = createSubscribeAction(
-  events.round.fail,
-  RoundActions.fail.type
-);
-
-export const Success = createSubscribeAction(
-  events.round.success,
-  RoundActions.success.type
+export const end = createSubscribeAction(
+  events.round.end,
+  RoundActions.end.type
 );
