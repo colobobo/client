@@ -1,0 +1,9875 @@
+{
+	"textures": [
+		{
+			"image": "texture-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1080
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1017,
+						"h": 1080
+					}
+				},
+				{
+					"filename": "river/liana/00248",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1080
+					},
+					"frame": {
+						"x": 1,
+						"y": 1083,
+						"w": 1017,
+						"h": 1080
+					}
+				},
+				{
+					"filename": "river/liana/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1079
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 1017,
+						"h": 1079
+					}
+				},
+				{
+					"filename": "river/liana/00115",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1079
+					},
+					"frame": {
+						"x": 1,
+						"y": 2165,
+						"w": 1017,
+						"h": 1079
+					}
+				},
+				{
+					"filename": "river/liana/00278",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1078
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1082,
+						"w": 1017,
+						"h": 1078
+					}
+				},
+				{
+					"filename": "river/liana/00209",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1077
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1,
+						"w": 1017,
+						"h": 1077
+					}
+				},
+				{
+					"filename": "river/liana/00208",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1076
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2162,
+						"w": 1017,
+						"h": 1076
+					}
+				},
+				{
+					"filename": "river/liana/00114",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1074
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1080,
+						"w": 1017,
+						"h": 1074
+					}
+				},
+				{
+					"filename": "river/liana/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1068
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1,
+						"w": 1017,
+						"h": 1068
+					}
+				},
+				{
+					"filename": "river/liana/00247",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1062
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2156,
+						"w": 1017,
+						"h": 1062
+					}
+				},
+				{
+					"filename": "river/liana/00249",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1060
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1071,
+						"w": 1017,
+						"h": 1060
+					}
+				},
+				{
+					"filename": "river/liana/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1058
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2133,
+						"w": 1017,
+						"h": 1058
+					}
+				},
+				{
+					"filename": "river/liana/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 902
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3193,
+						"w": 1017,
+						"h": 902
+					}
+				},
+				{
+					"filename": "river/liana/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 869
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3220,
+						"w": 1017,
+						"h": 869
+					}
+				},
+				{
+					"filename": "river/liana/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 853
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3240,
+						"w": 1017,
+						"h": 853
+					}
+				},
+				{
+					"filename": "river/liana/00242",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 847
+					},
+					"frame": {
+						"x": 1,
+						"y": 3246,
+						"w": 1017,
+						"h": 847
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4087
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 1044,
+						"h": 515
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1044,
+						"h": 515
+					}
+				},
+				{
+					"filename": "river/liana/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 1043,
+						"h": 546
+					},
+					"frame": {
+						"x": 1047,
+						"y": 1,
+						"w": 1043,
+						"h": 546
+					}
+				},
+				{
+					"filename": "river/liana/00284",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 1042,
+						"h": 553
+					},
+					"frame": {
+						"x": 2092,
+						"y": 1,
+						"w": 1042,
+						"h": 553
+					}
+				},
+				{
+					"filename": "river/fish/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 455,
+						"y": 658,
+						"w": 528,
+						"h": 874
+					},
+					"frame": {
+						"x": 3136,
+						"y": 1,
+						"w": 528,
+						"h": 874
+					}
+				},
+				{
+					"filename": "river/fish/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 573,
+						"y": 751,
+						"w": 387,
+						"h": 794
+					},
+					"frame": {
+						"x": 3666,
+						"y": 1,
+						"w": 387,
+						"h": 794
+					}
+				},
+				{
+					"filename": "river/liana/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 1026,
+						"h": 414
+					},
+					"frame": {
+						"x": 1,
+						"y": 518,
+						"w": 1026,
+						"h": 414
+					}
+				},
+				{
+					"filename": "river/liana/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 1026,
+						"h": 415
+					},
+					"frame": {
+						"x": 1029,
+						"y": 549,
+						"w": 1026,
+						"h": 415
+					}
+				},
+				{
+					"filename": "river/liana/00282",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 1026,
+						"h": 668
+					},
+					"frame": {
+						"x": 2057,
+						"y": 556,
+						"w": 1026,
+						"h": 668
+					}
+				},
+				{
+					"filename": "river/liana/00299",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 1026,
+						"h": 415
+					},
+					"frame": {
+						"x": 1,
+						"y": 934,
+						"w": 1026,
+						"h": 415
+					}
+				},
+				{
+					"filename": "river/liana/00300",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 0,
+						"w": 1026,
+						"h": 414
+					},
+					"frame": {
+						"x": 1029,
+						"y": 966,
+						"w": 1026,
+						"h": 414
+					}
+				},
+				{
+					"filename": "river/liana/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 0,
+						"w": 1025,
+						"h": 413
+					},
+					"frame": {
+						"x": 2057,
+						"y": 1226,
+						"w": 1025,
+						"h": 413
+					}
+				},
+				{
+					"filename": "river/liana/00117",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 986
+					},
+					"frame": {
+						"x": 1,
+						"y": 1351,
+						"w": 1017,
+						"h": 986
+					}
+				},
+				{
+					"filename": "river/liana/00206",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 973
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1382,
+						"w": 1017,
+						"h": 973
+					}
+				},
+				{
+					"filename": "river/liana/00118",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 904
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1641,
+						"w": 1017,
+						"h": 904
+					}
+				},
+				{
+					"filename": "river/liana/00131",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 437
+					},
+					"frame": {
+						"x": 1,
+						"y": 2339,
+						"w": 1017,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00132",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 437
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2357,
+						"w": 1017,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00133",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 437
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2547,
+						"w": 1017,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00207",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1038
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1641,
+						"w": 1017,
+						"h": 1038
+					}
+				},
+				{
+					"filename": "river/liana/00134",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 436
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2681,
+						"w": 1017,
+						"h": 436
+					}
+				},
+				{
+					"filename": "river/liana/00135",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 436
+					},
+					"frame": {
+						"x": 1,
+						"y": 2778,
+						"w": 1017,
+						"h": 436
+					}
+				},
+				{
+					"filename": "river/liana/00136",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 435
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2796,
+						"w": 1017,
+						"h": 435
+					}
+				},
+				{
+					"filename": "river/liana/00137",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 435
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2986,
+						"w": 1017,
+						"h": 435
+					}
+				},
+				{
+					"filename": "river/liana/00138",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3119,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00139",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 3216,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00140",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3233,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00141",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3423,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00142",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00143",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00144",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00145",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00146",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00147",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00148",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00149",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00150",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00151",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00152",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00153",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00154",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00155",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00156",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00157",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00158",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00159",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00160",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00161",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00162",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00163",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00181",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3555,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00164",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 3652,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3669,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1115,
+						"w": 458,
+						"h": 291
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3669,
+						"w": 458,
+						"h": 291
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1119,
+						"w": 458,
+						"h": 287
+					},
+					"frame": {
+						"x": 3085,
+						"y": 877,
+						"w": 458,
+						"h": 287
+					}
+				},
+				{
+					"filename": "river/fish/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 1456,
+						"w": 306,
+						"h": 74
+					},
+					"frame": {
+						"x": 3666,
+						"y": 797,
+						"w": 306,
+						"h": 74
+					}
+				},
+				{
+					"filename": "river/fish/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 128,
+						"y": 1449,
+						"w": 186,
+						"h": 66
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3970,
+						"w": 186,
+						"h": 66
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 1043,
+						"h": 492
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1043,
+						"h": 492
+					}
+				},
+				{
+					"filename": "river/liana/00285",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 1043,
+						"h": 520
+					},
+					"frame": {
+						"x": 1046,
+						"y": 1,
+						"w": 1043,
+						"h": 520
+					}
+				},
+				{
+					"filename": "river/liana/00121",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 584
+					},
+					"frame": {
+						"x": 2091,
+						"y": 1,
+						"w": 1040,
+						"h": 584
+					}
+				},
+				{
+					"filename": "river/liana/00286",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 14,
+						"y": 0,
+						"w": 1043,
+						"h": 496
+					},
+					"frame": {
+						"x": 1,
+						"y": 495,
+						"w": 1043,
+						"h": 496
+					}
+				},
+				{
+					"filename": "river/liana/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 1042,
+						"h": 476
+					},
+					"frame": {
+						"x": 1046,
+						"y": 523,
+						"w": 1042,
+						"h": 476
+					}
+				},
+				{
+					"filename": "river/liana/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 1041,
+						"h": 463
+					},
+					"frame": {
+						"x": 2090,
+						"y": 587,
+						"w": 1041,
+						"h": 463
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 321,
+						"w": 458,
+						"h": 1085
+					},
+					"frame": {
+						"x": 3133,
+						"y": 1,
+						"w": 458,
+						"h": 1085
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 267,
+						"w": 458,
+						"h": 1139
+					},
+					"frame": {
+						"x": 3593,
+						"y": 1,
+						"w": 458,
+						"h": 1139
+					}
+				},
+				{
+					"filename": "river/liana/00301",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 0,
+						"w": 1025,
+						"h": 413
+					},
+					"frame": {
+						"x": 1,
+						"y": 993,
+						"w": 1025,
+						"h": 413
+					}
+				},
+				{
+					"filename": "river/liana/00302",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 32,
+						"y": 0,
+						"w": 1025,
+						"h": 412
+					},
+					"frame": {
+						"x": 1028,
+						"y": 1001,
+						"w": 1025,
+						"h": 412
+					}
+				},
+				{
+					"filename": "river/liana/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2055,
+						"y": 1052,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00165",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 1408,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00173",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 1408,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00166",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1415,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00174",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1415,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00167",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1465,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00175",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1465,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00168",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 1844,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00176",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 1844,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00169",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1851,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00177",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1851,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00170",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1901,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00178",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1901,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00171",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 2280,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00179",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 2280,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00172",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2287,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00180",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2337,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00246",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1020
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1465,
+						"w": 1017,
+						"h": 1020
+					}
+				},
+				{
+					"filename": "river/liana/00182",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2487,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00183",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1,
+						"y": 2716,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00184",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2723,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00185",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 434
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2773,
+						"w": 1017,
+						"h": 434
+					}
+				},
+				{
+					"filename": "river/liana/00186",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 435
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2923,
+						"w": 1017,
+						"h": 435
+					}
+				},
+				{
+					"filename": "river/liana/00187",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 435
+					},
+					"frame": {
+						"x": 1,
+						"y": 3152,
+						"w": 1017,
+						"h": 435
+					}
+				},
+				{
+					"filename": "river/liana/00188",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 436
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3159,
+						"w": 1017,
+						"h": 436
+					}
+				},
+				{
+					"filename": "river/liana/00189",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 436
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3209,
+						"w": 1017,
+						"h": 436
+					}
+				},
+				{
+					"filename": "river/liana/00190",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 436
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3360,
+						"w": 1017,
+						"h": 436
+					}
+				},
+				{
+					"filename": "river/liana/00191",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 437
+					},
+					"frame": {
+						"x": 1,
+						"y": 3589,
+						"w": 1017,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00192",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 437
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3597,
+						"w": 1017,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00193",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 438
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3647,
+						"w": 1017,
+						"h": 438
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1109,
+						"w": 458,
+						"h": 297
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3798,
+						"w": 458,
+						"h": 297
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1110,
+						"w": 458,
+						"h": 296
+					},
+					"frame": {
+						"x": 3518,
+						"y": 3798,
+						"w": 458,
+						"h": 296
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1119,
+						"w": 458,
+						"h": 287
+					},
+					"frame": {
+						"x": 3081,
+						"y": 1088,
+						"w": 458,
+						"h": 287
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 3541,
+						"y": 1142,
+						"w": 458,
+						"h": 285
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-3.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4026,
+				"h": 4077
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/bubble-plant/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 65,
+						"w": 458,
+						"h": 1341
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 458,
+						"h": 1341
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 72,
+						"w": 458,
+						"h": 1334
+					},
+					"frame": {
+						"x": 1,
+						"y": 1344,
+						"w": 458,
+						"h": 1334
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 83,
+						"w": 458,
+						"h": 1323
+					},
+					"frame": {
+						"x": 1,
+						"y": 2680,
+						"w": 458,
+						"h": 1323
+					}
+				},
+				{
+					"filename": "river/liana/00287",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 15,
+						"y": 0,
+						"w": 1042,
+						"h": 478
+					},
+					"frame": {
+						"x": 461,
+						"y": 1,
+						"w": 1042,
+						"h": 478
+					}
+				},
+				{
+					"filename": "river/liana/00202",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 574
+					},
+					"frame": {
+						"x": 1505,
+						"y": 1,
+						"w": 1040,
+						"h": 574
+					}
+				},
+				{
+					"filename": "river/liana/00122",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 538
+					},
+					"frame": {
+						"x": 461,
+						"y": 481,
+						"w": 1040,
+						"h": 538
+					}
+				},
+				{
+					"filename": "river/liana/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 412
+					},
+					"frame": {
+						"x": 2547,
+						"y": 1,
+						"w": 1024,
+						"h": 412
+					}
+				},
+				{
+					"filename": "river/fish/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 522,
+						"y": 682,
+						"w": 452,
+						"h": 854
+					},
+					"frame": {
+						"x": 3573,
+						"y": 1,
+						"w": 452,
+						"h": 854
+					}
+				},
+				{
+					"filename": "river/liana/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2547,
+						"y": 415,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2547,
+						"y": 415,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1503,
+						"y": 577,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1503,
+						"y": 577,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2529,
+						"y": 828,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2529,
+						"y": 828,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1503,
+						"y": 990,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1503,
+						"y": 990,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 99,
+						"w": 458,
+						"h": 1307
+					},
+					"frame": {
+						"x": 3555,
+						"y": 857,
+						"w": 458,
+						"h": 1307
+					}
+				},
+				{
+					"filename": "river/liana/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2529,
+						"y": 1241,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 461,
+						"y": 1021,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00306",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00307",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00308",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00309",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00310",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00311",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00312",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00313",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00314",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00315",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00316",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00317",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00318",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00319",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00320",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00321",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00322",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00323",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00324",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00325",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00326",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00327",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00328",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00329",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00330",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00331",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00332",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00333",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00334",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00335",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00336",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00337",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00338",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00339",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00340",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00341",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00342",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00343",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00344",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1403,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 461,
+						"y": 1434,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2513,
+						"y": 1654,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 1816,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00303",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 461,
+						"y": 1847,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00304",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 2513,
+						"y": 2067,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00305",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 0,
+						"w": 1024,
+						"h": 411
+					},
+					"frame": {
+						"x": 1487,
+						"y": 2229,
+						"w": 1024,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 461,
+						"y": 2260,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 461,
+						"y": 2260,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 180,
+						"w": 458,
+						"h": 1226
+					},
+					"frame": {
+						"x": 3539,
+						"y": 2166,
+						"w": 458,
+						"h": 1226
+					}
+				},
+				{
+					"filename": "river/liana/00212",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 970
+					},
+					"frame": {
+						"x": 2513,
+						"y": 2480,
+						"w": 1017,
+						"h": 970
+					}
+				},
+				{
+					"filename": "river/liana/00205",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 887
+					},
+					"frame": {
+						"x": 1486,
+						"y": 2642,
+						"w": 1017,
+						"h": 887
+					}
+				},
+				{
+					"filename": "river/liana/00204",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 784
+					},
+					"frame": {
+						"x": 461,
+						"y": 2673,
+						"w": 1017,
+						"h": 784
+					}
+				},
+				{
+					"filename": "river/liana/00195",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 439
+					},
+					"frame": {
+						"x": 461,
+						"y": 3459,
+						"w": 1017,
+						"h": 439
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 823,
+						"w": 458,
+						"h": 583
+					},
+					"frame": {
+						"x": 3532,
+						"y": 3394,
+						"w": 458,
+						"h": 583
+					}
+				},
+				{
+					"filename": "river/liana/00196",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 439
+					},
+					"frame": {
+						"x": 2505,
+						"y": 3452,
+						"w": 1017,
+						"h": 439
+					}
+				},
+				{
+					"filename": "river/liana/00194",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 438
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3531,
+						"w": 1017,
+						"h": 438
+					}
+				},
+				{
+					"filename": "river/fish/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 1477,
+						"w": 375,
+						"h": 183
+					},
+					"frame": {
+						"x": 2499,
+						"y": 3893,
+						"w": 375,
+						"h": 183
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-4.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4096,
+				"h": 3868
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00288",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 0,
+						"w": 1041,
+						"h": 465
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1041,
+						"h": 465
+					}
+				},
+				{
+					"filename": "river/liana/00123",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 494
+					},
+					"frame": {
+						"x": 1044,
+						"y": 1,
+						"w": 1040,
+						"h": 494
+					}
+				},
+				{
+					"filename": "river/liana/00201",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 531
+					},
+					"frame": {
+						"x": 2086,
+						"y": 1,
+						"w": 1040,
+						"h": 531
+					}
+				},
+				{
+					"filename": "river/liana/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 1,
+						"y": 468,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 1,
+						"y": 468,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 1026,
+						"y": 497,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 0,
+						"w": 1023,
+						"h": 411
+					},
+					"frame": {
+						"x": 1026,
+						"y": 497,
+						"w": 1023,
+						"h": 411
+					}
+				},
+				{
+					"filename": "river/liana/00094",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 671
+					},
+					"frame": {
+						"x": 2051,
+						"y": 534,
+						"w": 1022,
+						"h": 671
+					}
+				},
+				{
+					"filename": "river/liana/00092",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 0,
+						"w": 1020,
+						"h": 676
+					},
+					"frame": {
+						"x": 3075,
+						"y": 534,
+						"w": 1020,
+						"h": 676
+					}
+				},
+				{
+					"filename": "river/liana/00211",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1014
+					},
+					"frame": {
+						"x": 1,
+						"y": 881,
+						"w": 1017,
+						"h": 1014
+					}
+				},
+				{
+					"filename": "river/liana/00250",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 998
+					},
+					"frame": {
+						"x": 1020,
+						"y": 910,
+						"w": 1017,
+						"h": 998
+					}
+				},
+				{
+					"filename": "river/liana/00213",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 926
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1207,
+						"w": 1017,
+						"h": 926
+					}
+				},
+				{
+					"filename": "river/liana/00244",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 925
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1212,
+						"w": 1017,
+						"h": 925
+					}
+				},
+				{
+					"filename": "river/liana/00214",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 884
+					},
+					"frame": {
+						"x": 1,
+						"y": 1897,
+						"w": 1017,
+						"h": 884
+					}
+				},
+				{
+					"filename": "river/liana/00243",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 883
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1910,
+						"w": 1017,
+						"h": 883
+					}
+				},
+				{
+					"filename": "river/liana/00215",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 845
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2135,
+						"w": 1017,
+						"h": 845
+					}
+				},
+				{
+					"filename": "river/liana/00245",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 971
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2139,
+						"w": 1017,
+						"h": 971
+					}
+				},
+				{
+					"filename": "river/liana/00216",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 811
+					},
+					"frame": {
+						"x": 1,
+						"y": 2783,
+						"w": 1017,
+						"h": 811
+					}
+				},
+				{
+					"filename": "river/liana/00241",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 815
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2795,
+						"w": 1017,
+						"h": 815
+					}
+				},
+				{
+					"filename": "river/liana/00217",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 781
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2982,
+						"w": 1017,
+						"h": 781
+					}
+				},
+				{
+					"filename": "river/liana/00218",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 755
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3112,
+						"w": 1017,
+						"h": 755
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 927,
+						"w": 458,
+						"h": 479
+					},
+					"frame": {
+						"x": 3128,
+						"y": 1,
+						"w": 458,
+						"h": 479
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1108,
+						"w": 458,
+						"h": 298
+					},
+					"frame": {
+						"x": 3588,
+						"y": 1,
+						"w": 458,
+						"h": 298
+					}
+				},
+				{
+					"filename": "river/fish/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1471,
+						"w": 458,
+						"h": 207
+					},
+					"frame": {
+						"x": 3588,
+						"y": 301,
+						"w": 458,
+						"h": 207
+					}
+				},
+				{
+					"filename": "river/fish/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1207,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "river/fish/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1207,
+						"w": 3,
+						"h": 3
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-5.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4095,
+				"h": 4077
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00200",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1040,
+						"h": 486
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1040,
+						"h": 486
+					}
+				},
+				{
+					"filename": "river/liana/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 0,
+						"w": 1039,
+						"h": 604
+					},
+					"frame": {
+						"x": 1043,
+						"y": 1,
+						"w": 1039,
+						"h": 604
+					}
+				},
+				{
+					"filename": "river/liana/00283",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 0,
+						"w": 1038,
+						"h": 625
+					},
+					"frame": {
+						"x": 2084,
+						"y": 1,
+						"w": 1038,
+						"h": 625
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 720,
+						"w": 458,
+						"h": 686
+					},
+					"frame": {
+						"x": 3124,
+						"y": 1,
+						"w": 458,
+						"h": 686
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 624,
+						"w": 458,
+						"h": 782
+					},
+					"frame": {
+						"x": 3584,
+						"y": 1,
+						"w": 458,
+						"h": 782
+					}
+				},
+				{
+					"filename": "river/liana/00095",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 670
+					},
+					"frame": {
+						"x": 1,
+						"y": 489,
+						"w": 1022,
+						"h": 670
+					}
+				},
+				{
+					"filename": "river/liana/00096",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 669
+					},
+					"frame": {
+						"x": 1025,
+						"y": 607,
+						"w": 1022,
+						"h": 669
+					}
+				},
+				{
+					"filename": "river/liana/00097",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 669
+					},
+					"frame": {
+						"x": 2049,
+						"y": 628,
+						"w": 1022,
+						"h": 669
+					}
+				},
+				{
+					"filename": "river/liana/00098",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 670
+					},
+					"frame": {
+						"x": 1,
+						"y": 1161,
+						"w": 1022,
+						"h": 670
+					}
+				},
+				{
+					"filename": "river/liana/00099",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 672
+					},
+					"frame": {
+						"x": 1025,
+						"y": 1278,
+						"w": 1022,
+						"h": 672
+					}
+				},
+				{
+					"filename": "river/liana/00224",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 673
+					},
+					"frame": {
+						"x": 2049,
+						"y": 1299,
+						"w": 1022,
+						"h": 673
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3073,
+						"y": 689,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3533,
+						"y": 785,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/liana/00225",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 670
+					},
+					"frame": {
+						"x": 1,
+						"y": 1833,
+						"w": 1022,
+						"h": 670
+					}
+				},
+				{
+					"filename": "river/liana/00226",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 669
+					},
+					"frame": {
+						"x": 1025,
+						"y": 1952,
+						"w": 1022,
+						"h": 669
+					}
+				},
+				{
+					"filename": "river/liana/00227",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 669
+					},
+					"frame": {
+						"x": 2049,
+						"y": 1974,
+						"w": 1022,
+						"h": 669
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3073,
+						"y": 2034,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3533,
+						"y": 2130,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/liana/00228",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 670
+					},
+					"frame": {
+						"x": 1,
+						"y": 2505,
+						"w": 1022,
+						"h": 670
+					}
+				},
+				{
+					"filename": "river/liana/00229",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 0,
+						"w": 1022,
+						"h": 671
+					},
+					"frame": {
+						"x": 1025,
+						"y": 2623,
+						"w": 1022,
+						"h": 671
+					}
+				},
+				{
+					"filename": "river/liana/00093",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 1021,
+						"h": 673
+					},
+					"frame": {
+						"x": 2049,
+						"y": 2645,
+						"w": 1021,
+						"h": 673
+					}
+				},
+				{
+					"filename": "river/liana/00219",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 732
+					},
+					"frame": {
+						"x": 1,
+						"y": 3177,
+						"w": 1017,
+						"h": 732
+					}
+				},
+				{
+					"filename": "river/liana/00220",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 714
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3296,
+						"w": 1017,
+						"h": 714
+					}
+				},
+				{
+					"filename": "river/liana/00221",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 699
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3320,
+						"w": 1017,
+						"h": 699
+					}
+				},
+				{
+					"filename": "river/fish/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 649,
+						"y": 881,
+						"w": 364,
+						"h": 697
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3379,
+						"w": 364,
+						"h": 697
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 3424,
+						"y": 3475,
+						"w": 458,
+						"h": 285
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 3424,
+						"y": 3762,
+						"w": 458,
+						"h": 285
+					}
+				},
+				{
+					"filename": "river/fish/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 145,
+						"y": 1275,
+						"w": 202,
+						"h": 339
+					},
+					"frame": {
+						"x": 3884,
+						"y": 3475,
+						"w": 202,
+						"h": 339
+					}
+				},
+				{
+					"filename": "river/fish/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 296,
+						"y": 789,
+						"w": 210,
+						"h": 249
+					},
+					"frame": {
+						"x": 3884,
+						"y": 3816,
+						"w": 210,
+						"h": 249
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-6.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4041
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 0,
+						"w": 1039,
+						"h": 452
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1039,
+						"h": 452
+					}
+				},
+				{
+					"filename": "river/liana/00289",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 18,
+						"y": 0,
+						"w": 1039,
+						"h": 454
+					},
+					"frame": {
+						"x": 1042,
+						"y": 1,
+						"w": 1039,
+						"h": 454
+					}
+				},
+				{
+					"filename": "river/liana/00124",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1034,
+						"h": 478
+					},
+					"frame": {
+						"x": 2083,
+						"y": 1,
+						"w": 1034,
+						"h": 478
+					}
+				},
+				{
+					"filename": "river/liana/00100",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 1021,
+						"h": 676
+					},
+					"frame": {
+						"x": 1,
+						"y": 455,
+						"w": 1021,
+						"h": 676
+					}
+				},
+				{
+					"filename": "river/liana/00120",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1021,
+						"h": 688
+					},
+					"frame": {
+						"x": 1024,
+						"y": 457,
+						"w": 1021,
+						"h": 688
+					}
+				},
+				{
+					"filename": "river/liana/00223",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 1021,
+						"h": 678
+					},
+					"frame": {
+						"x": 2047,
+						"y": 481,
+						"w": 1021,
+						"h": 678
+					}
+				},
+				{
+					"filename": "river/liana/00126",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1021,
+						"h": 443
+					},
+					"frame": {
+						"x": 1,
+						"y": 1133,
+						"w": 1021,
+						"h": 443
+					}
+				},
+				{
+					"filename": "river/liana/00230",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 1021,
+						"h": 672
+					},
+					"frame": {
+						"x": 1024,
+						"y": 1147,
+						"w": 1021,
+						"h": 672
+					}
+				},
+				{
+					"filename": "river/liana/00231",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 0,
+						"w": 1021,
+						"h": 675
+					},
+					"frame": {
+						"x": 2047,
+						"y": 1161,
+						"w": 1021,
+						"h": 675
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3070,
+						"y": 481,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3530,
+						"y": 1,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/liana/00234",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 692
+					},
+					"frame": {
+						"x": 1,
+						"y": 1578,
+						"w": 1017,
+						"h": 692
+					}
+				},
+				{
+					"filename": "river/liana/00235",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 701
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1821,
+						"w": 1017,
+						"h": 701
+					}
+				},
+				{
+					"filename": "river/liana/00236",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 712
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1838,
+						"w": 1017,
+						"h": 712
+					}
+				},
+				{
+					"filename": "river/liana/00237",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 726
+					},
+					"frame": {
+						"x": 1,
+						"y": 2272,
+						"w": 1017,
+						"h": 726
+					}
+				},
+				{
+					"filename": "river/liana/00238",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 743
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2524,
+						"w": 1017,
+						"h": 743
+					}
+				},
+				{
+					"filename": "river/liana/00239",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 763
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2552,
+						"w": 1017,
+						"h": 763
+					}
+				},
+				{
+					"filename": "river/liana/00240",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 787
+					},
+					"frame": {
+						"x": 1,
+						"y": 3000,
+						"w": 1017,
+						"h": 787
+					}
+				},
+				{
+					"filename": "river/liana/00253",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 771
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3269,
+						"w": 1017,
+						"h": 771
+					}
+				},
+				{
+					"filename": "river/liana/00254",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 723
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3317,
+						"w": 1017,
+						"h": 723
+					}
+				},
+				{
+					"filename": "river/liana/00280",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 957
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1838,
+						"w": 1017,
+						"h": 957
+					}
+				},
+				{
+					"filename": "river/liana/00275",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 920
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2797,
+						"w": 1017,
+						"h": 920
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 3530,
+						"y": 1346,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/fish/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1484,
+						"w": 442,
+						"h": 189
+					},
+					"frame": {
+						"x": 3530,
+						"y": 1647,
+						"w": 442,
+						"h": 189
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3719,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1116,
+						"w": 458,
+						"h": 290
+					},
+					"frame": {
+						"x": 3518,
+						"y": 3719,
+						"w": 458,
+						"h": 290
+					}
+				},
+				{
+					"filename": "river/fish/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 735,
+						"y": 1170,
+						"w": 237,
+						"h": 475
+					},
+					"frame": {
+						"x": 3119,
+						"y": 1,
+						"w": 237,
+						"h": 475
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-7.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00290",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 19,
+						"y": 0,
+						"w": 1038,
+						"h": 445
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1038,
+						"h": 445
+					}
+				},
+				{
+					"filename": "river/liana/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 0,
+						"w": 1037,
+						"h": 444
+					},
+					"frame": {
+						"x": 1041,
+						"y": 1,
+						"w": 1037,
+						"h": 444
+					}
+				},
+				{
+					"filename": "river/liana/00199",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1033,
+						"h": 477
+					},
+					"frame": {
+						"x": 2080,
+						"y": 1,
+						"w": 1033,
+						"h": 477
+					}
+				},
+				{
+					"filename": "river/liana/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 0,
+						"w": 1036,
+						"h": 437
+					},
+					"frame": {
+						"x": 1041,
+						"y": 447,
+						"w": 1036,
+						"h": 437
+					}
+				},
+				{
+					"filename": "river/liana/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 0,
+						"w": 1034,
+						"h": 432
+					},
+					"frame": {
+						"x": 2079,
+						"y": 480,
+						"w": 1034,
+						"h": 432
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 455,
+						"w": 458,
+						"h": 951
+					},
+					"frame": {
+						"x": 3115,
+						"y": 1,
+						"w": 458,
+						"h": 951
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 384,
+						"w": 458,
+						"h": 1022
+					},
+					"frame": {
+						"x": 3575,
+						"y": 1,
+						"w": 458,
+						"h": 1022
+					}
+				},
+				{
+					"filename": "river/liana/00101",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 0,
+						"w": 1020,
+						"h": 684
+					},
+					"frame": {
+						"x": 1,
+						"y": 448,
+						"w": 1020,
+						"h": 684
+					}
+				},
+				{
+					"filename": "river/liana/00197",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1020,
+						"h": 440
+					},
+					"frame": {
+						"x": 1023,
+						"y": 886,
+						"w": 1020,
+						"h": 440
+					}
+				},
+				{
+					"filename": "river/liana/00232",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 0,
+						"w": 1020,
+						"h": 679
+					},
+					"frame": {
+						"x": 2045,
+						"y": 914,
+						"w": 1020,
+						"h": 679
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3067,
+						"y": 954,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 3527,
+						"y": 1025,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/liana/00251",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 917
+					},
+					"frame": {
+						"x": 1,
+						"y": 1134,
+						"w": 1017,
+						"h": 917
+					}
+				},
+				{
+					"filename": "river/liana/00252",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 837
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1328,
+						"w": 1017,
+						"h": 837
+					}
+				},
+				{
+					"filename": "river/liana/00255",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 693
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1595,
+						"w": 1017,
+						"h": 693
+					}
+				},
+				{
+					"filename": "river/liana/00256",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 675
+					},
+					"frame": {
+						"x": 1,
+						"y": 2053,
+						"w": 1017,
+						"h": 675
+					}
+				},
+				{
+					"filename": "river/liana/00257",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 665
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2167,
+						"w": 1017,
+						"h": 665
+					}
+				},
+				{
+					"filename": "river/liana/00258",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 661
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2290,
+						"w": 1017,
+						"h": 661
+					}
+				},
+				{
+					"filename": "river/liana/00259",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 1,
+						"y": 2730,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00260",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2834,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00261",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2953,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00276",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 986
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2370,
+						"w": 1017,
+						"h": 986
+					}
+				},
+				{
+					"filename": "river/liana/00262",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3358,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00263",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 1,
+						"y": 3390,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/fish/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 696,
+						"y": 1024,
+						"w": 296,
+						"h": 601
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3494,
+						"w": 296,
+						"h": 601
+					}
+				},
+				{
+					"filename": "river/fish/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 716,
+						"y": 1096,
+						"w": 265,
+						"h": 549
+					},
+					"frame": {
+						"x": 1318,
+						"y": 3494,
+						"w": 265,
+						"h": 549
+					}
+				},
+				{
+					"filename": "river/fish/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 641,
+						"y": 1420,
+						"w": 439,
+						"h": 274
+					},
+					"frame": {
+						"x": 1585,
+						"y": 3494,
+						"w": 439,
+						"h": 274
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1118,
+						"w": 458,
+						"h": 288
+					},
+					"frame": {
+						"x": 1585,
+						"y": 3770,
+						"w": 458,
+						"h": 288
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 2045,
+						"y": 3613,
+						"w": 458,
+						"h": 285
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 2505,
+						"y": 3613,
+						"w": 458,
+						"h": 285
+					}
+				},
+				{
+					"filename": "river/fish/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 685,
+						"y": 1527,
+						"w": 388,
+						"h": 155
+					},
+					"frame": {
+						"x": 2045,
+						"y": 3900,
+						"w": 388,
+						"h": 155
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-8.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4056
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00274",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 859
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1017,
+						"h": 859
+					}
+				},
+				{
+					"filename": "river/liana/00273",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 807
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 1017,
+						"h": 807
+					}
+				},
+				{
+					"filename": "river/liana/00281",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 802
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1,
+						"w": 1017,
+						"h": 802
+					}
+				},
+				{
+					"filename": "river/liana/00272",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 765
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1,
+						"w": 1017,
+						"h": 765
+					}
+				},
+				{
+					"filename": "river/liana/00271",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 733
+					},
+					"frame": {
+						"x": 3058,
+						"y": 768,
+						"w": 1017,
+						"h": 733
+					}
+				},
+				{
+					"filename": "river/liana/00270",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 708
+					},
+					"frame": {
+						"x": 2039,
+						"y": 805,
+						"w": 1017,
+						"h": 708
+					}
+				},
+				{
+					"filename": "river/liana/00269",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 690
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1503,
+						"w": 1017,
+						"h": 690
+					}
+				},
+				{
+					"filename": "river/liana/00268",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 677
+					},
+					"frame": {
+						"x": 1020,
+						"y": 810,
+						"w": 1017,
+						"h": 677
+					}
+				},
+				{
+					"filename": "river/liana/00267",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 668
+					},
+					"frame": {
+						"x": 1,
+						"y": 862,
+						"w": 1017,
+						"h": 668
+					}
+				},
+				{
+					"filename": "river/liana/00266",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 663
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1489,
+						"w": 1017,
+						"h": 663
+					}
+				},
+				{
+					"filename": "river/liana/00265",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 660
+					},
+					"frame": {
+						"x": 1,
+						"y": 1532,
+						"w": 1017,
+						"h": 660
+					}
+				},
+				{
+					"filename": "river/liana/00264",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1515,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 220,
+						"w": 458,
+						"h": 1186
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2154,
+						"w": 458,
+						"h": 1186
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 535,
+						"w": 458,
+						"h": 871
+					},
+					"frame": {
+						"x": 1480,
+						"y": 2154,
+						"w": 458,
+						"h": 871
+					}
+				},
+				{
+					"filename": "river/liana/00222",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 0,
+						"w": 1019,
+						"h": 687
+					},
+					"frame": {
+						"x": 1940,
+						"y": 2175,
+						"w": 1019,
+						"h": 687
+					}
+				},
+				{
+					"filename": "river/liana/00233",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 39,
+						"y": 0,
+						"w": 1018,
+						"h": 684
+					},
+					"frame": {
+						"x": 2961,
+						"y": 2195,
+						"w": 1018,
+						"h": 684
+					}
+				},
+				{
+					"filename": "river/liana/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 38,
+						"y": 0,
+						"w": 1019,
+						"h": 680
+					},
+					"frame": {
+						"x": 1940,
+						"y": 2864,
+						"w": 1019,
+						"h": 680
+					}
+				},
+				{
+					"filename": "river/fish/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 610,
+						"y": 819,
+						"w": 410,
+						"h": 741
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3027,
+						"w": 410,
+						"h": 741
+					}
+				},
+				{
+					"filename": "river/liana/00203",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1027,
+						"h": 666
+					},
+					"frame": {
+						"x": 1,
+						"y": 3342,
+						"w": 1027,
+						"h": 666
+					}
+				},
+				{
+					"filename": "river/fish/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 674,
+						"y": 953,
+						"w": 329,
+						"h": 648
+					},
+					"frame": {
+						"x": 1030,
+						"y": 3342,
+						"w": 329,
+						"h": 648
+					}
+				},
+				{
+					"filename": "river/liana/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 0,
+						"w": 1029,
+						"h": 652
+					},
+					"frame": {
+						"x": 2961,
+						"y": 2881,
+						"w": 1029,
+						"h": 652
+					}
+				},
+				{
+					"filename": "river/liana/00291",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 0,
+						"w": 1036,
+						"h": 439
+					},
+					"frame": {
+						"x": 2961,
+						"y": 3535,
+						"w": 1036,
+						"h": 439
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1121,
+						"w": 458,
+						"h": 285
+					},
+					"frame": {
+						"x": 1361,
+						"y": 3770,
+						"w": 458,
+						"h": 285
+					}
+				},
+				{
+					"filename": "river/fish/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 1378,
+						"w": 357,
+						"h": 279
+					},
+					"frame": {
+						"x": 1821,
+						"y": 3770,
+						"w": 357,
+						"h": 279
+					}
+				},
+				{
+					"filename": "river/fish/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 663,
+						"y": 1474,
+						"w": 417,
+						"h": 214
+					},
+					"frame": {
+						"x": 1892,
+						"y": 3546,
+						"w": 417,
+						"h": 214
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1116,
+						"w": 458,
+						"h": 290
+					},
+					"frame": {
+						"x": 2180,
+						"y": 3762,
+						"w": 458,
+						"h": 290
+					}
+				},
+				{
+					"filename": "river/fish/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1502,
+						"w": 426,
+						"h": 167
+					},
+					"frame": {
+						"x": 2311,
+						"y": 3546,
+						"w": 426,
+						"h": 167
+					}
+				},
+				{
+					"filename": "river/fish/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 177,
+						"y": 1147,
+						"w": 193,
+						"h": 467
+					},
+					"frame": {
+						"x": 2739,
+						"y": 3546,
+						"w": 193,
+						"h": 467
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1108,
+						"w": 458,
+						"h": 298
+					},
+					"frame": {
+						"x": 1,
+						"y": 2194,
+						"w": 458,
+						"h": 298
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1110,
+						"w": 458,
+						"h": 296
+					},
+					"frame": {
+						"x": 461,
+						"y": 2194,
+						"w": 458,
+						"h": 296
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1117,
+						"w": 458,
+						"h": 289
+					},
+					"frame": {
+						"x": 461,
+						"y": 2492,
+						"w": 458,
+						"h": 289
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1118,
+						"w": 458,
+						"h": 288
+					},
+					"frame": {
+						"x": 1,
+						"y": 2494,
+						"w": 458,
+						"h": 288
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1120,
+						"w": 458,
+						"h": 286
+					},
+					"frame": {
+						"x": 461,
+						"y": 2783,
+						"w": 458,
+						"h": 286
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1120,
+						"w": 458,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 2784,
+						"w": 458,
+						"h": 286
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-9.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 3972
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00210",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1053
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1017,
+						"h": 1053
+					}
+				},
+				{
+					"filename": "river/liana/00279",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1053
+					},
+					"frame": {
+						"x": 1,
+						"y": 1056,
+						"w": 1017,
+						"h": 1053
+					}
+				},
+				{
+					"filename": "river/liana/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1042
+					},
+					"frame": {
+						"x": 1,
+						"y": 2111,
+						"w": 1017,
+						"h": 1042
+					}
+				},
+				{
+					"filename": "river/liana/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 816
+					},
+					"frame": {
+						"x": 1,
+						"y": 3155,
+						"w": 1017,
+						"h": 816
+					}
+				},
+				{
+					"filename": "river/liana/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 998
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 1017,
+						"h": 998
+					}
+				},
+				{
+					"filename": "river/liana/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 932
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1,
+						"w": 1017,
+						"h": 932
+					}
+				},
+				{
+					"filename": "river/liana/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 931
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1,
+						"w": 1017,
+						"h": 931
+					}
+				},
+				{
+					"filename": "river/liana/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 775
+					},
+					"frame": {
+						"x": 3058,
+						"y": 934,
+						"w": 1017,
+						"h": 775
+					}
+				},
+				{
+					"filename": "river/liana/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 773
+					},
+					"frame": {
+						"x": 2039,
+						"y": 935,
+						"w": 1017,
+						"h": 773
+					}
+				},
+				{
+					"filename": "river/liana/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 739
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1001,
+						"w": 1017,
+						"h": 739
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1710,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 2499,
+						"y": 1710,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1742,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 63,
+						"w": 458,
+						"h": 1343
+					},
+					"frame": {
+						"x": 1480,
+						"y": 1742,
+						"w": 458,
+						"h": 1343
+					}
+				},
+				{
+					"filename": "river/liana/00292",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 0,
+						"w": 1035,
+						"h": 433
+					},
+					"frame": {
+						"x": 1940,
+						"y": 3055,
+						"w": 1035,
+						"h": 433
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1026,
+						"w": 458,
+						"h": 380
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3087,
+						"w": 458,
+						"h": 380
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1056,
+						"w": 458,
+						"h": 350
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3087,
+						"w": 458,
+						"h": 350
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1056,
+						"w": 458,
+						"h": 350
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3439,
+						"w": 458,
+						"h": 350
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1111,
+						"w": 458,
+						"h": 295
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3469,
+						"w": 458,
+						"h": 295
+					}
+				},
+				{
+					"filename": "river/fish/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1522,
+						"w": 406,
+						"h": 142
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3766,
+						"w": 406,
+						"h": 142
+					}
+				},
+				{
+					"filename": "river/liana/00127",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 439
+					},
+					"frame": {
+						"x": 1940,
+						"y": 3490,
+						"w": 1017,
+						"h": 439
+					}
+				},
+				{
+					"filename": "river/liana/00293",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 0,
+						"w": 1033,
+						"h": 429
+					},
+					"frame": {
+						"x": 2959,
+						"y": 3490,
+						"w": 1033,
+						"h": 429
+					}
+				},
+				{
+					"filename": "river/liana/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 0,
+						"w": 1033,
+						"h": 428
+					},
+					"frame": {
+						"x": 2959,
+						"y": 1711,
+						"w": 1033,
+						"h": 428
+					}
+				},
+				{
+					"filename": "river/liana/00294",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 25,
+						"y": 0,
+						"w": 1032,
+						"h": 425
+					},
+					"frame": {
+						"x": 2959,
+						"y": 2141,
+						"w": 1032,
+						"h": 425
+					}
+				},
+				{
+					"filename": "river/liana/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 0,
+						"w": 1031,
+						"h": 425
+					},
+					"frame": {
+						"x": 2959,
+						"y": 2568,
+						"w": 1031,
+						"h": 425
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1120,
+						"w": 458,
+						"h": 286
+					},
+					"frame": {
+						"x": 2977,
+						"y": 2995,
+						"w": 458,
+						"h": 286
+					}
+				},
+				{
+					"filename": "river/fish/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1461,
+						"w": 474,
+						"h": 221
+					},
+					"frame": {
+						"x": 3437,
+						"y": 2995,
+						"w": 474,
+						"h": 221
+					}
+				},
+				{
+					"filename": "river/fish/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 215,
+						"y": 1000,
+						"w": 200,
+						"h": 249
+					},
+					"frame": {
+						"x": 3437,
+						"y": 3218,
+						"w": 200,
+						"h": 249
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-10.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 4073
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 0,
+						"w": 1030,
+						"h": 422
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1030,
+						"h": 422
+					}
+				},
+				{
+					"filename": "river/liana/00295",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 0,
+						"w": 1030,
+						"h": 423
+					},
+					"frame": {
+						"x": 1033,
+						"y": 1,
+						"w": 1030,
+						"h": 423
+					}
+				},
+				{
+					"filename": "river/liana/00125",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1027,
+						"h": 458
+					},
+					"frame": {
+						"x": 2065,
+						"y": 1,
+						"w": 1027,
+						"h": 458
+					}
+				},
+				{
+					"filename": "river/liana/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 713
+					},
+					"frame": {
+						"x": 1,
+						"y": 425,
+						"w": 1017,
+						"h": 713
+					}
+				},
+				{
+					"filename": "river/liana/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 716
+					},
+					"frame": {
+						"x": 1020,
+						"y": 426,
+						"w": 1017,
+						"h": 716
+					}
+				},
+				{
+					"filename": "river/liana/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 694
+					},
+					"frame": {
+						"x": 2039,
+						"y": 461,
+						"w": 1017,
+						"h": 694
+					}
+				},
+				{
+					"filename": "river/liana/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 680
+					},
+					"frame": {
+						"x": 1,
+						"y": 1140,
+						"w": 1017,
+						"h": 680
+					}
+				},
+				{
+					"filename": "river/liana/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 688
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1144,
+						"w": 1017,
+						"h": 688
+					}
+				},
+				{
+					"filename": "river/liana/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 760
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1157,
+						"w": 1017,
+						"h": 760
+					}
+				},
+				{
+					"filename": "river/liana/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1051
+					},
+					"frame": {
+						"x": 3058,
+						"y": 461,
+						"w": 1017,
+						"h": 1051
+					}
+				},
+				{
+					"filename": "river/liana/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 671
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1514,
+						"w": 1017,
+						"h": 671
+					}
+				},
+				{
+					"filename": "river/liana/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 665
+					},
+					"frame": {
+						"x": 1,
+						"y": 1822,
+						"w": 1017,
+						"h": 665
+					}
+				},
+				{
+					"filename": "river/liana/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 661
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1834,
+						"w": 1017,
+						"h": 661
+					}
+				},
+				{
+					"filename": "river/liana/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 659
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1919,
+						"w": 1017,
+						"h": 659
+					}
+				},
+				{
+					"filename": "river/liana/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2187,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 1,
+						"y": 2489,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2497,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2580,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 658
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2847,
+						"w": 1017,
+						"h": 658
+					}
+				},
+				{
+					"filename": "river/liana/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 660
+					},
+					"frame": {
+						"x": 1,
+						"y": 3149,
+						"w": 1017,
+						"h": 660
+					}
+				},
+				{
+					"filename": "river/liana/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 663
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3157,
+						"w": 1017,
+						"h": 663
+					}
+				},
+				{
+					"filename": "river/liana/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 672
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3240,
+						"w": 1017,
+						"h": 672
+					}
+				},
+				{
+					"filename": "river/liana/00128",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 439
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3507,
+						"w": 1017,
+						"h": 439
+					}
+				},
+				{
+					"filename": "river/fish/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 595,
+						"y": 1294,
+						"w": 485,
+						"h": 351
+					},
+					"frame": {
+						"x": 3094,
+						"y": 1,
+						"w": 485,
+						"h": 351
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1112,
+						"w": 458,
+						"h": 294
+					},
+					"frame": {
+						"x": 3581,
+						"y": 1,
+						"w": 458,
+						"h": 294
+					}
+				},
+				{
+					"filename": "river/fish/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 708,
+						"y": 1576,
+						"w": 343,
+						"h": 99
+					},
+					"frame": {
+						"x": 3094,
+						"y": 354,
+						"w": 343,
+						"h": 99
+					}
+				},
+				{
+					"filename": "river/fish/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 34,
+						"y": 1427,
+						"w": 346,
+						"h": 229
+					},
+					"frame": {
+						"x": 1,
+						"y": 3811,
+						"w": 346,
+						"h": 229
+					}
+				},
+				{
+					"filename": "river/fish/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 395,
+						"y": 678,
+						"w": 221,
+						"h": 240
+					},
+					"frame": {
+						"x": 349,
+						"y": 3811,
+						"w": 221,
+						"h": 240
+					}
+				},
+				{
+					"filename": "river/fish/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 340,
+						"y": 727,
+						"w": 213,
+						"h": 249
+					},
+					"frame": {
+						"x": 572,
+						"y": 3811,
+						"w": 213,
+						"h": 249
+					}
+				},
+				{
+					"filename": "river/fish/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 263,
+						"y": 856,
+						"w": 207,
+						"h": 250
+					},
+					"frame": {
+						"x": 787,
+						"y": 3811,
+						"w": 207,
+						"h": 250
+					}
+				},
+				{
+					"filename": "river/fish/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 927,
+						"w": 203,
+						"h": 250
+					},
+					"frame": {
+						"x": 996,
+						"y": 3822,
+						"w": 203,
+						"h": 250
+					}
+				},
+				{
+					"filename": "river/fish/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 195,
+						"y": 1073,
+						"w": 197,
+						"h": 249
+					},
+					"frame": {
+						"x": 1201,
+						"y": 3822,
+						"w": 197,
+						"h": 249
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-11.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4076,
+				"h": 3978
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00277",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1048
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1017,
+						"h": 1048
+					}
+				},
+				{
+					"filename": "river/liana/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1028
+					},
+					"frame": {
+						"x": 1,
+						"y": 1051,
+						"w": 1017,
+						"h": 1028
+					}
+				},
+				{
+					"filename": "river/liana/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 984
+					},
+					"frame": {
+						"x": 1,
+						"y": 2081,
+						"w": 1017,
+						"h": 984
+					}
+				},
+				{
+					"filename": "river/liana/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 891
+					},
+					"frame": {
+						"x": 1,
+						"y": 3067,
+						"w": 1017,
+						"h": 891
+					}
+				},
+				{
+					"filename": "river/liana/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 980
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 1017,
+						"h": 980
+					}
+				},
+				{
+					"filename": "river/liana/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 934
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1,
+						"w": 1017,
+						"h": 934
+					}
+				},
+				{
+					"filename": "river/liana/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 824
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1,
+						"w": 1017,
+						"h": 824
+					}
+				},
+				{
+					"filename": "river/liana/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 821
+					},
+					"frame": {
+						"x": 3058,
+						"y": 827,
+						"w": 1017,
+						"h": 821
+					}
+				},
+				{
+					"filename": "river/liana/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 792
+					},
+					"frame": {
+						"x": 2039,
+						"y": 937,
+						"w": 1017,
+						"h": 792
+					}
+				},
+				{
+					"filename": "river/liana/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 768
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1650,
+						"w": 1017,
+						"h": 768
+					}
+				},
+				{
+					"filename": "river/liana/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 747
+					},
+					"frame": {
+						"x": 1020,
+						"y": 983,
+						"w": 1017,
+						"h": 747
+					}
+				},
+				{
+					"filename": "river/liana/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 730
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1731,
+						"w": 1017,
+						"h": 730
+					}
+				},
+				{
+					"filename": "river/liana/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 715
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2420,
+						"w": 1017,
+						"h": 715
+					}
+				},
+				{
+					"filename": "river/liana/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 704
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1732,
+						"w": 1017,
+						"h": 704
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 120,
+						"w": 458,
+						"h": 1286
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2438,
+						"w": 458,
+						"h": 1286
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 147,
+						"w": 458,
+						"h": 1259
+					},
+					"frame": {
+						"x": 1480,
+						"y": 2438,
+						"w": 458,
+						"h": 1259
+					}
+				},
+				{
+					"filename": "river/fish/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 282,
+						"y": 1463,
+						"w": 55,
+						"h": 39
+					},
+					"frame": {
+						"x": 1940,
+						"y": 2438,
+						"w": 55,
+						"h": 39
+					}
+				},
+				{
+					"filename": "river/liana/00129",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 438
+					},
+					"frame": {
+						"x": 1997,
+						"y": 2463,
+						"w": 1017,
+						"h": 438
+					}
+				},
+				{
+					"filename": "river/liana/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 0,
+						"w": 1029,
+						"h": 420
+					},
+					"frame": {
+						"x": 1940,
+						"y": 2903,
+						"w": 1029,
+						"h": 420
+					}
+				},
+				{
+					"filename": "river/liana/00296",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 0,
+						"w": 1029,
+						"h": 420
+					},
+					"frame": {
+						"x": 2971,
+						"y": 3137,
+						"w": 1029,
+						"h": 420
+					}
+				},
+				{
+					"filename": "river/liana/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 0,
+						"w": 1028,
+						"h": 418
+					},
+					"frame": {
+						"x": 1940,
+						"y": 3325,
+						"w": 1028,
+						"h": 418
+					}
+				},
+				{
+					"filename": "river/liana/00297",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 0,
+						"w": 1028,
+						"h": 418
+					},
+					"frame": {
+						"x": 2970,
+						"y": 3559,
+						"w": 1028,
+						"h": 418
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-12.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4085,
+				"h": 4025
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "river/liana/00113",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1047
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1017,
+						"h": 1047
+					}
+				},
+				{
+					"filename": "river/liana/00116",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1047
+					},
+					"frame": {
+						"x": 1,
+						"y": 1050,
+						"w": 1017,
+						"h": 1047
+					}
+				},
+				{
+					"filename": "river/liana/00112",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 1006
+					},
+					"frame": {
+						"x": 1,
+						"y": 2099,
+						"w": 1017,
+						"h": 1006
+					}
+				},
+				{
+					"filename": "river/liana/00110",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 917
+					},
+					"frame": {
+						"x": 1,
+						"y": 3107,
+						"w": 1017,
+						"h": 917
+					}
+				},
+				{
+					"filename": "river/liana/00111",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 961
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 1017,
+						"h": 961
+					}
+				},
+				{
+					"filename": "river/liana/00109",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 876
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1,
+						"w": 1017,
+						"h": 876
+					}
+				},
+				{
+					"filename": "river/liana/00108",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 838
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1,
+						"w": 1017,
+						"h": 838
+					}
+				},
+				{
+					"filename": "river/liana/00107",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 805
+					},
+					"frame": {
+						"x": 3058,
+						"y": 841,
+						"w": 1017,
+						"h": 805
+					}
+				},
+				{
+					"filename": "river/liana/00119",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 804
+					},
+					"frame": {
+						"x": 2039,
+						"y": 879,
+						"w": 1017,
+						"h": 804
+					}
+				},
+				{
+					"filename": "river/liana/00106",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 775
+					},
+					"frame": {
+						"x": 3058,
+						"y": 1648,
+						"w": 1017,
+						"h": 775
+					}
+				},
+				{
+					"filename": "river/liana/00105",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 750
+					},
+					"frame": {
+						"x": 1020,
+						"y": 964,
+						"w": 1017,
+						"h": 750
+					}
+				},
+				{
+					"filename": "river/liana/00104",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 728
+					},
+					"frame": {
+						"x": 2039,
+						"y": 1685,
+						"w": 1017,
+						"h": 728
+					}
+				},
+				{
+					"filename": "river/liana/00103",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 710
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1716,
+						"w": 1017,
+						"h": 710
+					}
+				},
+				{
+					"filename": "river/liana/00102",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 695
+					},
+					"frame": {
+						"x": 2039,
+						"y": 2415,
+						"w": 1017,
+						"h": 695
+					}
+				},
+				{
+					"filename": "river/liana/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 694
+					},
+					"frame": {
+						"x": 1020,
+						"y": 2428,
+						"w": 1017,
+						"h": 694
+					}
+				},
+				{
+					"filename": "river/liana/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 686
+					},
+					"frame": {
+						"x": 3058,
+						"y": 2425,
+						"w": 1017,
+						"h": 686
+					}
+				},
+				{
+					"filename": "river/liana/00130",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1017,
+						"h": 438
+					},
+					"frame": {
+						"x": 2039,
+						"y": 3112,
+						"w": 1017,
+						"h": 438
+					}
+				},
+				{
+					"filename": "river/liana/00198",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 0,
+						"w": 1026,
+						"h": 453
+					},
+					"frame": {
+						"x": 3058,
+						"y": 3113,
+						"w": 1026,
+						"h": 453
+					}
+				},
+				{
+					"filename": "river/liana/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 0,
+						"w": 1027,
+						"h": 416
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3552,
+						"w": 1027,
+						"h": 416
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1080,
+						"w": 458,
+						"h": 326
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3124,
+						"w": 458,
+						"h": 326
+					}
+				},
+				{
+					"filename": "river/fish/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 123,
+						"y": 1441,
+						"w": 205,
+						"h": 65
+					},
+					"frame": {
+						"x": 1020,
+						"y": 3452,
+						"w": 205,
+						"h": 65
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1107,
+						"w": 458,
+						"h": 299
+					},
+					"frame": {
+						"x": 1480,
+						"y": 3124,
+						"w": 458,
+						"h": 299
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1113,
+						"w": 458,
+						"h": 293
+					},
+					"frame": {
+						"x": 2049,
+						"y": 3552,
+						"w": 458,
+						"h": 293
+					}
+				},
+				{
+					"filename": "river/bubble-plant/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1114,
+						"w": 458,
+						"h": 292
+					},
+					"frame": {
+						"x": 2509,
+						"y": 3552,
+						"w": 458,
+						"h": 292
+					}
+				},
+				{
+					"filename": "river/liana/00298",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 30,
+						"y": 0,
+						"w": 1027,
+						"h": 416
+					},
+					"frame": {
+						"x": 2969,
+						"y": 3568,
+						"w": 1027,
+						"h": 416
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:252a077f4ce1f2e94baed7637d45d7c8:518e1c944610b15511b636dc8dd9166f:8260d03705a1b58060b94cc36eba782f$"
+	}
+}

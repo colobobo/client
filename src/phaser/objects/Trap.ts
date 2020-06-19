@@ -2,6 +2,7 @@ import * as Phaser from "phaser";
 import MainScene from "../scenes/MainScene";
 import Member from "./Member";
 import { actions } from "../../redux";
+import { TrapsAnimationConfig } from "../../config/traps";
 
 export enum TrapLocation {
   top = "top",
@@ -11,78 +12,78 @@ export enum TrapLocation {
 export default class Trap extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
   scene: MainScene;
-  readonly animationKey: string;
   collisionEnabled: boolean;
-  location: TrapLocation;
   areaHeightRatio: number;
+  animationConfig: TrapsAnimationConfig;
+  animationRepeatDelay: number;
 
   constructor({
     scene,
     x = 0,
     y = 0,
-    texture,
-    frame,
     options,
-    animationKey,
     collisionEnabled = true,
-    location = TrapLocation.top,
-    areaHeightRatio = 0.5,
-    pixelRatio
+    areaHeightRatio = 1,
+    pixelRatio,
+    animationConfig,
+    animationRepeatDelay = 0
   }: {
     scene: MainScene;
     x?: number;
     y?: number;
-    texture: string;
-    frame?: string;
-    animationKey: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
     collisionEnabled?: boolean;
-    location?: TrapLocation;
     areaHeightRatio?: number;
     pixelRatio: number;
+    animationConfig: TrapsAnimationConfig;
+    animationRepeatDelay?: number;
   }) {
-    // TODO: wip
-    const firstFrame =
-      frame ||
-      (scene.anims.generateFrameNames(texture, {
-        prefix: "worlds/desert/trap/snake/",
-        start: 19,
-        end: 144,
-        zeroPad: 5
-      })[0]?.frame as string);
+    const firstFrame = scene.anims.generateFrameNames(animationConfig.texture, {
+      prefix: animationConfig.prefix,
+      start: animationConfig.startFrame,
+      end: animationConfig.endFrame,
+      zeroPad: 5
+    })[0]?.frame as string;
 
-    super(scene.matter.world, x, y, texture, firstFrame, options);
+    super(
+      scene.matter.world,
+      x,
+      y,
+      animationConfig.texture,
+      firstFrame,
+      options
+    );
 
     scene.sys.displayList.add(this);
     scene.sys.updateList.add(this);
 
     this.scene = scene;
-    this.animationKey = animationKey;
+    // this.animationKey = animationKey;
     this.collisionEnabled = collisionEnabled;
-    this.location = location;
+    // this.location = location;
     this.areaHeightRatio = areaHeightRatio;
     this.pixelRatio = pixelRatio;
+    this.animationConfig = animationConfig;
+    this.animationRepeatDelay = animationRepeatDelay;
     this.init();
   }
 
   // FUNCTIONS
 
   init() {
-    // set scale with areaHeightRatio
+    // set scale with areaHeightRatio (default 100%)
     this.setScale(
       ((this.scene.areaHeight * this.areaHeightRatio) / this.height) *
         this.pixelRatio
     );
+    // vertical center
+    this.setY(this.scene.game.canvas.height / 2);
 
-    if (this.location === TrapLocation.top) {
-      this.setY(this.y + this.displayHeight / 2);
-    } else if (this.location === TrapLocation.bottom) {
-      this.setY(this.scene.game.canvas.height - this.displayHeight / 2);
-    }
-
+    // animation
     this.createAnimation();
-    this.play(this.animationKey);
+    this.play(this.animationConfig.animationKey);
 
+    // collision
     if (this.collisionEnabled) {
       this.addCollisionListener();
     } else {
@@ -90,21 +91,24 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     }
   }
 
-  // wip
-  // TODO: create animation from dynamicaly
+  // ANIMATION
+
   createAnimation() {
     this.scene.anims.create({
-      key: this.animationKey,
+      key: this.animationConfig.animationKey,
       frames: this.scene.anims.generateFrameNames(this.texture.key, {
-        prefix: "worlds/desert/trap/snake/",
-        start: 19,
-        end: 144,
+        prefix: this.animationConfig.prefix,
+        start: this.animationConfig.startFrame,
+        end: this.animationConfig.endFrame,
         zeroPad: 5
       }),
       repeat: -1,
-      frameRate: 30
+      repeatDelay: this.animationRepeatDelay,
+      frameRate: 25
     });
   }
+
+  // COLLLISION
 
   addCollisionListener() {
     this.scene.matterCollision.addOnCollideStart({

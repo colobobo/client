@@ -1,7 +1,16 @@
 import * as Phaser from "phaser";
-import { enums, PlayerRolePropertiesPlateform } from "@colobobo/library";
+import {
+  enums,
+  PlayerRolePropertiesPlateform,
+  PlayerRolePropertiesTrap
+} from "@colobobo/library";
 import * as config from "../../config";
 import { PlatformPosition, platformsTexture } from "../../config/platforms";
+import {
+  getTrapsTexture,
+  TrapsAnimationConfig,
+  TrapsConfigsByWorlds
+} from "../../config/traps";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
@@ -159,6 +168,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   loadPlatforms() {
+    // TODO : remove
     Object.values(enums.World).forEach(world => {
       // load left platform
       this.load.svg(config.worlds[world].platforms.left);
@@ -167,30 +177,26 @@ export default class MainScene extends Phaser.Scene {
       // load wall
       this.load.svg(config.worlds[world].platforms.wall);
     });
-  }
 
-  loadTraps() {
-    // TODO : wip
-  }
-
-  loadShapes() {
-    this.load.json("shapes", "assets/shapes/shapes.json");
-  }
-
-  loadSpritesSheets() {
-    // test
-    this.load.multiatlas({
-      key: "spritesheets-test",
-      atlasURL: "assets/spritesheets/atlas-test.json",
-      path: "assets/spritesheets/"
-    });
-
-    // plateforms
+    // plateforms spritesheets
     this.load.multiatlas({
       key: platformsTexture,
       atlasURL: "assets/spritesheets/platforms/atlas.json",
       path: "assets/spritesheets/platforms/"
     });
+  }
+
+  loadTraps() {
+    // traps spritesheets
+    this.load.multiatlas({
+      key: getTrapsTexture(this.world),
+      atlasURL: `assets/spritesheets/traps/${this.world}/atlas.json`,
+      path: `assets/spritesheets/traps/${this.world}/`
+    });
+  }
+
+  loadShapes() {
+    this.load.json("shapes", "assets/shapes/shapes.json");
   }
 
   // ---------- CREATE ----------
@@ -355,21 +361,25 @@ export default class MainScene extends Phaser.Scene {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
 
     playersWithTrapRole.forEach(playerId => {
-      // const playerRole = this.playersRole[playerId];
       const device = this.areaDevices[playerId];
+      const playerRole = this.playersRole[playerId];
+      const playerRolePropertiesTrap = playerRole.properties as PlayerRolePropertiesTrap;
 
-      // TODO : create trap dynamicaly with playerRole data
+      /* eslint-disable */
+      // prettier-ignore
+      // @ts-ignore
+      const trapAnimationConfig: TrapsAnimationConfig = config.traps[this.world][playerRolePropertiesTrap.type];
+      /* eslint-enable */
 
       new Trap({
         pixelRatio: this.pixelRatio,
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.pixelRatio,
         y: 0,
-        texture: "spritesheets-test",
-        animationKey: "anim-snake",
         options: { isStatic: true },
-        collisionEnabled: false,
-        location: TrapLocation.top
+        animationConfig: trapAnimationConfig,
+        animationRepeatDelay: playerRolePropertiesTrap.interval,
+        collisionEnabled: false
       });
     });
   }
@@ -557,7 +567,6 @@ export default class MainScene extends Phaser.Scene {
     this.loadMembers();
     this.loadPlatforms();
     this.loadTraps();
-    this.loadSpritesSheets();
     this.loadShapes();
   }
 

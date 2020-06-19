@@ -1,0 +1,4872 @@
+{
+	"textures": [
+		{
+			"image": "texture-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4093,
+				"h": 4095
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "mountain/geyser/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 511,
+						"w": 484,
+						"h": 1094
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 484,
+						"h": 1094
+					}
+				},
+				{
+					"filename": "mountain/geyser/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 272,
+						"y": 543,
+						"w": 482,
+						"h": 1063
+					},
+					"frame": {
+						"x": 1,
+						"y": 1097,
+						"w": 482,
+						"h": 1063
+					}
+				},
+				{
+					"filename": "mountain/geyser/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 307,
+						"y": 473,
+						"w": 438,
+						"h": 1132
+					},
+					"frame": {
+						"x": 1,
+						"y": 2162,
+						"w": 438,
+						"h": 1132
+					}
+				},
+				{
+					"filename": "mountain/geyser/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 366,
+						"y": 837,
+						"w": 387,
+						"h": 768
+					},
+					"frame": {
+						"x": 1,
+						"y": 3296,
+						"w": 387,
+						"h": 768
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00138",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 509,
+						"y": 1511,
+						"w": 68,
+						"h": 26
+					},
+					"frame": {
+						"x": 1,
+						"y": 4066,
+						"w": 68,
+						"h": 26
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00139",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 520,
+						"y": 1517,
+						"w": 47,
+						"h": 18
+					},
+					"frame": {
+						"x": 71,
+						"y": 4066,
+						"w": 47,
+						"h": 18
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 518,
+						"y": 0,
+						"w": 23,
+						"h": 6
+					},
+					"frame": {
+						"x": 71,
+						"y": 4086,
+						"w": 23,
+						"h": 6
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00141",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 537,
+						"y": 1525,
+						"w": 15,
+						"h": 8
+					},
+					"frame": {
+						"x": 96,
+						"y": 4086,
+						"w": 15,
+						"h": 8
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 523,
+						"y": 0,
+						"w": 12,
+						"h": 3
+					},
+					"frame": {
+						"x": 113,
+						"y": 4086,
+						"w": 12,
+						"h": 3
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 113,
+						"y": 4091,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 113,
+						"y": 4091,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00143",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 113,
+						"y": 4091,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 513,
+						"y": 0,
+						"w": 32,
+						"h": 12
+					},
+					"frame": {
+						"x": 120,
+						"y": 4066,
+						"w": 32,
+						"h": 12
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00142",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 542,
+						"y": 1528,
+						"w": 6,
+						"h": 4
+					},
+					"frame": {
+						"x": 120,
+						"y": 4080,
+						"w": 6,
+						"h": 4
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00140",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 530,
+						"y": 1522,
+						"w": 29,
+						"h": 12
+					},
+					"frame": {
+						"x": 128,
+						"y": 4080,
+						"w": 29,
+						"h": 12
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 510,
+						"y": 0,
+						"w": 39,
+						"h": 21
+					},
+					"frame": {
+						"x": 159,
+						"y": 4066,
+						"w": 39,
+						"h": 21
+					}
+				},
+				{
+					"filename": "mountain/penguin/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 419,
+						"w": 386,
+						"h": 762
+					},
+					"frame": {
+						"x": 390,
+						"y": 3296,
+						"w": 386,
+						"h": 762
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 508,
+						"y": 0,
+						"w": 94,
+						"h": 34
+					},
+					"frame": {
+						"x": 390,
+						"y": 4060,
+						"w": 94,
+						"h": 34
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00137",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 496,
+						"y": 1505,
+						"w": 93,
+						"h": 34
+					},
+					"frame": {
+						"x": 486,
+						"y": 4060,
+						"w": 93,
+						"h": 34
+					}
+				},
+				{
+					"filename": "mountain/geyser/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 287,
+						"y": 542,
+						"w": 464,
+						"h": 1063
+					},
+					"frame": {
+						"x": 441,
+						"y": 2162,
+						"w": 464,
+						"h": 1063
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00134",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 455,
+						"y": 1484,
+						"w": 170,
+						"h": 61
+					},
+					"frame": {
+						"x": 441,
+						"y": 3227,
+						"w": 170,
+						"h": 61
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00135",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 469,
+						"y": 1491,
+						"w": 144,
+						"h": 52
+					},
+					"frame": {
+						"x": 613,
+						"y": 3227,
+						"w": 144,
+						"h": 52
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 505,
+						"y": 0,
+						"w": 104,
+						"h": 51
+					},
+					"frame": {
+						"x": 759,
+						"y": 3227,
+						"w": 104,
+						"h": 51
+					}
+				},
+				{
+					"filename": "mountain/penguin/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 419,
+						"w": 386,
+						"h": 762
+					},
+					"frame": {
+						"x": 778,
+						"y": 3280,
+						"w": 386,
+						"h": 762
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00136",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 483,
+						"y": 1498,
+						"w": 118,
+						"h": 43
+					},
+					"frame": {
+						"x": 865,
+						"y": 3227,
+						"w": 118,
+						"h": 43
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 331,
+						"y": 490,
+						"w": 444,
+						"h": 1059
+					},
+					"frame": {
+						"x": 485,
+						"y": 1097,
+						"w": 444,
+						"h": 1059
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 303,
+						"y": 630,
+						"w": 500,
+						"h": 919
+					},
+					"frame": {
+						"x": 907,
+						"y": 2158,
+						"w": 500,
+						"h": 919
+					}
+				},
+				{
+					"filename": "mountain/penguin/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1041,
+						"w": 386,
+						"h": 140
+					},
+					"frame": {
+						"x": 907,
+						"y": 3079,
+						"w": 386,
+						"h": 140
+					}
+				},
+				{
+					"filename": "mountain/penguin/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 353,
+						"w": 386,
+						"h": 828
+					},
+					"frame": {
+						"x": 1166,
+						"y": 3221,
+						"w": 386,
+						"h": 828
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00103",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00104",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00105",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00106",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00107",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00108",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00109",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00110",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00111",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00112",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00113",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00114",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00115",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00116",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00117",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00118",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00119",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00120",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00121",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 1453,
+						"w": 478,
+						"h": 112
+					},
+					"frame": {
+						"x": 1295,
+						"y": 3079,
+						"w": 478,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/penguin/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 290,
+						"w": 386,
+						"h": 891
+					},
+					"frame": {
+						"x": 1554,
+						"y": 3193,
+						"w": 386,
+						"h": 891
+					}
+				},
+				{
+					"filename": "mountain/geyser/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 317,
+						"y": 518,
+						"w": 427,
+						"h": 1087
+					},
+					"frame": {
+						"x": 487,
+						"y": 1,
+						"w": 427,
+						"h": 1087
+					}
+				},
+				{
+					"filename": "mountain/geyser/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 316,
+						"y": 537,
+						"w": 430,
+						"h": 1068
+					},
+					"frame": {
+						"x": 916,
+						"y": 1,
+						"w": 430,
+						"h": 1068
+					}
+				},
+				{
+					"filename": "mountain/geyser/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 318,
+						"y": 547,
+						"w": 427,
+						"h": 1059
+					},
+					"frame": {
+						"x": 931,
+						"y": 1071,
+						"w": 427,
+						"h": 1059
+					}
+				},
+				{
+					"filename": "mountain/geyser/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 537,
+						"w": 387,
+						"h": 1068
+					},
+					"frame": {
+						"x": 1348,
+						"y": 1,
+						"w": 387,
+						"h": 1068
+					}
+				},
+				{
+					"filename": "mountain/penguin/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 124,
+						"w": 386,
+						"h": 1057
+					},
+					"frame": {
+						"x": 1360,
+						"y": 1071,
+						"w": 386,
+						"h": 1057
+					}
+				},
+				{
+					"filename": "mountain/geyser/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 331,
+						"y": 623,
+						"w": 414,
+						"h": 984
+					},
+					"frame": {
+						"x": 1737,
+						"y": 1,
+						"w": 414,
+						"h": 984
+					}
+				},
+				{
+					"filename": "mountain/geyser/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 1737,
+						"y": 987,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/geyser/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 361,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 1737,
+						"y": 987,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/geyser/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 1737,
+						"y": 987,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/geyser/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 362,
+						"y": 679,
+						"w": 387,
+						"h": 927
+					},
+					"frame": {
+						"x": 1409,
+						"y": 2130,
+						"w": 387,
+						"h": 927
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00102",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 274,
+						"y": 1453,
+						"w": 470,
+						"h": 112
+					},
+					"frame": {
+						"x": 1775,
+						"y": 3059,
+						"w": 470,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/penguin/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 305,
+						"w": 386,
+						"h": 876
+					},
+					"frame": {
+						"x": 1942,
+						"y": 3173,
+						"w": 386,
+						"h": 876
+					}
+				},
+				{
+					"filename": "mountain/penguin/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 141,
+						"w": 386,
+						"h": 1040
+					},
+					"frame": {
+						"x": 1748,
+						"y": 1070,
+						"w": 386,
+						"h": 1040
+					}
+				},
+				{
+					"filename": "mountain/geyser/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 357,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 2126,
+						"y": 987,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 203,
+						"w": 386,
+						"h": 978
+					},
+					"frame": {
+						"x": 2153,
+						"y": 1,
+						"w": 386,
+						"h": 978
+					}
+				},
+				{
+					"filename": "mountain/penguin/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 256,
+						"w": 386,
+						"h": 925
+					},
+					"frame": {
+						"x": 1798,
+						"y": 2112,
+						"w": 386,
+						"h": 925
+					}
+				},
+				{
+					"filename": "mountain/penguin/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 151,
+						"w": 386,
+						"h": 1030
+					},
+					"frame": {
+						"x": 2136,
+						"y": 1070,
+						"w": 386,
+						"h": 1030
+					}
+				},
+				{
+					"filename": "mountain/geyser/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 355,
+						"y": 1525,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 2515,
+						"y": 981,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 221,
+						"w": 386,
+						"h": 960
+					},
+					"frame": {
+						"x": 2541,
+						"y": 1,
+						"w": 386,
+						"h": 960
+					}
+				},
+				{
+					"filename": "mountain/penguin/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 231,
+						"w": 386,
+						"h": 950
+					},
+					"frame": {
+						"x": 2186,
+						"y": 2102,
+						"w": 386,
+						"h": 950
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00122",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 279,
+						"y": 1453,
+						"w": 465,
+						"h": 112
+					},
+					"frame": {
+						"x": 2247,
+						"y": 3054,
+						"w": 465,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/penguin/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 182,
+						"w": 386,
+						"h": 999
+					},
+					"frame": {
+						"x": 2524,
+						"y": 1064,
+						"w": 386,
+						"h": 999
+					}
+				},
+				{
+					"filename": "mountain/penguin/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1089,
+						"w": 386,
+						"h": 92
+					},
+					"frame": {
+						"x": 2904,
+						"y": 963,
+						"w": 386,
+						"h": 92
+					}
+				},
+				{
+					"filename": "mountain/penguin/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 361,
+						"w": 386,
+						"h": 820
+					},
+					"frame": {
+						"x": 2929,
+						"y": 1,
+						"w": 386,
+						"h": 820
+					}
+				},
+				{
+					"filename": "mountain/penguin/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1047,
+						"w": 386,
+						"h": 134
+					},
+					"frame": {
+						"x": 2929,
+						"y": 823,
+						"w": 386,
+						"h": 134
+					}
+				},
+				{
+					"filename": "mountain/penguin/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 480,
+						"w": 386,
+						"h": 701
+					},
+					"frame": {
+						"x": 2574,
+						"y": 2065,
+						"w": 386,
+						"h": 701
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00098",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 329,
+						"y": 1299,
+						"w": 415,
+						"h": 266
+					},
+					"frame": {
+						"x": 2574,
+						"y": 2768,
+						"w": 415,
+						"h": 266
+					}
+				},
+				{
+					"filename": "mountain/penguin/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 487,
+						"w": 386,
+						"h": 694
+					},
+					"frame": {
+						"x": 2912,
+						"y": 1057,
+						"w": 386,
+						"h": 694
+					}
+				},
+				{
+					"filename": "mountain/geyser/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 358,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 3292,
+						"y": 959,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 879,
+						"w": 386,
+						"h": 302
+					},
+					"frame": {
+						"x": 2912,
+						"y": 1753,
+						"w": 386,
+						"h": 302
+					}
+				},
+				{
+					"filename": "mountain/penguin/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 542,
+						"w": 386,
+						"h": 639
+					},
+					"frame": {
+						"x": 3317,
+						"y": 1,
+						"w": 386,
+						"h": 639
+					}
+				},
+				{
+					"filename": "mountain/penguin/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 900,
+						"w": 386,
+						"h": 281
+					},
+					"frame": {
+						"x": 3317,
+						"y": 642,
+						"w": 386,
+						"h": 281
+					}
+				},
+				{
+					"filename": "mountain/penguin/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 555,
+						"w": 386,
+						"h": 626
+					},
+					"frame": {
+						"x": 2962,
+						"y": 2057,
+						"w": 386,
+						"h": 626
+					}
+				},
+				{
+					"filename": "mountain/geyser/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 363,
+						"y": 1524,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 2962,
+						"y": 2685,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 606,
+						"w": 386,
+						"h": 575
+					},
+					"frame": {
+						"x": 3300,
+						"y": 1042,
+						"w": 386,
+						"h": 575
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00126",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 336,
+						"y": 1453,
+						"w": 408,
+						"h": 112
+					},
+					"frame": {
+						"x": 3681,
+						"y": 925,
+						"w": 408,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/geyser/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 362,
+						"y": 1034,
+						"w": 387,
+						"h": 572
+					},
+					"frame": {
+						"x": 3705,
+						"y": 1,
+						"w": 387,
+						"h": 572
+					}
+				},
+				{
+					"filename": "mountain/geyser/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 362,
+						"y": 1327,
+						"w": 387,
+						"h": 280
+					},
+					"frame": {
+						"x": 3705,
+						"y": 575,
+						"w": 387,
+						"h": 280
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00100",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 300,
+						"y": 1211,
+						"w": 504,
+						"h": 354
+					},
+					"frame": {
+						"x": 3300,
+						"y": 1619,
+						"w": 504,
+						"h": 354
+					}
+				},
+				{
+					"filename": "mountain/penguin/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 625,
+						"w": 386,
+						"h": 556
+					},
+					"frame": {
+						"x": 3688,
+						"y": 1039,
+						"w": 386,
+						"h": 556
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00132",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 428,
+						"y": 1471,
+						"w": 221,
+						"h": 79
+					},
+					"frame": {
+						"x": 3300,
+						"y": 1975,
+						"w": 221,
+						"h": 79
+					}
+				},
+				{
+					"filename": "mountain/penguin/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 671,
+						"w": 386,
+						"h": 510
+					},
+					"frame": {
+						"x": 3350,
+						"y": 2056,
+						"w": 386,
+						"h": 510
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00133",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 1478,
+						"w": 197,
+						"h": 70
+					},
+					"frame": {
+						"x": 3523,
+						"y": 1975,
+						"w": 197,
+						"h": 70
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 503,
+						"y": 0,
+						"w": 112,
+						"h": 75
+					},
+					"frame": {
+						"x": 3722,
+						"y": 1975,
+						"w": 112,
+						"h": 75
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00101",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 292,
+						"y": 1453,
+						"w": 452,
+						"h": 112
+					},
+					"frame": {
+						"x": 3350,
+						"y": 2568,
+						"w": 452,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00093",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 376,
+						"y": 1095,
+						"w": 318,
+						"h": 465
+					},
+					"frame": {
+						"x": 3738,
+						"y": 2052,
+						"w": 318,
+						"h": 465
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 199,
+						"h": 450
+					},
+					"frame": {
+						"x": 3836,
+						"y": 1597,
+						"w": 199,
+						"h": 450
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 423,
+						"y": 237,
+						"w": 230,
+						"h": 1307
+					},
+					"frame": {
+						"x": 3804,
+						"y": 2519,
+						"w": 230,
+						"h": 1307
+					}
+				},
+				{
+					"filename": "mountain/geyser/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 320,
+						"y": 458,
+						"w": 428,
+						"h": 1147
+					},
+					"frame": {
+						"x": 3351,
+						"y": 2682,
+						"w": 428,
+						"h": 1147
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 452,
+						"y": 0,
+						"w": 178,
+						"h": 263
+					},
+					"frame": {
+						"x": 3781,
+						"y": 3828,
+						"w": 178,
+						"h": 263
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 497,
+						"y": 0,
+						"w": 125,
+						"h": 140
+					},
+					"frame": {
+						"x": 3961,
+						"y": 3828,
+						"w": 125,
+						"h": 140
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 500,
+						"y": 0,
+						"w": 119,
+						"h": 106
+					},
+					"frame": {
+						"x": 3961,
+						"y": 3970,
+						"w": 119,
+						"h": 106
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 396,
+						"y": 303,
+						"w": 296,
+						"h": 1241
+					},
+					"frame": {
+						"x": 2991,
+						"y": 2768,
+						"w": 296,
+						"h": 1241
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00094",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 336,
+						"y": 1302,
+						"w": 408,
+						"h": 263
+					},
+					"frame": {
+						"x": 3289,
+						"y": 3831,
+						"w": 408,
+						"h": 263
+					}
+				},
+				{
+					"filename": "mountain/geyser/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 365,
+						"y": 1525,
+						"w": 387,
+						"h": 81
+					},
+					"frame": {
+						"x": 2330,
+						"y": 4011,
+						"w": 387,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1100,
+						"w": 386,
+						"h": 81
+					},
+					"frame": {
+						"x": 2719,
+						"y": 4011,
+						"w": 386,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00092",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 414,
+						"y": 826,
+						"w": 262,
+						"h": 726
+					},
+					"frame": {
+						"x": 2714,
+						"y": 3036,
+						"w": 262,
+						"h": 726
+					}
+				},
+				{
+					"filename": "mountain/penguin/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 953,
+						"w": 386,
+						"h": 228
+					},
+					"frame": {
+						"x": 2330,
+						"y": 3764,
+						"w": 386,
+						"h": 228
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 454,
+						"y": 0,
+						"w": 175,
+						"h": 245
+					},
+					"frame": {
+						"x": 2718,
+						"y": 3764,
+						"w": 175,
+						"h": 245
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 0,
+						"w": 201,
+						"h": 587
+					},
+					"frame": {
+						"x": 2330,
+						"y": 3168,
+						"w": 201,
+						"h": 587
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 457,
+						"y": 0,
+						"w": 171,
+						"h": 224
+					},
+					"frame": {
+						"x": 2533,
+						"y": 3168,
+						"w": 171,
+						"h": 224
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 461,
+						"y": 0,
+						"w": 165,
+						"h": 200
+					},
+					"frame": {
+						"x": 2533,
+						"y": 3394,
+						"w": 165,
+						"h": 200
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 3864,
+				"h": 4095
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "mountain/stalactite/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 141,
+						"w": 201,
+						"h": 1408
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 201,
+						"h": 1408
+					}
+				},
+				{
+					"filename": "mountain/geyser/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 436,
+						"w": 411,
+						"h": 1169
+					},
+					"frame": {
+						"x": 204,
+						"y": 1,
+						"w": 411,
+						"h": 1169
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 184,
+						"w": 201,
+						"h": 1360
+					},
+					"frame": {
+						"x": 1,
+						"y": 1411,
+						"w": 201,
+						"h": 1360
+					}
+				},
+				{
+					"filename": "mountain/geyser/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 340,
+						"y": 453,
+						"w": 406,
+						"h": 1152
+					},
+					"frame": {
+						"x": 204,
+						"y": 1172,
+						"w": 406,
+						"h": 1152
+					}
+				},
+				{
+					"filename": "mountain/geyser/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 350,
+						"y": 447,
+						"w": 396,
+						"h": 1158
+					},
+					"frame": {
+						"x": 617,
+						"y": 1,
+						"w": 396,
+						"h": 1158
+					}
+				},
+				{
+					"filename": "mountain/geyser/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 345,
+						"y": 455,
+						"w": 401,
+						"h": 1150
+					},
+					"frame": {
+						"x": 1015,
+						"y": 1,
+						"w": 401,
+						"h": 1150
+					}
+				},
+				{
+					"filename": "mountain/geyser/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 341,
+						"y": 460,
+						"w": 405,
+						"h": 1145
+					},
+					"frame": {
+						"x": 1418,
+						"y": 1,
+						"w": 405,
+						"h": 1145
+					}
+				},
+				{
+					"filename": "mountain/geyser/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 318,
+						"y": 495,
+						"w": 425,
+						"h": 1110
+					},
+					"frame": {
+						"x": 1825,
+						"y": 1,
+						"w": 425,
+						"h": 1110
+					}
+				},
+				{
+					"filename": "mountain/geyser/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 342,
+						"y": 477,
+						"w": 404,
+						"h": 1128
+					},
+					"frame": {
+						"x": 2252,
+						"y": 1,
+						"w": 404,
+						"h": 1128
+					}
+				},
+				{
+					"filename": "mountain/geyser/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 352,
+						"y": 482,
+						"w": 394,
+						"h": 1123
+					},
+					"frame": {
+						"x": 2658,
+						"y": 1,
+						"w": 394,
+						"h": 1123
+					}
+				},
+				{
+					"filename": "mountain/geyser/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 459,
+						"w": 387,
+						"h": 1146
+					},
+					"frame": {
+						"x": 3054,
+						"y": 1,
+						"w": 387,
+						"h": 1146
+					}
+				},
+				{
+					"filename": "mountain/geyser/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 443,
+						"w": 387,
+						"h": 1162
+					},
+					"frame": {
+						"x": 3443,
+						"y": 1,
+						"w": 387,
+						"h": 1162
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 105,
+						"w": 201,
+						"h": 1277
+					},
+					"frame": {
+						"x": 1,
+						"y": 2773,
+						"w": 201,
+						"h": 1277
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 366,
+						"y": 385,
+						"w": 369,
+						"h": 1159
+					},
+					"frame": {
+						"x": 204,
+						"y": 2326,
+						"w": 369,
+						"h": 1159
+					}
+				},
+				{
+					"filename": "mountain/geyser/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 484,
+						"w": 387,
+						"h": 1121
+					},
+					"frame": {
+						"x": 575,
+						"y": 2326,
+						"w": 387,
+						"h": 1121
+					}
+				},
+				{
+					"filename": "mountain/geyser/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 486,
+						"w": 387,
+						"h": 1119
+					},
+					"frame": {
+						"x": 612,
+						"y": 1172,
+						"w": 387,
+						"h": 1119
+					}
+				},
+				{
+					"filename": "mountain/geyser/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 489,
+						"w": 387,
+						"h": 1116
+					},
+					"frame": {
+						"x": 964,
+						"y": 2293,
+						"w": 387,
+						"h": 1116
+					}
+				},
+				{
+					"filename": "mountain/geyser/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 508,
+						"w": 387,
+						"h": 1097
+					},
+					"frame": {
+						"x": 1001,
+						"y": 1161,
+						"w": 387,
+						"h": 1097
+					}
+				},
+				{
+					"filename": "mountain/geyser/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 359,
+						"y": 509,
+						"w": 387,
+						"h": 1096
+					},
+					"frame": {
+						"x": 1390,
+						"y": 1153,
+						"w": 387,
+						"h": 1096
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 76,
+						"w": 201,
+						"h": 1072
+					},
+					"frame": {
+						"x": 1779,
+						"y": 1148,
+						"w": 201,
+						"h": 1072
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 52,
+						"w": 201,
+						"h": 931
+					},
+					"frame": {
+						"x": 1982,
+						"y": 1113,
+						"w": 201,
+						"h": 931
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 33,
+						"w": 201,
+						"h": 829
+					},
+					"frame": {
+						"x": 2185,
+						"y": 1131,
+						"w": 201,
+						"h": 829
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 18,
+						"w": 201,
+						"h": 751
+					},
+					"frame": {
+						"x": 2388,
+						"y": 1131,
+						"w": 201,
+						"h": 751
+					}
+				},
+				{
+					"filename": "mountain/penguin/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 694,
+						"w": 386,
+						"h": 487
+					},
+					"frame": {
+						"x": 204,
+						"y": 3487,
+						"w": 386,
+						"h": 487
+					}
+				},
+				{
+					"filename": "mountain/geyser/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 358,
+						"y": 1154,
+						"w": 387,
+						"h": 453
+					},
+					"frame": {
+						"x": 592,
+						"y": 3449,
+						"w": 387,
+						"h": 453
+					}
+				},
+				{
+					"filename": "mountain/penguin/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 739,
+						"w": 386,
+						"h": 442
+					},
+					"frame": {
+						"x": 981,
+						"y": 3411,
+						"w": 386,
+						"h": 442
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 7,
+						"w": 201,
+						"h": 688
+					},
+					"frame": {
+						"x": 2591,
+						"y": 1131,
+						"w": 201,
+						"h": 688
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 0,
+						"w": 201,
+						"h": 636
+					},
+					"frame": {
+						"x": 2794,
+						"y": 1126,
+						"w": 201,
+						"h": 636
+					}
+				},
+				{
+					"filename": "mountain/penguin/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 763,
+						"w": 386,
+						"h": 418
+					},
+					"frame": {
+						"x": 2997,
+						"y": 1149,
+						"w": 386,
+						"h": 418
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00096",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 272,
+						"y": 1207,
+						"w": 472,
+						"h": 358
+					},
+					"frame": {
+						"x": 3385,
+						"y": 1165,
+						"w": 472,
+						"h": 358
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00097",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 345,
+						"y": 1355,
+						"w": 399,
+						"h": 210
+					},
+					"frame": {
+						"x": 2997,
+						"y": 1569,
+						"w": 399,
+						"h": 210
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00099",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 312,
+						"y": 1248,
+						"w": 465,
+						"h": 317
+					},
+					"frame": {
+						"x": 3398,
+						"y": 1525,
+						"w": 465,
+						"h": 317
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 200,
+						"h": 548
+					},
+					"frame": {
+						"x": 1353,
+						"y": 2260,
+						"w": 200,
+						"h": 548
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 200,
+						"h": 515
+					},
+					"frame": {
+						"x": 1353,
+						"y": 2810,
+						"w": 200,
+						"h": 515
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 200,
+						"h": 489
+					},
+					"frame": {
+						"x": 1555,
+						"y": 2251,
+						"w": 200,
+						"h": 489
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 200,
+						"h": 467
+					},
+					"frame": {
+						"x": 1555,
+						"y": 2742,
+						"w": 200,
+						"h": 467
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 201,
+						"h": 437
+					},
+					"frame": {
+						"x": 1369,
+						"y": 3327,
+						"w": 201,
+						"h": 437
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 203,
+						"h": 427
+					},
+					"frame": {
+						"x": 1572,
+						"y": 3211,
+						"w": 203,
+						"h": 427
+					}
+				},
+				{
+					"filename": "mountain/penguin/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1100,
+						"w": 386,
+						"h": 81
+					},
+					"frame": {
+						"x": 204,
+						"y": 3976,
+						"w": 386,
+						"h": 81
+					}
+				},
+				{
+					"filename": "mountain/penguin/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1008,
+						"w": 386,
+						"h": 173
+					},
+					"frame": {
+						"x": 592,
+						"y": 3904,
+						"w": 386,
+						"h": 173
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 205,
+						"h": 421
+					},
+					"frame": {
+						"x": 1757,
+						"y": 2251,
+						"w": 205,
+						"h": 421
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 206,
+						"h": 417
+					},
+					"frame": {
+						"x": 1757,
+						"y": 2674,
+						"w": 206,
+						"h": 417
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 215,
+						"h": 415
+					},
+					"frame": {
+						"x": 1777,
+						"y": 3093,
+						"w": 215,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/penguin/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 999,
+						"w": 386,
+						"h": 182
+					},
+					"frame": {
+						"x": 981,
+						"y": 3855,
+						"w": 386,
+						"h": 182
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00095",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 299,
+						"y": 1247,
+						"w": 445,
+						"h": 318
+					},
+					"frame": {
+						"x": 1369,
+						"y": 3766,
+						"w": 445,
+						"h": 318
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 213,
+						"h": 415
+					},
+					"frame": {
+						"x": 1964,
+						"y": 2222,
+						"w": 213,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 213,
+						"h": 415
+					},
+					"frame": {
+						"x": 1965,
+						"y": 2639,
+						"w": 213,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 212,
+						"h": 415
+					},
+					"frame": {
+						"x": 1994,
+						"y": 3056,
+						"w": 212,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/penguin/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1014,
+						"w": 386,
+						"h": 167
+					},
+					"frame": {
+						"x": 1982,
+						"y": 2046,
+						"w": 386,
+						"h": 167
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 212,
+						"h": 415
+					},
+					"frame": {
+						"x": 2179,
+						"y": 2215,
+						"w": 212,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 210,
+						"h": 415
+					},
+					"frame": {
+						"x": 2180,
+						"y": 2632,
+						"w": 210,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 210,
+						"h": 415
+					},
+					"frame": {
+						"x": 2208,
+						"y": 3049,
+						"w": 210,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 208,
+						"h": 415
+					},
+					"frame": {
+						"x": 2392,
+						"y": 2632,
+						"w": 208,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 208,
+						"h": 415
+					},
+					"frame": {
+						"x": 2420,
+						"y": 3049,
+						"w": 208,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00123",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 295,
+						"y": 1453,
+						"w": 449,
+						"h": 112
+					},
+					"frame": {
+						"x": 2208,
+						"y": 3466,
+						"w": 449,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/penguin/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 965,
+						"w": 386,
+						"h": 216
+					},
+					"frame": {
+						"x": 1777,
+						"y": 3510,
+						"w": 386,
+						"h": 216
+					}
+				},
+				{
+					"filename": "mountain/penguin/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 832,
+						"w": 386,
+						"h": 349
+					},
+					"frame": {
+						"x": 1816,
+						"y": 3728,
+						"w": 386,
+						"h": 349
+					}
+				},
+				{
+					"filename": "mountain/penguin/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 808,
+						"w": 386,
+						"h": 373
+					},
+					"frame": {
+						"x": 2204,
+						"y": 3580,
+						"w": 386,
+						"h": 373
+					}
+				},
+				{
+					"filename": "mountain/penguin/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1042,
+						"w": 386,
+						"h": 139
+					},
+					"frame": {
+						"x": 2204,
+						"y": 3955,
+						"w": 386,
+						"h": 139
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 206,
+						"h": 415
+					},
+					"frame": {
+						"x": 2592,
+						"y": 3580,
+						"w": 206,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00130",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 406,
+						"y": 1460,
+						"w": 263,
+						"h": 93
+					},
+					"frame": {
+						"x": 2592,
+						"y": 3997,
+						"w": 263,
+						"h": 93
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00124",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 295,
+						"y": 1453,
+						"w": 449,
+						"h": 112
+					},
+					"frame": {
+						"x": 2857,
+						"y": 1781,
+						"w": 449,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00125",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 311,
+						"y": 1453,
+						"w": 433,
+						"h": 112
+					},
+					"frame": {
+						"x": 2857,
+						"y": 1895,
+						"w": 433,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00127",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 345,
+						"y": 1453,
+						"w": 399,
+						"h": 112
+					},
+					"frame": {
+						"x": 2857,
+						"y": 2009,
+						"w": 399,
+						"h": 112
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 397
+					},
+					"frame": {
+						"x": 2659,
+						"y": 1821,
+						"w": 196,
+						"h": 397
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 410
+					},
+					"frame": {
+						"x": 2393,
+						"y": 2220,
+						"w": 198,
+						"h": 410
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 394
+					},
+					"frame": {
+						"x": 2593,
+						"y": 2220,
+						"w": 196,
+						"h": 394
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 205,
+						"h": 415
+					},
+					"frame": {
+						"x": 2602,
+						"y": 2616,
+						"w": 205,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 434,
+						"y": 0,
+						"w": 203,
+						"h": 415
+					},
+					"frame": {
+						"x": 2630,
+						"y": 3033,
+						"w": 203,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00128",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 345,
+						"y": 1454,
+						"w": 399,
+						"h": 104
+					},
+					"frame": {
+						"x": 2857,
+						"y": 2123,
+						"w": 399,
+						"h": 104
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 0,
+						"w": 195,
+						"h": 381
+					},
+					"frame": {
+						"x": 2791,
+						"y": 2229,
+						"w": 195,
+						"h": 381
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 203,
+						"h": 415
+					},
+					"frame": {
+						"x": 2809,
+						"y": 2612,
+						"w": 203,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 201,
+						"h": 415
+					},
+					"frame": {
+						"x": 2835,
+						"y": 3029,
+						"w": 201,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 0,
+						"w": 194,
+						"h": 367
+					},
+					"frame": {
+						"x": 2988,
+						"y": 2229,
+						"w": 194,
+						"h": 367
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 0,
+						"w": 200,
+						"h": 415
+					},
+					"frame": {
+						"x": 3014,
+						"y": 2598,
+						"w": 200,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 0,
+						"w": 200,
+						"h": 415
+					},
+					"frame": {
+						"x": 3038,
+						"y": 3015,
+						"w": 200,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 443,
+						"y": 0,
+						"w": 192,
+						"h": 349
+					},
+					"frame": {
+						"x": 3184,
+						"y": 2229,
+						"w": 192,
+						"h": 349
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 199,
+						"h": 415
+					},
+					"frame": {
+						"x": 3216,
+						"y": 2580,
+						"w": 199,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 199,
+						"h": 415
+					},
+					"frame": {
+						"x": 3240,
+						"y": 2997,
+						"w": 199,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/penguin/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1049,
+						"w": 386,
+						"h": 132
+					},
+					"frame": {
+						"x": 3417,
+						"y": 1844,
+						"w": 386,
+						"h": 132
+					}
+				},
+				{
+					"filename": "mountain/penguin/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1020,
+						"w": 386,
+						"h": 161
+					},
+					"frame": {
+						"x": 3417,
+						"y": 1978,
+						"w": 386,
+						"h": 161
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 0,
+						"w": 199,
+						"h": 415
+					},
+					"frame": {
+						"x": 3378,
+						"y": 2141,
+						"w": 199,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 412
+					},
+					"frame": {
+						"x": 3579,
+						"y": 2141,
+						"w": 198,
+						"h": 412
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 391
+					},
+					"frame": {
+						"x": 3417,
+						"y": 2558,
+						"w": 196,
+						"h": 391
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 443,
+						"y": 0,
+						"w": 191,
+						"h": 341
+					},
+					"frame": {
+						"x": 3615,
+						"y": 2555,
+						"w": 191,
+						"h": 341
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 444,
+						"y": 0,
+						"w": 190,
+						"h": 333
+					},
+					"frame": {
+						"x": 3441,
+						"y": 2951,
+						"w": 190,
+						"h": 333
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 444,
+						"y": 0,
+						"w": 190,
+						"h": 325
+					},
+					"frame": {
+						"x": 3633,
+						"y": 2898,
+						"w": 190,
+						"h": 325
+					}
+				},
+				{
+					"filename": "mountain/penguin/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1021,
+						"w": 386,
+						"h": 160
+					},
+					"frame": {
+						"x": 3441,
+						"y": 3286,
+						"w": 386,
+						"h": 160
+					}
+				},
+				{
+					"filename": "mountain/penguin/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1061,
+						"w": 386,
+						"h": 120
+					},
+					"frame": {
+						"x": 2659,
+						"y": 3450,
+						"w": 386,
+						"h": 120
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 0,
+						"w": 188,
+						"h": 315
+					},
+					"frame": {
+						"x": 2800,
+						"y": 3572,
+						"w": 188,
+						"h": 315
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 0,
+						"w": 187,
+						"h": 304
+					},
+					"frame": {
+						"x": 2990,
+						"y": 3572,
+						"w": 187,
+						"h": 304
+					}
+				},
+				{
+					"filename": "mountain/penguin/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1049,
+						"w": 386,
+						"h": 132
+					},
+					"frame": {
+						"x": 3047,
+						"y": 3432,
+						"w": 386,
+						"h": 132
+					}
+				},
+				{
+					"filename": "mountain/penguin/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1029,
+						"w": 386,
+						"h": 152
+					},
+					"frame": {
+						"x": 3435,
+						"y": 3448,
+						"w": 386,
+						"h": 152
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 448,
+						"y": 0,
+						"w": 184,
+						"h": 292
+					},
+					"frame": {
+						"x": 3179,
+						"y": 3566,
+						"w": 184,
+						"h": 292
+					}
+				},
+				{
+					"filename": "mountain/penguin/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1031,
+						"w": 386,
+						"h": 150
+					},
+					"frame": {
+						"x": 3365,
+						"y": 3602,
+						"w": 386,
+						"h": 150
+					}
+				},
+				{
+					"filename": "mountain/penguin/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1032,
+						"w": 386,
+						"h": 149
+					},
+					"frame": {
+						"x": 3365,
+						"y": 3754,
+						"w": 386,
+						"h": 149
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00129",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 398,
+						"y": 1456,
+						"w": 278,
+						"h": 98
+					},
+					"frame": {
+						"x": 2800,
+						"y": 3889,
+						"w": 278,
+						"h": 98
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00131",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 416,
+						"y": 1465,
+						"w": 244,
+						"h": 87
+					},
+					"frame": {
+						"x": 2857,
+						"y": 3989,
+						"w": 244,
+						"h": 87
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 465,
+						"y": 0,
+						"w": 159,
+						"h": 172
+					},
+					"frame": {
+						"x": 2388,
+						"y": 1884,
+						"w": 159,
+						"h": 172
+					}
+				},
+				{
+					"filename": "mountain/penguin/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 396,
+						"h": 1200
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1069,
+						"w": 386,
+						"h": 112
+					},
+					"frame": {
+						"x": 3103,
+						"y": 3905,
+						"w": 386,
+						"h": 112
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 400,
+				"h": 3742
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "mountain/stalactite/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 415
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 198,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 415
+					},
+					"frame": {
+						"x": 1,
+						"y": 418,
+						"w": 198,
+						"h": 415
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 414
+					},
+					"frame": {
+						"x": 1,
+						"y": 835,
+						"w": 198,
+						"h": 414
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 414
+					},
+					"frame": {
+						"x": 1,
+						"y": 1251,
+						"w": 198,
+						"h": 414
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 413
+					},
+					"frame": {
+						"x": 1,
+						"y": 1667,
+						"w": 198,
+						"h": 413
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 411
+					},
+					"frame": {
+						"x": 1,
+						"y": 2082,
+						"w": 198,
+						"h": 411
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 409
+					},
+					"frame": {
+						"x": 1,
+						"y": 2495,
+						"w": 198,
+						"h": 409
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 407
+					},
+					"frame": {
+						"x": 1,
+						"y": 2906,
+						"w": 198,
+						"h": 407
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 406
+					},
+					"frame": {
+						"x": 1,
+						"y": 3315,
+						"w": 198,
+						"h": 406
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 404
+					},
+					"frame": {
+						"x": 201,
+						"y": 1,
+						"w": 198,
+						"h": 404
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 0,
+						"w": 198,
+						"h": 402
+					},
+					"frame": {
+						"x": 201,
+						"y": 407,
+						"w": 198,
+						"h": 402
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 400
+					},
+					"frame": {
+						"x": 201,
+						"y": 811,
+						"w": 196,
+						"h": 400
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 388
+					},
+					"frame": {
+						"x": 201,
+						"y": 1213,
+						"w": 196,
+						"h": 388
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 440,
+						"y": 0,
+						"w": 196,
+						"h": 385
+					},
+					"frame": {
+						"x": 201,
+						"y": 1603,
+						"w": 196,
+						"h": 385
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 0,
+						"w": 195,
+						"h": 377
+					},
+					"frame": {
+						"x": 201,
+						"y": 1990,
+						"w": 195,
+						"h": 377
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 0,
+						"w": 194,
+						"h": 372
+					},
+					"frame": {
+						"x": 201,
+						"y": 2369,
+						"w": 194,
+						"h": 372
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 0,
+						"w": 193,
+						"h": 361
+					},
+					"frame": {
+						"x": 201,
+						"y": 2743,
+						"w": 193,
+						"h": 361
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 0,
+						"w": 193,
+						"h": 355
+					},
+					"frame": {
+						"x": 201,
+						"y": 3106,
+						"w": 193,
+						"h": 355
+					}
+				},
+				{
+					"filename": "mountain/stalactite/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 450,
+						"y": 0,
+						"w": 181,
+						"h": 278
+					},
+					"frame": {
+						"x": 201,
+						"y": 3463,
+						"w": 181,
+						"h": 278
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f9614d172caca6362ee6b09a3ec09b45:0718423c2087849631d25a0784ae7a10:31ac75ebec9e93291f61783900306d67$"
+	}
+}
