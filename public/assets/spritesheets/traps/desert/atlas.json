@@ -1,0 +1,6732 @@
+{
+	"textures": [
+		{
+			"image": "texture-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4095,
+				"h": 4095
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/meerkat/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 385,
+						"h": 1581
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 385,
+						"h": 1581
+					}
+				},
+				{
+					"filename": "desert/meerkat/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 385,
+						"h": 1581
+					},
+					"frame": {
+						"x": 1,
+						"y": 1584,
+						"w": 385,
+						"h": 1581
+					}
+				},
+				{
+					"filename": "desert/fire/00093",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 262,
+						"y": 292,
+						"w": 209,
+						"h": 927
+					},
+					"frame": {
+						"x": 1,
+						"y": 3167,
+						"w": 209,
+						"h": 927
+					}
+				},
+				{
+					"filename": "desert/snake/00124",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 926
+					},
+					"frame": {
+						"x": 212,
+						"y": 3167,
+						"w": 722,
+						"h": 926
+					}
+				},
+				{
+					"filename": "desert/meerkat/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 385,
+						"h": 1581
+					},
+					"frame": {
+						"x": 388,
+						"y": 1,
+						"w": 385,
+						"h": 1581
+					}
+				},
+				{
+					"filename": "desert/meerkat/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 0,
+						"w": 385,
+						"h": 1581
+					},
+					"frame": {
+						"x": 388,
+						"y": 1584,
+						"w": 385,
+						"h": 1581
+					}
+				},
+				{
+					"filename": "desert/meerkat/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 10,
+						"w": 385,
+						"h": 1571
+					},
+					"frame": {
+						"x": 775,
+						"y": 1,
+						"w": 385,
+						"h": 1571
+					}
+				},
+				{
+					"filename": "desert/meerkat/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 25,
+						"w": 385,
+						"h": 1556
+					},
+					"frame": {
+						"x": 775,
+						"y": 1574,
+						"w": 385,
+						"h": 1556
+					}
+				},
+				{
+					"filename": "desert/fire/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 1531,
+						"w": 77,
+						"h": 29
+					},
+					"frame": {
+						"x": 775,
+						"y": 3132,
+						"w": 77,
+						"h": 29
+					}
+				},
+				{
+					"filename": "desert/snake/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 955
+					},
+					"frame": {
+						"x": 936,
+						"y": 3132,
+						"w": 722,
+						"h": 955
+					}
+				},
+				{
+					"filename": "desert/fire/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 936,
+						"y": 4089,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "desert/fire/00118",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 936,
+						"y": 4089,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "desert/fire/00119",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 3,
+						"h": 3
+					},
+					"frame": {
+						"x": 936,
+						"y": 4089,
+						"w": 3,
+						"h": 3
+					}
+				},
+				{
+					"filename": "desert/fire/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1538,
+						"w": 75,
+						"h": 22
+					},
+					"frame": {
+						"x": 854,
+						"y": 3132,
+						"w": 75,
+						"h": 22
+					}
+				},
+				{
+					"filename": "desert/fire/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 1553,
+						"w": 55,
+						"h": 7
+					},
+					"frame": {
+						"x": 854,
+						"y": 3156,
+						"w": 55,
+						"h": 7
+					}
+				},
+				{
+					"filename": "desert/meerkat/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 25,
+						"w": 385,
+						"h": 1556
+					},
+					"frame": {
+						"x": 1162,
+						"y": 1,
+						"w": 385,
+						"h": 1556
+					}
+				},
+				{
+					"filename": "desert/meerkat/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 25,
+						"w": 385,
+						"h": 1556
+					},
+					"frame": {
+						"x": 1162,
+						"y": 1559,
+						"w": 385,
+						"h": 1556
+					}
+				},
+				{
+					"filename": "desert/meerkat/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 120,
+						"w": 385,
+						"h": 1461
+					},
+					"frame": {
+						"x": 1549,
+						"y": 1,
+						"w": 385,
+						"h": 1461
+					}
+				},
+				{
+					"filename": "desert/meerkat/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 134,
+						"w": 385,
+						"h": 1447
+					},
+					"frame": {
+						"x": 1549,
+						"y": 1464,
+						"w": 385,
+						"h": 1447
+					}
+				},
+				{
+					"filename": "desert/snake/00093",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1175
+					},
+					"frame": {
+						"x": 1660,
+						"y": 2913,
+						"w": 722,
+						"h": 1175
+					}
+				},
+				{
+					"filename": "desert/fire/00114",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 331,
+						"y": 926,
+						"w": 103,
+						"h": 79
+					},
+					"frame": {
+						"x": 1549,
+						"y": 2913,
+						"w": 103,
+						"h": 79
+					}
+				},
+				{
+					"filename": "desert/fire/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 151,
+						"y": 1291,
+						"w": 84,
+						"h": 124
+					},
+					"frame": {
+						"x": 1549,
+						"y": 2994,
+						"w": 84,
+						"h": 124
+					}
+				},
+				{
+					"filename": "desert/fire/00115",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 332,
+						"y": 920,
+						"w": 20,
+						"h": 53
+					},
+					"frame": {
+						"x": 1635,
+						"y": 2994,
+						"w": 20,
+						"h": 53
+					}
+				},
+				{
+					"filename": "desert/fire/00116",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 334,
+						"y": 902,
+						"w": 14,
+						"h": 39
+					},
+					"frame": {
+						"x": 1635,
+						"y": 3049,
+						"w": 14,
+						"h": 39
+					}
+				},
+				{
+					"filename": "desert/fire/00117",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 339,
+						"y": 885,
+						"w": 10,
+						"h": 24
+					},
+					"frame": {
+						"x": 1635,
+						"y": 3090,
+						"w": 10,
+						"h": 24
+					}
+				},
+				{
+					"filename": "desert/snake/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1267
+					},
+					"frame": {
+						"x": 2384,
+						"y": 1,
+						"w": 722,
+						"h": 1267
+					}
+				},
+				{
+					"filename": "desert/meerkat/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 134,
+						"w": 385,
+						"h": 1447
+					},
+					"frame": {
+						"x": 1936,
+						"y": 1,
+						"w": 385,
+						"h": 1447
+					}
+				},
+				{
+					"filename": "desert/fire/00109",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 338,
+						"y": 1017,
+						"w": 50,
+						"h": 202
+					},
+					"frame": {
+						"x": 2323,
+						"y": 1,
+						"w": 50,
+						"h": 202
+					}
+				},
+				{
+					"filename": "desert/meerkat/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 134,
+						"w": 385,
+						"h": 1447
+					},
+					"frame": {
+						"x": 1936,
+						"y": 1450,
+						"w": 385,
+						"h": 1447
+					}
+				},
+				{
+					"filename": "desert/fire/00108",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 340,
+						"y": 616,
+						"w": 44,
+						"h": 603
+					},
+					"frame": {
+						"x": 2323,
+						"y": 205,
+						"w": 44,
+						"h": 603
+					}
+				},
+				{
+					"filename": "desert/snake/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1263
+					},
+					"frame": {
+						"x": 3108,
+						"y": 1,
+						"w": 722,
+						"h": 1263
+					}
+				},
+				{
+					"filename": "desert/fire/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 224,
+						"y": 129,
+						"w": 262,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3832,
+						"y": 1,
+						"w": 262,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 226,
+						"y": 129,
+						"w": 258,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3832,
+						"y": 1094,
+						"w": 258,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/snake/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1257
+					},
+					"frame": {
+						"x": 3108,
+						"y": 1266,
+						"w": 722,
+						"h": 1257
+					}
+				},
+				{
+					"filename": "desert/snake/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 386
+					},
+					"frame": {
+						"x": 2323,
+						"y": 2525,
+						"w": 722,
+						"h": 386
+					}
+				},
+				{
+					"filename": "desert/snake/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1246
+					},
+					"frame": {
+						"x": 2323,
+						"y": 1270,
+						"w": 722,
+						"h": 1246
+					}
+				},
+				{
+					"filename": "desert/snake/00092",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1172
+					},
+					"frame": {
+						"x": 2384,
+						"y": 2913,
+						"w": 722,
+						"h": 1172
+					}
+				},
+				{
+					"filename": "desert/snake/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 383
+					},
+					"frame": {
+						"x": 3047,
+						"y": 2525,
+						"w": 722,
+						"h": 383
+					}
+				},
+				{
+					"filename": "desert/snake/00094",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1171
+					},
+					"frame": {
+						"x": 3108,
+						"y": 2910,
+						"w": 722,
+						"h": 1171
+					}
+				},
+				{
+					"filename": "desert/fire/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 228,
+						"y": 129,
+						"w": 248,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3832,
+						"y": 2187,
+						"w": 248,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 268,
+						"y": 447,
+						"w": 186,
+						"h": 772
+					},
+					"frame": {
+						"x": 3832,
+						"y": 3280,
+						"w": 186,
+						"h": 772
+					}
+				},
+				{
+					"filename": "desert/fire/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1523,
+						"w": 80,
+						"h": 37
+					},
+					"frame": {
+						"x": 3832,
+						"y": 4054,
+						"w": 80,
+						"h": 37
+					}
+				},
+				{
+					"filename": "desert/fire/00110",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 335,
+						"y": 1000,
+						"w": 66,
+						"h": 218
+					},
+					"frame": {
+						"x": 4020,
+						"y": 3280,
+						"w": 66,
+						"h": 218
+					}
+				},
+				{
+					"filename": "desert/fire/00107",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 327,
+						"y": 626,
+						"w": 64,
+						"h": 594
+					},
+					"frame": {
+						"x": 4020,
+						"y": 3500,
+						"w": 64,
+						"h": 594
+					}
+				},
+				{
+					"filename": "desert/fire/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 1545,
+						"w": 61,
+						"h": 15
+					},
+					"frame": {
+						"x": 3914,
+						"y": 4054,
+						"w": 61,
+						"h": 15
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4008,
+				"h": 4076
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/snake/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1245
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 722,
+						"h": 1245
+					}
+				},
+				{
+					"filename": "desert/snake/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1226
+					},
+					"frame": {
+						"x": 1,
+						"y": 1248,
+						"w": 722,
+						"h": 1226
+					}
+				},
+				{
+					"filename": "desert/snake/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1206
+					},
+					"frame": {
+						"x": 725,
+						"y": 1,
+						"w": 722,
+						"h": 1206
+					}
+				},
+				{
+					"filename": "desert/snake/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1199
+					},
+					"frame": {
+						"x": 1,
+						"y": 2476,
+						"w": 722,
+						"h": 1199
+					}
+				},
+				{
+					"filename": "desert/snake/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1163
+					},
+					"frame": {
+						"x": 725,
+						"y": 1209,
+						"w": 722,
+						"h": 1163
+					}
+				},
+				{
+					"filename": "desert/snake/00066",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1163
+					},
+					"frame": {
+						"x": 1449,
+						"y": 1,
+						"w": 722,
+						"h": 1163
+					}
+				},
+				{
+					"filename": "desert/snake/00095",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1161
+					},
+					"frame": {
+						"x": 725,
+						"y": 2374,
+						"w": 722,
+						"h": 1161
+					}
+				},
+				{
+					"filename": "desert/snake/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1152
+					},
+					"frame": {
+						"x": 1449,
+						"y": 1166,
+						"w": 722,
+						"h": 1152
+					}
+				},
+				{
+					"filename": "desert/snake/00096",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1149
+					},
+					"frame": {
+						"x": 2173,
+						"y": 1,
+						"w": 722,
+						"h": 1149
+					}
+				},
+				{
+					"filename": "desert/snake/00097",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1134
+					},
+					"frame": {
+						"x": 1449,
+						"y": 2320,
+						"w": 722,
+						"h": 1134
+					}
+				},
+				{
+					"filename": "desert/snake/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1122
+					},
+					"frame": {
+						"x": 2173,
+						"y": 1152,
+						"w": 722,
+						"h": 1122
+					}
+				},
+				{
+					"filename": "desert/snake/00098",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1118
+					},
+					"frame": {
+						"x": 2897,
+						"y": 1,
+						"w": 722,
+						"h": 1118
+					}
+				},
+				{
+					"filename": "desert/meerkat/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 275,
+						"w": 385,
+						"h": 1306
+					},
+					"frame": {
+						"x": 2173,
+						"y": 2276,
+						"w": 385,
+						"h": 1306
+					}
+				},
+				{
+					"filename": "desert/meerkat/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 275,
+						"w": 385,
+						"h": 1306
+					},
+					"frame": {
+						"x": 2560,
+						"y": 2276,
+						"w": 385,
+						"h": 1306
+					}
+				},
+				{
+					"filename": "desert/meerkat/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 437,
+						"w": 385,
+						"h": 1144
+					},
+					"frame": {
+						"x": 2897,
+						"y": 1121,
+						"w": 385,
+						"h": 1144
+					}
+				},
+				{
+					"filename": "desert/meerkat/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 437,
+						"w": 385,
+						"h": 1144
+					},
+					"frame": {
+						"x": 3621,
+						"y": 1,
+						"w": 385,
+						"h": 1144
+					}
+				},
+				{
+					"filename": "desert/fire/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 231,
+						"y": 102,
+						"w": 237,
+						"h": 1118
+					},
+					"frame": {
+						"x": 3284,
+						"y": 1121,
+						"w": 237,
+						"h": 1118
+					}
+				},
+				{
+					"filename": "desert/fire/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 223,
+						"y": 129,
+						"w": 245,
+						"h": 1091
+					},
+					"frame": {
+						"x": 2947,
+						"y": 2267,
+						"w": 245,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/meerkat/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 609,
+						"w": 385,
+						"h": 972
+					},
+					"frame": {
+						"x": 3523,
+						"y": 1147,
+						"w": 385,
+						"h": 972
+					}
+				},
+				{
+					"filename": "desert/fire/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 223,
+						"y": 129,
+						"w": 239,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3194,
+						"y": 2267,
+						"w": 239,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/snake/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 362
+					},
+					"frame": {
+						"x": 1,
+						"y": 3677,
+						"w": 722,
+						"h": 362
+					}
+				},
+				{
+					"filename": "desert/meerkat/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 609,
+						"w": 385,
+						"h": 972
+					},
+					"frame": {
+						"x": 3435,
+						"y": 2241,
+						"w": 385,
+						"h": 972
+					}
+				},
+				{
+					"filename": "desert/snake/00128",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 617
+					},
+					"frame": {
+						"x": 1449,
+						"y": 3456,
+						"w": 722,
+						"h": 617
+					}
+				},
+				{
+					"filename": "desert/meerkat/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 2173,
+						"y": 3584,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/fire/00106",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 241,
+						"y": 518,
+						"w": 157,
+						"h": 707
+					},
+					"frame": {
+						"x": 3822,
+						"y": 2121,
+						"w": 157,
+						"h": 707
+					}
+				},
+				{
+					"filename": "desert/fire/00102",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 257,
+						"y": 584,
+						"w": 172,
+						"h": 633
+					},
+					"frame": {
+						"x": 3822,
+						"y": 2830,
+						"w": 172,
+						"h": 633
+					}
+				},
+				{
+					"filename": "desert/fire/00062",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 304,
+						"y": 808,
+						"w": 125,
+						"h": 409
+					},
+					"frame": {
+						"x": 725,
+						"y": 3537,
+						"w": 125,
+						"h": 409
+					}
+				},
+				{
+					"filename": "desert/fire/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 992,
+						"w": 125,
+						"h": 314
+					},
+					"frame": {
+						"x": 2560,
+						"y": 3584,
+						"w": 125,
+						"h": 314
+					}
+				},
+				{
+					"filename": "desert/fire/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 1006,
+						"w": 120,
+						"h": 305
+					},
+					"frame": {
+						"x": 852,
+						"y": 3537,
+						"w": 120,
+						"h": 305
+					}
+				},
+				{
+					"filename": "desert/fire/00097",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 260,
+						"y": 508,
+						"w": 197,
+						"h": 710
+					},
+					"frame": {
+						"x": 2947,
+						"y": 3360,
+						"w": 197,
+						"h": 710
+					}
+				},
+				{
+					"filename": "desert/fire/00065",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 277,
+						"y": 537,
+						"w": 174,
+						"h": 681
+					},
+					"frame": {
+						"x": 3146,
+						"y": 3360,
+						"w": 174,
+						"h": 681
+					}
+				},
+				{
+					"filename": "desert/fire/00101",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 260,
+						"y": 601,
+						"w": 178,
+						"h": 616
+					},
+					"frame": {
+						"x": 3322,
+						"y": 3360,
+						"w": 178,
+						"h": 616
+					}
+				},
+				{
+					"filename": "desert/fire/00096",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 261,
+						"y": 454,
+						"w": 199,
+						"h": 765
+					},
+					"frame": {
+						"x": 3502,
+						"y": 3215,
+						"w": 199,
+						"h": 765
+					}
+				},
+				{
+					"filename": "desert/fire/00061",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 315,
+						"y": 898,
+						"w": 103,
+						"h": 318
+					},
+					"frame": {
+						"x": 3703,
+						"y": 3215,
+						"w": 103,
+						"h": 318
+					}
+				},
+				{
+					"filename": "desert/fire/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 1020,
+						"w": 114,
+						"h": 296
+					},
+					"frame": {
+						"x": 974,
+						"y": 3537,
+						"w": 114,
+						"h": 296
+					}
+				},
+				{
+					"filename": "desert/fire/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 1034,
+						"w": 109,
+						"h": 289
+					},
+					"frame": {
+						"x": 2687,
+						"y": 3584,
+						"w": 109,
+						"h": 289
+					}
+				},
+				{
+					"filename": "desert/fire/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 184,
+						"y": 1098,
+						"w": 130,
+						"h": 255
+					},
+					"frame": {
+						"x": 1090,
+						"y": 3537,
+						"w": 130,
+						"h": 255
+					}
+				},
+				{
+					"filename": "desert/fire/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 233,
+						"y": 1048,
+						"w": 103,
+						"h": 282
+					},
+					"frame": {
+						"x": 3703,
+						"y": 3535,
+						"w": 103,
+						"h": 282
+					}
+				},
+				{
+					"filename": "desert/fire/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 1062,
+						"w": 99,
+						"h": 273
+					},
+					"frame": {
+						"x": 2798,
+						"y": 3584,
+						"w": 99,
+						"h": 273
+					}
+				},
+				{
+					"filename": "desert/fire/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 183,
+						"y": 1113,
+						"w": 125,
+						"h": 246
+					},
+					"frame": {
+						"x": 1222,
+						"y": 3537,
+						"w": 125,
+						"h": 246
+					}
+				},
+				{
+					"filename": "desert/fire/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 231,
+						"y": 1076,
+						"w": 94,
+						"h": 266
+					},
+					"frame": {
+						"x": 3910,
+						"y": 1147,
+						"w": 94,
+						"h": 266
+					}
+				},
+				{
+					"filename": "desert/fire/00113",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 332,
+						"y": 947,
+						"w": 101,
+						"h": 264
+					},
+					"frame": {
+						"x": 3808,
+						"y": 3465,
+						"w": 101,
+						"h": 264
+					}
+				},
+				{
+					"filename": "desert/fire/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 176,
+						"y": 1186,
+						"w": 96,
+						"h": 200
+					},
+					"frame": {
+						"x": 3911,
+						"y": 3465,
+						"w": 96,
+						"h": 200
+					}
+				},
+				{
+					"filename": "desert/fire/00112",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 333,
+						"y": 967,
+						"w": 93,
+						"h": 250
+					},
+					"frame": {
+						"x": 3910,
+						"y": 1415,
+						"w": 93,
+						"h": 250
+					}
+				},
+				{
+					"filename": "desert/fire/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 232,
+						"y": 1100,
+						"w": 88,
+						"h": 248
+					},
+					"frame": {
+						"x": 3910,
+						"y": 1667,
+						"w": 88,
+						"h": 248
+					}
+				},
+				{
+					"filename": "desert/fire/00111",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 333,
+						"y": 984,
+						"w": 81,
+						"h": 234
+					},
+					"frame": {
+						"x": 1349,
+						"y": 3537,
+						"w": 81,
+						"h": 234
+					}
+				},
+				{
+					"filename": "desert/fire/00035",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 176,
+						"y": 1205,
+						"w": 89,
+						"h": 187
+					},
+					"frame": {
+						"x": 3910,
+						"y": 1917,
+						"w": 89,
+						"h": 187
+					}
+				},
+				{
+					"filename": "desert/fire/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 180,
+						"y": 1143,
+						"w": 114,
+						"h": 227
+					},
+					"frame": {
+						"x": 3703,
+						"y": 3819,
+						"w": 114,
+						"h": 227
+					}
+				},
+				{
+					"filename": "desert/fire/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 182,
+						"y": 1128,
+						"w": 119,
+						"h": 237
+					},
+					"frame": {
+						"x": 3819,
+						"y": 3731,
+						"w": 119,
+						"h": 237
+					}
+				},
+				{
+					"filename": "desert/fire/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 179,
+						"y": 1157,
+						"w": 107,
+						"h": 219
+					},
+					"frame": {
+						"x": 852,
+						"y": 3844,
+						"w": 107,
+						"h": 219
+					}
+				},
+				{
+					"filename": "desert/fire/00060",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 325,
+						"y": 988,
+						"w": 82,
+						"h": 228
+					},
+					"frame": {
+						"x": 961,
+						"y": 3844,
+						"w": 82,
+						"h": 228
+					}
+				},
+				{
+					"filename": "desert/fire/00037",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 177,
+						"y": 1172,
+						"w": 102,
+						"h": 209
+					},
+					"frame": {
+						"x": 1045,
+						"y": 3835,
+						"w": 102,
+						"h": 209
+					}
+				},
+				{
+					"filename": "desert/fire/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 173,
+						"y": 1226,
+						"w": 85,
+						"h": 172
+					},
+					"frame": {
+						"x": 1149,
+						"y": 3794,
+						"w": 85,
+						"h": 172
+					}
+				},
+				{
+					"filename": "desert/fire/00059",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 315,
+						"y": 1081,
+						"w": 90,
+						"h": 157
+					},
+					"frame": {
+						"x": 1236,
+						"y": 3785,
+						"w": 90,
+						"h": 157
+					}
+				},
+				{
+					"filename": "desert/fire/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 166,
+						"y": 1247,
+						"w": 84,
+						"h": 157
+					},
+					"frame": {
+						"x": 1328,
+						"y": 3785,
+						"w": 84,
+						"h": 157
+					}
+				},
+				{
+					"filename": "desert/fire/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 305,
+						"y": 1206,
+						"w": 77,
+						"h": 70
+					},
+					"frame": {
+						"x": 3523,
+						"y": 2121,
+						"w": 77,
+						"h": 70
+					}
+				},
+				{
+					"filename": "desert/fire/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 310,
+						"y": 1200,
+						"w": 77,
+						"h": 70
+					},
+					"frame": {
+						"x": 2173,
+						"y": 3939,
+						"w": 77,
+						"h": 70
+					}
+				},
+				{
+					"filename": "desert/fire/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 300,
+						"y": 1213,
+						"w": 78,
+						"h": 69
+					},
+					"frame": {
+						"x": 3819,
+						"y": 3970,
+						"w": 78,
+						"h": 69
+					}
+				},
+				{
+					"filename": "desert/fire/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 289,
+						"y": 1227,
+						"w": 79,
+						"h": 68
+					},
+					"frame": {
+						"x": 725,
+						"y": 3948,
+						"w": 79,
+						"h": 68
+					}
+				},
+				{
+					"filename": "desert/fire/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 1502,
+						"w": 87,
+						"h": 57
+					},
+					"frame": {
+						"x": 725,
+						"y": 4018,
+						"w": 87,
+						"h": 57
+					}
+				},
+				{
+					"filename": "desert/fire/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 315,
+						"y": 1193,
+						"w": 77,
+						"h": 69
+					},
+					"frame": {
+						"x": 1149,
+						"y": 3968,
+						"w": 77,
+						"h": 69
+					}
+				},
+				{
+					"filename": "desert/fire/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 295,
+						"y": 1220,
+						"w": 78,
+						"h": 68
+					},
+					"frame": {
+						"x": 3602,
+						"y": 2121,
+						"w": 78,
+						"h": 68
+					}
+				},
+				{
+					"filename": "desert/fire/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 284,
+						"y": 1233,
+						"w": 78,
+						"h": 67
+					},
+					"frame": {
+						"x": 2252,
+						"y": 3939,
+						"w": 78,
+						"h": 67
+					}
+				},
+				{
+					"filename": "desert/fire/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 42,
+						"y": 1460,
+						"w": 84,
+						"h": 61
+					},
+					"frame": {
+						"x": 3322,
+						"y": 3978,
+						"w": 84,
+						"h": 61
+					}
+				},
+				{
+					"filename": "desert/fire/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 1448,
+						"w": 84,
+						"h": 61
+					},
+					"frame": {
+						"x": 3911,
+						"y": 3667,
+						"w": 84,
+						"h": 61
+					}
+				},
+				{
+					"filename": "desert/fire/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 1442,
+						"w": 85,
+						"h": 60
+					},
+					"frame": {
+						"x": 3682,
+						"y": 2121,
+						"w": 85,
+						"h": 60
+					}
+				},
+				{
+					"filename": "desert/fire/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 83,
+						"y": 1412,
+						"w": 88,
+						"h": 56
+					},
+					"frame": {
+						"x": 3682,
+						"y": 2183,
+						"w": 88,
+						"h": 56
+					}
+				},
+				{
+					"filename": "desert/fire/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 314,
+						"y": 1190,
+						"w": 85,
+						"h": 60
+					},
+					"frame": {
+						"x": 2332,
+						"y": 3939,
+						"w": 85,
+						"h": 60
+					}
+				},
+				{
+					"filename": "desert/fire/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 73,
+						"y": 1424,
+						"w": 87,
+						"h": 58
+					},
+					"frame": {
+						"x": 3408,
+						"y": 3978,
+						"w": 87,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 48,
+						"y": 1454,
+						"w": 84,
+						"h": 60
+					},
+					"frame": {
+						"x": 2419,
+						"y": 3939,
+						"w": 84,
+						"h": 60
+					}
+				},
+				{
+					"filename": "desert/fire/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 144,
+						"y": 1361,
+						"w": 84,
+						"h": 60
+					},
+					"frame": {
+						"x": 2173,
+						"y": 4011,
+						"w": 84,
+						"h": 60
+					}
+				},
+				{
+					"filename": "desert/fire/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 89,
+						"y": 1405,
+						"w": 88,
+						"h": 55
+					},
+					"frame": {
+						"x": 3497,
+						"y": 3982,
+						"w": 88,
+						"h": 55
+					}
+				},
+				{
+					"filename": "desert/fire/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 1495,
+						"w": 87,
+						"h": 57
+					},
+					"frame": {
+						"x": 3587,
+						"y": 3982,
+						"w": 87,
+						"h": 57
+					}
+				},
+				{
+					"filename": "desert/fire/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 135,
+						"y": 1367,
+						"w": 85,
+						"h": 59
+					},
+					"frame": {
+						"x": 2259,
+						"y": 4008,
+						"w": 85,
+						"h": 59
+					}
+				},
+				{
+					"filename": "desert/fire/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 1488,
+						"w": 86,
+						"h": 58
+					},
+					"frame": {
+						"x": 2346,
+						"y": 4001,
+						"w": 86,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 1467,
+						"w": 84,
+						"h": 59
+					},
+					"frame": {
+						"x": 2434,
+						"y": 4001,
+						"w": 84,
+						"h": 59
+					}
+				},
+				{
+					"filename": "desert/fire/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 96,
+						"y": 1399,
+						"w": 87,
+						"h": 54
+					},
+					"frame": {
+						"x": 2560,
+						"y": 3900,
+						"w": 87,
+						"h": 54
+					}
+				},
+				{
+					"filename": "desert/fire/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 1516,
+						"w": 82,
+						"h": 44
+					},
+					"frame": {
+						"x": 3523,
+						"y": 2193,
+						"w": 82,
+						"h": 44
+					}
+				},
+				{
+					"filename": "desert/fire/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 78,
+						"y": 1418,
+						"w": 87,
+						"h": 56
+					},
+					"frame": {
+						"x": 2687,
+						"y": 3875,
+						"w": 87,
+						"h": 56
+					}
+				},
+				{
+					"filename": "desert/fire/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 1481,
+						"w": 86,
+						"h": 58
+					},
+					"frame": {
+						"x": 1236,
+						"y": 3944,
+						"w": 86,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 1430,
+						"w": 86,
+						"h": 58
+					},
+					"frame": {
+						"x": 1324,
+						"y": 3944,
+						"w": 86,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 127,
+						"y": 1374,
+						"w": 86,
+						"h": 58
+					},
+					"frame": {
+						"x": 1228,
+						"y": 4004,
+						"w": 86,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 31,
+						"y": 1474,
+						"w": 85,
+						"h": 58
+					},
+					"frame": {
+						"x": 1316,
+						"y": 4004,
+						"w": 85,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 111,
+						"y": 1386,
+						"w": 86,
+						"h": 57
+					},
+					"frame": {
+						"x": 2798,
+						"y": 3859,
+						"w": 86,
+						"h": 57
+					}
+				},
+				{
+					"filename": "desert/fire/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 1436,
+						"w": 84,
+						"h": 59
+					},
+					"frame": {
+						"x": 3899,
+						"y": 3970,
+						"w": 84,
+						"h": 59
+					}
+				},
+				{
+					"filename": "desert/fire/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 104,
+						"y": 1392,
+						"w": 86,
+						"h": 56
+					},
+					"frame": {
+						"x": 2776,
+						"y": 3918,
+						"w": 86,
+						"h": 56
+					}
+				},
+				{
+					"filename": "desert/fire/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 158,
+						"y": 1269,
+						"w": 85,
+						"h": 141
+					},
+					"frame": {
+						"x": 2649,
+						"y": 3933,
+						"w": 85,
+						"h": 141
+					}
+				},
+				{
+					"filename": "desert/fire/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 120,
+						"y": 1379,
+						"w": 85,
+						"h": 58
+					},
+					"frame": {
+						"x": 2736,
+						"y": 3976,
+						"w": 85,
+						"h": 58
+					}
+				},
+				{
+					"filename": "desert/fire/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 1509,
+						"w": 85,
+						"h": 51
+					},
+					"frame": {
+						"x": 2823,
+						"y": 3976,
+						"w": 85,
+						"h": 51
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4084,
+				"h": 4091
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/fire/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 247,
+						"y": 96,
+						"w": 233,
+						"h": 1124
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 233,
+						"h": 1124
+					}
+				},
+				{
+					"filename": "desert/snake/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1117
+					},
+					"frame": {
+						"x": 1,
+						"y": 1127,
+						"w": 722,
+						"h": 1117
+					}
+				},
+				{
+					"filename": "desert/snake/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1111
+					},
+					"frame": {
+						"x": 236,
+						"y": 1,
+						"w": 722,
+						"h": 1111
+					}
+				},
+				{
+					"filename": "desert/fire/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 245,
+						"y": 113,
+						"w": 234,
+						"h": 1107
+					},
+					"frame": {
+						"x": 1,
+						"y": 2246,
+						"w": 234,
+						"h": 1107
+					}
+				},
+				{
+					"filename": "desert/snake/00048",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 697
+					},
+					"frame": {
+						"x": 1,
+						"y": 3355,
+						"w": 722,
+						"h": 697
+					}
+				},
+				{
+					"filename": "desert/snake/00099",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1102
+					},
+					"frame": {
+						"x": 237,
+						"y": 2246,
+						"w": 722,
+						"h": 1102
+					}
+				},
+				{
+					"filename": "desert/fire/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 229,
+						"y": 122,
+						"w": 231,
+						"h": 1098
+					},
+					"frame": {
+						"x": 725,
+						"y": 1114,
+						"w": 231,
+						"h": 1098
+					}
+				},
+				{
+					"filename": "desert/snake/00089",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1097
+					},
+					"frame": {
+						"x": 958,
+						"y": 1114,
+						"w": 722,
+						"h": 1097
+					}
+				},
+				{
+					"filename": "desert/snake/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1096
+					},
+					"frame": {
+						"x": 960,
+						"y": 1,
+						"w": 722,
+						"h": 1096
+					}
+				},
+				{
+					"filename": "desert/snake/00127",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 685
+					},
+					"frame": {
+						"x": 725,
+						"y": 3350,
+						"w": 722,
+						"h": 685
+					}
+				},
+				{
+					"filename": "desert/snake/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00080",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00081",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00088",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00100",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00101",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00102",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00109",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00110",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00111",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00112",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00113",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00114",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00115",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00116",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00117",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00118",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00119",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00120",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 961,
+						"y": 2213,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00103",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 1682,
+						"y": 1099,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00104",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 1684,
+						"y": 1,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00126",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 759
+					},
+					"frame": {
+						"x": 1449,
+						"y": 3310,
+						"w": 722,
+						"h": 759
+					}
+				},
+				{
+					"filename": "desert/snake/00105",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 1685,
+						"y": 2196,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00106",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 2406,
+						"y": 1098,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00107",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 2408,
+						"y": 1,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 795
+					},
+					"frame": {
+						"x": 2173,
+						"y": 3293,
+						"w": 722,
+						"h": 795
+					}
+				},
+				{
+					"filename": "desert/snake/00108",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 2409,
+						"y": 2195,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00121",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1095
+					},
+					"frame": {
+						"x": 3130,
+						"y": 1098,
+						"w": 722,
+						"h": 1095
+					}
+				},
+				{
+					"filename": "desert/snake/00076",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1094
+					},
+					"frame": {
+						"x": 3132,
+						"y": 1,
+						"w": 722,
+						"h": 1094
+					}
+				},
+				{
+					"filename": "desert/fire/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 239,
+						"y": 176,
+						"w": 226,
+						"h": 1044
+					},
+					"frame": {
+						"x": 3856,
+						"y": 1,
+						"w": 226,
+						"h": 1044
+					}
+				},
+				{
+					"filename": "desert/fire/00091",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 253,
+						"y": 184,
+						"w": 225,
+						"h": 1036
+					},
+					"frame": {
+						"x": 3856,
+						"y": 1047,
+						"w": 225,
+						"h": 1036
+					}
+				},
+				{
+					"filename": "desert/snake/00049",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 742
+					},
+					"frame": {
+						"x": 2897,
+						"y": 3292,
+						"w": 722,
+						"h": 742
+					}
+				},
+				{
+					"filename": "desert/fire/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 223,
+						"y": 129,
+						"w": 237,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3133,
+						"y": 2195,
+						"w": 237,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00082",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 233,
+						"y": 129,
+						"w": 237,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3372,
+						"y": 2195,
+						"w": 237,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 231,
+						"y": 129,
+						"w": 236,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3611,
+						"y": 2195,
+						"w": 236,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00086",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 241,
+						"y": 129,
+						"w": 234,
+						"h": 1091
+					},
+					"frame": {
+						"x": 3849,
+						"y": 2195,
+						"w": 234,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/meerkat/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 779,
+						"w": 385,
+						"h": 802
+					},
+					"frame": {
+						"x": 3621,
+						"y": 3288,
+						"w": 385,
+						"h": 802
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-3.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4087,
+				"h": 4096
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/fire/00087",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 243,
+						"y": 129,
+						"w": 234,
+						"h": 1091
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 234,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00085",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 239,
+						"y": 129,
+						"w": 233,
+						"h": 1091
+					},
+					"frame": {
+						"x": 1,
+						"y": 1094,
+						"w": 233,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00077",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 224,
+						"y": 129,
+						"w": 231,
+						"h": 1091
+					},
+					"frame": {
+						"x": 1,
+						"y": 2187,
+						"w": 231,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00105",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 245,
+						"y": 535,
+						"w": 160,
+						"h": 681
+					},
+					"frame": {
+						"x": 1,
+						"y": 3280,
+						"w": 160,
+						"h": 681
+					}
+				},
+				{
+					"filename": "desert/fire/00104",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 250,
+						"y": 551,
+						"w": 163,
+						"h": 665
+					},
+					"frame": {
+						"x": 163,
+						"y": 3280,
+						"w": 163,
+						"h": 665
+					}
+				},
+				{
+					"filename": "desert/fire/00084",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 129,
+						"w": 231,
+						"h": 1091
+					},
+					"frame": {
+						"x": 234,
+						"y": 2187,
+						"w": 231,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00078",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 225,
+						"y": 129,
+						"w": 229,
+						"h": 1091
+					},
+					"frame": {
+						"x": 236,
+						"y": 1094,
+						"w": 229,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00083",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 235,
+						"y": 129,
+						"w": 229,
+						"h": 1091
+					},
+					"frame": {
+						"x": 237,
+						"y": 1,
+						"w": 229,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/fire/00098",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 259,
+						"y": 562,
+						"w": 195,
+						"h": 656
+					},
+					"frame": {
+						"x": 328,
+						"y": 3280,
+						"w": 195,
+						"h": 656
+					}
+				},
+				{
+					"filename": "desert/fire/00079",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 227,
+						"y": 129,
+						"w": 225,
+						"h": 1091
+					},
+					"frame": {
+						"x": 467,
+						"y": 1094,
+						"w": 225,
+						"h": 1091
+					}
+				},
+				{
+					"filename": "desert/snake/00075",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1090
+					},
+					"frame": {
+						"x": 468,
+						"y": 1,
+						"w": 722,
+						"h": 1090
+					}
+				},
+				{
+					"filename": "desert/fire/00090",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 249,
+						"y": 130,
+						"w": 231,
+						"h": 1090
+					},
+					"frame": {
+						"x": 467,
+						"y": 2187,
+						"w": 231,
+						"h": 1090
+					}
+				},
+				{
+					"filename": "desert/snake/00074",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1085
+					},
+					"frame": {
+						"x": 694,
+						"y": 1093,
+						"w": 722,
+						"h": 1085
+					}
+				},
+				{
+					"filename": "desert/snake/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1083
+					},
+					"frame": {
+						"x": 1192,
+						"y": 1,
+						"w": 722,
+						"h": 1083
+					}
+				},
+				{
+					"filename": "desert/snake/00047",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 655
+					},
+					"frame": {
+						"x": 525,
+						"y": 3279,
+						"w": 722,
+						"h": 655
+					}
+				},
+				{
+					"filename": "desert/snake/00122",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1076
+					},
+					"frame": {
+						"x": 700,
+						"y": 2180,
+						"w": 722,
+						"h": 1076
+					}
+				},
+				{
+					"filename": "desert/snake/00125",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 834
+					},
+					"frame": {
+						"x": 1249,
+						"y": 3258,
+						"w": 722,
+						"h": 834
+					}
+				},
+				{
+					"filename": "desert/snake/00073",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1070
+					},
+					"frame": {
+						"x": 1418,
+						"y": 1086,
+						"w": 722,
+						"h": 1070
+					}
+				},
+				{
+					"filename": "desert/snake/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1052
+					},
+					"frame": {
+						"x": 1916,
+						"y": 1,
+						"w": 722,
+						"h": 1052
+					}
+				},
+				{
+					"filename": "desert/snake/00069",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1050
+					},
+					"frame": {
+						"x": 1424,
+						"y": 2158,
+						"w": 722,
+						"h": 1050
+					}
+				},
+				{
+					"filename": "desert/fire/00094",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 264,
+						"y": 346,
+						"w": 203,
+						"h": 873
+					},
+					"frame": {
+						"x": 1973,
+						"y": 3210,
+						"w": 203,
+						"h": 873
+					}
+				},
+				{
+					"filename": "desert/snake/00072",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1033
+					},
+					"frame": {
+						"x": 2142,
+						"y": 1055,
+						"w": 722,
+						"h": 1033
+					}
+				},
+				{
+					"filename": "desert/snake/00070",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1024
+					},
+					"frame": {
+						"x": 2640,
+						"y": 1,
+						"w": 722,
+						"h": 1024
+					}
+				},
+				{
+					"filename": "desert/snake/00071",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1010
+					},
+					"frame": {
+						"x": 3364,
+						"y": 1,
+						"w": 722,
+						"h": 1010
+					}
+				},
+				{
+					"filename": "desert/snake/00123",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1008
+					},
+					"frame": {
+						"x": 3364,
+						"y": 1013,
+						"w": 722,
+						"h": 1008
+					}
+				},
+				{
+					"filename": "desert/meerkat/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 936,
+						"w": 385,
+						"h": 645
+					},
+					"frame": {
+						"x": 2866,
+						"y": 1027,
+						"w": 385,
+						"h": 645
+					}
+				},
+				{
+					"filename": "desert/meerkat/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1067,
+						"w": 385,
+						"h": 514
+					},
+					"frame": {
+						"x": 2866,
+						"y": 1674,
+						"w": 385,
+						"h": 514
+					}
+				},
+				{
+					"filename": "desert/snake/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 1005
+					},
+					"frame": {
+						"x": 2148,
+						"y": 2190,
+						"w": 722,
+						"h": 1005
+					}
+				},
+				{
+					"filename": "desert/snake/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 898
+					},
+					"frame": {
+						"x": 2178,
+						"y": 3197,
+						"w": 722,
+						"h": 898
+					}
+				},
+				{
+					"filename": "desert/fire/00092",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 258,
+						"y": 238,
+						"w": 216,
+						"h": 982
+					},
+					"frame": {
+						"x": 2872,
+						"y": 2190,
+						"w": 216,
+						"h": 982
+					}
+				},
+				{
+					"filename": "desert/fire/00067",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 259,
+						"y": 357,
+						"w": 199,
+						"h": 862
+					},
+					"frame": {
+						"x": 2902,
+						"y": 3174,
+						"w": 199,
+						"h": 862
+					}
+				},
+				{
+					"filename": "desert/fire/00068",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 249,
+						"y": 267,
+						"w": 213,
+						"h": 953
+					},
+					"frame": {
+						"x": 3090,
+						"y": 2190,
+						"w": 213,
+						"h": 953
+					}
+				},
+				{
+					"filename": "desert/snake/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 839
+					},
+					"frame": {
+						"x": 3305,
+						"y": 2023,
+						"w": 722,
+						"h": 839
+					}
+				},
+				{
+					"filename": "desert/snake/00046",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 611
+					},
+					"frame": {
+						"x": 3305,
+						"y": 2864,
+						"w": 722,
+						"h": 611
+					}
+				},
+				{
+					"filename": "desert/fire/00099",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 259,
+						"y": 616,
+						"w": 191,
+						"h": 602
+					},
+					"frame": {
+						"x": 3103,
+						"y": 3145,
+						"w": 191,
+						"h": 602
+					}
+				},
+				{
+					"filename": "desert/snake/00032",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 342
+					},
+					"frame": {
+						"x": 3103,
+						"y": 3749,
+						"w": 722,
+						"h": 342
+					}
+				},
+				{
+					"filename": "desert/fire/00100",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 258,
+						"y": 617,
+						"w": 189,
+						"h": 600
+					},
+					"frame": {
+						"x": 3827,
+						"y": 3477,
+						"w": 189,
+						"h": 600
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-4.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4057,
+				"h": 3867
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/snake/00045",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 571
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 722,
+						"h": 571
+					}
+				},
+				{
+					"filename": "desert/snake/00129",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 558
+					},
+					"frame": {
+						"x": 1,
+						"y": 574,
+						"w": 722,
+						"h": 558
+					}
+				},
+				{
+					"filename": "desert/snake/00044",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 543
+					},
+					"frame": {
+						"x": 725,
+						"y": 1,
+						"w": 722,
+						"h": 543
+					}
+				},
+				{
+					"filename": "desert/snake/00043",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 515
+					},
+					"frame": {
+						"x": 1,
+						"y": 1134,
+						"w": 722,
+						"h": 515
+					}
+				},
+				{
+					"filename": "desert/snake/00130",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 514
+					},
+					"frame": {
+						"x": 725,
+						"y": 546,
+						"w": 722,
+						"h": 514
+					}
+				},
+				{
+					"filename": "desert/snake/00042",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 487
+					},
+					"frame": {
+						"x": 1449,
+						"y": 1,
+						"w": 722,
+						"h": 487
+					}
+				},
+				{
+					"filename": "desert/snake/00131",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 470
+					},
+					"frame": {
+						"x": 1,
+						"y": 1651,
+						"w": 722,
+						"h": 470
+					}
+				},
+				{
+					"filename": "desert/snake/00041",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 460
+					},
+					"frame": {
+						"x": 725,
+						"y": 1062,
+						"w": 722,
+						"h": 460
+					}
+				},
+				{
+					"filename": "desert/snake/00040",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 437
+					},
+					"frame": {
+						"x": 1449,
+						"y": 490,
+						"w": 722,
+						"h": 437
+					}
+				},
+				{
+					"filename": "desert/snake/00132",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 432
+					},
+					"frame": {
+						"x": 2173,
+						"y": 1,
+						"w": 722,
+						"h": 432
+					}
+				},
+				{
+					"filename": "desert/snake/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 419
+					},
+					"frame": {
+						"x": 1,
+						"y": 2123,
+						"w": 722,
+						"h": 419
+					}
+				},
+				{
+					"filename": "desert/snake/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 416
+					},
+					"frame": {
+						"x": 725,
+						"y": 1524,
+						"w": 722,
+						"h": 416
+					}
+				},
+				{
+					"filename": "desert/snake/00039",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 416
+					},
+					"frame": {
+						"x": 1449,
+						"y": 929,
+						"w": 722,
+						"h": 416
+					}
+				},
+				{
+					"filename": "desert/snake/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 412
+					},
+					"frame": {
+						"x": 2173,
+						"y": 435,
+						"w": 722,
+						"h": 412
+					}
+				},
+				{
+					"filename": "desert/snake/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 408
+					},
+					"frame": {
+						"x": 2897,
+						"y": 1,
+						"w": 722,
+						"h": 408
+					}
+				},
+				{
+					"filename": "desert/snake/00133",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 403
+					},
+					"frame": {
+						"x": 1,
+						"y": 2544,
+						"w": 722,
+						"h": 403
+					}
+				},
+				{
+					"filename": "desert/snake/00038",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 399
+					},
+					"frame": {
+						"x": 725,
+						"y": 1942,
+						"w": 722,
+						"h": 399
+					}
+				},
+				{
+					"filename": "desert/snake/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 395
+					},
+					"frame": {
+						"x": 1449,
+						"y": 1347,
+						"w": 722,
+						"h": 395
+					}
+				},
+				{
+					"filename": "desert/snake/00134",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 381
+					},
+					"frame": {
+						"x": 2173,
+						"y": 849,
+						"w": 722,
+						"h": 381
+					}
+				},
+				{
+					"filename": "desert/snake/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 380
+					},
+					"frame": {
+						"x": 2897,
+						"y": 411,
+						"w": 722,
+						"h": 380
+					}
+				},
+				{
+					"filename": "desert/snake/00036",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 373
+					},
+					"frame": {
+						"x": 1,
+						"y": 2949,
+						"w": 722,
+						"h": 373
+					}
+				},
+				{
+					"filename": "desert/snake/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 363
+					},
+					"frame": {
+						"x": 725,
+						"y": 2343,
+						"w": 722,
+						"h": 363
+					}
+				},
+				{
+					"filename": "desert/snake/00135",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 363
+					},
+					"frame": {
+						"x": 1449,
+						"y": 1744,
+						"w": 722,
+						"h": 363
+					}
+				},
+				{
+					"filename": "desert/snake/00034",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 354
+					},
+					"frame": {
+						"x": 2173,
+						"y": 1232,
+						"w": 722,
+						"h": 354
+					}
+				},
+				{
+					"filename": "desert/snake/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 351
+					},
+					"frame": {
+						"x": 2897,
+						"y": 793,
+						"w": 722,
+						"h": 351
+					}
+				},
+				{
+					"filename": "desert/snake/00136",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 350
+					},
+					"frame": {
+						"x": 1,
+						"y": 3324,
+						"w": 722,
+						"h": 350
+					}
+				},
+				{
+					"filename": "desert/snake/00029",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 347
+					},
+					"frame": {
+						"x": 725,
+						"y": 2708,
+						"w": 722,
+						"h": 347
+					}
+				},
+				{
+					"filename": "desert/snake/00033",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 347
+					},
+					"frame": {
+						"x": 1449,
+						"y": 2109,
+						"w": 722,
+						"h": 347
+					}
+				},
+				{
+					"filename": "desert/fire/00095",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 263,
+						"y": 400,
+						"w": 201,
+						"h": 819
+					},
+					"frame": {
+						"x": 3621,
+						"y": 1,
+						"w": 201,
+						"h": 819
+					}
+				},
+				{
+					"filename": "desert/meerkat/00026",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1125,
+						"w": 385,
+						"h": 456
+					},
+					"frame": {
+						"x": 2173,
+						"y": 1588,
+						"w": 385,
+						"h": 456
+					}
+				},
+				{
+					"filename": "desert/meerkat/00025",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1127,
+						"w": 385,
+						"h": 454
+					},
+					"frame": {
+						"x": 725,
+						"y": 3057,
+						"w": 385,
+						"h": 454
+					}
+				},
+				{
+					"filename": "desert/meerkat/00027",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1130,
+						"w": 385,
+						"h": 451
+					},
+					"frame": {
+						"x": 1449,
+						"y": 2458,
+						"w": 385,
+						"h": 451
+					}
+				},
+				{
+					"filename": "desert/meerkat/00024",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1137,
+						"w": 385,
+						"h": 444
+					},
+					"frame": {
+						"x": 2897,
+						"y": 1146,
+						"w": 385,
+						"h": 444
+					}
+				},
+				{
+					"filename": "desert/fire/00103",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 253,
+						"y": 568,
+						"w": 168,
+						"h": 648
+					},
+					"frame": {
+						"x": 3824,
+						"y": 1,
+						"w": 168,
+						"h": 648
+					}
+				},
+				{
+					"filename": "desert/meerkat/00028",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1139,
+						"w": 385,
+						"h": 442
+					},
+					"frame": {
+						"x": 2173,
+						"y": 2046,
+						"w": 385,
+						"h": 442
+					}
+				},
+				{
+					"filename": "desert/meerkat/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 1112,
+						"y": 3057,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 3284,
+						"y": 1146,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/fire/00064",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 286,
+						"y": 627,
+						"w": 160,
+						"h": 591
+					},
+					"frame": {
+						"x": 2560,
+						"y": 1588,
+						"w": 160,
+						"h": 591
+					}
+				},
+				{
+					"filename": "desert/meerkat/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 3671,
+						"y": 822,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 3671,
+						"y": 1257,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/fire/00063",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 500,
+						"h": 1560
+					},
+					"spriteSourceSize": {
+						"x": 294,
+						"y": 717,
+						"w": 145,
+						"h": 500
+					},
+					"frame": {
+						"x": 2722,
+						"y": 1588,
+						"w": 145,
+						"h": 500
+					}
+				},
+				{
+					"filename": "desert/meerkat/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 2869,
+						"y": 1592,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 1499,
+						"y": 2911,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00051",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 725,
+						"y": 3513,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1209,
+						"w": 385,
+						"h": 372
+					},
+					"frame": {
+						"x": 1112,
+						"y": 3492,
+						"w": 385,
+						"h": 372
+					}
+				},
+				{
+					"filename": "desert/meerkat/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 1499,
+						"y": 3346,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00022",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1162,
+						"w": 385,
+						"h": 419
+					},
+					"frame": {
+						"x": 1836,
+						"y": 2490,
+						"w": 385,
+						"h": 419
+					}
+				},
+				{
+					"filename": "desert/meerkat/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 1886,
+						"y": 2911,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 1886,
+						"y": 3346,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1175,
+						"w": 385,
+						"h": 406
+					},
+					"frame": {
+						"x": 2223,
+						"y": 2490,
+						"w": 385,
+						"h": 406
+					}
+				},
+				{
+					"filename": "desert/meerkat/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 2273,
+						"y": 2898,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 2273,
+						"y": 3333,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 3284,
+						"y": 1581,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1148,
+						"w": 385,
+						"h": 433
+					},
+					"frame": {
+						"x": 3671,
+						"y": 1692,
+						"w": 385,
+						"h": 433
+					}
+				},
+				{
+					"filename": "desert/meerkat/00023",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1149,
+						"w": 385,
+						"h": 432
+					},
+					"frame": {
+						"x": 2869,
+						"y": 2027,
+						"w": 385,
+						"h": 432
+					}
+				},
+				{
+					"filename": "desert/meerkat/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1151,
+						"w": 385,
+						"h": 430
+					},
+					"frame": {
+						"x": 3256,
+						"y": 2016,
+						"w": 385,
+						"h": 430
+					}
+				},
+				{
+					"filename": "desert/meerkat/00020",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1154,
+						"w": 385,
+						"h": 427
+					},
+					"frame": {
+						"x": 3643,
+						"y": 2127,
+						"w": 385,
+						"h": 427
+					}
+				},
+				{
+					"filename": "desert/meerkat/00021",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1160,
+						"w": 385,
+						"h": 421
+					},
+					"frame": {
+						"x": 2610,
+						"y": 2461,
+						"w": 385,
+						"h": 421
+					}
+				},
+				{
+					"filename": "desert/meerkat/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1161,
+						"w": 385,
+						"h": 420
+					},
+					"frame": {
+						"x": 2660,
+						"y": 2884,
+						"w": 385,
+						"h": 420
+					}
+				},
+				{
+					"filename": "desert/meerkat/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1192,
+						"w": 385,
+						"h": 389
+					},
+					"frame": {
+						"x": 2660,
+						"y": 3306,
+						"w": 385,
+						"h": 389
+					}
+				},
+				{
+					"filename": "desert/meerkat/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1222,
+						"w": 385,
+						"h": 359
+					},
+					"frame": {
+						"x": 2997,
+						"y": 2461,
+						"w": 385,
+						"h": 359
+					}
+				},
+				{
+					"filename": "desert/meerkat/00050",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1223,
+						"w": 385,
+						"h": 358
+					},
+					"frame": {
+						"x": 3047,
+						"y": 2822,
+						"w": 385,
+						"h": 358
+					}
+				},
+				{
+					"filename": "desert/meerkat/00052",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3047,
+						"y": 3182,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00056",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3047,
+						"y": 3182,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00053",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3434,
+						"y": 2556,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00055",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3434,
+						"y": 2556,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00054",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3434,
+						"y": 2911,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00057",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3434,
+						"y": 3266,
+						"w": 385,
+						"h": 353
+					}
+				},
+				{
+					"filename": "desert/meerkat/00058",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 419,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 1228,
+						"w": 385,
+						"h": 353
+					},
+					"frame": {
+						"x": 3434,
+						"y": 3266,
+						"w": 385,
+						"h": 353
+					}
+				}
+			]
+		},
+		{
+			"image": "texture-5.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1448,
+				"h": 3069
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "desert/snake/00137",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 342
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 722,
+						"h": 342
+					}
+				},
+				{
+					"filename": "desert/snake/00031",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 340
+					},
+					"frame": {
+						"x": 1,
+						"y": 345,
+						"w": 722,
+						"h": 340
+					}
+				},
+				{
+					"filename": "desert/snake/00000",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00009",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00010",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00011",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00019",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 687,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 1028,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 1369,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 1710,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 2051,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 1,
+						"y": 2392,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 1,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00012",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 342,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00013",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 683,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00014",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 1024,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00015",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 1365,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00016",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 1706,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00017",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 2047,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00018",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 2388,
+						"w": 722,
+						"h": 339
+					}
+				},
+				{
+					"filename": "desert/snake/00030",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1080,
+						"h": 1920
+					},
+					"spriteSourceSize": {
+						"x": 189,
+						"y": 0,
+						"w": 722,
+						"h": 339
+					},
+					"frame": {
+						"x": 725,
+						"y": 2729,
+						"w": 722,
+						"h": 339
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b375cdf4de89321a71fe7a2921287f8a:912735f5a856e7122cc945953dd00e25:da1e2aa2c91e3d74b372a7fa8d26bc0c$"
+	}
+}
