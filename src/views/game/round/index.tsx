@@ -30,6 +30,7 @@ interface Props {
 const Round: FC<Props> = ({ isActive }) => {
   const dispatch = useDispatch();
 
+  const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
   const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
   const roundMembersActive = useSelector(selectors.round.selectMembersActive);
   const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
@@ -44,6 +45,12 @@ const Round: FC<Props> = ({ isActive }) => {
       dispatch(actions.webSocket.emit.round.playerReady());
     }
   }, [dispatch, isActive]);
+
+  useEffect(() => {
+    if (isActive && !hasGamePreamble) {
+      dispatch(actions.game.preambleUpdate());
+    }
+  }, [dispatch, hasGamePreamble, isActive]);
 
   // return
 

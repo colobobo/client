@@ -26,3 +26,8 @@ export const sceneTypeUpdate = createSubscribeAction(
   events.game.sceneTypeUpdate,
   GameActions.sceneTypeUpdate.type
 );
+
+export const roundEnd = createSubscribeAction(
+  events.round.end,
+  GameActions.roundEnd.type
+);
