@@ -366,11 +366,9 @@ export default class MainScene extends Phaser.Scene {
       const playerRolePropertiesTrap = playerRole.properties as PlayerRolePropertiesTrap;
 
       /* eslint-disable */
-      // prettier-ignore-start
+      // prettier-ignore
       // @ts-ignore
-      const trapAnimationConfig: TrapsAnimationConfig =
-        config.traps[this.world][playerRolePropertiesTrap.type];
-      // prettier-ignore-end
+      const trapAnimationConfig: TrapsAnimationConfig = config.traps[this.world][playerRolePropertiesTrap.type];
       /* eslint-enable */
 
       new Trap({
