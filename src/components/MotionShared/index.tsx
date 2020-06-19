@@ -1,11 +1,7 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, { FC, useCallback, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Classnames from "classnames";
 import { gsap } from "gsap";
-
-// store
-import { useDispatch } from "react-redux";
-import { actions, selectors } from "../../redux";
-import { useTypedSelector } from "../../redux/store";
 
 // components
 import Area from "../Area";
@@ -13,6 +9,7 @@ import InterfaceBleed, {
   BleedPosition,
   BleedColor
 } from "../../components/InterfaceBleed";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // style
 import "./index.scss";
@@ -37,18 +34,30 @@ interface Props {
   type: Type;
   extension: Extension;
   position: Position;
+  bleedColor: BleedColor;
   isPlayed: boolean;
+  onEnded: any;
+  onLoadedData: any;
+  showSkip?: boolean;
+  onSkipClick?: any;
 }
 
-const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
-  const dispatch = useDispatch();
-  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+const MotionShared: FC<Props> = ({
+  type,
+  extension,
+  position,
+  isPlayed,
+  onEnded,
+  onLoadedData,
+  onSkipClick,
+  bleedColor,
+  showSkip
+}) => {
+  const { t } = useTranslation();
 
   // refs
   const $motionVideo = useRef<HTMLVideoElement>(null);
   const $motionOverlay = useRef<HTMLDivElement>(null);
-
-  const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
   // handlers
 
@@ -59,25 +68,26 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
         opacity: 1
       })
       .then(() => {
-        if (isCreator) {
-          dispatch(actions.webSocket.emit.transition.ended());
-        }
+        onEnded();
       });
-  }, [dispatch, isCreator]);
-
-  const handleOnVideoLoaded = useCallback(() => {
-    setVideoIsLoaded(true);
-  }, []);
+  }, [onEnded]);
 
   // useEffect
 
   useEffect(() => {
-    if (isPlayed && videoIsLoaded) {
-      $motionVideo.current?.play();
+    if (isPlayed) {
+      gsap
+        .to($motionOverlay.current, {
+          duration: 0.2,
+          opacity: 0
+        })
+        .then(() => {
+          $motionVideo.current?.play();
+        });
     } else {
       $motionVideo.current?.pause();
     }
-  }, [isPlayed, videoIsLoaded]);
+  }, [isPlayed]);
 
   useEffect(() => {
     $motionVideo.current?.load();
@@ -90,10 +100,10 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
     <div className="motion-shared">
       <div className="motion-shared__container">
         <Area height="min">
-          {videoIsLoaded && (
+          {isPlayed && (
             <InterfaceBleed
               position={BleedPosition.left}
-              bgColor={BleedColor.preambleLeft}
+              bgColor={bleedColor}
               elementWidth={$motionVideo.current?.clientWidth}
             />
           )}
@@ -105,23 +115,29 @@ const MotionShared: FC<Props> = ({ type, extension, position, isPlayed }) => {
             autoPlay={false}
             preload="auto"
             onEnded={handleOnVideoEnded}
-            onLoadedData={handleOnVideoLoaded}
+            onLoadedData={onLoadedData}
           >
             <source
               src={require(`../../assets/motions/${type}.${extension}`)}
             />
           </video>
-          {videoIsLoaded && (
+          {isPlayed && (
             <InterfaceBleed
               position={BleedPosition.right}
-              bgColor={BleedColor.preambleRight}
+              bgColor={bleedColor}
               elementWidth={$motionVideo.current?.clientWidth}
             />
           )}
+          {showSkip && (
+            <InterfaceButton
+              onClick={onSkipClick}
+              color={Colors.blue}
+              text={t("transition.buttons.skip")}
+              classNames="motion-shared__action button--small"
+            />
+          )}
         </Area>
-        {isPlayed && (
-          <div ref={$motionOverlay} className="motion-shared__overlay"></div>
-        )}
+        <div ref={$motionOverlay} className="motion-shared__overlay"></div>
       </div>
     </div>
   );

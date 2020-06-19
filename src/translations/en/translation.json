@@ -77,8 +77,11 @@
     "placeholder": "Team name"
   },
   "transition": {
+    "animation": {
+      "faster": "Faster!"
+    },
     "buttons": {
-      "preambleSkip": "Skip preamble"
+      "skip": "Skip"
     }
   }
 }

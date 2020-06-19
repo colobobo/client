@@ -14,6 +14,7 @@ import { gsap } from "gsap";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 import InterfaceScoreArea from "../../components/InterfaceScoreArea";
+import InterfaceScoreClosing from "../../components/InterfaceScoreClosing";
 import InterfaceBleed, {
   BleedPosition,
   BleedColor
@@ -121,6 +122,8 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
           height: areaMinHeight
         }}
       >
+        {showMotion && isSuccess && <InterfaceScoreClosing />}
+
         <div ref={$scorePanel} className="score__panel">
           <InterfaceScorePanel
             isSuccess={isSuccess}
@@ -179,7 +182,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
       <InterfaceBleed
         position={BleedPosition.bottom}
-        bgColor={BleedColor.scoreBottom}
+        bgColor={BleedColor.score_bottom}
       />
     </div>
   );

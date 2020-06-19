@@ -77,8 +77,11 @@
     "placeholder": "Nom d'équipe"
   },
   "transition": {
+    "animation": {
+      "faster": "Plus vite !"
+    },
     "buttons": {
-      "preambleSkip": "Passer l'introduction"
+      "skip": "Passer"
     }
   }
 }

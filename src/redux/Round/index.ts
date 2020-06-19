@@ -16,6 +16,8 @@ export interface RoundState {
   score: number;
   lives: number;
   isSuccess: boolean;
+  isFail: boolean;
+  failCause: enums.round.FailCauses | null;
 }
 
 export const slice = createSlice({
@@ -62,11 +64,11 @@ export const slice = createSlice({
     end: (state: RoundState, action: PayloadAction<payloads.round.End>) => {
       state.score = action.payload.data.score;
       state.lives = action.payload.data.lives;
-      state.isSuccess = false;
-      state.isStarted = false;
       state.isStarted = false;
       state.isSuccess =
         action.payload.data.endType === enums.round.EndType.success;
+      state.isFail = action.payload.data.endType === enums.round.EndType.fail;
+      state.failCause = action.payload.data.failCause;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
@@ -88,6 +90,8 @@ const selectTick = (state: RootState) => getRoot(state).tick;
 const selectLives = (state: RootState) => getRoot(state).lives;
 const selectScore = (state: RootState) => getRoot(state).score;
 const selectIsSuccess = (state: RootState) => getRoot(state).isSuccess;
+const selectIsFail = (state: RootState) => getRoot(state).isFail;
+const selectFailCause = (state: RootState) => getRoot(state).failCause;
 const selectMember = (state: RootState, { id }: { id: string }) =>
   getRoot(state).members[id];
 const selectMembers = (state: RootState) => getRoot(state).members;
@@ -118,6 +122,8 @@ export const selectors = {
   selectLives,
   selectScore,
   selectIsSuccess,
+  selectIsFail,
+  selectFailCause,
   selectMembersAsArray,
   selectMembersWaiting,
   selectMembersActive,

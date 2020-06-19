@@ -11,15 +11,14 @@ import { actions, selectors } from "../../../redux";
 import { useTypedSelector } from "../../../redux/store";
 
 // components
+import { BleedColor } from "../../../components/InterfaceBleed";
 import InterfaceScore from "../../../components/InterfaceScore";
 import MotionShared, {
   Type,
   Extension,
   Position
 } from "../../../components/MotionShared";
-import MotionTransition, {
-  Outcome
-} from "../../../components/MotionTransition";
+import MotionTransition from "../../../components/MotionTransition";
 
 interface Props {
   isTansitionActive: boolean;
@@ -36,30 +35,45 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const isFail = useTypedSelector(selectors.round.selectIsFail);
   const currentWorld = useTypedSelector(selectors.round.selectWorld);
+  const failCause = useTypedSelector(selectors.round.selectFailCause);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
     setShowScore(value);
   }, []);
 
+  const handleTransitionEnded = useCallback(() => {
+    if (isCreator) {
+      dispatch(actions.webSocket.emit.transition.ended());
+    }
+    if (gameIsEnded) {
+      setTimeout(() => history.push("/leaderboard"), 2000);
+    }
+  }, [dispatch, gameIsEnded, history, isCreator]);
+
+  const handleVideoIsReady = useCallback(() => {
+    dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+  }, [dispatch, playerId]);
+
   // effect
 
   useEffect(() => {
-    if (isTansitionActive) {
+    if (isSuccess && isTansitionActive) {
+      setShowScore(true);
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
-    } else {
+    }
+  }, [dispatch, isSuccess, isTansitionActive, playerId]);
+
+  useEffect(() => {
+    if (!isTansitionActive) {
       dispatch(actions.transition.stop());
       handleOnMotionTransitionEnded(false);
     }
-  }, [dispatch, playerId, handleOnMotionTransitionEnded, isTansitionActive]);
-
-  useEffect(() => {
-    if (gameIsEnded) {
-      setTimeout(() => history.push("/leaderboard"), 4000);
-    }
-  }, [gameIsEnded, history]);
+  }, [dispatch, handleOnMotionTransitionEnded, isTansitionActive]);
 
   // return
 
@@ -67,16 +81,16 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
       {/*  /!\ Find another way to toggle the display of each element /!\ */}
       {/*  /!\ Toggle outcome when time is over OR if member is down /!\ */}
-      {isSuccess !== undefined && !showScore && isTansitionActive && (
+      {isFail && failCause && isTansitionActive && (
         <MotionTransition
-          outcome={Outcome.death}
+          failCause={failCause!}
           world={currentWorld}
           onMotionTransitionEnded={handleOnMotionTransitionEnded}
         />
       )}
       <div
         className={Classnames("transition__score", {
-          active: isTansitionActive && showScore
+          active: showScore
         })}
       >
         <InterfaceScore
@@ -90,6 +104,22 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           extension={Extension.mp4}
           position={Position.center}
           isPlayed={isTransitionStarted}
+          onEnded={handleTransitionEnded}
+          onLoadedData={handleVideoIsReady}
+          bleedColor={BleedColor.preamble}
+          showSkip={true}
+          onSkipClick={handleTransitionEnded}
+        />
+      )}
+      {gameIsEnded && (
+        <MotionShared
+          type={Type.ending}
+          extension={Extension.mp4}
+          position={Position.center}
+          isPlayed={isTransitionStarted}
+          onEnded={handleTransitionEnded}
+          onLoadedData={handleVideoIsReady}
+          bleedColor={BleedColor.ending}
         />
       )}
     </div>
