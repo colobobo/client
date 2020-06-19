@@ -122,7 +122,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
           height: areaMinHeight
         }}
       >
-        {showMotion && <InterfaceScoreClosing />}
+        {showMotion && isSuccess && <InterfaceScoreClosing />}
 
         <div ref={$scorePanel} className="score__panel">
           <InterfaceScorePanel
@@ -182,7 +182,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
 
       <InterfaceBleed
         position={BleedPosition.bottom}
-        bgColor={BleedColor.scoreBottom}
+        bgColor={BleedColor.score_bottom}
       />
     </div>
   );

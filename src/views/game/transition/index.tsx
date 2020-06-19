@@ -11,6 +11,7 @@ import { actions, selectors } from "../../../redux";
 import { useTypedSelector } from "../../../redux/store";
 
 // components
+import { BleedColor } from "../../../components/InterfaceBleed";
 import InterfaceScore from "../../../components/InterfaceScore";
 import MotionShared, {
   Type,
@@ -39,33 +40,40 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   const failCause = useTypedSelector(selectors.round.selectFailCause);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 
   const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
     setShowScore(value);
   }, []);
 
+  const handleTransitionEnded = useCallback(() => {
+    if (isCreator) {
+      dispatch(actions.webSocket.emit.transition.ended());
+    }
+    if (gameIsEnded) {
+      setTimeout(() => history.push("/leaderboard"), 2000);
+    }
+  }, [dispatch, gameIsEnded, history, isCreator]);
+
+  const handleVideoIsReady = useCallback(() => {
+    dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+  }, [dispatch, playerId]);
+
   // effect
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess && isTansitionActive) {
       setShowScore(true);
+      dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
     }
-  }, [isSuccess]);
+  }, [dispatch, isSuccess, isTansitionActive, playerId]);
 
   useEffect(() => {
-    if (isTansitionActive) {
-      dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
-    } else {
+    if (!isTansitionActive) {
       dispatch(actions.transition.stop());
       handleOnMotionTransitionEnded(false);
     }
-  }, [dispatch, playerId, handleOnMotionTransitionEnded, isTansitionActive]);
-
-  useEffect(() => {
-    if (gameIsEnded) {
-      setTimeout(() => history.push("/leaderboard"), 4000);
-    }
-  }, [gameIsEnded, history]);
+  }, [dispatch, handleOnMotionTransitionEnded, isTansitionActive]);
 
   // return
 
@@ -73,7 +81,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
       {/*  /!\ Find another way to toggle the display of each element /!\ */}
       {/*  /!\ Toggle outcome when time is over OR if member is down /!\ */}
-      {isFail && failCause && (
+      {isFail && failCause && isTansitionActive && (
         <MotionTransition
           failCause={failCause!}
           world={currentWorld}
@@ -82,7 +90,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
       )}
       <div
         className={Classnames("transition__score", {
-          active: isTansitionActive && showScore
+          active: showScore
         })}
       >
         <InterfaceScore
@@ -96,6 +104,20 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           extension={Extension.mp4}
           position={Position.center}
           isPlayed={isTransitionStarted}
+          onEnded={handleTransitionEnded}
+          onLoadedData={handleVideoIsReady}
+          bleedColor={BleedColor.preamble}
+        />
+      )}
+      {gameIsEnded && (
+        <MotionShared
+          type={Type.ending}
+          extension={Extension.mp4}
+          position={Position.center}
+          isPlayed={isTransitionStarted}
+          onEnded={handleTransitionEnded}
+          onLoadedData={handleVideoIsReady}
+          bleedColor={BleedColor.ending}
         />
       )}
     </div>
