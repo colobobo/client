@@ -58,8 +58,8 @@ type WorldConfig = ColorConfig & {
     wall: Phaser.Types.Loader.FileTypes.SVGFileConfig;
   };
   motions: {
-    death: string;
-    elapsedTime: string;
+    memberDropped: enums.round.FailCauses.memberDropped;
+    timer: enums.round.FailCauses.timer;
   };
 };
 
@@ -111,8 +111,8 @@ const getConfigs = (): WorldsConfig => {
           }
         },
         motions: {
-          death: require(`../assets/worlds/${world}/motions/death.mp4`),
-          elapsedTime: require(`../assets/worlds/${world}/motions/elapsedTime.mp4`)
+          memberDropped: require(`../assets/worlds/${world}/motions/death.mp4`),
+          timer: require(`../assets/worlds/${world}/motions/elapsedTime.mp4`)
         }
       } as WorldConfig
     };

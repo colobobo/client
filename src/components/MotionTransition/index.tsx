@@ -9,19 +9,14 @@ import * as config from "../../config";
 // style
 import "./index.scss";
 
-export enum Outcome {
-  death = "death",
-  elapsedTime = "elapsedTime"
-}
-
 interface Props {
-  outcome: Outcome;
+  failCause: enums.round.FailCauses;
   world: enums.World;
   onMotionTransitionEnded: (value: boolean) => any;
 }
 
 const MotionTransition: FC<Props> = ({
-  outcome,
+  failCause,
   world,
   onMotionTransitionEnded
 }) => {
@@ -46,7 +41,7 @@ const MotionTransition: FC<Props> = ({
           autoPlay
           onEnded={handleOnVideoEnded}
         >
-          <source src={config.worlds[world].motions[outcome]} />
+          <source src={config.worlds[world].motions[failCause]} />
         </video>
       </div>
     </div>

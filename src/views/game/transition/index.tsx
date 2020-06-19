@@ -2,6 +2,9 @@ import React, { FC, useEffect, useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import Classnames from "classnames";
 
+// lib
+import { enums } from "@colobobo/library";
+
 // styles
 import "./index.scss";
 
@@ -17,9 +20,7 @@ import MotionShared, {
   Extension,
   Position
 } from "../../../components/MotionShared";
-import MotionTransition, {
-  Outcome
-} from "../../../components/MotionTransition";
+import MotionTransition from "../../../components/MotionTransition";
 
 interface Props {
   isTansitionActive: boolean;
@@ -36,7 +37,9 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const isFail = useTypedSelector(selectors.round.selectIsFail);
   const currentWorld = useTypedSelector(selectors.round.selectWorld);
+  const failCause = useTypedSelector(selectors.round.selectFailCause);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const gameIsEnded = useTypedSelector(selectors.game.selectIsEnded);
 
@@ -73,9 +76,9 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
       {/*  /!\ Find another way to toggle the display of each element /!\ */}
       {/*  /!\ Toggle outcome when time is over OR if member is down /!\ */}
-      {isSuccess !== undefined && !showScore && isTansitionActive && (
+      {isFail && failCause && (
         <MotionTransition
-          outcome={Outcome.death}
+          failCause={failCause!}
           world={currentWorld}
           onMotionTransitionEnded={handleOnMotionTransitionEnded}
         />
