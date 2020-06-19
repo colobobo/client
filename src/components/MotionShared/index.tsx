@@ -1,4 +1,5 @@
 import React, { FC, useCallback, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Classnames from "classnames";
 import { gsap } from "gsap";
 
@@ -8,6 +9,7 @@ import InterfaceBleed, {
   BleedPosition,
   BleedColor
 } from "../../components/InterfaceBleed";
+import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // style
 import "./index.scss";
@@ -32,10 +34,12 @@ interface Props {
   type: Type;
   extension: Extension;
   position: Position;
+  bleedColor: BleedColor;
   isPlayed: boolean;
   onEnded: any;
   onLoadedData: any;
-  bleedColor: BleedColor;
+  showSkip?: boolean;
+  onSkipClick?: any;
 }
 
 const MotionShared: FC<Props> = ({
@@ -45,8 +49,12 @@ const MotionShared: FC<Props> = ({
   isPlayed,
   onEnded,
   onLoadedData,
-  bleedColor
+  onSkipClick,
+  bleedColor,
+  showSkip
 }) => {
+  const { t } = useTranslation();
+
   // refs
   const $motionVideo = useRef<HTMLVideoElement>(null);
   const $motionOverlay = useRef<HTMLDivElement>(null);
@@ -118,6 +126,14 @@ const MotionShared: FC<Props> = ({
               position={BleedPosition.right}
               bgColor={bleedColor}
               elementWidth={$motionVideo.current?.clientWidth}
+            />
+          )}
+          {showSkip && (
+            <InterfaceButton
+              onClick={onSkipClick}
+              color={Colors.blue}
+              text={t("transition.buttons.skip")}
+              classNames="motion-shared__action button--small"
             />
           )}
         </Area>

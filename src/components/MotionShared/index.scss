@@ -17,6 +17,14 @@
     z-index: 10;
   }
 
+  &__action {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: auto;
+    padding: 5px 20px;
+  }
+
   &__video {
     position: absolute;
     height: 100%;

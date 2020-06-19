@@ -81,7 +81,7 @@
       "faster": "Plus vite !"
     },
     "buttons": {
-      "preambleSkip": "Passer l'introduction"
+      "skip": "Passer"
     }
   }
 }

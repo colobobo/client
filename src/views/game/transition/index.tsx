@@ -107,6 +107,8 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           onEnded={handleTransitionEnded}
           onLoadedData={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
+          showSkip={true}
+          onSkipClick={handleTransitionEnded}
         />
       )}
       {gameIsEnded && (
