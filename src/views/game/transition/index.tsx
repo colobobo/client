@@ -2,9 +2,6 @@ import React, { FC, useEffect, useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
 import Classnames from "classnames";
 
-// lib
-import { enums } from "@colobobo/library";
-
 // styles
 import "./index.scss";
 
