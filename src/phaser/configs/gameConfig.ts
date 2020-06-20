@@ -15,7 +15,7 @@ export const getGameConfig = ({
   pixelRatio?: number;
 }): Phaser.Types.Core.GameConfig => ({
   type: Phaser.AUTO,
-  width: areaWidth * pixelRatio,
+  width: window.innerWidth * pixelRatio,
   height: areaHeight * pixelRatio,
   zoom: 1 / pixelRatio,
   // note : resolution doesn't work, see : https://github.com/photonstorm/phaser/issues/4417
@@ -42,10 +42,10 @@ export const getGameConfig = ({
             }
           : false,
       setBounds: {
-        x: -150 * pixelRatio,
+        x: 0,
         left: false,
         right: false,
-        width: (areaWidth + 150) * pixelRatio,
+        width: areaWidth * pixelRatio,
         height: areaHeight * pixelRatio,
         thickness: 30 * pixelRatio
       },

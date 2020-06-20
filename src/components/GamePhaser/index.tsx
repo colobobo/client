@@ -9,6 +9,7 @@ import React, {
 import * as Phaser from "phaser";
 import { selectors } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
+import { useTypedSelector } from "../../redux/store";
 import { getGameConfig } from "../../phaser/configs/gameConfig";
 import Game from "../../phaser/Game";
 import "./index.scss";
@@ -31,6 +32,10 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   const world = useSelector(selectors.round.selectWorld);
   const playersRole = useSelector(selectors.round.selectPlayersRole);
   const areaDevices = useSelector(selectors.area.selectDevices);
+  const device = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { playerId })
+  );
+
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   const pixelRatio = useMemo(() => window.devicePixelRatio, []);
@@ -170,7 +175,16 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
 
   // return
 
-  return <div className="game-phaser" ref={$parent} />;
+  return (
+    <div
+      className="game-phaser"
+      ref={$parent}
+      style={{
+        left: device.offsetX,
+        width: device.width
+      }}
+    />
+  );
 };
 
 export default GamePhaser;
