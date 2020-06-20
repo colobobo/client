@@ -8,9 +8,9 @@ export interface GameState {
   sceneType: enums.scene.Type | null;
   disposition: enums.game.Disposition;
   lives: number;
-  score: number;
   hasPreamble: boolean;
   isOver: boolean;
+  score: number;
 }
 
 export const slice = createSlice({
@@ -75,9 +75,9 @@ const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectIsEnded = (state: RootState) => getRoot(state).isEnded;
 const selectSceneType = (state: RootState) => getRoot(state).sceneType;
 const selectDisposition = (state: RootState) => getRoot(state).disposition;
-const selectScore = (state: RootState) => getRoot(state).score;
 const selectHasPreamble = (state: RootState) => getRoot(state).hasPreamble;
 const selectIsOver = (state: RootState) => getRoot(state).isOver;
+const selectScore = (state: RootState) => getRoot(state).score;
 
 export const selectors = {
   selectIsStarted,
@@ -85,9 +85,9 @@ export const selectors = {
   selectSceneType,
   selectDisposition,
   selectLives,
-  selectScore,
   selectHasPreamble,
-  selectIsOver
+  selectIsOver,
+  selectScore
 };
 
 // reducer / actions

@@ -8,6 +8,7 @@ export interface RoomState {
   error: number | null;
   playerId: string;
   isCreator: boolean;
+  playersMin: number;
 }
 
 export const slice = createSlice({
@@ -23,10 +24,11 @@ export const slice = createSlice({
       state: RoomState,
       action: PayloadAction<payloads.room.CreateSuccess>
     ) => {
-      const { id, playerId } = action.payload.data;
+      const { id, playerId, players } = action.payload.data;
       state.id = id;
       state.playerId = playerId;
       state.isCreator = true;
+      state.playersMin = players.min;
     },
     createError: (
       state: RoomState,
@@ -38,10 +40,11 @@ export const slice = createSlice({
       state: RoomState,
       action: PayloadAction<payloads.room.JoinSuccess>
     ) => {
-      const { id, playerId, isCreator } = action.payload.data;
+      const { id, playerId, isCreator, players } = action.payload.data;
       state.id = id;
       state.playerId = playerId;
       state.isCreator = isCreator;
+      state.playersMin = players.min;
     },
     joinError: (
       state: RoomState,
@@ -59,11 +62,14 @@ const selectId = (state: RootState) => getRoot(state).id;
 const selectError = (state: RootState) => getRoot(state).error;
 const selectPlayerId = (state: RootState) => getRoot(state).playerId;
 const selectIsCreator = (state: RootState) => getRoot(state).isCreator;
+const selectPlayersMin = (state: RootState) => getRoot(state).playersMin;
+
 export const selectors = {
   selectId,
   selectError,
   selectPlayerId,
-  selectIsCreator
+  selectIsCreator,
+  selectPlayersMin
 };
 
 // reducer / actions
