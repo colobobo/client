@@ -26,6 +26,7 @@ const Room: FC = () => {
   // store
 
   const dispatch = useDispatch();
+  const gameMinPlayers = useTypedSelector(selectors.room.selectPlayersMin);
   const isGameStarted = useTypedSelector(selectors.game.selectIsStarted);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const disposition = useTypedSelector(selectors.game.selectDisposition);
@@ -123,7 +124,7 @@ const Room: FC = () => {
             color={Colors.blue}
             text={t("room.buttons.start")}
             classNames="room__action"
-            disabled={devicesArray.length >= 3 ? false : true}
+            disabled={devicesArray.length >= gameMinPlayers ? false : true}
           />
         )}
       </div>
