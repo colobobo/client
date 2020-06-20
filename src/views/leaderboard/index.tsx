@@ -24,7 +24,7 @@ const About: FC = () => {
   const [activeRegister, setActiveRegister] = useState<boolean>(false);
 
   // store values
-  const score = useTypedSelector(selectors.round.selectScore)
+  const score = useTypedSelector(selectors.game.selectScore)
     .toString()
     .padStart(3, "0");
 
