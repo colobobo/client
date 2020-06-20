@@ -8,12 +8,16 @@ export interface GameState {
   sceneType: enums.scene.Type | null;
   disposition: enums.game.Disposition;
   lives: number;
+  hasPreamble: boolean;
+  isOver: boolean;
 }
 
 export const slice = createSlice({
   name: "game",
   initialState: {
     isStarted: false,
+    hasPreamble: false,
+    isOver: false,
     sceneType: null,
     disposition: enums.game.Disposition.line,
     lives: 0
@@ -50,6 +54,13 @@ export const slice = createSlice({
     end: (state: GameState, action: PayloadAction<payloads.game.End>) => {
       state.isStarted = false;
       state.isEnded = true;
+    },
+    preambleUpdate: (state: GameState) => {
+      state.hasPreamble = true;
+    },
+    roundEnd: (state: GameState, action: PayloadAction<payloads.round.End>) => {
+      const { lives } = action.payload.data;
+      state.isOver = lives === 0;
     }
   }
 });
@@ -62,13 +73,17 @@ const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
 const selectIsEnded = (state: RootState) => getRoot(state).isEnded;
 const selectSceneType = (state: RootState) => getRoot(state).sceneType;
 const selectDisposition = (state: RootState) => getRoot(state).disposition;
+const selectHasPreamble = (state: RootState) => getRoot(state).hasPreamble;
+const selectIsOver = (state: RootState) => getRoot(state).isOver;
 
 export const selectors = {
   selectIsStarted,
   selectIsEnded,
   selectSceneType,
   selectDisposition,
-  selectLives
+  selectLives,
+  selectHasPreamble,
+  selectIsOver
 };
 
 // reducer / actions

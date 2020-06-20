@@ -30,6 +30,7 @@ const Room: FC = () => {
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const disposition = useTypedSelector(selectors.game.selectDisposition);
   const devicesArray = useTypedSelector(selectors.area.selectDevicesArray);
+  const sceneType = useTypedSelector(selectors.game.selectSceneType);
 
   const [currentPlacement, setCurrentPlacement] = useState<
     enums.game.Disposition
@@ -38,10 +39,10 @@ const Room: FC = () => {
   // effect
 
   useEffect(() => {
-    if (isGameStarted) {
+    if (isGameStarted && sceneType) {
       history.push("/game/");
     }
-  }, [history, isGameStarted]);
+  }, [history, isGameStarted, sceneType]);
 
   // handlers
 
