@@ -1,9 +1,7 @@
 import * as Phaser from "phaser";
-import MainScene, {
-  CollisionCategories,
-  RoundMembersArray
-} from "../scenes/MainScene";
 import { enums } from "@colobobo/library";
+import MainScene, { CollisionCategories } from "../scenes/MainScene";
+import { RoundMembersArray } from "../Game";
 
 export default class Member extends Phaser.Physics.Matter.Image {
   pixelRatio: number;
@@ -53,7 +51,7 @@ export default class Member extends Phaser.Physics.Matter.Image {
   init() {
     // 25% of areaHeight
     this.setScale(
-      ((this.scene.areaHeight * 0.25) / this.height) * this.pixelRatio
+      ((this.scene.game.areaHeight * 0.25) / this.height) * this.pixelRatio
     );
     // set baseScale
     this.baseScale = this.scale;

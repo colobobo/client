@@ -10,7 +10,7 @@ import * as Phaser from "phaser";
 import { selectors } from "../../redux";
 import { useDispatch, useSelector } from "react-redux";
 import { getGameConfig } from "../../phaser/configs/gameConfig";
-import MainScene from "../../phaser/scenes/MainScene";
+import Game from "../../phaser/Game";
 import "./index.scss";
 
 interface Props {
@@ -31,6 +31,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   const world = useSelector(selectors.round.selectWorld);
   const playersRole = useSelector(selectors.round.selectPlayersRole);
   const areaDevices = useSelector(selectors.area.selectDevices);
+  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   const pixelRatio = useMemo(() => window.devicePixelRatio, []);
 
@@ -40,21 +41,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
 
   // PHASER REF
 
-  const $game = useRef<Phaser.Game | null>(null);
-  const $mainScene = useRef(
-    new MainScene({
-      dispatch,
-      world,
-      playerId,
-      playersRole,
-      areaDevices,
-      roundMembersArray: roundMembersArray,
-      isRoundStarted,
-      areaWidth,
-      areaHeight,
-      pixelRatio
-    })
-  );
+  const $game = useRef<Game | null>(null);
 
   // STATE
 
@@ -63,20 +50,43 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   // create phaser game
 
   const createGame = useCallback(() => {
-    const gameConfig = getGameConfig({
-      areaHeight,
-      areaWidth,
-      scene: $mainScene.current,
-      parent: $parent.current!,
-      pixelRatio
-    });
+    if (!$game.current) {
+      const gameConfig = getGameConfig({
+        areaHeight,
+        areaWidth,
+        parent: $parent.current!,
+        pixelRatio
+      });
 
-    $game.current = new Phaser.Game(gameConfig);
+      $game.current = new Game(gameConfig, {
+        dispatch,
+        world,
+        playerId,
+        playersRole,
+        areaDevices,
+        roundMembersArray: roundMembersArray,
+        isRoundStarted,
+        areaWidth,
+        areaHeight,
+        pixelRatio
+      });
 
-    $game.current.events.on(Phaser.Core.Events.READY, () => {
-      setIsGameReady(true);
-    });
-  }, [areaHeight, areaWidth, pixelRatio]);
+      $game.current.events.on(Phaser.Core.Events.READY, () => {
+        setIsGameReady(true);
+      });
+    }
+  }, [
+    areaDevices,
+    areaHeight,
+    areaWidth,
+    dispatch,
+    isRoundStarted,
+    pixelRatio,
+    playerId,
+    playersRole,
+    roundMembersArray,
+    world
+  ]);
 
   // SIDE EFFECTS
 
@@ -89,44 +99,44 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   // update dispatch
 
   useEffect(() => {
-    $mainScene.current.setDispatch(dispatch);
+    $game.current?.setDispatch(dispatch);
   }, [dispatch]);
 
   // update world
 
   useEffect(() => {
-    $mainScene.current.setWorld(world);
+    $game.current?.setWorld(world);
   }, [world]);
 
   // update playerId
 
   useEffect(() => {
-    $mainScene.current.setPlayerId(playerId);
+    $game.current?.setPlayerId(playerId);
   }, [playerId]);
 
   // update playersRole
 
   useEffect(() => {
-    $mainScene.current.setPlayersRole(playersRole);
+    $game.current?.setPlayersRole(playersRole);
   }, [playersRole]);
 
   // update areaDevices
 
   useEffect(() => {
-    $mainScene.current.setAreaDevices(areaDevices);
+    $game.current?.setAreaDevices(areaDevices);
   }, [areaDevices]);
 
   // update roundMembersArray
 
   useEffect(() => {
-    $mainScene.current.setRoundMembersArray(roundMembersArray);
+    $game.current?.setRoundMembersArray(roundMembersArray);
   }, [roundMembersArray]);
 
   // listen isRoundStarted -> pause or resume
 
   useEffect(() => {
     if (isGameReady) {
-      console.log({ isRoundStarted });
+      // TODO : play / pause game
       // isRoundStarted
       //   ? $mainScene.current.matter.resume()
       //   : $mainScene.current.matter.pause();
@@ -136,9 +146,16 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   useEffect(() => {
     if (isRoundStarted && roundId > 1) {
       // TODO: wip
-      $mainScene.current.newRound();
+      $game.current?.newRound();
     }
   }, [isRoundStarted, roundId]);
+
+  // TODO : update
+  useEffect(() => {
+    if (isTransitionStarted && roundId === 1) {
+      $game.current?.startPreloader();
+    }
+  }, [isTransitionStarted, roundId]);
 
   // on unmount : stop game
 

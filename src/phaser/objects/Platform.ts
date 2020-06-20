@@ -82,14 +82,14 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
 
     // set scale in % of areaHeight
     this.setScale(
-      ((this.scene.areaHeight * 0.84) / this.height) * this.pixelRatio
+      ((this.scene.game.areaHeight * 0.84) / this.height) * this.pixelRatio
     );
 
     // align to bottom
     this.scene.matter.alignBody(
       this.body as MatterJS.BodyType,
       this.x,
-      this.scene.areaHeight * this.pixelRatio,
+      this.scene.game.areaHeight * this.pixelRatio,
       Phaser.Display.Align.BOTTOM_CENTER
     );
 
@@ -333,10 +333,10 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
         // if collide with member and my role is plateforms
         if (
           gameObjectB instanceof Member &&
-          this.scene.playerId === this.scene.getPlayerWithPlatformRole()
+          this.scene.game.playerId === this.scene.getPlayerWithPlatformRole()
         ) {
           // emit member arrived
-          this.scene.dispatch(
+          this.scene.game.dispatch(
             actions.webSocket.emit.round.memberArrived({
               memberId: gameObjectB.id
             })
