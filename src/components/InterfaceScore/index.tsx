@@ -46,6 +46,7 @@ const InterfaceScore: FC<Props> = ({
   onGameOverClick
 }) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const isFail = useTypedSelector(selectors.round.selectIsFail);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
@@ -135,6 +136,7 @@ const InterfaceScore: FC<Props> = ({
           <InterfaceScorePanel
             isSuccess={isSuccess}
             isActive={isTansitionActive}
+            isFail={isFail}
             isScoreActive={isScoreActive}
             playSpritesheet={playSpritesheet}
             onAnimationComplete={handleOnPanelAnimationComplete}

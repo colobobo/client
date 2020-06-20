@@ -1,4 +1,4 @@
-import React, { FC, useRef, useCallback } from "react";
+import React, { FC, useRef, useCallback, useEffect } from "react";
 
 // lib
 import { enums } from "@colobobo/library";
@@ -20,7 +20,7 @@ const MotionTransition: FC<Props> = ({
   world,
   onMotionTransitionEnded
 }) => {
-  const motionVideo = useRef<HTMLVideoElement>(null);
+  const $motionVideo = useRef<HTMLVideoElement>(null);
 
   // handlers
 
@@ -28,17 +28,24 @@ const MotionTransition: FC<Props> = ({
     onMotionTransitionEnded(true);
   }, [onMotionTransitionEnded]);
 
+  // use effects
+  useEffect(() => {
+    $motionVideo.current?.load();
+    $motionVideo.current?.setAttribute("muted", "true");
+    $motionVideo.current?.play();
+  }, []);
+
   // return
 
   return (
     <div className="motion-transition">
       <div className="motion-transition__container">
         <video
-          ref={motionVideo}
+          ref={$motionVideo}
           className="motion-transition__video"
           playsInline
           muted
-          autoPlay
+          autoPlay={false}
           onEnded={handleOnVideoEnded}
         >
           <source src={config.worlds[world].motions[failCause]} />
