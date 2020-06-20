@@ -1,7 +1,13 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-import { payloads, enums, Members, PlayerRoles } from "@colobobo/library";
+import {
+  payloads,
+  enums,
+  Members,
+  PlayerRoles,
+  round
+} from "@colobobo/library";
 
 export interface RoundState {
   id: number;
@@ -13,19 +19,18 @@ export interface RoundState {
   tick: number;
   members: Members;
   playersRole: PlayerRoles;
-  score: number;
   lives: number;
   isSuccess: boolean;
   isFail: boolean;
   failCause: enums.round.FailCauses | null;
+  scoreDetails: round.ScoreDetails;
 }
 
 export const slice = createSlice({
   name: "round",
   initialState: {
     isStarted: false,
-    members: {},
-    score: 0
+    members: {}
   } as RoundState,
   reducers: {
     init: (state: RoundState, action: PayloadAction<payloads.round.Init>) => {
@@ -62,13 +67,13 @@ export const slice = createSlice({
       state.isStarted = false;
     },
     end: (state: RoundState, action: PayloadAction<payloads.round.End>) => {
-      state.score = action.payload.data.score;
-      state.lives = action.payload.data.lives;
+      const { lives, endType, failCause, roundScore } = action.payload.data;
+      state.lives = lives;
       state.isStarted = false;
-      state.isSuccess =
-        action.payload.data.endType === enums.round.EndType.success;
-      state.isFail = action.payload.data.endType === enums.round.EndType.fail;
-      state.failCause = action.payload.data.failCause;
+      state.isSuccess = endType === enums.round.EndType.success;
+      state.isFail = endType === enums.round.EndType.fail;
+      state.failCause = failCause;
+      state.scoreDetails = roundScore;
     },
     tick: (state: RoundState, action: PayloadAction<payloads.round.Tick>) => {
       state.members = action.payload.data.members;
@@ -88,10 +93,10 @@ const selectEndRoundTimeStamp = (state: RootState) =>
 const selectWorld = (state: RootState) => getRoot(state).world;
 const selectTick = (state: RootState) => getRoot(state).tick;
 const selectLives = (state: RootState) => getRoot(state).lives;
-const selectScore = (state: RootState) => getRoot(state).score;
 const selectIsSuccess = (state: RootState) => getRoot(state).isSuccess;
 const selectIsFail = (state: RootState) => getRoot(state).isFail;
 const selectFailCause = (state: RootState) => getRoot(state).failCause;
+const selectScoreDetails = (state: RootState) => getRoot(state).scoreDetails;
 const selectMember = (state: RootState, { id }: { id: string }) =>
   getRoot(state).members[id];
 const selectMembers = (state: RootState) => getRoot(state).members;
@@ -120,10 +125,10 @@ export const selectors = {
   selectMember,
   selectMembers,
   selectLives,
-  selectScore,
   selectIsSuccess,
   selectIsFail,
   selectFailCause,
+  selectScoreDetails,
   selectMembersAsArray,
   selectMembersWaiting,
   selectMembersActive,

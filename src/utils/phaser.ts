@@ -1,5 +1,3 @@
-import Phaser from "phaser";
-
 const getGameWrapConfig = (width: number, height: number) => ({
   min: {
     x: 0,
