@@ -124,7 +124,7 @@ const Room: FC = () => {
             color={Colors.blue}
             text={t("room.buttons.start")}
             classNames="room__action"
-            disabled={devicesArray.length >= gameMinPlayers ? false : true}
+            disabled={devicesArray.length < gameMinPlayers}
           />
         )}
       </div>
