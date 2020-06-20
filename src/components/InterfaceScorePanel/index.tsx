@@ -4,6 +4,9 @@ import { gsap } from "gsap";
 import Odometer from "react-odometerjs";
 import Classnames from "classnames";
 
+//lib
+import { enums } from "@colobobo/library";
+
 // store
 import { useTypedSelector } from "../../redux/store";
 import { selectors } from "../../redux";
@@ -84,8 +87,12 @@ const InterfaceScorePanel: FC<Props> = ({
 
     if (roundScoreDetails) {
       for (let [key] of Object.entries(roundScoreDetails.details)) {
-        const isTraps = key === "traps";
-        const isTime = key === "remainingTime";
+        const value = roundScoreDetails.details[key].value;
+        const points = roundScoreDetails.details[key].points;
+        const isPositivePoints = Math.sign(points) > 0;
+        const isTime = key === enums.round.ScoreDetails.remainingTime;
+        const isArrivedMembers =
+          key === enums.round.ScoreDetails.arrivedMembers;
 
         let card = (
           <div className="card" key={key}>
@@ -93,32 +100,31 @@ const InterfaceScorePanel: FC<Props> = ({
               {isTime && (
                 <span>
                   +
-                  {Math.floor(roundScoreDetails.details[key].value / 60000)
+                  {Math.floor(value / 60000)
                     .toString()
                     .padStart(1, "0")}
                   :
-                  {Math.ceil(
-                    (roundScoreDetails.details[key].value % 60000) / 1000
-                  )
+                  {Math.ceil((value % 60000) / 1000)
                     .toString()
                     .padStart(2, "0")}
                 </span>
               )}
-              {!isTime && <span>x{roundScoreDetails.details[key].value}</span>}
+              {!isTime && <span>x{value}</span>}
             </div>
             <div className="card__picture">
               <img
-                src={require(`../../assets/illustrations/score/${key}.png`)}
+                src={require(`../../assets/illustrations/score/${
+                  isArrivedMembers && value === 0 ? "arrivedMembers_null" : key
+                }.png`)}
                 alt="Icon"
               />
             </div>
             <p
               className={Classnames("card__point", {
-                "card__point--yellow": isTraps
+                "card__point--yellow": !isPositivePoints
               })}
             >
-              {isTraps ? "- " : "+ "}
-              {roundScoreDetails.details[key].points}
+              {isPositivePoints ? "+" : "" + points}
             </p>
           </div>
         );
