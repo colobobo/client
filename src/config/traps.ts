@@ -73,7 +73,7 @@ export const trapsConfigsByWorlds: TrapsConfigsByWorlds = {
     },
     [enums.traps.Jungle.liana]: {
       startFrame: 0,
-      endFrame: 344,
+      endFrame: 105,
       ...getGeneratedConfig(enums.World.jungle, enums.traps.Jungle.liana)
     }
   },
@@ -110,7 +110,7 @@ export const trapsConfigsByWorlds: TrapsConfigsByWorlds = {
     },
     [enums.traps.River.liana]: {
       startFrame: 0,
-      endFrame: 344,
+      endFrame: 105,
       ...getGeneratedConfig(enums.World.river, enums.traps.River.liana)
     }
   }

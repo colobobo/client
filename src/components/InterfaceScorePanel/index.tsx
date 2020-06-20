@@ -22,6 +22,7 @@ import "./index.scss";
 
 interface Props {
   isSuccess: boolean;
+  isFail: boolean;
   isActive: boolean;
   isScoreActive: boolean;
   playSpritesheet: boolean;
@@ -30,6 +31,7 @@ interface Props {
 
 const InterfaceScorePanel: FC<Props> = ({
   isSuccess,
+  isFail,
   isScoreActive,
   playSpritesheet,
   onAnimationComplete
@@ -56,7 +58,7 @@ const InterfaceScorePanel: FC<Props> = ({
 
     for (let i = 0; i < totalLives; i++) {
       const currentLife = i + 1;
-      const currentLifeLost = !isSuccess && currentLife === lostLives;
+      const currentLifeLost = isFail && currentLife === lostLives;
 
       let life = (
         <div className="score-panel__life" key={i}>
@@ -73,6 +75,7 @@ const InterfaceScorePanel: FC<Props> = ({
               play={isSuccess && playSpritesheet}
               animationID={animationId.teacher_success}
               autoplay={false}
+              isLoop={isSuccess}
             />
           )}
         </div>
@@ -80,7 +83,7 @@ const InterfaceScorePanel: FC<Props> = ({
       livesArray.push(life);
     }
     return livesArray;
-  }, [isSuccess, lives, playSpritesheet, totalLives]);
+  }, [isFail, isSuccess, lives, playSpritesheet, totalLives]);
 
   const cardsItem = useMemo(() => {
     let cardsArray = [];
@@ -124,7 +127,8 @@ const InterfaceScorePanel: FC<Props> = ({
                 "card__point--yellow": !isPositivePoints
               })}
             >
-              {isPositivePoints ? "+" : "" + points}
+              {isPositivePoints ? "+" : ""}
+              {points}
             </p>
           </div>
         );

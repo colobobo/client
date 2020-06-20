@@ -35,10 +35,18 @@ import "./index.scss";
 interface Props {
   isTansitionActive: boolean;
   isScoreActive: boolean;
+  isGameOver: boolean;
+  onGameOverClick: any;
 }
 
-const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
+const InterfaceScore: FC<Props> = ({
+  isTansitionActive,
+  isScoreActive,
+  isGameOver,
+  onGameOverClick
+}) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
+  const isFail = useTypedSelector(selectors.round.selectIsFail);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
@@ -128,6 +136,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
           <InterfaceScorePanel
             isSuccess={isSuccess}
             isActive={isTansitionActive}
+            isFail={isFail}
             isScoreActive={isScoreActive}
             playSpritesheet={playSpritesheet}
             onAnimationComplete={handleOnPanelAnimationComplete}
@@ -149,9 +158,13 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
             }}
           >
             <InterfaceButton
-              onClick={handleOnNextRoundClick}
+              onClick={isGameOver ? onGameOverClick : handleOnNextRoundClick}
               color={Colors.blue}
-              text={t("score.buttons.next")}
+              text={
+                isGameOver
+                  ? t("score.buttons.next")
+                  : t("score.buttons.nextLevel")
+              }
               classNames="score__next"
             />
             <div className={Classnames("score__animations")}>
@@ -167,7 +180,7 @@ const InterfaceScore: FC<Props> = ({ isTansitionActive, isScoreActive }) => {
           </div>
         )}
 
-        {isLastDevice && (
+        {isLastDevice && !isGameOver && (
           <SpriteAnimation
             className="score__sign"
             animationID={animationId.sign}

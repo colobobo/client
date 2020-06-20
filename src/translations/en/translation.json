@@ -62,7 +62,8 @@
     "bonus": "Successful level bonus",
     "sum": "Level total",
     "buttons": {
-      "next": "Next level"
+      "nextLevel": "Next level",
+      "next": "Next"
     }
   },
   "leaderboard": {
