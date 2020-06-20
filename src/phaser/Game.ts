@@ -1,9 +1,13 @@
 import * as Phaser from "phaser";
-import MainScene, { RoundMembersArray } from "./scenes/MainScene";
+import MainScene from "./scenes/MainScene";
 import { Dispatch } from "redux";
 import { enums } from "@colobobo/library";
 import { selectors } from "../redux";
 import Preloader from "./scenes/Preloader";
+
+export type RoundMembersArray = ReturnType<
+  typeof selectors.round.selectMembersAsArray
+>;
 
 type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
 type AreaDevices = ReturnType<typeof selectors.area.selectDevices>;
@@ -66,7 +70,7 @@ export default class Game extends Phaser.Game {
     this.areaHeight = areaHeight;
 
     this.scene.add("preloader", Preloader);
-    this.mainScene = new MainScene({ ...gameStoreData, game: this });
+    this.mainScene = new MainScene({ game: this });
     this.scene.add("main-scene", this.mainScene);
   }
 
@@ -74,33 +78,27 @@ export default class Game extends Phaser.Game {
 
   setDispatch(dispatch: Dispatch) {
     this.dispatch = dispatch;
-    this.mainScene.setDispatch(dispatch);
   }
 
   setPlayerId(playerId: string) {
     this.playerId = playerId;
-    this.mainScene.setPlayerId(playerId);
   }
 
   setRoundMembersArray(roundMembersArray: RoundMembersArray) {
     this.roundMembersArray = roundMembersArray;
-    this.mainScene.setRoundMembersArray(roundMembersArray);
-    // this.onGameMembersUpdate();
+    this.mainScene.onGameMembersUpdate();
   }
 
   setWorld(world: enums.World) {
     this.world = world;
-    this.mainScene.setWorld(world);
   }
 
   setPlayersRole(playersRole: PlayersRole) {
     this.playersRole = playersRole;
-    this.mainScene.setPlayersRole(playersRole);
   }
 
   setAreaDevices(areaDevices: AreaDevices) {
     this.areaDevices = areaDevices;
-    this.mainScene.setAreaDevices(areaDevices);
   }
 
   // FUNCTION
@@ -113,16 +111,6 @@ export default class Game extends Phaser.Game {
     console.log("new round");
     this.mainScene.destroy();
     this.mainScene = new MainScene({
-      dispatch: this.dispatch,
-      areaDevices: this.areaDevices,
-      playersRole: this.playersRole,
-      world: this.world,
-      roundMembersArray: this.roundMembersArray,
-      playerId: this.playerId,
-      pixelRatio: this.pixelRatio,
-      areaHeight: this.areaHeight,
-      areaWidth: this.areaWidth,
-      isRoundStarted: this.isRoundStarted,
       game: this
     });
 

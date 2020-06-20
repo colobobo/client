@@ -45,8 +45,8 @@ export default class Preloader extends Phaser.Scene {
   }
 
   preload() {
-    this.load.on("progress", (value: any) => {
-      // console.log("load progress : " + value);
+    this.load.on("progress", (value: string) => {
+      console.log(`load progress : ${Math.round(Number(value) * 100)}%`);
     });
     this.load.on("complete", () => {
       console.log("LOAD COMPLETE");
@@ -56,7 +56,8 @@ export default class Preloader extends Phaser.Scene {
     this.loadPlatforms();
     this.loadWalls();
     this.loadShapes();
-    this.loadTraps();
+    // TODO: uncomment
+    // this.loadTraps();
   }
 
   create() {

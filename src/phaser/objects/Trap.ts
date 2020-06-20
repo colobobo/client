@@ -4,11 +4,6 @@ import Member from "./Member";
 import { actions } from "../../redux";
 import { TrapsAnimationConfig } from "../../config/traps";
 
-export enum TrapLocation {
-  top = "top",
-  bottom = "bottom"
-}
-
 export default class Trap extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
   scene: MainScene;
@@ -73,7 +68,7 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
   init() {
     // set scale with areaHeightRatio (default 100%)
     this.setScale(
-      ((this.scene.areaHeight * this.areaHeightRatio) / this.height) *
+      ((this.scene.game.areaHeight * this.areaHeightRatio) / this.height) *
         this.pixelRatio
     );
     // vertical center
@@ -118,14 +113,14 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
         console.log("trap : collision start");
         // if collide with member
         if (gameObjectB instanceof Member) {
-          const roundMember = this.scene.roundMembersArray.find(
+          const roundMember = this.scene.game.roundMembersArray.find(
             member => member.id === gameObjectB.id
           );
           // if i'm the player manager
-          if (this.scene.playerId === roundMember?.manager) {
+          if (this.scene.game.playerId === roundMember?.manager) {
             // emit member trapped
 
-            this.scene.dispatch(
+            this.scene.game.dispatch(
               actions.webSocket.emit.round.memberTrapped({
                 memberId: gameObjectB.id
               })
