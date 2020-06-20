@@ -1,13 +1,13 @@
 import Phaser from "phaser";
 
-const getGameWrapConfig = (game: Phaser.Game) => ({
+const getGameWrapConfig = (width: number, height: number) => ({
   min: {
     x: 0,
     y: 0
   },
   max: {
-    x: game.canvas.width,
-    y: game.canvas.height
+    x: width,
+    y: height
   }
 });
 

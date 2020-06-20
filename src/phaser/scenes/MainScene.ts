@@ -93,9 +93,9 @@ export default class MainScene extends Phaser.Scene {
 
   createFloor() {
     const floorSensor = this.matter.add.rectangle(
-      this.game.canvas.width / 2,
-      this.game.canvas.height - 5,
-      this.game.canvas.width,
+      (this.game.areaWidth * this.game.pixelRatio) / 2,
+      this.game.areaHeight * this.game.pixelRatio - 5,
+      this.game.areaWidth * this.game.pixelRatio,
       10,
 
       {
@@ -140,7 +140,12 @@ export default class MainScene extends Phaser.Scene {
         scene: this,
         texture: config.members[roundMember.skin].skin.key,
         options: {
-          plugin: { wrap: utils.phaser.getGameWrapConfig(this.game) },
+          plugin: {
+            wrap: utils.phaser.getGameWrapConfig(
+              this.game.areaWidth * this.game.pixelRatio,
+              this.game.areaHeight * this.game.pixelRatio
+            )
+          },
           restitution: 0,
           friction: 0.002,
           // frictionStatic: 0.05,
@@ -441,6 +446,11 @@ export default class MainScene extends Phaser.Scene {
 
   create() {
     console.log("MainScene : Create");
+
+    // move camera with device offsetX
+
+    const device = this.game.areaDevices[this.game.playerId];
+    this.cameras.main.setScroll(device.offsetX * this.game.pixelRatio, 0);
 
     this.createCollisionCategories();
 
