@@ -56,11 +56,15 @@ export default class Preloader extends Phaser.Scene {
     this.loadPlatforms();
     this.loadWalls();
     this.loadShapes();
-    // TODO: uncomment
-    // this.loadTraps();
+    this.loadTraps();
   }
 
   create() {
+    const maxTextures = (this.game
+      .renderer as Phaser.Renderer.WebGL.WebGLRenderer).getMaxTextures();
+    const maxTextureSize = (this.game
+      .renderer as Phaser.Renderer.WebGL.WebGLRenderer).getMaxTextureSize();
+    console.log({ maxTextures, maxTextureSize });
     this.scene.start("main-scene");
   }
 }

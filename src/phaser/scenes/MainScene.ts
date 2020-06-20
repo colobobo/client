@@ -240,6 +240,8 @@ export default class MainScene extends Phaser.Scene {
     const playersWithTrapRole = this.getPlayersWithTrapRole();
 
     playersWithTrapRole.forEach(playerId => {
+      if (this.game.playerId !== playerId) return;
+
       const device = this.game.areaDevices[playerId];
       const playerRole = this.game.playersRole[playerId];
       const playerRolePropertiesTrap = playerRole.properties as PlayerRolePropertiesTrap;
@@ -446,8 +448,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.createPlatformsAndWall();
 
-    // TODO: uncomment
-    // this.createTraps();
+    this.createTraps();
 
     this.createMembers();
 
