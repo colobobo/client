@@ -11,7 +11,7 @@ export const getGameConfig = ({
   areaWidth: number;
   areaHeight: number;
   parent: Phaser.Types.Core.GameConfig["parent"];
-  scene: Phaser.Types.Core.GameConfig["scene"];
+  scene?: Phaser.Types.Core.GameConfig["scene"];
   pixelRatio?: number;
 }): Phaser.Types.Core.GameConfig => ({
   type: Phaser.AUTO,

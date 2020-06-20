@@ -6,18 +6,15 @@ import {
 } from "@colobobo/library";
 import * as config from "../../config";
 import { PlatformPosition, platformsTexture } from "../../config/platforms";
-import {
-  getTrapsTexture,
-  TrapsAnimationConfig,
-  TrapsConfigsByWorlds
-} from "../../config/traps";
+import { getTrapsTexture, TrapsAnimationConfig } from "../../config/traps";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "../objects/Member";
 import Platform from "../objects/Platform";
-import Trap, { TrapLocation } from "../objects/Trap";
+import Trap from "../objects/Trap";
+import Game from "../Game";
 
 export type RoundMembersArray = ReturnType<
   typeof selectors.round.selectMembersAsArray
@@ -33,6 +30,9 @@ export enum CollisionCategories {
 }
 
 export default class MainScene extends Phaser.Scene {
+  // custom game class
+  game: Game;
+
   // scene plugin
   matterCollision: typeof PhaserMatterCollisionPlugin;
 
@@ -73,7 +73,8 @@ export default class MainScene extends Phaser.Scene {
     isRoundStarted,
     areaWidth,
     areaHeight,
-    pixelRatio
+    pixelRatio,
+    game
   }: {
     dispatch: Dispatch;
     world: enums.World;
@@ -85,8 +86,26 @@ export default class MainScene extends Phaser.Scene {
     areaWidth: number;
     areaHeight: number;
     pixelRatio: number;
+    game: Game;
   }) {
     super({ key: "main-scene" });
+
+    console.log("main scene constructor");
+    this.game = game;
+
+    console.log({
+      dispatch,
+      world,
+      playerId,
+      playersRole,
+      areaDevices,
+      roundMembersArray,
+      isRoundStarted,
+      areaWidth,
+      areaHeight,
+      pixelRatio,
+      game
+    });
 
     this.pixelRatio = pixelRatio;
 
@@ -564,6 +583,7 @@ export default class MainScene extends Phaser.Scene {
   // ########## PHASER SCENE FUNCTIONS ##########
 
   preload() {
+    console.log("MainScene : preload");
     this.loadMembers();
     this.loadPlatforms();
     this.loadTraps();
