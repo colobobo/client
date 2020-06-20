@@ -31,6 +31,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
   const world = useSelector(selectors.round.selectWorld);
   const playersRole = useSelector(selectors.round.selectPlayersRole);
   const areaDevices = useSelector(selectors.area.selectDevices);
+  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
   const pixelRatio = useMemo(() => window.devicePixelRatio, []);
 
@@ -135,7 +136,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
 
   useEffect(() => {
     if (isGameReady) {
-      console.log({ isRoundStarted });
+      // TODO : play / pause game
       // isRoundStarted
       //   ? $mainScene.current.matter.resume()
       //   : $mainScene.current.matter.pause();
@@ -148,6 +149,13 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
       $game.current?.newRound();
     }
   }, [isRoundStarted, roundId]);
+
+  // TODO : update
+  useEffect(() => {
+    if (isTransitionStarted && roundId === 1) {
+      $game.current?.startPreloader();
+    }
+  }, [isTransitionStarted, roundId]);
 
   // on unmount : stop game
 

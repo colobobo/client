@@ -6,7 +6,7 @@ import {
 } from "@colobobo/library";
 import * as config from "../../config";
 import { PlatformPosition, platformsTexture } from "../../config/platforms";
-import { getTrapsTexture, TrapsAnimationConfig } from "../../config/traps";
+import { TrapsAnimationConfig } from "../../config/traps";
 import { actions, selectors } from "../../redux";
 import { Dispatch } from "redux";
 import * as utils from "../../utils";
@@ -88,27 +88,12 @@ export default class MainScene extends Phaser.Scene {
     pixelRatio: number;
     game: Game;
   }) {
-    super({ key: "main-scene" });
+    super({});
 
-    console.log("main scene constructor");
     this.game = game;
-
-    console.log({
-      dispatch,
-      world,
-      playerId,
-      playersRole,
-      areaDevices,
-      roundMembersArray,
-      isRoundStarted,
-      areaWidth,
-      areaHeight,
-      pixelRatio,
-      game
-    });
+    console.log("MainScene : constructor");
 
     this.pixelRatio = pixelRatio;
-
     this.dispatch = dispatch;
     this.playerId = playerId;
     this.roundMembersArray = roundMembersArray;
@@ -174,49 +159,6 @@ export default class MainScene extends Phaser.Scene {
   }
 
   // ########## FUNCTIONS ##########
-
-  // ---------- PRELOAD ----------
-
-  // load members
-
-  loadMembers() {
-    Object.values(enums.member.Skins).forEach(memberSkin => {
-      // load skins texture
-      this.load.svg(config.members[memberSkin].skin);
-    });
-  }
-
-  loadPlatforms() {
-    // TODO : remove
-    Object.values(enums.World).forEach(world => {
-      // load left platform
-      this.load.svg(config.worlds[world].platforms.left);
-      // load right platform
-      this.load.svg(config.worlds[world].platforms.right);
-      // load wall
-      this.load.svg(config.worlds[world].platforms.wall);
-    });
-
-    // plateforms spritesheets
-    this.load.multiatlas({
-      key: platformsTexture,
-      atlasURL: "assets/spritesheets/platforms/atlas.json",
-      path: "assets/spritesheets/platforms/"
-    });
-  }
-
-  loadTraps() {
-    // traps spritesheets
-    this.load.multiatlas({
-      key: getTrapsTexture(this.world),
-      atlasURL: `assets/spritesheets/traps/${this.world}/atlas.json`,
-      path: `assets/spritesheets/traps/${this.world}/`
-    });
-  }
-
-  loadShapes() {
-    this.load.json("shapes", "assets/shapes/shapes.json");
-  }
 
   // ---------- CREATE ----------
 
@@ -567,13 +509,6 @@ export default class MainScene extends Phaser.Scene {
     });
   }
 
-  // ---------- RESTART ----------
-
-  newRound() {
-    // TODO: wip
-    this.scene.restart();
-  }
-
   // ---------- START ----------
 
   start() {
@@ -582,15 +517,11 @@ export default class MainScene extends Phaser.Scene {
 
   // ########## PHASER SCENE FUNCTIONS ##########
 
-  preload() {
-    console.log("MainScene : preload");
-    this.loadMembers();
-    this.loadPlatforms();
-    this.loadTraps();
-    this.loadShapes();
-  }
+  preload() {}
 
   create() {
+    console.log("MainScene : Create");
+
     this.createCollisionCategories();
 
     this.createFloor();
@@ -614,17 +545,24 @@ export default class MainScene extends Phaser.Scene {
 
     setTimeout(() => {
       this.newMemberSpawn();
-    }, 3000);
+    }, 2000);
 
     this.events.on("destroy", () => {
       console.log("scene destroy");
-      this.matterCollision.removeAllCollideListeners();
     });
 
     this.events.on("shutdown", () => {
-      this.members = [];
       console.log("scene shutdown");
     });
+  }
+
+  destroy() {
+    this.scene.pause();
+    this.members = [];
+    this.matter.world.resetCollisionIDs();
+    this.matter.world.destroy();
+    this.matterCollision.removeAllCollideListeners();
+    this.scene.remove();
   }
 
   update(time: number, delta: number) {

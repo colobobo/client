@@ -3,6 +3,7 @@ import MainScene, { RoundMembersArray } from "./scenes/MainScene";
 import { Dispatch } from "redux";
 import { enums } from "@colobobo/library";
 import { selectors } from "../redux";
+import Preloader from "./scenes/Preloader";
 
 type PlayersRole = ReturnType<typeof selectors.round.selectPlayersRole>;
 type AreaDevices = ReturnType<typeof selectors.area.selectDevices>;
@@ -54,7 +55,6 @@ export default class Game extends Phaser.Game {
     } = gameStoreData;
 
     this.pixelRatio = pixelRatio;
-
     this.dispatch = dispatch;
     this.playerId = playerId;
     this.roundMembersArray = roundMembersArray;
@@ -65,14 +65,9 @@ export default class Game extends Phaser.Game {
     this.areaWidth = areaWidth;
     this.areaHeight = areaHeight;
 
-    console.log("game constructor");
-
+    this.scene.add("preloader", Preloader);
     this.mainScene = new MainScene({ ...gameStoreData, game: this });
     this.scene.add("main-scene", this.mainScene);
-
-    setTimeout(() => {
-      this.scene.start("main-scene");
-    }, 500);
   }
 
   // SETTERS
@@ -110,9 +105,31 @@ export default class Game extends Phaser.Game {
 
   // FUNCTION
 
+  startPreloader() {
+    this.scene.start("preloader");
+  }
+
   newRound() {
-    // TODO : change
-    this.mainScene.scene.restart();
+    console.log("new round");
+    this.mainScene.destroy();
+    this.mainScene = new MainScene({
+      dispatch: this.dispatch,
+      areaDevices: this.areaDevices,
+      playersRole: this.playersRole,
+      world: this.world,
+      roundMembersArray: this.roundMembersArray,
+      playerId: this.playerId,
+      pixelRatio: this.pixelRatio,
+      areaHeight: this.areaHeight,
+      areaWidth: this.areaWidth,
+      isRoundStarted: this.isRoundStarted,
+      game: this
+    });
+
+    // TODO : update
+    setTimeout(() => {
+      this.scene.add("main-scene", this.mainScene, true);
+    }, 100);
   }
 
   pause() {
