@@ -44,7 +44,6 @@ const NumericKeypad: FC<Props> = ({
 
   useEffect(() => {
     if (play) {
-      console.log("play sprite");
       spritesheetInstance.current?.goToAndPlay(1);
     }
   }, [play]);
