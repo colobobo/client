@@ -40,10 +40,11 @@ export const slice = createSlice({
       state: RoomState,
       action: PayloadAction<payloads.room.JoinSuccess>
     ) => {
-      const { id, playerId, isCreator } = action.payload.data;
+      const { id, playerId, isCreator, players } = action.payload.data;
       state.id = id;
       state.playerId = playerId;
       state.isCreator = isCreator;
+      state.playersMin = players.min;
     },
     joinError: (
       state: RoomState,

@@ -10,6 +10,7 @@ export interface GameState {
   lives: number;
   hasPreamble: boolean;
   isOver: boolean;
+  score: number;
 }
 
 export const slice = createSlice({
@@ -59,8 +60,9 @@ export const slice = createSlice({
       state.hasPreamble = true;
     },
     roundEnd: (state: GameState, action: PayloadAction<payloads.round.End>) => {
-      const { lives } = action.payload.data;
+      const { lives, gameScore } = action.payload.data;
       state.isOver = lives === 0;
+      state.score = gameScore;
     }
   }
 });
@@ -75,6 +77,7 @@ const selectSceneType = (state: RootState) => getRoot(state).sceneType;
 const selectDisposition = (state: RootState) => getRoot(state).disposition;
 const selectHasPreamble = (state: RootState) => getRoot(state).hasPreamble;
 const selectIsOver = (state: RootState) => getRoot(state).isOver;
+const selectScore = (state: RootState) => getRoot(state).score;
 
 export const selectors = {
   selectIsStarted,
@@ -83,7 +86,8 @@ export const selectors = {
   selectDisposition,
   selectLives,
   selectHasPreamble,
-  selectIsOver
+  selectIsOver,
+  selectScore
 };
 
 // reducer / actions
