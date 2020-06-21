@@ -173,6 +173,16 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
     };
   }, [dispatch]);
 
+  useEffect(() => {
+    if (isGameReady) {
+      if (isActive) {
+        $game.current?.resume();
+      } else {
+        $game.current?.pause();
+      }
+    }
+  }, [isActive, isGameReady]);
+
   // return
 
   return (
