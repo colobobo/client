@@ -15,7 +15,7 @@ import Platform from "../objects/Platform";
 import Trap from "../objects/Trap";
 import Game, { RoundMembersArray } from "../Game";
 import Wall from "../objects/Wall";
-import { membersTexture } from "../../config/members";
+import { membersShapes, membersTexture } from "../../config/members";
 
 export enum CollisionCategories {
   default = "default",
@@ -140,8 +140,6 @@ export default class MainScene extends Phaser.Scene {
     this.game.roundMembersArray.forEach((roundMember, i) => {
       const memberAnimationsConfig = config.members[roundMember.skin];
 
-      console.log(memberAnimationsConfig);
-
       const firstFrame = this.anims.generateFrameNames(
         memberAnimationsConfig.start.texture,
         {
@@ -171,10 +169,10 @@ export default class MainScene extends Phaser.Scene {
         },
         id: roundMember.id,
         animationsConfig: memberAnimationsConfig,
+        skin: roundMember.skin,
         pixelRatio: this.game.pixelRatio
       });
 
-      member.setPositionToStartPlatform();
       member.addEventListeners();
 
       // add member to members array

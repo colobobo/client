@@ -28,6 +28,7 @@ export type MembersConfigsBySkin = {
   [key in enums.member.Skins]: MembersAnimationsConfig;
 };
 
+export const membersShapes = "shapes-members";
 export const membersTexture = "texture-members";
 
 const getGeneratedConfig = (

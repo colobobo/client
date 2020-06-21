@@ -20,7 +20,7 @@ export type WallsConfigsByWorlds = {
 
 export const wallsShapes = "shapes-walls";
 
-export const wallsTexture = `texture-walls`;
+export const wallsTexture = "texture-walls";
 
 const getGeneratedConfig = (
   world: enums.World

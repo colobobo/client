@@ -2,7 +2,7 @@ import * as Phaser from "phaser";
 import { enums } from "@colobobo/library";
 import MainScene, { CollisionCategories } from "../scenes/MainScene";
 import { RoundMembersArray } from "../Game";
-import { MembersAnimationsConfig } from "../../config/members";
+import { MembersAnimationsConfig, membersShapes } from "../../config/members";
 
 export default class Member extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
@@ -10,8 +10,10 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   status: enums.member.Status = enums.member.Status.waiting;
   scene: MainScene;
   baseScale: number = 1;
+  options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
   animationsConfig: MembersAnimationsConfig;
   isDragged: boolean = false;
+  skin: enums.member.Skins;
 
   constructor({
     scene,
@@ -22,7 +24,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     options,
     id,
     pixelRatio,
-    animationsConfig
+    animationsConfig,
+    skin
   }: {
     scene: MainScene;
     x?: number;
@@ -33,6 +36,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     pixelRatio: number;
     frame?: string;
     animationsConfig: MembersAnimationsConfig;
+    skin: enums.member.Skins;
   }) {
     super(scene.matter.world, x, y, texture, frame, options);
 
@@ -41,28 +45,29 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
     this.scene = scene;
 
+    this.options = options;
+
     this.pixelRatio = pixelRatio;
 
     this.id = id;
 
     this.animationsConfig = animationsConfig;
 
+    this.skin = skin;
+
     this.init();
-  }
-
-  // CUSTOM GETTERS
-
-  get baseHeight(): number {
-    return this.baseScale * this.height;
   }
 
   // FUNCTIONS
 
   init() {
+    this.setBodyWithShape();
+
     // 25% of areaHeight
     this.setScale(
-      ((this.scene.game.areaHeight * 0.25) / this.height) * this.pixelRatio
+      ((this.scene.game.areaHeight * 0.3) / this.height) * this.pixelRatio
     );
+
     // set baseScale
     this.baseScale = this.scale;
 
@@ -76,6 +81,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     this.setCollidesWith(0);
 
     this.createAnimations();
+
+    this.setPositionToStartPlatform();
   }
 
   addEventListeners() {
@@ -84,11 +91,27 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   setPositionToStartPlatform() {
-    this.setX(this.scene.platforms.start!.x);
-    this.setY(
-      (this.scene.platforms.start!.body as MatterJS.BodyType).bounds.min.y -
-        this.baseHeight / 2
+    this.scene.matter.alignBody(
+      this.body as MatterJS.BodyType,
+      this.scene.platforms.start!.x,
+      (this.scene.platforms.start!.body as MatterJS.BodyType).bounds.min.y,
+      Phaser.Display.Align.BOTTOM_CENTER
     );
+  }
+
+  setBodyWithShape() {
+    const sScale = this.scale;
+    const sCenter = this.getCenter();
+    const shapes = this.scene.cache.json.get(membersShapes);
+
+    this.setScale(1);
+    this.setBody(shapes[this.skin], this.options);
+    this.setScale(sScale);
+
+    // re align center
+    this.setX(this.x + sCenter.x - this.getCenter().x);
+    this.setY(this.y + sCenter.y - this.getCenter().y);
+    this.setFixedRotation();
   }
 
   // ANIMATIONS
@@ -190,17 +213,18 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
     this.play(this.animationsConfig.finish.animationKey);
 
+    const bodyHeight =
+      (this.body as MatterJS.BodyType).bounds.max.y -
+      (this.body as MatterJS.BodyType).bounds.min.y;
+
     this.scene.tweens.add({
       targets: this,
       x: this.scene.platforms.finish!.x,
       y:
         (this.scene.platforms.finish!.body as MatterJS.BodyType).bounds.min.y -
-        this.displayHeight / 2,
+        bodyHeight / 2,
       duration: 300,
-      ease: "Sine.easeIn",
-      onComplete: () => {
-        this.setAlpha(0);
-      }
+      ease: "Sine.easeIn"
     });
   }
 }

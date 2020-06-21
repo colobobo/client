@@ -1,7 +1,7 @@
 import { platformsTexture } from "../../config/platforms";
 import { trapsTexture } from "../../config/traps";
 import { wallsShapes, wallsTexture } from "../../config/walls";
-import { membersTexture } from "../../config/members";
+import { membersShapes, membersTexture } from "../../config/members";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -43,6 +43,7 @@ export default class Preloader extends Phaser.Scene {
   loadShapes() {
     this.load.json("shapes", "assets/shapes/shapes.json");
     this.load.json(wallsShapes, "assets/shapes/walls/shapes.json");
+    this.load.json(membersShapes, "assets/shapes/members/shapes.json");
   }
 
   preload() {
