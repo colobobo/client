@@ -62,7 +62,7 @@ const InterfaceScore: FC<Props> = ({
 
   // handlers
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if ($animationContainer.current) {
       const width =
         $animationContainer.current?.clientHeight *
@@ -85,11 +85,11 @@ const InterfaceScore: FC<Props> = ({
       .then(() => {
         dispatch(actions.webSocket.emit.transition.ended());
       });
-  }, [dispatch]);
+  }, [dispatch]); */
 
   //use effects
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (isTransitionNext && !isGameOver) {
       setShowMotion(true);
       gsap.to([$scorePanel.current, $scoreBottom.current], {
@@ -97,9 +97,9 @@ const InterfaceScore: FC<Props> = ({
         opacity: 0
       });
     }
-  }, [isGameOver, isTransitionNext]);
+  }, [isGameOver, isTransitionNext]); */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (isScoreActive) {
       gsap.from($scorePanel.current, {
         duration: 1,
@@ -112,7 +112,7 @@ const InterfaceScore: FC<Props> = ({
       setShowMotion(false);
       setPlaySpritesheet(false);
     }
-  }, [areaMinHeight, isScoreActive]);
+  }, [areaMinHeight, isScoreActive]); */
 
   // return
 
@@ -126,7 +126,7 @@ const InterfaceScore: FC<Props> = ({
       >
         {showMotion && isSuccess && <InterfaceScoreClosing />}
 
-        <div ref={$scorePanel} className="score__panel">
+        {/*         <div ref={$scorePanel} className="score__panel">
           <InterfaceScorePanel
             isSuccess={isSuccess}
             isFail={isFail}
@@ -134,13 +134,13 @@ const InterfaceScore: FC<Props> = ({
             playSpritesheet={playSpritesheet}
             onAnimationComplete={handleOnPanelAnimationComplete}
           />
-        </div>
-
+        </div> */}
+        {/* 
         <InterfaceScoreArea
           isGameOver={isGameOver}
           showMotion={showMotion}
           onMotionEnded={handleOnMotionEnded}
-        />
+        /> */}
 
         <div
           ref={$scoreBottom}
@@ -162,7 +162,7 @@ const InterfaceScore: FC<Props> = ({
             />
           )}
 
-          <div
+          {/*           <div
             ref={$animationContainer}
             className={Classnames("score__animations", {
               active: isCreator
@@ -178,7 +178,7 @@ const InterfaceScore: FC<Props> = ({
               className="score__animation"
               play={playSpritesheet}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 

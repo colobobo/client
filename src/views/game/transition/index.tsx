@@ -25,14 +25,6 @@ interface Props {
 }
 
 const Transition: FC<Props> = ({ isTansitionActive }) => {
-  // return
-
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-  const [showScore, setShowScore] = useState(false);
-  const [showEnding, setShowEnding] = useState(false);
-
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
@@ -45,7 +37,17 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   const failCause = useTypedSelector(selectors.round.selectFailCause);
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
 
+  // return
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [showScore, setShowScore] = useState(false);
+  const [showEnding, setShowEnding] = useState(false);
+  const [showFailMotion, setShowFailMotion] = useState(false);
+
   const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
+    setShowFailMotion(false);
     setShowScore(value);
   }, []);
 
@@ -53,7 +55,8 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     if (isGameOver) {
       dispatch(actions.webSocket.emit.transition.ended());
     }
-    dispatch(actions.webSocket.emit.transition.next());
+    dispatch(actions.webSocket.emit.transition.ended());
+    // dispatch(actions.webSocket.emit.transition.next());
   }, [dispatch, isGameOver]);
 
   const handleTransitionEnded = useCallback(() => {
@@ -92,6 +95,12 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     }
   }, [dispatch, handleOnMotionTransitionEnded, isTansitionActive]);
 
+  useEffect(() => {
+    if (isTansitionActive && isFail) {
+      setShowFailMotion(true);
+    }
+  }, [isFail, isTansitionActive]);
+
   // return
 
   return (
@@ -109,7 +118,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           onSkipClick={handleTransitionEnded}
         />
       )}
-      {isFail && isTansitionActive && !showEnding && (
+      {showFailMotion && (
         <MotionTransition
           failCause={failCause!}
           world={currentWorld}

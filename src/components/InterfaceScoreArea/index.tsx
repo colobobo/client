@@ -67,7 +67,7 @@ const InterfaceScoreArea: FC<Props> = ({
             autoplay={true}
           />
         )}
-        <div
+        {/* <div
           className={Classnames("score__animations", {
             active: showMotion
           })}
@@ -81,7 +81,7 @@ const InterfaceScoreArea: FC<Props> = ({
           >
             <source src={require(`../../assets/motions/transition.webm`)} />
           </video>
-        </div>
+        </div> */}
       </Area>
     </div>
   );
