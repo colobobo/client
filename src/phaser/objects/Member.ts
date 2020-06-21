@@ -101,8 +101,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
   setBodyWithShape() {
     const sScale = this.scale;
-    const sCenter = this.getCenter();
     const shapes = this.scene.cache.json.get(membersShapes);
+    const sCenter = this.getCenter();
 
     this.setScale(1);
     this.setBody(shapes[this.skin], this.options);
