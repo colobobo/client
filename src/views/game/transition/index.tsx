@@ -35,13 +35,17 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
-  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
-  const isFail = useTypedSelector(selectors.round.selectIsFail);
-  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
-  const isGameOver = useTypedSelector(selectors.game.selectIsOver);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
-  const currentWorld = useTypedSelector(selectors.round.selectWorld);
-  const failCause = useTypedSelector(selectors.round.selectFailCause);
+  const isRoundSuccess = useTypedSelector(
+    selectors.transition.selectIsRoundSuccess
+  );
+  const isRoundFail = useTypedSelector(selectors.transition.selectIsRoundFail);
+  const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
+  const roundWorld = useTypedSelector(selectors.transition.selectRoundWorld);
+  const roundFailCause = useTypedSelector(
+    selectors.transition.selectRoundFailCause
+  );
+  const isGameOver = useTypedSelector(selectors.game.selectIsOver);
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
 
   const handleOnGameOverClick = useCallback(() => {
@@ -69,11 +73,11 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   // effect
 
   useEffect(() => {
-    if (isSuccess && isTansitionActive) {
+    if (isRoundSuccess && isTansitionActive) {
       setShowScore(true);
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
     }
-  }, [dispatch, isSuccess, isTansitionActive, playerId]);
+  }, [dispatch, isRoundSuccess, isTansitionActive, playerId]);
 
   useEffect(() => {
     if (!isTansitionActive) {
@@ -86,10 +90,10 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   return (
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
-      {isFail && failCause && isTansitionActive && (
+      {isRoundFail && roundFailCause && isTansitionActive && (
         <MotionTransition
-          failCause={failCause!}
-          world={currentWorld}
+          failCause={roundFailCause!}
+          world={roundWorld}
           onMotionTransitionEnded={handleOnMotionTransitionEnded}
         />
       )}

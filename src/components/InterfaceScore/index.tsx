@@ -45,8 +45,9 @@ const InterfaceScore: FC<Props> = ({
   isGameOver,
   onGameOverClick
 }) => {
-  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
-  const isFail = useTypedSelector(selectors.round.selectIsFail);
+  const isSuccess = useTypedSelector(selectors.transition.selectIsRoundSuccess);
+  const isFail = useTypedSelector(selectors.transition.selectIsRoundFail);
+
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
