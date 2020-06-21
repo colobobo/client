@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import gsap, { Linear } from "gsap";
 import Classnames from "classnames";
+import { enums } from "@colobobo/library";
 
 // store
 import { selectors } from "../../redux";
@@ -25,6 +26,7 @@ interface Props {
 
 const GameTimer: FC<Props> = ({ color }) => {
   // selectors
+  const roundStatus = useTypedSelector(selectors.round.selectStatus);
   const endRoundTimeStamp = useTypedSelector(
     selectors.round.selectEndRoundTimeStamp
   );
@@ -35,9 +37,9 @@ const GameTimer: FC<Props> = ({ color }) => {
   const [remainingTime, setRemainingTime] = useState(duration);
   const $timerGlow = useRef<HTMLDivElement>(null);
   const $animatedTimerValue = useRef({ value: duration });
+  const $timerTween = useRef<GSAPTimeline | null>(null);
   const $glowTween = useRef<GSAPTimeline | null>(null);
   const endCap = 5000;
-
   const handleAnimateTimerUpdate = useCallback(() => {
     const glowTweenProgress = gsap.utils.mapRange(
       endCap,
@@ -51,13 +53,19 @@ const GameTimer: FC<Props> = ({ color }) => {
   }, []);
 
   useEffect(() => {
-    gsap.to($animatedTimerValue.current, {
+    $animatedTimerValue.current.value = duration;
+    $timerTween.current = gsap.timeline();
+    $timerTween.current.to($animatedTimerValue.current, {
       ease: Linear.easeNone,
       value: 0,
       duration: duration / 1000,
       onUpdate: handleAnimateTimerUpdate
     });
   }, [duration, handleAnimateTimerUpdate]);
+
+  useEffect(() => {
+    if (roundStatus === enums.round.Status.pause) $timerTween.current?.pause();
+  }, [roundStatus]);
 
   useEffect(() => {
     $glowTween.current = gsap.timeline({ paused: true });
@@ -85,7 +93,7 @@ const GameTimer: FC<Props> = ({ color }) => {
       })}
     >
       <div className="timer__container">
-        <div ref={$timerGlow} className="timer__glow"></div>
+        <div ref={$timerGlow} className="timer__glow" />
         <div className="timer__content">
           {minutes.toString().padStart(1, "0")}:
           {seconds.toString().padStart(2, "0")}
