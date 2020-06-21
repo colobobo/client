@@ -65,7 +65,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
     // 25% of areaHeight
     this.setScale(
-      ((this.scene.game.areaHeight * 0.3) / this.height) * this.pixelRatio
+      ((this.scene.game.areaHeight * 0.32) / this.height) * this.pixelRatio
     );
 
     // set baseScale
@@ -190,16 +190,26 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
     // animate
 
-    // TODO: animate collision
-    this.setAlpha(0);
+    const timeline = this.scene.tweens.createTimeline();
 
-    // this.scene.tweens.add({
-    //   targets: this,
-    //   alpha: 0,
-    //   scale: 0.2,
-    //   duration: 400,
-    //   ease: "Sine.easeIn"
-    // });
+    timeline
+      .add({
+        targets: this,
+        alpha: 0.2,
+        duration: 100
+      })
+      .add({
+        targets: this,
+        alpha: 1,
+        duration: 100
+      })
+      .add({
+        targets: this,
+        alpha: 0,
+        duration: 200
+      });
+
+    timeline.play();
   }
 
   arrived() {
