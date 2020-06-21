@@ -106,7 +106,7 @@ const InterfaceScorePanel: FC<Props> = ({
                     .toString()
                     .padStart(1, "0")}
                   :
-                  {Math.ceil((value % 60000) / 1000)
+                  {Math.floor((value % 60000) / 1000)
                     .toString()
                     .padStart(2, "0")}
                 </span>
