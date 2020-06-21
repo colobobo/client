@@ -1,0 +1,99 @@
+{
+	"generator_info": "Shape definitions generated with PhysicsEditor. Visit https://www.codeandweb.com/physicseditor",
+	"desert": {
+		"type": "fromPhysicsEditor",
+		"label": "desert",
+		"isStatic": true,
+		"density": 0.1,
+		"restitution": 0,
+		"friction": 0.1,
+		"frictionAir": 0.01,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":192, "y":21 }, { "x":217, "y":886 }, { "x":317, "y":895 }, { "x":354, "y":16 } ]
+				]
+			}
+		]
+	},
+	"jungle": {
+		"type": "fromPhysicsEditor",
+		"label": "jungle",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":203, "y":954 }, { "x":331, "y":954 }, { "x":331, "y":8 }, { "x":209, "y":8 } ]
+				]
+			}
+		]
+	},
+	"mountain": {
+		"type": "fromPhysicsEditor",
+		"label": "mountain",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":215, "y":4 }, { "x":263, "y":905 }, { "x":280, "y":905 }, { "x":326, "y":4 } ]
+				]
+			}
+		]
+	},
+	"river": {
+		"type": "fromPhysicsEditor",
+		"label": "river",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":376, "y":957 }, { "x":349, "y":2 }, { "x":180, "y":2 }, { "x":167, "y":957 } ]
+				]
+			}
+		]
+	}
+}
