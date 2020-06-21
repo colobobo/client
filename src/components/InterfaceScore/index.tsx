@@ -15,7 +15,7 @@ import InterfaceBleed, {
 import SpriteAnimation from "../../components/SpriteAnimation";
 
 // config
-import { animationId } from "../../config/animations";
+import animations, { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
@@ -52,18 +52,24 @@ const InterfaceScore: FC<Props> = ({
   const $scorePanel = useRef<HTMLDivElement>(null);
   const $scoreOverlay = useRef<HTMLDivElement>(null);
   const $scoreBottom = useRef<HTMLDivElement>(null);
+  const $animationContainer = useRef<HTMLDivElement>(null);
 
   // state
 
   const [showMotion, setShowMotion] = useState(false);
   const [playSpritesheet, setPlaySpritesheet] = useState(false);
-  const [animationHeight, setAnimationHeight] = useState(0);
+  const [animationWidth, setAnimationWidth] = useState(0);
 
   // handlers
 
-  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
-    console.log(spritesheet.getInfo("height"));
-    setAnimationHeight(spritesheet.getInfo("height"));
+  useEffect(() => {
+    if ($animationContainer.current) {
+      const width =
+        $animationContainer.current?.clientHeight *
+        (animations[animationId.group_success].widthFrame /
+          animations[animationId.group_success].heightFrame);
+      setAnimationWidth(width);
+    }
   }, []);
 
   const handleOnPanelAnimationComplete = useCallback(() => {
@@ -134,7 +140,6 @@ const InterfaceScore: FC<Props> = ({
           isGameOver={isGameOver}
           showMotion={showMotion}
           onMotionEnded={handleOnMotionEnded}
-          animationHeight={animationHeight}
         />
 
         <div
@@ -158,16 +163,19 @@ const InterfaceScore: FC<Props> = ({
           )}
 
           <div
+            ref={$animationContainer}
             className={Classnames("score__animations", {
               active: isCreator
             })}
+            style={{
+              width: `${animationWidth}px`
+            }}
           >
             <SpriteAnimation
               animationID={
                 isSuccess ? animationId.group_success : animationId.group_fail
               }
               className="score__animation"
-              onInstance={handleSpritesheetAnimation}
               play={playSpritesheet}
             />
           </div>

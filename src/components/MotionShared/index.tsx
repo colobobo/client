@@ -37,7 +37,7 @@ interface Props {
   bleedColor: BleedColor;
   isPlayed: boolean;
   onEnded: any;
-  onLoadedData: any;
+  onLoad: any;
   showSkip?: boolean;
   onSkipClick?: any;
 }
@@ -48,7 +48,7 @@ const MotionShared: FC<Props> = ({
   position,
   isPlayed,
   onEnded,
-  onLoadedData,
+  onLoad,
   onSkipClick,
   bleedColor,
   showSkip
@@ -115,7 +115,7 @@ const MotionShared: FC<Props> = ({
             autoPlay={false}
             preload="auto"
             onEnded={handleOnVideoEnded}
-            onLoadedData={onLoadedData}
+            onCanPlayThrough={onLoad}
           >
             <source
               src={require(`../../assets/motions/${type}.${extension}`)}

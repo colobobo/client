@@ -19,14 +19,12 @@ interface Props {
   showMotion: boolean;
   onMotionEnded: any;
   isGameOver: boolean;
-  animationHeight: number;
 }
 
 const InterfaceScoreArea: FC<Props> = ({
   showMotion,
   onMotionEnded,
-  isGameOver,
-  animationHeight
+  isGameOver
 }) => {
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
   const playerId = useTypedSelector(selectors.room.selectPlayerId);
@@ -70,10 +68,7 @@ const InterfaceScoreArea: FC<Props> = ({
           />
         )}
         <div
-          style={{
-            height: `${animationHeight}px`
-          }}
-          className={Classnames("score__motion", {
+          className={Classnames("score__animations", {
             active: showMotion
           })}
         >

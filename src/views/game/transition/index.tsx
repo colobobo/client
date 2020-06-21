@@ -67,7 +67,6 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   const handleVideoIsReady = useCallback(() => {
     dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
-    console.log("player ready");
   }, [dispatch, playerId]);
 
   // effect
@@ -104,7 +103,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           position={Position.center}
           isPlayed={isTransitionStarted}
           onEnded={handleTransitionEnded}
-          onLoadedData={handleVideoIsReady}
+          onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
           showSkip={true}
           onSkipClick={handleTransitionEnded}
@@ -136,7 +135,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           position={Position.center}
           isPlayed={isTransitionStarted}
           onEnded={handleTransitionEnded}
-          onLoadedData={handleVideoIsReady}
+          onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
         />
       )}

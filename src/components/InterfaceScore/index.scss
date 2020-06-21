@@ -76,21 +76,8 @@
     bottom: 31%;
   }
 
-  &__animations {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-    opacity: 0;
-
-    &.active {
-      opacity: 1;
-    }
-  }
-
   &__animation {
-    width: 300px;
+    width: 100%;
   }
 
   &__sign {
@@ -112,13 +99,14 @@
     z-index: 10;
   }
 
-  &__motion {
-    opacity: 0;
-    pointer-events: none;
+  &__animations {
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 2;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+    height: 30%;
 
     video {
       height: 100%;
