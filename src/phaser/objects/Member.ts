@@ -2,22 +2,27 @@ import * as Phaser from "phaser";
 import { enums } from "@colobobo/library";
 import MainScene, { CollisionCategories } from "../scenes/MainScene";
 import { RoundMembersArray } from "../Game";
+import { MembersAnimationsConfig } from "../../config/members";
 
-export default class Member extends Phaser.Physics.Matter.Image {
+export default class Member extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
-  readonly id: string;
+  id: string;
   status: enums.member.Status = enums.member.Status.waiting;
   scene: MainScene;
   baseScale: number = 1;
+  animationsConfig: MembersAnimationsConfig;
+  isDragged: boolean = false;
 
   constructor({
     scene,
     x = 0,
     y = 0,
     texture,
+    frame,
     options,
     id,
-    pixelRatio
+    pixelRatio,
+    animationsConfig
   }: {
     scene: MainScene;
     x?: number;
@@ -26,16 +31,21 @@ export default class Member extends Phaser.Physics.Matter.Image {
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
     id: string;
     pixelRatio: number;
+    frame?: string;
+    animationsConfig: MembersAnimationsConfig;
   }) {
-    super(scene.matter.world, x, y, texture, undefined, options);
+    super(scene.matter.world, x, y, texture, frame, options);
 
     scene.sys.displayList.add(this);
+    scene.sys.updateList.add(this);
 
     this.scene = scene;
 
     this.pixelRatio = pixelRatio;
 
     this.id = id;
+
+    this.animationsConfig = animationsConfig;
 
     this.init();
   }
@@ -64,6 +74,8 @@ export default class Member extends Phaser.Physics.Matter.Image {
     );
     // disable collision
     this.setCollidesWith(0);
+
+    this.createAnimations();
   }
 
   addEventListeners() {
@@ -79,29 +91,41 @@ export default class Member extends Phaser.Physics.Matter.Image {
     );
   }
 
+  // ANIMATIONS
+
+  createAnimations() {
+    Object.values(this.animationsConfig).forEach(animationConfig => {
+      this.scene.anims.create({
+        key: animationConfig.animationKey,
+        frames: this.scene.anims.generateFrameNames(animationConfig.texture, {
+          prefix: animationConfig.prefix,
+          start: animationConfig.startFrame,
+          end: animationConfig.endFrame,
+          zeroPad: 5
+        }),
+        frameRate: 25
+      });
+    });
+  }
+
   spawned() {
     this.setPositionToStartPlatform();
     this.setFixedRotation();
-
     this.status = enums.member.Status.active;
 
-    this.scene.tweens.add({
-      alpha: 1,
-      targets: this,
-      scale: { from: 0.2, to: this.baseScale },
-      ease: "Sine.easeOut",
-      duration: 600,
-      onComplete: () => {
-        this.setCollidesWith([
-          this.scene.collisionCategories[CollisionCategories.default],
-          this.scene.collisionCategories[CollisionCategories.member],
-          this.scene.collisionCategories[CollisionCategories.platform],
-          this.scene.collisionCategories[CollisionCategories.wall]
-        ]);
-        this.setIgnoreGravity(false);
-        this.setInteractive();
-      }
-    });
+    this.setAlpha(1);
+    this.play(this.animationsConfig.start.animationKey);
+
+    setTimeout(() => {
+      this.setCollidesWith([
+        this.scene.collisionCategories[CollisionCategories.default],
+        this.scene.collisionCategories[CollisionCategories.member],
+        this.scene.collisionCategories[CollisionCategories.platform],
+        this.scene.collisionCategories[CollisionCategories.wall]
+      ]);
+      this.setIgnoreGravity(false);
+      this.setInteractive();
+    }, 500);
   }
 
   moved(roundMember: RoundMembersArray[0]) {
@@ -121,6 +145,19 @@ export default class Member extends Phaser.Physics.Matter.Image {
     }
   }
 
+  draggedStart() {
+    this.isDragged = true;
+
+    this.play(this.animationsConfig.drag.animationKey);
+    this.anims.setRepeat(-1);
+  }
+
+  draggedEnd() {
+    console.log("DRAG END");
+    this.isDragged = false;
+    this.anims.stopOnRepeat();
+  }
+
   trapped() {
     this.setVelocity(0);
     this.setIgnoreGravity(true);
@@ -129,13 +166,17 @@ export default class Member extends Phaser.Physics.Matter.Image {
     this.status = enums.member.Status.waiting;
 
     // animate
-    this.scene.tweens.add({
-      targets: this,
-      alpha: 0,
-      scale: 0.2,
-      duration: 400,
-      ease: "Sine.easeIn"
-    });
+
+    // TODO: animate collision
+    this.setAlpha(0);
+
+    // this.scene.tweens.add({
+    //   targets: this,
+    //   alpha: 0,
+    //   scale: 0.2,
+    //   duration: 400,
+    //   ease: "Sine.easeIn"
+    // });
   }
 
   arrived() {
@@ -146,16 +187,20 @@ export default class Member extends Phaser.Physics.Matter.Image {
     this.status = enums.member.Status.arrived;
 
     // animate
+
+    this.play(this.animationsConfig.finish.animationKey);
+
     this.scene.tweens.add({
       targets: this,
-      alpha: 0,
       x: this.scene.platforms.finish!.x,
       y:
         (this.scene.platforms.finish!.body as MatterJS.BodyType).bounds.min.y -
         this.displayHeight / 2,
-      scale: 0.2,
-      duration: 600,
-      ease: "Sine.easeIn"
+      duration: 300,
+      ease: "Sine.easeIn",
+      onComplete: () => {
+        this.setAlpha(0);
+      }
     });
   }
 }

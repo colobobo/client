@@ -1,8 +1,7 @@
-import { enums } from "@colobobo/library";
-import * as config from "../../config";
 import { platformsTexture } from "../../config/platforms";
 import { trapsTexture } from "../../config/traps";
 import { wallsShapes, wallsTexture } from "../../config/walls";
+import { membersTexture } from "../../config/members";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -10,9 +9,10 @@ export default class Preloader extends Phaser.Scene {
   }
 
   loadMembers() {
-    Object.values(enums.member.Skins).forEach(memberSkin => {
-      // load skins texture
-      this.load.svg(config.members[memberSkin].skin);
+    this.load.multiatlas({
+      key: membersTexture,
+      atlasURL: `assets/spritesheets/members/atlas.json`,
+      path: `assets/spritesheets/members/`
     });
   }
 
