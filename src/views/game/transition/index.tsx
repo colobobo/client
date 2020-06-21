@@ -38,20 +38,23 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
   const isFail = useTypedSelector(selectors.round.selectIsFail);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
+  const isTransitionNext = useTypedSelector(selectors.transition.selectIsNext);
   const isGameOver = useTypedSelector(selectors.game.selectIsOver);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
   const currentWorld = useTypedSelector(selectors.round.selectWorld);
   const failCause = useTypedSelector(selectors.round.selectFailCause);
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
 
-  const handleOnGameOverClick = useCallback(() => {
-    setShowScore(false);
-    setShowEnding(true);
-  }, []);
-
   const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
     setShowScore(value);
   }, []);
+
+  const handleOnNextClick = useCallback(() => {
+    if (isGameOver) {
+      dispatch(actions.webSocket.emit.transition.ended());
+    }
+    dispatch(actions.webSocket.emit.transition.next());
+  }, [dispatch, isGameOver]);
 
   const handleTransitionEnded = useCallback(() => {
     if (isCreator) {
@@ -64,9 +67,17 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   const handleVideoIsReady = useCallback(() => {
     dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
+    console.log("player ready");
   }, [dispatch, playerId]);
 
   // effect
+
+  useEffect(() => {
+    if (isTransitionNext && isGameOver) {
+      setShowScore(false);
+      setShowEnding(true);
+    }
+  }, [isGameOver, isTransitionNext]);
 
   useEffect(() => {
     if (isSuccess && isTansitionActive) {
@@ -86,7 +97,20 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   return (
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
-      {isFail && failCause && isTansitionActive && (
+      {!hasGamePreamble && (
+        <MotionShared
+          type={Type.preamble}
+          extension={Extension.mp4}
+          position={Position.center}
+          isPlayed={isTransitionStarted}
+          onEnded={handleTransitionEnded}
+          onLoadedData={handleVideoIsReady}
+          bleedColor={BleedColor.preamble}
+          showSkip={true}
+          onSkipClick={handleTransitionEnded}
+        />
+      )}
+      {isFail && isTansitionActive && !showEnding && (
         <MotionTransition
           failCause={failCause!}
           world={currentWorld}
@@ -102,28 +126,15 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           isScoreActive={showScore}
           isTansitionActive={isTansitionActive}
           isGameOver={isGameOver}
-          onGameOverClick={handleOnGameOverClick}
+          onNextClick={handleOnNextClick}
         />
       </div>
-      {!hasGamePreamble && (
-        <MotionShared
-          type={Type.preamble}
-          extension={Extension.mp4}
-          position={Position.center}
-          isPlayed={isTransitionStarted}
-          onEnded={handleTransitionEnded}
-          onLoadedData={handleVideoIsReady}
-          bleedColor={BleedColor.preamble}
-          showSkip={true}
-          onSkipClick={handleTransitionEnded}
-        />
-      )}
       {isGameOver && showEnding && (
         <MotionShared
           type={Type.ending}
           extension={Extension.mp4}
           position={Position.center}
-          isPlayed={showEnding}
+          isPlayed={isTransitionStarted}
           onEnded={handleTransitionEnded}
           onLoadedData={handleVideoIsReady}
           bleedColor={BleedColor.preamble}

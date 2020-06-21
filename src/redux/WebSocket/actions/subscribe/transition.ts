@@ -11,3 +11,8 @@ export const start = createSubscribeAction(
   events.transition.start,
   TransitionActions.start.type
 );
+
+export const nextSuccess = createSubscribeAction(
+  events.transition.nextSuccess,
+  TransitionActions.nextSuccess.type
+);

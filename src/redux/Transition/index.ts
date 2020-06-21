@@ -5,6 +5,7 @@ import { payloads } from "@colobobo/library";
 
 export interface TransitionState {
   isStarted: boolean;
+  isNext: boolean;
 }
 
 export const slice = createSlice({
@@ -25,6 +26,13 @@ export const slice = createSlice({
     },
     stop: state => {
       state.isStarted = false;
+      state.isNext = false;
+    },
+    nextSuccess: (
+      state: TransitionState,
+      action: PayloadAction<payloads.transition.NextSuccess>
+    ) => {
+      state.isNext = true;
     }
   }
 });
@@ -33,9 +41,11 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.transition;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectIsNext = (state: RootState) => getRoot(state).isNext;
 
 export const selectors = {
-  selectIsStarted
+  selectIsStarted,
+  selectIsNext
 };
 
 // reducer / actions

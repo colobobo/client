@@ -23,7 +23,6 @@ import "./index.scss";
 interface Props {
   isSuccess: boolean;
   isFail: boolean;
-  isActive: boolean;
   isScoreActive: boolean;
   playSpritesheet: boolean;
   onAnimationComplete: any;
