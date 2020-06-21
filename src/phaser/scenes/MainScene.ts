@@ -14,6 +14,7 @@ import Member from "../objects/Member";
 import Platform from "../objects/Platform";
 import Trap from "../objects/Trap";
 import Game, { RoundMembersArray } from "../Game";
+import Wall from "../objects/Wall";
 
 export enum CollisionCategories {
   default = "default",
@@ -222,23 +223,13 @@ export default class MainScene extends Phaser.Scene {
 
     // WALL
 
-    const wall = this.matter.add.image(
-      (device.offsetX + device.width * 0.5) * this.game.pixelRatio,
-      0,
-      config.worlds[this.game.world].platforms.wall.key,
-      undefined,
-      {
-        isStatic: true,
-        frictionStatic: 0,
-        friction: 0
-      }
-    );
-
-    // 100% of areaHeight
-    wall.setScale((this.game.areaHeight / wall.height) * this.game.pixelRatio);
-
-    // set y
-    wall.setY(wall.y + wall.displayHeight / 2);
+    new Wall({
+      scene: this,
+      pixelRatio: this.game.pixelRatio,
+      x: (device.offsetX + device.width * 0.5) * this.game.pixelRatio,
+      animationConfig: config.walls[this.game.world],
+      options: { isStatic: true, isSensor: true, ignorePointer: true }
+    });
   }
 
   createTraps() {
