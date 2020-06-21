@@ -1,7 +1,7 @@
 import { enums } from "@colobobo/library";
 import * as config from "../../config";
 import { platformsTexture } from "../../config/platforms";
-import { getTrapsTexture } from "../../config/traps";
+import { trapsTexture } from "../../config/traps";
 import { wallsShapes, wallsTexture } from "../../config/walls";
 
 export default class Preloader extends Phaser.Scene {
@@ -33,12 +33,10 @@ export default class Preloader extends Phaser.Scene {
   }
 
   loadTraps() {
-    Object.values(enums.World).forEach(world => {
-      this.load.multiatlas({
-        key: getTrapsTexture(world),
-        atlasURL: `assets/spritesheets/traps/${world}/atlas.json`,
-        path: `assets/spritesheets/traps/${world}/`
-      });
+    this.load.multiatlas({
+      key: trapsTexture,
+      atlasURL: `assets/spritesheets/traps/atlas.json`,
+      path: `assets/spritesheets/traps/`
     });
   }
 
