@@ -15,7 +15,7 @@ import Platform from "../objects/Platform";
 import Trap from "../objects/Trap";
 import Game, { RoundMembersArray } from "../Game";
 import Wall from "../objects/Wall";
-import { membersShapes, membersTexture } from "../../config/members";
+import { membersTexture } from "../../config/members";
 
 export enum CollisionCategories {
   default = "default",
