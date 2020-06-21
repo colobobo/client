@@ -283,6 +283,15 @@ export default class MainScene extends Phaser.Scene {
       // reset pointer constraint
       this.pointerContraint!.constraint.length = 0.01;
       this.pointerContraint!.constraint.damping = 0;
+
+      if (body.gameObject instanceof Member) {
+        console.log("member drag end");
+        this.game.dispatch(
+          actions.webSocket.emit.round.memberDragEnd({
+            memberId: body.gameObject.id
+          })
+        );
+      }
     });
 
     this.matter.world.on("beforeupdate", () => {

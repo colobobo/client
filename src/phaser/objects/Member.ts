@@ -110,10 +110,15 @@ export default class Member extends Phaser.Physics.Matter.Image {
       roundMember.position.x * this.pixelRatio,
       roundMember.position.y * this.pixelRatio
     );
-    this.setVelocity(
-      roundMember.velocity.x * this.pixelRatio,
-      roundMember.velocity.y * this.pixelRatio
-    );
+
+    if (roundMember.isDragged) {
+      this.setVelocity(0, 0);
+    } else {
+      this.setVelocity(
+        roundMember.velocity.x * this.pixelRatio,
+        roundMember.velocity.y * this.pixelRatio
+      );
+    }
   }
 
   trapped() {
