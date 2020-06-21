@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import Classnames from "classnames";
 import { gsap } from "gsap";
 
 // components
@@ -11,6 +12,10 @@ import InterfaceBleed, {
   BleedPosition,
   BleedColor
 } from "../../components/InterfaceBleed";
+import SpriteAnimation from "../../components/SpriteAnimation";
+
+// config
+import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
@@ -52,8 +57,14 @@ const InterfaceScore: FC<Props> = ({
 
   const [showMotion, setShowMotion] = useState(false);
   const [playSpritesheet, setPlaySpritesheet] = useState(false);
+  const [animationHeight, setAnimationHeight] = useState(0);
 
   // handlers
+
+  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
+    console.log(spritesheet.getInfo("height"));
+    setAnimationHeight(spritesheet.getInfo("height"));
+  }, []);
 
   const handleOnPanelAnimationComplete = useCallback(() => {
     setPlaySpritesheet(true);
@@ -120,22 +131,20 @@ const InterfaceScore: FC<Props> = ({
         </div>
 
         <InterfaceScoreArea
-          isSuccess={isSuccess}
           isGameOver={isGameOver}
           showMotion={showMotion}
           onMotionEnded={handleOnMotionEnded}
-          playSpritesheet={playSpritesheet}
-          isCreator={isCreator}
+          animationHeight={animationHeight}
         />
 
-        {isCreator && (
-          <div
-            ref={$scoreBottom}
-            className="score__bottom"
-            style={{
-              height: areaMinHeight
-            }}
-          >
+        <div
+          ref={$scoreBottom}
+          className="score__bottom"
+          style={{
+            height: areaMinHeight
+          }}
+        >
+          {isCreator && (
             <InterfaceButton
               onClick={onNextClick}
               color={Colors.blue}
@@ -146,8 +155,23 @@ const InterfaceScore: FC<Props> = ({
               }
               classNames="score__next"
             />
+          )}
+
+          <div
+            className={Classnames("score__animations", {
+              active: isCreator
+            })}
+          >
+            <SpriteAnimation
+              animationID={
+                isSuccess ? animationId.group_success : animationId.group_fail
+              }
+              className="score__animation"
+              onInstance={handleSpritesheetAnimation}
+              play={playSpritesheet}
+            />
           </div>
-        )}
+        </div>
       </div>
 
       {isScoreActive && (

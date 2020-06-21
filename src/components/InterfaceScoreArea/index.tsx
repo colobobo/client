@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  useEffect,
-  useRef,
-  useCallback,
-  useState,
-  useMemo
-} from "react";
+import React, { FC, useEffect, useRef, useMemo } from "react";
 import Classnames from "classnames";
 
 // components
@@ -25,19 +18,15 @@ import "./index.scss";
 interface Props {
   showMotion: boolean;
   onMotionEnded: any;
-  isSuccess: boolean;
-  playSpritesheet: boolean;
-  isCreator: boolean;
   isGameOver: boolean;
+  animationHeight: number;
 }
 
 const InterfaceScoreArea: FC<Props> = ({
   showMotion,
   onMotionEnded,
-  isSuccess,
-  playSpritesheet,
-  isCreator,
-  isGameOver
+  isGameOver,
+  animationHeight
 }) => {
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
   const playerId = useTypedSelector(selectors.room.selectPlayerId);
@@ -45,20 +34,11 @@ const InterfaceScoreArea: FC<Props> = ({
     selectors.area.selectDevice(state, { playerId })
   );
 
-  // states
-
-  const [animationHeight, setAnimationHeight] = useState(0);
-
   // refs
 
   const $motionVideo = useRef<HTMLVideoElement>(null);
 
   // handlers
-
-  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
-    console.log(spritesheet.getInfo("height"));
-    setAnimationHeight(spritesheet.getInfo("height"));
-  }, []);
 
   const isLastDevice = useMemo(() => {
     return Object.keys(areaDevices).length - 1 === device.position;
@@ -108,20 +88,6 @@ const InterfaceScoreArea: FC<Props> = ({
           </video>
         </div>
       </Area>
-      <div
-        className={Classnames("score__animations", {
-          active: isCreator
-        })}
-      >
-        <SpriteAnimation
-          animationID={
-            isSuccess ? animationId.group_success : animationId.group_fail
-          }
-          className="score__animation"
-          onInstance={handleSpritesheetAnimation}
-          play={playSpritesheet}
-        />
-      </div>
     </div>
   );
 };

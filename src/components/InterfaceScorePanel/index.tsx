@@ -173,7 +173,7 @@ const InterfaceScorePanel: FC<Props> = ({
       <div className="score-panel__container">
         <div className="score-panel__content">
           <div className="score-panel__score">
-            <Odometer format="d" duration={1000} value={newScore} />
+            <Odometer format="dddd" duration={1000} value={newScore} />
           </div>
           <div ref={$scoreLives} className="score-panel__lives">
             {livesItem}

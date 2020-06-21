@@ -26,7 +26,7 @@ const About: FC = () => {
   // store values
   const score = useTypedSelector(selectors.game.selectScore)
     .toString()
-    .padStart(3, "0");
+    .padStart(4, "0");
 
   // handlers
   const handleToggleScoreRegisterState = useCallback(state => {
