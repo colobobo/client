@@ -16,3 +16,8 @@ export const nextSuccess = createSubscribeAction(
   events.transition.nextSuccess,
   TransitionActions.nextSuccess.type
 );
+
+export const roundEnd = createSubscribeAction(
+  events.round.end,
+  TransitionActions.roundEnd.type
+);

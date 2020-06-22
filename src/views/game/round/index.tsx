@@ -63,6 +63,7 @@ const Round: FC<Props> = ({ isActive }) => {
         {world && (
           <div>
             <GameBackground world={world} />
+            <GamePhaser isActive={isActive} />
             <GameDecoration
               world={world}
               position={GameDecorationPosition.top}
@@ -73,7 +74,6 @@ const Round: FC<Props> = ({ isActive }) => {
             />
           </div>
         )}
-        <GamePhaser isActive={isActive} />
       </Area>
       <Area height="max">
         {world && (

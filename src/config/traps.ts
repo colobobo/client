@@ -29,7 +29,7 @@ export type TrapsConfigsByWorlds = {
   };
 };
 
-export const getTrapsTexture = (world: enums.World) => `texture-traps-${world}`;
+export const trapsTexture = `texture-traps`;
 
 const getGeneratedConfig = (
   world: enums.World,
@@ -38,7 +38,7 @@ const getGeneratedConfig = (
   return {
     prefix: `${world}/${trapName}/`,
     animationKey: `traps_${world}_${trapName}`,
-    texture: getTrapsTexture(world)
+    texture: trapsTexture
   };
 };
 
@@ -68,7 +68,7 @@ export const trapsConfigsByWorlds: TrapsConfigsByWorlds = {
     },
     [enums.traps.Jungle.chameleon]: {
       startFrame: 0,
-      endFrame: 75,
+      endFrame: 74,
       ...getGeneratedConfig(enums.World.jungle, enums.traps.Jungle.chameleon)
     },
     [enums.traps.Jungle.liana]: {

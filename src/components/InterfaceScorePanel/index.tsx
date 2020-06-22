@@ -39,11 +39,11 @@ const InterfaceScorePanel: FC<Props> = ({
   const defaultDelay = 1;
 
   const roundScoreDetails = useTypedSelector(
-    selectors.round.selectScoreDetails
+    selectors.transition.selectRoundScoreDetails
   );
+  const roundLives = useTypedSelector(selectors.transition.selectRoundLives);
   const gameScore = useTypedSelector(selectors.game.selectScore);
-  const lives = useTypedSelector(selectors.round.selectLives);
-  const totalLives = useTypedSelector(selectors.game.selectLives);
+  const gameLives = useTypedSelector(selectors.game.selectLives);
 
   // refs
   const $scoreLives = useRef<HTMLDivElement>(null);
@@ -53,9 +53,9 @@ const InterfaceScorePanel: FC<Props> = ({
 
   const livesItem = useMemo(() => {
     let livesArray = [];
-    const lostLives = totalLives - lives;
+    const lostLives = gameLives - roundLives;
 
-    for (let i = 0; i < totalLives; i++) {
+    for (let i = 0; i < gameLives; i++) {
       const currentLife = i + 1;
       const currentLifeLost = isFail && currentLife === lostLives;
 
@@ -82,7 +82,7 @@ const InterfaceScorePanel: FC<Props> = ({
       livesArray.push(life);
     }
     return livesArray;
-  }, [isFail, isSuccess, lives, playSpritesheet, totalLives]);
+  }, [isFail, isSuccess, roundLives, playSpritesheet, gameLives]);
 
   const cardsItem = useMemo(() => {
     let cardsArray = [];

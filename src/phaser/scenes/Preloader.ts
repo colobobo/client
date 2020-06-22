@@ -1,7 +1,7 @@
-import { enums } from "@colobobo/library";
-import * as config from "../../config";
 import { platformsTexture } from "../../config/platforms";
-import { getTrapsTexture } from "../../config/traps";
+import { trapsTexture } from "../../config/traps";
+import { wallsShapes, wallsTexture } from "../../config/walls";
+import { membersShapes, membersTexture } from "../../config/members";
 
 export default class Preloader extends Phaser.Scene {
   constructor() {
@@ -9,16 +9,18 @@ export default class Preloader extends Phaser.Scene {
   }
 
   loadMembers() {
-    Object.values(enums.member.Skins).forEach(memberSkin => {
-      // load skins texture
-      this.load.svg(config.members[memberSkin].skin);
+    this.load.multiatlas({
+      key: membersTexture,
+      atlasURL: `assets/spritesheets/members/atlas.json`,
+      path: `assets/spritesheets/members/`
     });
   }
 
   loadWalls() {
-    Object.values(enums.World).forEach(world => {
-      // load wall
-      this.load.svg(config.worlds[world].platforms.wall);
+    this.load.multiatlas({
+      key: wallsTexture,
+      atlasURL: `assets/spritesheets/walls/atlas.json`,
+      path: `assets/spritesheets/walls/`
     });
   }
 
@@ -31,17 +33,17 @@ export default class Preloader extends Phaser.Scene {
   }
 
   loadTraps() {
-    Object.values(enums.World).forEach(world => {
-      this.load.multiatlas({
-        key: getTrapsTexture(world),
-        atlasURL: `assets/spritesheets/traps/${world}/atlas.json`,
-        path: `assets/spritesheets/traps/${world}/`
-      });
+    this.load.multiatlas({
+      key: trapsTexture,
+      atlasURL: `assets/spritesheets/traps/atlas.json`,
+      path: `assets/spritesheets/traps/`
     });
   }
 
   loadShapes() {
     this.load.json("shapes", "assets/shapes/shapes.json");
+    this.load.json(wallsShapes, "assets/shapes/walls/shapes.json");
+    this.load.json(membersShapes, "assets/shapes/members/shapes.json");
   }
 
   preload() {

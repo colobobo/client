@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 import InterfaceScoreArea from "../../components/InterfaceScoreArea";
-import InterfaceScoreClosing from "../../components/InterfaceScoreClosing";
 import InterfaceBleed, {
   BleedPosition,
   BleedColor
@@ -29,8 +28,8 @@ interface Props {
 }
 
 const InterfaceScore: FC<Props> = ({ isGameOver, onNextClick }) => {
-  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
-  const isFail = useTypedSelector(selectors.round.selectIsFail);
+  const isSuccess = useTypedSelector(selectors.transition.selectIsRoundSuccess);
+  const isFail = useTypedSelector(selectors.transition.selectIsRoundFail);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
 

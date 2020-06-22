@@ -27,14 +27,18 @@ interface Props {
 const Transition: FC<Props> = ({ isTansitionActive }) => {
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
-  const isSuccess = useTypedSelector(selectors.round.selectIsSuccess);
-  const isFail = useTypedSelector(selectors.round.selectIsFail);
+  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
+  const isRoundSuccess = useTypedSelector(
+    selectors.transition.selectIsRoundSuccess
+  );
+  const isRoundFail = useTypedSelector(selectors.transition.selectIsRoundFail);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
   const isTransitionNext = useTypedSelector(selectors.transition.selectIsNext);
+  const roundWorld = useTypedSelector(selectors.transition.selectRoundWorld);
+  const roundFailCause = useTypedSelector(
+    selectors.transition.selectRoundFailCause
+  );
   const isGameOver = useTypedSelector(selectors.game.selectIsOver);
-  const isCreator = useTypedSelector(selectors.room.selectIsCreator);
-  const currentWorld = useTypedSelector(selectors.round.selectWorld);
-  const failCause = useTypedSelector(selectors.round.selectFailCause);
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
 
   // return
@@ -78,11 +82,11 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   }, [isGameOver, isTransitionNext]);
 
   useEffect(() => {
-    if (isSuccess && isTansitionActive) {
+    if (isRoundSuccess && isTansitionActive) {
       setShowScore(true);
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
     }
-  }, [dispatch, isSuccess, isTansitionActive, playerId]);
+  }, [dispatch, isRoundSuccess, isTansitionActive, playerId]);
 
   useEffect(() => {
     if (!isTansitionActive) {
@@ -92,10 +96,10 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   }, [dispatch, handleOnMotionTransitionEnded, isTansitionActive]);
 
   useEffect(() => {
-    if (isTansitionActive && isFail) {
+    if (isTansitionActive && isRoundFail) {
       setShowFailMotion(true);
     }
-  }, [isFail, isTansitionActive]);
+  }, [isRoundFail, isTansitionActive]);
 
   // return
 
@@ -116,8 +120,8 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
       )}
       {showFailMotion && (
         <MotionTransition
-          failCause={failCause!}
-          world={currentWorld}
+          failCause={roundFailCause!}
+          world={roundWorld}
           onMotionTransitionEnded={handleOnMotionTransitionEnded}
         />
       )}
