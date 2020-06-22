@@ -11,10 +11,6 @@ import InterfaceBleed, {
   BleedPosition,
   BleedColor
 } from "../../components/InterfaceBleed";
-import SpriteAnimation from "../../components/SpriteAnimation";
-
-// config
-import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";

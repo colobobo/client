@@ -2,7 +2,7 @@ import React, { FC, useEffect, useMemo } from "react";
 
 // store
 import { actions, selectors } from "../../../redux";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../redux/store";
 
 // components

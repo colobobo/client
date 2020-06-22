@@ -1,12 +1,7 @@
-import React, { FC, useEffect, useRef, useMemo } from "react";
-import Classnames from "classnames";
+import React, { FC, useMemo } from "react";
 
 // components
 import Area from "../../components/Area";
-import SpriteAnimation from "../../components/SpriteAnimation";
-
-// config
-import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
