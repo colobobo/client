@@ -15,6 +15,7 @@ import Platform from "../objects/Platform";
 import Trap from "../objects/Trap";
 import Game, { RoundMembersArray } from "../Game";
 import Wall from "../objects/Wall";
+import { membersTexture } from "../../config/members";
 
 export enum CollisionCategories {
   default = "default",
@@ -137,9 +138,22 @@ export default class MainScene extends Phaser.Scene {
 
   createMembers() {
     this.game.roundMembersArray.forEach((roundMember, i) => {
+      const memberAnimationsConfig = config.members[roundMember.skin];
+
+      const firstFrame = this.anims.generateFrameNames(
+        memberAnimationsConfig.start.texture,
+        {
+          prefix: memberAnimationsConfig.start.prefix,
+          start: memberAnimationsConfig.start.startFrame,
+          end: memberAnimationsConfig.start.endFrame,
+          zeroPad: 5
+        }
+      )[0]?.frame as string;
+
       const member = new Member({
         scene: this,
-        texture: config.members[roundMember.skin].skin.key,
+        texture: membersTexture,
+        frame: firstFrame,
         options: {
           plugin: {
             wrap: utils.phaser.getGameWrapConfig(
@@ -154,10 +168,11 @@ export default class MainScene extends Phaser.Scene {
           ignoreGravity: true
         },
         id: roundMember.id,
+        animationsConfig: memberAnimationsConfig,
+        skin: roundMember.skin,
         pixelRatio: this.game.pixelRatio
       });
 
-      member.setPositionToStartPlatform();
       member.addEventListeners();
 
       // add member to members array
@@ -352,6 +367,26 @@ export default class MainScene extends Phaser.Scene {
     this.platforms.start?.animateMemberSpawned();
   }
 
+  // member : moved
+
+  onMemberMoved(member: Member, roundMember: RoundMembersArray[0]) {
+    // disable gravity
+    // memberMatter.setIgnoreGravity(true);
+    member.moved(roundMember);
+  }
+
+  // member : dragged start
+
+  onMemberDraggedStart(member: Member) {
+    member.draggedStart();
+  }
+
+  // member : dragged end
+
+  onMemberDraggedEnd(member: Member) {
+    member.draggedEnd();
+  }
+
   // member : trapped
 
   onMemberTrapped(member: Member) {
@@ -379,14 +414,6 @@ export default class MainScene extends Phaser.Scene {
     console.log("on member arrived", member.id);
     member.arrived();
     this.platforms.finish?.animateMemberArrived();
-  }
-
-  // member : moved
-
-  onMemberMoved(member: Member, roundMember: RoundMembersArray[0]) {
-    // disable gravity
-    // memberMatter.setIgnoreGravity(true);
-    member.moved(roundMember);
   }
 
   // round tick : members update
@@ -429,6 +456,15 @@ export default class MainScene extends Phaser.Scene {
           roundMember.status === enums.member.Status.arrived
         ) {
           this.onMemberArrived(member);
+        }
+      }
+
+      // if isDragged is different
+      if (roundMember.isDragged !== member.isDragged) {
+        if (roundMember.isDragged) {
+          this.onMemberDraggedStart(member);
+        } else {
+          this.onMemberDraggedEnd(member);
         }
       }
     });

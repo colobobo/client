@@ -286,7 +286,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
       callback: (e: any) => {
         const { gameObjectB } = e;
         // if collide end with member
-        if (gameObjectB instanceof Member) {
+        if (gameObjectB instanceof Member && this.anims.currentAnim) {
           if (
             this.anims.currentAnim.key ===
               this.animationsConfig[PlatformAnimationsKey.lightIn]
