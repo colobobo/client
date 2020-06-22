@@ -90,7 +90,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     this.scene.matter.alignBody(
       this.body as MatterJS.BodyType,
       this.x,
-      this.scene.game.areaHeight * this.pixelRatio,
+      this.scene.game.areaHeight * 0.9 * this.pixelRatio,
       Phaser.Display.Align.BOTTOM_CENTER
     );
 
