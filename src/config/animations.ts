@@ -32,16 +32,16 @@ const animations: { [key: string]: AnimationType } = {
   },
   [animationId.teacher_fail]: {
     image: teacher_fail,
-    widthFrame: 150,
-    heightFrame: 150,
+    widthFrame: 60,
+    heightFrame: 60,
     steps: 74,
     fps: 25,
     loop: false
   },
   [animationId.teacher_success]: {
     image: teacher_success,
-    widthFrame: 150,
-    heightFrame: 150,
+    widthFrame: 60,
+    heightFrame: 60,
     steps: 14,
     fps: 25,
     loop: false

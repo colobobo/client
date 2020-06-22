@@ -61,20 +61,32 @@ const InterfaceScorePanel: FC<Props> = ({
 
       let life = (
         <div className="score-panel__life" key={i}>
-          {currentLife <= lostLives && (
+          {(currentLife <= lostLives && isSuccess) ||
+            (currentLife < lostLives && isFail && (
+              <img
+                src={require(`../../assets/illustrations/score/teacher_dead.png`)}
+                alt="Live"
+              />
+            ))}
+          {currentLifeLost && (
             <SpriteAnimation
-              pauseOnLastFrame={!currentLifeLost}
-              play={currentLifeLost && playSpritesheet}
+              play={playSpritesheet}
               animationID={animationId.teacher_fail}
               autoplay={false}
             />
           )}
-          {currentLife > lostLives && (
+          {currentLife > lostLives && isSuccess && (
             <SpriteAnimation
-              play={isSuccess && playSpritesheet}
+              play={playSpritesheet}
               animationID={animationId.teacher_success}
               autoplay={false}
-              isLoop={isSuccess}
+              isLoop={true}
+            />
+          )}
+          {currentLife > lostLives && isFail && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_alive.png`)}
+              alt="Live"
             />
           )}
         </div>
