@@ -16,25 +16,15 @@ import { selectors } from "../../redux";
 import "./index.scss";
 
 interface Props {
-  showMotion: boolean;
-  onMotionEnded: any;
   isGameOver: boolean;
 }
 
-const InterfaceScoreArea: FC<Props> = ({
-  showMotion,
-  onMotionEnded,
-  isGameOver
-}) => {
+const InterfaceScoreArea: FC<Props> = ({ isGameOver }) => {
   const areaDevices = useTypedSelector(selectors.area.selectDevices);
   const playerId = useTypedSelector(selectors.room.selectPlayerId);
   const device = useTypedSelector(state =>
     selectors.area.selectDevice(state, { playerId })
   );
-
-  // refs
-
-  const $motionVideo = useRef<HTMLVideoElement>(null);
 
   // handlers
 
@@ -42,18 +32,6 @@ const InterfaceScoreArea: FC<Props> = ({
     return Object.keys(areaDevices).length - 1 === device.position;
   }, [areaDevices, device.position]);
 
-  // use effect
-
-  useEffect(() => {
-    $motionVideo.current?.load();
-    $motionVideo.current?.setAttribute("muted", "true");
-  }, []);
-
-  useEffect(() => {
-    if (showMotion) {
-      $motionVideo.current?.play();
-    }
-  }, [showMotion]);
   // return
 
   return (
@@ -67,21 +45,6 @@ const InterfaceScoreArea: FC<Props> = ({
             autoplay={true}
           />
         )}
-        {/* <div
-          className={Classnames("score__animations", {
-            active: showMotion
-          })}
-        >
-          <video
-            ref={$motionVideo}
-            playsInline
-            muted
-            autoPlay={false}
-            onEnded={onMotionEnded}
-          >
-            <source src={require(`../../assets/motions/transition.webm`)} />
-          </video>
-        </div> */}
       </Area>
     </div>
   );

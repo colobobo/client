@@ -23,17 +23,17 @@ import "./index.scss";
 interface Props {
   isSuccess: boolean;
   isFail: boolean;
-  isScoreActive: boolean;
   playSpritesheet: boolean;
+  playPanelAnimation: boolean;
   onAnimationComplete: any;
 }
 
 const InterfaceScorePanel: FC<Props> = ({
   isSuccess,
   isFail,
-  isScoreActive,
   playSpritesheet,
-  onAnimationComplete
+  onAnimationComplete,
+  playPanelAnimation
 }) => {
   const { t } = useTranslation();
   const defaultDelay = 1;
@@ -147,7 +147,7 @@ const InterfaceScorePanel: FC<Props> = ({
   }, [playSpritesheet, gameScore]);
 
   useEffect(() => {
-    if (isScoreActive) {
+    if (playPanelAnimation) {
       const timeline = gsap.timeline({
         delay: defaultDelay
       });
@@ -164,7 +164,7 @@ const InterfaceScorePanel: FC<Props> = ({
 
       timeline.then(onAnimationComplete);
     }
-  }, [isScoreActive, onAnimationComplete]);
+  }, [onAnimationComplete, playPanelAnimation]);
 
   // return
 

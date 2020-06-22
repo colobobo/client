@@ -52,14 +52,10 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   }, []);
 
   const handleOnNextClick = useCallback(() => {
-    if (isGameOver) {
-      dispatch(actions.webSocket.emit.transition.ended());
-    }
     dispatch(actions.webSocket.emit.transition.ended());
-    // dispatch(actions.webSocket.emit.transition.next());
-  }, [dispatch, isGameOver]);
+  }, [dispatch]);
 
-  const handleTransitionEnded = useCallback(() => {
+  const handleOnMotionSharedEnded = useCallback(() => {
     if (isCreator) {
       dispatch(actions.webSocket.emit.transition.ended());
     }
@@ -111,11 +107,11 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           extension={Extension.mp4}
           position={Position.center}
           isPlayed={isTransitionStarted}
-          onEnded={handleTransitionEnded}
+          onEnded={handleOnMotionSharedEnded}
           onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
           showSkip={true}
-          onSkipClick={handleTransitionEnded}
+          onSkipClick={handleOnMotionSharedEnded}
         />
       )}
       {showFailMotion && (
@@ -125,25 +121,19 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
           onMotionTransitionEnded={handleOnMotionTransitionEnded}
         />
       )}
-      <div
-        className={Classnames("transition__score", {
-          active: showScore
-        })}
-      >
+      {showScore && (
         <InterfaceScore
-          isScoreActive={showScore}
-          isTansitionActive={isTansitionActive}
           isGameOver={isGameOver}
           onNextClick={handleOnNextClick}
         />
-      </div>
-      {isGameOver && showEnding && (
+      )}
+      {showEnding && (
         <MotionShared
           type={Type.ending}
           extension={Extension.mp4}
           position={Position.center}
           isPlayed={isTransitionStarted}
-          onEnded={handleTransitionEnded}
+          onEnded={handleOnMotionSharedEnded}
           onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
         />

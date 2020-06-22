@@ -48,6 +48,7 @@ const NumericKeypad: FC<Props> = ({
 
   useEffect(() => {
     if (pauseOnLastFrame) {
+      console.log("go to and pause");
       spritesheetInstance.current?.goToAndPause(steps);
     }
   }, [pauseOnLastFrame, steps]);
