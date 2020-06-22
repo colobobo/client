@@ -124,7 +124,7 @@ export default class MainScene extends Phaser.Scene {
             // emit member arrived
 
             this.game.dispatch(
-              actions.webSocket.emit.round.memberTrapped({
+              actions.webSocket.emit.round.memberDropped({
                 memberId: gameObjectB.id
               })
             );
