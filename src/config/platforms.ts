@@ -53,6 +53,8 @@ type PlatformsConfig = {
 
 export const platformsTexture = "platforms-texture";
 
+export const platformsShapes = "shapes-plateforms";
+
 const defaultEditableConfig: EditablePlateformsConfig = {
   [PlatformPosition.start]: {
     [PlatformAnimationsKey.lightIn]: {

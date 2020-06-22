@@ -7,17 +7,17 @@ import { TrapsAnimationConfig } from "../../config/traps";
 export default class Trap extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
   scene: MainScene;
-  collisionEnabled: boolean;
   areaHeightRatio: number;
   animationConfig: TrapsAnimationConfig;
   animationRepeatDelay: number;
+  options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
 
   constructor({
     scene,
     x = 0,
     y = 0,
+    frame,
     options,
-    collisionEnabled = true,
     areaHeightRatio = 1,
     pixelRatio,
     animationConfig,
@@ -26,36 +26,20 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
     scene: MainScene;
     x?: number;
     y?: number;
+    frame?: string;
     options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
-    collisionEnabled?: boolean;
     areaHeightRatio?: number;
     pixelRatio: number;
     animationConfig: TrapsAnimationConfig;
     animationRepeatDelay?: number;
   }) {
-    const firstFrame = scene.anims.generateFrameNames(animationConfig.texture, {
-      prefix: animationConfig.prefix,
-      start: animationConfig.startFrame,
-      end: animationConfig.endFrame,
-      zeroPad: 5
-    })[0]?.frame as string;
-
-    super(
-      scene.matter.world,
-      x,
-      y,
-      animationConfig.texture,
-      firstFrame,
-      options
-    );
+    super(scene.matter.world, x, y, animationConfig.texture, frame, options);
 
     scene.sys.displayList.add(this);
     scene.sys.updateList.add(this);
 
     this.scene = scene;
-    // this.animationKey = animationKey;
-    this.collisionEnabled = collisionEnabled;
-    // this.location = location;
+    this.options = options;
     this.areaHeightRatio = areaHeightRatio;
     this.pixelRatio = pixelRatio;
     this.animationConfig = animationConfig;
@@ -76,14 +60,10 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
 
     // animation
     this.createAnimation();
+    this.addAnimationEventListener();
     this.play(this.animationConfig.animationKey);
 
-    // collision
-    if (this.collisionEnabled) {
-      this.addCollisionListener();
-    } else {
-      this.setCollidesWith(0);
-    }
+    this.addCollisionListener();
   }
 
   // ANIMATION
@@ -101,6 +81,41 @@ export default class Trap extends Phaser.Physics.Matter.Sprite {
       repeatDelay: this.animationRepeatDelay,
       frameRate: 25
     });
+  }
+
+  addAnimationEventListener() {
+    this.on(
+      "animationupdate",
+      (
+        currentAnim: Phaser.Animations.Animation,
+        currentFrame: Phaser.Animations.AnimationFrame,
+        sprite: Phaser.GameObjects.Sprite
+      ) => {
+        const textureFrame = currentFrame.textureFrame as string;
+        const textureFrameParts = textureFrame.split("/");
+        const frameId = textureFrameParts[textureFrameParts.length - 1];
+        const shapes = this.scene.cache.json.get(
+          this.animationConfig.shapes.key
+        );
+        const frameShape = shapes[frameId];
+        if (frameShape) {
+          this.setBodyWithShape(frameShape);
+        }
+      }
+    );
+  }
+
+  setBodyWithShape(shape: any) {
+    const sScale = this.scale;
+    const sCenter = this.getCenter();
+
+    this.setScale(1);
+    this.setBody(shape, this.options);
+    this.setScale(sScale);
+
+    // re align center
+    this.setX(this.x + sCenter.x - this.getCenter().x);
+    this.setY(this.y + sCenter.y - this.getCenter().y);
   }
 
   // COLLLISION
