@@ -4,7 +4,9 @@
 .score {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   background: rgb(116, 212, 115);
   background: linear-gradient(
     180deg,
@@ -13,6 +15,15 @@
     rgba(100, 206, 85, 1) 51%,
     rgba(100, 206, 85, 1) 100%
   );
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+
+  &.active {
+    visibility: visible;
+    pointer-events: initial;
+    z-index: 1;
+  }
 
   &__container {
     position: absolute;
@@ -79,8 +90,9 @@
   &__animation {
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
   }
 
   &__sign {

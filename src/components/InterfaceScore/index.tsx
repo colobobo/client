@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
+import Classnames from "classnames";
 
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
@@ -25,9 +26,14 @@ import "./index.scss";
 interface Props {
   isGameOver: boolean;
   onNextClick: any;
+  isScoreActive: boolean;
 }
 
-const InterfaceScore: FC<Props> = ({ isGameOver, onNextClick }) => {
+const InterfaceScore: FC<Props> = ({
+  isGameOver,
+  onNextClick,
+  isScoreActive
+}) => {
   const isSuccess = useTypedSelector(selectors.transition.selectIsRoundSuccess);
   const isFail = useTypedSelector(selectors.transition.selectIsRoundFail);
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
@@ -69,7 +75,11 @@ const InterfaceScore: FC<Props> = ({ isGameOver, onNextClick }) => {
   // return
 
   return (
-    <div className="score">
+    <div
+      className={Classnames("score", {
+        active: isScoreActive
+      })}
+    >
       <div
         className="score__container"
         style={{
@@ -109,12 +119,12 @@ const InterfaceScore: FC<Props> = ({ isGameOver, onNextClick }) => {
           )}
 
           {isCreator && (
-            <SpriteAnimation
-              animationID={
-                isSuccess ? animationId.group_success : animationId.group_fail
-              }
+            <img
               className="score__animation"
-              play={playSpritesheet}
+              src={require(`../../assets/illustrations/score/gifs/${
+                isSuccess ? "success" : "fail"
+              }.gif`)}
+              alt="Animation"
             />
           )}
         </div>

@@ -127,6 +127,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
       )}
       {showScore && (
         <InterfaceScore
+          isScoreActive={showScore}
           isGameOver={isGameOver}
           onNextClick={handleOnNextClick}
         />
