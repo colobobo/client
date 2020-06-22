@@ -50,9 +50,9 @@ const InterfaceHeader: FC<Props> = ({
         {type === Type.leaderboard && (
           <div>
             <p className="header__score">{score}</p>
-            <p className="header__best-score">
+            {/* <p className="header__best-score">
               {t("header.score.description")} {score}
-            </p>
+            </p> */}
           </div>
         )}
       </div>

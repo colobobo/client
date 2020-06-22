@@ -45,6 +45,7 @@ const InterfaceScore: FC<Props> = ({
 
   const $scorePanel = useRef<HTMLDivElement>(null);
   const $scoreBottom = useRef<HTMLDivElement>(null);
+  const $scoreOverlay = useRef<HTMLDivElement>(null);
 
   // state
 
@@ -59,13 +60,19 @@ const InterfaceScore: FC<Props> = ({
   //use effects
 
   useEffect(() => {
+    gsap.to($scoreOverlay.current, {
+      duration: 0.5,
+      opacity: 0
+    });
     gsap.from($scorePanel.current, {
       duration: 1,
-      yPercent: `100`
+      yPercent: `100`,
+      delay: 1
     });
     gsap
       .to([$scorePanel.current, $scoreBottom.current], {
-        opacity: 1
+        opacity: 1,
+        delay: 1
       })
       .then(() => {
         setPlayPanelAnimation(true);
@@ -133,6 +140,7 @@ const InterfaceScore: FC<Props> = ({
         position={BleedPosition.bottom}
         bgColor={BleedColor.score_bottom}
       />
+      <div ref={$scoreOverlay} className="score__overlay"></div>
     </div>
   );
 };
