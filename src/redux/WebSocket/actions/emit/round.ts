@@ -37,3 +37,7 @@ export const memberDropped: EmitAction<payloads.round.MemberDropped> = createEmi
 export const memberArrived: EmitAction<payloads.round.MemberArrived> = createEmitAction(
   events.round.memberArrived
 );
+
+export const memberUpdateManager: EmitAction<payloads.round.MemberUpdateManager> = createEmitAction(
+  events.round.memberUpdateManager
+);

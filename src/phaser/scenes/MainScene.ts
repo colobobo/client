@@ -8,7 +8,6 @@ import * as config from "../../config";
 import { PlatformPosition, platformsTexture } from "../../config/platforms";
 import { TrapsAnimationConfig } from "../../config/traps";
 import { actions } from "../../redux";
-import * as utils from "../../utils";
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 import Member from "../objects/Member";
 import Platform from "../objects/Platform";
@@ -40,6 +39,9 @@ export default class MainScene extends Phaser.Scene {
   };
   pointerContraint: Phaser.Physics.Matter.PointerConstraint | null = null;
   members: Member[] = [];
+  memberPositionOffset: number = 0;
+  memberPositionWrapRectangle: Phaser.Geom.Rectangle;
+  memberManagerDetectRectangle: Phaser.Geom.Rectangle;
   platforms: {
     [key in PlatformPosition]?: Platform;
   } = {};
@@ -48,6 +50,34 @@ export default class MainScene extends Phaser.Scene {
     super({});
     this.game = game;
     console.log("MainScene : constructor");
+
+    const device = this.game.areaDevices[this.game.playerId];
+
+    // TODO : move this logic out of constructor
+
+    // first device
+    if (device.position === 0) {
+      this.memberPositionOffset = -250;
+    }
+
+    // last device
+    if (device.position === Object.keys(this.game.areaDevices).length - 1) {
+      this.memberPositionOffset = 250;
+    }
+
+    this.memberPositionWrapRectangle = new Phaser.Geom.Rectangle(
+      this.memberPositionOffset * this.game.pixelRatio,
+      -500,
+      this.game.areaWidth * this.game.pixelRatio,
+      this.game.areaHeight * this.game.pixelRatio + 1000
+    );
+
+    this.memberManagerDetectRectangle = new Phaser.Geom.Rectangle(
+      device.offsetX * this.game.pixelRatio + 25,
+      0,
+      device.width * this.game.pixelRatio - 50,
+      this.game.areaHeight * this.game.pixelRatio
+    );
   }
 
   // GETTERS
@@ -156,10 +186,11 @@ export default class MainScene extends Phaser.Scene {
         frame: firstFrame,
         options: {
           plugin: {
-            wrap: utils.phaser.getGameWrapConfig(
-              this.game.areaWidth * this.game.pixelRatio,
-              this.game.areaHeight * this.game.pixelRatio
-            )
+            // wrap: utils.phaser.getGameWrapConfig(
+            //   (this.game.areaWidth) * this.game.pixelRatio,
+            //   this.game.areaHeight * this.game.pixelRatio,
+            //   this.memberPositionOffset * this.game.pixelRatio
+            // )
           },
           restitution: 0,
           friction: 0.002,
@@ -320,6 +351,18 @@ export default class MainScene extends Phaser.Scene {
     });
 
     this.matter.world.on("beforeupdate", () => {
+      // wrap member position
+      this.members.forEach(member => {
+        member.setX(
+          Phaser.Math.Wrap(
+            member.x,
+            this.memberPositionOffset * this.game.pixelRatio,
+            this.memberPositionOffset * this.game.pixelRatio +
+              this.game.areaWidth * this.game.pixelRatio
+          )
+        );
+      });
+
       const { pointA, pointB, bodyB } = this.pointerContraint!.constraint;
       // pointA is pointer
       // pointB is drag start point
@@ -542,6 +585,31 @@ export default class MainScene extends Phaser.Scene {
   }
 
   update(time: number, delta: number) {
+    // if member is in my screen -> update manager
+    this.members.forEach(member => {
+      if (
+        Phaser.Geom.Rectangle.Contains(
+          this.memberManagerDetectRectangle,
+          member.x,
+          member.y
+        )
+      ) {
+        if (
+          this.game.playerId !==
+          this.game.roundMembersArray.find(
+            roundMember => roundMember.id === member.id
+          )?.manager
+        ) {
+          this.game.dispatch(
+            actions.webSocket.emit.round.memberUpdateManager({
+              playerId: this.game.playerId,
+              memberId: member.id
+            })
+          );
+        }
+      }
+    });
+
     this.game.roundMembersArray.forEach(roundMember => {
       // if I'm the member manager
       if (this.game.playerId === roundMember.manager) {
