@@ -68,7 +68,7 @@ export const trapsConfigsByWorlds: TrapsConfigsByWorlds = {
     },
     [enums.traps.Jungle.chameleon]: {
       startFrame: 0,
-      endFrame: 75,
+      endFrame: 74,
       ...getGeneratedConfig(enums.World.jungle, enums.traps.Jungle.chameleon)
     },
     [enums.traps.Jungle.liana]: {
