@@ -56,7 +56,10 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
 
   const handleOnNextClick = useCallback(() => {
     dispatch(actions.webSocket.emit.transition.ended());
-  }, [dispatch]);
+    if (isGameOver) {
+      dispatch(actions.webSocket.emit.transition.next());
+    }
+  }, [dispatch, isGameOver]);
 
   const handleOnMotionSharedEnded = useCallback(() => {
     if (isCreator) {
