@@ -61,13 +61,18 @@ const InterfaceScorePanel: FC<Props> = ({
 
       let life = (
         <div className="score-panel__life" key={i}>
-          {(currentLife <= lostLives && isSuccess) ||
-            (currentLife < lostLives && isFail && (
-              <img
-                src={require(`../../assets/illustrations/score/teacher_dead.png`)}
-                alt="Live"
-              />
-            ))}
+          {currentLife < lostLives && isFail && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_dead.png`)}
+              alt="Live"
+            />
+          )}
+          {currentLife <= lostLives && isSuccess && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_dead.png`)}
+              alt="Live"
+            />
+          )}
           {currentLifeLost && (
             <SpriteAnimation
               play={playSpritesheet}
@@ -159,18 +164,32 @@ const InterfaceScorePanel: FC<Props> = ({
   }, [playSpritesheet, gameScore]);
 
   useEffect(() => {
+    const timeline = gsap.timeline({
+      delay: defaultDelay
+    });
+    const cards = document.getElementsByClassName("card");
+    timeline.to(
+      [$scoreLives.current, ...cards, $scoreRoundTotal.current],
+      0.1,
+      {
+        opacity: 0
+      }
+    );
+  }, []);
+
+  useEffect(() => {
     if (playPanelAnimation) {
       const timeline = gsap.timeline({
         delay: defaultDelay
       });
 
-      timeline.from($scoreLives.current, 0.2, {
-        opacity: 0
+      timeline.to($scoreLives.current, 0.2, {
+        opacity: 1
       });
 
       const cards = document.getElementsByClassName("card");
-      timeline.from([...cards, $scoreRoundTotal.current], 0.5, {
-        opacity: 0,
+      timeline.to([...cards, $scoreRoundTotal.current], 0.5, {
+        opacity: 1,
         stagger: 0.5
       });
 

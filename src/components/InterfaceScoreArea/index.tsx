@@ -39,10 +39,10 @@ const InterfaceScoreArea: FC<Props> = ({ isGameOver }) => {
       <Area height="min">
         <div className="score__bush"></div>
         {isLastDevice && !isGameOver && (
-          <SpriteAnimation
+          <img
             className="score__sign"
-            animationID={animationId.sign}
-            autoplay={true}
+            src={require(`../../assets/illustrations/score/sign.png`)}
+            alt="Sign"
           />
         )}
       </Area>

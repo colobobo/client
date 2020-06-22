@@ -59,7 +59,7 @@ const InterfaceScore: FC<Props> = ({
 
   //use effects
 
-  /*useEffect(() => {
+  useEffect(() => {
     gsap.to($scoreOverlay.current, {
       duration: 0.5,
       opacity: 0
@@ -77,7 +77,7 @@ const InterfaceScore: FC<Props> = ({
       .then(() => {
         setPlayPanelAnimation(true);
       });
-  }, [areaMinHeight]);*/
+  }, [areaMinHeight]);
 
   // return
 
@@ -93,7 +93,7 @@ const InterfaceScore: FC<Props> = ({
           height: areaMinHeight
         }}
       >
-        {/*<div ref={$scorePanel} className="score__panel">
+        <div ref={$scorePanel} className="score__panel">
           <InterfaceScorePanel
             isSuccess={isSuccess}
             isFail={isFail}
@@ -101,9 +101,9 @@ const InterfaceScore: FC<Props> = ({
             playPanelAnimation={playPanelAnimation}
             onAnimationComplete={handleOnPanelAnimationComplete}
           />
-        </div>*/}
+        </div>
 
-        {/*<InterfaceScoreArea isGameOver={isGameOver} />*/}
+        <InterfaceScoreArea isGameOver={isGameOver} />
 
         <div
           ref={$scoreBottom}
@@ -125,7 +125,7 @@ const InterfaceScore: FC<Props> = ({
             />
           )}
 
-          {/*{isCreator && (
+          {isCreator && (
             <img
               className="score__animation"
               src={require(`../../assets/illustrations/score/gifs/${
@@ -133,14 +133,14 @@ const InterfaceScore: FC<Props> = ({
               }.gif`)}
               alt="Animation"
             />
-          )}*/}
+          )}
         </div>
       </div>
       <InterfaceBleed
         position={BleedPosition.bottom}
         bgColor={BleedColor.score_bottom}
       />
-      {/*<div ref={$scoreOverlay} className="score__overlay" />*/}
+      <div ref={$scoreOverlay} className="score__overlay" />
     </div>
   );
 };
