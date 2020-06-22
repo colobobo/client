@@ -63,6 +63,7 @@ export const slice = createSlice({
       const { lives, gameScore } = action.payload.data;
       state.isOver = lives === 0;
       state.score = gameScore;
+      console.log(gameScore, state.score);
     }
   }
 });

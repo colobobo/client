@@ -17,7 +17,7 @@ export enum Type {
 interface Props {
   type: Type;
   code?: string;
-  score?: string;
+  score?: number;
   backButtonStatus?: boolean;
   onBackButtonClick?: any;
 }

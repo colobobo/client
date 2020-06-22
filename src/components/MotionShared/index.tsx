@@ -5,10 +5,7 @@ import { gsap } from "gsap";
 
 // components
 import Area from "../Area";
-import InterfaceBleed, {
-  BleedPosition,
-  BleedColor
-} from "../../components/InterfaceBleed";
+import { BleedColor } from "../../components/InterfaceBleed";
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 
 // style
@@ -100,13 +97,13 @@ const MotionShared: FC<Props> = ({
     <div className="motion-shared">
       <div className="motion-shared__container">
         <Area height="min">
-          {isPlayed && (
+          {/* {isPlayed && (
             <InterfaceBleed
               position={BleedPosition.left}
               bgColor={bleedColor}
               elementWidth={$motionVideo.current?.clientWidth}
             />
-          )}
+          )} */}
           <video
             ref={$motionVideo}
             className={Classnames("motion-shared__video", position)}
@@ -121,13 +118,13 @@ const MotionShared: FC<Props> = ({
               src={require(`../../assets/motions/${type}.${extension}`)}
             />
           </video>
-          {isPlayed && (
+          {/* {isPlayed && (
             <InterfaceBleed
               position={BleedPosition.right}
               bgColor={bleedColor}
               elementWidth={$motionVideo.current?.clientWidth}
             />
-          )}
+          )} */}
           {showSkip && (
             <InterfaceButton
               onClick={onSkipClick}
