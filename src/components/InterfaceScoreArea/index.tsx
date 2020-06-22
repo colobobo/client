@@ -1,62 +1,47 @@
-import React, { FC, useEffect, useRef } from "react";
-import Classnames from "classnames";
+import React, { FC, useMemo } from "react";
 
 // components
 import Area from "../../components/Area";
+
+// store
+import { useTypedSelector } from "../../redux/store";
+import { selectors } from "../../redux";
 
 // style
 import "./index.scss";
 
 interface Props {
-  animationHeight: number;
-  showMotion: boolean;
-  onMotionEnded: any;
+  isGameOver: boolean;
 }
 
-const InterfaceScoreArea: FC<Props> = ({
-  animationHeight,
-  showMotion,
-  onMotionEnded
-}) => {
-  // refs
-  const $motionVideo = useRef<HTMLVideoElement>(null);
+const InterfaceScoreArea: FC<Props> = ({ isGameOver }) => {
+  const areaDevices = useTypedSelector(selectors.area.selectDevices);
+  const playerId = useTypedSelector(selectors.room.selectPlayerId);
+  const device = useTypedSelector(state =>
+    selectors.area.selectDevice(state, { playerId })
+  );
 
-  // use effect
+  // handlers
 
-  useEffect(() => {
-    $motionVideo.current?.load();
-    $motionVideo.current?.setAttribute("muted", "true");
-  }, []);
+  const isLastDevice = useMemo(() => {
+    return Object.keys(areaDevices).length - 1 === device.position;
+  }, [areaDevices, device.position]);
 
-  useEffect(() => {
-    if (showMotion) {
-      $motionVideo.current?.play();
-    }
-  }, [showMotion]);
   // return
 
   return (
-    <Area height="min">
-      <div className="score__bush"></div>
-      <div
-        style={{
-          height: `${animationHeight}px`
-        }}
-        className={Classnames("score__motion", {
-          active: showMotion
-        })}
-      >
-        <video
-          ref={$motionVideo}
-          playsInline
-          muted
-          autoPlay={false}
-          onEnded={onMotionEnded}
-        >
-          <source src={require(`../../assets/motions/transition.webm`)} />
-        </video>
-      </div>
-    </Area>
+    <div className="score-area">
+      <Area height="min">
+        <div className="score__bush"></div>
+        {isLastDevice && !isGameOver && (
+          <img
+            className="score__sign"
+            src={require(`../../assets/illustrations/score/sign.png`)}
+            alt="Sign"
+          />
+        )}
+      </Area>
+    </div>
   );
 };
 

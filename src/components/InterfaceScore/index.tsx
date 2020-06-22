@@ -1,165 +1,116 @@
-import React, {
-  FC,
-  useEffect,
-  useState,
-  useCallback,
-  useRef,
-  useMemo
-} from "react";
+import React, { FC, useEffect, useState, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import Classnames from "classnames";
 import { gsap } from "gsap";
+import Classnames from "classnames";
 
 // components
 import InterfaceButton, { Colors } from "../../components/InterfaceButton";
 import InterfaceScorePanel from "../../components/InterfaceScorePanel";
 import InterfaceScoreArea from "../../components/InterfaceScoreArea";
-import InterfaceScoreClosing from "../../components/InterfaceScoreClosing";
 import InterfaceBleed, {
   BleedPosition,
   BleedColor
 } from "../../components/InterfaceBleed";
-import SpriteAnimation from "../../components/SpriteAnimation";
-
-// config
-import { animationId } from "../../config/animations";
 
 // store
 import { useTypedSelector } from "../../redux/store";
-import { useDispatch } from "react-redux";
-import { actions, selectors } from "../../redux";
+import { selectors } from "../../redux";
 
 // styles
 import "./index.scss";
 
 interface Props {
-  isTansitionActive: boolean;
-  isScoreActive: boolean;
   isGameOver: boolean;
-  onGameOverClick: any;
+  onNextClick: any;
+  isScoreActive: boolean;
 }
 
 const InterfaceScore: FC<Props> = ({
-  isTansitionActive,
-  isScoreActive,
   isGameOver,
-  onGameOverClick
+  onNextClick,
+  isScoreActive
 }) => {
   const isSuccess = useTypedSelector(selectors.transition.selectIsRoundSuccess);
   const isFail = useTypedSelector(selectors.transition.selectIsRoundFail);
-
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
-  const areaDevices = useTypedSelector(selectors.area.selectDevices);
-  const playerId = useTypedSelector(selectors.room.selectPlayerId);
-  const device = useTypedSelector(state =>
-    selectors.area.selectDevice(state, { playerId })
-  );
 
-  const dispatch = useDispatch();
   const { t } = useTranslation();
-
-  const isLastDevice = useMemo(() => {
-    return Object.keys(areaDevices).length - 1 === device.position;
-  }, [areaDevices, device.position]);
 
   // refs
 
   const $scorePanel = useRef<HTMLDivElement>(null);
-  const $scoreOverlay = useRef<HTMLDivElement>(null);
   const $scoreBottom = useRef<HTMLDivElement>(null);
+  const $scoreOverlay = useRef<HTMLDivElement>(null);
 
   // state
 
-  const [showMotion, setShowMotion] = useState(false);
-  const [animationHeight, setAnimationHeight] = useState(0);
   const [playSpritesheet, setPlaySpritesheet] = useState(false);
+  const [playPanelAnimation, setPlayPanelAnimation] = useState(false);
 
   // handlers
-
   const handleOnPanelAnimationComplete = useCallback(() => {
     setPlaySpritesheet(true);
   }, []);
 
-  const handleOnNextRoundClick = useCallback(() => {
-    setShowMotion(true);
-    gsap.to([$scorePanel.current, $scoreBottom.current], {
-      duration: 0.3,
-      opacity: 0
-    });
-  }, []);
-
-  const handleSpritesheetAnimation = useCallback((spritesheet?: any) => {
-    setAnimationHeight(spritesheet.getInfo("height"));
-  }, []);
-
-  const handleOnMotionEnded = useCallback(() => {
-    gsap
-      .to($scoreOverlay.current, {
-        duration: 1,
-        opacity: 1
-      })
-      .then(() => {
-        dispatch(actions.webSocket.emit.transition.ended());
-      });
-  }, [dispatch]);
-
   //use effects
 
   useEffect(() => {
-    if (isScoreActive) {
-      gsap.from($scorePanel.current, {
-        duration: 1,
-        yPercent: `100`
+    gsap.to($scoreOverlay.current, {
+      duration: 0.5,
+      opacity: 0
+    });
+    gsap.from($scorePanel.current, {
+      duration: 1,
+      yPercent: `100`,
+      delay: 1
+    });
+    gsap
+      .to([$scorePanel.current, $scoreBottom.current], {
+        opacity: 1,
+        delay: 1
+      })
+      .then(() => {
+        setPlayPanelAnimation(true);
       });
-      gsap.to([$scorePanel.current, $scoreBottom.current], {
-        opacity: 1
-      });
-    } else {
-      setShowMotion(false);
-      setPlaySpritesheet(false);
-    }
-  }, [areaMinHeight, isScoreActive]);
+  }, [areaMinHeight]);
 
   // return
 
   return (
-    <div className="score">
+    <div
+      className={Classnames("score", {
+        active: isScoreActive
+      })}
+    >
       <div
         className="score__container"
         style={{
           height: areaMinHeight
         }}
       >
-        {showMotion && isSuccess && <InterfaceScoreClosing />}
-
         <div ref={$scorePanel} className="score__panel">
           <InterfaceScorePanel
             isSuccess={isSuccess}
-            isActive={isTansitionActive}
             isFail={isFail}
-            isScoreActive={isScoreActive}
             playSpritesheet={playSpritesheet}
+            playPanelAnimation={playPanelAnimation}
             onAnimationComplete={handleOnPanelAnimationComplete}
           />
         </div>
 
-        <InterfaceScoreArea
-          showMotion={showMotion}
-          animationHeight={animationHeight}
-          onMotionEnded={handleOnMotionEnded}
-        />
+        <InterfaceScoreArea isGameOver={isGameOver} />
 
-        {isCreator && (
-          <div
-            ref={$scoreBottom}
-            className="score__bottom"
-            style={{
-              height: areaMinHeight
-            }}
-          >
+        <div
+          ref={$scoreBottom}
+          className="score__bottom"
+          style={{
+            height: areaMinHeight
+          }}
+        >
+          {isCreator && (
             <InterfaceButton
-              onClick={isGameOver ? onGameOverClick : handleOnNextRoundClick}
+              onClick={onNextClick}
               color={Colors.blue}
               text={
                 isGameOver
@@ -168,36 +119,24 @@ const InterfaceScore: FC<Props> = ({
               }
               classNames="score__next"
             />
-            <div className={Classnames("score__animations")}>
-              <SpriteAnimation
-                animationID={
-                  isSuccess ? animationId.group_success : animationId.group_fail
-                }
-                className="score__animation"
-                onInstance={handleSpritesheetAnimation}
-                play={playSpritesheet}
-              />
-            </div>
-          </div>
-        )}
+          )}
 
-        {isLastDevice && !isGameOver && (
-          <SpriteAnimation
-            className="score__sign"
-            animationID={animationId.sign}
-            autoplay={true}
-          />
-        )}
+          {isCreator && (
+            <img
+              className="score__animation"
+              src={require(`../../assets/illustrations/score/gifs/${
+                isSuccess ? "success" : "fail"
+              }.gif`)}
+              alt="Animation"
+            />
+          )}
+        </div>
       </div>
-
-      {isScoreActive && (
-        <div ref={$scoreOverlay} className="score__overlay"></div>
-      )}
-
       <InterfaceBleed
         position={BleedPosition.bottom}
         bgColor={BleedColor.score_bottom}
       />
+      <div ref={$scoreOverlay} className="score__overlay" />
     </div>
   );
 };

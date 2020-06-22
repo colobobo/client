@@ -171,7 +171,7 @@ export default class MainScene extends Phaser.Scene {
       const memberAnimationsConfig = config.members[roundMember.skin];
 
       const firstFrame = this.anims.generateFrameNames(
-        memberAnimationsConfig.start.texture,
+        memberAnimationsConfig?.start.texture,
         {
           prefix: memberAnimationsConfig.start.prefix,
           start: memberAnimationsConfig.start.startFrame,

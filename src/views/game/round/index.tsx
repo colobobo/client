@@ -2,7 +2,7 @@ import React, { FC, useEffect, useMemo } from "react";
 
 // store
 import { actions, selectors } from "../../../redux";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../redux/store";
 
 // components
@@ -31,9 +31,6 @@ const Round: FC<Props> = ({ isActive }) => {
   const dispatch = useDispatch();
 
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
-  const roundMembersWaiting = useSelector(selectors.round.selectMembersWaiting);
-  const roundMembersActive = useSelector(selectors.round.selectMembersActive);
-  const roundMembersArrived = useSelector(selectors.round.selectMembersArrived);
   const world = useTypedSelector(selectors.round.selectWorld);
 
   const worldProperties = useMemo(() => {
@@ -92,77 +89,6 @@ const Round: FC<Props> = ({ isActive }) => {
         )}
       </Area>
       {world && <GameInterface colorTheme={worldProperties!.colorTheme} />}
-      <div
-        className="debug-buttons"
-        style={{
-          position: "absolute",
-          top: 90,
-          left: 10,
-          display: "none",
-          flexDirection: "column",
-          pointerEvents: "none"
-        }}
-      >
-        <button
-          style={{
-            marginTop: 10
-            //pointerEvents: "all"
-          }}
-          onClick={() => {
-            dispatch(actions.webSocket.emit.round.playerReady());
-          }}
-        >
-          Emit round player ready
-        </button>
-        <button
-          style={{
-            marginTop: 10
-            //pointerEvents: "all"
-          }}
-          onClick={() => {
-            const memberId = roundMembersWaiting[0]?.id;
-            if (memberId) {
-              dispatch(
-                actions.webSocket.emit.round.memberSpawned({ memberId })
-              );
-            }
-          }}
-        >
-          Emit member spawned
-        </button>
-        <button
-          style={{
-            marginTop: 10
-            //pointerEvents: "all"
-          }}
-          onClick={() => {
-            const memberId = roundMembersActive[0]?.id;
-            if (memberId) {
-              dispatch(
-                actions.webSocket.emit.round.memberTrapped({ memberId })
-              );
-            }
-          }}
-        >
-          Emit member trapped
-        </button>
-        <button
-          style={{ marginTop: 10, pointerEvents: "all" }}
-          onClick={() => {
-            const memberId = roundMembersActive[0]?.id;
-            if (memberId) {
-              dispatch(
-                actions.webSocket.emit.round.memberArrived({ memberId })
-              );
-            }
-          }}
-        >
-          Emit member arrived
-        </button>
-        <p style={{ marginTop: 5 }}>Waiting: {roundMembersWaiting.length}</p>
-        <p style={{ marginTop: 5 }}>Active: {roundMembersActive.length}</p>
-        <p style={{ marginTop: 5 }}>Arrived: {roundMembersArrived.length}</p>
-      </div>
     </div>
   );
 };

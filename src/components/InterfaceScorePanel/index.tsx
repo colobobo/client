@@ -23,18 +23,17 @@ import "./index.scss";
 interface Props {
   isSuccess: boolean;
   isFail: boolean;
-  isActive: boolean;
-  isScoreActive: boolean;
   playSpritesheet: boolean;
+  playPanelAnimation: boolean;
   onAnimationComplete: any;
 }
 
 const InterfaceScorePanel: FC<Props> = ({
   isSuccess,
   isFail,
-  isScoreActive,
   playSpritesheet,
-  onAnimationComplete
+  onAnimationComplete,
+  playPanelAnimation
 }) => {
   const { t } = useTranslation();
   const defaultDelay = 1;
@@ -62,20 +61,37 @@ const InterfaceScorePanel: FC<Props> = ({
 
       let life = (
         <div className="score-panel__life" key={i}>
-          {currentLife <= lostLives && (
+          {currentLife < lostLives && isFail && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_dead.png`)}
+              alt="Live"
+            />
+          )}
+          {currentLife <= lostLives && isSuccess && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_dead.png`)}
+              alt="Live"
+            />
+          )}
+          {currentLifeLost && (
             <SpriteAnimation
-              pauseOnLastFrame={!currentLifeLost}
-              play={currentLifeLost && playSpritesheet}
+              play={playSpritesheet}
               animationID={animationId.teacher_fail}
               autoplay={false}
             />
           )}
-          {currentLife > lostLives && (
+          {currentLife > lostLives && isSuccess && (
             <SpriteAnimation
-              play={isSuccess && playSpritesheet}
+              play={playSpritesheet}
               animationID={animationId.teacher_success}
               autoplay={false}
-              isLoop={isSuccess}
+              isLoop={true}
+            />
+          )}
+          {currentLife > lostLives && isFail && (
+            <img
+              src={require(`../../assets/illustrations/score/teacher_alive.png`)}
+              alt="Live"
             />
           )}
         </div>
@@ -107,7 +123,7 @@ const InterfaceScorePanel: FC<Props> = ({
                     .toString()
                     .padStart(1, "0")}
                   :
-                  {Math.ceil((value % 60000) / 1000)
+                  {Math.floor((value % 60000) / 1000)
                     .toString()
                     .padStart(2, "0")}
                 </span>
@@ -148,24 +164,38 @@ const InterfaceScorePanel: FC<Props> = ({
   }, [playSpritesheet, gameScore]);
 
   useEffect(() => {
-    if (isScoreActive) {
+    const timeline = gsap.timeline({
+      delay: defaultDelay
+    });
+    const cards = document.getElementsByClassName("card");
+    timeline.to(
+      [$scoreLives.current, ...cards, $scoreRoundTotal.current],
+      0.1,
+      {
+        opacity: 0
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (playPanelAnimation) {
       const timeline = gsap.timeline({
         delay: defaultDelay
       });
 
-      timeline.from($scoreLives.current, 0.2, {
-        opacity: 0
+      timeline.to($scoreLives.current, 0.2, {
+        opacity: 1
       });
 
       const cards = document.getElementsByClassName("card");
-      timeline.from([...cards, $scoreRoundTotal.current], 0.5, {
-        opacity: 0,
+      timeline.to([...cards, $scoreRoundTotal.current], 0.5, {
+        opacity: 1,
         stagger: 0.5
       });
 
       timeline.then(onAnimationComplete);
     }
-  }, [isScoreActive, onAnimationComplete]);
+  }, [onAnimationComplete, playPanelAnimation]);
 
   // return
 
@@ -174,7 +204,7 @@ const InterfaceScorePanel: FC<Props> = ({
       <div className="score-panel__container">
         <div className="score-panel__content">
           <div className="score-panel__score">
-            <Odometer format="d" duration={1000} value={newScore} />
+            <Odometer format="dddd" duration={1000} value={newScore} />
           </div>
           <div ref={$scoreLives} className="score-panel__lives">
             {livesItem}

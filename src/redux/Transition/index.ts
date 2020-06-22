@@ -5,6 +5,7 @@ import { payloads, enums, round } from "@colobobo/library";
 
 export interface TransitionState {
   isStarted: boolean;
+  isNext: boolean;
   roundWorld: enums.World;
   roundLives: number;
   isRoundSuccess: boolean;
@@ -31,6 +32,13 @@ export const slice = createSlice({
     },
     stop: state => {
       state.isStarted = false;
+      state.isNext = false;
+    },
+    nextSuccess: (
+      state: TransitionState,
+      action: PayloadAction<payloads.transition.NextSuccess>
+    ) => {
+      state.isNext = true;
     },
     roundEnd: (
       state: TransitionState,
@@ -57,6 +65,7 @@ export const slice = createSlice({
 
 const getRoot = (state: RootState) => state.transition;
 const selectIsStarted = (state: RootState) => getRoot(state).isStarted;
+const selectIsNext = (state: RootState) => getRoot(state).isNext;
 const selectRoundWorld = (state: RootState) => getRoot(state).roundWorld;
 const selectRoundLives = (state: RootState) => getRoot(state).roundLives;
 const selectRoundFailCause = (state: RootState) =>
@@ -74,7 +83,8 @@ export const selectors = {
   selectRoundFailCause,
   selectRoundScoreDetails,
   selectIsRoundSuccess,
-  selectIsRoundFail
+  selectIsRoundFail,
+  selectIsNext
 };
 
 // reducer / actions

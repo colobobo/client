@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState, useCallback } from "react";
 import { useHistory } from "react-router-dom";
-import Classnames from "classnames";
 
 // styles
 import "./index.scss";
@@ -25,14 +24,6 @@ interface Props {
 }
 
 const Transition: FC<Props> = ({ isTansitionActive }) => {
-  // return
-
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-  const [showScore, setShowScore] = useState(false);
-  const [showEnding, setShowEnding] = useState(false);
-
   // selector
   const playerId = useSelector(selectors.room.selectPlayerId);
   const isCreator = useTypedSelector(selectors.room.selectIsCreator);
@@ -41,6 +32,7 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   );
   const isRoundFail = useTypedSelector(selectors.transition.selectIsRoundFail);
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
+  const isTransitionNext = useTypedSelector(selectors.transition.selectIsNext);
   const roundWorld = useTypedSelector(selectors.transition.selectRoundWorld);
   const roundFailCause = useTypedSelector(
     selectors.transition.selectRoundFailCause
@@ -48,16 +40,25 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   const isGameOver = useTypedSelector(selectors.game.selectIsOver);
   const hasGamePreamble = useTypedSelector(selectors.game.selectHasPreamble);
 
-  const handleOnGameOverClick = useCallback(() => {
-    setShowScore(false);
-    setShowEnding(true);
-  }, []);
+  // return
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [showScore, setShowScore] = useState(false);
+  const [showEnding, setShowEnding] = useState(false);
+  const [showFailMotion, setShowFailMotion] = useState(false);
 
   const handleOnMotionTransitionEnded = useCallback((value: boolean) => {
+    setShowFailMotion(false);
     setShowScore(value);
   }, []);
 
-  const handleTransitionEnded = useCallback(() => {
+  const handleOnNextClick = useCallback(() => {
+    dispatch(actions.webSocket.emit.transition.ended());
+  }, [dispatch]);
+
+  const handleOnMotionSharedEnded = useCallback(() => {
     if (isCreator) {
       dispatch(actions.webSocket.emit.transition.ended());
     }
@@ -73,6 +74,13 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
   // effect
 
   useEffect(() => {
+    if (isTransitionNext && isGameOver) {
+      setShowScore(false);
+      setShowEnding(true);
+    }
+  }, [isGameOver, isTransitionNext]);
+
+  useEffect(() => {
     if (isRoundSuccess && isTansitionActive) {
       setShowScore(true);
       dispatch(actions.webSocket.emit.transition.playerReady({ playerId }));
@@ -86,50 +94,51 @@ const Transition: FC<Props> = ({ isTansitionActive }) => {
     }
   }, [dispatch, handleOnMotionTransitionEnded, isTansitionActive]);
 
+  useEffect(() => {
+    if (isTansitionActive && isRoundFail) {
+      setShowFailMotion(true);
+    }
+  }, [isRoundFail, isTansitionActive]);
+
   // return
 
   return (
     <div className={`transition ${isTansitionActive ? "active" : ""}`}>
-      {isRoundFail && roundFailCause && isTansitionActive && (
-        <MotionTransition
-          failCause={roundFailCause!}
-          world={roundWorld}
-          onMotionTransitionEnded={handleOnMotionTransitionEnded}
-        />
-      )}
-      <div
-        className={Classnames("transition__score", {
-          active: showScore
-        })}
-      >
-        <InterfaceScore
-          isScoreActive={showScore}
-          isTansitionActive={isTansitionActive}
-          isGameOver={isGameOver}
-          onGameOverClick={handleOnGameOverClick}
-        />
-      </div>
       {!hasGamePreamble && (
         <MotionShared
           type={Type.preamble}
           extension={Extension.mp4}
           position={Position.center}
           isPlayed={isTransitionStarted}
-          onEnded={handleTransitionEnded}
-          onLoadedData={handleVideoIsReady}
+          onEnded={handleOnMotionSharedEnded}
+          onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
           showSkip={true}
-          onSkipClick={handleTransitionEnded}
+          onSkipClick={handleOnMotionSharedEnded}
         />
       )}
-      {isGameOver && showEnding && (
+      {showFailMotion && (
+        <MotionTransition
+          failCause={roundFailCause!}
+          world={roundWorld}
+          onMotionTransitionEnded={handleOnMotionTransitionEnded}
+        />
+      )}
+      {showScore && (
+        <InterfaceScore
+          isScoreActive={showScore}
+          isGameOver={isGameOver}
+          onNextClick={handleOnNextClick}
+        />
+      )}
+      {showEnding && (
         <MotionShared
           type={Type.ending}
           extension={Extension.mp4}
           position={Position.center}
-          isPlayed={showEnding}
-          onEnded={handleTransitionEnded}
-          onLoadedData={handleVideoIsReady}
+          isPlayed={isTransitionStarted}
+          onEnded={handleOnMotionSharedEnded}
+          onLoad={handleVideoIsReady}
           bleedColor={BleedColor.preamble}
         />
       )}

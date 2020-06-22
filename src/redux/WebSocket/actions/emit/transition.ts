@@ -9,3 +9,5 @@ export const playerReady: EmitAction<payloads.transition.PlayerReady> = createEm
 export const ended: EmitAction<payloads.transition.Ended> = createEmitAction(
   events.transition.ended
 );
+
+export const next: EmitAction = createEmitAction(events.transition.next);

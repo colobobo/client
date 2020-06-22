@@ -164,8 +164,13 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        font-size: 1rem;
-        line-height: 0.8rem;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+
+        .small {
+          font-size: 1rem;
+          line-height: 0.8rem;
+        }
       }
 
       &__picture {
@@ -247,7 +252,8 @@
           top: -15px;
           width: 30px;
           height: 30px;
-          font-size: 1.2rem;
+          font-size: 1rem;
+          line-height: 0.8rem;
         }
 
         &__picture {

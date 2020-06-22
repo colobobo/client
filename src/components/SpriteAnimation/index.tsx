@@ -11,7 +11,6 @@ import "./index.scss";
 interface Props {
   animationID: string;
   className?: string;
-  startAt?: number;
   isLoop?: boolean;
   play?: boolean;
   pauseOnLastFrame?: boolean;
@@ -22,7 +21,6 @@ interface Props {
 const NumericKeypad: FC<Props> = ({
   className,
   animationID,
-  startAt,
   onInstance,
   play,
   pauseOnLastFrame,
@@ -50,6 +48,7 @@ const NumericKeypad: FC<Props> = ({
 
   useEffect(() => {
     if (pauseOnLastFrame) {
+      console.log("go to and pause");
       spritesheetInstance.current?.goToAndPause(steps);
     }
   }, [pauseOnLastFrame, steps]);
