@@ -6,7 +6,8 @@ import {
   PlatformAnimationsKey,
   PlatformPosition,
   PlatformsAnimationConfig,
-  PlatformsPositionConfig
+  PlatformsPositionConfig,
+  platformsShapes
 } from "../../config/platforms";
 
 // utils
@@ -89,7 +90,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
     this.scene.matter.alignBody(
       this.body as MatterJS.BodyType,
       this.x,
-      this.scene.game.areaHeight * this.pixelRatio,
+      this.scene.game.areaHeight * 0.9 * this.pixelRatio,
       Phaser.Display.Align.BOTTOM_CENTER
     );
 
@@ -101,7 +102,7 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
   }
 
   setBodyWithShape() {
-    const shapes = this.scene.cache.json.get("shapes");
+    const shapes = this.scene.cache.json.get(platformsShapes);
     this.setScale(1);
     this.setBody(shapes.platform, this.options);
   }

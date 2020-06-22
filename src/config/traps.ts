@@ -9,6 +9,10 @@ type GeneratedTrapsAnimationConfig = {
   texture: string;
   animationKey: string;
   prefix: string;
+  shapes: {
+    key: string;
+    path: string;
+  };
 };
 
 export type TrapsAnimationConfig = EditableTrapsAnimationConfig &
@@ -38,7 +42,11 @@ const getGeneratedConfig = (
   return {
     prefix: `${world}/${trapName}/`,
     animationKey: `traps_${world}_${trapName}`,
-    texture: trapsTexture
+    texture: trapsTexture,
+    shapes: {
+      key: `shapes-traps-${world}-${trapName}`,
+      path: `assets/shapes/traps/${world}/${trapName}/shapes.json`
+    }
   };
 };
 

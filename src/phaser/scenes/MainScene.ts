@@ -263,15 +263,25 @@ export default class MainScene extends Phaser.Scene {
       const trapAnimationConfig: TrapsAnimationConfig = config.traps[this.game.world][playerRolePropertiesTrap.type];
       /* eslint-enable */
 
+      const firstFrame = this.anims.generateFrameNames(
+        trapAnimationConfig.texture,
+        {
+          prefix: trapAnimationConfig.prefix,
+          start: trapAnimationConfig.startFrame,
+          end: trapAnimationConfig.endFrame,
+          zeroPad: 5
+        }
+      )[0]?.frame as string;
+
       new Trap({
         pixelRatio: this.game.pixelRatio,
         scene: this,
         x: (device.offsetX + device.width * 0.5) * this.game.pixelRatio,
         y: 0,
-        options: { isStatic: true },
+        frame: firstFrame,
+        options: { isStatic: true, isSensor: true },
         animationConfig: trapAnimationConfig,
-        animationRepeatDelay: playerRolePropertiesTrap.interval,
-        collisionEnabled: false
+        animationRepeatDelay: playerRolePropertiesTrap.interval
       });
     });
   }
