@@ -488,6 +488,8 @@ export default class MainScene extends Phaser.Scene {
   // round tick : members update
 
   onGameMembersUpdate() {
+    if (!this.isActive) return;
+
     this.game.roundMembersArray.forEach(roundMember => {
       const member = this.members.find(
         _member => _member.id === roundMember.id
