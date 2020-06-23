@@ -152,7 +152,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
         alpha: 0,
         duration: 200,
         onComplete: () => {
-          this.setVelocity(0);
+          this.setVelocity(0, 0);
           this.setPositionToStartPlatform();
         }
       });
@@ -161,7 +161,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   // STATES
 
   spawned() {
-    this.trappedTimeline.stop();
+    this.trappedTimeline.pause();
     this.setPositionToStartPlatform();
     this.setFixedRotation();
     this.status = enums.member.Status.active;
@@ -182,7 +182,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   moved(roundMember: RoundMembersArray[0]) {
-    if (!roundMember) return;
+    if (!roundMember || this.status !== enums.member.Status.active) return;
 
     // update member position and velocity
     this.setPosition(
@@ -214,11 +214,11 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   trapped() {
-    this.disableInteractive();
+    this.setVelocity(0, 0);
     this.setCollidesWith(0);
-    this.setVelocity(0);
     this.setIgnoreGravity(true);
     this.status = enums.member.Status.waiting;
+    this.disableInteractive();
 
     // animate
 

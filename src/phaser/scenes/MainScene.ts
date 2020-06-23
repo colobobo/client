@@ -31,6 +31,8 @@ export default class MainScene extends Phaser.Scene {
   matterCollision: typeof PhaserMatterCollisionPlugin;
 
   // scene variables
+  isActive: boolean = true;
+
   collisionCategories: { [key in CollisionCategories]: number } = {
     [CollisionCategories.default]: 1,
     [CollisionCategories.member]: 0,
@@ -465,10 +467,13 @@ export default class MainScene extends Phaser.Scene {
     // TODO: refacto
     if (waitingMembers.length === 1) {
       setTimeout(() => {
-        if (!this.platforms.start?.sensor!.getData("hasMemberOn")) {
+        if (
+          this.isActive &&
+          !this.platforms.start?.sensor!.getData("hasMemberOn")
+        ) {
           this.newMemberSpawn();
         }
-      }, 500);
+      }, 1500);
     }
   }
 
@@ -587,6 +592,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   destroy() {
+    this.isActive = false;
     this.scene.stop();
     this.matter.world.resetCollisionIDs();
     this.matter.world.destroy();
