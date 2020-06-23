@@ -61,6 +61,10 @@ const GameTimer: FC<Props> = ({ color }) => {
       duration: duration / 1000,
       onUpdate: handleAnimateTimerUpdate
     });
+
+    return () => {
+      $timerTween.current?.kill();
+    };
   }, [duration, handleAnimateTimerUpdate]);
 
   useEffect(() => {
