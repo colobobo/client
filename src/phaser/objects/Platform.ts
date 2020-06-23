@@ -255,8 +255,8 @@ export default class Platform extends Phaser.Physics.Matter.Sprite {
           // wait 0.5 second
           setTimeout(() => {
             // if sensor not currently colliding with member : new member spawn
-            if (!this.sensor!.getData("hasMemberOn")) {
-              this.scene.newMemberSpawn();
+            if (!this.sensor?.getData("hasMemberOn")) {
+              this?.scene?.newMemberSpawn();
             }
           }, 500);
         }

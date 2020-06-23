@@ -42,6 +42,7 @@ export default class MainScene extends Phaser.Scene {
   memberPositionOffset: number = 0;
   memberPositionWrapRectangle: Phaser.Geom.Rectangle;
   memberManagerDetectRectangle: Phaser.Geom.Rectangle;
+  draggedMember: Member | null = null;
   platforms: {
     [key in PlatformPosition]?: Platform;
   } = {};
@@ -325,6 +326,8 @@ export default class MainScene extends Phaser.Scene {
       console.log("dragstart ->", (body.gameObject as Member)?.id);
 
       if (body.gameObject instanceof Member) {
+        this.draggedMember = body.gameObject;
+
         this.game.dispatch(
           actions.webSocket.emit.round.memberDragStart({
             playerId: this.game.playerId,
@@ -342,6 +345,7 @@ export default class MainScene extends Phaser.Scene {
 
       if (body.gameObject instanceof Member) {
         console.log("member drag end");
+        this.draggedMember = null;
         this.game.dispatch(
           actions.webSocket.emit.round.memberDragEnd({
             memberId: body.gameObject.id
@@ -353,15 +357,18 @@ export default class MainScene extends Phaser.Scene {
     this.matter.world.on("beforeupdate", () => {
       // wrap member position
       this.members.forEach(member => {
-        member.setX(
-          Phaser.Math.Wrap(
-            member.x,
-            this.memberPositionOffset * this.game.pixelRatio,
-            this.memberPositionOffset * this.game.pixelRatio +
-              this.game.areaWidth * this.game.pixelRatio
-          )
+        const wrappedX = Phaser.Math.Wrap(
+          member.x,
+          this.memberPositionOffset * this.game.pixelRatio,
+          this.memberPositionOffset * this.game.pixelRatio +
+            this.game.areaWidth * this.game.pixelRatio
         );
+        if (wrappedX !== member.x) {
+          member.setX(wrappedX);
+        }
       });
+
+      // pointer constraint : prevent Continuous Collision Detection issue
 
       const { pointA, pointB, bodyB } = this.pointerContraint!.constraint;
       // pointA is pointer
@@ -402,11 +409,11 @@ export default class MainScene extends Phaser.Scene {
       waitingMember[0] &&
       this.game.playerId === this.getPlayerWithPlatformRole()
     ) {
-      console.log("SPAWN >>>>> ", waitingMember[0].id);
+      console.log("SPAWN >>>>> ", waitingMember[waitingMember.length - 1].id);
       // emit member spawned
       this.game.dispatch(
         actions.webSocket.emit.round.memberSpawned({
-          memberId: waitingMember[0].id
+          memberId: waitingMember[waitingMember.length - 1].id
         })
       );
     }
@@ -445,6 +452,10 @@ export default class MainScene extends Phaser.Scene {
   onMemberTrapped(member: Member) {
     console.log("on member trapped", member.id);
 
+    if (member.id === this.draggedMember?.id) {
+      this.pointerContraint?.stopDrag();
+    }
+
     member.trapped();
 
     const waitingMembers = this.getWaitingMembers();
@@ -457,7 +468,7 @@ export default class MainScene extends Phaser.Scene {
         if (!this.platforms.start?.sensor!.getData("hasMemberOn")) {
           this.newMemberSpawn();
         }
-      }, 800);
+      }, 500);
     }
   }
 
@@ -576,8 +587,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   destroy() {
-    this.scene.pause();
-    this.members = [];
+    this.scene.stop();
     this.matter.world.resetCollisionIDs();
     this.matter.world.destroy();
     this.matterCollision.removeAllCollideListeners();

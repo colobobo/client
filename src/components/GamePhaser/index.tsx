@@ -137,16 +137,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
     $game.current?.setRoundMembersArray(roundMembersArray);
   }, [roundMembersArray]);
 
-  // listen isRoundStarted -> pause or resume
-
-  useEffect(() => {
-    if (isGameReady) {
-      // TODO : play / pause game
-      // isRoundStarted
-      //   ? $mainScene.current.matter.resume()
-      //   : $mainScene.current.matter.pause();
-    }
-  }, [isGameReady, isRoundStarted]);
+  // -------
 
   useEffect(() => {
     if (isRoundStarted && roundId > 1) {

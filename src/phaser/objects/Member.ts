@@ -14,6 +14,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   animationsConfig: MembersAnimationsConfig;
   isDragged: boolean = false;
   skin: enums.member.Skins;
+  trappedTimeline: Phaser.Tweens.Timeline;
 
   constructor({
     scene,
@@ -55,6 +56,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
 
     this.skin = skin;
 
+    this.trappedTimeline = this.scene.tweens.createTimeline();
+
     this.init();
   }
 
@@ -81,6 +84,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     this.setCollidesWith(0);
 
     this.createAnimations();
+    this.createTween();
 
     this.setPositionToStartPlatform();
   }
@@ -131,7 +135,33 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     });
   }
 
+  createTween() {
+    this.trappedTimeline
+      .add({
+        targets: this,
+        alpha: 0.2,
+        duration: 100
+      })
+      .add({
+        targets: this,
+        alpha: 1,
+        duration: 100
+      })
+      .add({
+        targets: this,
+        alpha: 0,
+        duration: 200,
+        onComplete: () => {
+          this.setVelocity(0);
+          this.setPositionToStartPlatform();
+        }
+      });
+  }
+
+  // STATES
+
   spawned() {
+    this.trappedTimeline.stop();
     this.setPositionToStartPlatform();
     this.setFixedRotation();
     this.status = enums.member.Status.active;
@@ -152,6 +182,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   moved(roundMember: RoundMembersArray[0]) {
+    if (!roundMember) return;
+
     // update member position and velocity
     this.setPosition(
       roundMember.position.x * this.pixelRatio,
@@ -182,34 +214,15 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   trapped() {
+    this.disableInteractive();
+    this.setCollidesWith(0);
     this.setVelocity(0);
     this.setIgnoreGravity(true);
-    this.setCollidesWith(0);
-    this.disableInteractive();
     this.status = enums.member.Status.waiting;
 
     // animate
 
-    const timeline = this.scene.tweens.createTimeline();
-
-    timeline
-      .add({
-        targets: this,
-        alpha: 0.2,
-        duration: 100
-      })
-      .add({
-        targets: this,
-        alpha: 1,
-        duration: 100
-      })
-      .add({
-        targets: this,
-        alpha: 0,
-        duration: 200
-      });
-
-    timeline.play();
+    this.trappedTimeline.play();
   }
 
   arrived() {
