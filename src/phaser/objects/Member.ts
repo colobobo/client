@@ -95,7 +95,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   }
 
   setPositionToStartPlatform() {
-    this.scene.matter.alignBody(
+    this.scene?.matter.alignBody(
       this.body as MatterJS.BodyType,
       this.scene.platforms.start!.x,
       (this.scene.platforms.start!.body as MatterJS.BodyType).bounds.min.y,
