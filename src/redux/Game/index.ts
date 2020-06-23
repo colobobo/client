@@ -11,6 +11,7 @@ export interface GameState {
   hasPreamble: boolean;
   isOver: boolean;
   score: number;
+  hasDebug: boolean;
 }
 
 export const slice = createSlice({
@@ -21,7 +22,8 @@ export const slice = createSlice({
     isOver: false,
     sceneType: null,
     disposition: enums.game.Disposition.line,
-    lives: 0
+    lives: 0,
+    hasDebug: false
   } as GameState,
   reducers: {
     startSuccess: (
@@ -64,6 +66,12 @@ export const slice = createSlice({
       state.isOver = lives === 0;
       state.score = gameScore;
       console.log(gameScore, state.score);
+    },
+    setHasDebug: (
+      state: GameState,
+      action: PayloadAction<{ hasDebug: boolean }>
+    ) => {
+      state.hasDebug = action.payload.hasDebug;
     }
   }
 });
@@ -79,6 +87,7 @@ const selectDisposition = (state: RootState) => getRoot(state).disposition;
 const selectHasPreamble = (state: RootState) => getRoot(state).hasPreamble;
 const selectIsOver = (state: RootState) => getRoot(state).isOver;
 const selectScore = (state: RootState) => getRoot(state).score;
+const selectHasDebug = (state: RootState) => getRoot(state).hasDebug;
 
 export const selectors = {
   selectIsStarted,
@@ -88,7 +97,8 @@ export const selectors = {
   selectLives,
   selectHasPreamble,
   selectIsOver,
-  selectScore
+  selectScore,
+  selectHasDebug
 };
 
 // reducer / actions

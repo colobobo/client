@@ -6,13 +6,15 @@ export const getGameConfig = ({
   areaHeight,
   parent,
   scene,
-  pixelRatio = window.devicePixelRatio
+  pixelRatio = window.devicePixelRatio,
+  debug = false
 }: {
   areaWidth: number;
   areaHeight: number;
   parent: Phaser.Types.Core.GameConfig["parent"];
   scene?: Phaser.Types.Core.GameConfig["scene"];
   pixelRatio?: number;
+  debug?: boolean;
 }): Phaser.Types.Core.GameConfig => ({
   type: Phaser.AUTO,
   width: window.innerWidth * pixelRatio,
@@ -29,7 +31,7 @@ export const getGameConfig = ({
       // TODO: test sleeping
       // enableSleeping: true
       debug:
-        process.env.NODE_ENV === "development"
+        process.env.NODE_ENV === "development" || debug
           ? {
               showBody: true,
               showStaticBody: true,

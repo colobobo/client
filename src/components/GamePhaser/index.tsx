@@ -38,6 +38,8 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
 
   const isTransitionStarted = useSelector(selectors.transition.selectIsStarted);
 
+  const gameHasDebug = useSelector(selectors.game.selectHasDebug);
+
   const pixelRatio = useMemo(() => window.devicePixelRatio, []);
 
   // DOM REF
@@ -60,7 +62,8 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
         areaHeight,
         areaWidth,
         parent: $parent.current!,
-        pixelRatio
+        pixelRatio,
+        debug: gameHasDebug
       });
 
       $game.current = new Game(gameConfig, {
@@ -85,6 +88,7 @@ const GamePhaser: FC<Props> = ({ isActive }) => {
     areaHeight,
     areaWidth,
     dispatch,
+    gameHasDebug,
     isRoundStarted,
     pixelRatio,
     playerId,

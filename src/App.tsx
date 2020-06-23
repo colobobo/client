@@ -20,6 +20,10 @@ const App: FC = () => {
     return urlParams.has("admin");
   }, [urlParams]);
 
+  const urlHasDebug = useMemo(() => {
+    return urlParams.has("debug");
+  }, [urlParams]);
+
   const urlAdminIndex = useMemo(() => {
     return urlParams.get("admin");
   }, [urlParams]);
@@ -79,6 +83,18 @@ const App: FC = () => {
       );
     }
   }, [dispatch, urlAdminIndex, urlAdminRoomId, urlIsAdmin, urlRoomId]);
+
+  // if url debug
+
+  useEffect(() => {
+    if (urlHasDebug) {
+      dispatch(
+        actions.game.setHasDebug({
+          hasDebug: true
+        })
+      );
+    }
+  }, [dispatch, urlHasDebug]);
 
   // subscribe all socket events
 
