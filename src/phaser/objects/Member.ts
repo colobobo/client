@@ -163,7 +163,6 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
   spawned() {
     this.trappedTimeline.pause();
     this.setPositionToStartPlatform();
-    this.setFixedRotation();
     this.status = enums.member.Status.active;
 
     this.setAlpha(1);

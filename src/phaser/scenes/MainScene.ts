@@ -596,6 +596,7 @@ export default class MainScene extends Phaser.Scene {
   destroy() {
     this.isActive = false;
     this.scene.stop();
+    this.members = [];
     this.matter.world.resetCollisionIDs();
     this.matter.world.destroy();
     this.matterCollision.removeAllCollideListeners();
