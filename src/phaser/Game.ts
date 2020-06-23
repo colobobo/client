@@ -117,7 +117,7 @@ export default class Game extends Phaser.Game {
     // TODO : update
     setTimeout(() => {
       this.scene.add("main-scene", this.mainScene, true);
-    }, 100);
+    }, 500);
   }
 
   pause() {

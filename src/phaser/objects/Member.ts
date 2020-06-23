@@ -7,7 +7,7 @@ import { MembersAnimationsConfig, membersShapes } from "../../config/members";
 export default class Member extends Phaser.Physics.Matter.Sprite {
   pixelRatio: number;
   id: string;
-  status: enums.member.Status = enums.member.Status.waiting;
+  status: enums.member.Status;
   scene: MainScene;
   baseScale: number = 1;
   options?: Phaser.Types.Physics.Matter.MatterBodyConfig;
@@ -24,6 +24,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     frame,
     options,
     id,
+    status,
     pixelRatio,
     animationsConfig,
     skin
@@ -38,6 +39,7 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     frame?: string;
     animationsConfig: MembersAnimationsConfig;
     skin: enums.member.Skins;
+    status: enums.member.Status;
   }) {
     super(scene.matter.world, x, y, texture, frame, options);
 
@@ -51,6 +53,8 @@ export default class Member extends Phaser.Physics.Matter.Sprite {
     this.pixelRatio = pixelRatio;
 
     this.id = id;
+
+    this.status = status;
 
     this.animationsConfig = animationsConfig;
 

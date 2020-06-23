@@ -202,6 +202,7 @@ export default class MainScene extends Phaser.Scene {
           ignoreGravity: true
         },
         id: roundMember.id,
+        status: roundMember.status,
         animationsConfig: memberAnimationsConfig,
         skin: roundMember.skin,
         pixelRatio: this.game.pixelRatio
@@ -586,10 +587,12 @@ export default class MainScene extends Phaser.Scene {
 
     this.events.on("destroy", () => {
       console.log("scene destroy");
+      this.isActive = false;
     });
 
     this.events.on("shutdown", () => {
       console.log("scene shutdown");
+      this.isActive = false;
     });
   }
 
