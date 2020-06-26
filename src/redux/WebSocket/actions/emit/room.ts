@@ -1,11 +1,9 @@
-import { createEmitAction, EmitAction } from "../actionCreators";
+import { createEmitAction } from "../actionCreators";
 
 import { events, payloads } from "@colobobo/library";
 
-export const create: EmitAction<payloads.room.Create> = createEmitAction(
+export const create = createEmitAction<payloads.room.Create>(
   events.room.create
 );
 
-export const join: EmitAction<payloads.room.Join> = createEmitAction(
-  events.room.join
-);
+export const join = createEmitAction<payloads.room.Join>(events.room.join);

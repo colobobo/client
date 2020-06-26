@@ -11,7 +11,7 @@ export type EmitAction<T = {}> = (payload?: T) => WebSocketAction;
 
 // Emit
 
-export const createEmitAction = (event: Events): EmitAction => {
+export const createEmitAction = <T>(event: Events): EmitAction<T> => {
   return payload => ({
     type: WebSocketActionTypes.wsEmit,
     event,

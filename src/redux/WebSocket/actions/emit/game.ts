@@ -1,9 +1,9 @@
-import { createEmitAction, EmitAction } from "../actionCreators";
+import { createEmitAction } from "../actionCreators";
 
 import { events, payloads } from "@colobobo/library";
 
-export const start: EmitAction = createEmitAction(events.game.start);
+export const start = createEmitAction(events.game.start);
 
-export const dispositionSelected: EmitAction<payloads.game.DispositionSelected> = createEmitAction(
-  events.game.dispositionSelected
-);
+export const dispositionSelected = createEmitAction<
+  payloads.game.DispositionSelected
+>(events.game.dispositionSelected);

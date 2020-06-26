@@ -1,43 +1,43 @@
-import { createEmitAction, EmitAction } from "../actionCreators";
+import { createEmitAction } from "../actionCreators";
 
 import { events, payloads } from "@colobobo/library";
 
-export const playerReady: EmitAction<payloads.round.PlayerReady> = createEmitAction(
+export const playerReady = createEmitAction<payloads.round.PlayerReady>(
   events.round.playerReady
 );
 
-export const statusUpdate: EmitAction<payloads.round.StatusUpdate> = createEmitAction(
+export const statusUpdate = createEmitAction<payloads.round.StatusUpdate>(
   events.round.statusUpdate
 );
 
-export const memberSpawned: EmitAction<payloads.round.MemberSpawned> = createEmitAction(
+export const memberSpawned = createEmitAction<payloads.round.MemberSpawned>(
   events.round.memberSpawned
 );
 
-export const memberDragStart: EmitAction<payloads.round.MemberDragStart> = createEmitAction(
+export const memberDragStart = createEmitAction<payloads.round.MemberDragStart>(
   events.round.memberDragStart
 );
 
-export const memberDragEnd: EmitAction<payloads.round.MemberDragEnd> = createEmitAction(
+export const memberDragEnd = createEmitAction<payloads.round.MemberDragEnd>(
   events.round.memberDragEnd
 );
 
-export const memberMove: EmitAction<payloads.round.MemberMove> = createEmitAction(
+export const memberMove = createEmitAction<payloads.round.MemberMove>(
   events.round.memberMove
 );
 
-export const memberTrapped: EmitAction<payloads.round.MemberTrapped> = createEmitAction(
+export const memberTrapped = createEmitAction<payloads.round.MemberTrapped>(
   events.round.memberTrapped
 );
 
-export const memberDropped: EmitAction<payloads.round.MemberDropped> = createEmitAction(
+export const memberDropped = createEmitAction<payloads.round.MemberDropped>(
   events.round.memberDropped
 );
 
-export const memberArrived: EmitAction<payloads.round.MemberArrived> = createEmitAction(
+export const memberArrived = createEmitAction<payloads.round.MemberArrived>(
   events.round.memberArrived
 );
 
-export const memberUpdateManager: EmitAction<payloads.round.MemberUpdateManager> = createEmitAction(
-  events.round.memberUpdateManager
-);
+export const memberUpdateManager = createEmitAction<
+  payloads.round.MemberUpdateManager
+>(events.round.memberUpdateManager);
