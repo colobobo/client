@@ -1,11 +1,15 @@
-
 <div align="center">
 <img src="https://raw.githubusercontent.com/colobobo/client/master/src/assets/logo/logo-simple.png" alt="logo" width="400" />
 </div>
 
 <h4 align="center">A multiplayer mobile game with a shared gaming interface across devices</h4>
 
-<h6 align="center">Made with :</h6>
+<h6 align="center">
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="build with love" />
+  <br/>
+  <br/>
+  and :
+</h6>
 
 <p align="center">
   <a href="https://www.typescriptlang.org/">TypeScript</a> •
