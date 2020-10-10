@@ -16,12 +16,13 @@
   <a href="https://reactjs.org">React</a> •
   <a href="https://redux.js.org/">Redux</a> •
   <a href="https://phaser.io/">Phaser</a> •
-  <a href="https://socket.io/">Socket.IO</a>
+  <a href="https://socket.io/">Socket.IO</a> •
+  <a href="https://nodejs.org/">Node</a>
 </p>
 
 # Colobobo - Client
 
-This repo is the client part of Colobobo project. The others parts :
+This repository is the client part of Colobobo project. The other parts :
 - [Server](https://github.com/colobobo/server) 
 - [Library](https://github.com/colobobo/library)
 
