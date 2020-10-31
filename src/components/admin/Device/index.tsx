@@ -1,5 +1,5 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
-import { devices } from "../../../datas/devices";
+import { adminDevices } from "../../../config";
 
 //style
 import "./index.scss";
@@ -30,7 +30,9 @@ const Device: FC<Props> = ({
 }) => {
   // selectors
 
-  const adminDevices = useSelector(selectors.admin.selectDevices);
+  const adminConnectedDevices = useSelector(
+    selectors.admin.selectConnectedDevices
+  );
   const areaDevices = useSelector(selectors.area.selectDevices);
 
   // state
@@ -46,18 +48,18 @@ const Device: FC<Props> = ({
   const chooseDevice = useCallback((event: any) => {
     setCurrentDevice({
       index: event.target.value,
-      name: devices[event.target.value].name,
-      resolution: devices[event.target.value].resolution
+      name: adminDevices[event.target.value].name,
+      resolution: adminDevices[event.target.value].resolution
     });
   }, []);
 
   // memo
 
   const position = useMemo(() => {
-    const playerId = adminDevices[userId.toString()]?.playerId;
+    const playerId = adminConnectedDevices[userId.toString()]?.playerId;
 
     return areaDevices[playerId] ? areaDevices[playerId].position : 100;
-  }, [adminDevices, areaDevices, userId]);
+  }, [adminConnectedDevices, areaDevices, userId]);
 
   const iframeUrlSearchParams = useMemo(() => {
     const urlSearchParams = new URLSearchParams();
@@ -81,7 +83,7 @@ const Device: FC<Props> = ({
   return (
     <div className="device" style={{ order: position }}>
       <select value={currentDevice.index} onChange={chooseDevice}>
-        {devices.map((device, index) => (
+        {adminDevices.map((device, index) => (
           <option value={index} key={index}>
             {device.name}
           </option>

@@ -1,15 +1,14 @@
 import React, { useState, FC, useCallback, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { actions, selectors } from "../../../redux";
 import Device from "../../../components/admin/Device";
 
 //config
-import { groups } from "../../../config/groups";
-import { devices } from "../../../datas/devices";
+import { adminGroups, adminDevices } from "../../../config";
 
 //style
 import "./index.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { actions, selectors } from "../../../redux";
 
 interface room {
   name: string;
@@ -56,11 +55,11 @@ const Group: FC = () => {
   useEffect(() => {
     if (groupId) {
       setCurrentRoom({
-        name: groups[parseInt(groupId)].name,
-        devices: groups[parseInt(groupId)].devices,
-        autoconnect: groups[parseInt(groupId)].autoconnect
+        name: adminGroups[parseInt(groupId)].name,
+        devices: adminGroups[parseInt(groupId)].devices,
+        autoconnect: adminGroups[parseInt(groupId)].autoconnect
       });
-      setDevicesNumber(groups[parseInt(groupId)].devices.length);
+      setDevicesNumber(adminGroups[parseInt(groupId)].devices.length);
     }
   }, [groupId]);
 
@@ -73,16 +72,16 @@ const Group: FC = () => {
 
         if (currentRoom.devices[i] != null) {
           deviceName = currentRoom.devices[i];
-          for (let j = 0; j < devices.length; j++) {
-            if (devices[j].name === deviceName) {
+          for (let j = 0; j < adminDevices.length; j++) {
+            if (adminDevices[j].name === deviceName) {
               deviceIndex = j;
-              deviceResolution = devices[j].resolution;
+              deviceResolution = adminDevices[j].resolution;
             }
           }
         } else {
           deviceIndex = 0;
-          deviceName = devices[0].name;
-          deviceResolution = devices[0].resolution;
+          deviceName = adminDevices[0].name;
+          deviceResolution = adminDevices[0].resolution;
         }
 
         const deviceData = {

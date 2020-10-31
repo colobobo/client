@@ -1,4 +1,4 @@
-export { groups } from "./groups";
+export { adminGroups, adminDevices } from "./admin";
 export { membersConfigsBySkin as members } from "./members";
 export { getPlatFormsConfig } from "./platforms";
 export { trapsConfigsByWorlds as traps } from "./traps";

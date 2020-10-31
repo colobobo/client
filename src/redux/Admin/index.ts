@@ -7,7 +7,7 @@ export interface AdminState {
   status: boolean;
   roomId: string | null;
   deviceIndex: string;
-  devices: { [adminDeviceIndex: string]: { playerId: string } };
+  connectedDevices: { [adminDeviceIndex: string]: { playerId: string } };
 }
 
 export const slice = createSlice({
@@ -15,7 +15,7 @@ export const slice = createSlice({
   initialState: {
     status: false,
     roomId: null,
-    devices: {}
+    connectedDevices: {}
   } as AdminState,
   reducers: {
     activate: (state: AdminState) => {
@@ -40,7 +40,7 @@ export const slice = createSlice({
       action: PayloadAction<payloads.admin.DeviceConnected>
     ) => {
       const { deviceIndex, playerId } = action.payload.data;
-      state.devices[deviceIndex] = { playerId };
+      state.connectedDevices[deviceIndex] = { playerId };
     }
   }
 });
@@ -51,12 +51,13 @@ const getRoot = (state: RootState) => state.admin;
 const selectStatus = (state: RootState) => getRoot(state).status;
 const selectRoomId = (state: RootState) => getRoot(state).roomId;
 const selectDeviceIndex = (state: RootState) => getRoot(state).deviceIndex;
-const selectDevices = (state: RootState) => getRoot(state).devices;
+const selectConnectedDevices = (state: RootState) =>
+  getRoot(state).connectedDevices;
 export const selectors = {
   selectStatus,
   selectRoomId,
   selectDeviceIndex,
-  selectDevices
+  selectConnectedDevices
 };
 
 // reducer / actions
