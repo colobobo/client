@@ -1,23 +1,15 @@
 import React, { useState, FC, useMemo, useCallback } from "react";
 import { adminDevices } from "../../../config";
+import { AdminDevicesName, AdminDevice } from "../../../config/admin";
 
 //style
 import "./index.scss";
 import { useSelector } from "react-redux";
 import { selectors } from "../../../redux";
 
-interface currentDevice {
-  index: number;
-  name: string;
-  resolution: {
-    width: number;
-    height: number;
-  };
-}
-
 interface Props {
   userId: number;
-  deviceData: any;
+  deviceData: AdminDevice;
   adminRoomId: string;
   autoconnect?: boolean;
 }
@@ -37,20 +29,14 @@ const Device: FC<Props> = ({
 
   // state
 
-  const [currentDevice, setCurrentDevice] = useState<currentDevice>({
-    index: deviceData?.index,
-    name: deviceData?.name,
-    resolution: deviceData?.resolution
-  });
+  const [currentDevice, setCurrentDevice] = useState<AdminDevice>(deviceData);
 
   // handlers
 
   const chooseDevice = useCallback((event: any) => {
-    setCurrentDevice({
-      index: event.target.value,
-      name: adminDevices[event.target.value].name,
-      resolution: adminDevices[event.target.value].resolution
-    });
+    if (event.target.value) {
+      setCurrentDevice(adminDevices[event.target.value as AdminDevicesName]);
+    }
   }, []);
 
   // memo
@@ -82,9 +68,9 @@ const Device: FC<Props> = ({
 
   return (
     <div className="device" style={{ order: position }}>
-      <select value={currentDevice.index} onChange={chooseDevice}>
-        {adminDevices.map((device, index) => (
-          <option value={index} key={index}>
+      <select value={currentDevice.name} onChange={chooseDevice}>
+        {Object.values(adminDevices).map(device => (
+          <option value={device.name} key={device.name}>
             {device.name}
           </option>
         ))}
@@ -92,8 +78,8 @@ const Device: FC<Props> = ({
       <div
         className="device__screen"
         style={{
-          width: currentDevice.resolution.width,
-          height: currentDevice.resolution.height
+          width: currentDevice.dimensions.width,
+          height: currentDevice.dimensions.height
         }}
       >
         <iframe

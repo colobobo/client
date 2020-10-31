@@ -1,161 +1,175 @@
-export const devicesName = {
-  iPhone_5_SE: "iPhone 5/SE",
-  iPhone_6_7_8: "iPhone 6/7/8",
-  iPhone_6_7_8_Plus: "iPhone 6/7/8 Plus",
-  iPhone_X: "iPhone X",
-  iPhone_11: "iPhone 11",
-  iPhone_11_Pro: "iPhone 11 Pro",
-  iPad: "iPad",
-  iPad_Pro: "iPad Pro",
-  Samsung_Galaxy_S6: "Samsung Galaxy S6",
-  Samsung_Galaxy_S8: "Samsung Galaxy S8",
-  Samsung_Galaxy_S10_Plus: "Samsung Galaxy S10+"
+export enum AdminDevicesName {
+  iPhone_5_SE = "iPhone 5/SE",
+  iPhone_6_7_8 = "iPhone 6/7/8",
+  iPhone_6_7_8_Plus = "iPhone 6/7/8 Plus",
+  iPhone_X = "iPhone X",
+  iPhone_11 = "iPhone 11",
+  iPhone_11_Pro = "iPhone 11 Pro",
+  iPad = "iPad",
+  iPad_Pro = "iPad Pro",
+  Samsung_Galaxy_S6 = "Samsung Galaxy S6",
+  Samsung_Galaxy_S8 = "Samsung Galaxy S8",
+  Samsung_Galaxy_S10_Plus = "Samsung Galaxy S10+"
+}
+
+export type AdminDevice = {
+  name: AdminDevicesName;
+  dimensions: {
+    width: number;
+    height: number;
+  };
 };
 
-export const adminDevices = [
-  {
-    name: devicesName.iPhone_5_SE,
-    resolution: {
+export const adminDevices: { [key in AdminDevicesName]: AdminDevice } = {
+  [AdminDevicesName.iPhone_5_SE]: {
+    name: AdminDevicesName.iPhone_5_SE,
+    dimensions: {
       width: 320,
       height: 568
     }
   },
-  {
-    name: devicesName.iPhone_6_7_8,
-    resolution: {
+  [AdminDevicesName.iPhone_6_7_8]: {
+    name: AdminDevicesName.iPhone_6_7_8,
+    dimensions: {
       width: 375,
       height: 667
     }
   },
-  {
-    name: devicesName.iPhone_6_7_8_Plus,
-    resolution: {
+  [AdminDevicesName.iPhone_6_7_8_Plus]: {
+    name: AdminDevicesName.iPhone_6_7_8_Plus,
+    dimensions: {
       width: 414,
       height: 736
     }
   },
-  {
-    name: devicesName.iPhone_X,
-    resolution: {
+  [AdminDevicesName.iPhone_X]: {
+    name: AdminDevicesName.iPhone_X,
+    dimensions: {
       width: 375,
       height: 812
     }
   },
-  {
-    name: devicesName.iPhone_11,
-    resolution: {
+  [AdminDevicesName.iPhone_11]: {
+    name: AdminDevicesName.iPhone_11,
+    dimensions: {
       width: 414,
       height: 896
     }
   },
-  {
-    name: devicesName.iPhone_11_Pro,
-    resolution: {
+  [AdminDevicesName.iPhone_11_Pro]: {
+    name: AdminDevicesName.iPhone_11_Pro,
+    dimensions: {
       width: 375,
       height: 812
     }
   },
-  {
-    name: devicesName.iPad,
-    resolution: {
+  [AdminDevicesName.iPad]: {
+    name: AdminDevicesName.iPad,
+    dimensions: {
       width: 768,
       height: 1024
     }
   },
-  {
-    name: devicesName.iPad_Pro,
-    resolution: {
+  [AdminDevicesName.iPad_Pro]: {
+    name: AdminDevicesName.iPad_Pro,
+    dimensions: {
       width: 1024,
       height: 1366
     }
   },
-  {
-    name: devicesName.Samsung_Galaxy_S6,
-    resolution: {
+  [AdminDevicesName.Samsung_Galaxy_S6]: {
+    name: AdminDevicesName.Samsung_Galaxy_S6,
+    dimensions: {
       width: 360,
       height: 640
     }
   },
-  {
-    name: devicesName.Samsung_Galaxy_S8,
-    resolution: {
+  [AdminDevicesName.Samsung_Galaxy_S8]: {
+    name: AdminDevicesName.Samsung_Galaxy_S8,
+    dimensions: {
       width: 360,
       height: 740
     }
   },
-  {
-    name: devicesName.Samsung_Galaxy_S10_Plus,
-    resolution: {
+  [AdminDevicesName.Samsung_Galaxy_S10_Plus]: {
+    name: AdminDevicesName.Samsung_Galaxy_S10_Plus,
+    dimensions: {
       width: 412,
       height: 869
     }
   }
-];
+};
 
-export const adminGroups = [
+export type AdminGroup = {
+  name: String;
+  devices: AdminDevicesName[];
+  autoconnect: boolean;
+};
+
+export const adminGroups: AdminGroup[] = [
   {
     name: "Default room",
-    devices: [devicesName.iPhone_6_7_8],
+    devices: [AdminDevicesName.iPhone_6_7_8],
     autoconnect: false
   },
   {
     name: "Room with same mobiles height",
     devices: [
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_6_7_8
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_6_7_8
     ],
     autoconnect: true
   },
   {
     name: "Room with multiple mobiles height",
     devices: [
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_11,
-      devicesName.Samsung_Galaxy_S8,
-      devicesName.Samsung_Galaxy_S10_Plus,
-      devicesName.iPhone_X
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_11,
+      AdminDevicesName.Samsung_Galaxy_S8,
+      AdminDevicesName.Samsung_Galaxy_S10_Plus,
+      AdminDevicesName.iPhone_X
     ],
     autoconnect: true
   },
   {
     name: "Room with mobiles and ipad",
     devices: [
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_11,
-      devicesName.iPad,
-      devicesName.Samsung_Galaxy_S10_Plus
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_11,
+      AdminDevicesName.iPad,
+      AdminDevicesName.Samsung_Galaxy_S10_Plus
     ],
     autoconnect: true
   },
   {
     name: "Room with tall mobiles",
     devices: [
-      devicesName.iPhone_X,
-      devicesName.iPhone_11,
-      devicesName.iPad,
-      devicesName.iPhone_11_Pro
+      AdminDevicesName.iPhone_X,
+      AdminDevicesName.iPhone_11,
+      AdminDevicesName.iPad,
+      AdminDevicesName.iPhone_11_Pro
     ],
     autoconnect: true
   },
   {
     name: "Room with 3 mobiles",
     devices: [
-      devicesName.iPhone_6_7_8,
-      devicesName.iPhone_11,
-      devicesName.Samsung_Galaxy_S10_Plus
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_11,
+      AdminDevicesName.Samsung_Galaxy_S10_Plus
     ],
     autoconnect: true
   },
   {
     name: "Room with large mobiles",
     devices: [
-      devicesName.iPhone_6_7_8,
-      devicesName.iPad,
-      devicesName.iPhone_11_Pro,
-      devicesName.iPad,
-      devicesName.iPhone_6_7_8
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPad,
+      AdminDevicesName.iPhone_11_Pro,
+      AdminDevicesName.iPad,
+      AdminDevicesName.iPhone_6_7_8
     ],
     autoconnect: true
   }

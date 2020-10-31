@@ -1,21 +1,15 @@
-import React, { useState, FC, useCallback, useEffect } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, selectors } from "../../../redux";
 import Device from "../../../components/admin/Device";
 
 //config
-import { adminGroups, adminDevices } from "../../../config";
+import { adminDevices, adminGroups } from "../../../config";
+import { AdminDevicesName, AdminGroup } from "../../../config/admin";
 
 //style
 import "./index.scss";
-
-interface room {
-  name: string;
-  devices: Array<string>;
-  adminRoomId?: string;
-  autoconnect?: boolean;
-}
 
 const Group: FC = () => {
   let { groupId } = useParams();
@@ -27,93 +21,55 @@ const Group: FC = () => {
 
   // state
 
-  const [devicesList, setDevicesList] = useState<Array<object>>([]);
-  const [devicesNumber, setDevicesNumber] = useState<number>(0);
-  const [currentRoom, setCurrentRoom] = useState<room>({
+  const [currentRoom, setCurrentRoom] = useState<AdminGroup>({
     name: "",
     devices: [],
-    adminRoomId: "",
     autoconnect: false
   });
 
   // handlers
 
   const handleOnAddPlayer = useCallback(() => {
-    setDevicesNumber(prev => prev + 1);
+    setCurrentRoom(prev => ({
+      ...prev,
+      devices: [...prev.devices, AdminDevicesName.iPhone_5_SE]
+    }));
   }, []);
 
-  // EFFECTS
+  // effects
 
   // on mount : create socket room
-
   useEffect(() => {
     dispatch(
       actions.webSocket.emit.room.create({ isAdmin: true, width: 0, height: 0 })
     );
   }, [dispatch]);
 
+  // on mount : set room
   useEffect(() => {
     if (groupId) {
-      setCurrentRoom({
-        name: adminGroups[parseInt(groupId)].name,
-        devices: adminGroups[parseInt(groupId)].devices,
-        autoconnect: adminGroups[parseInt(groupId)].autoconnect
-      });
-      setDevicesNumber(adminGroups[parseInt(groupId)].devices.length);
+      setCurrentRoom(adminGroups[parseInt(groupId)]);
     }
   }, [groupId]);
 
-  useEffect(() => {
+  // renderer
+
+  const renderDevices = useCallback(() => {
     if (groupId && roomId) {
-      const devicesArray = [];
-
-      for (let i = 0; i < devicesNumber; i++) {
-        let deviceName, deviceIndex, deviceResolution;
-
-        if (currentRoom.devices[i] != null) {
-          deviceName = currentRoom.devices[i];
-          for (let j = 0; j < adminDevices.length; j++) {
-            if (adminDevices[j].name === deviceName) {
-              deviceIndex = j;
-              deviceResolution = adminDevices[j].resolution;
-            }
-          }
-        } else {
-          deviceIndex = 0;
-          deviceName = adminDevices[0].name;
-          deviceResolution = adminDevices[0].resolution;
-        }
-
-        const deviceData = {
-          index: deviceIndex,
-          name: deviceName,
-          resolution: deviceResolution
-        };
-
-        const device = (
-          <Device
-            key={i}
-            userId={i}
-            autoconnect={currentRoom.autoconnect}
-            deviceData={deviceData}
-            adminRoomId={roomId}
-            // onCreateRoom={handleOnCreateRoom}
-          />
-        );
-
-        devicesArray.push(device);
-      }
-      setDevicesList(devicesArray);
+      return currentRoom.devices.map((device, i) => (
+        <Device
+          key={i}
+          userId={i}
+          autoconnect={currentRoom.autoconnect}
+          deviceData={adminDevices[device]}
+          adminRoomId={roomId}
+        />
+      ));
     }
-  }, [
-    devicesNumber,
-    currentRoom.autoconnect,
-    currentRoom.devices,
-    currentRoom.adminRoomId,
-    // handleOnCreateRoom,
-    groupId,
-    roomId
-  ]);
+    return null;
+  }, [currentRoom.autoconnect, currentRoom.devices, groupId, roomId]);
+
+  // return
 
   return (
     <div className="admin-room">
@@ -129,7 +85,7 @@ const Group: FC = () => {
       </div>
 
       <div className="admin-room__container">
-        <div className="admin-room__clients">{devicesList}</div>
+        <div className="admin-room__clients">{renderDevices()}</div>
       </div>
     </div>
   );
