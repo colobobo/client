@@ -11,16 +11,37 @@ const Groups: FC = () => {
   return (
     <div className="admin-rooms">
       <div className="admin-rooms__container">
-        <h1 className="admin-rooms__title">Les groupes :</h1>
-        <ul className="admin-rooms__list">
+        <h1 className="admin-rooms__title">Liste des groupes :</h1>
+        <div className="admin-rooms__table">
+          <div className="admin-rooms__table__row">
+            <div className="admin-rooms__table__row__cell">
+              <strong>Name</strong>
+            </div>
+            <div className="admin-rooms__table__row__cell">
+              <strong>Auto-connect</strong>
+            </div>
+            <div className="admin-rooms__table__row__cell">
+              <strong>Devices</strong>
+            </div>
+          </div>
           {adminGroups.map((group, index) => (
-            <li className="admin-rooms__item" key={index}>
-              <Link to={`/admin/group/${index}`} className="item__link">
-                {group.name}
-              </Link>
-            </li>
+            <Link
+              to={`/admin/group/${index}`}
+              className="admin-rooms__table__row"
+              key={index}
+            >
+              <div className="admin-rooms__table__row__cell">{group.name}</div>
+              <div className="admin-rooms__table__row__cell">
+                {group.autoconnect ? "✅" : "❌"}
+              </div>
+              <div className="admin-rooms__table__row__cell">
+                {group.devices.map((device, i) => (
+                  <span key={i}>{device}</span>
+                ))}
+              </div>
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

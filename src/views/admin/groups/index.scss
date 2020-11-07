@@ -1,3 +1,5 @@
+@import "../../../stylesheets/variables.scss";
+
 .admin-rooms {
   &__container {
     padding: 20px 30px;
@@ -5,37 +7,36 @@
   &__title {
     margin-bottom: 30px;
   }
-  &__item {
-    list-style: none;
-    position: relative;
-    padding-left: 40px;
-    cursor: pointer;
-    margin-bottom: 20px;
-
-    &:before {
-      content: "";
-      width: 25px;
-      height: 25px;
-      background: #4f5d75;
-      border-radius: 50%;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-      &:before {
-        background: #ef8354;
+  &__table {
+    &__row {
+      display: grid;
+      grid-template-columns: 350px 125px auto;
+      column-gap: 50px;
+      color: inherit;
+      padding: 18px;
+      &:first-child {
+        background-color: $blue;
+        color: $white;
       }
-    }
-
-    .item {
-      &__link {
-        font-size: 30px;
-        color: black;
-        font-weight: bold;
+      &:not(:first-child) {
+        transition: background-color 0.2s ease;
+        &:hover {
+          background-color: #fa8f8f;
+        }
+      }
+      &:nth-child(2n + 3) {
+        background-color: #e5ecfc;
+      }
+      &:nth-child(2n + 2) {
+        background-color: $white;
+      }
+      &__cell {
+        font-size: 20px;
+        line-height: 1.1;
+        span {
+          font-size: 17px;
+          margin-right: 14px;
+        }
       }
     }
   }
