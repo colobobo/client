@@ -1,5 +1,5 @@
 import { WebSocketAction } from "../socketMiddleware";
-import { Events } from "@colobobo/library";
+import { events } from "@colobobo/library";
 
 export enum WebSocketActionTypes {
   wsEmit = "ws/emit",
@@ -11,7 +11,7 @@ export type EmitAction<T = {}> = (payload?: T) => WebSocketAction;
 
 // Emit
 
-export const createEmitAction = <T>(event: Events): EmitAction<T> => {
+export const createEmitAction = <T>(event: events.All): EmitAction<T> => {
   return payload => ({
     type: WebSocketActionTypes.wsEmit,
     event,
@@ -22,7 +22,7 @@ export const createEmitAction = <T>(event: Events): EmitAction<T> => {
 // Subscribe
 
 export const createSubscribeAction = (
-  event: Events,
+  event: events.All,
   handle: string | (() => any)
 ): WebSocketAction => {
   return {
@@ -34,7 +34,7 @@ export const createSubscribeAction = (
 
 // Unsubscribe
 
-export const createUnsubscribeAction = (event: Events): WebSocketAction => {
+export const createUnsubscribeAction = (event: events.All): WebSocketAction => {
   return {
     type: WebSocketActionTypes.wsUnsubscribe,
     event

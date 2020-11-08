@@ -1,12 +1,12 @@
 import io from "socket.io-client";
 import { MiddlewareAPI, Dispatch, Action } from "redux";
 import { WebSocketActionTypes } from "./actions/actionCreators";
-import { Events } from "@colobobo/library";
+import { events } from "@colobobo/library";
 import { RootState } from "../store";
 
 export interface WebSocketAction extends Action {
   type: WebSocketActionTypes;
-  event: Events;
+  event: events.All;
   handle?: ((result: any) => any) | string;
   payload?: any;
 }
