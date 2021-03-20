@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/colobobo/client/master/src/assets/logo/logo-simple.png" alt="logo" width="400" />
+<img src="https://raw.githubusercontent.com/colobobo/client/master/src/assets/logo/logo.gif" alt="logo" width="400" />
 </div>
 
 <h4 align="center">A multiplayer mobile game with a shared gaming interface across devices</h4>
