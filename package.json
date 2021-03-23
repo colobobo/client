@@ -89,8 +89,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "link-library": "yarn link \"@colobobo/library\"",
-    "unlink-library": "yarn unlink \"@colobobo/library\""
+    "library:update": "yarn upgrade @colobobo/library",
+    "library:link": "yarn link @colobobo/library",
+    "library:unlink": "yarn unlink @colobobo/library"
   },
   "browserslist": {
     "production": [
@@ -116,7 +117,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged & yarn upgrade @colobobo/library && git add yarn.lock"
+      "pre-commit": "lint-staged"
     }
   },
   "devDependencies": {
