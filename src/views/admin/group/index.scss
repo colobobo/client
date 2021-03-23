@@ -13,11 +13,12 @@
     white-space: nowrap;
     display: flex;
     align-items: center;
+    width: fit-content;
+    padding: 0 30px 50px 30px;
   }
 
   &__container {
-    overflow-x: scroll;
-    padding: 0 30px 50px 30px;
+    overflow-x: auto;
   }
 
   &__add {

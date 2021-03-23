@@ -113,6 +113,20 @@ export const adminGroups: AdminGroup[] = [
     autoconnect: false
   },
   {
+    name: "Room with 2 mobiles",
+    devices: [AdminDevicesName.iPhone_6_7_8, AdminDevicesName.iPhone_5_SE],
+    autoconnect: true
+  },
+  {
+    name: "Room with 3 mobiles",
+    devices: [
+      AdminDevicesName.iPhone_6_7_8,
+      AdminDevicesName.iPhone_11,
+      AdminDevicesName.Samsung_Galaxy_S10_Plus
+    ],
+    autoconnect: true
+  },
+  {
     name: "Room with same mobiles height",
     devices: [
       AdminDevicesName.iPhone_6_7_8,
@@ -134,7 +148,7 @@ export const adminGroups: AdminGroup[] = [
     autoconnect: true
   },
   {
-    name: "Room with mobiles and ipad",
+    name: "Room with mobiles and iPad",
     devices: [
       AdminDevicesName.iPhone_6_7_8,
       AdminDevicesName.iPhone_11,
@@ -144,26 +158,7 @@ export const adminGroups: AdminGroup[] = [
     autoconnect: true
   },
   {
-    name: "Room with tall mobiles",
-    devices: [
-      AdminDevicesName.iPhone_X,
-      AdminDevicesName.iPhone_11,
-      AdminDevicesName.iPad,
-      AdminDevicesName.iPhone_11_Pro
-    ],
-    autoconnect: true
-  },
-  {
-    name: "Room with 3 mobiles",
-    devices: [
-      AdminDevicesName.iPhone_6_7_8,
-      AdminDevicesName.iPhone_11,
-      AdminDevicesName.Samsung_Galaxy_S10_Plus
-    ],
-    autoconnect: true
-  },
-  {
-    name: "Room with large mobiles",
+    name: "Room with large devices",
     devices: [
       AdminDevicesName.iPhone_6_7_8,
       AdminDevicesName.iPad,
