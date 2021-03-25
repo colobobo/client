@@ -10,7 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectors, actions } from "../../redux";
 
 // components
-import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+import InterfaceButton, {
+  Colors as InterfaceButtonColors
+} from "../../components/InterfaceButton";
 import SpriteAnimation from "../../components/SpriteAnimation";
 
 // style
@@ -91,8 +93,8 @@ const Landing: FC = () => {
           <option value="en">{t("languages.english")}</option>
         </select>
 
-        <Link to="/about" className="landing__about button button--yellow">
-          ?
+        <Link to="/about" className="landing__about">
+          <InterfaceButton color={InterfaceButtonColors.yellow} text={"?"} />
         </Link>
 
         <div className="landing__center">
@@ -104,13 +106,13 @@ const Landing: FC = () => {
         <div className="landing__actions">
           <InterfaceButton
             onClick={handleOnClickCreateRoom}
-            color={Colors.yellow}
+            color={InterfaceButtonColors.yellow}
             text={t("landing.buttons.create")}
             classNames="landing__action"
           />
           <InterfaceButton
             onClick={handleOnJoinRedirect}
-            color={Colors.blue}
+            color={InterfaceButtonColors.blue}
             text={t("landing.buttons.join")}
             classNames="landing__action"
           />

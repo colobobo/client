@@ -16,6 +16,10 @@
   @include display-center;
   -webkit-appearance: none;
 
+  &:active {
+    filter: brightness(0.9);
+  }
+
   &--yellow {
     background: $yellow;
     color: $blue-dark;

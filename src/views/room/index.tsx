@@ -60,6 +60,7 @@ const Room: FC = () => {
   }, []);
 
   const handleOnBackButtonClick = useCallback(() => {
+    // TODO
     console.log("LEAVE THE ROOM AND REDIRECT TO HOME");
   }, []);
 
@@ -90,7 +91,7 @@ const Room: FC = () => {
               ? t("room.creatorDescription")
               : t("room.description")
           }}
-        ></p>
+        />
         {isCreator && (
           <div className="room__selection">
             {Object.values(enums.game.Disposition).map(value => (
@@ -103,14 +104,15 @@ const Room: FC = () => {
                   checked={currentPlacement === value}
                   onChange={handleCurrentPlacementChange}
                 />
-                <InterfaceButton
-                  color={
-                    currentPlacement === value ? Colors.yellow : Colors.white
-                  }
-                  text={t(`room.placement.${value}`)}
-                  classNames="button--small"
-                />
-                <label htmlFor={value} />
+                <label htmlFor={value}>
+                  <InterfaceButton
+                    color={
+                      currentPlacement === value ? Colors.yellow : Colors.white
+                    }
+                    text={t(`room.placement.${value}`)}
+                    classNames="button--small"
+                  />
+                </label>
               </div>
             ))}
           </div>

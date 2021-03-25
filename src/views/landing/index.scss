@@ -15,13 +15,15 @@
     height: 100%;
   }
 
-  &__about.button {
-    width: 50px;
-    height: 50px;
-    font-size: 2.2rem;
+  &__about {
     position: absolute;
     top: -20px;
     left: -10px;
+    .button {
+      width: 50px;
+      height: 50px;
+      font-size: 2.2rem;
+    }
   }
 
   &__center {
