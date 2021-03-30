@@ -31,7 +31,7 @@ const InterfaceScoreArea: FC<Props> = ({ isGameOver }) => {
 
   return (
     <div className="score-area">
-      <Area height="min">
+      <Area>
         <div className="score__bush"></div>
         {isLastDevice && !isGameOver && (
           <img

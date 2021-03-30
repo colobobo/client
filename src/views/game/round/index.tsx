@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../redux/store";
 
 // components
-import Area from "../../../components/Area";
+import Area, { AreaHeight } from "../../../components/Area";
 import GameDecorationBleed, {
   Position as GameDecorationBleedPosition
 } from "../../../components/GameDecorationBleed";
@@ -56,9 +56,9 @@ const Round: FC<Props> = ({ isActive }) => {
       style={{ backgroundColor: worldProperties?.bgColor }}
       className={`round ${isActive ? "active" : ""}`}
     >
-      <Area height="min">
+      <Area>
         {world && (
-          <div>
+          <>
             <GameBackground world={world} />
             <GamePhaser isActive={isActive} />
             <GameDecoration
@@ -69,12 +69,12 @@ const Round: FC<Props> = ({ isActive }) => {
               world={world}
               position={GameDecorationPosition.bottom}
             />
-          </div>
+          </>
         )}
       </Area>
-      <Area height="max">
+      <Area height={AreaHeight.max} classNames={"round__area__bleed"}>
         {world && (
-          <div>
+          <>
             <GameDecorationBleed
               bgBleedColor={worldProperties!.bgBleedColor}
               world={world}
@@ -85,7 +85,7 @@ const Round: FC<Props> = ({ isActive }) => {
               world={world}
               position={GameDecorationBleedPosition.bottom}
             />
-          </div>
+          </>
         )}
       </Area>
       {world && <GameInterface colorTheme={worldProperties!.colorTheme} />}

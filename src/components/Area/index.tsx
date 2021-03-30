@@ -1,13 +1,24 @@
 import React, { FC } from "react";
 import { selectors } from "../../redux";
 import { useTypedSelector } from "../../redux/store";
+import Classnames from "classnames";
 import "./index.scss";
 
-interface AreaProps {
-  height: string;
+export enum AreaHeight {
+  min = "min",
+  max = "max"
 }
 
-const Area: FC<AreaProps> = ({ children, height }) => {
+interface AreaProps {
+  classNames?: string;
+  height?: AreaHeight;
+}
+
+const Area: FC<AreaProps> = ({
+  children,
+  classNames,
+  height = AreaHeight.min
+}) => {
   // selectors
   const playerId = useTypedSelector(selectors.room.selectPlayerId);
   const device = useTypedSelector(state =>
@@ -17,15 +28,13 @@ const Area: FC<AreaProps> = ({ children, height }) => {
   const areaMinHeight = useTypedSelector(selectors.area.selectMinHeight);
   const areaMaxHeight = useTypedSelector(selectors.area.selectMaxHeight);
 
-  // handlers
-
   // return
   return (
     <div
-      className={`area area--${height}`}
+      className={Classnames("area", `area--${height}`, classNames)}
       style={{
         width: areaWidh,
-        height: height === "min" ? areaMinHeight : areaMaxHeight,
+        height: height === AreaHeight.min ? areaMinHeight : areaMaxHeight,
         left: -device?.offsetX || 0
       }}
     >

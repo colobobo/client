@@ -5,8 +5,8 @@ import { gsap } from "gsap";
 
 // components
 import Area from "../Area";
-import { BleedColor } from "../../components/InterfaceBleed";
-import InterfaceButton, { Colors } from "../../components/InterfaceButton";
+import { BleedColor } from "../InterfaceBleed";
+import InterfaceButton, { Colors } from "../InterfaceButton";
 
 // style
 import "./index.scss";
@@ -96,7 +96,7 @@ const MotionShared: FC<Props> = ({
   return (
     <div className="motion-shared">
       <div className="motion-shared__container">
-        <Area height="min">
+        <Area>
           {/* {isPlayed && (
             <InterfaceBleed
               position={BleedPosition.left}
